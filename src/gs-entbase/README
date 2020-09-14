@@ -1,0 +1,21 @@
+GENERAL ENTITY CODE BASE
+========================
+
+This is part reverse-engineering effort, part innovation, in terms of reusable
+and game-agnostic map-entity logic.
+
+A lot of entities from Half-Life and Source Engine based titles are implemented.
+Those are made possible through the documentation efforts of twhl.info
+and a lot of trial and error. A lot of mods and custom maps have been used to
+make sure this is as compatible as can be. It's always improving.
+
+Others objects I have come up with on my own for the projects.
+
+A few warnings to the uneducated:
+If you're planning on merging or using any of this code in combination with the
+original Half-Life SDK, you're violating the Half-Life SDK License Agreement.
+
+Thanks to Spike for FTEQCC's advanced features and his engine, FTEQW, that makes
+FreeCS and other projects even possible.
+
+Marco 'eukara' Hladik

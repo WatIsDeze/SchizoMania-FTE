@@ -1,0 +1,44 @@
+HALF-LIFE WON MENU - QUAKEC VERSION
+===================================
+
+This menu logic is part of the FreeCS project.
+It's a close recreation of the Half-Life main-menu (pre-Steam), also known as
+the Half-Life WON menu (or just WON Menu - you get the idea).
+It was used between 1998 and 2004.
+
+It attempts to parse string-data and bitmaps from the original paths
+whenever it can. 
+
+The original data is required for it to work.
+
+It's created from scratch and is not C++ - it's QuakeC and meant to be used
+within FTE QuakeWorld. The file extensions are only changed in order to help
+with the syntax highlighting choice of your favorite editor.
+
+This codebase is to be compiled with FTEQCC, no other compiler is supported.
+No engine other than FTE QuakeWorld is supported. I won't support anything else
+as there is no other QuakeWorld based engine that could easily add all the
+formats and builtins required.
+
+A few warnings to the uneducated:
+If you're planning on merging or using any of this code in combination with the
+original Half-Life SDK, you're violating the Half-Life SDK License Agreement.
+This includes using it in combination with the original Half-Life binaries and
+libraries. Valve has spoken out against such projects for the reason above.
+
+Over the past decade enough Half-Life projects have sprung up that have violated 
+and _abused_ the GPL, thus discouraging entities from releasing their sources in
+fear of such behaviour. This has done more harm than any good.
+If anyone was to intentionally distribute content created with the Half-Life SDK
+with this component, it'd violate the Half-Life SDK AND the GPL.
+It's frustrating, but this is the world we are living in right now.
+
+I recommend that you use this menu without relying on Half-Life file formats.
+FreeCS gets around this by not actually shipping the CS content as part of the
+project. User superior formats such as IQM (instead of MDL) for models and the
+Quake III Arena BSP format for levels.
+
+Thanks to Spike for FTEQCC's advanced features and his engine, FTEQW, that makes
+FreeCS and other projects even possible.
+
+Marco 'eukara' Hladik

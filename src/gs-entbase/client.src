@@ -1,0 +1,30 @@
+#ifdef DEVELOPER
+#define GS_DEVELOPER
+#endif
+
+#includelist
+baseentity.h
+decals.h
+materials.h
+client/defs.h
+client/basefx.cpp
+client/baseentity.cpp
+client/env_cubemap.cpp
+client/env_glow.cpp
+client/env_sun.cpp
+client/env_sound.cpp
+client/env_soundscape.cpp
+client/env_sprite.cpp
+client/env_particle.cpp
+client/env_laser.cpp
+client/func_lod.cpp
+client/func_dustmotes.cpp
+client/light_environment.cpp
+client/sky_camera.cpp
+client/info_notnull.cpp
+client/point_message.cpp
+client/func_physbox.cpp
+client/prop_dynamic.cpp
+client/prop_rope.cpp
+client/worldspawn.cpp
+#endlist
