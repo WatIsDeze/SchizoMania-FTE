@@ -23,31 +23,135 @@
 
 float GamePMove_Maxspeed(player target)
 {
-	return (target.flags & FL_CROUCHING) ? 135 : 270;
+	// Taken from the CStrike code.
+	float spd = serverkeyfloat("phy_maxspeed");
+
+	// switch (target.activeweapon)
+	// {
+	// case WEAPON_M3:
+	// 	spd *= 230/250;
+	// 	break;
+	// case WEAPON_XM1014:
+	// 	spd *= 240/250;
+	// 	break;
+	// case WEAPON_MP5:
+	// 	spd *= 250/250;
+	// 	break;
+	// case WEAPON_P90:
+	// 	spd *= 245/250;
+	// 	break;
+	// case WEAPON_UMP45:
+	// 	spd *= 250/250;
+	// 	break;
+	// case WEAPON_MAC10:
+	// 	spd *= 250/250;
+	// 	break;
+	// case WEAPON_TMP:
+	// 	spd *= 250/250;
+	// 	break;
+	// case WEAPON_AK47:
+	// 	spd *= 221/250;
+	// 	break;
+	// case WEAPON_SG552:
+	// 	spd *= 235/250;
+	// 	break;
+	// case WEAPON_M4A1:
+	// 	spd *= 230/250;
+	// 	break;
+	// case WEAPON_AUG:
+	// 	spd *= 240/250;
+	// 	break;
+	// case WEAPON_SCOUT:
+	// 	spd *= 260/250;
+	// 	break;
+	// case WEAPON_AWP:
+	// 	spd *= 210/250;
+	// 	break;
+	// case WEAPON_G3SG1:
+	// 	spd *= 210/250;
+	// 	break;
+	// case WEAPON_SG550:
+	// 	spd *= 210/250;
+	// 	break;
+	// case WEAPON_PARA:
+	// 	spd *= 220/250;
+	// 	break;
+	// case WEAPON_USP45:
+	// 	spd *= 250/250;
+	// 	break;
+	// case WEAPON_GLOCK18:
+	// 	spd *= 250/250;
+	// 	break;
+	// case WEAPON_DEAGLE:
+	// 	spd *= 250/250;
+	// 	break;
+	// case WEAPON_P228:
+	// 	spd *= 250/250;
+	// 	break;
+	// case WEAPON_ELITES:
+	// 	spd *= 250/250;
+	// 	break;
+	// case WEAPON_FIVESEVEN:
+	// 	spd *= 250/250;
+	// 	break;
+	// case WEAPON_KNIFE:
+	// 	spd *= 250/250;
+	// 	break;
+	// case WEAPON_HEGRENADE:
+	// 	spd *= 250/250;
+	// 	break;
+	// case WEAPON_FLASHBANG:
+	// 	spd *= 250/250;
+	// 	break;
+	// case WEAPON_SMOKEGRENADE:
+	// 	spd *= 250/250;
+	// 	break;
+	// case WEAPON_C4BOMB:
+	// 	spd *= 250/250;
+	// 	break;
+	// default:
+	// }
+
+	if (target.flags & FL_CROUCHING) {
+		spd *= 0.5f;
+	}
+
+	return spd;
 }
 
 void GamePMove_Fall(player target, float impactspeed)
 {
+	// Taken from the CStrike code.
 	if (impactspeed > 580) {
 #ifdef SERVER
-		float fFallDamage = (impactspeed - 580) * (100 / (1024 - 580));
+		float fFallDamage = (impactspeed - 580) * (100 / (1024 - 580)) * 1.75f;
 		Damage_Apply(target, world, fFallDamage, 0, DMG_FALL);
-		Sound_Play(target, CHAN_VOICE, "player.fall");
-#endif
-		target.punchangle += [15,0,(input_sequence & 1) ? 15 : -15];
-	} else if (impactspeed > 400) {
-		target.punchangle += [15,0,0];
-#ifdef SERVER
-		Sound_Play(target, CHAN_VOICE, "player.lightfall");
+
+		if (random() < 0.5)
+			sound(target, CHAN_AUTO, "player/pl_pain2.wav", 1.0, ATTN_NORM);
+		else
+			sound(target, CHAN_AUTO, "player/pl_pain4.wav", 1.0, ATTN_NORM);
 #endif
 	}
+
+// 	if (impactspeed > 580) {
+// #ifdef SERVER
+// 		float fFallDamage = (impactspeed - 580) * (100 / (1024 - 580));
+// 		Damage_Apply(target, world, fFallDamage, 0, DMG_FALL);
+// 		Sound_Play(target, CHAN_VOICE, "player.fall");
+// #endif
+// 		target.punchangle += [15,0,(input_sequence & 1) ? 15 : -15];
+// 	} else if (impactspeed > 400) {
+// 		target.punchangle += [15,0,0];
+// #ifdef SERVER
+// 		Sound_Play(target, CHAN_VOICE, "player.lightfall");
+// #endif
+// 	}
 }
 
 void GamePMove_Jump(player target)
 {
-	float flJumptimeDelta;
-	float flChainBonus;
-
+	// Taken from the CStrike code.
 	if (target.waterlevel >= 2) {
 		if (target.watertype == CONTENT_WATER) {
 			target.velocity[2] = 100;
@@ -57,20 +161,36 @@ void GamePMove_Jump(player target)
 			target.velocity[2] = 50;
 		}
 	} else {
-		/* Half-Life: Longjump module */
-#ifdef VALVE
-		if (target.flags & FL_CROUCHING && target.g_items & 0x00008000i) {
-			target.velocity = v_forward * 512;
-			target.velocity[2] += 100;
-		}
-#endif
-		target.velocity[2] += 240;
+		/* slow the player down a bit to prevent bhopping like crazy */
+		target.velocity *= 0.80f;
+		target.velocity[2] += 220;
 	}
+// 	float flJumptimeDelta;
+// 	float flChainBonus;
 
-	if (target.jumptime > 0) {
-		flJumptimeDelta = 0 - (target.jumptime - PHY_JUMP_CHAINWINDOW);
-		flChainBonus = PHY_JUMP_CHAIN - (((PHY_JUMP_CHAINWINDOW - (PHY_JUMP_CHAINWINDOW - flJumptimeDelta)) * 2) * PHY_JUMP_CHAINDECAY);
-		target.velocity[2] += flChainBonus;
-	}
-	target.jumptime = PHY_JUMP_CHAINWINDOW;
+// 	if (target.waterlevel >= 2) {
+// 		if (target.watertype == CONTENT_WATER) {
+// 			target.velocity[2] = 100;
+// 		} else if (target.watertype == CONTENT_SLIME) {
+// 			target.velocity[2] = 80;
+// 		} else {
+// 			target.velocity[2] = 50;
+// 		}
+// 	} else {
+// 		/* Half-Life: Longjump module */
+// #ifdef VALVE
+// 		if (target.flags & FL_CROUCHING && target.g_items & 0x00008000i) {
+// 			target.velocity = v_forward * 512;
+// 			target.velocity[2] += 100;
+// 		}
+// #endif
+// 		target.velocity[2] += 240;
+// 	}
+
+// 	if (target.jumptime > 0) {
+// 		flJumptimeDelta = 0 - (target.jumptime - PHY_JUMP_CHAINWINDOW);
+// 		flChainBonus = PHY_JUMP_CHAIN - (((PHY_JUMP_CHAINWINDOW - (PHY_JUMP_CHAINWINDOW - flJumptimeDelta)) * 2) * PHY_JUMP_CHAINDECAY);
+// 		target.velocity[2] += flChainBonus;
+// 	}
+// 	target.jumptime = PHY_JUMP_CHAINWINDOW;
 }
