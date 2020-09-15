@@ -1,21 +1,22 @@
 FTEMANIFEST 1
-GAME cstrike
-NAME "Counter-Strike"
+GAME schizomania
+NAME "SchizoMania"
 BASEGAME platform
 BASEGAME logos
 BASEGAME valve
 BASEGAME cstrike
+BASEGAME schizomania
 
 // custom game menu variables
--set gameinfo_game "Counter-Strike"
--set gameinfo_gamedir "cstrike"
+-set gameinfo_game "SchizoMania"
+-set gameinfo_gamedir "schizomania"
 -set gameinfo_fallback_dir ""
 -set gameinfo_mpentity "info_player_deathmatch"
 -set gameinfo_size "184000000"
--set gameinfo_url_info "www.counter-strike.net"
+-set gameinfo_url_info "https://github.com/WatIsDeze/SchizoMania-FTE"
 -set gameinfo_version "1.5"
--set gameinfo_url_dl "http://www.frag-net.com/mods/cstrike.fmf"
--set gameinfo_type "Multiplayer"
+-set gameinfo_url_dl ""
+-set gameinfo_type "Both"
 -set gameinfo_nomodels 0
 -set gameinfo_gamedll "progs.dat"
 -set gameinfo_startmap "c1a0"

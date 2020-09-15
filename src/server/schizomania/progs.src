@@ -1,0 +1,87 @@
+#pragma target fte
+#pragma progs_dat  "../../../schizomania/data.pk3dir/progs.dat"
+
+#define QWSSQC
+#define SERVER
+#define VALVE
+#define SCHIZOMANIA
+#define GS_RENDERFX
+
+#includelist
+../../shared/fteextensions.qc
+../../gs-entbase/server/defs.h
+../../shared/defs.h
+../defs.h
+
+../../gs-entbase/server.src
+../../gs-entbase/shared.src
+../../shared/schizomania/include.src
+
+../schizomania/defs.h
+
+../schizomania/monster_apache.cpp
+../schizomania/monster_alien_controller.cpp
+../schizomania/monster_alien_grunt.cpp
+../schizomania/monster_alien_slave.cpp
+../schizomania/monster_barnacle.cpp
+../schizomania/monster_barney.cpp
+../schizomania/monster_barney_dead.cpp
+../schizomania/monster_bigmomma.cpp
+../schizomania/monster_bloater.cpp
+../schizomania/monster_bullchicken.cpp
+../schizomania/monster_cockroach.cpp
+../schizomania/monster_flyer_flock.cpp
+../schizomania/monster_gargantua.cpp
+../schizomania/monster_gman.cpp
+../schizomania/monster_headcrab.cpp
+../schizomania/monster_babycrab.cpp
+../schizomania/monster_hevsuit_dead.cpp
+../schizomania/monster_houndeye.cpp
+../schizomania/monster_human_grunt.cpp
+../schizomania/monster_hgrunt_dead.cpp
+../schizomania/monster_human_assassin.cpp
+../schizomania/monster_ichthyosaur.cpp
+../schizomania/monster_leech.cpp
+../schizomania/monster_miniturret.cpp
+../schizomania/monster_nihilanth.cpp
+../schizomania/monster_osprey.cpp
+../schizomania/monster_rat.cpp
+../schizomania/monster_scientist_dead.cpp
+../schizomania/monster_sitting_scientist.cpp
+../schizomania/monster_scientist.cpp
+../schizomania/monster_sentry.cpp
+../schizomania/monster_tentacle.cpp
+../schizomania/monster_turret.cpp
+../schizomania/monster_zombie.cpp
+
+../schizomania/player.c
+../schizomania/spectator.c
+../schizomania/items.cpp
+../schizomania/item_longjump.cpp
+../schizomania/item_suit.cpp
+../schizomania/item_healthkit.cpp
+../schizomania/item_battery.cpp
+../schizomania/item_weaponbox.cpp
+../schizomania/world_items.cpp
+../schizomania/xen_spore_small.cpp
+../schizomania/xen_spore_medium.cpp
+../schizomania/xen_spore_large.cpp
+../schizomania/xen_hair.cpp
+../schizomania/xen_plantlight.cpp
+../schizomania/ammo.cpp
+
+../../botlib/include.src
+
+../schizomania/gamerules.cpp
+../schizomania/gamerules_singleplayer.cpp
+../schizomania/gamerules_multiplayer.cpp
+../schizomania/client.c
+../schizomania/server.c
+../schizomania/damage.c
+../schizomania/rules.c
+
+../schizomania/input.c
+../schizomania/spawn.c
+
+../include.src
+#endlist
