@@ -2,14 +2,31 @@
 // Please refer to the original documentation.
 // This is for development purposes ONLY.
 
+textures/data.pk3dir/textures/skies/smudge
+{
+	qer_editorImage textures/skies/smudge.tga
+	skyParms - 256 -
+
+	surfaceParm sky
+	surfaceParm noimpact
+	surfaceParm nolightmap
+	surfaceParm nodlight
+	noPicMip
+	nomipmaps
+	{
+		map $cube:textures/skies/smudge/bg
+		map $blackimage
+		map $blackimage
+	}
+}
+
 textures/data.pk3dir/textures/edit/edit_5
 {
     diffusemap textures/edit/edit_5.tga
-    {
-        map $lightmap
-    }
 }
-
+{
+    map $lightmap
+}
 textures/data.pk3dir/textures/edit/edit_4
 {
     diffusemap textures/edit/edit_4.tga
@@ -20,12 +37,12 @@ textures/data.pk3dir/textures/edit/edit_4
 
 textures/data.pk3dir/textures/edit/edit_3
 {
-    diffusemap textures/edit/edit_3.tga
-    {
-        map $lightmap
-    }
+	diffusemap textures/edit/edit_3.tga
+	{
+		map $diffuse
+		map $lightmap
+	}
 }
-
 textures/data.pk3dir/textures/edit/edit_1
 {
     diffusemap textures/edit/edit_1.tga
@@ -43,12 +60,12 @@ textures/data.pk3dir/textures/edit/edit_6
 }
 textures/data.pk3dir/textures/edit/edit_2
 {
-    diffusemap textures/edit/edit_2.tga
-    {
-        map $lightmap
-    }
+	diffusemap textures/edit/edit_2.tga
+	{
+		map $diffuse
+		map $lightmap
+	}
 }
-
 textures/data.pk3dir/textures/edit_2
 {
     diffusemap textures/edit/edit_2.tga
@@ -70,3 +87,21 @@ tcMod scroll 0.0015 -0.003
 rgbGen identityLighting
 }
 }
+textures/data.pk3dir/textures/sky/sky
+{
+	qer_editorImage textures/skies/smudge.tga
+	skyParms - 256 -
+
+	surfaceParm sky
+	surfaceParm noimpact
+	surfaceParm nolightmap
+	surfaceParm nodlight
+	noPicMip
+	nomipmaps
+	{
+		map $cube:textures/skies/smudge/bg
+		map $blackimage
+		map $blackimage
+	}
+}
+
