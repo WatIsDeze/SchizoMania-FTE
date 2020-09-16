@@ -227,8 +227,6 @@ w_glock_secondary(void)
 		return;
 	}
 
-	player pl = (player)self;
-
 	if (pl.w_attack_next > 0) {
 		return;
 	}

@@ -3,3 +3,37 @@ saveconfig
 bind ~ toggleconsole
 bind ` toggleconsole
 bind f1 toggleconsole
+/map test 
+noclip
+sv_cheats 1
+map test
+noclip
+/map test
+map test
+map test
+noclpi
+map test
+map test
+map test
+map tets
+map test
+map test
+map test
+map test
+map test
+map test
+quit
+map test
+map test
+map test
+map test
+/cl_thirdperson 1
+map test
+map test
+/cl_thirdperson 1
+map test
+map test
+map test
+map test
+/cl_thirdperson 1
+map test

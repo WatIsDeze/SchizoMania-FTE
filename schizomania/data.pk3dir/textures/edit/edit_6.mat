@@ -1,0 +1,6 @@
+{
+    diffusemap textures/edit/edit_6.tga
+}
+{
+    map $lightmap
+}
