@@ -17,9 +17,13 @@
 void
 GamePredict_PreFrame(player pl)
 {
+    pl.net_scma_shotmultiplier = pl.scma_shotmultiplier;
+	pl.net_scma_shottime = pl.scma_shottime;
 }
 
 void
 GamePredict_PostFrame(player pl)
 {
+    pl.scma_shotmultiplier = pl.net_scma_shotmultiplier;
+	pl.scma_shottime = pl.net_scma_shottime;
 }

@@ -1,2 +1,5 @@
 saveconfig default.cfg
 saveconfig
+bind ~ toggleconsole
+bind ` toggleconsole
+bind f1 toggleconsole

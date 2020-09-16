@@ -14,23 +14,17 @@
  * OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  */
 
-/*QUAKED weapon_9mmhandgun (0 0 1) (-16 -16 0) (16 16 32)
-"model" "models/w_9mmhandgun.mdl"
+/*QUAKED weapon_glock18 (0 0 1) (-16 -16 0) (16 16 32)
+"model" "models/w_glock18.mdl"
 
-HALF-LIFE (1998) ENTITY
+COUNTER-STRIKE (1999) ENTITY
 
-9mm Handgun/Glock Weapon
-Same as weapon_glock
+Glock 18 Select Fire Weapon
 
-*/
+Default arsenal for Terrorists
 
-/*QUAKED weapon_glock (0 0 1) (-16 -16 0) (16 16 32)
-"model" "models/w_9mmhandgun.mdl"
-
-HALF-LIFE (1998) ENTITY
-
-9mm Handgun/Glock Weapon
-Same as weapon_9mmhandgun
+- Buy Menu -
+Price: $400
 
 */
 
@@ -52,7 +46,7 @@ enum
 };
 
 void
-w_glock_precache(void)
+w_glock18_precache(void)
 {
 #ifdef SERVER
 	Sound_Precache("weapon_glock18.fire");
@@ -65,42 +59,45 @@ w_glock_precache(void)
 }
 
 void
-w_glock_updateammo(player pl)
+w_glock18_updateammo(player pl)
 {
 #ifdef SERVER
-	Weapons_UpdateAmmo(pl, pl.glock_mag, pl.ammo_9mm, -1);
+	Weapons_UpdateAmmo(pl, pl.glock18_mag, pl.ammo_9mm, -1);
 #endif
 }
 
 string
-w_glock_wmodel(void)
+w_glock18_wmodel(void)
 {
 	return "models/w_glock18.mdl";
 }
 
 string
-w_glock_pmodel(void)
+w_glock18_pmodel(void)
 {
 	return "models/p_glock18.mdl";
 }
 
 string
-w_glock_deathmsg(void)
+w_glock18_deathmsg(void)
 {
 	return "";
 }
 
 int
-w_glock_pickup(int new, int startammo)
+w_glock18_pickup(int new, int startammo)
 {
 #ifdef SERVER
 	player pl = (player)self;
 
 	if (new) {
-		pl.glock_mag = 20;
+		if (startammo == -1)
+			pl.glock18_mag = 20;
+		else
+			pl.glock18_mag = startammo;
 	} else {
-		if (pl.ammo_9mm < MAX_A_9MM) {
-			pl.ammo_9mm = bound(0, pl.ammo_9mm + 20, MAX_A_9MM);
+		if (pl.ammo_9mm < 40) {
+			pl.ammo_9mm = bound(0, pl.ammo_9mm + 20, 40);
 		} else {
 			return FALSE;
 		}
@@ -110,7 +107,7 @@ w_glock_pickup(int new, int startammo)
 }
 
 void
-w_glock_draw(void)
+w_glock18_draw(void)
 {
 	player pl = (player)self;
 	Weapons_SetModel("models/v_glock18.mdl");
@@ -125,22 +122,13 @@ w_glock_draw(void)
 	}
 
 #ifdef CLIENT
-//	Got to do this for crosshair support.
-//	pl.cs_cross_mindist = 8;
-//	pl.cs_cross_deltadist = 3;
+	pl.cs_cross_mindist = 8;
+	pl.cs_cross_deltadist = 3;
 #endif
 }
 
-// void
-// w_glock_holster(void)
-// {
-// #ifdef CLIENT
-// 	Weapons_ViewAnimation(GLOCK_HOLSTER);
-// #endif
-// }
-
 void
-w_glock_primary(void)
+w_glock18_primary(void)
 {
 	player pl = (player)self;
 
@@ -151,47 +139,38 @@ w_glock_primary(void)
 	if (pl.flags & FL_SEMI_TOGGLED) {
 		return;
 	}
-	/* ammo check */
+
 #ifdef CLIENT
 	if (!pl.a_ammo1) {
 		return;
 	}
 #else
-	if (!pl.glock_mag) {
+	if (!pl.glock18_mag) {
 		return;
 	}
 #endif
 
-	// Counter-Strike crosshair stuff.
-	//Cstrike_ShotMultiplierAdd(pl, 1);
-	//float accuracy = Cstrike_CalculateAccuracy(pl, 200);
+	Cstrike_ShotMultiplierAdd(pl, 1);
+	float accuracy = Cstrike_CalculateAccuracy(pl, 200);
 
-	/* actual firing */
 #ifdef CLIENT
 	pl.a_ammo1--;
-	View_SetMuzzleflash(MUZZLE_SMALL);
-	//Weapons_ViewPunchAngle([-2,0,0]);
-
-	//if (pl.a_ammo1) {
-//		Weapons_ViewAnimation(GLOCK_SHOOT);
-//	} else {
-//		Weapons_ViewAnimation(GLOCK_SHOOT_EMPTY);
-//	}
+	View_SetMuzzleflash(MUZZLE_RIFLE);
 #else
-	pl.glock_mag--;
-	//TraceAttack_SetPenetrationPower(0);
-	//TraceAttack_FireBullets(1, pl.origin + pl.view_ofs, 25, [accuracy,accuracy], WEAPON_GLOCK18);
-	TraceAttack_FireBullets(1, pl.origin + pl.view_ofs, Skill_GetValue("plr_9mm_bullet"), [0.01,0.01], WEAPON_GLOCK);
+	TraceAttack_SetPenetrationPower(0);
+	TraceAttack_FireBullets(1, pl.origin + pl.view_ofs, 25, [accuracy,accuracy], WEAPON_GLOCK18);
+	pl.glock18_mag--;
+
+	if (self.flags & FL_CROUCHING)
+		Animation_PlayerTopTemp(ANIM_SHOOT_ONEHAND, 0.45f);
+	else
+		Animation_PlayerTopTemp(ANIM_CROUCH_SHOOT_ONEHAND, 0.45f);
+
 	if (pl.a_ammo3) {
 		Sound_Play(pl, CHAN_WEAPON, "weapon_glock18.burstfire");
 	} else {
 		Sound_Play(pl, CHAN_WEAPON, "weapon_glock18.fire");
 	}
-
-	if (self.flags & FL_CROUCHING)
-		Animation_PlayerTopTemp(ANIM_SHOOT1HAND, 0.45f);
-	else
-		Animation_PlayerTopTemp(ANIM_CR_SHOOT1HAND, 0.45f);
 #endif
 
 	if (pl.a_ammo3) {
@@ -213,20 +192,13 @@ w_glock_primary(void)
 		}
 		pl.w_attack_next = 0.15f;
 	}
-
 	pl.flags |= FL_SEMI_TOGGLED;
 	pl.w_idle_next = pl.w_attack_next;
 }
 
 void
-w_glock_secondary(void)
+w_glock18_secondary(void)
 {
-	player pl = (player)self;
-
-	if (pl.w_attack_next > 0) {
-		return;
-	}
-
 	player pl = (player)self;
 
 	if (pl.w_attack_next > 0) {
@@ -249,7 +221,7 @@ w_glock_secondary(void)
 }
 
 void
-w_glock_reload(void)
+w_glock18_reload(void)
 {
 	player pl = (player)self;
 
@@ -265,15 +237,15 @@ w_glock_reload(void)
 		return;
 	}
 #else
-	if (pl.glock_mag >= 20) {
+	if (pl.glock18_mag >= 20) {
 		return;
 	}
 	if (!pl.ammo_9mm) {
 		return;
 	}
 
-	Weapons_ReloadWeapon(pl, player::glock_mag, player::ammo_9mm, 20);
-	Weapons_UpdateAmmo(pl, pl.glock_mag, pl.ammo_9mm, -1);
+	Weapons_ReloadWeapon(pl, player::glock18_mag, player::ammo_9mm, 20);
+	Weapons_UpdateAmmo(pl, pl.glock18_mag, pl.ammo_9mm, -1);
 #endif
 
 	int r = (float)input_sequence % 2;
@@ -290,78 +262,26 @@ w_glock_reload(void)
 	pl.w_idle_next = pl.w_attack_next;
 }
 
-void
-w_glock_release(void)
-{
-	player pl = (player)self;
-	int r;
-
-	if (pl.w_idle_next > 0.0) {
-		return;
-	}
-
-	r = (float)input_sequence % 3;
-	switch (r) {
-	case 1:
-		Weapons_ViewAnimation(GLOCK_IDLE2);
-		pl.w_idle_next = 2.5f;
-		break;
-	case 2:
-		Weapons_ViewAnimation(GLOCK_IDLE3);
-		pl.w_idle_next = 3.5f;
-		break;
-	default:
-		Weapons_ViewAnimation(GLOCK_IDLE1);
-		pl.w_idle_next = 3.75f;
-		break;
-	}
-}
-
 float
-w_glock_aimanim(void)
+w_glock18_aimanim(void)
 {
-	return self.flags & FL_CROUCHING ? ANIM_CR_AIM1HAND : ANIM_AIM1HAND;
+	return w_deagle_aimanim();
 }
 
 void
-w_glock_hud(void)
+w_glock18_hud(void)
 {
 #ifdef CLIENT
-	vector cross_pos;
-	vector aicon_pos;
-
-	cross_pos = g_hudmins + (g_hudres / 2) + [-12,-12];
-	aicon_pos = g_hudmins + [g_hudres[0] - 48, g_hudres[1] - 42];
-
-	drawsubpic(
-		cross_pos,
-		[24,24],
-		g_cross_spr,
-		[0.1875,0],
-		[0.1875, 0.1875],
-		[1,1,1],
-		1.0f,
-		DRAWFLAG_NORMAL
-	);
-
+	Cstrike_DrawCrosshair();
 	HUD_DrawAmmo1();
 	HUD_DrawAmmo2();
-
-	drawsubpic(
-		aicon_pos,
-		[24,24],
-		g_hud7_spr,
-		[0,72/128],
-		[24/256, 24/128],
-		g_hud_color,
-		pSeat->m_flAmmo2Alpha,
-		DRAWFLAG_ADDITIVE
-	);
+	vector aicon_pos = g_hudmins + [g_hudres[0] - 48, g_hudres[1] - 42];
+	drawsubpic(aicon_pos, [24,24], g_hud7_spr, [48/256,72/256], [24/256, 24/256], g_hud_color, pSeat->m_flAmmo2Alpha, DRAWFLAG_ADDITIVE);
 #endif
 }
 
 void
-w_glock_hudpic(int selected, vector pos, float a)
+w_glock18_hudpic(int selected, vector pos, float a)
 {
 #ifdef CLIENT
 	if (selected) {
@@ -372,7 +292,7 @@ w_glock_hudpic(int selected, vector pos, float a)
 			[0,45/256],
 			[170/256,45/256],
 			g_hud_color,
-			a,
+			1.0f,
 			DRAWFLAG_ADDITIVE
 		);
 	} else {
@@ -383,47 +303,41 @@ w_glock_hudpic(int selected, vector pos, float a)
 			[0,45/256],
 			[170/256,45/256],
 			g_hud_color,
-			a,
+			1.0f,
 			DRAWFLAG_ADDITIVE
 		);
 	}
 #endif
 }
 
-weapon_t w_glock =
+weapon_t w_glock18 =
 {
-	.name		= "9mmhandgun",
-	.id			= ITEM_GLOCK,
+	.name		= "glock18",
+	.id			= ITEM_GLOCK18,
 	.slot		= 1,
-	.slot_pos	= 0,
-	.draw		= w_glock_draw,
+	.slot_pos	= 1,
+	.allow_drop	= TRUE,
+	.draw		= w_glock18_draw,
 	.holster	= __NULL__,
-	.primary	= w_glock_primary,
-	.secondary	= w_glock_secondary,
-	.reload		= w_glock_reload,
-	.release	= w_scma_weaponrelease,
-	.crosshair	= w_glock_hud,
-	.precache	= w_glock_precache,
-	.pickup		= w_glock_pickup,
-	.updateammo	= w_glock_updateammo,
-	.wmodel		= w_glock_wmodel,
-	.pmodel		= w_glock_pmodel,
-	.deathmsg	= w_glock_deathmsg,
-	.aimanim	= w_glock_aimanim,
-	.hudpic		= w_glock_hudpic
+	.primary	= w_glock18_primary,
+	.secondary	= w_glock18_secondary,
+	.reload		= w_glock18_reload,
+	.release	= w_cstrike_weaponrelease,
+	.crosshair	= w_glock18_hud,
+	.precache	= w_glock18_precache,
+	.pickup		= w_glock18_pickup,
+	.updateammo	= w_glock18_updateammo,
+	.wmodel		= w_glock18_wmodel,
+	.pmodel		= w_glock18_pmodel,
+	.deathmsg	= w_glock18_deathmsg,
+	.aimanim	= w_glock18_aimanim,
+	.hudpic		= w_glock18_hudpic
 };
 
-/* pickups */
 #ifdef SERVER
 void
-weapon_9mmhandgun(void)
+weapon_glock18(void)
 {
-	Weapons_InitItem(WEAPON_GLOCK);
-}
-
-void
-weapon_glock(void)
-{
-	Weapons_InitItem(WEAPON_GLOCK);
+	Weapons_InitItem(WEAPON_GLOCK18);
 }
 #endif

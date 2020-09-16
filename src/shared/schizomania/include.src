@@ -16,6 +16,7 @@
 
 ../../shared/schizomania/items.h
 ../../shared/schizomania/weapons.h
+../../shared/schizomania/weapons_schizomania.c
 ../../shared/schizomania/w_crossbow.c
 ../../shared/schizomania/w_crowbar.c
 ../../shared/schizomania/w_egon.c

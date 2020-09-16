@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2016-2020 Marco Hladik <marco@icculus.org>
+ * Copyright (c) 2016-2019 Marco Hladik <marco@icculus.org>
  *
  * Permission to use, copy, modify, and distribute this software for any
  * purpose with or without fee is hereby granted, provided that the above
@@ -14,32 +14,22 @@
  * OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  */
 
-void
-Game_InitRules(void)
+#include "animations.h"
+#include "weapons.h"
+#include "items.h"
+
+// #define TEAM_T		1
+// #define TEAM_CT		2
+// #define TEAM_VIP	3
+
+// #define FL_BUYZONE		(1<<21)
+// #define FL_RESCUEZONE	(1<<22) 
+// #define FL_BOMBZONE		(1<<23)
+
+enum
 {
-	if (cvar("sv_playerslots") == 1 || cvar("coop") == 1) {
-		g_grMode = spawn(HLSingleplayerRules);
-	} else {
-		g_grMode = spawn(HLMultiplayerRules);
-	}
-}
-
-void
-Game_Worldspawn(void)
-{
-	// SCMA: Precache CS Audiofile.
-	precache_sound("player/pl_pain2.wav");
-	precache_sound("player/pl_pain4.wav");
-
-	// Default HL Sound_Precache?
-	Sound_Precache("ammo.pickup");
-	Sound_Precache("ammo.respawn");
-	Sound_Precache("player.die");
-	Sound_Precache("player.fall");
-	Sound_Precache("player.lightfall");
-
-	precache_model("models/player.mdl");
-	precache_model("models/w_weaponbox.mdl");
-	Weapons_Init();
-	Player_Precache();
-}
+	STAT_MONEY = 34,
+	STAT_PROGRESS,
+	STAT_GAMETIME,
+	STAT_GAMESTATE
+};

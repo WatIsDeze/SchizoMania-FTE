@@ -16,7 +16,11 @@
 
 noref int input_sequence;
 class player:base_player
-{
+{	
+	// <SCMA> Properties.
+	int scma_shotmultiplier;
+	float scma_shottime;
+	// </SCMA>
 #ifdef CLIENT
 	/* External model */
 	entity p_model;
@@ -24,6 +28,16 @@ class player:base_player
 	int p_model_bone;
 	float pitch;
 	float lastweapon;
+
+	// <SCMA> Properties.
+	int scma_cross_mindist;
+	int scma_cross_deltadist;
+	int scma_old_shotmultiplier;
+	float scma_crosshairdistance;
+
+	int net_scma_shotmultiplier;
+	float net_scma_shottime;
+	// </SCMA>
 
 	virtual void(void) gun_offset;
 	virtual void(void) draw;
@@ -51,6 +65,13 @@ class player:base_player
 	int ammo_tripmine;
 	int ammo_snark;
 	int ammo_hornet;
+
+	// <SCMA>	
+	int mode_glock18;
+
+	int old_scma_shotmultiplier;
+	float old_scma_shottime;
+	// </SCMA>
 #endif
 };
 

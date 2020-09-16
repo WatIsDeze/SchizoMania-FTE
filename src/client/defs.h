@@ -91,6 +91,12 @@ void View_PlayAnimation(int);
 void View_PlayAnimation(int);
 void Sound_PlayVOX(string);
 
+// <SCMA> Crosshair drawing.
+// void SCMA_DrawCrosshair(void);
+// void SCMA_DrawSimpleCrosshair(void);
+// void SCMA_DrawScope(void);
+// <SCMA>
+
 /* this really should be done in-engine */
 
 __wrap float(vector pos, string pic, vector size, vector rgb, float alpha, optional float drawflag) drawpic =
