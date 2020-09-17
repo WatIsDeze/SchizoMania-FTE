@@ -3,8 +3,8 @@ GAME schizomania
 NAME "SchizoMania"
 BASEGAME platform
 BASEGAME logos
-BASEGAME valve
 BASEGAME cstrike
+BASEGAME valve
 BASEGAME schizomania
 
 // custom game menu variables
@@ -16,16 +16,16 @@ BASEGAME schizomania
 -set gameinfo_url_info "https://github.com/WatIsDeze/SchizoMania-FTE"
 -set gameinfo_version "1.5"
 -set gameinfo_url_dl ""
--set gameinfo_type "Both"
+-set gameinfo_type "Singleplayer"
 -set gameinfo_nomodels 0
 -set gameinfo_gamedll "progs.dat"
--set gameinfo_startmap "c1a0"
--set gameinfo_trainingmap "map t0a0"
+-set gameinfo_startmap "test"
+-set gameinfo_trainingmap "map test"
 -set gameinfo_cldll 1
 -set gameinfo_hlversion "1110"
 -set gameinfo_svonly "0"
 -set gameinfo_menutrack ""
--set gameinfo_chatroom "freecs"
+-set gameinfo_chatroom "schizomania"
 
 DOWNLOADSURL http://www.frag-net.com/dl/cstrike_packages
 UPDATEURL http://www.frag-net.com/mods/cstrike.fmf

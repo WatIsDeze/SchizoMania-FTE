@@ -22,19 +22,20 @@ textures/data.pk3dir/textures/skies/smudge
 
 textures/data.pk3dir/textures/edit/edit_5
 {
-    diffusemap textures/edit/edit_5.tga
-}
-{
-    map $lightmap
+	diffusemap textures/edit/edit_5.tga
+	{
+		map $diffuse
+		map $lightmap
+	}
 }
 textures/data.pk3dir/textures/edit/edit_4
 {
-    diffusemap textures/edit/edit_4.tga
-    {
-        map $lightmap
-    }
+	diffusemap textures/edit/edit_4.tga
+	{
+		map $diffuse
+		map $lightmap
+	}
 }
-
 textures/data.pk3dir/textures/edit/edit_3
 {
 	diffusemap textures/edit/edit_3.tga
@@ -45,18 +46,19 @@ textures/data.pk3dir/textures/edit/edit_3
 }
 textures/data.pk3dir/textures/edit/edit_1
 {
-    diffusemap textures/edit/edit_1.tga
-    {
-        map $lightmap
-    }
+	diffusemap textures/edit/edit_1.tga
+	{
+		map $diffuse
+		map $lightmap
+	}
 }
-
 textures/data.pk3dir/textures/edit/edit_6
 {
-    diffusemap textures/edit/edit_6.tga
-}
-{
-    map $lightmap
+	diffusemap textures/edit/edit_6.tga
+	{
+		map $diffuse
+		map $lightmap
+	}
 }
 textures/data.pk3dir/textures/edit/edit_2
 {

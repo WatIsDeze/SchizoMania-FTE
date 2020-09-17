@@ -1,6 +1,8 @@
 {
-    diffusemap textures/edit/edit_5.tga
-}
-{
-    map $lightmap
+	diffusemap textures/edit/edit_5.tga
+	{
+		program defaultwall
+		map $diffuse
+		map $lightmap
+	}
 }

@@ -14,7 +14,7 @@
  * OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  */
 
-*/
+
 /*QUAKED info_player_start (0 0.8 0.8) (-16 -16 0) (16 16 72)
 
 HALF-LIFE (1998) ENTITY
@@ -28,7 +28,6 @@ void info_player_start(void)
 	setsize(self, VEC_HULL_MIN, VEC_HULL_MAX);
 }
 
-*/
 /*QUAKED info_player_deathmatch (0 0.8 0.8) (-16 -16 0) (16 16 72)
 
 HALF-LIFE (1998) ENTITY

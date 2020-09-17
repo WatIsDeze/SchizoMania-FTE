@@ -84,6 +84,14 @@ HLSingleplayerRules::PlayerSpawn(base_player pl)
 	forceinfokey(pl, "*spec", "0");
 	forceinfokey(pl, "*deaths", ftos(pl.deaths));
 
+	// Load up our player with the suit, crowbar and glock.
+	LevelNewParms();
+	LevelDecodeParms(pl);
+	pl.g_items = ITEM_CROWBAR | ITEM_GLOCK | ITEM_SUIT;
+	pl.activeweapon = WEAPON_GLOCK;
+	pl.glock_mag = 18;
+	pl.ammo_9mm = 44;
+
 	/* this is where the mods want to deviate */
 	entity spot;
 

@@ -56,3 +56,54 @@ map test
 /map cs_
 /map cs_siege 
 map test
+map test
+map test
+map test
+noclip
+deathmatch 0
+map test
+noclip
+sv_cheats 1
+map test
+noclip
+map test
+noclip
+sv_cheats 1
+dea
+/deathmatch 
+/deathmatch  0
+/deathmatch  
+map test
+noclip
+/deathmatch 
+/coop  1
+map test
+sv_cheats 1
+deathmatch 0
+map test
+map test
+deathmatch 0
+map test
+sv_playerslots 1
+map test
+map test
+map test
+sv_playerslots 1
+map test
+map test
+give all
+impulse 101
+impulse 99
+impulse 66
+impulse 32
+impulse 32
+map test
+god
+god
+god
+map test
+/r_shadows
+/r_shadows 1
+/r_shadows 2
+/r_shadows 0
+map test
