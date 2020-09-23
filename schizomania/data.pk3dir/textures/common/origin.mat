@@ -1,0 +1,11 @@
+{
+    diffusemap textures/common/origin.tga
+    {
+        qer_nocarve
+        surfaceparm nodraw
+        surfaceparm nolightmap
+        surfaceparm nonsolid
+        surfaceparm trans
+        surfaceparm origin
+    }
+}

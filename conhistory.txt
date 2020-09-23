@@ -221,3 +221,4 @@ map test
 map test_doors
 /map test_doors
 /map test_doors
+/map test_doors

@@ -1,0 +1,8 @@
+{
+    diffusemap textures/common/caulk.tga
+    {
+        surfaceparm nodraw
+        surfaceparm nolightmap
+        surfaceparm nomarks
+    }
+}

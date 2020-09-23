@@ -1,0 +1,13 @@
+{
+    diffusemap textures/common/hint.tga // should NOT use surfaceparm hint.. strange but true
+    {
+        qer_nocarve
+        qer_trans 0.30
+        surfaceparm nodraw
+        surfaceparm nonsolid
+        surfaceparm structural
+        surfaceparm trans
+        surfaceparm noimpact
+        surfaceparm hint	// ydnar: yes it should.
+    }
+}

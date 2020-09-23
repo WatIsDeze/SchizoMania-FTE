@@ -1,0 +1,12 @@
+{
+    diffusemap textures/common/cushion.tga
+    {
+        qer_nocarve
+        qer_trans 0.50
+        surfaceparm nodraw
+        surfaceparm nolightmap
+        surfaceparm trans
+        surfaceparm nomarks
+        surfaceparm nodamage
+    }
+}
