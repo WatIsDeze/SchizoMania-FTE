@@ -159,3 +159,35 @@ impulse 101
 impulse 101
 impulse 101
 impulse 101
+map test
+/gl_lightmap_nearest 1
+/gl_lightmap_nearest 0
+map test
+map test
+impulse 201
+gl_texturemode
+gl_texturemode nnn
+gl_texturemode2d
+gl_texturemode2d n
+sv_cheats 1
+map test
+/r_dynamic 
+r_dynamic 1
+map test
+god
+impulse 201
+bind f1 toggleconsole
+/r_dynamic 
+map test
+map test
+map test
+/cl_showtriggers 
+/cl_showtriggers 1
+sv_cheats 1
+map test
+map test
+map test
+map test
+map test
+/map test_basemap
+/map test_basemap

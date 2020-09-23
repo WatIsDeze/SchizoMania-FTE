@@ -60,10 +60,18 @@
 // entity 1
 {
 "classname" "info_player_start"
-"origin" "-1120.000000 -624.000000 136.000000"
+"origin" "-1024.000000 -1024.000000 -128.000000"
 }
 // entity 2
 {
-"classname" "monster_scientist"
-"origin" "-1184.000000 -624.000000 136.000000"
+"classname" "light_environment"
+"origin" "-1024.000000 -1024.000000 40.000000"
+"color" "0.996 0.941 0.835"
+"ambientcolor" "0.678 0.816 0.949"
+"intensity" "350"
+"sunangle" "-44.616"
+"pitch" "-145.86"
+"filterradius" "1"
+"sunspreadangle" "0"
+"samples" "16"
 }
