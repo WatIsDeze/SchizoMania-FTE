@@ -191,3 +191,33 @@ map test
 map test
 /map test_basemap
 /map test_basemap
+/map test_basemap
+/map test_basemap
+bind f1 toggleconsole
+noclip
+noclip
+noclip
+noclip
+map test_b
+/map test_basemap
+map test
+/map test_basemap
+/map test_basemap
+/map test_basemap
+/map test_lights
+/map test_lights
+/map test_lights
+/map test_lights
+/map test_lights
+/map test_doors
+/map test_doors
+/map test_lights
+/map test_doors
+/map test_doors
+/map test_doors
+/map test_doors
+/map test_doors
+/map test_doors
+map test_doors
+/map test_doors
+/map test_doors
