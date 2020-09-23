@@ -17,6 +17,39 @@
 void
 HLSingleplayerRules::PlayerDeath(base_player pl)
 {
+	/* obituary networking */
+	WriteByte(MSG_MULTICAST, SVC_CGAMEPACKET);
+	WriteByte(MSG_MULTICAST, EV_OBITUARY);
+	if (g_dmg_eAttacker.netname)
+		WriteString(MSG_MULTICAST, g_dmg_eAttacker.netname);
+	else
+		WriteString(MSG_MULTICAST, g_dmg_eAttacker.classname);
+	WriteString(MSG_MULTICAST, pl.netname);
+	WriteByte(MSG_MULTICAST, g_dmg_iWeapon);
+	WriteByte(MSG_MULTICAST, 0);
+	msg_entity = world;
+	multicast([0,0,0], MULTICAST_ALL);
+
+	/* death-counter */
+	pl.deaths++;
+	forceinfokey(pl, "*deaths", ftos(pl.deaths));
+
+	/* update score-counter */
+	if (pl.flags & FL_CLIENT || pl.flags & FL_MONSTER)
+	if (g_dmg_eAttacker.flags & FL_CLIENT) {
+		if (pl == g_dmg_eAttacker)
+			g_dmg_eAttacker.frags--;
+		else
+			g_dmg_eAttacker.frags++;
+	}
+
+	/* in DM we only care about the frags */
+	if (cvar("mp_fraglimit"))
+	if (g_dmg_eAttacker.frags >= cvar("mp_fraglimit")) {
+		IntermissionStart();
+	}
+
+	weaponbox_spawn((player)pl);
 	pl.movetype = MOVETYPE_NONE;
 	pl.solid = SOLID_NOT;
 	pl.takedamage = DAMAGE_NO;
@@ -25,14 +58,17 @@ HLSingleplayerRules::PlayerDeath(base_player pl)
 	pl.health = 0;
 	Sound_Play(pl, CHAN_AUTO, "player.die");
 
-	if (cvar("coop") == 1) {
-		pl.think = PutClientInServer;
-		pl.nextthink = time + 4.0f;
-	}
+	// For now automatically respawn. (Later on we'll restart the map.)
+	pl.think = PutClientInServer;
+	pl.nextthink = time + 4.0f;
 
 	if (pl.health < -50) {
+		pl.health = 0;
 		FX_GibHuman(pl.origin);
+		return;
 	}
+
+	pl.health = 0;
 
 	/* Let's handle corpses on the clientside */
 	entity corpse = spawn();
@@ -48,8 +84,12 @@ HLSingleplayerRules::PlayerDeath(base_player pl)
 }
 
 void
-HLSingleplayerRules::PlayerSpawn(base_player pl)
+HLSingleplayerRules::PlayerSpawn(base_player pp)
 {
+	player pl = (player)pp;
+	/* this is where the mods want to deviate */
+	entity spot;
+
 	pl.classname = "player";
 	pl.health = pl.max_health = 100;
 	pl.takedamage = DAMAGE_YES;
@@ -58,18 +98,14 @@ HLSingleplayerRules::PlayerSpawn(base_player pl)
 	pl.flags = FL_CLIENT;
 	pl.viewzoom = 1.0;
 	pl.model = "models/player.mdl";
+	string mymodel = infokey(pl, "model");
 
-
-	if (cvar("coop") == 1) {
-		string mymodel = infokey(pl, "model");
-		if (mymodel) {
-			mymodel = sprintf("models/player/%s/%s.mdl", mymodel, mymodel);
-			if (whichpack(mymodel)) {
-				pl.model = mymodel;
-			}
+	if (mymodel) {
+		mymodel = sprintf("models/player/%s/%s.mdl", mymodel, mymodel);
+		if (whichpack(mymodel)) {
+			pl.model = mymodel;
 		}
 	}
-
 	setmodel(pl, pl.model);
 
 	setsize(pl, VEC_HULL_MIN, VEC_HULL_MAX);
@@ -84,7 +120,7 @@ HLSingleplayerRules::PlayerSpawn(base_player pl)
 	forceinfokey(pl, "*spec", "0");
 	forceinfokey(pl, "*deaths", ftos(pl.deaths));
 
-	// Load up our player with the suit, crowbar and glock.
+	// Setp new level params and decode em.
 	LevelNewParms();
 	LevelDecodeParms(pl);
 	pl.g_items = ITEM_CROWBAR | ITEM_GLOCK | ITEM_SUIT;

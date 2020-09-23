@@ -137,6 +137,26 @@ HLMultiplayerRules::PlayerSpawn(base_player pp)
 	pl.activeweapon = WEAPON_GLOCK;
 	pl.glock_mag = 18;
 	pl.ammo_9mm = 44;
+	
+	pl.ammo_9mm = 44;
+	pl.ammo_357 = 44;
+	pl.ammo_m203_grenade = 4;
+	pl.ammo_bolt = 44;
+	pl.ammo_rocket = 44;
+	pl.ammo_uranium = 44;
+	pl.ammo_handgrenade = 44;
+	pl.ammo_satchel = 44;
+	pl.ammo_tripmine = 44;
+	pl.ammo_snark = 44;
+	pl.ammo_hornet = 44;
+
+	pl.glock_mag = 44;
+	pl.mp5_mag = 44;
+	pl.python_mag = 44;
+	pl.shotgun_mag = 44;
+	pl.crossbow_mag = 44;
+	pl.rpg_mag = 44;
+	pl.satchel_chg = 44;
 
 	spot = Spawn_SelectRandom("info_player_deathmatch");
 	setorigin(pl, spot.origin);

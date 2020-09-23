@@ -107,3 +107,55 @@ map test
 /r_shadows 2
 /r_shadows 0
 map test
+map test
+/cl_decals 
+map test
+map test
+map test
+god
+map test
+map test
+map test
+map test
+map test
+sv_cheats 1
+map test
+give all
+give weapon_mp5
+give weapon_shotgun
+god
+map test
+map test
+map test
+map test
+sv_cheats 1
+map test
+god
+map test
+map test
+god
+map test
+map test
+/cl_thirdperson 1
+/cl_thirdperson 0
+god
+give all
+map test
+impulse 101
+impulse 102
+impulse
+impulse 102
+sv_cheats 1
+map test
+1impulse 101
+impulse 101
+impulse 101
+impulse 101
+impulse 101
+impulse 101
+impulse 101
+impulse 101
+impulse 101
+impulse 101
+impulse 101
+impulse 101

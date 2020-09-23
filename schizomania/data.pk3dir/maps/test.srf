@@ -186,3 +186,51 @@ default
 	lightmapAxis ( 0.000000 0.000000 1.000000 )
 }
 
+28 // SURFACE_FACE V: 4 I: 6 planar
+{
+	shader textures/edit/edit_4
+	entity 11
+	castShadows 0
+	lightmapAxis ( -1.000000 0.000000 0.000000 )
+}
+
+29 // SURFACE_FACE V: 4 I: 6 planar
+{
+	shader textures/edit/edit_4
+	entity 11
+	castShadows 0
+	lightmapAxis ( 1.000000 0.000000 0.000000 )
+}
+
+30 // SURFACE_FACE V: 4 I: 6 planar
+{
+	shader textures/edit/edit_4
+	entity 11
+	castShadows 0
+	lightmapAxis ( 0.000000 -1.000000 0.000000 )
+}
+
+31 // SURFACE_FACE V: 4 I: 6 planar
+{
+	shader textures/edit/edit_4
+	entity 11
+	castShadows 0
+	lightmapAxis ( 0.000000 1.000000 0.000000 )
+}
+
+32 // SURFACE_FACE V: 4 I: 6 planar
+{
+	shader textures/edit/edit_4
+	entity 11
+	castShadows 0
+	lightmapAxis ( 0.000000 0.000000 -1.000000 )
+}
+
+33 // SURFACE_FACE V: 4 I: 6 planar
+{
+	shader textures/edit/edit_4
+	entity 11
+	castShadows 0
+	lightmapAxis ( 0.000000 0.000000 1.000000 )
+}
+
