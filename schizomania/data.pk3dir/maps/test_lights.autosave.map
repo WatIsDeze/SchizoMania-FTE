@@ -304,10 +304,10 @@
 {
 "classname" "light"
 "origin" "-1320.000000 -704.000000 -128.000000"
-"light" "350"
+"light" "150"
 "_color" "0.8 0 0"
-"style" "4"
 "targetname" "light_0"
+"pattern" "afgaaaaaaaaaaaafaaaaaaaaaa"
 }
 // entity 4
 {
