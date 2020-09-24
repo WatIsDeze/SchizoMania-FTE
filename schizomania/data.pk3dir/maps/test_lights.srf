@@ -477,25 +477,25 @@ default
 78 // SURFACE_FACE V: 6 I: 12 planar
 {
 	shader textures/skies/smudge
-	lightmapAxis ( 0.000000 -1.000000 0.000000 )
+	sampleSize 0
 }
 
 79 // SURFACE_FACE V: 6 I: 12 planar
 {
 	shader textures/skies/smudge
-	lightmapAxis ( 0.000000 1.000000 0.000000 )
+	sampleSize 0
 }
 
 80 // SURFACE_FACE V: 4 I: 6 planar
 {
 	shader textures/skies/smudge
-	lightmapAxis ( -1.000000 0.000000 0.000000 )
+	sampleSize 0
 }
 
 81 // SURFACE_FACE V: 4 I: 6 planar
 {
 	shader textures/skies/smudge
-	lightmapAxis ( 1.000000 0.000000 0.000000 )
+	sampleSize 0
 }
 
 82 // SURFACE_FACE V: 4 I: 6 planar
@@ -507,7 +507,7 @@ default
 83 // SURFACE_FACE V: 4 I: 6 planar
 {
 	shader textures/skies/smudge
-	lightmapAxis ( 0.000000 0.000000 -1.000000 )
+	sampleSize 0
 }
 
 84 // SURFACE_FACE V: 4 I: 6 planar

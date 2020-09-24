@@ -241,3 +241,14 @@ map test_doors
 map test_doors
 map test_Doors
 map test_doors
+/map test_lights
+/map test_lights
+map test_doors
+map test_lights
+map test_lights
+map test_lights
+/map test_lights
+map test_doors
+/map test_lights
+/map test_base
+/map test_basemap

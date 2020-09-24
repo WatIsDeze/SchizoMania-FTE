@@ -291,9 +291,9 @@
 {
 "classname" "light_environment"
 "origin" "-1024.000000 -1024.000000 40.000000"
-"color" "0.596 0.541 0.435"
-"ambientcolor" "0.278 0.416 0.549"
-"intensity" "350"
+"color" "0.03 0.025 0.035"
+"ambientcolor" "0.03 0.025 0.035"
+"intensity" "150"
 "sunangle" "-44.616"
 "pitch" "-145.86"
 "filterradius" "1"
@@ -304,11 +304,11 @@
 {
 "classname" "light"
 "origin" "-1320.000000 -704.000000 -128.000000"
-"light" "350"
+"light" "150"
 "_color" "0.8 0 0"
-"style" "13"
+"style" "4"
 "targetname" "light_0"
-"spawnflags" "1"
+"pattern" "afgaaaaaaaaaaaafaaaaaaaaaa"
 }
 // entity 4
 {
