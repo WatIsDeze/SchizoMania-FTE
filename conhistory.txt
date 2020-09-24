@@ -1,0 +1,13 @@
+/map test_lights
+/map test_doors
+/map test_doors
+/map test_doors
+/map test_shaders
+buildcube
+/buildcubemaps 
+/map test_sun.map
+map test_sun.bsp
+/map test_shaders.map
+map test_shaders
+buildcubemaps
+buildcubemaps

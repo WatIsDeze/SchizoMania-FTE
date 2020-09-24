@@ -2,13 +2,16 @@
 {
 	qer_editorImage textures/skies/smudge.tga
 	skyParms - 256 -
+	vmap_globalTexture
 
 	surfaceParm sky
 	surfaceParm noimpact
 	surfaceParm nolightmap
 	surfaceParm nodlight
-	noPicMip
+
+	nopicmip
 	nomipmaps
+
 	{
 		program skybox
 		map $cube:textures/skies/smudge/bg

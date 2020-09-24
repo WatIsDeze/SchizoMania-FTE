@@ -1,5 +1,5 @@
 #pragma target fte
-#pragma progs_dat  "../../../schizomania/data.pk3dir/csprogs.dat"
+#pragma progs_dat  "../../../schizomania/data.pk3dir/scmaprogs.dat"
 
 #define CSQC
 #define CLIENT
@@ -27,6 +27,7 @@
 ../schizomania/cmds.c
 ../schizomania/game_event.c
 ../schizomania/view.c
+../schizomania/crosshair.c
 ../schizomania/obituary.c
 ../schizomania/hud.c
 ../schizomania/hud_weaponselect.c

@@ -25,8 +25,8 @@ SCMA_DrawCrosshair(void)
 	int line_length;
 
 	/* these are defined in the weapon-code files */
-	float distance = pl.cs_cross_mindist; 
-	float delta = pl.cs_cross_deltadist;
+	float distance = pl.scma_cross_mindist; 
+	float delta = pl.scma_cross_deltadist;
 
 	if (!(pl.flags & FL_ONGROUND)) {
 		distance = distance * 2.0f;
@@ -37,19 +37,19 @@ SCMA_DrawCrosshair(void)
 	}
 
 	/* amount of shots that we've shot does affect our accuracy */
-	if (pl.cs_shotmultiplier > pl.cs_old_shotmultiplier) {
-		pl.cs_crosshairdistance = min(15, pl.cs_crosshairdistance + delta);
-	} else if (pl.cs_crosshairdistance > distance) {
-		pl.cs_crosshairdistance -= (pl.cs_crosshairdistance * clframetime);
+	if (pl.scma_shotmultiplier > pl.scma_old_shotmultiplier) {
+		pl.scma_crosshairdistance = min(15, pl.scma_crosshairdistance + delta);
+	} else if (pl.scma_crosshairdistance > distance) {
+		pl.scma_crosshairdistance -= (pl.scma_crosshairdistance * clframetime);
 	}
 
-	pl.cs_old_shotmultiplier = pl.cs_shotmultiplier;
+	pl.scma_old_shotmultiplier = pl.scma_shotmultiplier;
 	
-	if (pl.cs_crosshairdistance < distance) {
-		 pl.cs_crosshairdistance = distance;
+	if (pl.scma_crosshairdistance < distance) {
+		 pl.scma_crosshairdistance = distance;
 	}
 
-	cross_dist = ceil(pl.cs_crosshairdistance);
+	cross_dist = ceil(pl.scma_crosshairdistance);
 	line_length = max(1, ((cross_dist - distance) / 2) + 5);
 
 	/* line setup */
