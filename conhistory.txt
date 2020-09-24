@@ -236,3 +236,8 @@ map test_doors
 map test_doors
 map test_doors
 map test_doors
+map test_doors
+map test_doors
+map test_doors
+map test_Doors
+map test_doors
