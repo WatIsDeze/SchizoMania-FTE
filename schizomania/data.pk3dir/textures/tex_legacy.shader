@@ -2,6 +2,125 @@
 // Please refer to the original documentation.
 // This is for development purposes ONLY.
 
+textures/common/cushion
+{
+    diffusemap textures/common/cushion.tga
+    {
+        qer_nocarve
+        qer_trans 0.50
+        surfaceparm nodraw
+        surfaceparm nolightmap
+        surfaceparm trans
+        surfaceparm nomarks
+        surfaceparm nodamage
+    }
+}
+textures/common/donotenter
+{
+    diffusemap textures/common/donotenter.tga
+    {
+        qer_trans 0.50
+        surfaceparm nodraw
+        surfaceparm nonsolid
+        surfaceparm trans
+        surfaceparm nomarks
+        surfaceparm donotenter
+    }
+}
+textures/common/areaportal
+{
+    diffusemap textures/common/areaportal.tga
+    {
+        qer_trans 0.50
+        surfaceparm nodraw
+        surfaceparm nolightmap
+        surfaceparm nonsolid
+        surfaceparm structural
+        surfaceparm trans
+        surfaceparm nomarks
+        surfaceparm areaportal
+    }
+}
+textures/common/origin
+{
+    diffusemap textures/common/origin.tga
+    {
+        qer_nocarve
+        surfaceparm nodraw
+        surfaceparm nolightmap
+        surfaceparm nonsolid
+        surfaceparm trans
+        surfaceparm origin
+    }
+}
+textures/common/hint
+{
+    diffusemap textures/common/hint.tga // should NOT use surfaceparm hint.. strange but true
+    {
+        qer_nocarve
+        qer_trans 0.30
+        surfaceparm nodraw
+        surfaceparm nonsolid
+        surfaceparm structural
+        surfaceparm trans
+        surfaceparm noimpact
+        surfaceparm hint	// ydnar: yes it should.
+    }
+}
+textures/common/clip
+{
+    diffusemap textures/common/clip.tga
+    {
+        qer_trans 0.40
+        surfaceparm nodraw
+        surfaceparm nolightmap
+        surfaceparm nonsolid
+        surfaceparm trans
+        surfaceparm nomarks
+        surfaceparm noimpact
+        surfaceparm playerclip
+    }
+}
+textures/common/caulk
+{
+    diffusemap textures/common/caulk.tga
+    {
+        surfaceparm nodraw
+        surfaceparm nolightmap
+        surfaceparm nomarks
+    }
+}
+textures/common/trigger
+{
+    diffusemap textures/common/trigger.tga
+    {
+        qer_trans 0.50
+        qer_nocarve
+        surfaceparm nodraw
+    }
+}
+textures/common/full_clip
+{
+    diffusemap textures/common/full_clip.tga // silly shader, use weapclip instead
+    {
+        qer_trans 0.40
+        surfaceparm nodraw
+        surfaceparm playerclip
+    }
+}
+textures/common/clusterportal
+{
+    diffusemap textures/common/clusterportal.tga
+    {
+        qer_trans 0.50
+        surfaceparm nodraw
+        surfaceparm nolightmap
+        surfaceparm nonsolid
+        surfaceparm trans
+        surfaceparm nomarks
+        surfaceparm clusterportal
+    }
+}
 textures/edit/edit_5
 {
 	diffusemap textures/edit/edit_5.tga
@@ -10,6 +129,15 @@ textures/edit/edit_5
 		map $lightmap
 	}
 }
+textures/edit/base_1
+{
+	diffusemap textures/edit/base_1.tga
+	{
+		map $diffuse
+		map $lightmap
+	}
+}
+
 textures/edit/edit_4
 {
 	diffusemap textures/edit/edit_4.tga
@@ -34,6 +162,15 @@ textures/edit/edit_1
 		map $lightmap
 	}
 }
+textures/edit/base_2
+{
+	diffusemap textures/edit/base_2.tga
+	{
+		map $diffuse
+		map $lightmap
+	}
+}
+
 textures/edit/edit_6
 {
 	diffusemap textures/edit/edit_6.tga

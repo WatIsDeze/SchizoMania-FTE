@@ -222,3 +222,17 @@ map test_doors
 /map test_doors
 /map test_doors
 /map test_doors
+/map test_doors
+/map test_doors
+/map test_doors
+map test_doors
+map test_door
+map test_doors
+map test_doors
+map test_doors
+/map test_doors
+map test_doors
+map test_doors
+map test_doors
+map test_doors
+map test_doors
