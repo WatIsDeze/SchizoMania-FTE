@@ -11,3 +11,9 @@ map test_sun.bsp
 map test_shaders
 buildcubemaps
 buildcubemaps
+/map test_doors
+map test_doors
+/map test_lights
+map test_doors
+map test_doors
+map test_doors

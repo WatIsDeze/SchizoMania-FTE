@@ -6,130 +6,130 @@ default
 	longestCurve 0.000000
 }
 
-0 // SURFACE_FACE V: 6 I: 12 planar
+0 // SURFACE_FACE V: 4 I: 6 planar
 {
-	shader textures/edit/edit_4
+	shader textures/measure/wall128gr
 	lightmapAxis ( -1.000000 0.000000 0.000000 )
 }
 
-1 // SURFACE_FACE V: 9 I: 24 planar
+1 // SURFACE_FACE V: 4 I: 6 planar
 {
-	shader textures/edit/edit_4
+	shader textures/measure/wall128gr
 	lightmapAxis ( 1.000000 0.000000 0.000000 )
 }
 
 2 // SURFACE_FACE V: 4 I: 6 planar
 {
-	shader textures/edit/edit_4
+	shader textures/measure/wall128gr
 	lightmapAxis ( 0.000000 -1.000000 0.000000 )
 }
 
 3 // SURFACE_FACE V: 4 I: 6 planar
 {
-	shader textures/edit/edit_4
+	shader textures/measure/wall128gr
 	lightmapAxis ( 0.000000 1.000000 0.000000 )
 }
 
-4 // SURFACE_FACE V: 6 I: 12 planar
+4 // SURFACE_FACE V: 5 I: 9 planar
 {
-	shader textures/edit/edit_4
-	lightmapAxis ( 0.000000 0.000000 -1.000000 )
+	shader textures/measure/wall128gr
+	lightmapAxis ( 0.000000 0.000000 1.000000 )
 }
 
 5 // SURFACE_FACE V: 4 I: 6 planar
 {
-	shader textures/edit/edit_4
-	lightmapAxis ( 0.000000 0.000000 1.000000 )
+	shader textures/measure/wall128gr
+	lightmapAxis ( -1.000000 0.000000 0.000000 )
 }
 
 6 // SURFACE_FACE V: 4 I: 6 planar
 {
-	shader textures/edit/edit_4
-	lightmapAxis ( -1.000000 0.000000 0.000000 )
+	shader textures/measure/wall128gr
+	lightmapAxis ( 1.000000 0.000000 0.000000 )
 }
 
 7 // SURFACE_FACE V: 4 I: 6 planar
 {
-	shader textures/edit/edit_4
-	lightmapAxis ( 1.000000 0.000000 0.000000 )
+	shader textures/measure/wall128gr
+	lightmapAxis ( 0.000000 0.000000 1.000000 )
 }
 
 8 // SURFACE_FACE V: 4 I: 6 planar
 {
-	shader textures/edit/edit_4
-	lightmapAxis ( 0.000000 1.000000 0.000000 )
+	shader textures/measure/wall128gr
+	lightmapAxis ( -1.000000 0.000000 0.000000 )
 }
 
 9 // SURFACE_FACE V: 4 I: 6 planar
 {
-	shader textures/edit/edit_4
-	lightmapAxis ( -1.000000 0.000000 0.000000 )
+	shader textures/measure/wall128gr
+	lightmapAxis ( 1.000000 0.000000 0.000000 )
 }
 
 10 // SURFACE_FACE V: 4 I: 6 planar
 {
-	shader textures/edit/edit_4
-	lightmapAxis ( 1.000000 0.000000 0.000000 )
+	shader textures/measure/wall128gr
+	lightmapAxis ( 0.000000 -1.000000 0.000000 )
 }
 
 11 // SURFACE_FACE V: 4 I: 6 planar
 {
-	shader textures/edit/edit_4
-	lightmapAxis ( 0.000000 -1.000000 0.000000 )
+	shader textures/measure/wall128gr
+	lightmapAxis ( 0.000000 1.000000 0.000000 )
 }
 
-12 // SURFACE_FACE V: 4 I: 6 planar
+12 // SURFACE_FACE V: 5 I: 9 planar
+{
+	shader textures/measure/wall128gr
+	lightmapAxis ( 0.000000 0.000000 1.000000 )
+}
+
+13 // SURFACE_FACE V: 6 I: 12 planar
 {
 	shader textures/edit/edit_4
 	lightmapAxis ( -1.000000 0.000000 0.000000 )
 }
 
-13 // SURFACE_FACE V: 4 I: 6 planar
+14 // SURFACE_FACE V: 9 I: 24 planar
 {
 	shader textures/edit/edit_4
 	lightmapAxis ( 1.000000 0.000000 0.000000 )
-}
-
-14 // SURFACE_FACE V: 4 I: 6 planar
-{
-	shader textures/edit/edit_4
-	lightmapAxis ( -1.000000 0.000000 0.000000 )
 }
 
 15 // SURFACE_FACE V: 4 I: 6 planar
 {
 	shader textures/edit/edit_4
-	lightmapAxis ( 1.000000 0.000000 0.000000 )
+	lightmapAxis ( 0.000000 -1.000000 0.000000 )
 }
 
 16 // SURFACE_FACE V: 4 I: 6 planar
 {
 	shader textures/edit/edit_4
-	lightmapAxis ( 0.000000 -1.000000 0.000000 )
+	lightmapAxis ( 0.000000 1.000000 0.000000 )
 }
 
-17 // SURFACE_FACE V: 4 I: 6 planar
+17 // SURFACE_FACE V: 6 I: 12 planar
 {
 	shader textures/edit/edit_4
-	lightmapAxis ( 0.000000 1.000000 0.000000 )
+	lightmapAxis ( 0.000000 0.000000 -1.000000 )
 }
 
 18 // SURFACE_FACE V: 4 I: 6 planar
 {
 	shader textures/edit/edit_4
-	lightmapAxis ( -1.000000 0.000000 0.000000 )
+	lightmapAxis ( 0.000000 0.000000 1.000000 )
 }
 
 19 // SURFACE_FACE V: 4 I: 6 planar
 {
 	shader textures/edit/edit_4
-	lightmapAxis ( 1.000000 0.000000 0.000000 )
+	lightmapAxis ( -1.000000 0.000000 0.000000 )
 }
 
 20 // SURFACE_FACE V: 4 I: 6 planar
 {
 	shader textures/edit/edit_4
-	lightmapAxis ( 0.000000 -1.000000 0.000000 )
+	lightmapAxis ( 1.000000 0.000000 0.000000 )
 }
 
 21 // SURFACE_FACE V: 4 I: 6 planar
@@ -138,13 +138,13 @@ default
 	lightmapAxis ( 0.000000 1.000000 0.000000 )
 }
 
-22 // SURFACE_FACE V: 6 I: 12 planar
+22 // SURFACE_FACE V: 4 I: 6 planar
 {
 	shader textures/edit/edit_4
 	lightmapAxis ( -1.000000 0.000000 0.000000 )
 }
 
-23 // SURFACE_FACE V: 9 I: 24 planar
+23 // SURFACE_FACE V: 4 I: 6 planar
 {
 	shader textures/edit/edit_4
 	lightmapAxis ( 1.000000 0.000000 0.000000 )
@@ -159,31 +159,31 @@ default
 25 // SURFACE_FACE V: 4 I: 6 planar
 {
 	shader textures/edit/edit_4
-	lightmapAxis ( 0.000000 1.000000 0.000000 )
+	lightmapAxis ( -1.000000 0.000000 0.000000 )
 }
 
-26 // SURFACE_FACE V: 6 I: 12 planar
+26 // SURFACE_FACE V: 4 I: 6 planar
 {
 	shader textures/edit/edit_4
-	lightmapAxis ( 0.000000 0.000000 -1.000000 )
+	lightmapAxis ( 1.000000 0.000000 0.000000 )
 }
 
 27 // SURFACE_FACE V: 4 I: 6 planar
 {
 	shader textures/edit/edit_4
-	lightmapAxis ( 0.000000 0.000000 1.000000 )
+	lightmapAxis ( -1.000000 0.000000 0.000000 )
 }
 
 28 // SURFACE_FACE V: 4 I: 6 planar
 {
 	shader textures/edit/edit_4
-	lightmapAxis ( -1.000000 0.000000 0.000000 )
+	lightmapAxis ( 1.000000 0.000000 0.000000 )
 }
 
 29 // SURFACE_FACE V: 4 I: 6 planar
 {
 	shader textures/edit/edit_4
-	lightmapAxis ( 1.000000 0.000000 0.000000 )
+	lightmapAxis ( 0.000000 -1.000000 0.000000 )
 }
 
 30 // SURFACE_FACE V: 4 I: 6 planar
@@ -213,55 +213,55 @@ default
 34 // SURFACE_FACE V: 4 I: 6 planar
 {
 	shader textures/edit/edit_4
+	lightmapAxis ( 0.000000 1.000000 0.000000 )
+}
+
+35 // SURFACE_FACE V: 6 I: 12 planar
+{
+	shader textures/edit/edit_4
 	lightmapAxis ( -1.000000 0.000000 0.000000 )
 }
 
-35 // SURFACE_FACE V: 4 I: 6 planar
+36 // SURFACE_FACE V: 9 I: 24 planar
 {
 	shader textures/edit/edit_4
 	lightmapAxis ( 1.000000 0.000000 0.000000 )
-}
-
-36 // SURFACE_FACE V: 4 I: 6 planar
-{
-	shader textures/edit/edit_4
-	lightmapAxis ( -1.000000 0.000000 0.000000 )
 }
 
 37 // SURFACE_FACE V: 4 I: 6 planar
 {
 	shader textures/edit/edit_4
-	lightmapAxis ( 1.000000 0.000000 0.000000 )
+	lightmapAxis ( 0.000000 -1.000000 0.000000 )
 }
 
 38 // SURFACE_FACE V: 4 I: 6 planar
 {
 	shader textures/edit/edit_4
-	lightmapAxis ( 0.000000 -1.000000 0.000000 )
+	lightmapAxis ( 0.000000 1.000000 0.000000 )
 }
 
-39 // SURFACE_FACE V: 4 I: 6 planar
+39 // SURFACE_FACE V: 6 I: 12 planar
 {
 	shader textures/edit/edit_4
-	lightmapAxis ( 0.000000 1.000000 0.000000 )
+	lightmapAxis ( 0.000000 0.000000 -1.000000 )
 }
 
 40 // SURFACE_FACE V: 4 I: 6 planar
 {
 	shader textures/edit/edit_4
-	lightmapAxis ( -1.000000 0.000000 0.000000 )
+	lightmapAxis ( 0.000000 0.000000 1.000000 )
 }
 
 41 // SURFACE_FACE V: 4 I: 6 planar
 {
 	shader textures/edit/edit_4
-	lightmapAxis ( 1.000000 0.000000 0.000000 )
+	lightmapAxis ( -1.000000 0.000000 0.000000 )
 }
 
 42 // SURFACE_FACE V: 4 I: 6 planar
 {
 	shader textures/edit/edit_4
-	lightmapAxis ( 0.000000 -1.000000 0.000000 )
+	lightmapAxis ( 1.000000 0.000000 0.000000 )
 }
 
 43 // SURFACE_FACE V: 4 I: 6 planar
@@ -270,13 +270,13 @@ default
 	lightmapAxis ( 0.000000 1.000000 0.000000 )
 }
 
-44 // SURFACE_FACE V: 6 I: 12 planar
+44 // SURFACE_FACE V: 4 I: 6 planar
 {
 	shader textures/edit/edit_4
 	lightmapAxis ( -1.000000 0.000000 0.000000 )
 }
 
-45 // SURFACE_FACE V: 9 I: 24 planar
+45 // SURFACE_FACE V: 4 I: 6 planar
 {
 	shader textures/edit/edit_4
 	lightmapAxis ( 1.000000 0.000000 0.000000 )
@@ -291,31 +291,31 @@ default
 47 // SURFACE_FACE V: 4 I: 6 planar
 {
 	shader textures/edit/edit_4
-	lightmapAxis ( 0.000000 1.000000 0.000000 )
+	lightmapAxis ( -1.000000 0.000000 0.000000 )
 }
 
-48 // SURFACE_FACE V: 6 I: 12 planar
+48 // SURFACE_FACE V: 4 I: 6 planar
 {
 	shader textures/edit/edit_4
-	lightmapAxis ( 0.000000 0.000000 -1.000000 )
+	lightmapAxis ( 1.000000 0.000000 0.000000 )
 }
 
 49 // SURFACE_FACE V: 4 I: 6 planar
 {
 	shader textures/edit/edit_4
-	lightmapAxis ( 0.000000 0.000000 1.000000 )
+	lightmapAxis ( -1.000000 0.000000 0.000000 )
 }
 
 50 // SURFACE_FACE V: 4 I: 6 planar
 {
 	shader textures/edit/edit_4
-	lightmapAxis ( -1.000000 0.000000 0.000000 )
+	lightmapAxis ( 1.000000 0.000000 0.000000 )
 }
 
 51 // SURFACE_FACE V: 4 I: 6 planar
 {
 	shader textures/edit/edit_4
-	lightmapAxis ( 1.000000 0.000000 0.000000 )
+	lightmapAxis ( 0.000000 -1.000000 0.000000 )
 }
 
 52 // SURFACE_FACE V: 4 I: 6 planar
@@ -345,55 +345,55 @@ default
 56 // SURFACE_FACE V: 4 I: 6 planar
 {
 	shader textures/edit/edit_4
+	lightmapAxis ( 0.000000 1.000000 0.000000 )
+}
+
+57 // SURFACE_FACE V: 6 I: 12 planar
+{
+	shader textures/edit/edit_4
 	lightmapAxis ( -1.000000 0.000000 0.000000 )
 }
 
-57 // SURFACE_FACE V: 4 I: 6 planar
+58 // SURFACE_FACE V: 9 I: 24 planar
 {
 	shader textures/edit/edit_4
 	lightmapAxis ( 1.000000 0.000000 0.000000 )
-}
-
-58 // SURFACE_FACE V: 4 I: 6 planar
-{
-	shader textures/edit/edit_4
-	lightmapAxis ( -1.000000 0.000000 0.000000 )
 }
 
 59 // SURFACE_FACE V: 4 I: 6 planar
 {
 	shader textures/edit/edit_4
-	lightmapAxis ( 1.000000 0.000000 0.000000 )
+	lightmapAxis ( 0.000000 -1.000000 0.000000 )
 }
 
 60 // SURFACE_FACE V: 4 I: 6 planar
 {
 	shader textures/edit/edit_4
-	lightmapAxis ( 0.000000 -1.000000 0.000000 )
+	lightmapAxis ( 0.000000 1.000000 0.000000 )
 }
 
-61 // SURFACE_FACE V: 4 I: 6 planar
+61 // SURFACE_FACE V: 6 I: 12 planar
 {
 	shader textures/edit/edit_4
-	lightmapAxis ( 0.000000 1.000000 0.000000 )
+	lightmapAxis ( 0.000000 0.000000 -1.000000 )
 }
 
 62 // SURFACE_FACE V: 4 I: 6 planar
 {
 	shader textures/edit/edit_4
-	lightmapAxis ( -1.000000 0.000000 0.000000 )
+	lightmapAxis ( 0.000000 0.000000 1.000000 )
 }
 
 63 // SURFACE_FACE V: 4 I: 6 planar
 {
 	shader textures/edit/edit_4
-	lightmapAxis ( 1.000000 0.000000 0.000000 )
+	lightmapAxis ( -1.000000 0.000000 0.000000 )
 }
 
 64 // SURFACE_FACE V: 4 I: 6 planar
 {
 	shader textures/edit/edit_4
-	lightmapAxis ( 0.000000 -1.000000 0.000000 )
+	lightmapAxis ( 1.000000 0.000000 0.000000 )
 }
 
 65 // SURFACE_FACE V: 4 I: 6 planar
@@ -402,13 +402,13 @@ default
 	lightmapAxis ( 0.000000 1.000000 0.000000 )
 }
 
-66 // SURFACE_FACE V: 6 I: 12 planar
+66 // SURFACE_FACE V: 4 I: 6 planar
 {
 	shader textures/edit/edit_4
 	lightmapAxis ( -1.000000 0.000000 0.000000 )
 }
 
-67 // SURFACE_FACE V: 9 I: 24 planar
+67 // SURFACE_FACE V: 4 I: 6 planar
 {
 	shader textures/edit/edit_4
 	lightmapAxis ( 1.000000 0.000000 0.000000 )
@@ -423,31 +423,31 @@ default
 69 // SURFACE_FACE V: 4 I: 6 planar
 {
 	shader textures/edit/edit_4
-	lightmapAxis ( 0.000000 1.000000 0.000000 )
+	lightmapAxis ( -1.000000 0.000000 0.000000 )
 }
 
-70 // SURFACE_FACE V: 6 I: 12 planar
+70 // SURFACE_FACE V: 4 I: 6 planar
 {
 	shader textures/edit/edit_4
-	lightmapAxis ( 0.000000 0.000000 -1.000000 )
+	lightmapAxis ( 1.000000 0.000000 0.000000 )
 }
 
 71 // SURFACE_FACE V: 4 I: 6 planar
 {
 	shader textures/edit/edit_4
-	lightmapAxis ( 0.000000 0.000000 1.000000 )
+	lightmapAxis ( -1.000000 0.000000 0.000000 )
 }
 
 72 // SURFACE_FACE V: 4 I: 6 planar
 {
 	shader textures/edit/edit_4
-	lightmapAxis ( -1.000000 0.000000 0.000000 )
+	lightmapAxis ( 1.000000 0.000000 0.000000 )
 }
 
 73 // SURFACE_FACE V: 4 I: 6 planar
 {
 	shader textures/edit/edit_4
-	lightmapAxis ( 1.000000 0.000000 0.000000 )
+	lightmapAxis ( 0.000000 -1.000000 0.000000 )
 }
 
 74 // SURFACE_FACE V: 4 I: 6 planar
@@ -477,76 +477,76 @@ default
 78 // SURFACE_FACE V: 4 I: 6 planar
 {
 	shader textures/edit/edit_4
+	lightmapAxis ( 0.000000 1.000000 0.000000 )
+}
+
+79 // SURFACE_FACE V: 6 I: 12 planar
+{
+	shader textures/edit/edit_4
 	lightmapAxis ( -1.000000 0.000000 0.000000 )
 }
 
-79 // SURFACE_FACE V: 4 I: 6 planar
+80 // SURFACE_FACE V: 6 I: 12 planar
 {
 	shader textures/edit/edit_4
 	lightmapAxis ( 1.000000 0.000000 0.000000 )
-}
-
-80 // SURFACE_FACE V: 4 I: 6 planar
-{
-	shader textures/edit/edit_4
-	lightmapAxis ( -1.000000 0.000000 0.000000 )
 }
 
 81 // SURFACE_FACE V: 4 I: 6 planar
 {
 	shader textures/edit/edit_4
-	lightmapAxis ( 1.000000 0.000000 0.000000 )
+	lightmapAxis ( 0.000000 0.000000 1.000000 )
 }
 
 82 // SURFACE_FACE V: 4 I: 6 planar
 {
 	shader textures/edit/edit_4
-	lightmapAxis ( 0.000000 -1.000000 0.000000 )
+	lightmapAxis ( 1.000000 0.000000 0.000000 )
 }
 
 83 // SURFACE_FACE V: 4 I: 6 planar
 {
 	shader textures/edit/edit_4
-	lightmapAxis ( 0.000000 1.000000 0.000000 )
+	lightmapAxis ( 0.000000 -1.000000 0.000000 )
 }
 
 84 // SURFACE_FACE V: 4 I: 6 planar
 {
 	shader textures/edit/edit_4
-	lightmapAxis ( -1.000000 0.000000 0.000000 )
+	lightmapAxis ( 0.000000 1.000000 0.000000 )
 }
 
-85 // SURFACE_FACE V: 4 I: 6 planar
+85 // SURFACE_FACE V: 5 I: 9 planar
 {
 	shader textures/edit/edit_4
-	lightmapAxis ( 1.000000 0.000000 0.000000 )
+	lightmapAxis ( 0.000000 0.000000 1.000000 )
 }
 
 86 // SURFACE_FACE V: 4 I: 6 planar
 {
 	shader textures/edit/edit_4
-	lightmapAxis ( 0.000000 -1.000000 0.000000 )
+	lightmapAxis ( -1.000000 0.000000 0.000000 )
 }
 
 87 // SURFACE_FACE V: 4 I: 6 planar
 {
 	shader textures/edit/edit_4
-	lightmapAxis ( 0.000000 1.000000 0.000000 )
-}
-
-88 // SURFACE_FACE V: 6 I: 12 planar
-{
-	shader textures/edit/edit_4
-	lightmapAxis ( -1.000000 0.000000 0.000000 )
-}
-
-89 // SURFACE_FACE V: 6 I: 12 planar
-{
-	shader textures/edit/edit_4
 	lightmapAxis ( 1.000000 0.000000 0.000000 )
 }
 
-90 // SURFACE_FACE V: 4 I: 6 planar
+88 // SURFACE_FACE V: 4 I: 6 planar
+{
+	shader textures/edit/edit_4
+	lightmapAxis ( 0.000000 -1.000000 0.000000 )
+}
+
+89 // SURFACE_FACE V: 4 I: 6 planar
+{
+	shader textures/edit/edit_4
+	lightmapAxis ( 0.000000 1.000000 0.000000 )
+}
+
+90 // SURFACE_FACE V: 5 I: 9 planar
 {
 	shader textures/edit/edit_4
 	lightmapAxis ( 0.000000 0.000000 1.000000 )
@@ -555,31 +555,31 @@ default
 91 // SURFACE_FACE V: 4 I: 6 planar
 {
 	shader textures/edit/edit_4
-	lightmapAxis ( 1.000000 0.000000 0.000000 )
+	lightmapAxis ( -1.000000 0.000000 0.000000 )
 }
 
 92 // SURFACE_FACE V: 4 I: 6 planar
 {
 	shader textures/edit/edit_4
-	lightmapAxis ( 0.000000 -1.000000 0.000000 )
+	lightmapAxis ( 1.000000 0.000000 0.000000 )
 }
 
 93 // SURFACE_FACE V: 4 I: 6 planar
 {
 	shader textures/edit/edit_4
+	lightmapAxis ( 0.000000 -1.000000 0.000000 )
+}
+
+94 // SURFACE_FACE V: 4 I: 6 planar
+{
+	shader textures/edit/edit_4
 	lightmapAxis ( 0.000000 1.000000 0.000000 )
 }
 
-94 // SURFACE_FACE V: 5 I: 9 planar
+95 // SURFACE_FACE V: 5 I: 9 planar
 {
 	shader textures/edit/edit_4
 	lightmapAxis ( 0.000000 0.000000 1.000000 )
-}
-
-95 // SURFACE_FACE V: 4 I: 6 planar
-{
-	shader textures/edit/edit_4
-	lightmapAxis ( -1.000000 0.000000 0.000000 )
 }
 
 96 // SURFACE_FACE V: 4 I: 6 planar
@@ -621,16 +621,16 @@ default
 102 // SURFACE_FACE V: 4 I: 6 planar
 {
 	shader textures/edit/edit_4
-	lightmapAxis ( 0.000000 -1.000000 0.000000 )
+	lightmapAxis ( 0.000000 0.000000 1.000000 )
 }
 
 103 // SURFACE_FACE V: 4 I: 6 planar
 {
 	shader textures/edit/edit_4
-	lightmapAxis ( 0.000000 1.000000 0.000000 )
+	lightmapAxis ( -1.000000 0.000000 0.000000 )
 }
 
-104 // SURFACE_FACE V: 5 I: 9 planar
+104 // SURFACE_FACE V: 4 I: 6 planar
 {
 	shader textures/edit/edit_4
 	lightmapAxis ( 0.000000 0.000000 1.000000 )
@@ -639,22 +639,22 @@ default
 105 // SURFACE_FACE V: 4 I: 6 planar
 {
 	shader textures/edit/edit_4
-	lightmapAxis ( 1.000000 0.000000 0.000000 )
+	lightmapAxis ( -1.000000 0.000000 0.000000 )
 }
 
 106 // SURFACE_FACE V: 4 I: 6 planar
 {
 	shader textures/edit/edit_4
-	lightmapAxis ( 0.000000 -1.000000 0.000000 )
+	lightmapAxis ( 0.000000 0.000000 1.000000 )
 }
 
 107 // SURFACE_FACE V: 4 I: 6 planar
 {
 	shader textures/edit/edit_4
-	lightmapAxis ( 0.000000 1.000000 0.000000 )
+	lightmapAxis ( -1.000000 0.000000 0.000000 )
 }
 
-108 // SURFACE_FACE V: 5 I: 9 planar
+108 // SURFACE_FACE V: 4 I: 6 planar
 {
 	shader textures/edit/edit_4
 	lightmapAxis ( 0.000000 0.000000 1.000000 )
@@ -669,345 +669,363 @@ default
 110 // SURFACE_FACE V: 4 I: 6 planar
 {
 	shader textures/edit/edit_4
-	lightmapAxis ( 1.000000 0.000000 0.000000 )
+	lightmapAxis ( 0.000000 0.000000 1.000000 )
 }
 
 111 // SURFACE_FACE V: 4 I: 6 planar
 {
 	shader textures/edit/edit_4
-	lightmapAxis ( 0.000000 0.000000 1.000000 )
+	lightmapAxis ( -1.000000 0.000000 0.000000 )
 }
 
 112 // SURFACE_FACE V: 4 I: 6 planar
 {
 	shader textures/edit/edit_4
-	lightmapAxis ( -1.000000 0.000000 0.000000 )
+	lightmapAxis ( 0.000000 0.000000 1.000000 )
 }
 
 113 // SURFACE_FACE V: 4 I: 6 planar
 {
 	shader textures/edit/edit_4
-	lightmapAxis ( 0.000000 0.000000 1.000000 )
+	lightmapAxis ( -1.000000 0.000000 0.000000 )
 }
 
 114 // SURFACE_FACE V: 4 I: 6 planar
 {
 	shader textures/edit/edit_4
-	lightmapAxis ( -1.000000 0.000000 0.000000 )
+	lightmapAxis ( 0.000000 0.000000 1.000000 )
 }
 
 115 // SURFACE_FACE V: 4 I: 6 planar
 {
 	shader textures/edit/edit_4
-	lightmapAxis ( 0.000000 0.000000 1.000000 )
+	lightmapAxis ( -1.000000 0.000000 0.000000 )
 }
 
 116 // SURFACE_FACE V: 4 I: 6 planar
 {
 	shader textures/edit/edit_4
-	lightmapAxis ( -1.000000 0.000000 0.000000 )
-}
-
-117 // SURFACE_FACE V: 4 I: 6 planar
-{
-	shader textures/edit/edit_4
 	lightmapAxis ( 0.000000 0.000000 1.000000 )
 }
 
-118 // SURFACE_FACE V: 4 I: 6 planar
+117 // SURFACE_FACE V: 5 I: 9 planar
 {
 	shader textures/edit/edit_4
 	lightmapAxis ( -1.000000 0.000000 0.000000 )
 }
 
-119 // SURFACE_FACE V: 4 I: 6 planar
+118 // SURFACE_FACE V: 5 I: 9 planar
+{
+	shader textures/edit/edit_4
+	lightmapAxis ( 1.000000 0.000000 0.000000 )
+}
+
+119 // SURFACE_FACE V: 6 I: 12 planar
+{
+	shader textures/edit/edit_4
+	lightmapAxis ( 0.000000 -1.000000 0.000000 )
+}
+
+120 // SURFACE_FACE V: 6 I: 12 planar
+{
+	shader textures/edit/edit_4
+	lightmapAxis ( 0.000000 1.000000 0.000000 )
+}
+
+121 // SURFACE_FACE V: 5 I: 9 planar
 {
 	shader textures/edit/edit_4
 	lightmapAxis ( 0.000000 0.000000 1.000000 )
 }
 
-120 // SURFACE_FACE V: 4 I: 6 planar
+122 // SURFACE_FACE V: 5 I: 9 planar
 {
 	shader textures/edit/edit_4
 	lightmapAxis ( -1.000000 0.000000 0.000000 )
 }
 
-121 // SURFACE_FACE V: 4 I: 6 planar
+123 // SURFACE_FACE V: 5 I: 9 planar
 {
 	shader textures/edit/edit_4
-	lightmapAxis ( 0.000000 0.000000 1.000000 )
+	lightmapAxis ( 1.000000 0.000000 0.000000 )
 }
 
-122 // SURFACE_FACE V: 4 I: 6 planar
+124 // SURFACE_FACE V: 6 I: 12 planar
 {
 	shader textures/edit/edit_4
-	lightmapAxis ( -1.000000 0.000000 0.000000 )
+	lightmapAxis ( 0.000000 -1.000000 0.000000 )
 }
 
-123 // SURFACE_FACE V: 4 I: 6 planar
+125 // SURFACE_FACE V: 6 I: 12 planar
 {
 	shader textures/edit/edit_4
-	lightmapAxis ( 0.000000 0.000000 1.000000 )
-}
-
-124 // SURFACE_FACE V: 4 I: 6 planar
-{
-	shader textures/edit/edit_4
-	lightmapAxis ( -1.000000 0.000000 0.000000 )
-}
-
-125 // SURFACE_FACE V: 4 I: 6 planar
-{
-	shader textures/edit/edit_4
-	lightmapAxis ( 0.000000 0.000000 1.000000 )
+	lightmapAxis ( 0.000000 1.000000 0.000000 )
 }
 
 126 // SURFACE_FACE V: 5 I: 9 planar
 {
 	shader textures/edit/edit_4
-	lightmapAxis ( -1.000000 0.000000 0.000000 )
-}
-
-127 // SURFACE_FACE V: 5 I: 9 planar
-{
-	shader textures/edit/edit_4
-	lightmapAxis ( 1.000000 0.000000 0.000000 )
-}
-
-128 // SURFACE_FACE V: 6 I: 12 planar
-{
-	shader textures/edit/edit_4
-	lightmapAxis ( 0.000000 -1.000000 0.000000 )
-}
-
-129 // SURFACE_FACE V: 6 I: 12 planar
-{
-	shader textures/edit/edit_4
-	lightmapAxis ( 0.000000 1.000000 0.000000 )
-}
-
-130 // SURFACE_FACE V: 5 I: 9 planar
-{
-	shader textures/edit/edit_4
 	lightmapAxis ( 0.000000 0.000000 1.000000 )
 }
 
-131 // SURFACE_FACE V: 5 I: 9 planar
+127 // SURFACE_FACE V: 4 I: 6 planar
 {
-	shader textures/edit/edit_4
+	shader textures/edit/edit_5
+	lightmapAxis ( 0.000000 -1.000000 0.000000 )
+}
+
+128 // SURFACE_FACE V: 4 I: 6 planar
+{
+	shader textures/edit/edit_5
+	lightmapAxis ( 0.000000 0.000000 1.000000 )
+}
+
+129 // SURFACE_FACE V: 4 I: 6 planar
+{
+	shader textures/edit/edit_5
+	lightmapAxis ( 0.000000 1.000000 0.000000 )
+}
+
+130 // SURFACE_FACE V: 4 I: 6 planar
+{
+	shader textures/edit/edit_5
+	lightmapAxis ( 0.000000 0.000000 1.000000 )
+}
+
+131 // SURFACE_FACE V: 9 I: 24 planar
+{
+	shader textures/edit/edit_5
 	lightmapAxis ( -1.000000 0.000000 0.000000 )
 }
 
-132 // SURFACE_FACE V: 5 I: 9 planar
+132 // SURFACE_FACE V: 11 I: 30 planar
 {
-	shader textures/edit/edit_4
-	lightmapAxis ( 1.000000 0.000000 0.000000 )
+	shader textures/edit/edit_5
+	lightmapAxis ( 0.000000 0.000000 1.000000 )
 }
 
-133 // SURFACE_FACE V: 6 I: 12 planar
+133 // SURFACE_FACE V: 4 I: 6 planar
 {
-	shader textures/edit/edit_4
-	lightmapAxis ( 0.000000 -1.000000 0.000000 )
+	shader textures/edit/edit_5
+	lightmapAxis ( 1.000000 0.000000 0.000000 )
 }
 
 134 // SURFACE_FACE V: 6 I: 12 planar
 {
-	shader textures/edit/edit_4
-	lightmapAxis ( 0.000000 1.000000 0.000000 )
-}
-
-135 // SURFACE_FACE V: 5 I: 9 planar
-{
-	shader textures/edit/edit_4
+	shader textures/edit/edit_5
 	lightmapAxis ( 0.000000 0.000000 1.000000 )
 }
 
-136 // SURFACE_FACE V: 4 I: 6 planar
+135 // SURFACE_FACE V: 6 I: 12 planar
 {
-	shader textures/edit/edit_5
-	lightmapAxis ( 0.000000 -1.000000 0.000000 )
+	shader textures/skies/recotta
+	sampleSize 0
+}
+
+136 // SURFACE_FACE V: 6 I: 12 planar
+{
+	shader textures/skies/recotta
+	sampleSize 0
 }
 
 137 // SURFACE_FACE V: 4 I: 6 planar
 {
-	shader textures/edit/edit_5
-	lightmapAxis ( 0.000000 0.000000 1.000000 )
+	shader textures/skies/recotta
+	sampleSize 0
 }
 
 138 // SURFACE_FACE V: 4 I: 6 planar
 {
-	shader textures/edit/edit_5
-	lightmapAxis ( 0.000000 1.000000 0.000000 )
+	shader textures/skies/recotta
+	sampleSize 0
 }
 
 139 // SURFACE_FACE V: 4 I: 6 planar
 {
-	shader textures/edit/edit_5
+	shader textures/measure/floor
 	lightmapAxis ( 0.000000 0.000000 1.000000 )
 }
 
-140 // SURFACE_FACE V: 9 I: 24 planar
+140 // SURFACE_FACE V: 4 I: 6 planar
 {
-	shader textures/edit/edit_5
-	lightmapAxis ( -1.000000 0.000000 0.000000 )
+	shader textures/skies/recotta
+	sampleSize 0
 }
 
-141 // SURFACE_FACE V: 11 I: 30 planar
+141 // SURFACE_FACE V: 4 I: 6 planar
 {
-	shader textures/edit/edit_5
-	lightmapAxis ( 0.000000 0.000000 1.000000 )
+	shader textures/skies/recotta
+	entity 3
+	castShadows 0
+	sampleSize 0
 }
 
 142 // SURFACE_FACE V: 4 I: 6 planar
 {
-	shader textures/edit/edit_5
-	lightmapAxis ( 1.000000 0.000000 0.000000 )
-}
-
-143 // SURFACE_FACE V: 6 I: 12 planar
-{
-	shader textures/edit/edit_5
-	lightmapAxis ( 0.000000 0.000000 1.000000 )
-}
-
-144 // SURFACE_FACE V: 6 I: 12 planar
-{
-	shader textures/skies/smudge
+	shader textures/skies/recotta
+	entity 3
+	castShadows 0
 	sampleSize 0
 }
 
-145 // SURFACE_FACE V: 6 I: 12 planar
+143 // SURFACE_FACE V: 4 I: 6 planar
 {
-	shader textures/skies/smudge
+	shader textures/skies/recotta
+	entity 3
+	castShadows 0
+	sampleSize 0
+}
+
+144 // SURFACE_FACE V: 4 I: 6 planar
+{
+	shader textures/skies/recotta
+	entity 3
+	castShadows 0
+	sampleSize 0
+}
+
+145 // SURFACE_FACE V: 4 I: 6 planar
+{
+	shader textures/skies/recotta
+	entity 3
+	castShadows 0
 	sampleSize 0
 }
 
 146 // SURFACE_FACE V: 4 I: 6 planar
 {
-	shader textures/skies/smudge
+	shader textures/skies/recotta
+	entity 3
+	castShadows 0
 	sampleSize 0
 }
 
 147 // SURFACE_FACE V: 4 I: 6 planar
 {
-	shader textures/skies/smudge
-	sampleSize 0
+	shader textures/edit/edit_5
+	entity 4
+	castShadows 0
+	lightmapAxis ( -1.000000 0.000000 0.000000 )
 }
 
 148 // SURFACE_FACE V: 4 I: 6 planar
 {
-	shader textures/edit/base_1
-	lightmapAxis ( 0.000000 0.000000 1.000000 )
+	shader textures/edit/edit_5
+	entity 4
+	castShadows 0
+	lightmapAxis ( 1.000000 0.000000 0.000000 )
 }
 
 149 // SURFACE_FACE V: 4 I: 6 planar
 {
-	shader textures/skies/smudge
-	sampleSize 0
+	shader textures/edit/edit_5
+	entity 4
+	castShadows 0
+	lightmapAxis ( 0.000000 -1.000000 0.000000 )
 }
 
 150 // SURFACE_FACE V: 4 I: 6 planar
 {
-	shader textures/edit/edit_3
-	entity 3
+	shader textures/edit/edit_5
+	entity 4
 	castShadows 0
-	lightmapAxis ( -1.000000 0.000000 0.000000 )
+	lightmapAxis ( 0.000000 1.000000 0.000000 )
 }
 
 151 // SURFACE_FACE V: 4 I: 6 planar
 {
-	shader textures/edit/edit_3
-	entity 3
+	shader textures/edit/edit_5
+	entity 4
 	castShadows 0
-	lightmapAxis ( 1.000000 0.000000 0.000000 )
+	lightmapAxis ( 0.000000 0.000000 -1.000000 )
 }
 
 152 // SURFACE_FACE V: 4 I: 6 planar
 {
-	shader textures/edit/edit_3
-	entity 3
-	castShadows 0
-	lightmapAxis ( 0.000000 -1.000000 0.000000 )
-}
-
-153 // SURFACE_FACE V: 4 I: 6 planar
-{
-	shader textures/edit/edit_3
-	entity 3
-	castShadows 0
-	lightmapAxis ( 0.000000 1.000000 0.000000 )
-}
-
-154 // SURFACE_FACE V: 4 I: 6 planar
-{
-	shader textures/edit/edit_3
-	entity 3
-	castShadows 0
-	lightmapAxis ( 0.000000 0.000000 -1.000000 )
-}
-
-155 // SURFACE_FACE V: 4 I: 6 planar
-{
-	shader textures/edit/edit_3
-	entity 3
-	castShadows 0
-	lightmapAxis ( 0.000000 0.000000 1.000000 )
-}
-
-156 // SURFACE_FACE V: 4 I: 6 planar
-{
-	shader textures/edit/edit_5
-	entity 4
-	castShadows 0
-	lightmapAxis ( -1.000000 0.000000 0.000000 )
-}
-
-157 // SURFACE_FACE V: 4 I: 6 planar
-{
-	shader textures/edit/edit_5
-	entity 4
-	castShadows 0
-	lightmapAxis ( 1.000000 0.000000 0.000000 )
-}
-
-158 // SURFACE_FACE V: 4 I: 6 planar
-{
-	shader textures/edit/edit_5
-	entity 4
-	castShadows 0
-	lightmapAxis ( 0.000000 -1.000000 0.000000 )
-}
-
-159 // SURFACE_FACE V: 4 I: 6 planar
-{
-	shader textures/edit/edit_5
-	entity 4
-	castShadows 0
-	lightmapAxis ( 0.000000 1.000000 0.000000 )
-}
-
-160 // SURFACE_FACE V: 4 I: 6 planar
-{
-	shader textures/edit/edit_5
-	entity 4
-	castShadows 0
-	lightmapAxis ( 0.000000 0.000000 -1.000000 )
-}
-
-161 // SURFACE_FACE V: 4 I: 6 planar
-{
 	shader textures/edit/edit_5
 	entity 4
 	castShadows 0
 	lightmapAxis ( 0.000000 0.000000 1.000000 )
 }
 
-162 // SURFACE_FACE V: 6 I: 12 planar
+153 // SURFACE_FACE V: 6 I: 12 planar
 {
 	shader textures/edit/edit_5
 	entity 5
 	castShadows 0
 	lightmapAxis ( -1.000000 0.000000 0.000000 )
+}
+
+154 // SURFACE_FACE V: 6 I: 12 planar
+{
+	shader textures/edit/edit_5
+	entity 5
+	castShadows 0
+	lightmapAxis ( 1.000000 0.000000 0.000000 )
+}
+
+155 // SURFACE_FACE V: 4 I: 6 planar
+{
+	shader textures/edit/edit_5
+	entity 5
+	castShadows 0
+	lightmapAxis ( 0.000000 -1.000000 0.000000 )
+}
+
+156 // SURFACE_FACE V: 4 I: 6 planar
+{
+	shader textures/edit/edit_5
+	entity 5
+	castShadows 0
+	lightmapAxis ( 0.000000 1.000000 0.000000 )
+}
+
+157 // SURFACE_FACE V: 8 I: 18 planar
+{
+	shader textures/edit/edit_5
+	entity 5
+	castShadows 0
+	lightmapAxis ( 0.000000 0.000000 -1.000000 )
+}
+
+158 // SURFACE_FACE V: 4 I: 6 planar
+{
+	shader textures/edit/edit_5
+	entity 5
+	castShadows 0
+	lightmapAxis ( 0.000000 0.000000 1.000000 )
+}
+
+159 // SURFACE_FACE V: 4 I: 6 planar
+{
+	shader textures/edit/edit_5
+	entity 5
+	castShadows 0
+	lightmapAxis ( -1.000000 0.000000 0.000000 )
+}
+
+160 // SURFACE_FACE V: 4 I: 6 planar
+{
+	shader textures/edit/edit_5
+	entity 5
+	castShadows 0
+	lightmapAxis ( 1.000000 0.000000 0.000000 )
+}
+
+161 // SURFACE_FACE V: 4 I: 6 planar
+{
+	shader textures/edit/edit_5
+	entity 5
+	castShadows 0
+	lightmapAxis ( 0.000000 -1.000000 0.000000 )
+}
+
+162 // SURFACE_FACE V: 4 I: 6 planar
+{
+	shader textures/edit/edit_5
+	entity 5
+	castShadows 0
+	lightmapAxis ( 0.000000 1.000000 0.000000 )
 }
 
 163 // SURFACE_FACE V: 6 I: 12 planar
@@ -1015,15 +1033,15 @@ default
 	shader textures/edit/edit_5
 	entity 5
 	castShadows 0
-	lightmapAxis ( 1.000000 0.000000 0.000000 )
+	lightmapAxis ( -1.000000 0.000000 0.000000 )
 }
 
-164 // SURFACE_FACE V: 4 I: 6 planar
+164 // SURFACE_FACE V: 6 I: 12 planar
 {
 	shader textures/edit/edit_5
 	entity 5
 	castShadows 0
-	lightmapAxis ( 0.000000 -1.000000 0.000000 )
+	lightmapAxis ( 1.000000 0.000000 0.000000 )
 }
 
 165 // SURFACE_FACE V: 4 I: 6 planar
@@ -1031,15 +1049,15 @@ default
 	shader textures/edit/edit_5
 	entity 5
 	castShadows 0
-	lightmapAxis ( 0.000000 1.000000 0.000000 )
+	lightmapAxis ( 0.000000 -1.000000 0.000000 )
 }
 
-166 // SURFACE_FACE V: 8 I: 18 planar
+166 // SURFACE_FACE V: 4 I: 6 planar
 {
 	shader textures/edit/edit_5
 	entity 5
 	castShadows 0
-	lightmapAxis ( 0.000000 0.000000 -1.000000 )
+	lightmapAxis ( 0.000000 1.000000 0.000000 )
 }
 
 167 // SURFACE_FACE V: 4 I: 6 planar
@@ -1047,15 +1065,15 @@ default
 	shader textures/edit/edit_5
 	entity 5
 	castShadows 0
-	lightmapAxis ( 0.000000 0.000000 1.000000 )
+	lightmapAxis ( 0.000000 0.000000 -1.000000 )
 }
 
-168 // SURFACE_FACE V: 4 I: 6 planar
+168 // SURFACE_FACE V: 8 I: 18 planar
 {
 	shader textures/edit/edit_5
 	entity 5
 	castShadows 0
-	lightmapAxis ( -1.000000 0.000000 0.000000 )
+	lightmapAxis ( 0.000000 0.000000 1.000000 )
 }
 
 169 // SURFACE_FACE V: 4 I: 6 planar
@@ -1063,7 +1081,7 @@ default
 	shader textures/edit/edit_5
 	entity 5
 	castShadows 0
-	lightmapAxis ( 1.000000 0.000000 0.000000 )
+	lightmapAxis ( -1.000000 0.000000 0.000000 )
 }
 
 170 // SURFACE_FACE V: 4 I: 6 planar
@@ -1071,7 +1089,7 @@ default
 	shader textures/edit/edit_5
 	entity 5
 	castShadows 0
-	lightmapAxis ( 0.000000 -1.000000 0.000000 )
+	lightmapAxis ( 1.000000 0.000000 0.000000 )
 }
 
 171 // SURFACE_FACE V: 4 I: 6 planar
@@ -1079,182 +1097,14 @@ default
 	shader textures/edit/edit_5
 	entity 5
 	castShadows 0
-	lightmapAxis ( 0.000000 1.000000 0.000000 )
-}
-
-172 // SURFACE_FACE V: 6 I: 12 planar
-{
-	shader textures/edit/edit_5
-	entity 5
-	castShadows 0
-	lightmapAxis ( -1.000000 0.000000 0.000000 )
-}
-
-173 // SURFACE_FACE V: 6 I: 12 planar
-{
-	shader textures/edit/edit_5
-	entity 5
-	castShadows 0
-	lightmapAxis ( 1.000000 0.000000 0.000000 )
-}
-
-174 // SURFACE_FACE V: 4 I: 6 planar
-{
-	shader textures/edit/edit_5
-	entity 5
-	castShadows 0
 	lightmapAxis ( 0.000000 -1.000000 0.000000 )
 }
 
-175 // SURFACE_FACE V: 4 I: 6 planar
+172 // SURFACE_FACE V: 4 I: 6 planar
 {
 	shader textures/edit/edit_5
 	entity 5
 	castShadows 0
 	lightmapAxis ( 0.000000 1.000000 0.000000 )
-}
-
-176 // SURFACE_FACE V: 4 I: 6 planar
-{
-	shader textures/edit/edit_5
-	entity 5
-	castShadows 0
-	lightmapAxis ( 0.000000 0.000000 -1.000000 )
-}
-
-177 // SURFACE_FACE V: 8 I: 18 planar
-{
-	shader textures/edit/edit_5
-	entity 5
-	castShadows 0
-	lightmapAxis ( 0.000000 0.000000 1.000000 )
-}
-
-178 // SURFACE_FACE V: 4 I: 6 planar
-{
-	shader textures/edit/edit_5
-	entity 5
-	castShadows 0
-	lightmapAxis ( -1.000000 0.000000 0.000000 )
-}
-
-179 // SURFACE_FACE V: 4 I: 6 planar
-{
-	shader textures/edit/edit_5
-	entity 5
-	castShadows 0
-	lightmapAxis ( 1.000000 0.000000 0.000000 )
-}
-
-180 // SURFACE_FACE V: 4 I: 6 planar
-{
-	shader textures/edit/edit_5
-	entity 5
-	castShadows 0
-	lightmapAxis ( 0.000000 -1.000000 0.000000 )
-}
-
-181 // SURFACE_FACE V: 4 I: 6 planar
-{
-	shader textures/edit/edit_5
-	entity 5
-	castShadows 0
-	lightmapAxis ( 0.000000 1.000000 0.000000 )
-}
-
-182 // SURFACE_FACE V: 4 I: 6 planar
-{
-	shader textures/edit/edit_5
-	entity 6
-	castShadows 0
-	lightmapAxis ( -1.000000 0.000000 0.000000 )
-}
-
-183 // SURFACE_FACE V: 4 I: 6 planar
-{
-	shader textures/edit/edit_5
-	entity 6
-	castShadows 0
-	lightmapAxis ( 1.000000 0.000000 0.000000 )
-}
-
-184 // SURFACE_FACE V: 4 I: 6 planar
-{
-	shader textures/edit/edit_5
-	entity 6
-	castShadows 0
-	lightmapAxis ( 0.000000 -1.000000 0.000000 )
-}
-
-185 // SURFACE_FACE V: 4 I: 6 planar
-{
-	shader textures/edit/edit_5
-	entity 6
-	castShadows 0
-	lightmapAxis ( 0.000000 1.000000 0.000000 )
-}
-
-186 // SURFACE_FACE V: 4 I: 6 planar
-{
-	shader textures/edit/edit_5
-	entity 6
-	castShadows 0
-	lightmapAxis ( 0.000000 0.000000 -1.000000 )
-}
-
-187 // SURFACE_FACE V: 4 I: 6 planar
-{
-	shader textures/edit/edit_5
-	entity 6
-	castShadows 0
-	lightmapAxis ( 0.000000 0.000000 1.000000 )
-}
-
-188 // SURFACE_FACE V: 4 I: 6 planar
-{
-	shader textures/edit/edit_5
-	entity 7
-	castShadows 0
-	lightmapAxis ( -1.000000 0.000000 0.000000 )
-}
-
-189 // SURFACE_FACE V: 4 I: 6 planar
-{
-	shader textures/edit/edit_5
-	entity 7
-	castShadows 0
-	lightmapAxis ( 1.000000 0.000000 0.000000 )
-}
-
-190 // SURFACE_FACE V: 4 I: 6 planar
-{
-	shader textures/edit/edit_5
-	entity 7
-	castShadows 0
-	lightmapAxis ( 0.000000 -1.000000 0.000000 )
-}
-
-191 // SURFACE_FACE V: 4 I: 6 planar
-{
-	shader textures/edit/edit_5
-	entity 7
-	castShadows 0
-	lightmapAxis ( 0.000000 1.000000 0.000000 )
-}
-
-192 // SURFACE_FACE V: 4 I: 6 planar
-{
-	shader textures/edit/edit_5
-	entity 7
-	castShadows 0
-	lightmapAxis ( 0.000000 0.000000 -1.000000 )
-}
-
-193 // SURFACE_FACE V: 4 I: 6 planar
-{
-	shader textures/edit/edit_5
-	entity 7
-	castShadows 0
-	lightmapAxis ( 0.000000 0.000000 1.000000 )
 }
 

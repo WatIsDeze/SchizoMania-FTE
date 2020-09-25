@@ -45,6 +45,9 @@ PMove_Init(void) {
 #elif CSTRIKE
 	localcmd("serverinfo phy_accelerate 4\n");
 	localcmd("serverinfo phy_maxspeed 250\n");
+#elif SCHIZOMANIA
+	localcmd("serverinfo phy_accelerate 4\n");
+	localcmd("serverinfo phy_maxspeed 250\n");
 #else
 	localcmd("serverinfo phy_accelerate 8\n");
 	localcmd("serverinfo phy_maxspeed 270\n");
