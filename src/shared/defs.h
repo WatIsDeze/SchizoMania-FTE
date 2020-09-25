@@ -29,8 +29,15 @@
 /* Those are constant for HL BSP and CANNOT be changed.
  * Blame Valve for purchasing a Quake II license but not
  * scrapping hull sizes for their .bsp format... */
-const vector VEC_HULL_MIN = [-16,-16,-36];
-const vector VEC_HULL_MAX = [16,16,36];
+// const vector VEC_HULL_MIN = [-16,-16,-36];
+// const vector VEC_HULL_MAX = [16,16,36];
+// const vector VEC_CHULL_MIN = [-16,-16,-18];
+// const vector VEC_CHULL_MAX = [16,16,18];
+// <SCMA>
+// Boohoo, we changed the Hull Size to match The Wastes (At least, given the test player size texture)
+// </SCMA>
+const vector VEC_HULL_MIN = [-16,-16,-32];
+const vector VEC_HULL_MAX = [16,16,32];
 const vector VEC_CHULL_MIN = [-16,-16,-18];
 const vector VEC_CHULL_MAX = [16,16,18];
 
