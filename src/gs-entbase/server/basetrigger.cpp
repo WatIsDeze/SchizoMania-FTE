@@ -14,89 +14,131 @@
  * OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  */
 
-enum
-{ 
-	USE_TOGGLE,
-	USE_CONTINOUS
-};
-
-enum
-{
-	TRIG_OFF,
-	TRIG_ON,
-	TRIG_TOGGLE
-};
-
-class CBaseTrigger:CBaseEntity
-{
-	int m_strGlobalState;
-	string m_strKillTarget;
-	string m_strMessage;
-	string m_strMaster;
-	float m_flDelay;
-	int m_iUseType;
-	int m_iTeam;
-	int m_iValue;
-
-	void(void) CBaseTrigger;
-
-	virtual void(entity, int) Trigger;
-	virtual void(entity, int) UseTargets;
-	virtual void(entity, int, float) UseTargets_Delay;
-	virtual int(void) GetValue;
-	virtual int(void) GetMaster;
-	virtual void(void) InitBrushTrigger;
-	virtual void(void) InitPointTrigger;
-	virtual void(string, string) SpawnKey;
-};
-
+/* modern trigger architecture */
 void
-CBaseTrigger::UseTargets(entity act, int state)
+CBaseTrigger::UseOutput(entity act, string outname)
 {
-	for (entity f = world; (f = find(f, ::targetname, target));) {
-		CBaseTrigger trigger = (CBaseTrigger)f;
-		dprint(sprintf("^2%s::^3UseTargets^7: Triggering %s `%s` from %s\n", 
-			this.classname, f.classname, trigger.targetname, act.classname));
-		if (trigger.Trigger != __NULL__) {
-			trigger.Trigger(act, state);
-		}
-	}
+	for (entity f = world; (f = find(f, ::targetname, outname));) {
+		CBaseOutput op = (CBaseOutput)f;
 
-	/* hack: check to see if this is a sound file */
-	/*if (whichpack(m_strMessage)) {
-		print(m_strMessage);
-		print("\n");
-	} else {
-		if (m_strMessage && act.flags & FL_CLIENT) {
-			centerprint(act, m_strMessage);
+		/* no more tries and not -1 (infinite) */
+		if (op.m_iCount == 0) {
+			return;
 		}
-	}*/
 
-	if (m_strKillTarget) {
-		entity eKill = find(world, ::targetname, m_strKillTarget);
-		if (eKill) {
-			remove(eKill);
-		}
+		op.m_eActivator = act;
+		op.think = CBaseOutput::TriggerOutput;
+		op.nextthink = time + op.m_flDelay;
 	}
 }
 
-void
-CBaseTrigger::UseTargets_Delay(entity act, int state, float fDelay)
+/* input is a 5 parameter, commar separated string, output is the targetname
+   of a minion entity that'll handle the triggering (and counting down of uses)
+   as defined in the Source Input/Output specs */
+string
+CBaseTrigger::CreateOutput(string outmsg)
 {
-	static void Entities_UseTargets_Delay_Think(void) {
-		CBaseTrigger::UseTargets(self.owner, self.health); /* ugly */
+	static int outcount = 0;
+	string outname = "";
+	float c;
+
+	if (!outmsg)
+		return "";
+
+	outname = sprintf("output_%i\n", outcount);
+	outcount++;
+
+	/* to make sure tokenize 'remembers' to tell us about the commonly
+	   empty data string, we prepared the output string beforehand to
+	   at least contain a _ symbol after the comma separator... now
+	   we gotta clip that away using substring(). messy, but that's the
+	   only way to keep them at 5 argv() calls per output */
+	c = tokenizebyseparator(outmsg, ",");
+	for (float i = 1; i < c; i+=5) {
+		CBaseOutput new_minion = spawn(CBaseOutput);
+
+		new_minion.classname = "triggerminion";
+		new_minion.targetname = outname;
+		new_minion.m_strTarget = substring(argv(i), 1,-1);
+		new_minion.m_strInput = substring(argv(i+1), 1,-1);
+		new_minion.m_strData = substring(argv(i+2), 1,-1);
+		new_minion.m_flDelay = stof(substring(argv(i+3), 1,-1));
+		new_minion.m_iCount = stoi(substring(argv(i+4), 1,-1));
+		new_minion.m_iOldCount = new_minion.m_iCount;
+
+		/* print final debug output */
+		dprint(sprintf("^2%s::CreateOutput report:\n", classname));
+		dprint(sprintf("Target: %s\n", new_minion.m_strTarget));
+		dprint(sprintf("Input: %s\n", new_minion.m_strInput));
+		dprint(sprintf("Data Message: %s\n", new_minion.m_strData));
+		dprint(sprintf("Delay: %f\n", new_minion.m_flDelay));
+		dprint(sprintf("Uses: %i\n\n", new_minion.m_iCount));
+	}
+
+	/* return the name that'll act as the trigger for all outputs */
+	return outname;
+}
+
+/* entities receive the inputs here and need to act on intype and data
+   accordingly. this is just a stub for unknown event troubleshooting */
+void
+CBaseTrigger::Input(entity act, string intype, string data)
+{
+	if (data != "")
+	dprint(sprintf("^2%s::^3Input^7: Receives input %s from %s with data %s\n", 
+		this.classname, intype, act.classname, data));
+	else
+	dprint(sprintf("^2%s::^3Input^7: Receives input %s from %s\n", 
+		this.classname, intype, act.classname));
+}
+
+/* legacy trigger architecture */
+void
+CBaseTrigger::Trigger(entity act, int state)
+{
+	dprint(sprintf("^2%s::^3Input^7: Triggerd by %s with no consequence\n", 
+		this.classname, act.classname));
+}
+
+void
+CBaseTrigger::UseTargets(entity act, int state, float fDelay)
+{
+	static void Entities_UseTargets_Think(void) {
+		CBaseTrigger::UseTargets(self.owner, self.health, 0.0f);
 		remove(self);
 	}
 
-	dprint(sprintf("^2%s::^3UseTargets_Delay^7: Triggering `%s`\n", 
-		this.classname, target));
+	if (fDelay > 0.0f) {
+		dprint(sprintf("^2%s::^3UseTargets^7: Triggering `%s`\n", 
+			this.classname, target));
 
-	CBaseTrigger eTimer = spawn(CBaseTrigger);
-	eTimer.owner = act;
-	eTimer.think = Entities_UseTargets_Delay_Think;
-	eTimer.target = target;
-	eTimer.nextthink = time + fDelay;
-	eTimer.health = state;  /* ugly */
+		CBaseTrigger eTimer = spawn(CBaseTrigger);
+		eTimer.owner = act;
+		eTimer.think = Entities_UseTargets_Think;
+		eTimer.target = target;
+		eTimer.nextthink = time + fDelay;
+		eTimer.health = state;  /* ugly */
+	} else {
+		for (entity f = world; (f = find(f, ::targetname, target));) {
+			CBaseTrigger trigger = (CBaseTrigger)f;
+
+			dprint(sprintf("^2%s::^3UseTargets^7:" \
+			       "Triggering %s `%s` from %s\n", \
+			        this.classname, f.classname, \
+			        trigger.targetname, act.classname));
+
+			if (trigger.Trigger != __NULL__) {
+				trigger.Trigger(act, state);
+			}
+		}
+
+		if (m_strKillTarget) {
+			entity eKill = find(world, ::targetname, m_strKillTarget);
+			if (eKill) {
+				remove(eKill);
+			}
+		}
+	}
 }
 
 int
@@ -137,12 +179,6 @@ CBaseTrigger::GetMaster(void)
 }
 
 void
-CBaseTrigger::Trigger(entity act, int state)
-{
-	
-}
-
-void
 CBaseTrigger::InitPointTrigger(void)
 {
 	setsize(this, VEC_HULL_MIN, VEC_HULL_MAX);
@@ -174,6 +210,13 @@ CBaseTrigger::SpawnKey(string strKey, string strValue)
 	case "team_no":
 		m_iTeam = stoi(strValue);
 		break;
+	case "delay":
+		m_flDelay = stof(strValue);
+		break;
+	case "OnTrigger":
+		strValue = strreplace(",", ",_", strValue);
+		m_strOnTrigger = strcat(m_strOnTrigger, ",_", strValue);
+		break;
 	default:
 		CBaseEntity::SpawnKey(strKey, strValue);
 		break;
@@ -184,4 +227,6 @@ void
 CBaseTrigger::CBaseTrigger(void)
 {
 	CBaseEntity::CBaseEntity();
+
+	m_strOnTrigger = CreateOutput(m_strOnTrigger);
 }

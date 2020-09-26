@@ -14,53 +14,18 @@
  * OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  */
 
-/*QUAKED func_wall (0 .5 .8) ?
-"targetname"    Name
+int g_iMenuActive;
+vector video_res;
 
-Brush that lets light to pass through it.
-On idTech 2 BSPs, it will change texture variants when triggered.
-*/
+var float frametime;
+var float lasttime;
 
-class func_wall:CBaseTrigger
-{
-	void(void) func_wall;
+#define UI_DEVELOPER
 
-	virtual void(void) Respawn;
-	virtual void(entity, int) Trigger;
-};
+#define KEY_UNKNOWN 		-1
+#define KEY_GAME 			0
+#define KEY_MENU 			2
+#define KEY_MENU_GRABBED 	3
 
-void
-func_wall::Trigger(entity act, int state)
-{
-	switch (state) {
-	case TRIG_OFF:
-		SetFrame(0);
-		break;
-	case TRIG_ON:
-		SetFrame(1);
-		break;
-	default:
-		SetFrame(1 - frame);
-	}
-}
-
-void
-func_wall::Respawn(void)
-{
-	/* reset the visual parameters */
-	CBaseEntity::Respawn();
-
-	/* func_wall specifics */
-	SetAngles([0,0,0]);
-	SetMovetype(MOVETYPE_PUSH);
-	SetSolid(SOLID_BSP);
-	SetModel(m_oldModel);
-	SetOrigin(m_oldOrigin);
-	SetFrame(0);
-}
-
-void
-func_wall::func_wall(void)
-{
-	CBaseTrigger::CBaseTrigger();
-}
+#define TARGET_MENU 	1
+#define TARGET_CLIENT 	2

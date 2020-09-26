@@ -225,11 +225,7 @@ func_door::Trigger(entity act, int state)
 
 	/* only trigger stuff once we are done moving */
 	if ((m_iState == DOORSTATE_RAISED) || (m_iState == DOORSTATE_LOWERED)) {
-		if (m_flDelay > 0) {
-			CBaseTrigger::UseTargets_Delay(act, TRIG_TOGGLE, m_flDelay);
-		} else {
-			CBaseTrigger::UseTargets(act, TRIG_TOGGLE);
-		}
+		UseTargets(act, TRIG_TOGGLE, m_flDelay);
 	}
 
 	if (state == TRIG_OFF) {
@@ -402,9 +398,6 @@ func_door::SpawnKey(string strKey, string strValue)
 		break;
 	case "lip":
 		m_flLip = stof(strValue);
-		break;
-	case "delay":
-		m_flDelay = stof(strValue);
 		break;
 	case "wait":
 		m_flWait = stof(strValue);

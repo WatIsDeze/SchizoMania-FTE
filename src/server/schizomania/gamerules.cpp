@@ -112,8 +112,9 @@ HLGameRules::LevelNewParms(void)
 /* we check what fields have changed over the course of the frame and network
  * only the ones that have actually changed */
 void
-HLGameRules::PlayerPostFrame(base_player pl)
+HLGameRules::PlayerPostFrame(base_player pp)
 {
+	player pl = (player)pp;
 	Animation_PlayerUpdate();
 
 	if (autocvar_sv_playerkeepalive)

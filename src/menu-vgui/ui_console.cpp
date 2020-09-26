@@ -14,53 +14,30 @@
  * OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  */
 
-/*QUAKED func_wall (0 .5 .8) ?
-"targetname"    Name
+int g_iConsoleInitialized;
 
-Brush that lets light to pass through it.
-On idTech 2 BSPs, it will change texture variants when triggered.
-*/
-
-class func_wall:CBaseTrigger
+void UI_Console_Show ( void )
 {
-	void(void) func_wall;
-
-	virtual void(void) Respawn;
-	virtual void(entity, int) Trigger;
-};
-
-void
-func_wall::Trigger(entity act, int state)
-{
-	switch (state) {
-	case TRIG_OFF:
-		SetFrame(0);
-		break;
-	case TRIG_ON:
-		SetFrame(1);
-		break;
-	default:
-		SetFrame(1 - frame);
+	static CUIWindow winConsole;
+	static CUIButton btnSend;
+	static void Console_Send ( void ) {
 	}
-}
 
-void
-func_wall::Respawn(void)
-{
-	/* reset the visual parameters */
-	CBaseEntity::Respawn();
+	if ( !g_iConsoleInitialized ) {
+		g_iConsoleInitialized = TRUE;
+		winConsole = spawn( CUIWindow );
+		winConsole.SetTitle( "Console" );
+		winConsole.SetSize( '320 240' );
 
-	/* func_wall specifics */
-	SetAngles([0,0,0]);
-	SetMovetype(MOVETYPE_PUSH);
-	SetSolid(SOLID_BSP);
-	SetModel(m_oldModel);
-	SetOrigin(m_oldOrigin);
-	SetFrame(0);
-}
+		btnSend = spawn( CUIButton );
+		btnSend.SetTitle( "Send" );
+		btnSend.SetSize( '48 24' );
+		btnSend.SetPos( winConsole.GetSize() - '64 32' );
+		btnSend.SetFunc( Console_Send );
+		
+		winConsole.Add( btnSend );
+		g_uiDesktop.Add( winConsole );
+	}
 
-void
-func_wall::func_wall(void)
-{
-	CBaseTrigger::CBaseTrigger();
+	winConsole.Show();
 }

@@ -29,28 +29,19 @@
 /* Those are constant for HL BSP and CANNOT be changed.
  * Blame Valve for purchasing a Quake II license but not
  * scrapping hull sizes for their .bsp format... */
-// const vector VEC_HULL_MIN = [-16,-16,-36];
-// const vector VEC_HULL_MAX = [16,16,36];
-// const vector VEC_CHULL_MIN = [-16,-16,-18];
-// const vector VEC_CHULL_MAX = [16,16,18];
-// <SCMA>
-// Boohoo, we changed the Hull Size to match The Wastes (At least, given the test player size texture)
-// </SCMA>
-const vector VEC_HULL_MIN = [-16,-16,-32];
-const vector VEC_HULL_MAX = [16,16,32];
+const vector VEC_HULL_MIN = [-16,-16,-36];
+const vector VEC_HULL_MAX = [16,16,36];
 const vector VEC_CHULL_MIN = [-16,-16,-18];
 const vector VEC_CHULL_MAX = [16,16,18];
 
-// /* Counter-Strike players are hunched over a little bit */
-// #ifdef CSTRIKE
-// const vector VEC_PLAYER_VIEWPOS =  [0,0,20];
-// const vector VEC_PLAYER_CVIEWPOS = [0,0,12];
-// #else
-// const vector VEC_PLAYER_VIEWPOS = [0,0,24];
-// const vector VEC_PLAYER_CVIEWPOS = [0,0,12];
-// #endif
+/* Counter-Strike players are hunched over a little bit */
+#ifdef CSTRIKE
 const vector VEC_PLAYER_VIEWPOS =  [0,0,20];
 const vector VEC_PLAYER_CVIEWPOS = [0,0,12];
+#else
+const vector VEC_PLAYER_VIEWPOS = [0,0,24];
+const vector VEC_PLAYER_CVIEWPOS = [0,0,12];
+#endif
 
 // Actually used by input_button etc.
 #define INPUT_BUTTON0 0x00000001

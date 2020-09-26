@@ -28,7 +28,6 @@ class trigger_autosave:CBaseTrigger
 
 	virtual void(void) touch;
 	virtual void(void) Respawn;
-	virtual void(string, string) SpawnKey;
 };
 
 void
@@ -49,32 +48,15 @@ trigger_autosave::touch(void)
 
 	//readcmd("save autosave\n");
 	Hide();
+	SetSolid(SOLID_NOT);
 
-	if (m_flDelay > 0) {
-		CBaseTrigger::UseTargets_Delay(other, TRIG_TOGGLE, m_flDelay);
-	} else {
-		CBaseTrigger::UseTargets(other, TRIG_TOGGLE);
-	}
-	solid = SOLID_NOT;
+	CBaseTrigger::UseTargets(other, TRIG_TOGGLE, m_flDelay);
 }
 
 void
 trigger_autosave::Respawn(void)
 {
 	InitBrushTrigger();
-}
-
-void
-trigger_autosave::SpawnKey(string strKey, string strValue)
-{
-	switch (strKey) {
-	case "delay":
-		m_flDelay = stof(strValue);
-		break;
-	default:
-		CBaseTrigger::SpawnKey(strKey, strValue);
-		break;
-	}
 }
 
 void

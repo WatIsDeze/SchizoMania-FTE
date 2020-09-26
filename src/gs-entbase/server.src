@@ -7,6 +7,7 @@ baseentity.h
 decals.h
 materials.h
 server/baseentity.cpp
+server/baseoutput.cpp
 server/basetrigger.cpp
 server/basemonster.cpp
 server/basenpc.cpp
@@ -35,6 +36,7 @@ server/func_recharge.cpp
 server/func_healthcharger.cpp
 server/func_breakable.cpp
 server/func_button.cpp
+server/func_brush.cpp
 server/func_door.cpp
 server/func_door_rotating.cpp
 server/func_illusionary.cpp

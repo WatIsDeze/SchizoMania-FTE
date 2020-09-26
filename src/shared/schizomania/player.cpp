@@ -17,6 +17,11 @@
 noref int input_sequence;
 class player:base_player
 {	
+	// <SCMA>
+	int scma_shotmultiplier;
+	float scma_shottime;
+	// </SCMA>
+
 #ifdef CLIENT
 	/* External model */
 	entity p_model;

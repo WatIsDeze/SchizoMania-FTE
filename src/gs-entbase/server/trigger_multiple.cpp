@@ -36,8 +36,9 @@ enumflags
 
 class trigger_multiple:CBaseTrigger
 {
-	float m_flDelay;
 	float m_flWait;
+	string m_strOnStartTouch;
+
 	void(void) trigger_multiple;
 	virtual void(void) touch;
 	virtual void(void) Respawn;
@@ -61,11 +62,14 @@ trigger_multiple::touch(void)
 		}
 	}
 
-	if (m_flDelay > 0) {
-		UseTargets_Delay(other, TRIG_TOGGLE, m_flDelay);
-	} else {
-		UseTargets(other, TRIG_TOGGLE);
+	/* modern */
+	if (!target) {
+		UseOutput(other, m_strOnStartTouch);
+		return;
 	}
+
+	/* legacy */
+	UseTargets(other, TRIG_TOGGLE, m_flDelay);
 	
 	/* This is effectively a trigger_once...*/
 	if (m_flWait != -1) {
@@ -85,11 +89,13 @@ void
 trigger_multiple::SpawnKey(string strKey, string strValue)
 {
 	switch (strKey) {
-	case "delay":
-		m_flDelay = stof(strValue);
-		break;
 	case "wait":
 		m_flWait = stof(strValue);
+		break;
+	case "OnStartTouch":
+	case "OnStartTouchAll":
+		strValue = strreplace(",", ",_", strValue);
+		m_strOnStartTouch = strcat(m_strOnStartTouch, ",_", strValue);
 		break;
 	default:
 		CBaseTrigger::SpawnKey(strKey, strValue);
@@ -100,4 +106,7 @@ void
 trigger_multiple::trigger_multiple(void)
 {
 	CBaseTrigger::CBaseTrigger();
+
+	if (m_strOnStartTouch)
+		m_strOnStartTouch = CreateOutput(m_strOnStartTouch);
 }

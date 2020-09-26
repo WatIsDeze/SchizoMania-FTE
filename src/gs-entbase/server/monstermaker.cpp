@@ -135,7 +135,7 @@ monstermaker::Spawner(void)
 		m_iMonsterSpawned++;
 
 		if (target) {
-			UseTargets(this, TRIG_TOGGLE);
+			UseTargets(this, TRIG_TOGGLE, 0.0f);
 		}
 
 		/* inherit the monsterclip flag */
@@ -205,9 +205,6 @@ monstermaker::SpawnKey(string strKey, string strValue)
 	case "child_alivemax":
 	case "m_imaxlivechildren":
 		m_iMaxChildren = stoi(strValue);
-		break;
-	case "delay":
-		m_flDelay = stof(strValue);
 		break;
 	case "child_name":
 	case "netname":

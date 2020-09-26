@@ -14,53 +14,22 @@
  * OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  */
 
-/*QUAKED func_wall (0 .5 .8) ?
-"targetname"    Name
+int g_iFindServersInitialized;
 
-Brush that lets light to pass through it.
-On idTech 2 BSPs, it will change texture variants when triggered.
-*/
-
-class func_wall:CBaseTrigger
+void UI_FindServers_Show ( void )
 {
-	void(void) func_wall;
+	static CUIWindow winFind;
 
-	virtual void(void) Respawn;
-	virtual void(entity, int) Trigger;
-};
+	if ( !g_iFindServersInitialized ) {
+		g_iFindServersInitialized = TRUE;
+		winFind = spawn( CUIWindow );
+		winFind.SetTitle( "Find Servers" );
+		winFind.SetSize( '600 400' );
+		winFind.SetIcon( "textures/ui/icons/servers" );
 
-void
-func_wall::Trigger(entity act, int state)
-{
-	switch (state) {
-	case TRIG_OFF:
-		SetFrame(0);
-		break;
-	case TRIG_ON:
-		SetFrame(1);
-		break;
-	default:
-		SetFrame(1 - frame);
+		g_uiDesktop.Add( winFind );
 	}
-}
 
-void
-func_wall::Respawn(void)
-{
-	/* reset the visual parameters */
-	CBaseEntity::Respawn();
-
-	/* func_wall specifics */
-	SetAngles([0,0,0]);
-	SetMovetype(MOVETYPE_PUSH);
-	SetSolid(SOLID_BSP);
-	SetModel(m_oldModel);
-	SetOrigin(m_oldOrigin);
-	SetFrame(0);
-}
-
-void
-func_wall::func_wall(void)
-{
-	CBaseTrigger::CBaseTrigger();
+	winFind.Show();
+	winFind.SetPos( ( video_res / 2 ) - ( winFind.GetSize() / 2 ) );
 }

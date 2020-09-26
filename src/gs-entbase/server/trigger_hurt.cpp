@@ -87,19 +87,11 @@ trigger_hurt::touch(void)
 		if (spawnflags & SF_HURT_FIREONPLAYER) {
 			if (other.flags & FL_CLIENT) {
 				eActivator = other;
-				if (m_flDelay > 0) {
-					CBaseTrigger::UseTargets_Delay(other, TRIG_TOGGLE, m_flDelay);
-				} else {
-					CBaseTrigger::UseTargets(other, TRIG_TOGGLE);
-				}
+				UseTargets(other, TRIG_TOGGLE, m_flDelay);
 			}
 		} else {
 			eActivator = other;
-			if (m_flDelay > 0) {
-				CBaseTrigger::UseTargets_Delay(other, TRIG_TOGGLE, m_flDelay);
-			} else {
-				CBaseTrigger::UseTargets(other, TRIG_TOGGLE);
-			}
+			UseTargets(other, TRIG_TOGGLE, m_flDelay);
 		}
 	}
 
@@ -138,9 +130,6 @@ trigger_hurt::SpawnKey(string strKey, string strValue)
 		break;
 	case "wait":
 		m_flNextDmg = stof(strValue);
-		break;
-	case "delay":
-		m_flDelay = stof(strValue);
 		break;
 	default:
 		CBaseTrigger::SpawnKey(strKey, strValue);

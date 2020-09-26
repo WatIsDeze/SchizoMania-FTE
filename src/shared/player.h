@@ -36,13 +36,6 @@ class base_player
 	/* vehicle info */
 	entity vehicle;
 
-	// <SCMA> Properties.
-	int scma_shotmultiplier;
-	int old_scma_shotmultiplier;
-
-	float scma_shottime;
-	float old_scma_shottime;
-	// </SCMA>
 #ifdef CLIENT
 	/* Prediction */
 	vector net_origin;
@@ -59,11 +52,6 @@ class base_player
 	int net_ammo2;
 	int net_ammo3;
 	int sequence;
-
-	// </SCMA>
-	int net_scma_shotmultiplier;
-	float net_scma_shottime;
-	// </SCMA>
 #else
 
 	/* conditional networking */
@@ -83,10 +71,6 @@ class base_player
 	int old_a_ammo1;
 	int old_a_ammo2;
 	int old_a_ammo3;
-	// </SCMA>
-	int old_net_scma_shotmultiplier;
-	float old_net_scma_shottime;
-	// </SCMA>
 	
 	int voted;
 #endif

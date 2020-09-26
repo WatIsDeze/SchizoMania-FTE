@@ -14,53 +14,35 @@
  * OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  */
 
-/*QUAKED func_wall (0 .5 .8) ?
-"targetname"    Name
+#ifdef GAME_TW
+	#define BACKGROUND_IMG "textures/gfx/background"
+#elif GAME_CS
+	#define BACKGROUND_IMG "textures/gfx/background"
+#else
+	#define BACKGROUND_IMG "gfx/conback"
+#endif
 
-Brush that lets light to pass through it.
-On idTech 2 BSPs, it will change texture variants when triggered.
-*/
+var int g_iBackgroundLoaded = FALSE;
 
-class func_wall:CBaseTrigger
+void Background_Init ( void )
 {
-	void(void) func_wall;
+	precache_pic( BACKGROUND_IMG );
 
-	virtual void(void) Respawn;
-	virtual void(entity, int) Trigger;
-};
-
-void
-func_wall::Trigger(entity act, int state)
-{
-	switch (state) {
-	case TRIG_OFF:
-		SetFrame(0);
-		break;
-	case TRIG_ON:
-		SetFrame(1);
-		break;
-	default:
-		SetFrame(1 - frame);
+	if ( iscachedpic( BACKGROUND_IMG ) ) {
+		g_iBackgroundLoaded = TRUE;
 	}
 }
 
-void
-func_wall::Respawn(void)
+void Background_Draw ( vector vecSize )
 {
-	/* reset the visual parameters */
-	CBaseEntity::Respawn();
-
-	/* func_wall specifics */
-	SetAngles([0,0,0]);
-	SetMovetype(MOVETYPE_PUSH);
-	SetSolid(SOLID_BSP);
-	SetModel(m_oldModel);
-	SetOrigin(m_oldOrigin);
-	SetFrame(0);
-}
-
-void
-func_wall::func_wall(void)
-{
-	CBaseTrigger::CBaseTrigger();
+	if ( clientstate() == 2 ) {
+		drawfill( [ 0, 0 ], vecSize, [ 0, 0, 0 ], 0.5f );
+	} else {
+		if ( g_iBackgroundLoaded == TRUE ) {
+			drawpic( [ 0, 0 ], BACKGROUND_IMG, vecSize, [ 1, 1, 1 ], 1.0f );
+		} else {
+			drawfill( [ 0, 0 ], vecSize, [ 0, 0, 0 ], 1.0f );
+			drawfill( [ 0, 0 ], vecSize, UI_MAINCOLOR, 0.5f );
+		}
+	}
 }

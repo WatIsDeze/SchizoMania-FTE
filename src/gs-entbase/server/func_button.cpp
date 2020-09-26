@@ -211,12 +211,7 @@ func_button::Trigger(entity act, int state)
 		Sound_Play(this, CHAN_VOICE, m_strSndPressed);
 
 	MoveAway();
-
-	if (m_flDelay) {
-		UseTargets_Delay(act, TRIG_TOGGLE, m_flDelay);
-	} else {
-		UseTargets(act, TRIG_TOGGLE);
-	}
+	UseTargets(act, TRIG_TOGGLE, m_flDelay);
 }
 
 void
@@ -368,10 +363,7 @@ func_button::SpawnKey(string strKey, string strValue)
 	case "wait":
 		m_flWait = stof(strValue);
 		break;
-	case "delay":
-		m_flDelay = stof(strValue);
-		break;
-		/* compatibility */
+	/* compatibility */
 	case "sounds":
 		m_strSndPressed = sprintf("func_button.hlsfx_%i", stoi(strValue) + 1i);
 		break;

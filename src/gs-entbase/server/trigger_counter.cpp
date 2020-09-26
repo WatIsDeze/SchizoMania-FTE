@@ -69,14 +69,10 @@ trigger_counter::Trigger(entity act, int state)
 	if (m_iCounted < m_iMaxCount)
 		return;
 
-	solid = SOLID_NOT; /* make inactive */
+	SetSolid(SOLID_NOT); /* make inactive */
 	m_iValue = 1;
 
-	if (m_flDelay > 0) {
-		CBaseTrigger::UseTargets_Delay(act, TRIG_TOGGLE, m_flDelay);
-	} else {
-		CBaseTrigger::UseTargets(act, TRIG_TOGGLE);
-	}
+	UseTargets(act, TRIG_TOGGLE, m_flDelay);
 }
 
 void
@@ -95,9 +91,6 @@ trigger_counter::SpawnKey(string strKey, string strValue)
 	switch (strKey) {
 	case "count":
 		m_iMaxCount = stoi(strValue);
-		break;
-	case "delay":
-		m_flDelay = stof(strValue);
 		break;
 	default:
 		CBaseTrigger::SpawnKey(strKey, strValue);
