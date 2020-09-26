@@ -17,6 +17,8 @@
 void
 HLMultiplayerRules::FrameStart(void)
 {
+
+	// Multiplayer intermission.
 	if (cvar("mp_timelimit"))
 	if (time >= (cvar("mp_timelimit") * 60)) {
 		IntermissionStart();

@@ -68,3 +68,24 @@ map test_doors
 fps
 map test_Doors
 map test_doors
+mapname
+map test_doors
+mapname
+map mainmenu
+map test_doors
+map mainmenu
+noclip
+noclip
+noclip
+noclip
+noclip
+noclip
+noclip
+noclip
+asdf
+developer
+quit
+map test_doors
+noclip
+noclip
+map test_doors

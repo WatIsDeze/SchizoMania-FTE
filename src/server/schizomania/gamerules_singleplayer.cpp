@@ -83,13 +83,18 @@ HLSingleplayerRules::PlayerDeath(base_player pl)
 	corpse.velocity = pl.velocity;
 }
 
-void
-HLSingleplayerRules::PlayerSpawn(base_player pp)
-{
-	player pl = (player)pp;
-	/* this is where the mods want to deviate */
-	entity spot;
+/*
+============================
+SpawnInGamePlayer
 
+Spawn the client's player entity.
+============================
+*/
+void
+HLSingleplayerRules::SpawnInGamePlayer(base_player pp) {
+	// Cast.
+	player pl = (player)pp;
+	
 	pl.classname = "player";
 	pl.health = pl.max_health = 100;
 	pl.takedamage = DAMAGE_YES;
@@ -144,4 +149,80 @@ HLSingleplayerRules::PlayerSpawn(base_player pp)
 
 	Weapons_RefreshAmmo(pl);
 	Client_FixAngle(pl, pl.angles);
+}
+
+/*
+============================
+SpawnInMenuCameraPlayer
+
+Spawn the client's camera player entity, used for the mainmenu where we
+don't want the player to use userinput.
+============================
+*/
+void
+HLSingleplayerRules::SpawnInMenuCameraPlayer(base_player pp, entity eMainmenu) {
+	// Cast.
+	player pl = (player)pp;
+
+	pl.classname = "spectator";
+	pl.health = 0;
+	pl.armor = 0;
+	pl.takedamage = DAMAGE_NO;
+	pl.solid = SOLID_NOT;
+	pl.movetype = MOVETYPE_NOCLIP;
+	pl.SendEntity = Player_SendEntity;
+	pl.flags = FL_CLIENT;
+	pl.weapon = 0;
+	pl.viewzoom = 1.0f;
+	pl.model = 0;
+	setsize (pl, [-16,-16,-16], [16,16,16]);
+	pl.view_ofs = pl.velocity = [0,0,0];
+	forceinfokey(pl, "*spec", "2");
+
+	// Ensure empty inventory.
+	pl.items = 0x0;
+	pl.activeweapon = 0;
+
+	// Set the origin of the player at the menu entity.
+	setorigin(pl, eMainmenu.origin);
+
+	// Find the mainmenu camera its target.
+	if (eMainmenu.target) {
+		entity eTarget = find(world, ::targetname, eMainmenu.target);
+		// Found the target, adjust player angles.
+		if (eTarget) {
+			pl.angles = vectoangles(eTarget.origin - eMainmenu.origin);
+			pl.angles[0] *= -1;
+		}
+	}
+
+	// Fix angle.
+	Client_FixAngle(pl, pl.angles);
+}
+
+/*
+============================
+PlayerSpawn
+
+Determine whether to spawn the player entity, or a camera menu entity 
+for use in the mainmenu.bsp map.
+============================
+*/
+void
+HLSingleplayerRules::PlayerSpawn(base_player pp)
+{
+	// Cast.
+	player pl = (player)pp;
+
+	// Is there a mainmenu entity?
+	entity eMainmenu = find(world, ::classname, "egui_mainmenu");
+dprint("TEST ---- SPAWN IN MENU PLAYER");
+	// Spawn menu if egui_mainmenu was found. Otherwise, spawn the player as per usual.
+	if (eMainmenu) {
+		dprint("TEST ---- SPAWN IN MENU PLAYER");
+		SpawnInMenuCameraPlayer(pl, eMainmenu);
+	} else {
+		dprint("TEST ---- SPAWN IN GAME PLAYER");
+		SpawnInGamePlayer(pl);
+	}
 } 

@@ -4,7 +4,7 @@ all:
 	make plugins
 
 menu:
-	cd menu-fn && $(MAKE)
+	cd menu-vgui && $(MAKE)
 
 games:
 	cd client/schizomania && $(MAKE)

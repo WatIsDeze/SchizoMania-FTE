@@ -35,19 +35,32 @@ Menu_AutoScale(void)
 
 void m_init ( void )
 {
+	// Initialize systems.
 	UISystem_Init();
 	Background_Init();
 	Desktop_Init();
 	
+	// Set max players to 1 so the menu level acts like a singleplayer map.
+	//localcmd("maxplayers 1");
+
+	// Change level to mainmenu.
+	changelevel("mainmenu");
+
+	// Register menu commands.
 	registercommand( "menu_quit" );
 	registercommand( "menu_music" );
+
+	// Auto scale.
 	Menu_AutoScale();
 }
 
 void
 Menu_RendererRestarted(void)
 {
+	// Restart menu.
 	localcmd("menu_restart\n");
+
+	// Autoscale menu.
 	Menu_AutoScale();
 }
 

@@ -19,6 +19,8 @@
 
 ../schizomania/defs.h
 
+../schizomania/egui_mainmenu.cpp
+
 ../schizomania/monster_apache.cpp
 ../schizomania/monster_alien_controller.cpp
 ../schizomania/monster_alien_grunt.cpp

@@ -31,6 +31,9 @@ class HLSingleplayerRules:HLGameRules
 	/* client */
 	virtual void(base_player) PlayerSpawn;
 	virtual void(base_player) PlayerDeath;
+
+	virtual void(base_player) SpawnInGamePlayer;
+	virtual void(base_player, entity) SpawnInMenuCameraPlayer;
 };
 
 class HLMultiplayerRules:HLGameRules
