@@ -1,4 +1,5 @@
 CC=fteqcc
+CCFLAGS=-msvcstyle
 
 all:
 	$(CC) chatsounds.src

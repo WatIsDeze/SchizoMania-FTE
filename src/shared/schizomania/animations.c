@@ -15,7 +15,7 @@
  */
 
 .float frame_time;
-.float frame_old;
+.float frame_old; 
 .float fWasCrouching;
 
 // For lerping, sigh

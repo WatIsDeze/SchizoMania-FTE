@@ -66,3 +66,5 @@ vid_reload
 cl_shownet 1
 map test_doors
 fps
+map test_Doors
+map test_doors
