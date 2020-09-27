@@ -42,6 +42,10 @@ void m_init ( void )
 	registercommand( "menu_quit" );
 	registercommand( "menu_music" );
 	registercommand( "map_background" );
+
+	// Setup the mainmenu background.
+	localcmd("map_background mainmenu");
+	
 	Menu_AutoScale();
 }
 
