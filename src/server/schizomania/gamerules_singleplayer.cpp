@@ -169,12 +169,13 @@ HLSingleplayerRules::SpawnInMenuCameraPlayer(base_player pp, entity eMainmenu) {
 	pl.armor = 0;
 	pl.takedamage = DAMAGE_NO;
 	pl.solid = SOLID_NOT;
-	pl.movetype = MOVETYPE_NOCLIP;
+	pl.movetype = MOVETYPE_NONE;
 	pl.SendEntity = Player_SendEntity;
 	pl.flags = FL_CLIENT;
 	pl.weapon = 0;
 	pl.viewzoom = 1.0f;
 	pl.model = 0;
+	pl.gravity = __NULL__;
 	setsize (pl, [-16,-16,-16], [16,16,16]);
 	pl.view_ofs = pl.velocity = [0,0,0];
 	forceinfokey(pl, "*spec", "2");
@@ -216,13 +217,13 @@ HLSingleplayerRules::PlayerSpawn(base_player pp)
 
 	// Is there a mainmenu entity?
 	entity eMainmenu = find(world, ::classname, "egui_mainmenu");
-dprint("TEST ---- SPAWN IN MENU PLAYER");
+
 	// Spawn menu if egui_mainmenu was found. Otherwise, spawn the player as per usual.
 	if (eMainmenu) {
-		dprint("TEST ---- SPAWN IN MENU PLAYER");
+		dprint("HLSingleplayerRules::PlayerSpawn - Spawning player menu camera\n");
 		SpawnInMenuCameraPlayer(pl, eMainmenu);
 	} else {
-		dprint("TEST ---- SPAWN IN GAME PLAYER");
+		dprint("HLSingleplayerRules::PlayerSpawn - Spawning player entity.\n");
 		SpawnInGamePlayer(pl);
 	}
 } 

@@ -32,6 +32,8 @@ void egui_mainmenu::Respawn(void)
 {
 	think = __NULL__;
 	nextthink = -1;
+
+	localcmd("togglemenu");
 }
 
 void egui_mainmenu::egui_mainmenu(void)

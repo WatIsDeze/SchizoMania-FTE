@@ -89,3 +89,17 @@ map test_doors
 noclip
 noclip
 map test_doors
+m_toggle
+togglemenu
+pause
+paus
+pausab
+pausable
+pausable 0
+m_pausable
+/pausable 
+/pausable 0
+map test_doors
+map demo_doors
+map test_doors
+vid_restart
