@@ -23,6 +23,8 @@ void UI_QuitGame_Show ( void )
 	static CUIButton btnQuit;
 	static CUIButton btnCancel;
 
+	m_display();
+
 	static void QuitGame_Yes ( void ) {
 		winQuitGame.Hide();
 		localcmd( "quit\n" );

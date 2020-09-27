@@ -31,7 +31,7 @@ void Desktop_Init ( void )
 		m_toggle( 0 );
 	}
 	static void Desktop_DisconnectGame ( void ) {
-		localcmd( "disconnect\n" );
+		localcmd( "disconnect\nmap_background mainmenu\n" );
 	}
 
 	g_uiDesktop = spawn( CUIWidget );

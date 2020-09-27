@@ -44,7 +44,7 @@ void m_init ( void )
 	registercommand( "map_background" );
 
 	// Setup the mainmenu background.
-	localcmd("map_background mainmenu");
+	localcmd("map_background mainmenu\n");
 	
 	Menu_AutoScale();
 }
