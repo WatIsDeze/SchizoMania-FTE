@@ -38,14 +38,15 @@ void m_init ( void )
 	UISystem_Init();
 	Background_Init();
 	Desktop_Init();
-	
+
+	// Register menu cmds.	
 	registercommand( "menu_quit" );
 	registercommand( "menu_music" );
 	registercommand( "map_background" );
-
-	// Setup the mainmenu background.
-	localcmd("map_background mainmenu\n");
 	
+	// Start up our local mainmenu background server map.
+	localcmd("map_background mainmenu\n");
+
 	Menu_AutoScale();
 }
 

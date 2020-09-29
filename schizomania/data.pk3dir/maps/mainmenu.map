@@ -56,6 +56,15 @@
 ( -256 -256 256 ) ( -256 -256 264 ) ( 120 -256 256 ) measure/wall128 [ 1 0 0 0 ] [ -0 -0 -1 0 ] -0 0.5 0.5 0 0 0
 ( -256 24 256 ) ( -256 256 256 ) ( -256 24 264 ) measure/wall128 [ 0 1 0 0 ] [ -0 -0 -1 0 ] -0 0.5 0.5 0 0 0
 }
+// brush 6
+{
+( 72 0 152 ) ( 72 -56 152 ) ( 0 0 152 ) measure/wall128 [ 1 0 0 -0 ] [ -0 -1 -0 16 ] -0 0.5 0.5 0 0 0
+( 72 0 152 ) ( 0 0 152 ) ( 72 0 144 ) measure/wall128 [ 1 0 0 -0 ] [ -0 -0 -1 0 ] -0 0.5 0.5 0 0 0
+( 72 0 152 ) ( 72 0 144 ) ( 72 -56 152 ) measure/wall128 [ 0 1 0 48 ] [ -0 -0 -1 0 ] -0 0.5 0.5 0 0 0
+( 0 -56 144 ) ( 72 -56 144 ) ( 0 0 144 ) measure/wall128 [ 1 0 0 -0 ] [ -0 -1 -0 16 ] -0 0.5 0.5 0 0 0
+( 0 -56 144 ) ( 0 -56 152 ) ( 72 -56 144 ) measure/wall128 [ 1 0 0 -0 ] [ -0 -0 -1 0 ] -0 0.5 0.5 0 0 0
+( 0 -56 144 ) ( 0 0 144 ) ( 0 -56 152 ) measure/wall128 [ 0 1 0 48 ] [ -0 -0 -1 0 ] -0 0.5 0.5 0 0 0
+}
 }
 // entity 1
 {
@@ -68,65 +77,63 @@
 }
 // entity 2
 {
-"classname" "monster_barney"
-"origin" "-192.000000 184.000000 16.000000"
-"angle" "-44.868408"
-}
-// entity 3
-{
 "classname" "env_spark"
 "origin" "-232.000000 144.000000 56.000000"
 "spawnflags" "64"
 }
-// entity 4
+// entity 3
 {
 "classname" "env_spark"
 "origin" "-232.000000 184.000000 112.000000"
 "spawnflags" "64"
+"MaxDelay" "2"
 }
-// entity 5
+// entity 4
 {
 "classname" "env_spark"
 "origin" "-232.000000 208.000000 48.000000"
 "spawnflags" "64"
 }
-// entity 6
+// entity 5
 {
 "classname" "env_spark"
 "origin" "-144.000000 168.000000 104.000000"
 "spawnflags" "64"
+"target" "sparks_2"
+"targetname" "sparks_2"
+"MaxDelay" "1.25"
 }
-// entity 7
+// entity 6
 {
 "classname" "env_spark"
 "origin" "-152.000000 112.000000 104.000000"
 "spawnflags" "64"
 }
-// entity 8
+// entity 7
 {
 "classname" "env_spark"
 "origin" "-152.000000 192.000000 24.000000"
 "spawnflags" "64"
 }
-// entity 9
+// entity 8
 {
 "classname" "info_intermission"
 "origin" "72.000000 -80.000000 200.000000"
 "target" "camera_dir"
 }
-// entity 10
+// entity 9
 {
 "classname" "info_notnull"
 "origin" "-168.000000 -80.000000 64.000000"
 "targetname" "camera_dir"
 }
-// entity 11
+// entity 10
 {
 "classname" "info_null"
 "origin" "-192.000000 176.000000 8.000000"
 "targetname" "light_pos"
 }
-// entity 12
+// entity 11
 {
 "classname" "light"
 "origin" "-240.000000 240.000000 192.000000"
@@ -136,21 +143,27 @@
 "style" "2"
 "target" "light_pos"
 }
-// entity 13
+// entity 12
 {
 "classname" "egui_mainmenu"
 "origin" "0.000000 0.000000 176.000000"
 "angles" "39.063614 142.563629 0.000000"
 "target" "cam_dir"
 }
-// entity 14
+// entity 13
 {
 "classname" "info_player_start"
 "origin" "0.000000 0.000000 40.000000"
 }
-// entity 15
+// entity 14
 {
 "classname" "info_notnull"
 "origin" "-240.000000 240.000000 40.000000"
 "targetname" "cam_dir"
+}
+// entity 15
+{
+"classname" "monster_human_grunt"
+"origin" "-176.000000 168.000000 16.000000"
+"angle" "-44.990635"
 }

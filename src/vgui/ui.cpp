@@ -18,7 +18,7 @@ font_s g_fntDefault;
 var int g_vguiWidgetCount;
 
 #ifdef CLASSIC_VGUI
-	#define UI_MAINCOLOR [255,200,0] / 255
+	#define UI_MAINCOLOR [59,143,140] / 255
 	#define UI_MAINALPHA 255
 #else
 	var vector UI_MAINCOLOR;

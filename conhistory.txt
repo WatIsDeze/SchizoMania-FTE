@@ -103,3 +103,38 @@ map test_doors
 map demo_doors
 map test_doors
 vid_restart
+map test_doors
+violence
+violence_
+map test_doors
+violence
+violence_hblood 1
+map test_doors
+map test_doors
+map test_doors
+buildcubemaps
+/map test_shaders
+/gl_overbright
+/gl_overbright 4
+/gl_overbright 12
+map test_shaders
+/gl_overbright
+vid_reload
+map test_shaders
+gl_overbright 2
+vid_reload
+map test_shaders
+buildcubemaps
+map test_shaders
+buildcubemaps
+map test_doors
+map test_doors
+map test_doors
+menu_cmd
+showconsole
+r_shadows 
+r_shadows 1
+/map_background mainmenu
+map test_shaders
+map test_doors
+map test_doors

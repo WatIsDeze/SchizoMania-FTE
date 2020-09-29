@@ -178,7 +178,6 @@ HLSingleplayerRules::SpawnInMenuCameraPlayer(base_player pp, entity eMainmenu) {
 	pl.gravity = __NULL__;
 	setsize (pl, [-16,-16,-16], [16,16,16]);
 	pl.view_ofs = pl.velocity = [0,0,0];
-	forceinfokey(pl, "*spec", "2");
 
 	// Ensure empty inventory.
 	pl.items = 0x0;
@@ -186,14 +185,16 @@ HLSingleplayerRules::SpawnInMenuCameraPlayer(base_player pp, entity eMainmenu) {
 
 	// Set the origin of the player at the menu entity.
 	setorigin(pl, eMainmenu.origin);
-
+	
 	// Find the mainmenu camera its target.
 	if (eMainmenu.target) {
 		entity eTarget = find(world, ::targetname, eMainmenu.target);
+		dprint("Found etarget\n");
 		// Found the target, adjust player angles.
 		if (eTarget) {
+			dprint("Found etarget\n");
 			pl.angles = vectoangles(eTarget.origin - eMainmenu.origin);
-			pl.angles[0] *= -1;
+			//pl.angles[0] *= -1;
 		}
 	}
 

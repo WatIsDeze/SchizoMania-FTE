@@ -35,6 +35,7 @@ void Desktop_Init ( void )
 	}
 
 	g_uiDesktop = spawn( CUIWidget );
+	g_uiDesktop.SetPos( '0 0');
 	g_uiDesktop.FlagAdd( 1 );
 
 	btnNewgame = spawn( CUIMenuButton );
@@ -55,6 +56,7 @@ void Desktop_Init ( void )
 
 	btnLoadgame = spawn( CUIMenuButton );
 	btnLoadgame.SetTitle( "Load Game" );
+	btnLoadgame.SetFunc( UI_NewGame_Show );	
 	btnLoadgame.SetSize( '128 24' );
 	btnLoadgame.SetPos( '32 96' );
 	btnLoadgame.SetIcon( "textures/ui/icons/folder" );

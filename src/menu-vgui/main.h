@@ -15,6 +15,3 @@
  */
 
 CUIWidget g_uiDesktop; 
-
-void
-m_display(void);
