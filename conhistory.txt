@@ -138,3 +138,7 @@ r_shadows 1
 map test_shaders
 map test_doors
 map test_doors
+sv_playerslots
+map test_doors
+menutoggle
+togglemenu

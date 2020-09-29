@@ -21,23 +21,34 @@ void UI_NewGame_Show ( void )
 	static CUIWindow winNewGame;
 	static CUIButton btnPlay;
 	static CUIButton btnCancel;
-	static CUIRadio radTraining;
-	static CUIRadio radEasy;
-	static CUIRadio radMedium;
-	static CUIRadio radHard;
+	static CUILabel	lblSelectChapter;
+	static CUIRadio radChapter1;
+	static CUIRadio radChapter2;
+	static CUIRadio radChapter3;
 
 	static void NewGame_Play ( void ) {
-		localcmd( "maxplayers 1\nmap measure\n" );
+	
+		// TODO: Load in the proper chapter map.
+		localcmd( "g_background 0\nmaxplayers 1\ncoop 0\nmap test_doors\ntogglemenu" );
 		winNewGame.Hide();
 	}
 	static void NewGame_Cancel ( void ) {
 		winNewGame.Hide();
 	}
-	static void NewGame_Uncheck ( void ) {
-		radTraining.SetValue( FALSE );
-		radEasy.SetValue( FALSE );
-		radMedium.SetValue( FALSE );
-		radHard.SetValue( FALSE );
+	static void NewGame_Check_Chapter1 ( void ) {
+		radChapter1.SetValue( TRUE );
+		radChapter2.SetValue( FALSE );
+		radChapter3.SetValue( FALSE );
+	}
+	static void NewGame_Check_Chapter2 ( void ) {
+		radChapter1.SetValue( FALSE );
+		radChapter2.SetValue( TRUE );
+		radChapter3.SetValue( FALSE );
+	}
+	static void NewGame_Check_Chapter3 ( void ) {
+		radChapter1.SetValue( FALSE );
+		radChapter2.SetValue( FALSE );
+		radChapter3.SetValue( TRUE );
 	}
 
 	if ( !g_iNewGameInitialized ) {
@@ -60,38 +71,31 @@ void UI_NewGame_Show ( void )
 		btnCancel.SetPos( winNewGame.GetSize() - '80 32' );
 		btnCancel.SetFunc( NewGame_Cancel );
 
-		radTraining = spawn( CUIRadio );
-		radTraining.SetTitle( "Training" );
-		radTraining.SetSize( '96 16' );
-		radTraining.SetPos( '32 32' );
+		radChapter1 = spawn( CUIRadio );
+		radChapter1.SetTitle( "Chapter 1" );
+		radChapter1.SetSize( '96 16' );
+		radChapter1.SetPos( '32 32' );
 
-		radEasy = spawn( CUIRadio );
-		radEasy.SetTitle( "Easy" );
-		radEasy.SetSize( '96 16' );
-		radEasy.SetPos( '32 56' );
+		radChapter2 = spawn( CUIRadio );
+		radChapter2.SetTitle( "Chapter 2" );
+		radChapter2.SetSize( '96 16' );
+		radChapter2.SetPos( '32 56' );
 
-		radMedium = spawn( CUIRadio );
-		radMedium.SetTitle( "Medium" );
-		radMedium.SetSize( '96 16' );
-		radMedium.SetPos( '32 80' );
-		radMedium.SetValue( TRUE );
+		radChapter3 = spawn( CUIRadio );
+		radChapter3.SetTitle( "Chapter 3" );
+		radChapter3.SetSize( '96 16' );
+		radChapter3.SetPos( '32 80' );
+		radChapter3.SetValue( TRUE );
 
-		radHard = spawn( CUIRadio );
-		radHard.SetTitle( "Hard" );
-		radHard.SetSize( '96 16' );
-		radHard.SetPos( '32 104' );
-
-		radTraining.SetFunc( NewGame_Uncheck );
-		radEasy.SetFunc( NewGame_Uncheck );
-		radMedium.SetFunc( NewGame_Uncheck );
-		radHard.SetFunc( NewGame_Uncheck );
+		radChapter1.SetFunc( NewGame_Check_Chapter1 );
+		radChapter2.SetFunc( NewGame_Check_Chapter2 );
+		radChapter3.SetFunc( NewGame_Check_Chapter3 );
 
 		winNewGame.Add( btnPlay );
 		winNewGame.Add( btnCancel );
-		winNewGame.Add( radTraining );
-		winNewGame.Add( radEasy );
-		winNewGame.Add( radMedium );
-		winNewGame.Add( radHard );
+		winNewGame.Add( radChapter1 );
+		winNewGame.Add( radChapter2 );
+		winNewGame.Add( radChapter3 );
 	}
 
 	winNewGame.Show();

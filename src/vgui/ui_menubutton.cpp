@@ -17,12 +17,18 @@
 #ifdef MENU
 enumflags
 {
+	// Button states.
 	MBUTTON_VISIBLE,
 	MBUTTON_HOVER,
 	MBUTTON_DOWN,
+
+	// Show flags.
 	MBUTTON_SHOWOFFLINE,
 	MBUTTON_SHOWSP,
-	MBUTTON_SHOWMP
+	MBUTTON_SHOWMP,
+
+	// Hide flags.
+	MBUTTON_HIDEMAINMENU,
 };
 
 class CUIMenuButton:CUIWidget
@@ -104,12 +110,12 @@ void CUIMenuButton::Draw(void)
 void CUIMenuButton::Input (float flEVType, float flKey, float flChar, float flDevID)
 {
 	// If we're not ingame
-	if (clientstate() != 2) {
-		if (!(m_iFlags & MBUTTON_SHOWOFFLINE)) {
+	if (clientstate() == 2 && !g_background) {
+		if (!(m_iFlags & MBUTTON_SHOWSP)) {
 			return;
 		}
 	} else {
-		if (!(m_iFlags & MBUTTON_SHOWSP)) {
+		if (!(m_iFlags & MBUTTON_SHOWOFFLINE)) {
 			return;
 		}
 	}

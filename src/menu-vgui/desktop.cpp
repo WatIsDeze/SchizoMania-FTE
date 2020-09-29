@@ -56,7 +56,6 @@ void Desktop_Init ( void )
 
 	btnLoadgame = spawn( CUIMenuButton );
 	btnLoadgame.SetTitle( "Load Game" );
-	btnLoadgame.SetFunc( UI_NewGame_Show );	
 	btnLoadgame.SetSize( '128 24' );
 	btnLoadgame.SetPos( '32 96' );
 	btnLoadgame.SetIcon( "textures/ui/icons/folder" );
