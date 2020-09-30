@@ -1175,7 +1175,7 @@ textures/skies/recotta
 	surfaceParm sky
 	surfaceParm nodlight
 
-	vmap_skylight 200 4
+	vmap_skylight 800 4
 	vmap_sunExt 1 0.084 0.084 140 -35 25 3 16
 	nopicmip
 	nomipmaps

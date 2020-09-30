@@ -612,6 +612,30 @@ textures/data.pk3dir/textures/common/clipmetal
 	nomipmaps
 }
 
+textures/data.pk3dir/textures/skies/ulukai
+// SchizoMania Material
+{
+	qer_editorImage textures/skies/ulukai.tga
+	skyParms textures/skies/ulukai/ulukai 1024 -
+	vmap_globalTexture
+
+	surfaceParm noimpact
+	surfaceParm nolightmap
+	surfaceParm sky
+	surfaceParm nodlight
+
+	vmap_skylight 800 4
+	//vmap_sunExt 1 0.084 0.084 140 -35 25 3 16
+	nopicmip
+	nomipmaps
+
+	{
+		map $cube:textures/skies/recotta/bg
+		map $blackimage
+		map $blackimage
+	}
+}
+
 textures/data.pk3dir/textures/skies/smudge
 {
 	qer_editorImage textures/skies/smudge.tga
@@ -667,7 +691,7 @@ textures/data.pk3dir/textures/skies/recotta
 	surfaceParm sky
 	surfaceParm nodlight
 
-	vmap_skylight 200 4
+	vmap_skylight 800 4
 	vmap_sunExt 1 0.084 0.084 140 -35 25 3 16
 	nopicmip
 	nomipmaps
