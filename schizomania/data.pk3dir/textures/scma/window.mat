@@ -1,12 +1,11 @@
-// SchizoMania Material.
+// Vera Visions Material
 {
 	diffusemap textures/scma/window.tga
 	normalmap textures/scma/window_normal.tga
 
 	{
-        q3map_alphaGen const 0.5
-        q3map_blendfunc blend
-		map textures/scma/window.tga
-
+		program lightmapped
+		map $diffuse
+		map $normalmap
 	}
 }

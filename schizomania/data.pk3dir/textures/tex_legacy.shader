@@ -1107,16 +1107,22 @@ textures/next/rusty4
 	}
 }
 
+textures/scma/sand_01
+{
+    qer_editorimage textures/scma/sand_01.tga
+	diffusemap textures/scma/sand_01.tga
+
+	{
+		map $diffuse
+	}
+}
+
 textures/scma/window
-// SchizoMania Material.
 {
 	diffusemap textures/scma/window.tga
 
 	{
-        q3map_alphaGen const 0.5
-        q3map_blendfunc blend
-		map textures/scma/window.tga
-
+		map $diffuse
 	}
 }
 
