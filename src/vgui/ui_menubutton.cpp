@@ -26,9 +26,6 @@ enumflags
 	MBUTTON_SHOWOFFLINE,
 	MBUTTON_SHOWSP,
 	MBUTTON_SHOWMP,
-
-	// Hide flags.
-	MBUTTON_HIDEMAINMENU,
 };
 
 class CUIMenuButton:CUIWidget

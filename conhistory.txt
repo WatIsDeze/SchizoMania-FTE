@@ -142,3 +142,19 @@ sv_playerslots
 map test_doors
 menutoggle
 togglemenu
+map test_doors
+impulse 201
+god
+map test_doors
+god
+map test_doors
+sv_cheats 1
+impulse 101
+map test_doors
+impulse 101
+map test_doors
+impulse 101
+sv_cheats 1
+/cl_thirdperson 1
+/cl_thirdperson 0
+map test_doors

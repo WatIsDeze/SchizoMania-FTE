@@ -26,10 +26,9 @@ void UI_NewGame_Show ( void )
 	static CUIRadio radChapter2;
 	static CUIRadio radChapter3;
 
-	static void NewGame_Play ( void ) {
-	
+	static void NewGame_Play ( void ) {	
 		// TODO: Load in the proper chapter map.
-		localcmd( "g_background 0\nmaxplayers 1\ncoop 0\nmap test_doors\ntogglemenu" );
+		localcmd( "maxplayers 1\ncoop 0\nmap test_sphere\n" );
 		winNewGame.Hide();
 	}
 	static void NewGame_Cancel ( void ) {
@@ -71,20 +70,25 @@ void UI_NewGame_Show ( void )
 		btnCancel.SetPos( winNewGame.GetSize() - '80 32' );
 		btnCancel.SetFunc( NewGame_Cancel );
 
+		lblSelectChapter = spawn ( CUILabel );
+		lblSelectChapter.SetTitle( "Select a chapter to play:" );
+		lblSelectChapter.SetSize( '128 16' );
+		lblSelectChapter.SetPos( '32 32' );
+
 		radChapter1 = spawn( CUIRadio );
 		radChapter1.SetTitle( "Chapter 1" );
 		radChapter1.SetSize( '96 16' );
-		radChapter1.SetPos( '32 32' );
+		radChapter1.SetPos( '32 56' );
 
 		radChapter2 = spawn( CUIRadio );
 		radChapter2.SetTitle( "Chapter 2" );
 		radChapter2.SetSize( '96 16' );
-		radChapter2.SetPos( '32 56' );
+		radChapter2.SetPos( '32 80' );
 
 		radChapter3 = spawn( CUIRadio );
 		radChapter3.SetTitle( "Chapter 3" );
 		radChapter3.SetSize( '96 16' );
-		radChapter3.SetPos( '32 80' );
+		radChapter3.SetPos( '32 104' );
 		radChapter3.SetValue( TRUE );
 
 		radChapter1.SetFunc( NewGame_Check_Chapter1 );
@@ -96,6 +100,7 @@ void UI_NewGame_Show ( void )
 		winNewGame.Add( radChapter1 );
 		winNewGame.Add( radChapter2 );
 		winNewGame.Add( radChapter3 );
+		winNewGame.Add( lblSelectChapter );
 	}
 
 	winNewGame.Show();

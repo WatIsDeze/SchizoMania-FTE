@@ -767,13 +767,16 @@ textures/data.pk3dir/textures/edit/edit_2
 		map $lightmap
 	}
 }
-textures/data.pk3dir/textures/scma/asphalt2
+textures/data.pk3dir/textures/scma/window
 // SchizoMania Material.
 {
 	diffusemap textures/scma/window.tga
 
 	{
-		map $diffuse
+        q3map_alphaGen const 0.5
+        q3map_blendfunc blend
+		map textures/scma/window.tga
+
 	}
 }
 
