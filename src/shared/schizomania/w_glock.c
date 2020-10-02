@@ -126,8 +126,8 @@ w_glock_draw(void)
 
 #ifdef CLIENT
 //	Got to do this for crosshair support.
-//	pl.cs_cross_mindist = 8;
-//	pl.cs_cross_deltadist = 3;
+	pl.scma_cross_mindist = 8;
+	pl.scma_cross_deltadist = 3;
 #endif
 }
 
@@ -163,14 +163,14 @@ w_glock_primary(void)
 #endif
 
 	// Counter-Strike crosshair stuff.
-	//Cstrike_ShotMultiplierAdd(pl, 1);
-	//float accuracy = Cstrike_CalculateAccuracy(pl, 200);
+	SCMA_ShotMultiplierAdd(pl, 1);
+	float accuracy = SCMA_CalculateAccuracy(pl, 200);
 
 	/* actual firing */
 #ifdef CLIENT
 	pl.a_ammo1--;
 	View_SetMuzzleflash(MUZZLE_SMALL);
-	//Weapons_ViewPunchAngle([-2,0,0]);
+//	Weapons_ViewPunchAngle([-2,0,0]);
 
 	//if (pl.a_ammo1) {
 //		Weapons_ViewAnimation(GLOCK_SHOOT);
@@ -180,8 +180,8 @@ w_glock_primary(void)
 #else
 	pl.glock_mag--;
 	//TraceAttack_SetPenetrationPower(0);
-	//TraceAttack_FireBullets(1, pl.origin + pl.view_ofs, 25, [accuracy,accuracy], WEAPON_GLOCK18);
-	TraceAttack_FireBullets(1, pl.origin + pl.view_ofs, Skill_GetValue("plr_9mm_bullet"), [0.01,0.01], WEAPON_GLOCK);
+	TraceAttack_FireBullets(1, pl.origin + pl.view_ofs, 25, [accuracy,accuracy], WEAPON_GLOCK);
+	//TraceAttack_FireBullets(1, pl.origin + pl.view_ofs, Skill_GetValue("plr_9mm_bullet"), [0.01,0.01], WEAPON_GLOCK);
 	if (pl.a_ammo3) {
 		Sound_Play(pl, CHAN_WEAPON, "weapon_glock18.burstfire");
 	} else {
@@ -222,10 +222,6 @@ void
 w_glock_secondary(void)
 {
 	player pl = (player)self;
-
-	if (pl.w_attack_next > 0) {
-		return;
-	}
 
 	if (pl.w_attack_next > 0) {
 		return;
@@ -325,36 +321,37 @@ void
 w_glock_hud(void)
 {
 #ifdef CLIENT
-	vector cross_pos;
-	vector aicon_pos;
+//	vector cross_pos;
+//	vector aicon_pos;
 
-	cross_pos = g_hudmins + (g_hudres / 2) + [-12,-12];
-	aicon_pos = g_hudmins + [g_hudres[0] - 48, g_hudres[1] - 42];
-
-	drawsubpic(
-		cross_pos,
-		[24,24],
-		g_cross_spr,
-		[0.1875,0],
-		[0.1875, 0.1875],
-		[1,1,1],
-		1.0f,
-		DRAWFLAG_NORMAL
-	);
+//	cross_pos = g_hudmins + (g_hudres / 2) + [-12,-12];
+//	aicon_pos = g_hudmins + [g_hudres[0] - 48, g_hudres[1] - 42];
+	SCMA_DrawCrosshair();
+	// drawsubpic(
+	// 	cross_pos,
+	// 	[24,24],
+	// 	g_cross_spr,
+	// 	[0.1875,0],
+	// 	[0.1875, 0.1875],
+	// 	[1,1,1],
+	// 	1.0f,
+	// 	DRAWFLAG_NORMAL
+	// );
 
 	HUD_DrawAmmo1();
 	HUD_DrawAmmo2();
-
-	drawsubpic(
-		aicon_pos,
-		[24,24],
-		g_hud7_spr,
-		[0,72/128],
-		[24/256, 24/128],
-		g_hud_color,
-		pSeat->m_flAmmo2Alpha,
-		DRAWFLAG_ADDITIVE
-	);
+	vector aicon_pos = g_hudmins + [g_hudres[0] - 48, g_hudres[1] - 42];
+	drawsubpic(aicon_pos, [24,24], g_hud7_spr, [48/256,72/256], [24/256, 24/256], g_hud_color, pSeat->m_flAmmo2Alpha, DRAWFLAG_ADDITIVE);
+	// drawsubpic(
+	// 	aicon_pos,
+	// 	[24,24],
+	// 	g_hud7_spr,
+	// 	[0,72/128],
+	// 	[24/256, 24/128],
+	// 	g_hud_color,
+	// 	pSeat->m_flAmmo2Alpha,
+	// 	DRAWFLAG_ADDITIVE
+	// );
 #endif
 }
 

@@ -16,7 +16,7 @@
 
 	{
 		program skybox
-		map $cube:textures/skies/recotta/bg
+		map $cube:textures/skies/ulukai/ulukai
 		map $blackimage
 		map $blackimage
 	}

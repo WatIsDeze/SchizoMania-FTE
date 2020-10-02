@@ -1107,9 +1107,98 @@ textures/next/rusty4
 	}
 }
 
+textures/scma/red_slate_roof_tiles_01
+{
+	diffusemap textures/scma/red_slate_roof_tiles_01.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/scma/wall_01
+{
+	diffusemap textures/scma/wall_01.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/scma/concrete2
+{
+	diffusemap textures/scma/concrete2.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/scma/light_01
+{
+	diffusemap textures/scma/light_01.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/scma/door_rail
+{
+	diffusemap textures/scma/door_rail.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/scma/floor_tiles_09
+{
+	diffusemap textures/scma/floor_tiles_09.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/scma/tile01
+{
+	diffusemap textures/scma/tile01.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/scma/concrete3
+{
+	diffusemap textures/scma/concrete3.tga
+	
+	{
+		map $diffuse
+	}
+}
+
+textures/scma/concrete6
+{
+	diffusemap textures/scma/concrete6.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/scma/grass_02
+{
+	diffusemap textures/scma/grass_02.tga
+
+	{
+		map $diffuse
+	}
+}
+
 textures/scma/sand_01
 {
-    qer_editorimage textures/scma/sand_01.tga
 	diffusemap textures/scma/sand_01.tga
 
 	{
@@ -1117,9 +1206,243 @@ textures/scma/sand_01
 	}
 }
 
-textures/scma/window
+textures/scma/wall_03
 {
-	diffusemap textures/scma/window.tga
+	diffusemap textures/scma/wall_03.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/scma/wall_01_bricks
+{
+	diffusemap textures/scma/wall_01_bricks.tga
+	diffusemap textures/scma/wall_01_bricks_normal.tga
+	{
+		map $diffuse
+	}
+}
+
+textures/scma/tilesplain0119
+{
+	diffusemap textures/scma/tilesplain0119.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/scma/wall_04
+{
+	diffusemap textures/scma/wall_04.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/scma/step02
+{
+	diffusemap textures/scma/step02.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/scma/floor_tiles_08
+{
+	diffusemap textures/scma/floor_tiles_08.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/scma/wood_01
+{
+	diffusemap textures/scma/wood_01.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/scma/woodfloor01
+{
+	diffusemap textures/scma/woodfloor01.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/scma/planks_dirty_greenish
+{
+	diffusemap textures/scma/planks_dirty_greenish.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/scma/metal_a2
+{
+	diffusemap textures/scma/metal_a2.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/scma/step01
+{
+	diffusemap textures/scma/step01.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/scma/step03
+{
+	diffusemap textures/scma/step03.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/scma/carpet_01
+{
+	diffusemap textures/scma/carpet_01.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/scma/concrete1w
+{
+	diffusemap textures/scma/concrete1w.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/scma/light-switch_01
+{
+	diffusemap textures/scma/light-switch_01.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/scma/glass_01
+{
+	diffusemap textures/scma/glass_01.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/scma/vent
+{
+	diffusemap textures/scma/vent.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/scma/floor_tiles_06
+{
+	diffusemap textures/scma/floor_tiles_06.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/scma/grass_01
+{
+	diffusemap textures/scma/grass_01.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/scma/planks_dirty_blackish
+{
+	diffusemap textures/scma/planks_dirty_blackish.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/scma/concrete4
+{
+	diffusemap textures/scma/concrete4.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/scma/concrete5
+{
+	diffusemap textures/scma/concrete5.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/scma/ceiling_01
+{
+	diffusemap textures/scma/ceiling_01.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/scma/planks_blue
+{
+	diffusemap textures/scma/planks_blue.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/scma/tile02
+{
+	diffusemap textures/scma/tile02.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/scma/electrical-outlet
+{
+	diffusemap textures/scma/electrical-outlet.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/scma/door_texture_2
+{
+	diffusemap textures/scma/door_texture_2.tga
 
 	{
 		map $diffuse
@@ -1144,7 +1467,7 @@ textures/skies/ulukai
 	nomipmaps
 
 	{
-		map $cube:textures/skies/recotta/bg
+		map $cube:textures/skies/ulukai/ulukai
 		map $blackimage
 		map $blackimage
 	}

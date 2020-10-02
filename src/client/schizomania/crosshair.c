@@ -80,11 +80,11 @@ SCMA_DrawSimpleCrosshair(void)
 }
 
 /*
-=================
+=======================
 HUD_DrawScope
 
 Tries to draw a scope whenever viewzoom < 1.0f
-=================
+=======================
 */
 void
 SCMA_DrawScope(void)
@@ -93,7 +93,7 @@ SCMA_DrawScope(void)
 	static float scope_offset;
 	static float scope_scale;
 
-	static void Cstrike_ScopePic(vector pos, vector sz, string img) {
+	static void SCMA_ScopePic(vector pos, vector sz, string img) {
 		drawpic((pos * scope_scale) + [scope_offset, 0], img, sz * scope_scale, [1,1,1], 1.0f);
 	}
 
@@ -106,14 +106,14 @@ SCMA_DrawScope(void)
 	scope_offset = g_hudmins[0] + (g_hudres[0] / 2) - ((640 * scope_scale) / 2);
 
 	// Type 1 Border... more coming soon?
-	Cstrike_ScopePic([0,0], [192,112], "sprites/top_left.spr_0.tga");
-	Cstrike_ScopePic([192,0], [256,112], "sprites/top.spr_0.tga");
-	Cstrike_ScopePic([448,0], [192,112], "sprites/top_right.spr_0.tga");
-	Cstrike_ScopePic([0,112], [192,256], "sprites/left.spr_0.tga");
-	Cstrike_ScopePic([448,112], [192,256], "sprites/right.spr_0.tga");
-	Cstrike_ScopePic([0,368], [192,112], "sprites/bottom_left.spr_0.tga");
-	Cstrike_ScopePic([192,368], [256,112], "sprites/bottom.spr_0.tga");
-	Cstrike_ScopePic([448,368], [192,112], "sprites/bottom_right.spr_0.tga");
+	SCMA_ScopePic([0,0], [192,112], "sprites/top_left.spr_0.tga");
+	SCMA_ScopePic([192,0], [256,112], "sprites/top.spr_0.tga");
+	SCMA_ScopePic([448,0], [192,112], "sprites/top_right.spr_0.tga");
+	SCMA_ScopePic([0,112], [192,256], "sprites/left.spr_0.tga");
+	SCMA_ScopePic([448,112], [192,256], "sprites/right.spr_0.tga");
+	SCMA_ScopePic([0,368], [192,112], "sprites/bottom_left.spr_0.tga");
+	SCMA_ScopePic([192,368], [256,112], "sprites/bottom.spr_0.tga");
+	SCMA_ScopePic([448,368], [192,112], "sprites/bottom_right.spr_0.tga");
 
 	// Rect borders left and right
 	if (scope_offset > 0) {

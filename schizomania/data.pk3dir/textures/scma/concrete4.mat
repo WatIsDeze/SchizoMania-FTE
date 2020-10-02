@@ -1,0 +1,10 @@
+{
+	diffusemap textures/scma/concrete4.tga
+	normalmap textures/scma/concrete4_normal.tga
+
+	{
+		program lightmapped
+		map $diffuse
+		map $normalmap
+	}
+}

@@ -1,0 +1,10 @@
+{
+	diffusemap textures/scma/planks_blue.tga
+	normalmap textures/scma/planks_blue_normal.tga
+
+	{
+		program lightmapped
+		map $diffuse
+		map $normalmap
+	}
+}

@@ -1,0 +1,10 @@
+{
+	diffusemap textures/scma/ceiling_01.tga
+    normalmap textures/scma/ceiling_01_normal.tga
+
+	{
+		program lightmapped
+		map $diffuse
+		map $normalmap
+	}
+}

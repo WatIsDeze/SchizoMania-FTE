@@ -158,3 +158,6 @@ sv_cheats 1
 /cl_thirdperson 1
 /cl_thirdperson 0
 map test_doors
+map crossfire
+map crossfire
+map crossfire
