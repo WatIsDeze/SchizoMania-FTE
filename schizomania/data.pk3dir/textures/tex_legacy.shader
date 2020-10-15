@@ -499,6 +499,21 @@ textures/edit/edit_2
 		map $lightmap
 	}
 }
+textures/glass/glass_01
+{
+    surfaceParm glass
+    surfaceParm trans
+    surfaceParm alphashadow
+    cull none
+
+    qer_editorImage "textures/glass/glass_01.tga"
+    {
+        map "textures/glass/glass_01.tga"
+        map "textures/sfx/glass_01_normal.tga"
+        map $reflectcube
+        blendFunc GL_ONE GL_ONE
+    }
+}
 textures/liquid/water1
 {
 	qer_editorImage "textures/liquid/water5.tga"
@@ -1559,41 +1574,6 @@ textures/skies/yukongold
 		map $blackimage
 		map $cube:textures/skies/yukongold/bg
 		map $cube:textures/skies/yukongold/fg
-	}
-}
-
-textures/sky/sky_normal
-{
-q3map_lightmapFilterRadius 0 8
-q3map_sunExt 5 6 8 450 315 90 3 32
-q3map_skyLight 75 6
-surfaceparm sky
-surfaceparm noimpact
-surfaceparm nolightmap
-skyparms textures/sky/sky_normal.tga 512 -
-nopicmip
-nomipmaps
-{
-map textures/sky/sky_normall.tga
-tcMod scroll 0.0015 -0.003
-rgbGen identityLighting
-}
-}
-textures/sky/sky
-{
-	qer_editorImage textures/skies/smudge.tga
-	skyParms - 256 -
-
-	surfaceParm sky
-	surfaceParm noimpact
-	surfaceParm nolightmap
-	surfaceParm nodlight
-	noPicMip
-	nomipmaps
-	{
-		map $cube:textures/skies/smudge/bg
-		map $blackimage
-		map $blackimage
 	}
 }
 

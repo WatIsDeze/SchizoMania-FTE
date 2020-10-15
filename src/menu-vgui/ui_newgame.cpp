@@ -28,7 +28,10 @@ void UI_NewGame_Show ( void )
 
 	static void NewGame_Play ( void ) {	
 		// TODO: Load in the proper chapter map.
-		localcmd( "maxplayers 1\ncoop 0\nmap test_sphere\n" );
+		localcmd("stopmusic\n");
+		//localcmd("set skill 1; maxplayers 1\n");
+		localcmd( "maxplayers 1\ncoop 0\n"); 
+		localcmd( "map test_sphere\n" );
 		winNewGame.Hide();
 	}
 	static void NewGame_Cancel ( void ) {

@@ -43,7 +43,7 @@ cvar_init(void)
 	localcmd("seta scr_conalpha 1\n");
 	localcmd("seta cl_idlefps 0\n");
 	localcmd("seta allow_download_packages 0\n");
-	localcmd("seta r_shadow_realtime_dlight 1\n");
+	localcmd("seta r_shadow_realtime_dlight 0\n");
 	localcmd("seta gl_mindist 4\n"); // Thanks Valve for v_shotgun.mdl
 	localcmd("seta _pext_infoblobs 1\n");
 	
@@ -96,6 +96,8 @@ m_init(void)
 
 	registercommand("menu_customgame");
 	registercommand("map_background");
+	registercommand("menu_musicstart");
+
 	font_console = loadfont("font", "", "12", -1);
 	font_label = loadfont("label", "gfx/shell/mssansserif.ttf", "10 12 14", -1);
 	font_arial = loadfont("label", "gfx/shell/arial.ttf", "14 11 12", -1);
@@ -122,7 +124,7 @@ m_init(void)
 	Strings_Init();
 	g_initialized = TRUE;
 
-	if (cvar_string("game") != "valve") {
+	if (cvar_string("gameinfo_gamedir") != "valve") {
 		m_intro_skip();
 		Music_MenuStart();
 	}
@@ -184,16 +186,25 @@ m_draw(vector screensize)
 
 	g_background = cvar("_background");
 
+	/* make sure input carries over when a map background is active */
 	if (g_background) {
-		setkeydest(KEY_MENU);
-		setmousetarget(TARGET_MENU);
-		setcursormode(TRUE, "gfx/cursor");
+		if (getkeydest() != KEY_MENU) {
+			setkeydest(KEY_MENU);
+			setmousetarget(TARGET_MENU);
+			setcursormode(TRUE, "gfx/cursor");
+		}
 	}
 
 	/* to prevent TCP timeouts */
 	menu_chatrooms_keepalive();
 
 	if (!g_active && !g_background) {
+		/* make sure we're redirecting input when the background's gone */
+		if (getkeydest() != KEY_GAME) {
+			setkeydest(KEY_GAME);
+			setmousetarget(TARGET_CLIENT);
+			setcursormode(FALSE);
+		}
 		return;
 	}
 
@@ -298,6 +309,9 @@ m_consolecommand(string cmd)
 {
 	tokenize(cmd);
 	switch (argv(0)) {
+		case "menu_musicstart":
+			Music_MenuStart();
+			break;
 		case "menu_musictrack":
 			Music_ParseTrack(argv(1));
 			break;

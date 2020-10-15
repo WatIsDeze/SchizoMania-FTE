@@ -54,15 +54,12 @@ CModList::Draw(void)
 	drawfill([g_menuofs[0] + m_x, g_menuofs[1] + m_y], [m_size[0], m_size[1]], 
 			 [0,0,0], 1.0f);
 
-	visible = floor(m_size[1] / 29) + 1;
+	visible = floor(m_size[1] / 29);
 	visible = bound(0, visible, gameinfo_count);
 	pos = m_y;
 
-	for (int i = m_scroll; i < (visible + m_scroll); i++) {
+	for (int i = m_scroll; i <= (visible + m_scroll); i++) {
 		vector colo;
-		if (games[i].gamedir == GAME_DIR) {
-			continue;
-		}
 		if (m_selected == i) {
 			colo = ML_COL_2;
 			drawfill([g_menuofs[0] + m_x, g_menuofs[1] + pos], [m_size[0], 29], 
@@ -129,16 +126,13 @@ CModList::Input(float type, float x, float y, float devid)
 	int visible;
 	int pos[2];
 
-	visible = floor(m_size[1] / 29) + 1;
+	visible = floor(m_size[1] / 29);
 	visible = bound(0, visible, gameinfo_count);
 
 	pos[0] = m_x;
 	pos[1] = m_y;
 
-	for (int i = m_scroll; i < (visible + m_scroll); i++) {
-		if (games[i].gamedir == GAME_DIR) {
-			continue;
-		}
+	for (int i = m_scroll; i <= (visible + m_scroll); i++) {
 		if (Util_CheckMouse(pos[0], pos[1], m_size[0], 29)) {
 			if (type == IE_KEYDOWN) {
 				if (x == K_MOUSE1) {

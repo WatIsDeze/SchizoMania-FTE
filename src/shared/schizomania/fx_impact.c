@@ -58,10 +58,10 @@ FX_Impact(int iType, vector vecPos, vector vNormal)
 		Decals_Place(vecPos, sprintf("{break%d", floor(random(1,4))));
 		break;
 	case IMPACT_MELEE:
-		Decals_Place(vecPos, sprintf("{shot%d", floor(random(1,6))));
+		Decals_Place(vecPos, sprintf("decals/bullet.tga", floor(random(1,6))));
 		break;
 	default:
-		Decals_Place(vecPos, sprintf("{bigshot%d", floor(random(1,6))));
+		Decals_Place(vecPos, sprintf("decals/bullet.tga", floor(random(1,6))));
 		break;
 	}
 
