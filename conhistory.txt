@@ -161,3 +161,15 @@ map test_doors
 map crossfire
 map crossfire
 map crossfire
+/map test_doors
+map demo01
+noclip
+god
+sv_cheats 1
+map demo01
+god
+noclip
+noclip
+map demo01
+map demo01
+map demo01

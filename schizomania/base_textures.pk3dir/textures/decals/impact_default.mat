@@ -1,0 +1,9 @@
+{
+	polygonOffset 1
+	surfaceParm nodlight
+	{
+		program unlit
+		map "textures/decals/impact_default.tga"
+		blendfunc GL_ZERO GL_ONE_MINUS_SRC_COLOR
+	}
+}

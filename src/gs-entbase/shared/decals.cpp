@@ -60,11 +60,9 @@ decal::ReadEntity(void)
 
 	size = drawgetimagesize(m_strTexture);
 
-	// <SCMA> Don't bother, just do these decals on all bsp versions.
-	// if (serverkeyfloat("*bspversion") == 30) {
-	// 	BuildShader();
-	// }
-	BuildShader();
+	if (serverkeyfloat("*bspversion") == 30) {
+		BuildShader();
+	}
 
 	makevectors(angles);
 	float surf = getsurfacenearpoint(world, origin);
@@ -152,11 +150,9 @@ decal::Place(vector org, string dname)
 #else
 	size = drawgetimagesize(m_strTexture);
 
-	// <SCMA> Don't bother, just do these decals on all bsp versions.
-	// if (serverkeyfloat("*bspversion") == 30) {
-	// 	BuildShader();
-	// }
-	BuildShader();
+	if (serverkeyfloat("*bspversion") == 30) {
+		BuildShader();
+	}
 
 	makevectors(angles);
 	float surf = getsurfacenearpoint(world, origin);
@@ -218,10 +214,9 @@ decal Decals_Next(vector pos)
 /* Generalized Decal Placing Function */
 void Decals_Place(vector pos, string dname)
 {
-	// <SCMA> Don't bother, just do these decals on all bsp versions.
-	// if (serverkeyfloat("*bspversion") != 30) {
-	// 	return;
-	// }
+	if (serverkeyfloat("*bspversion") != 30) {
+		return;
+	}
 
 	decal x = Decals_Next(pos);
 	x.Place(pos, dname);

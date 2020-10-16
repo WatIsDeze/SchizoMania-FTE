@@ -1,0 +1,10 @@
+{
+	diffusemap textures/nieb/clone/concrete05.jpg
+	normalmap textures/nieb/clone/concrete05_normal.jpg
+
+	{
+		program lightmapped
+		map $diffuse
+		map $normalmap
+	}
+}

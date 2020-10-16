@@ -92,11 +92,10 @@ infodecal::SpawnKey(string strKey, string strValue)
 void
 infodecal::infodecal(void)
 {
-	// <SCMA> We want decals in all bsp v.
-	// if (serverkeyfloat("*bspversion") != 30) {
-	// 	remove(self);
-	// 	return;
-	// }
+	if (serverkeyfloat("*bspversion") != 30) {
+		remove(self);
+		return;
+	}
 
 	CBaseTrigger::CBaseTrigger();
 }
