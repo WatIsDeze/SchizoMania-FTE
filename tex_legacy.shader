@@ -3691,6 +3691,8 @@ textures/schizomania/game_data.pk3dir/textures/skies/ulukai
 	surfaceParm nodlight
 
 	vmap_skylight 800 4
+	vmap_lightrgb .8 .4 .1
+	vmap_sunext	1 1 0.8 60 30 90 2 3
 	//vmap_sunExt 1 0.084 0.084 140 -35 25 3 16
 	nopicmip
 	nomipmaps
