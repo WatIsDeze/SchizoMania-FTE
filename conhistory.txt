@@ -189,3 +189,24 @@ map demo01
 noclip
 noclip
 vid_restart
+ls
+/map test_lightstyles
+map test_lightstyles
+/r_editlights
+/r_editlights 1
+/r_editlights_edit 1
+/r_editlights_clone
+/r_editlights_spawn
+/r_editlights_spawn
+/r_editlights_spawn
+phy_
+serverinfo phy_gravity
+serverinfo phy_gravity 950
+serverinfo phy_maxspeed 120
+map demo01
+serverinfo phy_maxspeed 120
+serverinfo phy_maxspeed 180
+phy_maxspeed 165
+serverinfo phy_maxspeed 165
+serverinfo phy_maxspeed 145
+map test_lightstyles

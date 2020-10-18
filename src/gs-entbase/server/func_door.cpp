@@ -18,7 +18,6 @@
 "targetname"    Name
 "target"        Target when triggered.
 "killtarget"    Target to kill when triggered.
-"angle"			Direction in which this door has to move.
 "speed"         Movement speed in game-units per second.
 "lip"           Sets how many units are still visible after a door moved.
 "delay"         Time until triggering target.

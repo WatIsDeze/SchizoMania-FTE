@@ -2883,7 +2883,7 @@ nieb/clone/brick08
 "light" "125"
 "radius" "384"
 "_color" "0.9 0.8 0.5"
-"style" "9"
+"style" "10"
 "targetname" "light_path_a_0"
 "spawnflags" "1"
 }

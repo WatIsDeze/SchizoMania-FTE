@@ -35,19 +35,20 @@ PMove_Init(void) {
 	localcmd("serverinfo phy_friction 4\n");
 	localcmd("serverinfo phy_edgefriction 1\n");
 	localcmd("serverinfo phy_stopspeed 75\n");
-	localcmd("serverinfo phy_gravity 800\n");
+	localcmd("serverinfo phy_gravity 950\n");			// Was 800
 	localcmd("serverinfo phy_airaccelerate 10\n");
 	localcmd("serverinfo phy_wateraccelerate 8\n");
 
+// <SCMA> Uses this one now also.
 #ifdef VALVE
 	localcmd("serverinfo phy_accelerate 8\n");
-	localcmd("serverinfo phy_maxspeed 270\n");
+	localcmd("serverinfo phy_maxspeed 225\n");
 #elif CSTRIKE
 	localcmd("serverinfo phy_accelerate 4\n");
 	localcmd("serverinfo phy_maxspeed 250\n");
 #else
-	localcmd("serverinfo phy_accelerate 8\n");
-	localcmd("serverinfo phy_maxspeed 270\n");
+	localcmd("serverinfo phy_accelerate 4\n");	// Was 8
+	localcmd("serverinfo phy_maxspeed 225\n");	// Was 270
 #endif
 
 #endif
