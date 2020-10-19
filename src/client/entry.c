@@ -68,7 +68,7 @@ CSQC_Init(float apilevel, string enginename, float engineversion)
 	precache_model("sprites/muzzleflash3.spr");
 
 	/* VOX */
-	Sound_InitVOX();
+	Vox_Init();
 
 	precache_sound("common/wpn_hudon.wav");
 	precache_sound("common/wpn_hudoff.wav");
@@ -341,6 +341,7 @@ CSQC_UpdateView(float w, float h, float focus)
 			Scores_Draw();
 		} else if (focus == TRUE) {
 			GameText_Draw();
+			PointMessage_Draw();
 
 			if (getplayerkeyvalue(player_localnum, "*spec") != "0") {
 				HUD_DrawSpectator();
@@ -367,7 +368,7 @@ CSQC_UpdateView(float w, float h, float focus)
 	DSP_UpdateListener();
 	pSeat = (void*)0x70000000i;
 
-	Sound_ProcessWordQue();
+	Vox_Update();
 }
 
 /*
@@ -643,7 +644,7 @@ CSQC_ConsoleCommand(string sCMD)
 		GameMessage_Setup(argv(1));
 		break;
 	case "vox_test":
-		Sound_PlayVOX(sCMD);
+		Vox_Play(sCMD);
 		break;
 	case "+attack2":
 		pSeat->m_iInputAttack2 = TRUE;
@@ -884,5 +885,8 @@ Incase you need to free something
 void
 CSQC_Shutdown(void)
 {
-	
+	Sentences_Shutdown();
+	Titles_Shutdown();
+	Sound_Shutdown();
+	Vox_Shutdown();
 }

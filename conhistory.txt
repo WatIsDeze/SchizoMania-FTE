@@ -210,3 +210,4 @@ phy_maxspeed 165
 serverinfo phy_maxspeed 165
 serverinfo phy_maxspeed 145
 map test_lightstyles
+quit
