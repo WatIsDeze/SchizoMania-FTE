@@ -34,19 +34,19 @@ TraceAttack_FireSingle(vector vecPos, vector vAngle, int iDamage, int iWeapon)
 	}
 
 	if (trace_ent.takedamage == DAMAGE_YES) {
-// #ifdef CSTRIKE
+#ifdef CSTRIKE
 		/* modify the damage based on the location */
 		switch (trace_surface_id) {
 		case BODY_HEAD:
 			/* the helmet is one power house */
-			// if (trace_ent.items & ITEM_HELMET) {
-			// 	iDamage = 0;
-			// 	sound(self, CHAN_ITEM, "weapons/ric_metal-2.wav", 1, ATTN_IDLE);
-			// 	trace_ent.items &= ~ITEM_HELMET;
-			// 	return;
-			// } else {
+			if (trace_ent.items & ITEM_HELMET) {
+				iDamage = 0;
+				sound(self, CHAN_ITEM, "weapons/ric_metal-2.wav", 1, ATTN_IDLE);
+				trace_ent.items &= ~ITEM_HELMET;
+				return;
+			} else {
 				iDamage *= 4;
-			//}
+			}
 			break;
 		case BODY_STOMACH:
 			iDamage *= 0.9;
@@ -56,12 +56,12 @@ TraceAttack_FireSingle(vector vecPos, vector vAngle, int iDamage, int iWeapon)
 			iDamage *= 0.4;
 			break;
 		}
-// #else
-// 		/* only headshots count in HL */
-// 		if (trace_surface_id == BODY_HEAD) {
-// 			iDamage *= 3;
-// 		}
-// #endif
+#else
+		/* only headshots count in HL */
+		if (trace_surface_id == BODY_HEAD) {
+			iDamage *= 3;
+		}
+#endif
 		Damage_Apply(trace_ent, self, iDamage, iWeapon, DMG_BULLET);
 	}
 
@@ -116,14 +116,14 @@ TraceAttack_FireBullets(int iShots, vector vecPos, int iDamage, vector vecSpread
 
 	while (iShots > 0) {
 		vDir = aim(self, 100000);
-// #ifndef CSTRIKE
-// 		vDir += random(-1,1) * vecSpread[0] * v_right;
-// 		vDir += random(-1,1) * vecSpread[1] * v_up;
-// #else
+#ifndef CSTRIKE
+		vDir += random(-1,1) * vecSpread[0] * v_right;
+		vDir += random(-1,1) * vecSpread[1] * v_up;
+#else
 		player pl = (player)self;
 
 		/* weapons have already applied their multiplier... so attempt this */
-		int multiplier = pl.scma_shotmultiplier - iShots;
+		int multiplier = pl.cs_shotmultiplier - iShots;
 		float frand = (multiplier / 6);
 
 		/* shoddy attempt at spray patterns */
@@ -134,7 +134,7 @@ TraceAttack_FireBullets(int iShots, vector vecPos, int iDamage, vector vecSpread
 
 		vDir += frand * vecSpread[0] * v_right;
 		vDir += (vecSpread[1] * v_up) * 2;
-// #endif
+#endif
 		TraceAttack_FireSingle(vecPos, vDir, iDamage, iWeapon);
 		iShots--;
 	}
