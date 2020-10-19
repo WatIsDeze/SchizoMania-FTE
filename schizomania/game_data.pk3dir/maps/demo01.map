@@ -1967,7 +1967,7 @@
 ( -1536 -1760 64 ) ( -1536 -1760 -64 ) ( -1536 -1952 64 ) nieb/sand02 [ 0 1 0 112 ] [ -0 -0 -1 0 ] -0 0.25 0.25 0 0 0
 ( 808 -2048 -128 ) ( 1328 -2048 -128 ) ( 808 -1856 -128 ) nieb/sand02 [ 1 0 0 80 ] [ -0 -1 -0 0 ] -0 0.25 0.25 0 0 0
 ( 3072 2496 -64 ) ( 3072 2496 64 ) ( 3592 2496 -64 ) nieb/sand02 [ 1 0 0 80 ] [ -0 -0 -1 0 ] -0 0.25 0.25 0 0 0
-( -1944 -2348 -64 ) ( -1944 -2156 -64 ) ( -1944 -2348 64 ) nieb/sand02 [ 0 1 0 112 ] [ -0 -0 -1 0 ] -0 0.25 0.25 0 0 0
+( -1928 -2348 -64 ) ( -1928 -2156 -64 ) ( -1928 -2348 64 ) nieb/sand02 [ 0 1 0 112 ] [ -0 -0 -1 0 ] -0 0.25 0.25 0 0 0
 }
 // brush 218
 {
@@ -2800,6 +2800,7 @@
 "light" "125"
 "radius" "384"
 "_color" "0.9 0.8 0.5"
+"style" "11"
 }
 // entity 5
 {
@@ -2819,8 +2820,22 @@
 "targetname" "light_path_a_1"
 "spawnflags" "1"
 "style" "10"
+"pattern" "aaghjkzaaerstu"
 }
 // entity 7
+{
+"classname" "light"
+"origin" "-1647.944092 2478.028076 64.000000"
+"light" "125"
+"radius" "384"
+"_color" "0.9 0.8 0.5"
+"style" "6"
+"targetname" "light_path_a_0"
+"spawnflags" "1"
+"target" "light_path_a_1"
+"pattern" "ghjkzaaerstuaa"
+}
+// entity 8
 {
 "classname" "trigger_once"
 "targetname" "trig_once_park_a"
@@ -2835,7 +2850,7 @@
 ( -1928 2400 -64 ) ( -1928 2696 -64 ) ( -1928 2400 184 ) common/trigger [ 0 1 0 0 ] [ -0 -0 -1 0 ] -0 0.5 0.5 0 0 0
 }
 }
-// entity 8
+// entity 9
 {
 "classname" "monstermaker"
 "origin" "-1480.000000 2608.000000 24.000000"
@@ -2845,7 +2860,7 @@
 "angle" "-178.181427"
 "target" "mm_path_a1"
 }
-// entity 9
+// entity 10
 {
 "classname" "monstermaker"
 "origin" "-1480.000000 2496.000000 24.000000"
@@ -2855,7 +2870,7 @@
 "angle" "173.753098"
 "target" "light_path_a_0"
 }
-// entity 10
+// entity 11
 {
 "classname" "monster_zombie"
 "origin" "-3824.000000 -4824.000000 -56.000000"
