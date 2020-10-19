@@ -1,0 +1,10 @@
+{
+	diffusemap textures/nieb/autumn/face0b.jpg
+    normalmap textures/nieb/autumn/face0b_normal.jpg
+
+	{
+		program lightmapped
+		map $diffuse
+		map $normalmap
+	}
+}

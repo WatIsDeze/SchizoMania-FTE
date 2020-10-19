@@ -1,0 +1,10 @@
+{
+	diffusemap textures/nieb/clock_face.jpg
+    normalmap textures/nieb/clock_face_normal.jpg
+
+	{
+		program lightmapped
+		map $diffuse
+		map $normalmap
+	}
+}

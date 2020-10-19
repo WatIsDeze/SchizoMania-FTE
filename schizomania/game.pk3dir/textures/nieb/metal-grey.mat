@@ -1,0 +1,10 @@
+{
+	diffusemap textures/nieb/metal-grey.jpg
+    normalmap textures/nieb/metal-grey_normal.jpg
+
+	{
+		program lightmapped
+		map $diffuse
+		map $normalmap
+	}
+}
