@@ -2800,6 +2800,7 @@
 "light" "125"
 "radius" "384"
 "_color" "0.9 0.8 0.5"
+"style" "11"
 }
 // entity 5
 {
@@ -2818,8 +2819,8 @@
 "_color" "0.9 0.8 0.5"
 "targetname" "light_path_a_1"
 "spawnflags" "1"
-"style" "2"
-"pattern" "zklamnfshaijaaa"
+"style" "10"
+"pattern" "aaghjkzaaerstu"
 }
 // entity 7
 {
@@ -2828,10 +2829,11 @@
 "light" "125"
 "radius" "384"
 "_color" "0.9 0.8 0.5"
+"style" "6"
 "targetname" "light_path_a_0"
 "spawnflags" "1"
 "target" "light_path_a_1"
-"pattern" "aaajiahsfnmalkz"
+"pattern" "ghjkzaaerstuaa"
 }
 // entity 8
 {

@@ -1,5 +1,5 @@
 #pragma target fte
-#pragma progs_dat  "../../../schizomania/data.pk3dir/progs.dat"
+#pragma progs_dat  "../../../schizomania/game.pk3dir/progs.dat"
 
 #define QWSSQC
 #define SERVER

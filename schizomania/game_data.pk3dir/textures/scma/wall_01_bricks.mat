@@ -1,9 +1,0 @@
-{
-	diffusemap textures/scma/wall_01_bricks.tga
-	diffusemap textures/scma/wall_01_bricks_normal.tga
-	{
-		program lightmapped
-		map $diffuse
-		map $normalmap
-	}
-}

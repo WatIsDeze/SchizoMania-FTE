@@ -28,86 +28,8 @@ float GamePMove_Maxspeed(player target)
 
 	// switch (target.activeweapon)
 	// {
-	// case WEAPON_M3:
-	// 	spd *= 230/250;
-	// 	break;
-	// case WEAPON_XM1014:
-	// 	spd *= 240/250;
-	// 	break;
-	// case WEAPON_MP5:
-	// 	spd *= 250/250;
-	// 	break;
-	// case WEAPON_P90:
-	// 	spd *= 245/250;
-	// 	break;
-	// case WEAPON_UMP45:
-	// 	spd *= 250/250;
-	// 	break;
-	// case WEAPON_MAC10:
-	// 	spd *= 250/250;
-	// 	break;
-	// case WEAPON_TMP:
-	// 	spd *= 250/250;
-	// 	break;
-	// case WEAPON_AK47:
-	// 	spd *= 221/250;
-	// 	break;
-	// case WEAPON_SG552:
-	// 	spd *= 235/250;
-	// 	break;
-	// case WEAPON_M4A1:
-	// 	spd *= 230/250;
-	// 	break;
-	// case WEAPON_AUG:
-	// 	spd *= 240/250;
-	// 	break;
-	// case WEAPON_SCOUT:
-	// 	spd *= 260/250;
-	// 	break;
-	// case WEAPON_AWP:
-	// 	spd *= 210/250;
-	// 	break;
-	// case WEAPON_G3SG1:
-	// 	spd *= 210/250;
-	// 	break;
-	// case WEAPON_SG550:
-	// 	spd *= 210/250;
-	// 	break;
-	// case WEAPON_PARA:
-	// 	spd *= 220/250;
-	// 	break;
-	// case WEAPON_USP45:
-	// 	spd *= 250/250;
-	// 	break;
-	// case WEAPON_GLOCK18:
-	// 	spd *= 250/250;
-	// 	break;
-	// case WEAPON_DEAGLE:
-	// 	spd *= 250/250;
-	// 	break;
-	// case WEAPON_P228:
-	// 	spd *= 250/250;
-	// 	break;
-	// case WEAPON_ELITES:
-	// 	spd *= 250/250;
-	// 	break;
-	// case WEAPON_FIVESEVEN:
-	// 	spd *= 250/250;
-	// 	break;
-	// case WEAPON_KNIFE:
-	// 	spd *= 250/250;
-	// 	break;
-	// case WEAPON_HEGRENADE:
-	// 	spd *= 250/250;
-	// 	break;
-	// case WEAPON_FLASHBANG:
-	// 	spd *= 250/250;
-	// 	break;
-	// case WEAPON_SMOKEGRENADE:
-	// 	spd *= 250/250;
-	// 	break;
-	// case WEAPON_C4BOMB:
-	// 	spd *= 250/250;
+	// case WEAPON_XX:
+	// 	spd *= 144/165;
 	// 	break;
 	// default:
 	// }

@@ -1,8 +1,0 @@
-{
-	diffusemap textures/nieb/base/base1.tga
-	{
-		program defaultwall
-		map $diffuse
-		map $lightmap
-	}
-}

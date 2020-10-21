@@ -1,8 +1,0 @@
-{
-    diffusemap textures/common/full_clip.tga // silly shader, use weapclip instead
-    {
-        qer_trans 0.40
-        surfaceparm nodraw
-        surfaceparm playerclip
-    }
-}

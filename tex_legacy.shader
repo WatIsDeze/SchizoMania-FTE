@@ -2391,6 +2391,15 @@ textures/schizomania/assets_free.pk3dir/textures/nieb/grass1
 	}
 }
 
+textures/schizomania/assets_free.pk3dir/textures/mike/grafiti_door1
+{
+	diffusemap textures/mike/grafiti_door1.jpg
+
+	{
+		map $diffuse
+	}
+}
+
 textures/schizomania/base_textures.pk3dir/textures/sfx/reflection
 {
 	polygonOffset 1
@@ -3006,7 +3015,7 @@ textures/schizomania/base_textures.pk3dir/textures/ui/m_lineright
 textures/schizomania/base_textures.pk3dir/textures/decals/impact_wood
 {
 	polygonOffset 1
-	surfaceParm nodlight
+	surfaceParm noshadows
 	{
 		map "textures/decals/impact_wood.tga"
 		blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
@@ -3016,7 +3025,7 @@ textures/schizomania/base_textures.pk3dir/textures/decals/impact_wood
 textures/schizomania/base_textures.pk3dir/textures/decals/impact_metal
 {
 	polygonOffset 1
-	surfaceParm nodlight
+	surfaceParm noshadows
 	{
 		map "textures/decals/impact_metal.tga"
 		blendfunc GL_ZERO GL_ONE_MINUS_SRC_COLOR
@@ -3026,7 +3035,7 @@ textures/schizomania/base_textures.pk3dir/textures/decals/impact_metal
 textures/schizomania/base_textures.pk3dir/textures/decals/impact_glass
 {
 	polygonOffset 1
-	surfaceParm nodlight
+	surfaceParm noshadows
 	{
 		map "textures/decals/impact_glass.tga"
 		blendFunc GL_ONE GL_ONE
@@ -3036,7 +3045,7 @@ textures/schizomania/base_textures.pk3dir/textures/decals/impact_glass
 textures/schizomania/base_textures.pk3dir/textures/decals/impact_default
 {
 	polygonOffset 1
-	surfaceParm nodlight
+	surfaceParm noshadows
 	{
 		map "textures/decals/impact_default.tga"
 		blendfunc GL_ZERO GL_ONE_MINUS_SRC_COLOR
@@ -3046,14 +3055,14 @@ textures/schizomania/base_textures.pk3dir/textures/decals/impact_default
 textures/schizomania/base_textures.pk3dir/textures/decals/impact_tile
 {
 	polygonOffset 1
-	surfaceParm nodlight
+	surfaceParm noshadows
 	{
 		map "textures/decals/impact_tile.tga"
 		blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
 	}
 }
 
-textures/schizomania/game_data.pk3dir/textures/measure/desk
+textures/schizomania/game.pk3dir/textures/measure/desk
 {
 	diffusemap textures/measure/desk.tga
 
@@ -3062,7 +3071,7 @@ textures/schizomania/game_data.pk3dir/textures/measure/desk
 	}
 }
 
-textures/schizomania/game_data.pk3dir/textures/measure/counter
+textures/schizomania/game.pk3dir/textures/measure/counter
 {
 	diffusemap textures/measure/counter.tga
 
@@ -3071,7 +3080,7 @@ textures/schizomania/game_data.pk3dir/textures/measure/counter
 	}
 }
 
-textures/schizomania/game_data.pk3dir/textures/measure/wall128b
+textures/schizomania/game.pk3dir/textures/measure/wall128b
 {
 	diffusemap textures/measure/wall128b.tga
 
@@ -3080,7 +3089,7 @@ textures/schizomania/game_data.pk3dir/textures/measure/wall128b
 	}
 }
 
-textures/schizomania/game_data.pk3dir/textures/measure/wall64a
+textures/schizomania/game.pk3dir/textures/measure/wall64a
 {
 	diffusemap textures/measure/wall64a.tga
 
@@ -3089,12 +3098,12 @@ textures/schizomania/game_data.pk3dir/textures/measure/wall64a
 	}
 }
 
-textures/schizomania/game_data.pk3dir/textures/measure/rail
+textures/schizomania/game.pk3dir/textures/measure/rail
 {
 	diffusemap textures/measure/rail.tga
 }
 
-textures/schizomania/game_data.pk3dir/textures/measure/floor
+textures/schizomania/game.pk3dir/textures/measure/floor
 {
 	diffusemap textures/measure/floor.tga
 
@@ -3103,7 +3112,7 @@ textures/schizomania/game_data.pk3dir/textures/measure/floor
 	}
 }
 
-textures/schizomania/game_data.pk3dir/textures/measure/wall128
+textures/schizomania/game.pk3dir/textures/measure/wall128
 {
 	diffusemap textures/measure/wall128.tga
 
@@ -3112,7 +3121,7 @@ textures/schizomania/game_data.pk3dir/textures/measure/wall128
 	}
 }
 
-textures/schizomania/game_data.pk3dir/textures/measure/door
+textures/schizomania/game.pk3dir/textures/measure/door
 {
 	diffusemap textures/measure/door.tga
 
@@ -3121,7 +3130,7 @@ textures/schizomania/game_data.pk3dir/textures/measure/door
 	}
 }
 
-textures/schizomania/game_data.pk3dir/textures/measure/wall128pl
+textures/schizomania/game.pk3dir/textures/measure/wall128pl
 {
 	diffusemap textures/measure/wall128pl.tga
 
@@ -3130,7 +3139,7 @@ textures/schizomania/game_data.pk3dir/textures/measure/wall128pl
 	}
 }
 
-textures/schizomania/game_data.pk3dir/textures/measure/wall32
+textures/schizomania/game.pk3dir/textures/measure/wall32
 {
 	diffusemap textures/measure/wall32.tga
 
@@ -3139,7 +3148,7 @@ textures/schizomania/game_data.pk3dir/textures/measure/wall32
 	}
 }
 
-textures/schizomania/game_data.pk3dir/textures/measure/ceiling
+textures/schizomania/game.pk3dir/textures/measure/ceiling
 {
 	diffusemap textures/measure/ceiling.tga
 
@@ -3148,7 +3157,7 @@ textures/schizomania/game_data.pk3dir/textures/measure/ceiling
 	}
 }
 
-textures/schizomania/game_data.pk3dir/textures/measure/stairs1
+textures/schizomania/game.pk3dir/textures/measure/stairs1
 {
 	diffusemap textures/measure/stairs1.tga
 
@@ -3157,7 +3166,7 @@ textures/schizomania/game_data.pk3dir/textures/measure/stairs1
 	}
 }
 
-textures/schizomania/game_data.pk3dir/textures/measure/wall128gr
+textures/schizomania/game.pk3dir/textures/measure/wall128gr
 {
 	diffusemap textures/measure/wall128gr.tga
 
@@ -3166,12 +3175,12 @@ textures/schizomania/game_data.pk3dir/textures/measure/wall128gr
 	}
 }
 
-textures/schizomania/game_data.pk3dir/textures/measure/ladder
+textures/schizomania/game.pk3dir/textures/measure/ladder
 {
 	diffusemap textures/measure/ladder.tga
 }
 
-textures/schizomania/game_data.pk3dir/textures/measure/wall64
+textures/schizomania/game.pk3dir/textures/measure/wall64
 {
 	diffusemap textures/measure/wall64.tga
 
@@ -3180,7 +3189,7 @@ textures/schizomania/game_data.pk3dir/textures/measure/wall64
 	}
 }
 
-textures/schizomania/game_data.pk3dir/textures/measure/wall128g
+textures/schizomania/game.pk3dir/textures/measure/wall128g
 {
 	diffusemap textures/measure/wall128g.tga
 
@@ -3189,7 +3198,7 @@ textures/schizomania/game_data.pk3dir/textures/measure/wall128g
 	}
 }
 
-textures/schizomania/game_data.pk3dir/textures/measure/wall128_blend
+textures/schizomania/game.pk3dir/textures/measure/wall128_blend
 {
 	vmap_lightmapMergable
 	qer_editorImage "textures/measure/wall128b.tga"
@@ -3203,7 +3212,7 @@ textures/schizomania/game_data.pk3dir/textures/measure/wall128_blend
 	}
 }
 
-textures/schizomania/game_data.pk3dir/textures/measure/player
+textures/schizomania/game.pk3dir/textures/measure/player
 {
 	diffusemap textures/measure/player.tga
 
@@ -3212,7 +3221,7 @@ textures/schizomania/game_data.pk3dir/textures/measure/player
 	}
 }
 
-textures/schizomania/game_data.pk3dir/textures/glass/glass_01
+textures/schizomania/game.pk3dir/textures/glass/glass_01
 {
     surfaceParm glass
     surfaceParm trans
@@ -3227,7 +3236,7 @@ textures/schizomania/game_data.pk3dir/textures/glass/glass_01
         blendFunc GL_ONE GL_ONE
     }
 }
-textures/schizomania/game_data.pk3dir/textures/liquid/water1
+textures/schizomania/game.pk3dir/textures/liquid/water1
 {
 	qer_editorImage "textures/liquid/water5.tga"
 	sort banner
@@ -3244,7 +3253,7 @@ textures/schizomania/game_data.pk3dir/textures/liquid/water1
 	}
 }
 
-textures/schizomania/game_data.pk3dir/textures/liquid/water2
+textures/schizomania/game.pk3dir/textures/liquid/water2
 {
 	qer_editorImage "textures/liquid/water2.tga"
 	sort banner
@@ -3261,37 +3270,7 @@ textures/schizomania/game_data.pk3dir/textures/liquid/water2
 	}
 }
 
-textures/schizomania/game_data.pk3dir/textures/dev/info_node_air
-{
-	diffusemap textures/dev/info_node_air.tga
-	
-	{
-		map $diffuse
-		blendFunc blend
-	}
-}
-
-textures/schizomania/game_data.pk3dir/textures/dev/info_node
-{
-	diffusemap textures/dev/info_node.tga
-	
-	{
-		map $diffuse
-		blendFunc blend
-	}
-}
-
-textures/schizomania/game_data.pk3dir/textures/dev/scripted_sequence
-{
-	diffusemap textures/dev/scripted_sequence.tga
-	
-	{
-		map $diffuse
-		blendFunc blend
-	}
-}
-
-textures/schizomania/game_data.pk3dir/textures/common/clipvehicle
+textures/schizomania/game.pk3dir/textures/common/clipvehicle
 {
 	qer_editorImage "textures/common/clipvehicle.tga"
 	qer_trans 0.50
@@ -3302,7 +3281,7 @@ textures/schizomania/game_data.pk3dir/textures/common/clipvehicle
 	nomipmaps
 }
 
-textures/schizomania/game_data.pk3dir/textures/common/hitmesh
+textures/schizomania/game.pk3dir/textures/common/hitmesh
 {
 	qer_editorImage "textures/common/hitmesh.tga"
 	surfaceParm nolightmap
@@ -3314,7 +3293,7 @@ textures/schizomania/game_data.pk3dir/textures/common/hitmesh
 	nomipmaps
 }
 
-textures/schizomania/game_data.pk3dir/textures/common/clipglass
+textures/schizomania/game.pk3dir/textures/common/clipglass
 {
 	qer_editorImage "textures/common/clip.tga"
 	qer_trans 0.50
@@ -3324,7 +3303,7 @@ textures/schizomania/game_data.pk3dir/textures/common/clipglass
 	nomipmaps
 }
 
-textures/schizomania/game_data.pk3dir/textures/common/clipplayer
+textures/schizomania/game.pk3dir/textures/common/clipplayer
 {
 	qer_editorImage "textures/common/clipplayer.tga"
 	qer_trans 0.50
@@ -3334,7 +3313,7 @@ textures/schizomania/game_data.pk3dir/textures/common/clipplayer
 	nomipmaps
 }
 
-textures/schizomania/game_data.pk3dir/textures/common/lightgrid
+textures/schizomania/game.pk3dir/textures/common/lightgrid
 {
 	qer_editorImage "textures/common/lightgrid.tga"
 	surfaceParm nodraw
@@ -3347,7 +3326,7 @@ textures/schizomania/game_data.pk3dir/textures/common/lightgrid
 	nomipmaps
 }
 
-textures/schizomania/game_data.pk3dir/textures/common/climb
+textures/schizomania/game.pk3dir/textures/common/climb
 {
 	qer_editorImage "textures/common/climb.tga"
 	qer_trans 0.50
@@ -3358,7 +3337,7 @@ textures/schizomania/game_data.pk3dir/textures/common/climb
 	nomipmaps
 }
 
-textures/schizomania/game_data.pk3dir/textures/common/skyportal
+textures/schizomania/game.pk3dir/textures/common/skyportal
 {
 	qer_editorImage "textures/common/skyportal.tga"
 	surfaceParm noimpact
@@ -3369,7 +3348,7 @@ textures/schizomania/game_data.pk3dir/textures/common/skyportal
 	skyParms - 512 -
 }
 
-textures/schizomania/game_data.pk3dir/textures/common/clipsnow
+textures/schizomania/game.pk3dir/textures/common/clipsnow
 {
 	qer_editorImage "textures/common/clip.tga"
 	qer_trans 0.50
@@ -3379,7 +3358,7 @@ textures/schizomania/game_data.pk3dir/textures/common/clipsnow
 	nomipmaps
 }
 
-textures/schizomania/game_data.pk3dir/textures/common/cushion
+textures/schizomania/game.pk3dir/textures/common/cushion
 {
     diffusemap textures/common/cushion.tga
     {
@@ -3392,7 +3371,7 @@ textures/schizomania/game_data.pk3dir/textures/common/cushion
         surfaceparm nodamage
     }
 }
-textures/schizomania/game_data.pk3dir/textures/common/alpha_0
+textures/schizomania/game.pk3dir/textures/common/alpha_0
 {
 	qer_editorImage "textures/common/alpha_0.tga"
 	vmap_alphaMod volume
@@ -3403,7 +3382,7 @@ textures/schizomania/game_data.pk3dir/textures/common/alpha_0
 	nomipmaps
 }
 
-textures/schizomania/game_data.pk3dir/textures/common/skip
+textures/schizomania/game.pk3dir/textures/common/skip
 {
 	qer_editorImage "textures/common/skip.tga"
 	qer_trans 0.50
@@ -3415,7 +3394,7 @@ textures/schizomania/game_data.pk3dir/textures/common/skip
 	nomipmaps
 }
 
-textures/schizomania/game_data.pk3dir/textures/common/nodraw
+textures/schizomania/game.pk3dir/textures/common/nodraw
 {
 	qer_editorImage "textures/common/nodraw.tga"
 	qer_trans 0.50
@@ -3426,7 +3405,7 @@ textures/schizomania/game_data.pk3dir/textures/common/nodraw
 	nomipmaps
 }
 
-textures/schizomania/game_data.pk3dir/textures/common/alpha_25
+textures/schizomania/game.pk3dir/textures/common/alpha_25
 {
 	qer_editorImage "textures/common/alpha_25.tga"
 	vmap_alphaMod volume
@@ -3437,7 +3416,7 @@ textures/schizomania/game_data.pk3dir/textures/common/alpha_25
 	nomipmaps
 }
 
-textures/schizomania/game_data.pk3dir/textures/common/donotenter
+textures/schizomania/game.pk3dir/textures/common/donotenter
 {
 	qer_editorImage "textures/common/donotenter.tga"
 	qer_trans 0.50
@@ -3450,7 +3429,7 @@ textures/schizomania/game_data.pk3dir/textures/common/donotenter
 	nomipmaps
 }
 
-textures/schizomania/game_data.pk3dir/textures/common/areaportal
+textures/schizomania/game.pk3dir/textures/common/areaportal
 {
 	qer_editorImage "textures/common/areaportal.tga"
 	surfaceParm nodraw
@@ -3461,7 +3440,7 @@ textures/schizomania/game_data.pk3dir/textures/common/areaportal
 	surfaceParm areaportal
 }
 
-textures/schizomania/game_data.pk3dir/textures/common/caulkslime
+textures/schizomania/game.pk3dir/textures/common/caulkslime
 {
 	qer_editorImage "textures/common/caulkslime.tga"
 	qer_trans 0.50
@@ -3472,7 +3451,7 @@ textures/schizomania/game_data.pk3dir/textures/common/caulkslime
 	nomipmaps
 }
 
-textures/schizomania/game_data.pk3dir/textures/common/blank
+textures/schizomania/game.pk3dir/textures/common/blank
 {
 	{
 		map $whiteimage
@@ -3481,7 +3460,7 @@ textures/schizomania/game_data.pk3dir/textures/common/blank
 	}
 }
 
-textures/schizomania/game_data.pk3dir/textures/common/alpha_100
+textures/schizomania/game.pk3dir/textures/common/alpha_100
 {
 	qer_editorImage "textures/common/alpha_100.tga"
 	vmap_alphaMod volume
@@ -3492,7 +3471,7 @@ textures/schizomania/game_data.pk3dir/textures/common/alpha_100
 	nomipmaps
 }
 
-textures/schizomania/game_data.pk3dir/textures/common/origin
+textures/schizomania/game.pk3dir/textures/common/origin
 {
 	qer_editorImage "textures/common/origin.tga"
 	qer_trans 0.50
@@ -3503,7 +3482,7 @@ textures/schizomania/game_data.pk3dir/textures/common/origin
 	nomipmaps
 }
 
-textures/schizomania/game_data.pk3dir/textures/common/hint
+textures/schizomania/game.pk3dir/textures/common/hint
 {
 	qer_editorImage "textures/common/hint.tga"
 	qer_trans 0.50
@@ -3516,7 +3495,7 @@ textures/schizomania/game_data.pk3dir/textures/common/hint
 	nomipmaps
 }
 
-textures/schizomania/game_data.pk3dir/textures/common/terrain
+textures/schizomania/game.pk3dir/textures/common/terrain
 {
 	qer_editorImage "textures/common/terrain.tga"
 	vmap_terrain
@@ -3526,7 +3505,7 @@ textures/schizomania/game_data.pk3dir/textures/common/terrain
 	nomipmaps
 }
 
-textures/schizomania/game_data.pk3dir/textures/common/alpha_75
+textures/schizomania/game.pk3dir/textures/common/alpha_75
 {
 	qer_editorImage "textures/common/alpha_75.tga"
 	vmap_alphaMod volume
@@ -3537,7 +3516,7 @@ textures/schizomania/game_data.pk3dir/textures/common/alpha_75
 	nomipmaps
 }
 
-textures/schizomania/game_data.pk3dir/textures/common/caulkwater
+textures/schizomania/game.pk3dir/textures/common/caulkwater
 {
 	qer_editorImage "textures/common/caulkwater.tga"
 	qer_trans 0.50
@@ -3551,7 +3530,7 @@ textures/schizomania/game_data.pk3dir/textures/common/caulkwater
 	surfaceParm fog
 }
 
-textures/schizomania/game_data.pk3dir/textures/common/blocklight
+textures/schizomania/game.pk3dir/textures/common/blocklight
 {
 	qer_editorImage "textures/common/blocklight.tga"
 	surfaceParm nonsolid
@@ -3559,7 +3538,7 @@ textures/schizomania/game_data.pk3dir/textures/common/blocklight
 	nomipmaps
 }
 
-textures/schizomania/game_data.pk3dir/textures/common/clipdirt
+textures/schizomania/game.pk3dir/textures/common/clipdirt
 {
 	qer_editorImage "textures/common/clip.tga"
 	qer_trans 0.50
@@ -3569,7 +3548,7 @@ textures/schizomania/game_data.pk3dir/textures/common/clipdirt
 	nomipmaps
 }
 
-textures/schizomania/game_data.pk3dir/textures/common/alpha_50
+textures/schizomania/game.pk3dir/textures/common/alpha_50
 {
 	qer_editorImage "textures/common/alpha_50.tga"
 	vmap_alphaMod volume
@@ -3580,7 +3559,7 @@ textures/schizomania/game_data.pk3dir/textures/common/alpha_50
 	nomipmaps
 }
 
-textures/schizomania/game_data.pk3dir/textures/common/clip
+textures/schizomania/game.pk3dir/textures/common/clip
 {
 	qer_editorImage "textures/common/clip.tga"
 	surfaceParm nodraw
@@ -3588,7 +3567,7 @@ textures/schizomania/game_data.pk3dir/textures/common/clip
 	nomipmaps
 }
 
-textures/schizomania/game_data.pk3dir/textures/common/caulk
+textures/schizomania/game.pk3dir/textures/common/caulk
 {
 	qer_editorImage "textures/common/caulk.tga"
 	qer_trans 0.50
@@ -3598,7 +3577,7 @@ textures/schizomania/game_data.pk3dir/textures/common/caulk
 	nomipmaps
 }
 
-textures/schizomania/game_data.pk3dir/textures/common/trigger
+textures/schizomania/game.pk3dir/textures/common/trigger
 {
 	qer_editorImage "textures/common/trigger.tga"
 	qer_trans 0.50
@@ -3607,7 +3586,7 @@ textures/schizomania/game_data.pk3dir/textures/common/trigger
 	nomipmaps
 }
 
-textures/schizomania/game_data.pk3dir/textures/common/full_clip
+textures/schizomania/game.pk3dir/textures/common/full_clip
 {
     diffusemap textures/common/full_clip.tga // silly shader, use weapclip instead
     {
@@ -3616,7 +3595,7 @@ textures/schizomania/game_data.pk3dir/textures/common/full_clip
         surfaceparm playerclip
     }
 }
-textures/schizomania/game_data.pk3dir/textures/common/clipwood
+textures/schizomania/game.pk3dir/textures/common/clipwood
 {
 	qer_editorImage "textures/common/clipwood.tga"
 	qer_trans 0.50
@@ -3626,7 +3605,7 @@ textures/schizomania/game_data.pk3dir/textures/common/clipwood
 	nomipmaps
 }
 
-textures/schizomania/game_data.pk3dir/textures/common/terrain2
+textures/schizomania/game.pk3dir/textures/common/terrain2
 {
 	qer_editorImage "textures/common/terrain.tga"
 	vmap_terrain
@@ -3637,7 +3616,7 @@ textures/schizomania/game_data.pk3dir/textures/common/terrain2
 	nomipmaps
 }
 
-textures/schizomania/game_data.pk3dir/textures/common/clusterportal
+textures/schizomania/game.pk3dir/textures/common/clusterportal
 {
     diffusemap textures/common/clusterportal.tga
     {
@@ -3650,7 +3629,7 @@ textures/schizomania/game_data.pk3dir/textures/common/clusterportal
         surfaceparm clusterportal
     }
 }
-textures/schizomania/game_data.pk3dir/textures/common/cliptile
+textures/schizomania/game.pk3dir/textures/common/cliptile
 {
 	qer_editorImage "textures/common/clip.tga"
 	qer_trans 0.50
@@ -3660,7 +3639,7 @@ textures/schizomania/game_data.pk3dir/textures/common/cliptile
 	nomipmaps
 }
 
-textures/schizomania/game_data.pk3dir/textures/common/rtsurface
+textures/schizomania/game.pk3dir/textures/common/rtsurface
 {
 	qer_editorImage "textures/common/rtsurface.tga"
 	{
@@ -3668,7 +3647,7 @@ textures/schizomania/game_data.pk3dir/textures/common/rtsurface
 	}
 }
 
-textures/schizomania/game_data.pk3dir/textures/common/clipmetal
+textures/schizomania/game.pk3dir/textures/common/clipmetal
 {
 	qer_editorImage "textures/common/clipmetal.tga"
 	qer_trans 0.50
@@ -3678,7 +3657,7 @@ textures/schizomania/game_data.pk3dir/textures/common/clipmetal
 	nomipmaps
 }
 
-textures/schizomania/game_data.pk3dir/textures/skies/ulukai
+textures/schizomania/game.pk3dir/textures/skies/ulukai
 // SchizoMania Material
 {
 	qer_editorImage textures/skies/ulukai.tga
@@ -3704,7 +3683,7 @@ textures/schizomania/game_data.pk3dir/textures/skies/ulukai
 	}
 }
 
-textures/schizomania/game_data.pk3dir/textures/skies/smudge
+textures/schizomania/game.pk3dir/textures/skies/smudge
 {
 	qer_editorImage textures/skies/smudge.tga
 	skyParms - 256 -
@@ -3725,7 +3704,7 @@ textures/schizomania/game_data.pk3dir/textures/skies/smudge
 	}
 }
 
-textures/schizomania/game_data.pk3dir/textures/skies/dune
+textures/schizomania/game.pk3dir/textures/skies/dune
 {
 	qer_editorImage textures/skies/dune.tga
 	skyParms - 256 -
@@ -3748,7 +3727,7 @@ textures/schizomania/game_data.pk3dir/textures/skies/dune
 	}
 }
 
-textures/schizomania/game_data.pk3dir/textures/skies/recotta
+textures/schizomania/game.pk3dir/textures/skies/recotta
 {
 	qer_editorImage textures/skies/recotta.tga
 	skyParms textures/skies/recotta/bg 256 -
@@ -3771,7 +3750,7 @@ textures/schizomania/game_data.pk3dir/textures/skies/recotta
 	}
 }
 
-textures/schizomania/game_data.pk3dir/textures/skies/yukongold
+textures/schizomania/game.pk3dir/textures/skies/yukongold
 {
 	qer_editorImage textures/skies/yukongold.tga
 	skyParms - 256 -
@@ -3793,349 +3772,7 @@ textures/schizomania/game_data.pk3dir/textures/skies/yukongold
 	}
 }
 
-textures/schizomania/game_data.pk3dir/textures/scma/red_slate_roof_tiles_01
-{
-	diffusemap textures/scma/red_slate_roof_tiles_01.tga
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/game_data.pk3dir/textures/scma/wall_01
-{
-	diffusemap textures/scma/wall_01.tga
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/game_data.pk3dir/textures/scma/concrete2
-{
-	diffusemap textures/scma/concrete2.tga
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/game_data.pk3dir/textures/scma/light_01
-{
-	diffusemap textures/scma/light_01.tga
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/game_data.pk3dir/textures/scma/door_rail
-{
-	diffusemap textures/scma/door_rail.tga
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/game_data.pk3dir/textures/scma/floor_tiles_09
-{
-	diffusemap textures/scma/floor_tiles_09.tga
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/game_data.pk3dir/textures/scma/tile01
-{
-	diffusemap textures/scma/tile01.tga
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/game_data.pk3dir/textures/scma/concrete3
-{
-	diffusemap textures/scma/concrete3.tga
-	
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/game_data.pk3dir/textures/scma/concrete6
-{
-	diffusemap textures/scma/concrete6.tga
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/game_data.pk3dir/textures/scma/grass_02
-{
-	diffusemap textures/scma/grass_02.tga
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/game_data.pk3dir/textures/scma/sand_01
-{
-	diffusemap textures/scma/sand_01.tga
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/game_data.pk3dir/textures/scma/wall_03
-{
-	diffusemap textures/scma/wall_03.tga
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/game_data.pk3dir/textures/scma/wall_01_bricks
-{
-	diffusemap textures/scma/wall_01_bricks.tga
-	diffusemap textures/scma/wall_01_bricks_normal.tga
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/game_data.pk3dir/textures/scma/tilesplain0119
-{
-	diffusemap textures/scma/tilesplain0119.tga
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/game_data.pk3dir/textures/scma/wall_04
-{
-	diffusemap textures/scma/wall_04.tga
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/game_data.pk3dir/textures/scma/step02
-{
-	diffusemap textures/scma/step02.tga
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/game_data.pk3dir/textures/scma/floor_tiles_08
-{
-	diffusemap textures/scma/floor_tiles_08.tga
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/game_data.pk3dir/textures/scma/wood_01
-{
-	diffusemap textures/scma/wood_01.tga
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/game_data.pk3dir/textures/scma/woodfloor01
-{
-	diffusemap textures/scma/woodfloor01.tga
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/game_data.pk3dir/textures/scma/planks_dirty_greenish
-{
-	diffusemap textures/scma/planks_dirty_greenish.tga
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/game_data.pk3dir/textures/scma/metal_a2
-{
-	diffusemap textures/scma/metal_a2.tga
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/game_data.pk3dir/textures/scma/step01
-{
-	diffusemap textures/scma/step01.tga
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/game_data.pk3dir/textures/scma/step03
-{
-	diffusemap textures/scma/step03.tga
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/game_data.pk3dir/textures/scma/carpet_01
-{
-	diffusemap textures/scma/carpet_01.tga
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/game_data.pk3dir/textures/scma/concrete1w
-{
-	diffusemap textures/scma/concrete1w.tga
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/game_data.pk3dir/textures/scma/light-switch_01
-{
-	diffusemap textures/scma/light-switch_01.tga
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/game_data.pk3dir/textures/scma/glass_01
-{
-	diffusemap textures/scma/glass_01.tga
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/game_data.pk3dir/textures/scma/vent
-{
-	diffusemap textures/scma/vent.tga
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/game_data.pk3dir/textures/scma/floor_tiles_06
-{
-	diffusemap textures/scma/floor_tiles_06.tga
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/game_data.pk3dir/textures/scma/grass_01
-{
-	diffusemap textures/scma/grass_01.tga
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/game_data.pk3dir/textures/scma/planks_dirty_blackish
-{
-	diffusemap textures/scma/planks_dirty_blackish.tga
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/game_data.pk3dir/textures/scma/concrete4
-{
-	diffusemap textures/scma/concrete4.tga
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/game_data.pk3dir/textures/scma/concrete5
-{
-	diffusemap textures/scma/concrete5.tga
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/game_data.pk3dir/textures/scma/ceiling_01
-{
-	diffusemap textures/scma/ceiling_01.tga
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/game_data.pk3dir/textures/scma/planks_blue
-{
-	diffusemap textures/scma/planks_blue.tga
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/game_data.pk3dir/textures/scma/tile02
-{
-	diffusemap textures/scma/tile02.tga
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/game_data.pk3dir/textures/scma/electrical-outlet
-{
-	diffusemap textures/scma/electrical-outlet.tga
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/game_data.pk3dir/textures/scma/door_texture_2
-{
-	diffusemap textures/scma/door_texture_2.tga
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/game_data.pk3dir/textures/next/dirty3
+textures/schizomania/game.pk3dir/textures/next/dirty3
 {
 	diffusemap textures/next/dirty3.tga
 
@@ -4144,7 +3781,7 @@ textures/schizomania/game_data.pk3dir/textures/next/dirty3
 	}
 }
 
-textures/schizomania/game_data.pk3dir/textures/next/bunker8
+textures/schizomania/game.pk3dir/textures/next/bunker8
 {
 	diffusemap textures/next/bunker8.tga
 
@@ -4153,7 +3790,7 @@ textures/schizomania/game_data.pk3dir/textures/next/bunker8
 	}
 }
 
-textures/schizomania/game_data.pk3dir/textures/next/plywood4
+textures/schizomania/game.pk3dir/textures/next/plywood4
 {
 	diffusemap textures/next/plywood4.tga
 
@@ -4162,7 +3799,7 @@ textures/schizomania/game_data.pk3dir/textures/next/plywood4
 	}
 }
 
-textures/schizomania/game_data.pk3dir/textures/next/plywood2
+textures/schizomania/game.pk3dir/textures/next/plywood2
 {
 	diffusemap textures/next/plywood2.tga
 
@@ -4171,7 +3808,7 @@ textures/schizomania/game_data.pk3dir/textures/next/plywood2
 	}
 }
 
-textures/schizomania/game_data.pk3dir/textures/next/dirty4
+textures/schizomania/game.pk3dir/textures/next/dirty4
 {
 	diffusemap textures/next/dirty4.tga
 
@@ -4180,7 +3817,7 @@ textures/schizomania/game_data.pk3dir/textures/next/dirty4
 	}
 }
 
-textures/schizomania/game_data.pk3dir/textures/next/bunker1
+textures/schizomania/game.pk3dir/textures/next/bunker1
 {
 	diffusemap textures/next/bunker1.tga
 
@@ -4189,7 +3826,7 @@ textures/schizomania/game_data.pk3dir/textures/next/bunker1
 	}
 }
 
-textures/schizomania/game_data.pk3dir/textures/next/asphalt1
+textures/schizomania/game.pk3dir/textures/next/asphalt1
 {
 	diffusemap textures/next/asphalt1.tga
 
@@ -4198,7 +3835,7 @@ textures/schizomania/game_data.pk3dir/textures/next/asphalt1
 	}
 }
 
-textures/schizomania/game_data.pk3dir/textures/next/rusty3
+textures/schizomania/game.pk3dir/textures/next/rusty3
 {
 	diffusemap textures/next/rusty3.tga
 
@@ -4207,7 +3844,7 @@ textures/schizomania/game_data.pk3dir/textures/next/rusty3
 	}
 }
 
-textures/schizomania/game_data.pk3dir/textures/next/tarmac2
+textures/schizomania/game.pk3dir/textures/next/tarmac2
 {
 	diffusemap textures/next/tarmac2.tga
 
@@ -4216,7 +3853,7 @@ textures/schizomania/game_data.pk3dir/textures/next/tarmac2
 	}
 }
 
-textures/schizomania/game_data.pk3dir/textures/next/earth1
+textures/schizomania/game.pk3dir/textures/next/earth1
 {
 	diffusemap textures/next/earth1.tga
 
@@ -4225,7 +3862,7 @@ textures/schizomania/game_data.pk3dir/textures/next/earth1
 	}
 }
 
-textures/schizomania/game_data.pk3dir/textures/next/vent5
+textures/schizomania/game.pk3dir/textures/next/vent5
 {
 	diffusemap textures/next/vent5.tga
 
@@ -4234,7 +3871,7 @@ textures/schizomania/game_data.pk3dir/textures/next/vent5
 	}
 }
 
-textures/schizomania/game_data.pk3dir/textures/next/tarmac1
+textures/schizomania/game.pk3dir/textures/next/tarmac1
 {
 	diffusemap textures/next/tarmac1.tga
 
@@ -4243,7 +3880,7 @@ textures/schizomania/game_data.pk3dir/textures/next/tarmac1
 	}
 }
 
-textures/schizomania/game_data.pk3dir/textures/next/bunker4
+textures/schizomania/game.pk3dir/textures/next/bunker4
 {
 	diffusemap textures/next/bunker4.tga
 
@@ -4252,7 +3889,7 @@ textures/schizomania/game_data.pk3dir/textures/next/bunker4
 	}
 }
 
-textures/schizomania/game_data.pk3dir/textures/next/rusty6
+textures/schizomania/game.pk3dir/textures/next/rusty6
 {
 	diffusemap textures/next/rusty6.tga
 
@@ -4261,7 +3898,7 @@ textures/schizomania/game_data.pk3dir/textures/next/rusty6
 	}
 }
 
-textures/schizomania/game_data.pk3dir/textures/next/vent2
+textures/schizomania/game.pk3dir/textures/next/vent2
 {
 	diffusemap textures/next/vent2.tga
 
@@ -4270,7 +3907,7 @@ textures/schizomania/game_data.pk3dir/textures/next/vent2
 	}
 }
 
-textures/schizomania/game_data.pk3dir/textures/next/rusty1
+textures/schizomania/game.pk3dir/textures/next/rusty1
 {
 	diffusemap textures/next/rusty1.tga
 
@@ -4279,7 +3916,7 @@ textures/schizomania/game_data.pk3dir/textures/next/rusty1
 	}
 }
 
-textures/schizomania/game_data.pk3dir/textures/next/plywood1
+textures/schizomania/game.pk3dir/textures/next/plywood1
 {
 	diffusemap textures/next/plywood1.tga
 
@@ -4288,7 +3925,7 @@ textures/schizomania/game_data.pk3dir/textures/next/plywood1
 	}
 }
 
-textures/schizomania/game_data.pk3dir/textures/next/earth6
+textures/schizomania/game.pk3dir/textures/next/earth6
 {
 	diffusemap textures/next/earth6.tga
 
@@ -4297,7 +3934,7 @@ textures/schizomania/game_data.pk3dir/textures/next/earth6
 	}
 }
 
-textures/schizomania/game_data.pk3dir/textures/next/bunker9
+textures/schizomania/game.pk3dir/textures/next/bunker9
 {
 	diffusemap textures/next/bunker9.tga
 
@@ -4306,7 +3943,7 @@ textures/schizomania/game_data.pk3dir/textures/next/bunker9
 	}
 }
 
-textures/schizomania/game_data.pk3dir/textures/next/vent1
+textures/schizomania/game.pk3dir/textures/next/vent1
 {
 	diffusemap textures/next/vent1.tga
 
@@ -4315,7 +3952,7 @@ textures/schizomania/game_data.pk3dir/textures/next/vent1
 	}
 }
 
-textures/schizomania/game_data.pk3dir/textures/next/asphalt3
+textures/schizomania/game.pk3dir/textures/next/asphalt3
 {
 	diffusemap textures/next/asphalt3.tga
 
@@ -4324,7 +3961,7 @@ textures/schizomania/game_data.pk3dir/textures/next/asphalt3
 	}
 }
 
-textures/schizomania/game_data.pk3dir/textures/next/bunker3
+textures/schizomania/game.pk3dir/textures/next/bunker3
 {
 	diffusemap textures/next/bunker3.tga
 
@@ -4333,7 +3970,7 @@ textures/schizomania/game_data.pk3dir/textures/next/bunker3
 	}
 }
 
-textures/schizomania/game_data.pk3dir/textures/next/rusty2
+textures/schizomania/game.pk3dir/textures/next/rusty2
 {
 	diffusemap textures/next/rusty2.tga
 
@@ -4342,7 +3979,7 @@ textures/schizomania/game_data.pk3dir/textures/next/rusty2
 	}
 }
 
-textures/schizomania/game_data.pk3dir/textures/next/dirty2
+textures/schizomania/game.pk3dir/textures/next/dirty2
 {
 	diffusemap textures/next/dirty2.tga
 
@@ -4351,7 +3988,7 @@ textures/schizomania/game_data.pk3dir/textures/next/dirty2
 	}
 }
 
-textures/schizomania/game_data.pk3dir/textures/next/bunker2
+textures/schizomania/game.pk3dir/textures/next/bunker2
 {
 	diffusemap textures/next/bunker2.tga
 
@@ -4360,7 +3997,7 @@ textures/schizomania/game_data.pk3dir/textures/next/bunker2
 	}
 }
 
-textures/schizomania/game_data.pk3dir/textures/next/earth5
+textures/schizomania/game.pk3dir/textures/next/earth5
 {
 	diffusemap textures/next/earth5.tga
 
@@ -4369,7 +4006,7 @@ textures/schizomania/game_data.pk3dir/textures/next/earth5
 	}
 }
 
-textures/schizomania/game_data.pk3dir/textures/next/vent4
+textures/schizomania/game.pk3dir/textures/next/vent4
 {
 	diffusemap textures/next/vent4.tga
 
@@ -4378,7 +4015,7 @@ textures/schizomania/game_data.pk3dir/textures/next/vent4
 	}
 }
 
-textures/schizomania/game_data.pk3dir/textures/next/bunker5
+textures/schizomania/game.pk3dir/textures/next/bunker5
 {
 	diffusemap textures/next/bunker5.tga
 
@@ -4387,7 +4024,7 @@ textures/schizomania/game_data.pk3dir/textures/next/bunker5
 	}
 }
 
-textures/schizomania/game_data.pk3dir/textures/next/earth9
+textures/schizomania/game.pk3dir/textures/next/earth9
 {
 	diffusemap textures/next/earth9.tga
 
@@ -4396,7 +4033,7 @@ textures/schizomania/game_data.pk3dir/textures/next/earth9
 	}
 }
 
-textures/schizomania/game_data.pk3dir/textures/next/dirty1
+textures/schizomania/game.pk3dir/textures/next/dirty1
 {
 	diffusemap textures/next/dirty1.tga
 
@@ -4405,7 +4042,7 @@ textures/schizomania/game_data.pk3dir/textures/next/dirty1
 	}
 }
 
-textures/schizomania/game_data.pk3dir/textures/next/asphalt2
+textures/schizomania/game.pk3dir/textures/next/asphalt2
 {
 	diffusemap textures/next/asphalt2.tga
 
@@ -4414,7 +4051,7 @@ textures/schizomania/game_data.pk3dir/textures/next/asphalt2
 	}
 }
 
-textures/schizomania/game_data.pk3dir/textures/next/plywood5
+textures/schizomania/game.pk3dir/textures/next/plywood5
 {
 	diffusemap textures/next/plywood5.tga
 
@@ -4423,7 +4060,7 @@ textures/schizomania/game_data.pk3dir/textures/next/plywood5
 	}
 }
 
-textures/schizomania/game_data.pk3dir/textures/next/cracked1
+textures/schizomania/game.pk3dir/textures/next/cracked1
 {
 	diffusemap textures/next/cracked1.tga
 
@@ -4432,7 +4069,7 @@ textures/schizomania/game_data.pk3dir/textures/next/cracked1
 	}
 }
 
-textures/schizomania/game_data.pk3dir/textures/next/rusty5
+textures/schizomania/game.pk3dir/textures/next/rusty5
 {
 	diffusemap textures/next/rusty5.tga
 
@@ -4441,7 +4078,7 @@ textures/schizomania/game_data.pk3dir/textures/next/rusty5
 	}
 }
 
-textures/schizomania/game_data.pk3dir/textures/next/earth7
+textures/schizomania/game.pk3dir/textures/next/earth7
 {
 	diffusemap textures/next/earth7.tga
 
@@ -4450,7 +4087,7 @@ textures/schizomania/game_data.pk3dir/textures/next/earth7
 	}
 }
 
-textures/schizomania/game_data.pk3dir/textures/next/vent3
+textures/schizomania/game.pk3dir/textures/next/vent3
 {
 	diffusemap textures/next/vent3.tga
 
@@ -4459,7 +4096,7 @@ textures/schizomania/game_data.pk3dir/textures/next/vent3
 	}
 }
 
-textures/schizomania/game_data.pk3dir/textures/next/cracked2
+textures/schizomania/game.pk3dir/textures/next/cracked2
 {
 	diffusemap textures/next/cracked2.tga
 
@@ -4468,7 +4105,7 @@ textures/schizomania/game_data.pk3dir/textures/next/cracked2
 	}
 }
 
-textures/schizomania/game_data.pk3dir/textures/next/earth8
+textures/schizomania/game.pk3dir/textures/next/earth8
 {
 	diffusemap textures/next/earth8.tga
 
@@ -4477,7 +4114,7 @@ textures/schizomania/game_data.pk3dir/textures/next/earth8
 	}
 }
 
-textures/schizomania/game_data.pk3dir/textures/next/rusty7
+textures/schizomania/game.pk3dir/textures/next/rusty7
 {
 	diffusemap textures/next/rusty7.tga
 
@@ -4486,7 +4123,7 @@ textures/schizomania/game_data.pk3dir/textures/next/rusty7
 	}
 }
 
-textures/schizomania/game_data.pk3dir/textures/next/bunker7
+textures/schizomania/game.pk3dir/textures/next/bunker7
 {
 	diffusemap textures/next/bunker7.tga
 
@@ -4495,7 +4132,7 @@ textures/schizomania/game_data.pk3dir/textures/next/bunker7
 	}
 }
 
-textures/schizomania/game_data.pk3dir/textures/next/earth4
+textures/schizomania/game.pk3dir/textures/next/earth4
 {
 	diffusemap textures/next/earth4.tga
 
@@ -4504,7 +4141,7 @@ textures/schizomania/game_data.pk3dir/textures/next/earth4
 	}
 }
 
-textures/schizomania/game_data.pk3dir/textures/next/earth3
+textures/schizomania/game.pk3dir/textures/next/earth3
 {
 	diffusemap textures/next/earth3.tga
 
@@ -4513,7 +4150,7 @@ textures/schizomania/game_data.pk3dir/textures/next/earth3
 	}
 }
 
-textures/schizomania/game_data.pk3dir/textures/next/bunker6
+textures/schizomania/game.pk3dir/textures/next/bunker6
 {
 	diffusemap textures/next/bunker6.tga
 
@@ -4522,7 +4159,7 @@ textures/schizomania/game_data.pk3dir/textures/next/bunker6
 	}
 }
 
-textures/schizomania/game_data.pk3dir/textures/next/plywood3
+textures/schizomania/game.pk3dir/textures/next/plywood3
 {
 	diffusemap textures/next/plywood3.tga
 
@@ -4531,7 +4168,7 @@ textures/schizomania/game_data.pk3dir/textures/next/plywood3
 	}
 }
 
-textures/schizomania/game_data.pk3dir/textures/next/earth2
+textures/schizomania/game.pk3dir/textures/next/earth2
 {
 	diffusemap textures/next/earth2.tga
 
@@ -4541,7 +4178,729 @@ textures/schizomania/game_data.pk3dir/textures/next/earth2
 	}
 }
 
-textures/schizomania/game_data.pk3dir/textures/next/rusty4
+textures/schizomania/game.pk3dir/textures/next/rusty4
+{
+	diffusemap textures/next/rusty4.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/test_maps.pk3dir/textures/measure/desk
+{
+	diffusemap textures/measure/desk.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/test_maps.pk3dir/textures/measure/counter
+{
+	diffusemap textures/measure/counter.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/test_maps.pk3dir/textures/measure/wall128b
+{
+	diffusemap textures/measure/wall128b.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/test_maps.pk3dir/textures/measure/wall64a
+{
+	diffusemap textures/measure/wall64a.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/test_maps.pk3dir/textures/measure/rail
+{
+	diffusemap textures/measure/rail.tga
+}
+
+textures/schizomania/test_maps.pk3dir/textures/measure/floor
+{
+	diffusemap textures/measure/floor.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/test_maps.pk3dir/textures/measure/wall128
+{
+	diffusemap textures/measure/wall128.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/test_maps.pk3dir/textures/measure/door
+{
+	diffusemap textures/measure/door.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/test_maps.pk3dir/textures/measure/wall128pl
+{
+	diffusemap textures/measure/wall128pl.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/test_maps.pk3dir/textures/measure/wall32
+{
+	diffusemap textures/measure/wall32.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/test_maps.pk3dir/textures/measure/ceiling
+{
+	diffusemap textures/measure/ceiling.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/test_maps.pk3dir/textures/measure/stairs1
+{
+	diffusemap textures/measure/stairs1.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/test_maps.pk3dir/textures/measure/wall128gr
+{
+	diffusemap textures/measure/wall128gr.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/test_maps.pk3dir/textures/measure/ladder
+{
+	diffusemap textures/measure/ladder.tga
+}
+
+textures/schizomania/test_maps.pk3dir/textures/measure/wall64
+{
+	diffusemap textures/measure/wall64.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/test_maps.pk3dir/textures/measure/wall128g
+{
+	diffusemap textures/measure/wall128g.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/test_maps.pk3dir/textures/measure/wall128_blend
+{
+	vmap_lightmapMergable
+	qer_editorImage "textures/measure/wall128b.tga"
+	polygonOffset 1
+
+	{
+		map "textures/measure/wall128.tga"
+		map "textures/measure/wall128b.tga"
+		map $whiteimage
+		map $whiteimage
+	}
+}
+
+textures/schizomania/test_maps.pk3dir/textures/liquid/water1
+{
+	qer_editorImage "textures/liquid/water5.tga"
+	sort banner
+	qer_trans 0.8
+	surfaceParm nonsolid
+	surfaceParm trans
+	surfaceParm water
+	surfaceParm nodlight
+
+	diffusemap "textures/liquid/water5.tga"
+	{
+		map $blackimage
+		map $refraction
+	}
+}
+
+textures/schizomania/test_maps.pk3dir/textures/liquid/water2
+{
+	qer_editorImage "textures/liquid/water2.tga"
+	sort banner
+	qer_trans 0.8
+	surfaceParm nonsolid
+	surfaceParm trans
+	surfaceParm water
+	surfaceParm nodlight
+
+	{
+		map $reflection
+		map $refraction
+		map "textures/liquid/water1_n.tga"
+	}
+}
+
+textures/schizomania/test_maps.pk3dir/textures/skies/smudge
+{
+	qer_editorImage textures/skies/smudge.tga
+	skyParms - 256 -
+	vmap_globalTexture
+
+	surfaceParm sky
+	surfaceParm noimpact
+	surfaceParm nolightmap
+	surfaceParm nodlight
+
+	nopicmip
+	nomipmaps
+
+	{
+		map $cube:textures/skies/smudge/bg
+		map $blackimage
+		map $blackimage
+	}
+}
+
+textures/schizomania/test_maps.pk3dir/textures/skies/dune
+{
+	qer_editorImage textures/skies/dune.tga
+	skyParms - 256 -
+	vmap_globalTexture
+
+	surfaceParm sky
+	surfaceParm noimpact
+	surfaceParm nolightmap
+	surfaceParm nodlight
+
+	nopicmip
+	nomipmaps
+
+	{
+		map $cube:textures/skies/dune_hdr/40th/bg
+		map $cube:textures/skies/dune_hdr/250th/bg
+		map $cube:textures/skies/dune_hdr/1600th/bg
+		map textures/skies/clouds/dunecloud.tga
+		map textures/skies/clouds/dunecloud_layer.tga
+	}
+}
+
+textures/schizomania/test_maps.pk3dir/textures/skies/recotta
+{
+	qer_editorImage textures/skies/recotta.tga
+	skyParms textures/skies/recotta/bg 256 -
+	vmap_globalTexture
+
+	surfaceParm noimpact
+	surfaceParm nolightmap
+	surfaceParm sky
+	surfaceParm nodlight
+
+	vmap_skylight 200 4
+	nopicmip
+	nomipmaps
+
+	{
+		map $cube:textures/skies/recotta/bg
+		map textures/skies/clouds/dunecloud.tga
+		map $blackimage
+	}
+}
+
+textures/schizomania/test_maps.pk3dir/textures/skies/yukongold
+{
+	qer_editorImage textures/skies/yukongold.tga
+	skyParms - 256 -
+	vmap_globalTexture
+
+	surfaceParm sky
+	surfaceParm noimpact
+	surfaceParm nolightmap
+	surfaceParm nodlight
+
+	nopicmip
+	nomipmaps
+	
+	{
+		map textures/skies/clouds/dustycloud.tga
+		map $blackimage
+		map $cube:textures/skies/yukongold/bg
+		map $cube:textures/skies/yukongold/fg
+	}
+}
+
+textures/schizomania/test_maps.pk3dir/textures/decals/puddle01
+{
+	surfaceParm nomarks
+	surfaceParm nonsolid
+	surfaceParm trans
+	surfaceParm nodlight
+	diffusemap textures/decals/puddle01.tga
+
+	polygonOffset 1
+	{
+		blendFunc GL_ONE GL_ONE
+	}
+}
+
+textures/schizomania/test_maps.pk3dir/textures/next/dirty3
+{
+	diffusemap textures/next/dirty3.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/test_maps.pk3dir/textures/next/bunker8
+{
+	diffusemap textures/next/bunker8.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/test_maps.pk3dir/textures/next/plywood4
+{
+	diffusemap textures/next/plywood4.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/test_maps.pk3dir/textures/next/plywood2
+{
+	diffusemap textures/next/plywood2.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/test_maps.pk3dir/textures/next/dirty4
+{
+	diffusemap textures/next/dirty4.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/test_maps.pk3dir/textures/next/bunker1
+{
+	diffusemap textures/next/bunker1.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/test_maps.pk3dir/textures/next/rusty1_to_rusty5
+{
+	qer_editorImage "textures/next/rusty1.tga"
+	polygonOffset 1
+
+	{
+		map "textures/next/rusty5.tga"
+		map "textures/next/rusty7.tga"
+	}
+}
+
+textures/schizomania/test_maps.pk3dir/textures/next/asphalt1
+{
+	diffusemap textures/next/asphalt1.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/test_maps.pk3dir/textures/next/rusty3
+{
+	diffusemap textures/next/rusty3.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/test_maps.pk3dir/textures/next/tarmac2
+{
+	diffusemap textures/next/tarmac2.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/test_maps.pk3dir/textures/next/earth1
+{
+	diffusemap textures/next/earth1.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/test_maps.pk3dir/textures/next/vent5
+{
+	diffusemap textures/next/vent5.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/test_maps.pk3dir/textures/next/tarmac1
+{
+	diffusemap textures/next/tarmac1.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/test_maps.pk3dir/textures/next/bunker4
+{
+	diffusemap textures/next/bunker4.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/test_maps.pk3dir/textures/next/rusty6
+{
+	diffusemap textures/next/rusty6.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/test_maps.pk3dir/textures/next/vent2
+{
+	diffusemap textures/next/vent2.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/test_maps.pk3dir/textures/next/rusty1
+{
+	diffusemap textures/next/rusty1.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/test_maps.pk3dir/textures/next/plywood1
+{
+	diffusemap textures/next/plywood1.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/test_maps.pk3dir/textures/next/earth6
+{
+	diffusemap textures/next/earth6.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/test_maps.pk3dir/textures/next/bunker9
+{
+	diffusemap textures/next/bunker9.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/test_maps.pk3dir/textures/next/vent1
+{
+	diffusemap textures/next/vent1.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/test_maps.pk3dir/textures/next/asphalt3
+{
+	diffusemap textures/next/asphalt3.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/test_maps.pk3dir/textures/next/bunker3
+{
+	diffusemap textures/next/bunker3.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/test_maps.pk3dir/textures/next/rusty2
+{
+	diffusemap textures/next/rusty2.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/test_maps.pk3dir/textures/next/dirty2
+{
+	diffusemap textures/next/dirty2.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/test_maps.pk3dir/textures/next/bunker2
+{
+	diffusemap textures/next/bunker2.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/test_maps.pk3dir/textures/next/earth5
+{
+	diffusemap textures/next/earth5.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/test_maps.pk3dir/textures/next/vent4
+{
+	diffusemap textures/next/vent4.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/test_maps.pk3dir/textures/next/bunker5
+{
+	diffusemap textures/next/bunker5.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/test_maps.pk3dir/textures/next/earth9
+{
+	diffusemap textures/next/earth9.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/test_maps.pk3dir/textures/next/dirty1
+{
+	diffusemap textures/next/dirty1.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/test_maps.pk3dir/textures/next/asphalt2
+{
+	diffusemap textures/next/asphalt2.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/test_maps.pk3dir/textures/next/plywood5
+{
+	diffusemap textures/next/plywood5.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/test_maps.pk3dir/textures/next/cracked1
+{
+	diffusemap textures/next/cracked1.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/test_maps.pk3dir/textures/next/rusty5
+{
+	diffusemap textures/next/rusty5.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/test_maps.pk3dir/textures/next/earth7
+{
+	diffusemap textures/next/earth7.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/test_maps.pk3dir/textures/next/vent3
+{
+	diffusemap textures/next/vent3.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/test_maps.pk3dir/textures/next/cracked2
+{
+	diffusemap textures/next/cracked2.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/test_maps.pk3dir/textures/next/earth8
+{
+	diffusemap textures/next/earth8.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/test_maps.pk3dir/textures/next/rusty7
+{
+	diffusemap textures/next/rusty7.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/test_maps.pk3dir/textures/next/earth7_terrain
+{
+	polygonOffset 1
+	diffusemap textures/next/earth7.tga
+
+	{
+		blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
+	}
+}
+
+textures/schizomania/test_maps.pk3dir/textures/next/bunker7
+{
+	diffusemap textures/next/bunker7.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/test_maps.pk3dir/textures/next/earth4
+{
+	diffusemap textures/next/earth4.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/test_maps.pk3dir/textures/next/earth3
+{
+	diffusemap textures/next/earth3.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/test_maps.pk3dir/textures/next/bunker6
+{
+	diffusemap textures/next/bunker6.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/test_maps.pk3dir/textures/next/plywood3
+{
+	diffusemap textures/next/plywood3.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/test_maps.pk3dir/textures/next/earth2
+{
+	diffusemap textures/next/earth2.tga
+
+	{
+		map $diffuse
+		map $reflectcube
+	}
+}
+
+textures/schizomania/test_maps.pk3dir/textures/next/rusty4
 {
 	diffusemap textures/next/rusty4.tga
 
