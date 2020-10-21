@@ -36,7 +36,7 @@ float GamePMove_Maxspeed(player target)
 	// }
 
 	if (target.flags & FL_CROUCHING) {
-		spd *= 0.175f;
+		spd = 55;
 	}
 
 	return spd;
