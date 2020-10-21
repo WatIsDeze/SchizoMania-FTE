@@ -44,12 +44,13 @@ FX_Blood(vector pos, vector color)
 	static void Blood_Touch(void)
 	{
 		Decals_Place(self.origin, sprintf("{blood%d", floor(random(1,9))));
+//		pointparticles(DECAL_IMPACT_GLASS, pos, vNormal, 1);
 		self.touch = __NULL__;
 	}
 
-	if (cvar("violence_hblood") <= 0) {
-		return;
-	}
+	//if (cvar("violence_hblood") <= 0) {
+	//	return;
+	//}
 
 	env_sprite eBlood = spawn(env_sprite);
 	setorigin(eBlood, pos);

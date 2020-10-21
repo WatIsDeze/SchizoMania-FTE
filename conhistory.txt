@@ -6,3 +6,69 @@ cl_movespeedkey 1
 cl_movespeedkey 0.3
 cl_movespeedkey 5
 cl_movespeedkey 1.75
+/cl_movement
+/cl_movespeedkey 
+quit
+cl_movespeedkey
+cl_movespeedkey 1
+cl_movespeedkey 2
+cl_movespeedkey 1.75
+bind LSHIFT "+speed"
+bind SHIFT "+speed"
++speed
+map demo
+map demo01
+bind "LSHIFT" "-speed"
+cl_movespeedkey 1
+cl_movespeedkey 1.25
+cl_movespeedkey 0.75
+/cl_movespeedkey 
+/cl_movespeedkey  0.5
+map demo01
+/map test
+god
+give all
+impulse 101
+map test_doors
+/cl_forwardspeed 
+/cl_forwardspeed  2
+/cl_forwardspeed  85
+cl_movespeedkey
+cl_movespeedkey 5
+cl_movespeedkey 1
+cl_movespeedkey 0.5
+cl_movespeedkey 2
+/cl_forwardspeed  165
+cl_sidespeed
+cl_sidespeed 145
+/cl_backspeed 
+/cl_backspeed  125
+/cl_backspeed  12
+/cl_backspeed  105
+/cl_movespeedkey 1.5
+/cl_movespeedkey 
+bind LSHIFT "+speed"
+bind LSHIFT "-speed"
+bind LSHIFT "+speed"
+/cl_movespeedkey 10
+/cl_forwardspeed 
+/cl_forwardspeed  122
+/cl_movespeedkey 
+/cl_movespeedkey  4
+/cl_movespeedkey  44
+/cl_forwardspeed 
+/cl_forwardspeed 165
+/cl_movespeedkey 
+/cl_movespeedkey  3
+/cl_movespeedkey  5
+/cl_movespeedkey  55
+/cl_movespeedkey 
+/cl_movespeedkey  1.5
+/cl_movespeedkey  2
+/cl_movespeedkey  1.75
+cl_sidesp
+/cl_sidespeed 
+/cl_backspeed 
+cl_backspeed 125
+cl_sidespeed 155
+cl_backspeed 145

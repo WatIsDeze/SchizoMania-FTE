@@ -101,57 +101,60 @@ FX_Impact(int iType, vector vecPos, vector vNormal)
 		break;
 	}
 	else
-	switch (iType) {
-	case IMPACT_GLASS:
-		pointparticles(DECAL_IMPACT_GLASS, vecPos, vNormal, 1);
-		break;
-	case IMPACT_WOOD:
-		pointparticles(DECAL_IMPACT_WOOD, vecPos, vNormal, 1);
-		break;
-	case IMPACT_METAL:
-		pointparticles(DECAL_IMPACT_METAL, vecPos, vNormal, 1);
-		break;
-	case IMPACT_FLESH:
-		pointparticles(DECAL_IMPACT_FLESH, vecPos, vNormal, 1);
-		break;
-	default:
-		pointparticles(DECAL_IMPACT_DEFAULT, vecPos, vNormal, 1);
-		break;
-	}
-
-	switch (iType) {
-		case IMPACT_MELEE:
-		case IMPACT_EXPLOSION:
-			break;
+		// Decals.
+		switch (iType) {
 		case IMPACT_GLASS:
-			pointparticles(FX_IMPACT_BLACKBITS, vecPos, vNormal, 1);
+			pointparticles(DECAL_IMPACT_GLASS, vecPos, vNormal, 1);
 			break;
 		case IMPACT_WOOD:
-			pointparticles(FX_IMPACT_SPARK, vecPos, vNormal, 1);
-			pointparticles(FX_IMPACT_BLACKBITS, vecPos, vNormal, 1);
-			pointparticles(FX_IMPACT_SMOKE_BROWN, vecPos, vNormal, 1);
+			pointparticles(DECAL_IMPACT_WOOD, vecPos, vNormal, 1);
 			break;
 		case IMPACT_METAL:
-			pointparticles(FX_IMPACT_SPARK, vecPos, vNormal, 1);
-			pointparticles(FX_IMPACT_BLACKBITS, vecPos, vNormal, 1);
+			pointparticles(DECAL_IMPACT_METAL, vecPos, vNormal, 1);
 			break;
 		case IMPACT_FLESH:
-			FX_Blood(vecPos, vNormal);
+			pointparticles(DECAL_IMPACT_FLESH, vecPos, vNormal, 1);
 			break;
-		case IMPACT_DEFAULT:
 		default:
-			pointparticles(FX_IMPACT_SPARK, vecPos, vNormal, 1);
-			pointparticles(FX_IMPACT_BLACKBITS, vecPos, vNormal, 1);
-			pointparticles(FX_IMPACT_SMOKE_GREY, vecPos, vNormal, 1);
+			pointparticles(DECAL_IMPACT_DEFAULT, vecPos, vNormal, 1);
 			break;
-	}
+		}
 
-	switch (iType) {
-		case IMPACT_FLESH:
-			break;
-		default:
-			pointsound(vecPos, sprintf("weapons/ric%d.wav", floor((random() * 5) + 1)), 1, ATTN_STATIC);
-			break;
-	}
+		// Spark/Smoke particles.
+		switch (iType) {
+			case IMPACT_MELEE:
+			case IMPACT_EXPLOSION:
+				break;
+			case IMPACT_GLASS:
+				pointparticles(FX_IMPACT_BLACKBITS, vecPos, vNormal, 1);
+				break;
+			case IMPACT_WOOD:
+				pointparticles(FX_IMPACT_SPARK, vecPos, vNormal, 1);
+				pointparticles(FX_IMPACT_BLACKBITS, vecPos, vNormal, 1);
+				pointparticles(FX_IMPACT_SMOKE_BROWN, vecPos, vNormal, 1);
+				break;
+			case IMPACT_METAL:
+				pointparticles(FX_IMPACT_SPARK, vecPos, vNormal, 1);
+				pointparticles(FX_IMPACT_BLACKBITS, vecPos, vNormal, 1);
+				break;
+			case IMPACT_FLESH:
+				FX_Blood(vecPos, vNormal);
+				break;
+			case IMPACT_DEFAULT:
+			default:
+				pointparticles(FX_IMPACT_SPARK, vecPos, vNormal, 1);
+				pointparticles(FX_IMPACT_BLACKBITS, vecPos, vNormal, 1);
+				pointparticles(FX_IMPACT_SMOKE_GREY, vecPos, vNormal, 1);
+				break;
+		}
+
+		// Smoke.
+		switch (iType) {
+			case IMPACT_FLESH:
+				break;
+			default:
+				pointsound(vecPos, sprintf("weapons/ric%d.wav", floor((random() * 5) + 1)), 1, ATTN_STATIC);
+				break;
+		}
 #endif
 } 
