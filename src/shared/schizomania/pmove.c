@@ -24,7 +24,7 @@
 float GamePMove_Maxspeed(player target)
 {
 	// Taken from the CStrike code.
-	float spd = serverkeyfloat("phy_maxspeed") ;//serverkeyfloat("phy_maxspeed");
+	float spd = serverkeyfloat("phy_maxspeed");//serverkeyfloat("phy_maxspeed");
 
 	
 	// switch (target.activeweapon)
@@ -36,7 +36,7 @@ float GamePMove_Maxspeed(player target)
 	// }
 
 	if (target.flags & FL_CROUCHING) {
-		spd *= 0.5f;
+		spd *= 0.175f;
 	}
 
 	return spd;

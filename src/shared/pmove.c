@@ -41,14 +41,14 @@ PMove_Init(void) {
 
 // <SCMA> Uses this one now also.
 #ifdef VALVE
-	localcmd("serverinfo phy_accelerate 4\n");	// Was 8
-	localcmd("serverinfo phy_maxspeed 335\n");	// Was 270
+	localcmd("serverinfo phy_accelerate 6\n");	// Was 8
+	localcmd("serverinfo phy_maxspeed 285\n");	// Was 270
 #elif CSTRIKE
-	localcmd("serverinfo phy_accelerate 4\n");	// Was 8
-	localcmd("serverinfo phy_maxspeed 335\n");	// Was 270
+	localcmd("serverinfo phy_accelerate 6\n");	// Was 8
+	localcmd("serverinfo phy_maxspeed 285\n");	// Was 270
 #else
-	localcmd("serverinfo phy_accelerate 4\n");	// Was 8
-	localcmd("serverinfo phy_maxspeed 335\n");	// Was 270
+	localcmd("serverinfo phy_accelerate 6\n");	// Was 8
+	localcmd("serverinfo phy_maxspeed 285\n");	// Was 270
 #endif
 
 #endif

@@ -72,3 +72,21 @@ cl_sidesp
 cl_backspeed 125
 cl_sidespeed 155
 cl_backspeed 145
+/cl_forwardspeed 
+/cl_forwardspeed 175
+/cl_forwardspeed 
+/cl_forwardspeed 165
+/cl_forwardspeed 170
+/cl_forwardspeed 
+165
+/cl_forwardspeed 155
+/cl_forwardspeed 160
+/cl_forwardspeed 
+/cl_forwardspeed 165
+/cl_forwardspeed 
+/cl_forwardspeed 
+/cl_movespeedkey 
+/cl_movespeedkey 2
+/cl_movespeedkey 
+/cl_movespeedkey 1.1
+/cl_movespeedkey 1.75
