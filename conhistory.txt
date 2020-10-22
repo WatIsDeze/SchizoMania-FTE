@@ -95,3 +95,7 @@ r_postprocshader postproc_software
 r_postprocshader postproc_software
 r_postprocshader postproc_software
 vid_restart
+sv_csqcdebug 1
+vid_restart
+map test_lightstyles
+map test_dlights

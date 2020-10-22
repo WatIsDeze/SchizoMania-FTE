@@ -15,7 +15,7 @@
  */
 
 void
-Player_ReadEntity(float new)
+Player_ReceiveEntity(float new)
 {
 	float fl;
 	player pl = (player)self;
@@ -107,6 +107,7 @@ Player_ReadEntity(float new)
 		pl.a_ammo2 = readbyte();
 	if (fl & PLAYER_AMMO3)
 		pl.a_ammo3 = readbyte();
+
 
 	// <SCMA>
 	if (fl & PLAYER_CSSHOT)
