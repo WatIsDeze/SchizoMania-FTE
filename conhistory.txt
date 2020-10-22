@@ -90,3 +90,8 @@ cl_backspeed 145
 /cl_movespeedkey 
 /cl_movespeedkey 1.1
 /cl_movespeedkey 1.75
+vid_restart
+r_postprocshader postproc_software
+r_postprocshader postproc_software
+r_postprocshader postproc_software
+vid_restart

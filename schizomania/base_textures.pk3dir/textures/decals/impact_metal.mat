@@ -1,6 +1,6 @@
 {
 	polygonOffset 1
-	surfaceParm noshadows
+	surfaceParm nodlight
 	{
 		program unlit
 		map "textures/decals/impact_metal.tga"

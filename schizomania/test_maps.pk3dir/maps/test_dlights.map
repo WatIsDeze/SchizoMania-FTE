@@ -65,23 +65,7 @@
 {
 "classname" "info_player_deathmatch"
 }
-// entity 3
-{
-"classname" "light"
-"origin" "192.000000 128.000000 64.000000"
-"light" "50"
-"pattern" "abmcfgyzmnhpazcf"
-"targetname" "foobar1"
-"style" "12"
-}
-// entity 4
-{
-"classname" "light"
-"origin" "192.000000 -128.000000 64.000000"
-"light" "50"
-"targetname" "foobar2"
-"style" "2"
-}
+
 // entity 5
 {
 "classname" "func_button"
@@ -110,40 +94,56 @@
 ( 48 112 64 ) ( 48 152 64 ) ( 48 112 72 ) next/rusty7 [ 0 1 0 0 ] [ -0 -0 -1 0 ] -0 0.5 0.5 0 0 0
 }
 }
-// entity 7
-{
-"classname" "light"
-"origin" "-192.000000 128.000000 64.000000"
-"light" "25"
-}
-// entity 8
-{
-"classname" "light"
-"origin" "-192.000000 -64.000000 64.000000"
-"light" "25"
-"style" "9"
-}
-// entity 9
-{
-"classname" "point_message"
-"origin" "120.000000 128.000000 32.000000"
-"message" "Custom pattern, toggable."
-}
-// entity 10
-{
-"classname" "point_message"
-"origin" "120.000000 -64.000000 32.000000"
-"message" "Preset pattern, toggable."
-}
-// entity 11
-{
-"classname" "point_message"
-"origin" "-160.000000 -64.000000 32.000000"
-"message" "Preset pattern, static."
-}
-// entity 12
+
 {
 "classname" "point_message"
 "origin" "-160.000000 128.000000 32.000000"
-"message" "No pattern, static."
+"message" "White dynamic light with no style pattern."
+}
+{
+"classname" "dynamic_light"
+"origin" "-192.000000 128.000000 64.000000"
+"_light" "255 255 255"
+"brightness" "250"
+}
+
+{
+"classname" "point_message"
+"origin" "-160.000000 -64.000000 32.000000"
+"message" "Small blinking yellow dynamic light."
+}
+{
+"classname" "dynamic_light"
+"origin" "-192.000000 -64.000000 64.000000"
+"style" "9"
+"_light" "255 255 128"
+"brightness" "150"
+}
+
+{
+"classname" "point_message"
+"origin" "120.000000 128.000000 32.000000"
+"message" "Toggable white flickering dynamic light."
+}
+{
+"classname" "dynamic_light"
+"origin" "192.000000 128.000000 64.000000"
+"targetname" "foobar1"
+"style" "1"
+"_light" "255 255 255"
+"brightness" "250"
+}
+
+{
+"classname" "point_message"
+"origin" "120.000000 -64.000000 32.000000"
+"message" "Toggable red slow pulsing dynamic light."
+}
+{
+"classname" "dynamic_light"
+"origin" "192.000000 -128.000000 64.000000"
+"targetname" "foobar2"
+"style" "2"
+"_light" "255 0 0"
+"brightness" "250"
 }

@@ -1,10 +1,11 @@
 {
 	diffusemap textures/mike/grafiti_door1.jpg
     normalmap textures/mike/grafiti_door1_normal.jpg
-
+surfaceParm tile
 	{
 		program lightmapped
 		map $diffuse
 		map $normalmap
+surfaceParm tile
 	}
 }
