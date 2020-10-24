@@ -99,3 +99,20 @@ sv_csqcdebug 1
 vid_restart
 map test_lightstyles
 map test_dlights
+/map test_dlights
+map demo02
+map demo01
+map demo02
+showfps
+show_Fps
+showfps 1
+show_fps 2
+map demo02
+god
+noclip
+sv_cheats 1
+map demo02
+map demo02
+map demo02
+map demo02
+noclip
