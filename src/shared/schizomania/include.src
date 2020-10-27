@@ -1,4 +1,6 @@
  #includelist
+../../shared/schizomania/entities.h
+../../shared/schizomania/flags.h
 ../../shared/sound.c
 ../../shared/schizomania/player.cpp
 ../../shared/schizomania/weapon_common.h

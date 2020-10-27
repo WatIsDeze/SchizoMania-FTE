@@ -116,3 +116,6 @@ map demo02
 map demo02
 map demo02
 noclip
+/map test_patchblnd
+/map test_
+/map test_patchblend
