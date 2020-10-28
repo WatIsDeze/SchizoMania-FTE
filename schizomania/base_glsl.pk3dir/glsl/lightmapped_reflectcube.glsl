@@ -16,7 +16,10 @@
 !!cvardf r_glsl_pcf
 !!samps =FAKESHADOWS shadowmap
 
-!!cvardf dev_skipnormal
+!!cvardf r_skipDiffuse
+!!cvardf r_skipNormal
+!!cvardf r_skipSpecular
+!!cvardf r_skipLightmap
 
 #include "sys/defs.h"
 
@@ -69,61 +72,104 @@ varying vec2 lm1, lm2, lm3;
 	#include "sys/fog.h"
 	#include "sys/pcf.h"
 
+#if r_skipLightmap==0
+	#ifdef LIGHTSTYLED
+		#define LIGHTMAP0 texture2D(s_lightmap0, lm0).rgb
+		#define LIGHTMAP1 texture2D(s_lightmap1, lm1).rgb
+		#define LIGHTMAP2 texture2D(s_lightmap2, lm2).rgb
+		#define LIGHTMAP3 texture2D(s_lightmap3, lm3).rgb
+	#else
+		#define LIGHTMAP texture2D(s_lightmap, lm0).rgb 
+	#endif
+#else
+	#ifdef LIGHTSTYLED
+		#define LIGHTMAP0 vec3(0.5,0.5,0.5)
+		#define LIGHTMAP1 vec3(0.5,0.5,0.5)
+		#define LIGHTMAP2 vec3(0.5,0.5,0.5)
+		#define LIGHTMAP3 vec3(0.5,0.5,0.5)
+	#else
+		#define LIGHTMAP vec3(0.5,0.5,0.5)
+	#endif
+#endif
+
 	vec3 lightmap_fragment()
 	{
 		vec3 lightmaps;
 
 #ifdef LIGHTSTYLED
-		lightmaps  = texture2D(s_lightmap0, lm0).rgb * e_lmscale[0].rgb;
-		lightmaps += texture2D(s_lightmap1, lm1).rgb * e_lmscale[1].rgb;
-		lightmaps += texture2D(s_lightmap2, lm2).rgb * e_lmscale[2].rgb;
-		lightmaps += texture2D(s_lightmap3, lm3).rgb * e_lmscale[3].rgb;
+		lightmaps  = LIGHTMAP0 * e_lmscale[0].rgb;
+		lightmaps += LIGHTMAP1 * e_lmscale[1].rgb;
+		lightmaps += LIGHTMAP2 * e_lmscale[2].rgb;
+		lightmaps += LIGHTMAP3 * e_lmscale[3].rgb;
 #else
-		lightmaps  = texture2D(s_lightmap, lm0).rgb * e_lmscale.rgb;
+		lightmaps  = LIGHTMAP * e_lmscale.rgb;
 #endif
 		return lightmaps;
 	}
 
-	vec3 lightmap_fragment (vec3 normal_f)
+#if r_skipNormal==0
+	vec3 lightmap_fragment(vec3 normal_f)
 	{
+#ifndef DELUXE
+		return lightmap_fragment();
+#else
 		vec3 lightmaps;
 
-#ifdef LIGHTSTYLED
-		lightmaps  = texture2D(s_lightmap0, lm0).rgb * e_lmscale[0].rgb * dot(normal_f, (texture2D(s_deluxemap0, lm0).rgb - 0.5) * 2.0);
-		lightmaps += texture2D(s_lightmap1, lm1).rgb * e_lmscale[1].rgb * dot(normal_f, (texture2D(s_deluxemap1, lm1).rgb - 0.5) * 2.0);
-		lightmaps += texture2D(s_lightmap2, lm2).rgb * e_lmscale[2].rgb * dot(normal_f, (texture2D(s_deluxemap2, lm2).rgb - 0.5) * 2.0);
-		lightmaps += texture2D(s_lightmap3, lm3).rgb * e_lmscale[3].rgb * dot(normal_f, (texture2D(s_deluxemap3, lm3).rgb - 0.5) * 2.0);
-#else
-		lightmaps  = texture2D(s_lightmap, lm0).rgb * e_lmscale.rgb * dot(normal_f, (texture2D(s_deluxemap, lm0).rgb - 0.5) * 2.0);
-#endif
+	#if defined(LIGHTSTYLED)
+		lightmaps  = LIGHTMAP0 * e_lmscale[0].rgb * dot(normal_f, (texture2D(s_deluxemap0, lm0).rgb - 0.5) * 2.0);
+		lightmaps += LIGHTMAP1 * e_lmscale[1].rgb * dot(normal_f, (texture2D(s_deluxemap1, lm1).rgb - 0.5) * 2.0);
+		lightmaps += LIGHTMAP2 * e_lmscale[2].rgb * dot(normal_f, (texture2D(s_deluxemap2, lm2).rgb - 0.5) * 2.0);
+		lightmaps += LIGHTMAP3 * e_lmscale[3].rgb * dot(normal_f, (texture2D(s_deluxemap3, lm3).rgb - 0.5) * 2.0);
+	#else 
+		lightmaps  = LIGHTMAP * e_lmscale.rgb * dot(normal_f, (texture2D(s_deluxemap, lm0).rgb - 0.5) * 2.0);
+	#endif
+
 		return lightmaps;
+#endif
 	}
+#endif
 
 	void main (void)
 	{
 		vec3 cube_c;
-		vec4 out_f = vec4(1.0, 1.0, 1.0, 1.0);
-		vec4 diffuse_f = texture2D(s_t0, tex_c);
-		vec3 normal_f = normalize(texture2D(s_normalmap, tex_c).rgb - 0.5);
 		vec3 env_f;
 
-		if (float(dev_skipnormal) == 1.0) {
-			diffuse_f.rgb *= lightmap_fragment();
-		} else {
-			diffuse_f.rgb *= lightmap_fragment(normal_f);
-		}
+	#if r_skipDiffuse==0
+		vec4 diffuse_f = texture2D(s_diffuse, tex_c);
+	#else
+		vec4 diffuse_f = vec4(1.0,1.0,1.0,1.0);
+	#endif
+
+	#if r_skipNormal==0
+		vec3 normal_f = normalize(texture2D(s_normalmap, tex_c).rgb - 0.5);
+		#define refl diffuse_f.a
+	#else
+		#define normal_f vec3(0.0,0.0,1.0)
+		#define refl (diffuse_f.a / 2.0) + 0.5
+	#endif
+
+	#if r_skipNormal==1
+		diffuse_f.rgb *= lightmap_fragment();
+	#else
+		diffuse_f.rgb *= lightmap_fragment(normal_f);
+	#endif
 
 		#ifdef FAKESHADOWS
 		diffuse_f.rgb *= ShadowmapFilter(s_shadowmap, vtexprojcoord);
 		#endif
 
+	#if r_skipSpecular==0
+		vec4 out_f = vec4(1.0, 1.0, 1.0, 1.0);
 		cube_c = reflect(normalize(-eyevector), normal_f.rgb);
 		cube_c = cube_c.x * invsurface[0] + cube_c.y * invsurface[1] + cube_c.z * invsurface[2];
 		cube_c = (m_model * vec4(cube_c.xyz, 0.0)).xyz;
 		env_f = textureCube(s_box, cube_c).rgb * (e_lmscale.rgb * 0.25);
-		out_f.rgb = mix(env_f, diffuse_f.rgb, diffuse_f.a);
+		out_f.rgb = mix(env_f, diffuse_f.rgb, refl);
 
 		// Add fog to the final fragment
 		gl_FragColor = fog4(out_f);
+	#else
+		gl_FragColor = fog4(diffuse_f);;
+	#endif
 	}
 #endif
