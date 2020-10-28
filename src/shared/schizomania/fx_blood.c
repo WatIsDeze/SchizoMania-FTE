@@ -53,9 +53,9 @@ FX_Blood(vector pos, vector color)
 		}
 	}
 
-	// if (cvar("violence_hblood") <= 0) {
-	// 	return;
-	// }
+	if (cvar("violence_hblood") <= 0) {
+		return;
+	}
 
 	env_sprite eBlood = spawn(env_sprite);
 	setorigin(eBlood, pos);
