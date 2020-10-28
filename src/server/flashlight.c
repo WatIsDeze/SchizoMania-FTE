@@ -33,10 +33,10 @@ void Flashlight_Toggle(void)
 		return;
 	}
 
-	if (self.flags & FL_FLASHLIGHT) {
-		self.flags &= ~FL_FLASHLIGHT;
+	if (self.gflags & GF_FLASHLIGHT) {
+		self.gflags &= ~GF_FLASHLIGHT;
 	} else {
-		self.flags |= FL_FLASHLIGHT;
+		self.gflags |= GF_FLASHLIGHT;
 	}
 	sound(self, CHAN_ITEM, "items/flashlight1.wav", 1, ATTN_IDLE);
 }

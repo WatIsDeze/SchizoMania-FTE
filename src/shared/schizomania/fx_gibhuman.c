@@ -60,9 +60,9 @@ FX_GibHuman(vector pos)
 		}
 	}
 
-	if (cvar("violence_hgibs") <= 0) {
-		return;
-	}
+	// if (cvar("violence_hgibs") <= 0) {
+	// 	return;
+	// }
 
 	for (int i = 0; i < 5; i++) {
 		vector vel;

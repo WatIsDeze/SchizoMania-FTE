@@ -22,12 +22,12 @@ void Flashlight_Toggle(void)
 		}
 	}
 
-#ifdef VALVE
-	player pl = (player)self;
-	if (!(pl.g_items & ITEM_SUIT)) {
-		return;
-	}
-#endif
+// #ifdef VALVE
+// 	player pl = (player)self;
+// 	if (!(pl.g_items & ITEM_SUIT)) {
+// 		return;
+// 	}
+// #endif
 
 	if (self.health <= 0) {
 		return;

@@ -196,6 +196,7 @@ HLGameRules::PlayerPostFrame(base_player pp)
 	pl.old_angles[0] = pl.v_angle[0];
 	pl.old_velocity = pl.velocity;
 	pl.old_flags = pl.flags;
+	pl.old_gflags = pl.gflags;
 	pl.old_activeweapon = pl.activeweapon;
 	pl.old_items = pl.g_items;
 	pl.old_health = pl.health;
