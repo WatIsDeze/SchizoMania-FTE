@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2016-2019 Marco Hladik <marco@icculus.org>
+ * Copyright (c) 2016-2020 Marco Hladik <marco@icculus.org>
  *
  * Permission to use, copy, modify, and distribute this software for any
  * purpose with or without fee is hereby granted, provided that the above
@@ -14,20 +14,13 @@
  * OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  */
 
-#include "animations.h"
-#include "weapons.h"
-#include "items.h"
-#include "entities.h"
-#include "events.h"
+#ifdef BULLETPENETRATION
+	var int iTotalPenetrations;
+#endif
 
-#define TEAM_T		1
-#define TEAM_CT		2
-#define TEAM_VIP	3
+void TraceAttack_FireSingle(vector vecPos, vector vAngle, int iDamage, int iWeapon);
+void TraceAttack_FireBullets(int iShots, vector vecPos, int iDamage, vector vecSpread, int iWeapon);
 
-enum
-{
-	STAT_MONEY = 34,
-	STAT_PROGRESS,
-	STAT_GAMETIME,
-	STAT_GAMESTATE
-};
+#ifdef BULLETPENETRATION
+void TraceAttack_SetPenetrationPower(int power);
+#endif

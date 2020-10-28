@@ -81,6 +81,7 @@
 ../schizomania/server.c
 ../schizomania/damage.c
 ../schizomania/rules.c
+../schizomania/flashlight.c
 
 ../schizomania/input.c
 ../schizomania/spawn.c

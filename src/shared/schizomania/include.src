@@ -1,5 +1,5 @@
  #includelist
-../../shared/schizomania/entities.h
+../../shared/schizomania/defs.h
 ../../shared/schizomania/flags.h
 ../../shared/sound.c
 ../../shared/schizomania/player.cpp
