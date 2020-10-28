@@ -564,7 +564,6 @@ CBaseMonster::CBaseMonster(void)
 		return;
 	}
 
-	precache_model(model);
 	CBaseEntity::CBaseEntity();
 
 	/* give us a 65 degree view cone */
