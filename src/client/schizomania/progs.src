@@ -35,4 +35,5 @@
 ../schizomania/input.c
 
 ../include.src
+../../shared/include.src
 #endlist

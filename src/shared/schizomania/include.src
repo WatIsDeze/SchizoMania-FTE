@@ -1,13 +1,13 @@
  #includelist
 ../../shared/schizomania/defs.h
 ../../shared/schizomania/flags.h
-../../shared/sound.c
+
 ../../shared/schizomania/player.cpp
 ../../shared/schizomania/weapon_common.h
 ../../shared/schizomania/animations.h
 ../../shared/schizomania/animations.c
 ../../shared/schizomania/pmove.c
-../../shared/pmove.c
+
 
 ../../shared/schizomania/fx_blood.c
 ../../shared/schizomania/fx_breakmodel.c
