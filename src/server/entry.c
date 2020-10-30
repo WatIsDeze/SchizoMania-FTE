@@ -32,18 +32,22 @@ void StartFrame(void)
 
 void ClientConnect(float csqc_active)
 {
-	g_grMode.PlayerConnect(self);
+	/* make sure you never change the classname. ever. */
+	if (self.classname != "player") {
+		spawnfunc_player();
+	}
+
+	g_grMode.PlayerConnect((base_player)self);
 }
 
 void ClientDisconnect(void)
 {
-	g_grMode.PlayerDisconnect(self);
+	g_grMode.PlayerDisconnect((base_player)self);
 }
 
 void ClientKill(void)
 {
-	player pl = (player)self;
-	g_grMode.PlayerKill(pl);
+	g_grMode.PlayerKill((base_player)self);
 }
 
 void SpectatorThink(void)
