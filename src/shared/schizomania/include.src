@@ -16,7 +16,6 @@
 ../../shared/schizomania/fx_spark.c
 ../../shared/schizomania/fx_impact.c
 
-../../shared/schizomania/items.h
 ../../shared/schizomania/weapons.h
 ../../shared/schizomania/weapons_schizomania.c
 ../../shared/schizomania/w_crossbow.c

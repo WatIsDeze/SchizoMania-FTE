@@ -58,7 +58,8 @@
 
 ../schizomania/player.c
 ../schizomania/spectator.c
-../schizomania/items.cpp
+
+../schizomania/item_pickup.cpp
 ../schizomania/item_longjump.cpp
 ../schizomania/item_suit.cpp
 ../schizomania/item_healthkit.cpp

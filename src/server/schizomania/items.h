@@ -14,7 +14,10 @@
  * OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  */
 
-/* PICKUP ITEMS */
+
+/*
+Core pickup item code. Serves as an entity in the world.
+*/
 class item_pickup:CBaseTrigger
 {
 	int m_bFloating;
