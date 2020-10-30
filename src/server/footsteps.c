@@ -225,7 +225,7 @@ Footsteps_Update(void)
 		}
 
 		/* the footsteps call might overwrite this later */
-		pl.step_time = time + 0.35;
+		pl.step_time = time + 0.45;
 
 		switch (serverkeyfloat("*bspversion")) {
 		case 30: /* HL */
