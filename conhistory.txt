@@ -121,3 +121,24 @@ noclip
 /map test_patchblend
 saveconfig
 map demo02
+/map base_test_map
+/map base_test_map
+/map base_test_map
+/map base_test_map
+/map base_test_map
+/map base_test_map
+/map base_test_map
+/map test_basemap
+/map base_test_map
+/map base_test_map
+/map base_test_map
+/map base_test_map
+/map base_test_map
+/map test_basemap
+/map demo0
+/map demo02
+/map test_basemap
+map test_base_map
+/map base_test_map
+/map base_test_map
+/map base_test_map

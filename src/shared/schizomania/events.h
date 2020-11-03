@@ -16,8 +16,12 @@
 
 enum
 {
-	EV_RADIOMSG = EV_SEPARATOR,
-	EV_RADIOMSG2,
-	EV_SMOKE,
-	EV_FLASH
+	EV_SCHIZOMANIA = EV_SEPARATOR,
+
+	//================
+	// ITEM EVENTS.
+	//================
+	EV_ITEM_PICKUP,				// Picking up an item to inventory event.
+	EV_ITEM_DROP,				// Dropping an item from inventory event.
+	EV_ITEM_USE,				// Using an item from inventory event.
 };

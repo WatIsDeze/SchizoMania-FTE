@@ -209,7 +209,7 @@ HLGameRules::PlayerPostFrame(base_player pp)
 	pl.old_a_ammo2 = pl.a_ammo2;
 	pl.old_a_ammo3 = pl.a_ammo3;
 
-	// <SCMA>
+	// <WatIs>
 	pl.old_scma_shotmultiplier = pl.scma_shotmultiplier;
 	pl.old_scma_shottime = pl.scma_shottime;
 	// </SCMA>

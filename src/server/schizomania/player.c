@@ -153,12 +153,22 @@ float Player_SendEntity(entity ePEnt, float fChanged)
 	if (fChanged & PLAYER_AMMO3) {
 		WriteByte(MSG_ENTITY, pl.a_ammo3);
 	}
+
+	// <WatIs>
 	if (fChanged & PLAYER_CSSHOT) {
 		WriteByte(MSG_ENTITY, pl.scma_shotmultiplier);
 	}
 	if (fChanged & PLAYER_CSSHOTTIME) {
 		WriteFloat(MSG_ENTITY, pl.scma_shottime);
 	}
+///////////
+	// if (fChanged & PLAYER_ITEMCMD) {
+	// 	WriteByte(MSG_ENTITY, pl.inventory_itemid);
+	// }
+	// if (fChanged & PLAYER_ITEMINDEX) {
+	// 	WriteByte(MSG_ENTITY, pl.item_cmd);
+	// }
+	// </WatIs>
 
 	return TRUE;
 }

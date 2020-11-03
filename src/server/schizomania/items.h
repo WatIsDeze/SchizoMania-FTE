@@ -13,11 +13,6 @@
  * IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING
  * OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  */
-
-
-/*
-Core pickup item code. Serves as an entity in the world.
-*/
 class item_pickup:CBaseTrigger
 {
 	int m_bFloating;

@@ -34,7 +34,7 @@ PMove_Init(void)
 	localcmd("serverinfo phy_airaccelerate 10\n");
 	localcmd("serverinfo phy_wateraccelerate 8\n");
 
-// <SCMA> Uses this one now also.
+// <WatIs> Uses this one now also.
 #ifdef VALVE
 	localcmd("serverinfo phy_accelerate 6\n");	// Was 8
 	localcmd("serverinfo phy_maxspeed 285\n");	// Was 270

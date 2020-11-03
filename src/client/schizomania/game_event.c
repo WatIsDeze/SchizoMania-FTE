@@ -14,10 +14,36 @@
  * OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  */
 
+//=======================
+// void Game_Parse_Event(float fHeader)
+//
+// Parse all stock events, and GAME specific events.
+//=======================
 void
 Game_Parse_Event(float fHeader)
 {
 	switch (fHeader) {
+
+	//-------------------------
+	// SCMA events.
+	//-------------------------
+	case EV_ITEM_PICKUP:
+		int itemID = readbyte();
+		int itemAmount = readbyte();
+
+		// 
+		string playerName = "Player"; //getplayerkeyvalue(fSender, "name");
+		CSQC_Parse_Print(sprintf("%s picked up itemID: %i x %i", playerName, itemID, itemAmount), PRINT_CHAT);
+		// if (autocvar_cl_autoweaponswitch == 1) {
+		// 	sendevent("PlayerSwitchWeapon", "i", w);
+		// }
+
+		// HUD_WeaponPickupNotify(w);
+		break;
+
+	//-------------------------
+	// Stock FreeCS events.
+	//-------------------------
 	case EV_OBITUARY:
 		Obituary_Parse();
 		break;

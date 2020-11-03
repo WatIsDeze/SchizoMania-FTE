@@ -17,10 +17,20 @@
 noref int input_sequence;
 class player:base_player
 {	
-	// <SCMA>
+	// <WatIs>
+	// Shot multiplier and shot time, for CS recoil like system.
+	//
 	int scma_shotmultiplier;
 	float scma_shottime;
-	// </SCMA>
+
+	// <WatIs>
+	// Inv system of 255 items. int is the count of.
+	//
+	// Use server/client to operate with a message.
+	int inventory_items[255];
+	int inventory_itemid;
+	// </WatIs>
+	// </WatIs>
 
 #ifdef CLIENT
 	/* External model */
@@ -30,7 +40,7 @@ class player:base_player
 	float pitch;
 	float lastweapon;
 
-	// <SCMA> Properties.
+	// <WatIs> Properties.
 	int scma_cross_mindist;
 	int scma_cross_deltadist;
 	int scma_old_shotmultiplier;
@@ -67,7 +77,7 @@ class player:base_player
 	int ammo_snark;
 	int ammo_hornet;
 
-	// <SCMA>	
+	// <WatIs>	
 	int mode_glock18;
 
 	int old_scma_shotmultiplier;
