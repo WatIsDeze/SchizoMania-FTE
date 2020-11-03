@@ -142,3 +142,13 @@ map test_base_map
 /map base_test_map
 /map base_test_map
 /map base_test_map
+/map base_test_map
+map demo001
+map demo01
+drop 2 3
+drop
++drop
+drop
+drop 3 2
+drop 2 3
+drop 1 3

@@ -28,7 +28,6 @@ class player:base_player
 	//
 	// Use server/client to operate with a message.
 	int inventory_items[255];
-	int inventory_itemid;
 	// </WatIs>
 	// </WatIs>
 

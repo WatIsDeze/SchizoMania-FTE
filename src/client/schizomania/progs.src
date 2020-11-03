@@ -25,6 +25,7 @@
 ../schizomania/player.c
 ../schizomania/entities.c
 ../schizomania/cmds.c
+../schizomania/events_items.c
 ../schizomania/game_event.c
 ../schizomania/view.c
 ../schizomania/crosshair.c

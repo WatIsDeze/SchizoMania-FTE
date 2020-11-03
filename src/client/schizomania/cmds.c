@@ -14,10 +14,27 @@
  * OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  */
 
+//=======================
+// int Game_ConsoleCommand(void)
+//
+// SchizoMania console command implementations.
+//=======================
 int
 Game_ConsoleCommand(void)
 {
 	switch(argv(0)) {
+		case "drop":
+			float itemID = 0;
+			float amount = 0;
+			if (argv(1)) {
+				itemID = stof(argv(1));
+			}
+			if (argv(2)) {
+				amount = stof(argv(2));
+			}
+
+			sendevent("Dropitem", "ii", itemID, amount);
+			break;
 		default:
 		return FALSE;
 	}

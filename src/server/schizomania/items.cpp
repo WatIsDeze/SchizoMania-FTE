@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2016-2020 Marco Hladik <marco@icculus.org>
+ * Copyright (c) 2020 Mike Poortman <someemail@mail.com>
  *
  * Permission to use, copy, modify, and distribute this software for any
  * purpose with or without fee is hereby granted, provided that the above
@@ -14,12 +14,63 @@
  * OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  */
 
-
+//=======================
+// void Item_Drop(base_player pl, int itemID, int amount)
+//
+// Spawns an item_inventory with a MOVETYPE_TOSS which can be picked up
+// again later on.
+//=======================
 void
-CSEv_Item_Pickup_i(int i_ItemID)
+Item_Drop(base_player pl, int itemID, int amount)
 {
-	HLGameRules rules = (HLGameRules)g_grMode;
-	player pl = (player)self;
+	
+	static void DropItem_Enable(void)
+	{
+		self.solid = SOLID_TRIGGER;
+	}
 
-	centerprint(pl, sprintf("Picked up itemid: %i", i_ItemID));
-} 
+	// if (!pl.activeweapon)
+	// 	return;
+
+	// if (g_weapons[pl.activeweapon].allow_drop != TRUE)
+	// 	return;
+
+	item_inventory drop = spawn(item_inventory);
+	drop.SetItem(itemID);
+	drop.SetAmount(amount);
+	setorigin(drop, pl.origin);
+	drop.solid = SOLID_NOT;
+	drop.think = DropItem_Enable;
+	drop.nextthink = time + 1.5f;
+	drop.movetype = MOVETYPE_TOSS;
+	drop.classname = "remove_me";
+
+	makevectors(pl.v_angle);
+	drop.velocity = v_forward * 256;
+	drop.avelocity[1] = 500;
+	
+	// Write out EV_ITEM_DROP event.
+	WriteByte(MSG_MULTICAST, SVC_CGAMEPACKET);
+	WriteByte(MSG_MULTICAST, EV_ITEM_DROP);
+	WriteByte(MSG_MULTICAST, itemID);
+	WriteByte(MSG_MULTICAST, amount);
+	msg_entity = other;
+
+	// Multicast it.
+	multicast([0,0,0], MSG_MULTICAST);
+	
+	// 
+	//Weapons_RemoveItem(pl, pl.activeweapon);
+}
+
+//=======================
+// void CSEv_Dropitem_ii(float itemID, float amount)
+//
+// Dropitem event implementation.
+//=======================
+void
+CSEv_Dropitem_ii(float itemID, float amount)
+{
+	player pl = (player)self;
+	Item_Drop(pl, itemID, amount);
+}

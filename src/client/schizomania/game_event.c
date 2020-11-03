@@ -28,17 +28,10 @@ Game_Parse_Event(float fHeader)
 	// SCMA events.
 	//-------------------------
 	case EV_ITEM_PICKUP:
-		int itemID = readbyte();
-		int itemAmount = readbyte();
-
-		// 
-		string playerName = "Player"; //getplayerkeyvalue(fSender, "name");
-		CSQC_Parse_Print(sprintf("%s picked up itemID: %i x %i", playerName, itemID, itemAmount), PRINT_CHAT);
-		// if (autocvar_cl_autoweaponswitch == 1) {
-		// 	sendevent("PlayerSwitchWeapon", "i", w);
-		// }
-
-		// HUD_WeaponPickupNotify(w);
+		Items_Event_Pickup();
+		break;
+	case EV_ITEM_DROP:
+		Items_Event_Drop();
 		break;
 
 	//-------------------------

@@ -101,7 +101,7 @@
 {
 "classname" "item_inventory"
 "origin" "240.000000 0.000000 92.000000"
-"model" "models/winebottle.mdl"
+"model" "models/w_egon.mdl"
 "amount" "1"
 "itemID" "2"
 }
@@ -120,20 +120,4 @@
 "model" "models/winebottle.mdl"
 "amount" "1"
 "itemID" "2"
-}
-// entity 6
-{
-"classname" "item_inventory"
-"origin" "240.000000 192.000000 92.000000"
-"model" "models/can.mdl"
-"amount" "1"
-"itemID" "1"
-}
-// entity 7
-{
-"classname" "item_inventory"
-"origin" "128.000000 192.000000 92.000000"
-"model" "models/can.mdl"
-"amount" "1"
-"itemID" "1"
 }

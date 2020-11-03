@@ -31,7 +31,7 @@ void UI_NewGame_Show ( void )
 		localcmd("stopmusic\n");
 		//localcmd("set skill 1; maxplayers 1\n");
 		localcmd( "maxplayers 1\ncoop 0\n"); 
-		localcmd( "map demo01\n" );
+		localcmd( "map test_item_inventory\n" );
 		winNewGame.Hide();
 	}
 	static void NewGame_Cancel ( void ) {

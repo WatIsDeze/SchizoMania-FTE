@@ -25,6 +25,9 @@ void
 Client_Init(float apilevel, string enginename, float engineversion)
 {
 	Obituary_Init();
+
+	// Commands.
+	registercommand("drop");
 }
 
 void
