@@ -21,7 +21,7 @@
 // again later on.
 //=======================
 void
-Item_Drop(base_player pl, int itemID, int amount)
+Item_Drop(player pl, int itemID, int amount)
 {
 	
 	static void DropItem_Enable(void)
@@ -29,12 +29,23 @@ Item_Drop(base_player pl, int itemID, int amount)
 		self.solid = SOLID_TRIGGER;
 	}
 
-	// if (!pl.activeweapon)
-	// 	return;
+	// In case the itemID or amount is invalid, debug this.
+	if (itemID < 0 || itemID > 255) {
+		dprint(sprintf("Invalid itemID: %i - Should be between 0 to 256", itemID));
+		return;
+	}
+	if (amount < 0 || amount > 255) {
+		dprint(sprintf("Invalid m_iAmount: %i - Should be between 0 to 256", amount));
+		return;
+	}
 
-	// if (g_weapons[pl.activeweapon].allow_drop != TRUE)
-	// 	return;
+    // Remove item from the player inventory.
+    pl.inventory_items[itemID] += amount;
 
+    // Ensure it is in bounds.
+    pl.inventory_items[itemID] = bound(0, pl.inventory_items[itemID], 255);
+
+	// Spawn dropable.
 	item_inventory drop = spawn(item_inventory);
 	drop.SetItem(itemID);
 	drop.SetAmount(amount);
@@ -58,9 +69,6 @@ Item_Drop(base_player pl, int itemID, int amount)
 
 	// Multicast it.
 	multicast([0,0,0], MSG_MULTICAST);
-	
-	// 
-	//Weapons_RemoveItem(pl, pl.activeweapon);
 }
 
 //=======================

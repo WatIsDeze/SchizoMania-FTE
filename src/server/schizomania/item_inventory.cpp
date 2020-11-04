@@ -44,7 +44,7 @@ void
 item_inventory::SetItem(int itemID) {
 	m_iItemID = itemID;
 
-	//if (itemID == 1)
+	if (itemID == 1)
 		SetModel("models/can.mdl");
 	if (itemID == 2)
 		SetModel("models/winebottle.mdl");

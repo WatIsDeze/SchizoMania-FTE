@@ -152,3 +152,9 @@ drop
 drop 3 2
 drop 2 3
 drop 1 3
+drop 2 3
+drop 2 3
+drop 2 1
+/titles_test 
+/map test_item_inventory
+/titles_test 
