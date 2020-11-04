@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2016-2019 Marco Hladik <marco@icculus.org>
+ * Copyright (c) 2020 Mike Poortman <someemail@mail.com>
  *
  * Permission to use, copy, modify, and distribute this software for any
  * purpose with or without fee is hereby granted, provided that the above
@@ -13,21 +13,17 @@
  * IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING
  * OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  */
-
-#include "animations.h"
-#include "weapons.h"
-#include "items/items.h"
-#include "entities.h"
-#include "events.h"
-
-#define TEAM_T		1
-#define TEAM_CT		2
-#define TEAM_VIP	3
-
+//=======================
+// ACTUAL ITEM DATABASE.
+//
+// Currently item indexes are Written and ead as byte.
+// 
+// DO NOT EXCEED 255, OR EXPECT TROUBLE
+//=======================
 enum
 {
-	STAT_MONEY = 34,
-	STAT_PROGRESS,
-	STAT_GAMETIME,
-	STAT_GAMESTATE
+    INVENTORY_ITEM_NULL = 0,
+    INVENTORY_ITEM_CAN,
+    INVENTORY_ITEM_WINEBOTTLE,
+    INVENTORY_ITEM_MAX
 };

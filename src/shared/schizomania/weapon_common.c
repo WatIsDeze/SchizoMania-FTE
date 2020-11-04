@@ -14,10 +14,6 @@
  * OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  */
 
-#ifdef SERVER
-void Decals_Init(void);
-#endif
-
 void Weapons_Init(void)
 {
 	/* in the future we'll have no internal weapon table, then this will fill

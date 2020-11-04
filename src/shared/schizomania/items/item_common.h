@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2016-2019 Marco Hladik <marco@icculus.org>
+ * Copyright (c) 2020 Mike Poortman <someemail@mail.com>
  *
  * Permission to use, copy, modify, and distribute this software for any
  * purpose with or without fee is hereby granted, provided that the above
@@ -13,21 +13,17 @@
  * IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING
  * OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  */
+//=======================
+// INVENTORY ITEM
+//
+// Defines the model for each item in the item "database".
+//=======================
+typedef struct {
+    string name;        // Item name.
+    float ID;           // Item ENUM inventory Index.
 
-#include "animations.h"
-#include "weapons.h"
-#include "items/items.h"
-#include "entities.h"
-#include "events.h"
+    void(void) use;
+    void(void) precache;
 
-#define TEAM_T		1
-#define TEAM_CT		2
-#define TEAM_VIP	3
-
-enum
-{
-	STAT_MONEY = 34,
-	STAT_PROGRESS,
-	STAT_GAMETIME,
-	STAT_GAMESTATE
-};
+    string() wmodel;    // Returns weapon model.
+} inventory_item_t;

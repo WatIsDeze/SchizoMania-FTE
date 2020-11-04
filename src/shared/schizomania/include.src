@@ -16,6 +16,15 @@
 ../../shared/schizomania/fx_spark.c
 ../../shared/schizomania/fx_impact.c
 
+../../shared/schizomania/items/items.h
+../../shared/schizomania/items/item_common.h
+../../shared/schizomania/items/i_can.c
+../../shared/schizomania/items/i_winebottle.c
+../../shared/schizomania/items/items.cpp
+../../shared/schizomania/items/item_common.c
+
+
+
 ../../shared/schizomania/weapons.h
 ../../shared/schizomania/weapons_schizomania.c
 ../../shared/schizomania/w_crossbow.c

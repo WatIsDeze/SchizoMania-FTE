@@ -37,6 +37,7 @@ Game_Worldspawn(void)
 
 	precache_model("models/player.mdl");
 	precache_model("models/w_weaponbox.mdl");
+	Items_Init();
 	Weapons_Init();
 	Player_Precache();
 }

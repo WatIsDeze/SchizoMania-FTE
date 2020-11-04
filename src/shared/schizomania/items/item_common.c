@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2016-2019 Marco Hladik <marco@icculus.org>
+ * Copyright (c) 2020 Mike Poortman <someemail@mail.com>
  *
  * Permission to use, copy, modify, and distribute this software for any
  * purpose with or without fee is hereby granted, provided that the above
@@ -13,21 +13,16 @@
  * IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING
  * OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  */
-
-#include "animations.h"
-#include "weapons.h"
-#include "items/items.h"
-#include "entities.h"
-#include "events.h"
-
-#define TEAM_T		1
-#define TEAM_CT		2
-#define TEAM_VIP	3
-
-enum
+//=======================
+// void Items_Init(void)
+//
+// Precache all items, maybe other possible init stuff.
+//=======================
+void Items_Init(void)
 {
-	STAT_MONEY = 34,
-	STAT_PROGRESS,
-	STAT_GAMETIME,
-	STAT_GAMESTATE
-};
+	for (int i = 0; i < g_inventory_items.length; i++) {
+		if (g_inventory_items[i].precache != __NULL__) {
+			g_inventory_items[i].precache();
+		}
+	}
+}

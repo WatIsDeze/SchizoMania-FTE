@@ -105,6 +105,7 @@ CSQC_RendererRestarted(string rstr)
 	precache_pic("gfx/vgui/icntlk_pl");
 
 	/* View */
+	Items_Init();
 	Weapons_Init();
 	Scores_Init();
 	View_Init();

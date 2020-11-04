@@ -24,10 +24,10 @@ class player:base_player
 	float scma_shottime;
 
 	// <WatIs>
-	// Inv system of 255 items. int is the count of.
+	// Inv system of INVENTORY_ITEM_MAX items. int is the count of.
 	//
 	// Use server/client to operate with a message.
-	int inventory_items[255];
+	int inventory_items[INVENTORY_ITEM_MAX];
 	// </WatIs>
 	// </WatIs>
 

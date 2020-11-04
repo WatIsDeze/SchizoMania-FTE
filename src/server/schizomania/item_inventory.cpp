@@ -40,22 +40,21 @@ class item_inventory:CBaseEntity
 //=======================
 // void item_inventory::SetItem(int itemID)
 //=======================
-void
-item_inventory::SetItem(int itemID) {
-	m_iItemID = itemID;
+void item_inventory::SetItem(int itemID) {
+	// Ensure it is in bounds.
+	m_iItemID = bound(0, itemID, INVENTORY_ITEM_MAX);
 
-	if (itemID == 1)
-		SetModel("models/can.mdl");
-	if (itemID == 2)
-		SetModel("models/winebottle.mdl");
+	// Update model.
+	SetModel(g_inventory_items[itemID].wmodel());
 }
 
 //=======================
 // void item_inventory::SetAmount(int amount)
 //=======================
-void
-item_inventory::SetAmount(int amount) {
-	m_iAmount = amount;
+void item_inventory::SetAmount(int amount) {
+	// Ensure it is in bounds.
+	m_iAmount = bound(0, amount, 255);
+
 }
 
 //=======================
@@ -66,8 +65,7 @@ item_inventory::SetAmount(int amount) {
 // - mount:  The amount of 'itemid' items that are contained in this
 //           pickup.
 //=======================
-void
-item_inventory::SpawnKey(string strKey, string strValue)
+void item_inventory::SpawnKey(string strKey, string strValue)
 {
 	switch (strKey) {
 	case "itemID":
@@ -96,25 +94,11 @@ void item_inventory::touch(void)
 		return;
 	}
 
-	// In case the itemID or amount is invalid, debug this.
-	if (m_iItemID < 0 || m_iItemID > 255) {
-		dprint(sprintf("Invalid itemID: %i - Should be between 0 to 256", m_iItemID));
-		return;
-	}
-	if (m_iAmount < 0 || m_iAmount > 255) {
-		dprint(sprintf("Invalid m_iAmount: %i - Should be between 0 to 256", m_iAmount));
-		return;
-	}
-
 	// Cast to player.
 	player pl = (player)other;
 
 	// Add item to the player inventory.
-	pl.inventory_items[m_iItemID] += m_iAmount;
-	if (pl.inventory_items[m_iItemID] < 0)
-		pl.inventory_items[m_iItemID] = 0;
-	if (pl.inventory_items[m_iItemID] > 255)
-		pl.inventory_items[m_iItemID] = 255;
+	pl.inventory_items[m_iItemID] = bound(0, pl.inventory_items[m_iItemID] + m_iAmount, 255);
 
 	// Player pickup sound and log.
 	Logging_Pickup(other, this, __NULL__);
@@ -142,17 +126,11 @@ void item_inventory::touch(void)
 void item_inventory::item_inventory(void)
 {
 	// Setup base itemID and amount.
-	m_iItemID = 1;
-	m_iAmount = 1;
+	m_iItemID = INVENTORY_ITEM_NULL;
+	m_iAmount = 0;
 
 	//SetModel(model);
 	SetSize([-16,-16,0], [16,16,16]);
 	SetSolid(SOLID_TRIGGER);
 	SetMovetype(MOVETYPE_TOSS);
-
-	// Place in Precache function?
-	// precache_model("models/can.mdl");
-	// precache_model("model/winebottle.mdl");
-	// Sound_Precache("item.pickup");
-	// Sound_Precache("item.drop");
 }
