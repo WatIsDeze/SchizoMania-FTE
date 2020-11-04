@@ -3,44 +3,45 @@
 ../../shared/schizomania/flags.h
 
 ../../shared/schizomania/player.cpp
-../../shared/schizomania/weapon_common.h
+../../shared/schizomania/weapons/weapon_common.h
 ../../shared/schizomania/animations.h
 ../../shared/schizomania/animations.c
 ../../shared/schizomania/pmove.c
 
 
-../../shared/schizomania/fx_blood.c
-../../shared/schizomania/fx_breakmodel.c
-../../shared/schizomania/fx_explosion.c
-../../shared/schizomania/fx_gibhuman.c
-../../shared/schizomania/fx_spark.c
-../../shared/schizomania/fx_impact.c
+../../shared/schizomania/fx/fx_blood.c
+../../shared/schizomania/fx/fx_breakmodel.c
+../../shared/schizomania/fx/fx_explosion.c
+../../shared/schizomania/fx/fx_gibhuman.c
+../../shared/schizomania/fx/fx_spark.c
+../../shared/schizomania/fx/fx_impact.c
 
 ../../shared/schizomania/items/items.h
 ../../shared/schizomania/items/item_common.h
 ../../shared/schizomania/items/i_can.c
 ../../shared/schizomania/items/i_winebottle.c
+../../shared/schizomania/items/i_lvbottle.c
 ../../shared/schizomania/items/items.cpp
 ../../shared/schizomania/items/item_common.c
 
 
 
-../../shared/schizomania/weapons.h
-../../shared/schizomania/weapons_schizomania.c
-../../shared/schizomania/w_crossbow.c
-../../shared/schizomania/w_crowbar.c
-../../shared/schizomania/w_egon.c
-../../shared/schizomania/w_gauss.c
-../../shared/schizomania/w_glock.c
-../../shared/schizomania/w_handgrenade.c
-../../shared/schizomania/w_hornetgun.c
-../../shared/schizomania/w_mp5.c
-../../shared/schizomania/w_python.c
-../../shared/schizomania/w_rpg.c
-../../shared/schizomania/w_satchel.c
-../../shared/schizomania/w_shotgun.c
-../../shared/schizomania/w_snark.c
-../../shared/schizomania/w_tripmine.c
-../../shared/schizomania/weapons.c
-../../shared/schizomania/weapon_common.c
+../../shared/schizomania/weapons/weapons.h
+../../shared/schizomania/weapons/weapons_schizomania.c
+../../shared/schizomania/weapons/w_crossbow.c
+../../shared/schizomania/weapons/w_crowbar.c
+../../shared/schizomania/weapons/w_egon.c
+../../shared/schizomania/weapons/w_gauss.c
+../../shared/schizomania/weapons/w_glock.c
+../../shared/schizomania/weapons/w_handgrenade.c
+../../shared/schizomania/weapons/w_hornetgun.c
+../../shared/schizomania/weapons/w_mp5.c
+../../shared/schizomania/weapons/w_python.c
+../../shared/schizomania/weapons/w_rpg.c
+../../shared/schizomania/weapons/w_satchel.c
+../../shared/schizomania/weapons/w_shotgun.c
+../../shared/schizomania/weapons/w_snark.c
+../../shared/schizomania/weapons/w_tripmine.c
+../../shared/schizomania/weapons/weapons.c
+../../shared/schizomania/weapons/weapon_common.c
 #endlist

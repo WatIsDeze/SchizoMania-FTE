@@ -19,5 +19,6 @@
 //
 inventory_item_t g_inventory_items[] = {
     i_can,
-    i_winebottle
+    i_winebottle,
+    i_lvbottle
 };

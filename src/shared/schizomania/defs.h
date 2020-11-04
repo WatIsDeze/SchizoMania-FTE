@@ -15,7 +15,7 @@
  */
 
 #include "animations.h"
-#include "weapons.h"
+#include "weapons/weapons.h"
 #include "items/items.h"
 #include "entities.h"
 #include "events.h"
