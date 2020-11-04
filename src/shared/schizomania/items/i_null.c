@@ -15,43 +15,21 @@
  * OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  */
 //=======================
-// void i_winebottle_precache(void)
-// 
-// Precache.
-//=======================
-void i_winebottle_precache(void) {
-#ifdef SERVER
-	Sound_Precache("item_winebottle.use");
-	precache_model("models/winebottle.mdl");
-#else
-	precache_model("models/winebottle.mdl");
-#endif
-}
-
-//=======================
-// void i_winebottle_use(void)
-//
-// Use.
-//=======================
-void i_winebottle_use(void) {
-
-}
-
-//=======================
-// string i_winebottle_wmodel(void)
+// string i_can_wmodel(void)
 //
 // Return item model string path.
 //=======================
-string i_winebottle_wmodel(void) {
-    return "models/winebottle.mdl";
+string 
+i_null_wmodel(void) {
+    return "";
 }
 
-inventory_item_t i_winebottle = 
+inventory_item_t i_null = 
 {
-	.name		= "A bottle of Wine",
-	.ID			= INVENTORY_ITEM_WINEBOTTLE,
+	.name		= "NULL ITEM",
+	.ID			= INVENTORY_ITEM_NULL,
 
-	.use		= i_winebottle_use,
-	.precache	= i_winebottle_precache,
-    .wmodel     = i_winebottle_wmodel
+	.use		= __NULL__,
+	.precache	= __NULL__,
+    .wmodel     = i_null_wmodel
 };

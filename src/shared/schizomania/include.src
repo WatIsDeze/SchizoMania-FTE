@@ -18,6 +18,7 @@
 
 ../../shared/schizomania/items/items.h
 ../../shared/schizomania/items/item_common.h
+../../shared/schizomania/items/i_null.c
 ../../shared/schizomania/items/i_can.c
 ../../shared/schizomania/items/i_winebottle.c
 ../../shared/schizomania/items/i_lvbottle.c

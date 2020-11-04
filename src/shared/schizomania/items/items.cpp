@@ -18,6 +18,7 @@
 // ITEM RELATED FUNCTIONS GO HERE, NONE AS OF YET.
 //
 inventory_item_t g_inventory_items[] = {
+    i_null,
     i_can,
     i_winebottle,
     i_lvbottle

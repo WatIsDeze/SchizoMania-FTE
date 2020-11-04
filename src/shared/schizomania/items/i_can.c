@@ -58,18 +58,3 @@ inventory_item_t i_can =
 	.precache	= i_can_precache,
     .wmodel     = i_can_wmodel
 };
-
-/* pickups */
-#ifdef SERVER
-// void
-// weapon_9mmhandgun(void)
-// {
-// 	Weapons_InitItem(WEAPON_GLOCK);
-// }
-
-// void
-// weapon_glock(void)
-// {
-// 	Weapons_InitItem(WEAPON_GLOCK);
-// }
-#endif

@@ -26,24 +26,15 @@ Item_Drop(player pl, int itemID, int amount)
 	
 	static void DropItem_Enable(void)
 	{
-		self.solid = SOLID_TRIGGER;
+		self.solid = SOLID_CORPSE;
 	}
 
-	// In case the itemID or amount is invalid, debug this.
-	if (itemID < 0 || itemID > 255) {
-		dprint(sprintf("Invalid itemID: %i - Should be between 0 to 256", itemID));
-		return;
-	}
-	if (amount < 0 || amount > 255) {
-		dprint(sprintf("Invalid m_iAmount: %i - Should be between 0 to 256", amount));
-		return;
-	}
+	// Ensure ItemID and amount are in bounds.
+	itemID = bound(0, itemID, INVENTORY_ITEM_MAX - 1);
+	amount = bound(0, amount, 255);
 
     // Remove item from the player inventory.
-    pl.inventory_items[itemID] += amount;
-
-    // Ensure it is in bounds.
-    pl.inventory_items[itemID] = bound(0, pl.inventory_items[itemID], 255);
+    pl.inventory_items[itemID] = bound(0, pl.inventory_items[itemID] - amount, 255);
 
 	// Spawn dropable.
 	item_inventory drop = spawn(item_inventory);

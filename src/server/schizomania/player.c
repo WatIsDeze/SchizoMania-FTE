@@ -161,13 +161,6 @@ float Player_SendEntity(entity ePEnt, float fChanged)
 	if (fChanged & PLAYER_CSSHOTTIME) {
 		WriteFloat(MSG_ENTITY, pl.scma_shottime);
 	}
-///////////
-	// if (fChanged & PLAYER_ITEMCMD) {
-	// 	WriteByte(MSG_ENTITY, pl.inventory_itemid);
-	// }
-	// if (fChanged & PLAYER_ITEMINDEX) {
-	// 	WriteByte(MSG_ENTITY, pl.item_cmd);
-	// }
 	// </WatIs>
 
 	return TRUE;

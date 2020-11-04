@@ -30,7 +30,8 @@ class item_inventory:CBaseEntity
     int m_iAmount;          			// Amount to give for the game item database.
 	
 	void(void) item_inventory;
-	virtual void(void) touch;
+	virtual void(void) Respawn;
+	virtual void(void) PlayerUse;
 	virtual void(string, string) SpawnKey;
 
 	virtual void(int) SetItem;
@@ -42,7 +43,7 @@ class item_inventory:CBaseEntity
 //=======================
 void item_inventory::SetItem(int itemID) {
 	// Ensure it is in bounds.
-	m_iItemID = bound(0, itemID, INVENTORY_ITEM_MAX);
+	m_iItemID = bound(0, itemID, INVENTORY_ITEM_MAX - 1);
 
 	// Update model.
 	SetModel(g_inventory_items[itemID].wmodel());
@@ -54,7 +55,6 @@ void item_inventory::SetItem(int itemID) {
 void item_inventory::SetAmount(int amount) {
 	// Ensure it is in bounds.
 	m_iAmount = bound(0, amount, 255);
-
 }
 
 //=======================
@@ -80,22 +80,22 @@ void item_inventory::SpawnKey(string strKey, string strValue)
 }
 
 //=======================
-// void item_inventory::touch(void)
+// void item_inventory::PlayerUse(void)
 //
-// Executed only if touched by a player, returns otherwise.
+// Executed only if used by a player, returns otherwise.
 //
 // Plays a pickup sound, logs the pickup event and sends a pickup event
 // off to the client.
 //=======================
-void item_inventory::touch(void)
+void item_inventory::PlayerUse(void)
 {
 	// Determine whether it is a player, AI etc don't interact with these.
-	if (other.classname != "player") {
-		return;
+	if (eActivator.classname != "player") {
+	  	return;
 	}
 
 	// Cast to player.
-	player pl = (player)other;
+	player pl = (player)eActivator;
 
 	// Add item to the player inventory.
 	pl.inventory_items[m_iItemID] = bound(0, pl.inventory_items[m_iItemID] + m_iAmount, 255);
@@ -119,18 +119,31 @@ void item_inventory::touch(void)
 }
 
 //=======================
+// void item_inventory::Respawn(void)
+//
+// Respawn.
+//=======================
+void item_inventory::Respawn(void) {
+	// Ensure item ID is in bounds.
+	m_iItemID = bound(0, m_iItemID, INVENTORY_ITEM_MAX - 1);
+	
+	// Set defaults.
+	SetModel(g_inventory_items[m_iItemID].wmodel());
+	SetSize([-8,-8,0], [8,8,8]);
+	SetSolid(SOLID_CORPSE);
+	SetMovetype(MOVETYPE_TOSS);
+}
+
+//=======================
 // void item_inventory::item_inventory(void)
 //
 // Constructor.
 //=======================
 void item_inventory::item_inventory(void)
 {
-	// Setup base itemID and amount.
-	m_iItemID = INVENTORY_ITEM_NULL;
-	m_iAmount = 0;
+	// Call Super class constructor. 
+	CBaseEntity::CBaseEntity();
 
-	//SetModel(model);
-	SetSize([-16,-16,0], [16,16,16]);
-	SetSolid(SOLID_TRIGGER);
-	SetMovetype(MOVETYPE_TOSS);
+	// Respawn.
+	Respawn();
 }
