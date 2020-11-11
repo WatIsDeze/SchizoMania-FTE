@@ -6,6 +6,7 @@
 #define VALVE
 #define SCHIZOMANIA
 #define GS_RENDERFX
+#define BULLETPENETRATION
 
 #includelist
 ../../shared/fteextensions.qc

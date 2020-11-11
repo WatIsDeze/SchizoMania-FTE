@@ -208,3 +208,5 @@ drop 2 1
 map demo01
 drop 1 1
 map demo01
+map demo01
+map demo01
