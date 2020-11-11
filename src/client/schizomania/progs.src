@@ -35,6 +35,8 @@
 ../schizomania/scoreboard.c
 ../schizomania/input.c
 
+../schizomania/item_inventory.cpp
+
 ../include.src
 ../../shared/include.src
 #endlist

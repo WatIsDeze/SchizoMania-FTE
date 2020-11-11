@@ -80,7 +80,6 @@
 // entity 5
 {
 "classname" "func_physbox"
-"massscale" "300"
 // brush 0
 {
 ( 80 64 -48 ) ( 80 0 -48 ) ( 64 64 -48 ) next/bunker1 [ 1 0 0 0 ] [ -0 -1 -0 0 ] -0 0.5 0.5 0 0 0
@@ -103,7 +102,6 @@
 // entity 6
 {
 "classname" "func_physbox"
-"massscale" "300"
 // brush 0
 {
 ( 80 64 -32 ) ( 80 0 -32 ) ( 64 64 -32 ) next/bunker1 [ 1 0 0 0 ] [ -0 -1 -0 0 ] -0 0.5 0.5 0 0 0
@@ -126,7 +124,6 @@
 // entity 7
 {
 "classname" "func_physbox"
-"massscale" "300"
 // brush 0
 {
 ( 80 64 -16 ) ( 80 0 -16 ) ( 64 64 -16 ) next/bunker1 [ 1 0 0 0 ] [ -0 -1 -0 0 ] -0 0.5 0.5 0 0 0
@@ -149,7 +146,6 @@
 // entity 8
 {
 "classname" "func_physbox"
-"massscale" "300"
 // brush 0
 {
 ( 80 64 0 ) ( 80 0 0 ) ( 64 64 0 ) next/bunker1 [ 1 0 0 0 ] [ -0 -1 -0 0 ] -0 0.5 0.5 0 0 0
@@ -172,7 +168,6 @@
 // entity 9
 {
 "classname" "func_physbox"
-"massscale" "300"
 // brush 0
 {
 ( 80 64 16 ) ( 80 0 16 ) ( 64 64 16 ) next/bunker1 [ 1 0 0 0 ] [ -0 -1 -0 0 ] -0 0.5 0.5 0 0 0
@@ -195,7 +190,6 @@
 // entity 10
 {
 "classname" "func_physbox"
-"massscale" "300"
 // brush 0
 {
 ( 80 64 32 ) ( 80 0 32 ) ( 64 64 32 ) next/bunker1 [ 1 0 0 0 ] [ -0 -1 -0 0 ] -0 0.5 0.5 0 0 0

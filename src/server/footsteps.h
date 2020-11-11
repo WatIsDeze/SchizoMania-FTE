@@ -14,32 +14,25 @@
  * OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  */
 
-float
-Math_LerpAngle(float fStart, float fEnd, float fAmount)
-{
-	float shortest_angle = ((((fEnd - fStart) % 360) + 540) % 360) - 180;
-	return shortest_angle * fAmount;
-}
+/* HLBSP materials.txt character id's */
+#define MATID_ALIEN			'H'
+#define MATID_BLOODYFLESH	'B'
+#define MATID_COMPUTER		'P'
+#define MATID_CONCRETE		'C'
+#define MATID_DIRT			'D'
+#define MATID_FLESH			'F'
+#define MATID_FOLIAGE		'O'
+#define MATID_GLASS			'Y'
+#define MATID_GRATE			'G'
+#define MATID_METAL			'M'
+#define MATID_SLOSH			'S'
+#define MATID_SNOW			'N'
+#define MATID_TILE			'T'
+#define MATID_VENT			'V'
+#define MATID_WOOD			'W'
 
-float
-Math_Lerp(float fA, float fB, float fPercent)
-{
-	return (fA * (1 - fPercent)) + (fB * fPercent);
-}
-
-float
-Math_FixDelta(float fDelta)
-{
-	if (fDelta >= 180) {
-		fDelta -= 360;
-	} else if (fDelta <= -180) {
-		fDelta += 360;
-	}
-	return fDelta;
-}
-
-vector
-Math_Reflect(vector v1, vector v2)
-{
-	return v1 - 2 * dotproduct(v1, v2) * v2;
-}
+void Footsteps_Init(void);
+void Footsteps_HLBSP(base_player target);
+void Footsteps_VVBSP(base_player target);
+void Footsteps_Default(base_player target);
+void Footsteps_Update(void);

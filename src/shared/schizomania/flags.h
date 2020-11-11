@@ -15,9 +15,9 @@
  */
 
 /* game flags */
-#define GF_SEMI_TOGGLED		(1<<0)
-#define GF_FLASHLIGHT		(1<<1)
-#define GF_UNUSED3			(1<<2)
+#define GF_SEMI_TOGGLED		(1<<0)      // For weapon secondary fire.
+#define GF_FLASHLIGHT		(1<<1)      // Flashlight on or off?
+#define GF_HOVER_FULLBRIGHT	(1<<2)      // When hovered(aimed at), makes the entity glow.
 #define GF_UNUSED4			(1<<3)
 #define GF_UNUSED5			(1<<4)
 #define GF_UNUSED6			(1<<5)

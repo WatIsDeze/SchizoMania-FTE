@@ -14,8 +14,6 @@
  * OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  */
 
-#define GS_PHYSICS
-
 void
 CBasePhysics::PhysicsEnable(void)
 {

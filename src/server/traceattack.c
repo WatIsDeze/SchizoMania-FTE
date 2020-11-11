@@ -63,7 +63,7 @@ TraceAttack_FireSingle(vector vecPos, vector vAngle, int iDamage, int iWeapon)
 		FX_Blood(trace_endpos, [1,0,0]);
 		return;
 	}
-
+	
 	surf = getsurfacenearpoint(trace_ent, trace_endpos);
 	tex = getsurfacetexture(trace_ent, surf);
 

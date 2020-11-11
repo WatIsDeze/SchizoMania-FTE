@@ -1,6 +1,7 @@
 #ifdef DEVELOPER
 #define GS_DEVELOPER
 #endif
+#define GS_PHYSICS
 
 #includelist
 baseentity.h

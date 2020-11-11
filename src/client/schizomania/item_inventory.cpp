@@ -46,7 +46,7 @@ void item_inventory::SetItem(int itemID) {
 	m_iItemID = bound(0, itemID, INVENTORY_ITEM_MAX - 1);
 
 	// Update model.
-	SetModel(g_inventory_items[itemID].wmodel());
+	//SetModel(g_inventory_items[itemID].wmodel());
 }
 
 //=======================
@@ -89,38 +89,7 @@ void item_inventory::SpawnKey(string strKey, string strValue)
 //=======================
 void item_inventory::PlayerUse(void)
 {
-	// Determine whether it is a player, AI etc don't interact with these.
-	if (eActivator.classname != "player") {
-	  	return;
-	}
 
-	// Ensure the player is alive.
-	if (eActivator.health <= 0) {
-		return;
-	}
-
-	// Cast to player.
-	player pl = (player)eActivator;
-
-	// Add item to the player inventory.
-	pl.inventory_items[m_iItemID] = bound(0, pl.inventory_items[m_iItemID] + m_iAmount, 255);
-
-	// Player pickup sound and log.
-	Logging_Pickup(other, this, __NULL__);
-	sound(pl, CHAN_ITEM, "items/gunpickup2.wav", 1, ATTN_NORM);
-	
-	// Write out EV_ITEM_PICKUP event.
-	WriteByte(MSG_MULTICAST, SVC_CGAMEPACKET);
-	WriteByte(MSG_MULTICAST, EV_ITEM_PICKUP);
-	WriteByte(MSG_MULTICAST, m_iItemID);
-	WriteByte(MSG_MULTICAST, m_iAmount);
-	msg_entity = other;
-
-	// Multicast it.
-	multicast([0,0,0], MSG_MULTICAST);
-
-	// Remove from world, we don't want to pick it up twice.
-	remove(this);
 }
 
 //=======================
@@ -134,10 +103,11 @@ void item_inventory::Respawn(void) {
 	gflags |= GF_HOVER_FULLBRIGHT;
 	//gflags |= GF_HOVER_FULLBRIGHT;
 	// Set defaults.
-	SetModel(g_inventory_items[m_iItemID].wmodel());
-	SetSize([-16,-16,0], [16,16,16]);
-	SetSolid(SOLID_CORPSE);
-	SetMovetype(MOVETYPE_TOSS);
+	//SetModel(g_inventory_items[m_iItemID].wmodel());
+	// SetSize([-16,-16,0], [16,16,16]);
+	// SetSolid(SOLID_CORPSE);
+	// SetMovetype(MOVETYPE_TOSS);
+//    remove(self);
 }
 
 //=======================
@@ -154,12 +124,10 @@ void item_inventory::item_inventory(void)
 //========================================================
 //========================================================
 //========================================================
-
 //	self.gflags |= GF_HOVER_FULLBRIGHT;
 	//gflags |= GF_HOVER_FULLBRIGHT;
 	// Classname? 
-	classname = "item_inventory";
-
+classname = "item_inventory";
 	// Call Super class constructor. 
 	CBaseEntity::CBaseEntity();
 self.classname = "item_inventory";
