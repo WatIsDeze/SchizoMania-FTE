@@ -87,7 +87,7 @@
 // entity 1
 {
 "classname" "info_player_start"
-"origin" "0.000000 -8.000000 88.000000"
+"origin" "-120.000000 -32.000000 88.000000"
 }
 // entity 2
 {
@@ -100,7 +100,7 @@
 // entity 3
 {
 "classname" "item_inventory"
-"origin" "240.000000 0.000000 92.000000"
+"origin" "128.000000 0.000000 92.000000"
 "model" "models/winebottle.mdl"
 "amount" "1"
 "itemID" "2"
@@ -108,7 +108,7 @@
 // entity 4
 {
 "classname" "item_inventory"
-"origin" "240.000000 96.000000 92.000000"
+"origin" "160.000000 -72.000000 92.000000"
 "model" "models/can.mdl"
 "amount" "1"
 "itemID" "1"
@@ -116,7 +116,7 @@
 // entity 5
 {
 "classname" "item_inventory"
-"origin" "240.000000 -96.000000 92.000000"
+"origin" "96.000000 -128.000000 92.000000"
 "model" "models/winebottle.mdl"
 "amount" "1"
 "itemID" "2"
@@ -124,7 +124,7 @@
 // entity 6
 {
 "classname" "item_inventory"
-"origin" "240.000000 192.000000 92.000000"
+"origin" "144.000000 80.000000 92.000000"
 "model" "models/can.mdl"
 "amount" "1"
 "itemID" "1"
@@ -132,7 +132,7 @@
 // entity 7
 {
 "classname" "item_inventory"
-"origin" "128.000000 192.000000 92.000000"
+"origin" "32.000000 80.000000 92.000000"
 "model" "models/can.mdl"
 "amount" "1"
 "itemID" "1"

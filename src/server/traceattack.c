@@ -21,10 +21,31 @@ TraceAttack_FireSingle(vector vecPos, vector vAngle, int iDamage, int iWeapon)
 	string tex;
 	vector range;
 	float surf;
+	float maxPenetrationThickness = 8;
 
 	range = (vAngle * 8196);
 
 	traceline(vecPos, vecPos + range, MOVE_LAGGED | MOVE_HITMODEL, self);
+
+	// UNCOMMENT FOR DEBUG INFO.
+	// dprint("==================================================\n");
+	// dprint(sprintf("Tracing from:\n	%v'\nto\n%v\n", vecPos, vecPos + range));
+	// dprint(sprintf("Thickness: %f\n", thickness));
+	// dprint("==================================================\n");
+	// dprint(sprintf("trace_allsolid		= %f\n", trace_allsolid));
+	// dprint(sprintf("trace_startsolid	= %f\n", trace_startsolid));
+	// dprint(sprintf("trace_fraction		= %f\n", trace_fraction));
+	// dprint(sprintf("trace_endpos		= %v\n", trace_endpos));
+	// dprint(sprintf("trace_plane_normal	= %v\n", trace_plane_normal));
+	// dprint(sprintf("trace_plane_dist	= %f\n", trace_plane_dist));
+	// dprint(sprintf("trace_ent			= %S\n", trace_ent.classname));
+	// dprint(sprintf("trace_inopen		= %f\n", trace_inopen));
+	// dprint(sprintf("trace_inwater		= %f\n", trace_inwater));
+
+	// If it starts solid, it means the walls are too thick.
+	if (trace_startsolid > 0) {
+		return;
+	}
 
 	if (trace_fraction >= 1.0f)
 		return;
@@ -71,6 +92,7 @@ TraceAttack_FireSingle(vector vecPos, vector vAngle, int iDamage, int iWeapon)
 	switch ((float)hash_get(hashMaterials, tex)) {
 	case 'G':
 	case 'V':
+		maxPenetrationThickness = 4;
 		FX_Impact(IMPACT_METAL, trace_endpos, trace_plane_normal);
 		break;
 	case 'M':
@@ -79,16 +101,20 @@ TraceAttack_FireSingle(vector vecPos, vector vAngle, int iDamage, int iWeapon)
 		break;
 	case 'D':
 	case 'W':
+		maxPenetrationThickness = 8;
 		FX_Impact(IMPACT_WOOD, trace_endpos, trace_plane_normal);
 		break;
 	case 'Y':
+		maxPenetrationThickness = 16;
 		FX_Impact(IMPACT_GLASS, trace_endpos, trace_plane_normal);
 		break;
 	case 'N':
+		maxPenetrationThickness = 8;
 		FX_Impact(IMPACT_DEFAULT, trace_endpos, trace_plane_normal);
 		break;
 	case 'T':
 	default:
+		maxPenetrationThickness = 8;
 		FX_Impact(IMPACT_DEFAULT, trace_endpos, trace_plane_normal);
 		break;
 	}
@@ -96,7 +122,8 @@ TraceAttack_FireSingle(vector vecPos, vector vAngle, int iDamage, int iWeapon)
 #ifdef BULLETPENETRATION
 	if (iTotalPenetrations > 0) {
 		iTotalPenetrations -= 1;
-		TraceAttack_FireSingle(trace_endpos + (v_forward * 2), vAngle, iDamage / 2, iWeapon);
+		TraceAttack_FireSingle(trace_endpos + (v_forward * maxPenetrationThickness), vAngle, iDamage / 2, iWeapon);
+		//TraceAttack_FireSingle(trace_endpos + (vAngle * 8), vAngle, iDamage / 2, iWeapon);
 	}
 #endif
 }

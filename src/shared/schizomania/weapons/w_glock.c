@@ -179,7 +179,7 @@ w_glock_primary(void)
 //	}
 #else
 	pl.glock_mag--;
-	TraceAttack_SetPenetrationPower(0);
+	TraceAttack_SetPenetrationPower(1);
 	TraceAttack_FireBullets(1, pl.origin + pl.view_ofs, Skill_GetValue("plr_9mm_bullet"), [accuracy,accuracy], WEAPON_GLOCK);
 	//TraceAttack_FireBullets(1, pl.origin + pl.view_ofs, Skill_GetValue("plr_9mm_bullet"), [0.01,0.01], WEAPON_GLOCK);
 	if (pl.a_ammo3) {
