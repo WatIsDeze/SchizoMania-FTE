@@ -62,3 +62,4 @@ map test_current
 /map test_item_inventory
 /map test_item_inventory
 /map test_item_inventory
+/map test_item_inventory

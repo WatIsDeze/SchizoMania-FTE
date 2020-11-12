@@ -174,11 +174,11 @@ void View_DrawHoveredItem(void) {
 	} else {
 		// Check for no NULL trace. (It does happen at times).
 		if (oldItemTraceEnt != __NULL__) {
-			if (oldItemTraceEnt.gflag & GF_HOVER_FULLBRIGHT) {
+			if (oldItemTraceEnt.gflags & GF_HOVER_FULLBRIGHT) {
 				// Remove effect.
 				oldItemTraceEnt.effects &= ~EF_FULLBRIGHT;
 			}
-			
+
 			// Reset entity reference.
 			oldItemTraceEnt = __NULL__;
 		}

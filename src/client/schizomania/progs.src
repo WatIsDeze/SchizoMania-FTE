@@ -20,6 +20,8 @@
 ../../gs-entbase/shared.src
 ../../shared/schizomania/include.src
 
+../schizomania/entities/gameentity.cpp
+
 ../schizomania/predict.c
 ../schizomania/init.c
 ../schizomania/player.c
@@ -35,7 +37,6 @@
 ../schizomania/scoreboard.c
 ../schizomania/input.c
 
-../schizomania/entities/gameentity.cpp
 ../schizomania/entities/item_inventory.cpp
 
 ../include.src

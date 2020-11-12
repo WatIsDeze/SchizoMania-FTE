@@ -21,6 +21,13 @@ Game_Entity_Update(float id, float new)
 	case ENT_TRIPMINE:
 		w_tripmine_parse();
 		break;
+	case ENT_GAMEENTITY:
+		CGameEntity gent = (CGameEntity)self;
+		if (new) {
+			spawnfunc_CGameEntity();
+		}
+		gent.ReceiveEntity(readfloat());
+		break;
 	default:
 		return FALSE;
 	}
