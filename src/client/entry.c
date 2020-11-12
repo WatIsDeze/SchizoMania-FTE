@@ -808,6 +808,13 @@ CSQC_Ent_Update(float new)
 		}
 		me.ReceiveEntity(readfloat());
 		break;
+	case ENT_GAMEENTITY:
+		CGameEntity gent = (CGameEntity)self;
+		if (new) {
+			spawnfunc_CGameEntity();
+		}
+		gent.ReceiveEntity(readfloat());
+		break;
 	case ENT_PLAYER:
 		Player_ReceiveEntity(new);
 		break;

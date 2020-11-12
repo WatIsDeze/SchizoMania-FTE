@@ -24,7 +24,7 @@ Entity for pickup items which go in the inventory.
           pickup.
 
 */
-class item_inventory:CBaseEntity
+class item_inventory:CGameEntity
 {
     int m_iItemID;             			// Item ID for the game item database.
     int m_iAmount;          			// Amount to give for the game item database.
@@ -75,7 +75,7 @@ void item_inventory::SpawnKey(string strKey, string strValue)
 		m_iAmount = stoi(strValue);
 		break;
 	default:
-		CBaseEntity::SpawnKey(strKey, strValue);
+		CGameEntity::SpawnKey(strKey, strValue);
 	}
 }
 
@@ -131,7 +131,8 @@ void item_inventory::PlayerUse(void)
 void item_inventory::Respawn(void) {
 	// Ensure item ID is in bounds.
 	m_iItemID = bound(0, m_iItemID, INVENTORY_ITEM_MAX - 1);
-	gflags |= GF_HOVER_FULLBRIGHT;
+	//gflags |= GF_HOVER_FULLBRIGHT;
+	SetGFlags(gflags | GF_HOVER_FULLBRIGHT);
 	//gflags |= GF_HOVER_FULLBRIGHT;
 	// Set defaults.
 	SetModel(g_inventory_items[m_iItemID].wmodel());
@@ -161,7 +162,7 @@ void item_inventory::item_inventory(void)
 	classname = "item_inventory";
 
 	// Call Super class constructor. 
-	CBaseEntity::CBaseEntity();
+	CGameEntity::CGameEntity();
 self.classname = "item_inventory";
 	// Respawn.
 	Respawn();

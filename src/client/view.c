@@ -130,7 +130,26 @@ View_CalcRoll(void)
 // If it is, give it a shell.
 //=======================
 entity oldItemTraceEnt;
+		// if (checkpvs(vecPlayer, this) == FALSE)
+		// 	alpha -= clframetime;
 
+		// other = world;
+		// traceline(this.origin, vecPlayer, MOVE_OTHERONLY, this);
+
+		// /* If we can't trace against the player, or are two close, fade out */
+		// if (trace_fraction < 1.0f || vlen(origin - vecPlayer) < 128)
+		// 	alpha -= clframetime; 
+		// else
+		// 	alpha += clframetime;
+
+		// /* max alpha will be applied here to the color instead */
+		// colormod *= m_flRenderAmt;
+		// alpha = bound(0.0f, alpha, 1.0f);
+		// effects = EF_ADDITIVE | EF_FULLBRIGHT;
+
+		// /* Scale the glow somewhat with the players distance */
+		// if (alpha > 0.0f)
+		// 	scale = bound(1, vlen(vecPlayer - origin) / 256, 4);
 void View_DrawHoveredItem(void) {
 	player pl = (player) self;
 
@@ -145,22 +164,21 @@ void View_DrawHoveredItem(void) {
 	// If we hit a trace, and it had GF_HOVER_FULLBRIGHT, EF_FULLBRIGHT it.
 	if (trace_ent != world) {
 		// All of the below fail, exception for CBaseEntity.
-		// if (trace_ent.classname == "CBaseEntity") {
-		 	dprint(trace_ent.classname);
-		// }
-		// if (trace_ent.gflags & GF_HOVER_FULLBRIGHT) {
+		if (trace_ent.gflags & GF_HOVER_FULLBRIGHT) {
 			//dprint(trace_ent.classname);
 			trace_ent.effects |= EF_FULLBRIGHT;
 			
 			// Store it so we can remove effect when unhovered.
 			oldItemTraceEnt = trace_ent;
-		// }
+		}
 	} else {
 		// Check for no NULL trace. (It does happen at times).
 		if (oldItemTraceEnt != __NULL__) {
-			// Remove effect.
-			oldItemTraceEnt.effects &= ~EF_FULLBRIGHT;
-
+			if (oldItemTraceEnt.gflag & GF_HOVER_FULLBRIGHT) {
+				// Remove effect.
+				oldItemTraceEnt.effects &= ~EF_FULLBRIGHT;
+			}
+			
 			// Reset entity reference.
 			oldItemTraceEnt = __NULL__;
 		}

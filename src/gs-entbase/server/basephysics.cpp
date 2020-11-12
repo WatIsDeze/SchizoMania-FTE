@@ -154,7 +154,7 @@ CBasePhysics::touch(void)
 {
 	PhysicsEnable();
 	makevectors(vectoangles(origin - other.origin));
-	ApplyForceOffset([0, 0, 2], origin - other.origin);
+	ApplyForceOffset(v_forward, origin - other.origin);
 }
 
 void

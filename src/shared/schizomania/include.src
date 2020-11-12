@@ -1,13 +1,13 @@
  #includelist
 ../../shared/schizomania/defs.h
 ../../shared/schizomania/flags.h
+../../shared/schizomania/entities/gameentities.h
 
 ../../shared/schizomania/player.cpp
 ../../shared/schizomania/weapons/weapon_common.h
 ../../shared/schizomania/animations.h
 ../../shared/schizomania/animations.c
 ../../shared/schizomania/pmove.c
-
 
 ../../shared/schizomania/fx/fx_blood.c
 ../../shared/schizomania/fx/fx_breakmodel.c
@@ -24,8 +24,6 @@
 ../../shared/schizomania/items/i_lvbottle.c
 ../../shared/schizomania/items/items.cpp
 ../../shared/schizomania/items/item_common.c
-
-
 
 ../../shared/schizomania/weapons/weapons.h
 ../../shared/schizomania/weapons/weapons_schizomania.c

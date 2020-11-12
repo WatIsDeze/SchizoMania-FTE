@@ -20,62 +20,48 @@
 
 ../schizomania/defs.h
 
-../schizomania/egui_mainmenu.cpp
+../schizomania/entities/gameentity.cpp
+../schizomania/entities/egui_mainmenu.cpp
 
-../schizomania/monster_apache.cpp
-../schizomania/monster_alien_controller.cpp
-../schizomania/monster_alien_grunt.cpp
-../schizomania/monster_alien_slave.cpp
-../schizomania/monster_barnacle.cpp
-../schizomania/monster_barney.cpp
-../schizomania/monster_barney_dead.cpp
-../schizomania/monster_bigmomma.cpp
-../schizomania/monster_bloater.cpp
-../schizomania/monster_bullchicken.cpp
-../schizomania/monster_cockroach.cpp
-../schizomania/monster_flyer_flock.cpp
-../schizomania/monster_gargantua.cpp
-../schizomania/monster_gman.cpp
-../schizomania/monster_headcrab.cpp
-../schizomania/monster_babycrab.cpp
-../schizomania/monster_hevsuit_dead.cpp
-../schizomania/monster_houndeye.cpp
-../schizomania/monster_human_grunt.cpp
-../schizomania/monster_hgrunt_dead.cpp
-../schizomania/monster_human_assassin.cpp
-../schizomania/monster_ichthyosaur.cpp
-../schizomania/monster_leech.cpp
-../schizomania/monster_miniturret.cpp
-../schizomania/monster_nihilanth.cpp
-../schizomania/monster_osprey.cpp
-../schizomania/monster_rat.cpp
-../schizomania/monster_scientist_dead.cpp
-../schizomania/monster_sitting_scientist.cpp
-../schizomania/monster_scientist.cpp
-../schizomania/monster_sentry.cpp
-../schizomania/monster_tentacle.cpp
-../schizomania/monster_turret.cpp
-../schizomania/monster_zombie.cpp
+../schizomania/entities/monster_apache.cpp
+../schizomania/entities/monster_alien_controller.cpp
+../schizomania/entities/monster_alien_grunt.cpp
+../schizomania/entities/monster_alien_slave.cpp
+../schizomania/entities/monster_barnacle.cpp
+../schizomania/entities/monster_barney.cpp
+../schizomania/entities/monster_barney_dead.cpp
+../schizomania/entities/monster_cockroach.cpp
+../schizomania/entities/monster_flyer_flock.cpp
+../schizomania/entities/monster_gman.cpp
+../schizomania/entities/monster_headcrab.cpp
+../schizomania/entities/monster_babycrab.cpp
+../schizomania/entities/monster_houndeye.cpp
+../schizomania/entities/monster_human_grunt.cpp
+../schizomania/entities/monster_hgrunt_dead.cpp
+../schizomania/entities/monster_human_assassin.cpp
+../schizomania/entities/monster_ichthyosaur.cpp
+../schizomania/entities/monster_leech.cpp
+../schizomania/entities/monster_rat.cpp
+../schizomania/entities/monster_scientist_dead.cpp
+../schizomania/entities/monster_sitting_scientist.cpp
+../schizomania/entities/monster_scientist.cpp
+../schizomania/entities/monster_sentry.cpp
+../schizomania/entities/monster_tentacle.cpp
+../schizomania/entities/monster_zombie.cpp
 
 ../schizomania/player.c
 ../schizomania/spectator.c
 
-../schizomania/item_inventory.cpp
+../schizomania/entities/item_inventory.cpp
 ../schizomania/items.cpp
-../schizomania/item_pickup.cpp
+../schizomania/entities/item_pickup.cpp
 
-../schizomania/item_longjump.cpp
-../schizomania/item_suit.cpp
-../schizomania/item_healthkit.cpp
-../schizomania/item_battery.cpp
-../schizomania/item_weaponbox.cpp
-../schizomania/world_items.cpp
-../schizomania/xen_spore_small.cpp
-../schizomania/xen_spore_medium.cpp
-../schizomania/xen_spore_large.cpp
-../schizomania/xen_hair.cpp
-../schizomania/xen_plantlight.cpp
-../schizomania/ammo.cpp
+../schizomania/entities/item_longjump.cpp
+../schizomania/entities/item_suit.cpp
+../schizomania/entities/item_healthkit.cpp
+../schizomania/entities/item_battery.cpp
+../schizomania/entities/item_weaponbox.cpp
+../schizomania/entities/ammo.cpp
 
 ../../botlib/include.src
 

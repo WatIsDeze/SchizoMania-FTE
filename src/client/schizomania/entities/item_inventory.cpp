@@ -24,7 +24,7 @@ Entity for pickup items which go in the inventory.
           pickup.
 
 */
-class item_inventory:CBaseEntity
+class item_inventory:CGameEntity
 {
     int m_iItemID;             			// Item ID for the game item database.
     int m_iAmount;          			// Amount to give for the game item database.
@@ -41,7 +41,8 @@ class item_inventory:CBaseEntity
 //=======================
 // void item_inventory::SetItem(int itemID)
 //=======================
-void item_inventory::SetItem(int itemID) {
+void 
+item_inventory::SetItem(int itemID) {
 	// Ensure it is in bounds.
 	m_iItemID = bound(0, itemID, INVENTORY_ITEM_MAX - 1);
 
@@ -52,7 +53,8 @@ void item_inventory::SetItem(int itemID) {
 //=======================
 // void item_inventory::SetAmount(int amount)
 //=======================
-void item_inventory::SetAmount(int amount) {
+void 
+item_inventory::SetAmount(int amount) {
 	// Ensure it is in bounds.
 	m_iAmount = bound(0, amount, 255);
 }
@@ -65,7 +67,8 @@ void item_inventory::SetAmount(int amount) {
 // - mount:  The amount of 'itemid' items that are contained in this
 //           pickup.
 //=======================
-void item_inventory::SpawnKey(string strKey, string strValue)
+void 
+item_inventory::SpawnKey(string strKey, string strValue)
 {
 	switch (strKey) {
 	case "itemID":
@@ -75,7 +78,7 @@ void item_inventory::SpawnKey(string strKey, string strValue)
 		m_iAmount = stoi(strValue);
 		break;
 	default:
-		CBaseEntity::SpawnKey(strKey, strValue);
+		CGameEntity::SpawnKey(strKey, strValue);
 	}
 }
 
@@ -87,7 +90,8 @@ void item_inventory::SpawnKey(string strKey, string strValue)
 // Plays a pickup sound, logs the pickup event and sends a pickup event
 // off to the client.
 //=======================
-void item_inventory::PlayerUse(void)
+void 
+item_inventory::PlayerUse(void)
 {
 
 }
@@ -97,10 +101,14 @@ void item_inventory::PlayerUse(void)
 //
 // Respawn.
 //=======================
-void item_inventory::Respawn(void) {
+void 
+item_inventory::Respawn(void) {
+	CGameEntity::Respawn();
+
 	// Ensure item ID is in bounds.
 	m_iItemID = bound(0, m_iItemID, INVENTORY_ITEM_MAX - 1);
-	gflags |= GF_HOVER_FULLBRIGHT;
+	//gflags |= GF_HOVER_FULLBRIGHT;
+	
 	//gflags |= GF_HOVER_FULLBRIGHT;
 	// Set defaults.
 	//SetModel(g_inventory_items[m_iItemID].wmodel());
@@ -115,7 +123,8 @@ void item_inventory::Respawn(void) {
 //
 // Constructor.
 //=======================
-void item_inventory::item_inventory(void)
+void 
+item_inventory::item_inventory(void)
 {	
 //========================================================
 //========================================================
@@ -129,7 +138,7 @@ void item_inventory::item_inventory(void)
 	// Classname? 
 classname = "item_inventory";
 	// Call Super class constructor. 
-	CBaseEntity::CBaseEntity();
+	CGameEntity::CGameEntity();
 self.classname = "item_inventory";
 	// Respawn.
 	Respawn();

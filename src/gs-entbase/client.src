@@ -2,6 +2,7 @@
 #define GS_DEVELOPER
 #endif
 #define GS_PHYSICS
+#define GS_RENDERFX
 
 #includelist
 baseentity.h

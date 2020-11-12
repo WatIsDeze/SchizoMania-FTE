@@ -3,6 +3,7 @@
 #endif
 
 #define GS_PHYSICS
+#define GS_RENDERFX
 
 #includelist
 shared/decals.cpp

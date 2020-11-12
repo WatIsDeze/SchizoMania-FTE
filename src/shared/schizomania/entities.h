@@ -16,5 +16,12 @@
 
 enum
 {
-	ENT_TRIPMINE = ENT_SEPARATOR
+	ENT_TRIPMINE = ENT_SEPARATOR,
+
+	// Custom game entity, similar to ENT_ENTITY which resides in
+	// the gs-entbase source code.
+	//
+	// It has been created for entities which require sending extra data
+	// such as flags, and gflags.
+	ENT_GAMEENTITY,
 };

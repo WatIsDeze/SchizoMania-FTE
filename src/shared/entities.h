@@ -25,7 +25,7 @@ enum
 	ENT_SPRITE,
 	ENT_SPRAY,
 	ENT_DECAL,
-	ENT_SEPARATOR
+	ENT_SEPARATOR,
 };
 
 /* entity update flags */

@@ -92,7 +92,7 @@ TraceAttack_FireSingle(vector vecPos, vector vAngle, int iDamage, int iWeapon)
 	switch ((float)hash_get(hashMaterials, tex)) {
 	case 'G':
 	case 'V':
-		maxPenetrationThickness = 4;
+		// maxPenetrationThickness = 4;
 		FX_Impact(IMPACT_METAL, trace_endpos, trace_plane_normal);
 		break;
 	case 'M':
@@ -101,20 +101,20 @@ TraceAttack_FireSingle(vector vecPos, vector vAngle, int iDamage, int iWeapon)
 		break;
 	case 'D':
 	case 'W':
-		maxPenetrationThickness = 8;
+		// maxPenetrationThickness = 8;
 		FX_Impact(IMPACT_WOOD, trace_endpos, trace_plane_normal);
 		break;
 	case 'Y':
-		maxPenetrationThickness = 16;
+		// maxPenetrationThickness = 16;
 		FX_Impact(IMPACT_GLASS, trace_endpos, trace_plane_normal);
 		break;
 	case 'N':
-		maxPenetrationThickness = 8;
+		// maxPenetrationThickness = 8;
 		FX_Impact(IMPACT_DEFAULT, trace_endpos, trace_plane_normal);
 		break;
 	case 'T':
 	default:
-		maxPenetrationThickness = 8;
+		// maxPenetrationThickness = 8;
 		FX_Impact(IMPACT_DEFAULT, trace_endpos, trace_plane_normal);
 		break;
 	}

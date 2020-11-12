@@ -35,7 +35,8 @@
 ../schizomania/scoreboard.c
 ../schizomania/input.c
 
-../schizomania/item_inventory.cpp
+../schizomania/entities/gameentity.cpp
+../schizomania/entities/item_inventory.cpp
 
 ../include.src
 ../../shared/include.src
