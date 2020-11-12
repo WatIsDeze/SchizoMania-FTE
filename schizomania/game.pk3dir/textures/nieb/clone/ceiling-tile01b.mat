@@ -1,6 +1,6 @@
 {
-	diffusemap textures/nieb/clone/ceiling-tile01b.jpg
-	normalmap textures/nieb/clone/ceiling-tile01b_normal.jpg
+	diffusemap textures/nieb/clone/ceiling-tile01b.tga
+	normalmap textures/nieb/clone/ceiling-tile01b_normal.tga
 
 	{
 		program lightmapped

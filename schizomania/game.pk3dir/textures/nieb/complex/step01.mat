@@ -1,6 +1,6 @@
 {
-	diffusemap textures/scma/step01.tga
-	normalmap textures/scma/step01_normal.tga
+	diffusemap textures/nieb/complex/step01.tga
+	normalmap textures/nieb/complex/step01_normal.tga
 
 	{
 		program lightmapped

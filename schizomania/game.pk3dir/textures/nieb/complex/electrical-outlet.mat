@@ -1,6 +1,6 @@
 {
-	diffusemap textures/scma/electrical-outlet.tga
-	normalmap textures/scma/electrical-outlet_normal.tga
+	diffusemap textures/nieb/complex/electrical-outlet.tga
+	normalmap textures/nieb/complex/electrical-outlet_normal.tga
 
 	{
 		program lightmapped

@@ -1,6 +1,6 @@
 {
-	diffusemap textures/nieb/clone/trim05.jpg
-	normalmap textures/nieb/clone/trim05_normal.jpg
+	diffusemap textures/nieb/clone/trim05.tga
+	normalmap textures/nieb/clone/trim05_normal.tga
 
 	{
 		program lightmapped

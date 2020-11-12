@@ -1,6 +1,6 @@
 {
-	diffusemap textures/nieb/clone/container01-top-end.jpg
-	normalmap textures/nieb/clone/container01-top-end_normal.jpg
+	diffusemap textures/nieb/clone/container01-top-end.tga
+	normalmap textures/nieb/clone/container01-top-end_normal.tga
 
 	{
 		program lightmapped

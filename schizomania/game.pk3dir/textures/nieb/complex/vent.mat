@@ -1,6 +1,6 @@
 {
-	diffusemap textures/scma/vent.tga
-	normalmap textures/scma/vent_normal.tga
+	diffusemap textures/nieb/complex/vent.tga
+	normalmap textures/nieb/complex/vent_normal.tga
 
 	{
 		program lightmapped

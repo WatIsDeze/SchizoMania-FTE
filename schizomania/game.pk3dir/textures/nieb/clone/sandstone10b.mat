@@ -1,6 +1,6 @@
 {
-	diffusemap textures/nieb/clone/sandstone10b.jpg
-	normalmap textures/nieb/clone/sandstone10b_normal.jpg
+	diffusemap textures/nieb/clone/sandstone10b.tga
+	normalmap textures/nieb/clone/sandstone10b_normal.tga
 
 	{
 		program lightmapped

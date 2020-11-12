@@ -106,7 +106,7 @@ item_inventory::Respawn(void) {
 	CGameEntity::Respawn();
 
 	// Ensure item ID is in bounds.
-	m_iItemID = bound(0, m_iItemID, INVENTORY_ITEM_MAX - 1);
+	//m_iItemID = bound(0, m_iItemID, INVENTORY_ITEM_MAX - 1);
 	//gflags |= GF_HOVER_FULLBRIGHT;
 	
 	//gflags |= GF_HOVER_FULLBRIGHT;
@@ -126,13 +126,6 @@ item_inventory::Respawn(void) {
 void 
 item_inventory::item_inventory(void)
 {	
-//========================================================
-//========================================================
-//========================================================
-// Use Receive and Send entity to send the specific flags?
-//========================================================
-//========================================================
-//========================================================
 //	self.gflags |= GF_HOVER_FULLBRIGHT;
 	//gflags |= GF_HOVER_FULLBRIGHT;
 	// Classname? 

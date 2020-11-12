@@ -1,6 +1,6 @@
 {
-	diffusemap textures/scma/door_rail.tga
-	normalmap textures/scma/door_rail_normal.tga
+	diffusemap textures/nieb/complex/door_rail.tga
+	normalmap textures/nieb/complex/door_rail_normal.tga
 
 	{
 		program lightmapped

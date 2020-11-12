@@ -1,6 +1,6 @@
 {
-	diffusemap textures/nieb/clone/plaster02.jpg
-	normalmap textures/nieb/clone/plaster02_normal.jpg
+	diffusemap textures/nieb/clone/plaster02.tga
+	normalmap textures/nieb/clone/plaster02_normal.tga
 
 	{
 		program lightmapped

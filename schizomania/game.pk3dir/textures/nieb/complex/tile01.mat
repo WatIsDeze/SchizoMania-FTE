@@ -1,6 +1,6 @@
 {
-	diffusemap textures/scma/tile01.tga
-	normalmap textures/scma/tile01_normal.tga
+	diffusemap textures/nieb/complex/tile01.tga
+	normalmap textures/nieb/complex/tile01_normal.tga
 
 	{
 		program lightmapped

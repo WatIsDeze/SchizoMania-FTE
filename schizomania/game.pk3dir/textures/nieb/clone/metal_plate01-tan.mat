@@ -1,6 +1,6 @@
 {
-	diffusemap textures/nieb/clone/metal_plate01-tan.jpg
-	normalmap textures/nieb/clone/metal_plate01-tan_normal.jpg
+	diffusemap textures/nieb/clone/metal_plate01-tan.tga
+	normalmap textures/nieb/clone/metal_plate01-tan_normal.tga
 
 	{
 		program lightmapped
