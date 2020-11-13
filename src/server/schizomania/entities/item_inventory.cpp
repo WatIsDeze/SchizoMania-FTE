@@ -114,10 +114,10 @@ void item_inventory::PlayerUse(void)
 	WriteByte(MSG_MULTICAST, EV_ITEM_PICKUP);
 	WriteByte(MSG_MULTICAST, m_iItemID);
 	WriteByte(MSG_MULTICAST, m_iAmount);
-	msg_entity = other;
+	msg_entity = pl;
 
 	// Multicast it.
-	multicast([0,0,0], MSG_MULTICAST);
+	multicast([0,0,0], MULTICAST_ONE_R);
 
 	// Remove from world, we don't want to pick it up twice.
 	remove(this);
@@ -131,11 +131,10 @@ void item_inventory::PlayerUse(void)
 void item_inventory::Respawn(void) {
 	// Ensure item ID is in bounds.
 	m_iItemID = bound(0, m_iItemID, INVENTORY_ITEM_MAX - 1);
-	//gflags |= GF_HOVER_FULLBRIGHT;
-	SetGFlags(gflags | GF_HOVER_FULLBRIGHT);
-	//gflags |= GF_HOVER_FULLBRIGHT;
+
 	// Set defaults.
 	SetModel(g_inventory_items[m_iItemID].wmodel());
+	SetGFlags(gflags | GF_HOVER_FULLBRIGHT);
 	SetSize([-16,-16,0], [16,16,16]);
 	SetSolid(SOLID_CORPSE);
 	SetMovetype(MOVETYPE_TOSS);
@@ -159,11 +158,10 @@ void item_inventory::item_inventory(void)
 //	self.gflags |= GF_HOVER_FULLBRIGHT;
 	//gflags |= GF_HOVER_FULLBRIGHT;
 	// Classname? 
-	classname = "item_inventory";
-
 	// Call Super class constructor. 
 	CGameEntity::CGameEntity();
-self.classname = "item_inventory";
+	classname = "item_inventory";
+	
 	// Respawn.
 	Respawn();
 }

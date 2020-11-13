@@ -1,98 +1,29 @@
-sv_cheats 1
-impulse 101
+drop 2 1
+drop 2 1
+drop 2 1
+drop 2 1a
+quit
+drop 2 1a
+/map test_item_inventory
+drop 2 1
+drop 2 1
+/map test_item_inventory
+drop 2 1
+drop 1 1
+/map test_item_inventory
+drop 1 1
+drop 1 1
+/map test_item_inventory
+drop 1 1
+drop 1 1
+/map test_item_inventory
+/map test_current
+/map test_current
+drop 1 1
+/map test_current
+/map test_current
 map test_current
-impulse 101
-impulse 101
-impulse 101
-impulse 101
-impulse 101
 map test_current
 map test_current
 map test_current
-map test_current
-map test_current
-noclip
-noclip
-map test_current
-map test_current
-map test_current
-map test_current
-map test_current
-map test_current
-map test_current
-map test_current
-/r_ignoreentpvs 0
-/map test_current
-/map test_current
-/map test_item_inventory
-/map sv_qcdebug 1
-/map test_item_inventory
-/map test_item_inventory
-/map test_item_inventory
-/map test_item_inventory
-/map test_item_inventory
-/map test_item_inventory
-/map test_item_inventory
-/map test_item_inventory
-/map test_item_inventory
-/map test_item_inventory
-
-/map test_item_inventory
-/map test_item_inventory
-/map sv_qcdebug 1
-/map test_item_inventory
-/map sv_qcdebug 1
-/map test_item_inventory
-/map test_item_inventory
-/map test_item_inventory
-/map test_item_inventory
-/map test_item_inventory
-/map test_item_inventory
-/map test_item_inventory
-/map test_item_inventory
-/map test_item_inventory
-/map test_item_inventory
-/map test_item_inventory
-/map test_item_inventory
-/map test_item_inventory
-/map test_item_inventory
-/map test_item_inventory
-/map test_item_inventory
-/map test_item_inventory
-/map test_item_inventory
-/map test_item_inventory
-/map test_item_inventory
-/map test_item_inventory
-/map test_item_inventory
-/map test_item_inventory
-/map test_item_inventory
-/map test_current
-/map test_current
-impulse 101
-sv_cheat 1
-sv_cheats 1
-/map test_current
-impulse 101
-impulse 101
-impulse 101
-impulse 101
-/map test_current
-/map test_current
-/map test_current
-/map test_current
-/map test_current
-/map test_current
-/map test_current
-/map test_current
-cl_thirdperson 1
-cl_thirdperson 0
-cl_thirdperson 0
-/map test_current
-/map test_current
-/map test_current
-/map test_current
-/map test_current
-/map test_current
-/map test_current
-/map test_current
-/map test_current
+drop 1 1

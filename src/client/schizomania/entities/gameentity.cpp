@@ -118,6 +118,7 @@ void CGameEntity::ReceiveEntity(float flChanged) {
     if (flChanged & GAMEFL_CHANGED_FLAGS) {
 		flags = readfloat();
 		gflags = readfloat();
+				dprint("Client Changed gflags\n");
 	}
 }
 
@@ -157,7 +158,7 @@ CGameEntity::SpawnKey(string strKey, string strValue)
 //=======================
 void CGameEntity::CGameEntity(void)
 {	
-	// Call Super class constructor. 
-    classname = "CGameEntity";
 	CBaseEntity::CBaseEntity();
+	// Call Super class constructor. 
+	classname = "CGameEntity";
 }

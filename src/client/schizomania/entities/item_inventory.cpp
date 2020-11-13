@@ -31,7 +31,6 @@ class item_inventory:CGameEntity
 	
 	void(void) item_inventory;
 	virtual void(void) Respawn;
-	virtual void(void) PlayerUse;
 	virtual void(string, string) SpawnKey;
 
 	virtual void(int) SetItem;
@@ -83,20 +82,6 @@ item_inventory::SpawnKey(string strKey, string strValue)
 }
 
 //=======================
-// void item_inventory::PlayerUse(void)
-//
-// Executed only if used by a player, returns otherwise.
-//
-// Plays a pickup sound, logs the pickup event and sends a pickup event
-// off to the client.
-//=======================
-void 
-item_inventory::PlayerUse(void)
-{
-
-}
-
-//=======================
 // void item_inventory::Respawn(void)
 //
 // Respawn.
@@ -104,7 +89,7 @@ item_inventory::PlayerUse(void)
 void 
 item_inventory::Respawn(void) {
 	CGameEntity::Respawn();
-
+	//gflags |= GF_HOVER_FULLBRIGHT;
 	// Ensure item ID is in bounds.
 	//m_iItemID = bound(0, m_iItemID, INVENTORY_ITEM_MAX - 1);
 	//gflags |= GF_HOVER_FULLBRIGHT;
@@ -125,14 +110,11 @@ item_inventory::Respawn(void) {
 //=======================
 void 
 item_inventory::item_inventory(void)
-{	
-//	self.gflags |= GF_HOVER_FULLBRIGHT;
-	//gflags |= GF_HOVER_FULLBRIGHT;
-	// Classname? 
-classname = "item_inventory";
+{
 	// Call Super class constructor. 
 	CGameEntity::CGameEntity();
-self.classname = "item_inventory";
+	classname = "item_inventory";	
+
 	// Respawn.
-	Respawn();
+	//Respawn();
 }

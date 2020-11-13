@@ -147,6 +147,7 @@ CGameEntity::SendEntity(entity ePEnt, float fChanged) {
 	if (fChanged & GAMEFL_CHANGED_FLAGS) {
 		WriteFloat(MSG_ENTITY, flags);
 		WriteFloat(MSG_ENTITY, gflags);
+		dprint("Server Changed gflags\n");
 	}
 
 	// Succeeded.
@@ -160,7 +161,7 @@ CGameEntity::SendEntity(entity ePEnt, float fChanged) {
 //=======================
 void 
 CGameEntity::Respawn(void) {
-    //CBaseEntity::Respawn();
+    CBaseEntity::Respawn();
 }
 
 //=======================
@@ -191,7 +192,6 @@ CGameEntity::SpawnKey(string strKey, string strValue)
 void CGameEntity::CGameEntity(void)
 {	
 	// Call Super class constructor. 
+	CBaseEntity::CBaseEntity(); 
 	classname = "CGameEntity";
-	CBaseEntity::CBaseEntity();
- 
 }

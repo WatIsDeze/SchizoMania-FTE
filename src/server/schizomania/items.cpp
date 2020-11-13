@@ -38,6 +38,7 @@ Item_Drop(player pl, int itemID, int amount)
 
 	// Spawn dropable.
 	item_inventory drop = spawn(item_inventory);
+	drop.classname = "item_inventory";
 	drop.SetItem(itemID);
 	drop.SetAmount(amount);
 	setorigin(drop, pl.origin);
@@ -45,7 +46,7 @@ Item_Drop(player pl, int itemID, int amount)
 	drop.think = DropItem_Enable;
 	drop.nextthink = time + 1.5f;
 	drop.movetype = MOVETYPE_TOSS;
-	drop.classname = "remove_me";
+	
 
 	makevectors(pl.v_angle);
 	drop.velocity = v_forward * 256;
@@ -56,10 +57,10 @@ Item_Drop(player pl, int itemID, int amount)
 	WriteByte(MSG_MULTICAST, EV_ITEM_DROP);
 	WriteByte(MSG_MULTICAST, itemID);
 	WriteByte(MSG_MULTICAST, amount);
-	msg_entity = other;
+	msg_entity = pl;
 
 	// Multicast it.
-	multicast([0,0,0], MSG_MULTICAST);
+	multicast([0,0,0], MULTICAST_ONE_R);
 }
 
 //=======================

@@ -14,7 +14,7 @@
  * OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  */
 
-/*QUAKED light_dynamic (1 0 0) (-8 -8 -8) (8 8 8)
+/*QUAKED dynamic_light (1 0 0) (-8 -8 -8) (8 8 8)
 "targetname"        Name
 "target"            Name of an entity in the map that light will point at.
 "_light"            Color of the spotlight in RGB255 format.
