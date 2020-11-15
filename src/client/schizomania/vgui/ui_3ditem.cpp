@@ -45,6 +45,14 @@ void AngleVectors ( vector angles )
 	v_up[2] = cr*cp;
 }
 
+enumflags
+{
+    ITEM_VISIBLE,
+    ITEM_HOVER,
+    ITEM_DOWN,
+	ITEM_SELECTED
+};
+
 class CUI3DItem:CUIWidget
 {
     // 3D Item Model entity.
@@ -63,14 +71,14 @@ class CUI3DItem:CUIWidget
     
     // Widget Functions.
 	void(void) CUI3DItem;
-	virtual void(float, float, float, float) m_vInputFunc = 0;
+	virtual void(float) m_vItemSelectedFunc = 0;
 	virtual vector() GetSize;
 	virtual vector() Get3DPos;
 	virtual vector() Get3DAngles;
 	virtual void(vector) SetSize;
 	virtual void(vector) Set3DPos;
 	virtual void(vector) Set3DAngles;
-	virtual void(void(float, float, float, float)) SetInputFunc;
+	virtual void(void(float)) SetItemSelectFunc;
 	virtual void(float, float, float, float) Input;
     virtual void(void) Draw;
 
@@ -91,7 +99,7 @@ CUI3DItem::CUI3DItem(void)
 	m_flFOV = 90;
 	m_vecSize = [96,96];
 	m_vec3DPos = m_vec3DAngles = [0,0,0];
-	m_iFlags = VIEW_VISIBLE;
+	m_iFlags = ITEM_VISIBLE;
 
     // Spawn model entity.
     m_eModel = spawn();
@@ -168,14 +176,14 @@ CUI3DItem::Get3DPos(void)
 }
 
 //=======================
-// void CUI3DItem::SetInputFunc(...)
+// void CUI3DItem::SetItemSelectFunc(...)
 //
-// Set designated input function.
+// Set item selected callback.
 //=======================
 void
-CUI3DItem::SetInputFunc(void(float, float, float, float) vFunc)
+CUI3DItem::SetItemSelectFunc(void(float) vFunc)
 {
-	m_vInputFunc = vFunc;
+	m_vItemSelectedFunc = vFunc;
 }
 
 //=======================
@@ -186,8 +194,18 @@ CUI3DItem::SetInputFunc(void(float, float, float, float) vFunc)
 void
 CUI3DItem::Draw(void)
 {
-    static vector vecDistance = [ 20, 0, 0 ];
+    static vector vecDistance = [ 20, 0, 5 ];
 
+    // Draw item background.
+    if (m_iFlags & ITEM_SELECTED) {
+        drawfill(m_parent.m_vecOrigin + m_vecOrigin, m_vecSize, UI_MAINCOLOR, 0.25f);
+    } else if (m_iFlags & ITEM_HOVER) {
+        drawfill(m_parent.m_vecOrigin + m_vecOrigin, m_vecSize, UI_MAINCOLOR, 0.15f);
+    } else {
+        drawfill(m_parent.m_vecOrigin + m_vecOrigin, m_vecSize, UI_MAINCOLOR, 0.05f);
+    }
+
+    // Start drawing 3D item scene.
 	clearscene();
 	setproperty(VF_VIEWPORT, m_vecOrigin + m_parent.m_vecOrigin, m_vecSize);
 	setproperty(VF_DRAWWORLD, 0);
@@ -200,22 +218,50 @@ CUI3DItem::Draw(void)
         setmodel(m_eModel, g_inventory_items[m_iItemID].wmodel());
 	  	AngleVectors( Get3DAngles() );
         Set3DPos( v_forward * -vecDistance[0] + v_right * vecDistance[1] + v_up * vecDistance[2] );
-        dprint(sprintf("Initializing item entity with model: %S \n", g_inventory_items[m_iItemID].wmodel()));
 	}
-    
+
+    // Rotate and animate model.    
     m_eModel.angles.y += frametime * 100;
 	m_eModel.frame1time += frametime;
 
+    // Last but not least, render the 3D scene.
 	addentity( m_eModel );
 	renderscene();
 
     // Draw item name.
-    Font_DrawText(m_parent.m_vecOrigin + m_vecOrigin + [0, 88],
+    Font_DrawText(m_parent.m_vecOrigin + m_vecOrigin + [2, 86],
         g_inventory_items[m_iItemID].name, g_fntDefault);
 
+    // Calculate item amount string width.
+    string strAmount = sprintf("(%i)x", m_iItemAmount);
+
+    // Calculate item amount string width for rendering offset.
+    float scale = g_fntDefault.iScale;
+	float stringWidth = stringwidth(strAmount, TRUE, [scale, scale]);
+	
     // Draw item amount.
-    Font_DrawText(m_parent.m_vecOrigin + m_vecOrigin + [88, 0],
-        sprintf("(%i) x", m_iItemAmount), g_fntDefault);
+    Font_DrawText(m_parent.m_vecOrigin + m_vecOrigin + [96 - (stringWidth + 2), 2],
+        strAmount, g_fntDefault);
+
+    // Draw item outline.
+    if (m_iFlags & ITEM_SELECTED) {
+        drawfill(m_parent.m_vecOrigin + m_vecOrigin + [0, m_vecSize[1] - 1], [m_vecSize[0], 1], [1,1,1], 0.8f);
+        drawfill(m_parent.m_vecOrigin + m_vecOrigin, [m_vecSize[0], 1], [1,1,1], 0.8f);
+        drawfill(m_parent.m_vecOrigin + m_vecOrigin + [0, 1], [1, m_vecSize[1] - 2], [1,1,1], 0.8f);
+        drawfill(m_parent.m_vecOrigin + m_vecOrigin + [m_vecSize[0] - 1, 1], [1, m_vecSize[1] - 2], [1,1,1], 0.8f);
+    } else if (m_iFlags & ITEM_HOVER) {
+        drawfill(m_parent.m_vecOrigin + m_vecOrigin + [0, m_vecSize[1] - 1], [m_vecSize[0], 1], [1,1,1], 0.5f);
+        drawfill(m_parent.m_vecOrigin + m_vecOrigin, [m_vecSize[0], 1], [1,1,1], 0.5f);
+        drawfill(m_parent.m_vecOrigin + m_vecOrigin + [0, 1], [1, m_vecSize[1] - 2], [1,1,1], 0.5f);
+        drawfill(m_parent.m_vecOrigin + m_vecOrigin + [m_vecSize[0] - 1, 1], [1, m_vecSize[1] - 2], [1,1,1], 0.5f);
+    } else {
+        drawfill(m_parent.m_vecOrigin + m_vecOrigin + [0, m_vecSize[1] - 1], [m_vecSize[0], 1], [1,1,1], 0.25f);
+        drawfill(m_parent.m_vecOrigin + m_vecOrigin, [m_vecSize[0], 1], [1,1,1], 0.25f);
+        drawfill(m_parent.m_vecOrigin + m_vecOrigin + [0, 1], [1, m_vecSize[1] - 2], [1,1,1], 0.25f);
+        drawfill(m_parent.m_vecOrigin + m_vecOrigin + [m_vecSize[0] - 1, 1], [1, m_vecSize[1] - 2], [1,1,1], 0.25f);        
+    }
+
+    
 }
 
 //=======================
@@ -226,11 +272,34 @@ CUI3DItem::Draw(void)
 void
 CUI3DItem::Input(float flEVType, float flKey, float flChar, float flDevID)
 {
-	if (!m_vInputFunc) {
-		return;
-	}
+	// if (!m_vInputFunc) {
+	//  	return;
+	// }
 
-	m_vInputFunc(flEVType, flKey, flChar, flDevID);
+    if (Util_MouseAbove(getmousepos(), m_parent.m_vecOrigin + m_vecOrigin, m_vecSize)) {
+        FlagAdd(ITEM_HOVER);
+    } else {
+        FlagRemove(ITEM_HOVER);
+    }
+
+	// m_vInputFunc(flEVType, flKey, flChar, flDevID);
+	if (flEVType == IE_KEYDOWN) {
+		if (flKey == K_MOUSE1) {
+			if (Util_MouseAbove(getmousepos(), m_parent.m_vecOrigin + m_vecOrigin, m_vecSize)) {
+				FlagAdd(ITEM_DOWN);
+			}
+		}
+	} else if (flEVType == IE_KEYUP) {
+		if (flKey == K_MOUSE1) {
+			if (m_iFlags & BUTTON_DOWN && Util_MouseAbove(getmousepos(), m_parent.m_vecOrigin + m_vecOrigin, m_vecSize)) {
+				if (m_vItemSelectedFunc) {
+					m_vItemSelectedFunc(m_iItemID);
+				}
+                FlagAdd(ITEM_SELECTED);
+			}
+			FlagRemove(BUTTON_DOWN);
+		}
+	}
 }
 
 //=======================

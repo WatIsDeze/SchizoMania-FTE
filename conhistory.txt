@@ -189,3 +189,27 @@ quit
 drop 2 1
 drop 2 1
 /map test_current
+/map test_current
+/map test_current
+/map test_current
+/map test_current
+/map test_current
+/map test_current
+/map test_current
+/map test_current
+/map test_current
+/map test_current
+/map test_current
+/map test_current
+/map test_current
+/map test_current
+/map test_current
+/map test_current
+/map test_current
+/map test_current
+/map test_current
+/map test_current
+/map test_current
+/map test_current
+/map test_current
+/map test_current
