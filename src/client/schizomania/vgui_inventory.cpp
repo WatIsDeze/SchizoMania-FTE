@@ -16,10 +16,14 @@
 
 static CUIWindow winInventory;
 static CUI3DItem itemButtons[INVENTORY_ITEM_MAX];
-static float selectedItemID;
+static int selectedItemID;
 
 #define UI_INVENTORY_ITEM_WIDTH 96
 #define UI_INVENTORY_ITEM_HEIGHT 96
+
+// Defined here so it can be used in each VGUI_Inventory_ function.
+void
+VGUI_Inventory_UpdateItems(void);
 
 //=======================
 // void VGUI_Inventory_Use(void)
@@ -59,11 +63,21 @@ VGUI_Inventory_Equip(void)
 void
 VGUI_Inventory_Drop(void)
 {
+	player pl = (player)self;
+
 	if (!winInventory)
 		return;
 
+	dprint(sprintf("SELECTED ID = %i, %f", selectedItemID, (float)pl.inventory_items[selectedItemID]));
+	
+	if (!(selectedItemID >= 1 && selectedItemID < INVENTORY_ITEM_MAX))
+		return;
+	
 	// Drop the currently selected item.
-	sendevent("Dropitem", "ii", 1, 1);
+	sendevent("Dropitem", "ii", (float)selectedItemID, 1);
+
+	// Update item view.
+	VGUI_Inventory_UpdateItems();
 
 	// TODO: Implement.
 	winInventory.Hide();
@@ -96,8 +110,7 @@ VGUI_Inventory_ItemSelect(float itemID) {
 	}
 
 	// Store selected itemID.
-	selectedItemID = itemID;
-	// dprint(sprintf("Selected itemID: %f\n", itemID));
+	selectedItemID = (int)itemID;
 }
 
 //=======================
@@ -134,15 +147,24 @@ VGUI_Inventory_UpdateItems(void)
 		// Setup 3D view properties.
 		itemButtons[i].Set3DAngles([35, 0, 0]);
 
+		// Determine whether this button should be visible or not. (In case of 0 items)
+		int itemAmount = pl.inventory_items[i];
+
+		if (itemAmount <= 0) {
+			itemButtons[i].FlagRemove(ITEM_VISIBLE);
+		} else {
+			itemButtons[i].FlagAdd(ITEM_VISIBLE);
+			
+			// Only Increment X by width define in case this button was visible.
+			buttonPos.x += UI_INVENTORY_ITEM_WIDTH + 4;
+		}
+
 		// Pass item ID and Amount.
 		itemButtons[i].SetItemID(i);
-		itemButtons[i].SetItemAmount(pl.inventory_items[i]);
+		itemButtons[i].SetItemAmount(itemAmount);
 
 		// Setup item select callback.
 		itemButtons[i].SetItemSelectFunc( VGUI_Inventory_ItemSelect );
-
-		// Increment X by width define.
-		buttonPos.x += UI_INVENTORY_ITEM_WIDTH + 4;
 	}
 }
 
