@@ -210,9 +210,12 @@ CUI3DItem::Draw(void)
 	renderscene();
 
     // Draw item name.
+    Font_DrawText(m_parent.m_vecOrigin + m_vecOrigin + [0, 88],
+        g_inventory_items[m_iItemID].name, g_fntDefault);
 
     // Draw item amount.
-    Font_DrawText(m_parent.m_vecOrigin + m_vecOrigin + [8, 8], "Hello", g_fntDefault);
+    Font_DrawText(m_parent.m_vecOrigin + m_vecOrigin + [88, 0],
+        sprintf("(%i) x", m_iItemAmount), g_fntDefault);
 }
 
 //=======================

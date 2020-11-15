@@ -49,6 +49,7 @@ string i_glock18_wmodel(void) {
 inventory_item_t i_glock18 = 
 {
 	.name		= "Glock 18",
+	.description = "The Glock 18 is a powerful tool in combat.",
 	.ID			= INVENTORY_ITEM_GLOCK,
 
 	.use		= i_glock18_use,

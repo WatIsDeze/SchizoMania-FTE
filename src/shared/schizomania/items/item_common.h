@@ -20,6 +20,7 @@
 //=======================
 typedef struct {
     string name;        // Item name.
+    string description; // Item description.
     float ID;           // Item ENUM inventory Index.
 
     void(void) use;

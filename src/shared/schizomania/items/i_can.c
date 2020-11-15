@@ -51,7 +51,8 @@ i_can_wmodel(void) {
 
 inventory_item_t i_can = 
 {
-	.name		= "Can of Soda",
+	.name		= "Soda Can",
+	.description = "A can of Soda",
 	.ID			= INVENTORY_ITEM_CAN,
 
 	.use		= i_can_use,

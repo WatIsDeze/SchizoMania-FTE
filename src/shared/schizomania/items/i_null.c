@@ -27,6 +27,7 @@ i_null_wmodel(void) {
 inventory_item_t i_null = 
 {
 	.name		= "NULL ITEM",
+//	.descripton = "NULL DESCRIPTION",
 	.ID			= INVENTORY_ITEM_NULL,
 
 	.use		= __NULL__,

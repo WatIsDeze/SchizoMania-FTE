@@ -61,6 +61,9 @@ VGUI_Inventory_Drop(void)
 	if (!winInventory)
 		return;
 
+	// Drop the currently selected item.
+	sendevent("Dropitem", "ii", 1, 1);
+
 	// TODO: Implement.
 	winInventory.Hide();
 }
@@ -79,23 +82,6 @@ VGUI_Inventory_Close(void)
 	winInventory.Hide();
 }
 
-// entity eModel;
-// void
-// UI_ItemButton_Draw(void) 
-// {
-// 	vector vecDistance = [90, 0, 0];
-// 	CUI3DView v = (CUI3DView)self;
-// 		static int initialized = FALSE;
-// 		if ( !initialized ) {
-// 			initialized = TRUE;
-// 			eModel = spawn();
-// 			setmodel(eModel, "models/player.mdl" );
-// 			AngleVectors( v.Get3DAngles() );
-// 			v.Set3DPos( v_forward * -vecDistance[0] + v_right * vecDistance[1] + v_up * vecDistance[2] );
-// 		}
-// 		addentity( eModel );
-// 		eModel.frame1time += frametime;
-// }
 //=======================
 // void VGUI_Inventory_UpdateItems(void)
 //
@@ -123,12 +109,13 @@ VGUI_Inventory_UpdateItems(void)
 			winInventory.Add(itemButtons[i]);
 		}
 
+		// Position button accordingly.
 		itemButtons[i].SetPos(buttonPos);
 		itemButtons[i].SetSize( [UI_INVENTORY_ITEM_WIDTH, UI_INVENTORY_ITEM_HEIGHT]);
 		itemButtons[i].SetItemID(i);
 		itemButtons[i].SetItemAmount(pl.inventory_items[i]);
 
-		// Increment X by 32.
+		// Increment X by width define.
 		buttonPos.x += UI_INVENTORY_ITEM_WIDTH + 4;
 	}
 }
@@ -150,31 +137,31 @@ VGUI_Inventory_Show(void) {
 		initialized = TRUE;
 		winInventory = spawn(CUIWindow);
 		winInventory.SetTitle("Inventory");
-		winInventory.SetSize('420 320');
+		winInventory.SetSize('460 320');
 
 		// Setup the default buttons.
 		btnUse = spawn(CUIButton);
 		btnUse.SetTitle("Use");
 		btnUse.SetSize( '108 24' );
-		btnUse.SetPos( '306 32' );
+		btnUse.SetPos( '346 32' );
 		btnUse.SetFunc(VGUI_Inventory_Use);
 
 		btnEquip = spawn(CUIButton);
 		btnEquip.SetTitle("Equip");
 		btnEquip.SetSize( '108 24' );
-		btnEquip.SetPos( '306 62' );
+		btnEquip.SetPos( '346 62' );
 		btnEquip.SetFunc(VGUI_Inventory_Equip);
 
 		btnDrop = spawn(CUIButton);
 		btnDrop.SetTitle("Drop");
 		btnDrop.SetSize( '108 24' );
-		btnDrop.SetPos( '306 92' );
+		btnDrop.SetPos( '346 92' );
 		btnDrop.SetFunc(VGUI_Inventory_Drop);
 
 		btnClose = spawn(CUIButton);
 		btnClose.SetTitle("Close");
 		btnClose.SetSize( '108 24' );
-		btnClose.SetPos( '306 290' );
+		btnClose.SetPos( '346 290' );
 		btnClose.SetFunc(VGUI_Inventory_Close);
 
 		g_uiDesktop.Add(winInventory);
@@ -182,9 +169,9 @@ VGUI_Inventory_Show(void) {
 		winInventory.Add(btnEquip);
 		winInventory.Add(btnDrop);
 		winInventory.Add(btnClose);
-
-		VGUI_Inventory_UpdateItems();
 	}
+
+	VGUI_Inventory_UpdateItems();
 
 	winInventory.Show();
 	winInventory.SetPos((video_res / 2) - (winInventory.GetSize() / 2));

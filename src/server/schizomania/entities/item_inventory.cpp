@@ -135,7 +135,7 @@ void item_inventory::Respawn(void) {
 	// Set defaults.
 	SetModel(g_inventory_items[m_iItemID].wmodel());
 	SetGFlags(gflags | GF_HOVER_FULLBRIGHT);
-	// SetSize([-8,-8,0], [8,8,16]);
+	SetSize([-8,-8,0], [8,8,16]);
 	SetSolid(SOLID_CORPSE);
 	SetMovetype(MOVETYPE_TOSS);
 }
@@ -147,17 +147,6 @@ void item_inventory::Respawn(void) {
 //=======================
 void item_inventory::item_inventory(void)
 {	
-//========================================================
-//========================================================
-//========================================================
-// Use Receive and Send entity to send the specific flags?
-//========================================================
-//========================================================
-//========================================================
-
-//	self.gflags |= GF_HOVER_FULLBRIGHT;
-	//gflags |= GF_HOVER_FULLBRIGHT;
-	// Classname? 
 	// Call Super class constructor. 
 	CGameEntity::CGameEntity();
 	classname = "item_inventory";

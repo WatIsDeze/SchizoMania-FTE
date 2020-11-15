@@ -48,7 +48,8 @@ string i_winebottle_wmodel(void) {
 
 inventory_item_t i_winebottle = 
 {
-	.name		= "A bottle of Wine",
+	.name		= "Wine Bottle",
+	.description = "An old sweet red wine.",
 	.ID			= INVENTORY_ITEM_WINEBOTTLE,
 
 	.use		= i_winebottle_use,
