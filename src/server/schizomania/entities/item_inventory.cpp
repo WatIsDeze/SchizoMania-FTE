@@ -135,7 +135,7 @@ void item_inventory::Respawn(void) {
 	// Set defaults.
 	SetModel(g_inventory_items[m_iItemID].wmodel());
 	SetGFlags(gflags | GF_HOVER_FULLBRIGHT);
-	SetSize([-16,-16,0], [16,16,16]);
+	// SetSize([-8,-8,0], [8,8,16]);
 	SetSolid(SOLID_CORPSE);
 	SetMovetype(MOVETYPE_TOSS);
 }

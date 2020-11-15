@@ -15,6 +15,14 @@
  */
 
 //=======================
+// VGUI Menu Function definitions.
+//
+// Placed here due to our VGUI code being included later on in progs.src
+//=======================
+void VGUI_Inventory_Show(void);
+void VGUI_Inventory_Close(void);
+
+//=======================
 // int Game_ConsoleCommand(void)
 //
 // SchizoMania console command implementations.
@@ -34,6 +42,10 @@ Game_ConsoleCommand(void)
 			}
 
 			sendevent("Dropitem", "ii", itemID, amount);
+			break;
+		case "inventory":
+			dprint("==================\n OPENING INVENTORY \n ================\n");
+			VGUI_Inventory_Show();
 			break;
 		default:
 		return FALSE;

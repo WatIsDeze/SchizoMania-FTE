@@ -21,7 +21,7 @@
 ../../shared/schizomania/items/i_null.c
 ../../shared/schizomania/items/i_can.c
 ../../shared/schizomania/items/i_winebottle.c
-../../shared/schizomania/items/i_lvbottle.c
+../../shared/schizomania/items/i_glock18.c
 ../../shared/schizomania/items/items.cpp
 ../../shared/schizomania/items/item_common.c
 

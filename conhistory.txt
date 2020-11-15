@@ -27,3 +27,149 @@ map test_current
 map test_current
 map test_current
 drop 1 1
+r_showbboxes 1
+/map test_current
+/map test_current
+r_showbboxes 1
+r_showbboxes 1
+/map test_current
+r_showbboxes 100
+r_showbboxes 4
+r_showbboxes 2
+r_showbboxes 7
+r_showbboxes 4
+r_showbboxes 3
+r_showbboxes q
+r_showbboxes 2
+r_showbboxes 1
+r_showbboxes 2
+r_showbboxes 1
+r_showbboxes 3
+r_showbboxes 4
+r_showbboxes 2
+r_showbboxes 2
+/map test_current
+/map test_current
+r_showbboxes 2
+/modelviewer 
+/map test_current
+/modelviewer 
+/modelviewer  1
+/modelviewer models/can.mdl
+/modelviewer  1
+/modelviewer  1
+/modelviewer  
+/modelviewer  models/can.mdl
+sizeup
+sizedown
+/con_textsize 
+/con_textsize  14
+/r_showbboxes 
+/r_showtris 1
+/r_showtris 1
+/r_showtris 3
+/r_showtris 2
+sv_cheats 1
+/map test_current
+/r_showtris 1
+/r_showtris 3
+/r_showtris 0
+r_showbboxes
+r_showbboxes 2
+/map test_current
+/r_showbboxes 1
+reload
+vid_restart
+/map test_current
+/r_showbboxes 2
+/r_showbboxes 1
+/r_showbboxes 2
+/map test_current
+/r_showbboxes 2
+/r_showbboxes 1
+/r_showbboxes 3
+/r_showbboxes 2
+/sv_gameplayfix_setmodelrealbox 
+/sv_gameplayfix_setmodelsize_qw 
+developer
+quit
+/r_showbboxes 2
+/map test_current
+/r_showbboxes 2
+/r_showbboxes 1
+/r_showbboxes 2
+/map test_current
+/map test_current
+/map test_current
+/map test_current
+chooseteam
+chooseteam
+chooseteam
+quit
+chooseteam
+/map test_current
+chooseteam
+chooseteam
+quit
+/map test_current
+chooseteam
+quit
+/map test_current
+inventory
+inventory
+/map test_current
+/map test_current
+inventory
+/map test_current
+/map test_current
+/map test_current
+/map test_current
+/map test_current
+/map test_current
+/map test_current
+/map test_current
+/map test_current
+/map test_current
+/map test_current
+/map test_current
+/map test_current
+/map test_current
+/map test_current
+/map test_current
+/map test_current
+/map test_current
+/map test_current
+/map test_current
+/map test_current
+/map test_current
+/map test_current
+/map test_current
+/map test_current
+/map test_current
+/map test_current
+/map test_current
+/map test_current
+/map test_current
+/map test_current
+/map test_current
+/map test_current
+/map test_current
+/map test_current
+/map test_current
+/map test_current
+/map test_current
+/map test_current
+/map test_current
+/map test_current
+/map test_current
+/map test_current
+/map test_current
+/map test_current
+/map test_current
+/map test_current
+/map test_current
+/map test_current
+/map test_current
+quit
+quit
+/map test_current

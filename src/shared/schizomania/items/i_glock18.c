@@ -15,58 +15,43 @@
  * OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  */
 //=======================
-// void i_lvbottle_precache(void)
+// void i_glock18_precache(void)
 // 
 // Precache.
 //=======================
-void i_lvbottle_precache(void) {
+void i_glock18_precache(void) {
 #ifdef SERVER
-	Sound_Precache("item_lvbottle.use");
-	precache_model("models/lvbottle.mdl");
+	Sound_Precache("item_glock.use");
+	precache_model("models/w_glock18.mdl");
 #else
-	precache_model("models/lvbottle.mdl");
+	precache_model("models/w_glock18.mdl");
 #endif
 }
 
 //=======================
-// void i_lvbottle_use(void)
+// void i_glock18_use(void)
 //
 // Use.
 //=======================
-void i_lvbottle_use(void) {
+void i_glock18_use(void) {
 
 }
 
 //=======================
-// string i_lvbottle_wmodel(void)
+// string i_glock18_wmodel(void)
 //
 // Return item model string path.
 //=======================
-string i_lvbottle_wmodel(void) {
-    return "models/lvbottle.mdl";
+string i_glock18_wmodel(void) {
+    return "models/w_glock18.mdl";
 }
 
-inventory_item_t i_lvbottle = 
+inventory_item_t i_glock18 = 
 {
-	.name		= "A bottle of lv",
-	.ID			= INVENTORY_ITEM_LVBOTTLE,
+	.name		= "Glock 18",
+	.ID			= INVENTORY_ITEM_GLOCK,
 
-	.use		= i_lvbottle_use,
-	.precache	= i_lvbottle_precache,
-    .wmodel     = i_lvbottle_wmodel
+	.use		= i_glock18_use,
+	.precache	= i_glock18_precache,
+    .wmodel     = i_glock18_wmodel
 };
-
-/* pickups */
-#ifdef SERVER
-// void
-// weapon_9mmhandgun(void)
-// {
-// 	Weapons_InitItem(WEAPON_GLOCK);
-// }
-
-// void
-// weapon_glock(void)
-// {
-// 	Weapons_InitItem(WEAPON_GLOCK);
-// }
-#endif

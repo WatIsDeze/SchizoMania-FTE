@@ -40,5 +40,9 @@
 ../schizomania/entities/item_inventory.cpp
 
 ../include.src
+
+../schizomania/vgui/ui_3ditem.cpp
+../schizomania/vgui_inventory.cpp
+
 ../../shared/include.src
 #endlist

@@ -28,6 +28,7 @@ Client_Init(float apilevel, string enginename, float engineversion)
 
 	// Commands.
 	registercommand("drop");
+	registercommand("inventory");
 }
 
 void

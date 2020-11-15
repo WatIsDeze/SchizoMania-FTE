@@ -19,9 +19,17 @@ CUIWidget g_uiDesktop;
 void
 VGUI_Init(void)
 {
+	static CUIButton btnLoadgame;
+
 	UISystem_Init();
 	g_uiDesktop = spawn(CUIWidget);
 	g_uiDesktop.FlagAdd(1);
+
+		btnLoadgame = spawn( CUIButton );
+	btnLoadgame.SetTitle( "DDDDDDDDDLoad Game" );
+	btnLoadgame.SetSize( '128 24' );
+	btnLoadgame.SetPos( '128 96' );
+
 }
 
 int

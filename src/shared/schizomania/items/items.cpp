@@ -21,5 +21,5 @@ inventory_item_t g_inventory_items[] = {
     i_null,
     i_can,
     i_winebottle,
-    i_lvbottle
+    i_glock18
 };
