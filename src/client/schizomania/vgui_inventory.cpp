@@ -76,10 +76,12 @@ VGUI_Inventory_Drop(void)
 	// Drop the currently selected item.
 	sendevent("Dropitem", "ii", (float)selectedItemID, 1);
 
+	// TODO: Maybe remove ITEM_SELCTED flag from button here.
+
 	// Update item view.
 	VGUI_Inventory_UpdateItems();
 
-	// TODO: Implement.
+	// Hide item display.
 	winInventory.Hide();
 }
 

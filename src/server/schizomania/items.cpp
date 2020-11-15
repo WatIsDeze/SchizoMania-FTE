@@ -41,6 +41,8 @@ Item_Drop(player pl, int itemID, int amount)
 	drop.classname = "item_inventory";
 	drop.SetItem(itemID);
 	drop.SetAmount(amount);
+	drop.SetSize([-8,-8,0], [8,8,16]);
+	//drop.SetGFlags(GF_HOVER_FULLBRIGHT);
 	setorigin(drop, pl.origin);
 	drop.solid = SOLID_NOT;
 	drop.think = DropItem_Enable;
