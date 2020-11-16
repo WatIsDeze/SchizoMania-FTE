@@ -34,22 +34,19 @@ void i_medkit_precache(void) {
 // Use.
 //=======================
 void i_medkit_use(player pl) {
-    	dprint("==================");
-dprint(sprintf("%i", pl));
-dprint("=====================");
     #ifdef SERVER
         // Heal the player.
 	    Damage_Apply(pl, pl, -20, 0, DMG_GENERIC);
 
         // Play medkit sound.
         Sound_Play(pl, CHAN_ITEM, "item.healthkit");
-        dprint("server - i_medkit_use");
-    #else
-        // Play medkit sound.
-        Sound_Play(pl, CHAN_ITEM, "item.healthkit");
-        dprint("client - i_medkit_use");
+    //  dprint("server - i_medkit_use");
     #endif
-
+    // #else
+    //     // Play medkit sound.
+    //     Sound_Play(pl, CHAN_ITEM, "item.healthkit");
+    //     dprint("client - i_medkit_use");
+    // #endif
 }
 
 //=======================

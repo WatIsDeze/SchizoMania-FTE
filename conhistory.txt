@@ -18,3 +18,9 @@
 /map test_current
 /map test_current
 /map test_current
+/map test_current
+/map test_current
+/map test_current
+/map test_current
+/map test_current
+/map test_current
