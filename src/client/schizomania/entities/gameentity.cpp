@@ -118,7 +118,6 @@ void CGameEntity::ReceiveEntity(float flChanged) {
     if (flChanged & GAMEFL_CHANGED_FLAGS) {
 		flags = readfloat();
 		gflags = readfloat();
-				dprint("Client Changed gflags\n");
 	}
 }
 

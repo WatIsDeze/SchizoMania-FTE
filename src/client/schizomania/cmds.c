@@ -44,7 +44,6 @@ Game_ConsoleCommand(void)
 			sendevent("Dropitem", "ii", itemID, amount);
 			break;
 		case "inventory":
-			dprint("==================\n OPENING INVENTORY \n ================\n");
 			VGUI_Inventory_Show();
 			break;
 		default:

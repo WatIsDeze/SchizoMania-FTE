@@ -24,3 +24,116 @@
 /map test_current
 /map test_current
 /map test_current
+/map test_current
+/map test_current
+/map test_current
+r_showbboxes 2
+r_showbboxes 1
+r_showbboxes 2
+r_showbboxes 1
+r_showbboxes 2
+r_showbboxes 2
+/map test_current
+r_showbboxes 1
+/map test_current
+r_showbboxes 1
+r_showbboxes 2
+r_showbboxes 2
+/map test_current
+r_showbboxes 2
+r_showbboxes 1
+r_showbboxes 2
+r_showbboxes 1
+r_showbboxes 2
+r_showbboxes 2
+/map test_current
+/map test_current
+r_showbboxes 2
+r_showbboxes 2
+/map test_current
+drop
+drop
+/map test_current
+drop
+drop
+drop
+drop
+/map test_current
+drop
+/r_showbboxes 2
+/r_showbboxes 2
+/r_showbboxes 1
+/r_showbboxes 2
+/r_showbboxes 1
+/r_showbboxes 2
+/r_showbboxes 2
+/map test_current
+/map test_current
+r_showfields 1
+sv_cheats 1
+/map test_current
+/con_textsize 1
+/con_textsize 112
+/con_textsize 12
+/con_textsize 10
+/con_textsize 12
+/map test_current
+r_showbboxes 2
+/map test_current
+/map test_current
+r_showbboxes 2
+r_showfields 1
+sv_cheats 1
+/map test_current
+noclpi
+nocli[
+noclip
+noclip
+r_showbboxes 2
+/map test_current
+r_showfields 1
+sv_cheats 1
+r_showbboxes 1
+/map test_current
+/map test_current
+/map test_current
+/map test_current
+/map test_current
+drop 1 1
+drop 1 1
+drop 1 1
+/map test_current
+drop 1 1
+/map test_current
+/map test_current
+/map test_current
+r_showbboxes 2
+/map test_current
+r_showbboxes 2
+r_showbboxes 1
+r_showbboxes 1
+r_showbboxes 2
+/map test_current
+/map test_current
+r_showbboxes 1
+/map test_current
+/r_showfields 
+/r_showfields 2
+sv_cheats 1
+/map test_current
+/r_showfields 2
+/r_showfields 2
+sv_cheats 1
+/r_showfields 2
+/map test_current
+/map test_current
+/map test_current
+drop 1 1
+/map test_current
+/map test_current
+/map test_current
+/map test_current
+/map test_current
+/map test_current
+/map test_current
+/map test_current

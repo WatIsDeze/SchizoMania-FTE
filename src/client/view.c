@@ -140,15 +140,16 @@ void View_DrawHoveredItem(void) {
 	makevectors(vecAng);
 
 	// Do the entity trace.
-	traceline(vecSrc, vecSrc + (v_forward * 64), MOVE_NORMAL | MOVE_HITMODEL, self);
-
+	traceline(vecSrc, vecSrc + (v_forward * 64), MOVE_NORMAL, self);
+		
 	// In case we traced a previous entity, undo its effects.
 	if (oldItemTraceEnt != trace_ent) {
-		// if (oldItemTraceEnt.gflags & GF_HOVER_FULLBRIGHT) {
+		if (oldItemTraceEnt.gflags & GF_HOVER_FULLBRIGHT) {
 			// Remove effect.
-			if (oldItemTraceEnt.effects & EF_FULLBRIGHT)
+			if (oldItemTraceEnt.effects & EF_FULLBRIGHT) {
 				oldItemTraceEnt.effects &= ~EF_FULLBRIGHT;
-		// }
+			}
+		}
 
 		// Reset entity reference.
 		oldItemTraceEnt = __NULL__;
@@ -156,13 +157,12 @@ void View_DrawHoveredItem(void) {
 
 	// If we hit a trace, and it had GF_HOVER_FULLBRIGHT, EF_FULLBRIGHT it.
 	if (trace_ent != world) {
-		
 		// All of the below fail, exception for CBaseEntity.
-		// if (trace_ent.gflags & GF_HOVER_FULLBRIGHT) {
+		if (trace_ent.gflags & GF_HOVER_FULLBRIGHT) {
 			//dprint(trace_ent.classname);
 			if (!trace_ent.effects & EF_FULLBRIGHT)
 				trace_ent.effects |= EF_FULLBRIGHT;
-		// }
+		}
 		
 		// Store it so we can remove effect when unhovered.
 		oldItemTraceEnt = trace_ent;

@@ -21,11 +21,6 @@
 void
 Item_Use(player pl, int itemID, int amount)
 {
-	static void DropItem_Enable(void)
-	{
-		self.solid = SOLID_CORPSE;
-	}
-
 	// Ensure ItemID is valid and amount are in bounds.
 	if (itemID <= 0 || itemID >= INVENTORY_ITEM_MAX) {
 		// Debug print.
@@ -56,13 +51,9 @@ Item_Use(player pl, int itemID, int amount)
 	drop.SetItem(itemID);
 	drop.SetAmount(amount);
 	drop.SetSize([-8,-8,0], [8,8,16]);
-	//drop.SetGFlags(GF_HOVER_FULLBRIGHT);
+	drop.SetGFlags(GF_HOVER_FULLBRIGHT);
 	setorigin(drop, pl.origin);
-	drop.solid = SOLID_NOT;
-	drop.think = DropItem_Enable;
-	drop.nextthink = time + 1.5f;
-	drop.movetype = MOVETYPE_TOSS;
-	
+	drop.nextthink = time + 1.5f;	
 
 	makevectors(pl.v_angle);
 	drop.velocity = v_forward * 256;
@@ -102,7 +93,9 @@ Item_Drop(player pl, int itemID, int amount)
 {
 	static void DropItem_Enable(void)
 	{
-		self.solid = SOLID_CORPSE;
+		// CBaseEntity item = CBaseEntity(self);
+
+		// item.SetSolid(SOLID_CORPSE);
 	}
 
 	// Ensure ItemID is valid and amount are in bounds.
@@ -115,11 +108,13 @@ Item_Drop(player pl, int itemID, int amount)
 	itemID = bound(0, itemID, INVENTORY_ITEM_MAX - 1);
 	amount = bound(0, amount, 255);
 
-    // Remove item from the player inventory.
+	// Enssure the player has enough of these items.
 	if (pl.inventory_items[itemID] <= 0) {
 		dprint(sprintf("Player tried to drop itemID: %i, but doesn't have this item", itemID));
 		return;
 	}
+
+    // Remove item from the player inventory.
     pl.inventory_items[itemID] = bound(0, pl.inventory_items[itemID] - amount, 255);
 
 	// Spawn dropable.
@@ -128,13 +123,12 @@ Item_Drop(player pl, int itemID, int amount)
 	drop.SetItem(itemID);
 	drop.SetAmount(amount);
 	drop.SetSize([-8,-8,0], [8,8,16]);
-	//drop.SetGFlags(GF_HOVER_FULLBRIGHT);
+	drop.SetGFlags(GF_HOVER_FULLBRIGHT);
 	setorigin(drop, pl.origin);
-	drop.solid = SOLID_NOT;
+	// drop.SetSolid(SOLID_NOT);
 	drop.think = DropItem_Enable;
 	drop.nextthink = time + 1.5f;
 	drop.movetype = MOVETYPE_TOSS;
-	
 
 	makevectors(pl.v_angle);
 	drop.velocity = v_forward * 256;

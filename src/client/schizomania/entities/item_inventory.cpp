@@ -99,6 +99,7 @@ item_inventory::Respawn(void) {
 	//SetModel(g_inventory_items[m_iItemID].wmodel());
 	// SetSize([-16,-16,0], [16,16,16]);
 	// SetSolid(SOLID_CORPSE);
+	
 	// SetMovetype(MOVETYPE_TOSS);
 //    remove(self);
 }
@@ -114,7 +115,13 @@ item_inventory::item_inventory(void)
 	// Call Super class constructor. 
 	CGameEntity::CGameEntity();
 	classname = "item_inventory";	
+// 	solid = SOLID_CORPSE;
 
+//  setorigin(this, [0, 0, 0]);
+//  setsize(this, [-8, -8, 0], [8 , 8, 16]);
+
+	// mins = [-8,-8,0];
+	// maxs = [8,8,16];
 	// Respawn.
-	//Respawn();
+	// CRespawn();
 }
