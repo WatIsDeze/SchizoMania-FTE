@@ -23,8 +23,16 @@
 enum
 {
     INVENTORY_ITEM_NULL = 0,
+
+    // Random.
     INVENTORY_ITEM_CAN = 1,
     INVENTORY_ITEM_WINEBOTTLE = 2,
-    INVENTORY_ITEM_GLOCK = 3,
+
+    // Weapons.
+    INVENTORY_ITEM_KNIFE = 3,
+    INVENTORY_ITEM_GLOCK = 4,
+
+    // Health/Status.
+    INVENTORY_ITEM_MEDKIT = 5,
     INVENTORY_ITEM_MAX
 };

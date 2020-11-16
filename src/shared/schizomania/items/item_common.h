@@ -23,7 +23,7 @@ typedef struct {
     string description; // Item description.
     float ID;           // Item ENUM inventory Index.
 
-    void(void) use;
+    void(player) use;
     void(void) precache;
 
     string() wmodel;    // Returns weapon model.

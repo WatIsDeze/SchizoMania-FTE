@@ -31,12 +31,33 @@ VGUI_Inventory_UpdateItems(void);
 // Uses the selected inventory item.
 //=======================
 void
-VGUI_Inventory_Use(void)
+VGUI_Inventory_Use()
 {
+	player pl = (player)self;
+
 	if (!winInventory)
 		return;
 
-	// TODO: Implement.
+	if (!(selectedItemID >= 1 && selectedItemID < INVENTORY_ITEM_MAX))
+		return;
+	
+	// Drop the currently selected item.
+	sendevent("Useitem", "ii", (float)selectedItemID, 1);
+
+	// This is the last item of this kind that we're dropping.
+	// We want to make sure it is unselected when picking it up again.
+	if (itemButtons[selectedItemID].GetItemAmount() <= 1) {
+		// Remove selected flag.
+		itemButtons[selectedItemID].FlagRemove(ITEM_SELECTED);
+		
+		// Reset selected item ID.
+		selectedItemID = 0;
+	}
+
+	// Update item view.
+	VGUI_Inventory_UpdateItems();
+
+	// Hide item display.
 	winInventory.Hide();
 }
 
@@ -68,8 +89,6 @@ VGUI_Inventory_Drop(void)
 	if (!winInventory)
 		return;
 
-	dprint(sprintf("SELECTED ID = %i, %f", selectedItemID, (float)pl.inventory_items[selectedItemID]));
-	
 	if (!(selectedItemID >= 1 && selectedItemID < INVENTORY_ITEM_MAX))
 		return;
 	
@@ -135,19 +154,29 @@ VGUI_Inventory_UpdateItems(void)
 
 	// Used for determining current button position.
 	vector buttonPos = [8, 32, 0];
+	int xiteration = 1;
 
 	// Loop through all possible item ID's.
 	for (int i = 1; i < INVENTORY_ITEM_MAX; i++) {
-		// Increment Y position after each 8 items.
-		if (i % 8)
-			buttonPos.y += UI_INVENTORY_ITEM_HEIGHT + 4;
-
-		// Spawn the item button in case it didn't exist yet.
+		// Make sure all item buttons are pre-spawned.
 		if (!itemButtons[i]) {
 			itemButtons[i] = spawn( CUI3DItem );
-
+			itemButtons[i].FlagRemove(ITEM_VISIBLE);
 			// Last but not least, add button to window.
 			winInventory.Add(itemButtons[i]);
+		}
+
+		// Make sure this item is actually in our inventory.
+		if (pl.inventory_items[i] <= 0) {
+			continue;
+		}
+
+
+		// Increment Y position after each 8 items and reset X.
+		if (xiteration == 4) {
+			buttonPos.y += UI_INVENTORY_ITEM_HEIGHT + 4;
+			buttonPos.x = 8;
+			xiteration = 0;
 		}
 
 		// Position button accordingly.
@@ -175,6 +204,8 @@ VGUI_Inventory_UpdateItems(void)
 
 		// Setup item select callback.
 		itemButtons[i].SetItemSelectFunc( VGUI_Inventory_ItemSelect );
+				//
+		xiteration += 1;
 	}
 }
 

@@ -35,7 +35,7 @@ i_can_precache(void) {
 // Use.
 //=======================
 void
-i_can_use(void) {
+i_can_use(player pl) {
 
 }
 
@@ -52,7 +52,7 @@ i_can_wmodel(void) {
 inventory_item_t i_can = 
 {
 	.name		= "Soda Can",
-	.description = "A can of Soda",
+	.description = "A can of Soda. Capable of healing 5 points.",
 	.ID			= INVENTORY_ITEM_CAN,
 
 	.use		= i_can_use,

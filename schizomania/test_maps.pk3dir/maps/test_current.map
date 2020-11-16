@@ -824,7 +824,7 @@
 "origin" "-120.000000 88.000000 60.000000"
 "model" "models/winebottle.mdl"
 "amount" "1"
-"itemID" "2"
+"itemID" "4"
 }
 // entity 3
 {
@@ -832,7 +832,7 @@
 "origin" "-152.000000 56.000000 60.000000"
 "model" "models/can.mdl"
 "amount" "1"
-"itemID" "1"
+"itemID" "3"
 }
 // entity 4
 {
@@ -856,7 +856,7 @@
 "origin" "-32.000000 88.000000 60.000000"
 "model" "models/can.mdl"
 "amount" "1"
-"itemID" "1"
+"itemID" "5"
 }
 // entity 7
 {
@@ -915,7 +915,7 @@
 {
 "classname" "light"
 "origin" "256.000000 0.000000 110.000000"
-"light" "16"
+"light" "8"
 "_color" "0.8 0.2 0.2"
 "radius" "8"
 }
@@ -923,15 +923,16 @@
 {
 "classname" "light"
 "origin" "256.000000 -64.000000 110.000000"
-"light" "16"
+"light" "8"
 "_color" "0.8 0.2 0.2"
 "radius" "8"
+"style" "7"
 }
 // entity 16
 {
 "classname" "light"
 "origin" "256.000000 -128.000000 110.000000"
-"light" "16"
+"light" "8"
 "_color" "0.8 0.2 0.2"
 "radius" "8"
 }
@@ -939,9 +940,10 @@
 {
 "classname" "light"
 "origin" "256.000000 64.000000 110.000000"
-"light" "16"
+"light" "8"
 "_color" "0.8 0.2 0.2"
 "radius" "8"
+"style" "5"
 }
 // entity 18
 {

@@ -33,7 +33,7 @@ void i_winebottle_precache(void) {
 //
 // Use.
 //=======================
-void i_winebottle_use(void) {
+void i_winebottle_use(player pl) {
 
 }
 

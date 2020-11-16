@@ -33,7 +33,7 @@ void i_glock18_precache(void) {
 //
 // Use.
 //=======================
-void i_glock18_use(void) {
+void i_glock18_use(player pl) {
 
 }
 

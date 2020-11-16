@@ -19,7 +19,15 @@
 //
 inventory_item_t g_inventory_items[] = {
     i_null,
+
+    // Random.
     i_can,
     i_winebottle,
-    i_glock18
+
+    // Weapons.
+    i_knife,
+    i_glock18,
+
+    // Health/Status related.
+    i_medkit
 };
