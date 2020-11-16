@@ -234,3 +234,9 @@ drop 2 1
 quit
 /map test_current
 /map test_current
+/map test_current
+/map test_current
+/map test_current
+/map test_current
+/map test_current
+/map test_current

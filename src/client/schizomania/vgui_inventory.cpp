@@ -76,7 +76,15 @@ VGUI_Inventory_Drop(void)
 	// Drop the currently selected item.
 	sendevent("Dropitem", "ii", (float)selectedItemID, 1);
 
-	// TODO: Maybe remove ITEM_SELCTED flag from button here.
+	// This is the last item of this kind that we're dropping.
+	// We want to make sure it is unselected when picking it up again.
+	if (itemButtons[selectedItemID].GetItemAmount() <= 1) {
+		// Remove selected flag.
+		itemButtons[selectedItemID].FlagRemove(ITEM_SELECTED);
+		
+		// Reset selected item ID.
+		selectedItemID = 0;
+	}
 
 	// Update item view.
 	VGUI_Inventory_UpdateItems();

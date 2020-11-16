@@ -85,6 +85,9 @@ class CUI3DItem:CUIWidget
     // Item related widget functions.
     virtual void(int) SetItemID;
     virtual void(int) SetItemAmount;
+
+	virtual int(void) GetItemID;
+	virtual int(void) GetItemAmount;
 };
 
 //=======================
@@ -320,4 +323,24 @@ CUI3DItem::SetItemID(int itemID) {
 void
 CUI3DItem::SetItemAmount(int itemAmount) {
     m_iItemAmount = itemAmount;
+}
+
+//=======================
+// void CUI3DItem::GetItemID(void)
+//
+// Return current itemID to be referring to.
+//=======================
+int
+CUI3DItem::GetItemID(void) {
+    return m_iItemID ;
+}
+
+//=======================
+// void CUI3DItem::GetItemAmount(void)
+//
+// Return current item amount of the referred item.
+//=======================
+int
+CUI3DItem::GetItemAmount(void) {
+    return m_iItemAmount ;
 }
