@@ -19,9 +19,10 @@ enum
 	EV_SCHIZOMANIA = EV_SEPARATOR,
 
 	//================
-	// ITEM EVENTS.
+	// INVENTORY ITEM EVENTS.
 	//================
 	EV_ITEM_PICKUP,				// Picking up an item to inventory event.
 	EV_ITEM_DROP,				// Dropping an item from inventory event.
-	EV_ITEM_USE,				// Using an item from inventory event.
+	EV_ITEM_USE,				// Using an item event.
+	EV_ITEM_EQUIP,				// Equiping an item event.
 };

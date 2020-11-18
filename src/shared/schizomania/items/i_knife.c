@@ -49,7 +49,12 @@ string i_knife_wmodel(void) {
 inventory_item_t i_knife = 
 {
 	.name		= "Knife",
-	.description = "A sharp hunting knife, good for combat.",
+
+    .txtPickup	= "pickd up a Knife",
+    .txtDrop	= "dropped a Knife",
+	.txtUse		= "used a Knife",
+	.txtDescription = "A sharp hunting knife, good for... 'hunting'.",
+
 	.ID			= INVENTORY_ITEM_KNIFE,
 
 	.use		= i_knife_use,

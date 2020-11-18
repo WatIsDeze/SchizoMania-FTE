@@ -19,12 +19,15 @@
 // Defines the model for each item in the item "database".
 //=======================
 typedef struct {
-    string name;        // Item name.
-    string description; // Item description.
-    float ID;           // Item ENUM inventory Index.
+    string name;            // Item name.
+    string txtPickup;       // Text for display when a player picks up this item.
+    string txtDrop;          // Text for display when a player drops this item.
+    string txtUse;          // Text for display when a player uses this item.
+    string txtDescription;   // Text for display when item is being viewed in inventory.
+    float ID;               // Item ENUM inventory Index.
 
     void(player) use;
     void(void) precache;
 
-    string() wmodel;    // Returns weapon model.
+    string() wmodel;        // Returns weapon model.
 } inventory_item_t;

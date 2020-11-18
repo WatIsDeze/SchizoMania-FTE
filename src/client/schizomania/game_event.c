@@ -33,6 +33,12 @@ Game_Parse_Event(float fHeader)
 	case EV_ITEM_DROP:
 		Items_Event_Drop();
 		break;
+	case EV_ITEM_USE:
+		Items_Event_Use();
+		break;
+	case EV_ITEM_EQUIP:
+		Items_Event_Equip();
+		break;
 
 	//-------------------------
 	// Stock FreeCS events.

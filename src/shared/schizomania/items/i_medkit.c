@@ -61,7 +61,12 @@ string i_medkit_wmodel(void) {
 inventory_item_t i_medkit = 
 {
 	.name		= "Medkit",
-	.description = "A basic medkit. Capable of healing 20 points.",
+
+    .txtPickup	= "picked up a Medkit",
+    .txtDrop	= "dropped a Medkit",
+    .txtUse		= "used a Medkit",
+	.txtDescription = "Capable of healing 20 points on use.",
+
 	.ID			= INVENTORY_ITEM_MEDKIT,
 
 	.use		= i_medkit_use,

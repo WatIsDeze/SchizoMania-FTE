@@ -13,6 +13,34 @@
  * IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING
  * OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  */
+
+//=======================
+// void Item_Pickup(base_player pl, int itemID, int amount)
+//
+// Uses the amount of items on the given player.
+//=======================
+void
+Item_Pickup(player pl, int itemID, int amount)
+{
+	// Add item to the player inventory.
+	pl.inventory_items[itemID] = bound(0, pl.inventory_items[itemID] + amount, 255);
+
+	// Player pickup sound and log.
+	//Logging_Pickup(other, this, __NULL__);
+	sound(pl, CHAN_ITEM, "items/gunpickup2.wav", 1, ATTN_NORM);
+	
+	// Write out EV_ITEM_PICKUP event.
+	WriteByte(MSG_MULTICAST, SVC_CGAMEPACKET);
+	WriteByte(MSG_MULTICAST, EV_ITEM_PICKUP);
+	WriteByte(MSG_MULTICAST, num_for_edict(pl) - 1); 
+	WriteByte(MSG_MULTICAST, itemID);
+	WriteByte(MSG_MULTICAST, amount);
+	msg_entity = pl;
+
+	// Multicast it.
+	multicast([0,0,0], MULTICAST_ALL_R);
+}
+
 //=======================
 // void Item_Use(base_player pl, int itemID, int amount)
 //
@@ -45,29 +73,16 @@ Item_Use(player pl, int itemID, int amount)
 		}
 	}
 
-	// Spawn dropable.
-	item_inventory drop = spawn(item_inventory);
-	drop.classname = "item_inventory";
-	drop.SetItem(itemID);
-	drop.SetAmount(amount);
-	drop.SetSize([-8,-8,0], [8,8,16]);
-	drop.SetGFlags(GF_HOVER_FULLBRIGHT);
-	setorigin(drop, pl.origin);
-	drop.nextthink = time + 1.5f;	
-
-	makevectors(pl.v_angle);
-	drop.velocity = v_forward * 256;
-	drop.avelocity[1] = 500;
-	
-	// Write out EV_ITEM_DROP event.
+	// Write out EV_ITEM_USE event.
 	WriteByte(MSG_MULTICAST, SVC_CGAMEPACKET);
-	WriteByte(MSG_MULTICAST, EV_ITEM_DROP);
+	WriteByte(MSG_MULTICAST, EV_ITEM_USE);
+	WriteByte(MSG_MULTICAST, num_for_edict(pl) - 1); 
 	WriteByte(MSG_MULTICAST, itemID);
 	WriteByte(MSG_MULTICAST, amount);
 	msg_entity = pl;
 
 	// Multicast it.
-	multicast([0,0,0], MULTICAST_ONE_R);
+	multicast([0,0,0], MULTICAST_ALL_R);
 }
 
 //=======================
@@ -137,12 +152,13 @@ Item_Drop(player pl, int itemID, int amount)
 	// Write out EV_ITEM_DROP event.
 	WriteByte(MSG_MULTICAST, SVC_CGAMEPACKET);
 	WriteByte(MSG_MULTICAST, EV_ITEM_DROP);
+	WriteByte(MSG_MULTICAST, num_for_edict(pl) - 1); 
 	WriteByte(MSG_MULTICAST, itemID);
 	WriteByte(MSG_MULTICAST, amount);
 	msg_entity = pl;
 
 	// Multicast it.
-	multicast([0,0,0], MULTICAST_ONE_R);
+	multicast([0,0,0], MULTICAST_ALL_R);
 }
 
 //=======================

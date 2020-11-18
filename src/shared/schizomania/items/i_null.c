@@ -27,7 +27,12 @@ i_null_wmodel(void) {
 inventory_item_t i_null = 
 {
 	.name		= "NULL ITEM",
-//	.descripton = "NULL DESCRIPTION",
+    
+	.txtPickup	= "picked up a NULL ITEM",
+    .txtUse		= "used a NULL ITEM",       
+	.txtDrop	= "dropped a NULL ITEM",
+	.txtDescription = "NULL ITEM",
+
 	.ID			= INVENTORY_ITEM_NULL,
 
 	.use		= __NULL__,

@@ -52,7 +52,12 @@ i_can_wmodel(void) {
 inventory_item_t i_can = 
 {
 	.name		= "Soda Can",
-	.description = "A can of Soda. Capable of healing 5 points.",
+
+    .txtPickup	= "picked up a Can of Soda",
+    .txtDrop	= "dropped a Can of Soda",
+	.txtUse		= "drank a Can of Soda",
+	.txtDescription = "A can of Soda. Its refreshing drink is capable of healing 5 points.",
+
 	.ID			= INVENTORY_ITEM_CAN,
 
 	.use		= i_can_use,
