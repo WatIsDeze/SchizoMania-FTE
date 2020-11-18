@@ -154,7 +154,7 @@ VGUI_Inventory_UpdateItems(void)
 
 	// Used for determining current button position.
 	vector buttonPos = [8, 32, 0];
-	int xiteration = 1;
+	int xiteration = 0;
 
 	// Loop through all possible item ID's.
 	for (int i = 1; i < INVENTORY_ITEM_MAX; i++) {
@@ -166,14 +166,8 @@ VGUI_Inventory_UpdateItems(void)
 			winInventory.Add(itemButtons[i]);
 		}
 
-		// Make sure this item is actually in our inventory.
-		if (pl.inventory_items[i] <= 0) {
-			continue;
-		}
-
-
 		// Increment Y position after each 8 items and reset X.
-		if (xiteration == 4) {
+		if (xiteration == 3) {
 			buttonPos.y += UI_INVENTORY_ITEM_HEIGHT + 4;
 			buttonPos.x = 8;
 			xiteration = 0;
@@ -196,6 +190,9 @@ VGUI_Inventory_UpdateItems(void)
 			
 			// Only Increment X by width define in case this button was visible.
 			buttonPos.x += UI_INVENTORY_ITEM_WIDTH + 4;
+
+			// Next X iteration.
+			xiteration += 1;
 		}
 
 		// Pass item ID and Amount.
@@ -204,8 +201,7 @@ VGUI_Inventory_UpdateItems(void)
 
 		// Setup item select callback.
 		itemButtons[i].SetItemSelectFunc( VGUI_Inventory_ItemSelect );
-				//
-		xiteration += 1;
+
 	}
 }
 

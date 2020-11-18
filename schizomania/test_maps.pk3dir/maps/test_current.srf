@@ -1257,31 +1257,31 @@ default
 208 // SURFACE_FACE V: 4 I: 6 planar
 {
 	shader textures/skies/ulukai
-	lightmapAxis ( 0.000000 0.000000 -1.000000 )
+	sampleSize 0
 }
 
 209 // SURFACE_FACE V: 4 I: 6 planar
 {
 	shader textures/skies/ulukai
-	lightmapAxis ( -1.000000 0.000000 0.000000 )
+	sampleSize 0
 }
 
 210 // SURFACE_FACE V: 4 I: 6 planar
 {
 	shader textures/skies/ulukai
-	lightmapAxis ( 1.000000 0.000000 0.000000 )
+	sampleSize 0
 }
 
 211 // SURFACE_FACE V: 4 I: 6 planar
 {
 	shader textures/skies/ulukai
-	lightmapAxis ( 0.000000 1.000000 0.000000 )
+	sampleSize 0
 }
 
 212 // SURFACE_FACE V: 4 I: 6 planar
 {
 	shader textures/skies/ulukai
-	lightmapAxis ( 0.000000 -1.000000 0.000000 )
+	sampleSize 0
 }
 
 213 // SURFACE_FACE V: 4 I: 6 planar
@@ -1401,31 +1401,31 @@ default
 232 // SURFACE_FACE V: 4 I: 6 planar
 {
 	shader textures/skies/ulukai
-	lightmapAxis ( 0.000000 0.000000 -1.000000 )
+	sampleSize 0
 }
 
 233 // SURFACE_FACE V: 7 I: 15 planar
 {
 	shader textures/skies/ulukai
-	lightmapAxis ( -1.000000 0.000000 0.000000 )
+	sampleSize 0
 }
 
 234 // SURFACE_FACE V: 7 I: 15 planar
 {
 	shader textures/skies/ulukai
-	lightmapAxis ( 1.000000 0.000000 0.000000 )
+	sampleSize 0
 }
 
 235 // SURFACE_FACE V: 7 I: 15 planar
 {
 	shader textures/skies/ulukai
-	lightmapAxis ( 0.000000 1.000000 0.000000 )
+	sampleSize 0
 }
 
 236 // SURFACE_FACE V: 7 I: 15 planar
 {
 	shader textures/skies/ulukai
-	lightmapAxis ( 0.000000 -1.000000 0.000000 )
+	sampleSize 0
 }
 
 237 // SURFACE_FACE V: 5 I: 9 planar
@@ -1489,46 +1489,6 @@ default
 245 // SURFACE_FACE V: 4 I: 6 planar
 {
 	shader textures/mike/grafiti_door1
-	entity 21
-	castShadows 0
-	lightmapAxis ( 0.000000 0.000000 1.000000 )
-}
-
-246 // SURFACE_FACE V: 4 I: 6 planar
-{
-	shader textures/common/origin
-	entity 21
-	castShadows 0
-	lightmapAxis ( -1.000000 0.000000 0.000000 )
-}
-
-247 // SURFACE_FACE V: 4 I: 6 planar
-{
-	shader textures/common/origin
-	entity 21
-	castShadows 0
-	lightmapAxis ( 1.000000 0.000000 0.000000 )
-}
-
-248 // SURFACE_FACE V: 4 I: 6 planar
-{
-	shader textures/common/origin
-	entity 21
-	castShadows 0
-	lightmapAxis ( 0.000000 -1.000000 0.000000 )
-}
-
-249 // SURFACE_FACE V: 4 I: 6 planar
-{
-	shader textures/common/origin
-	entity 21
-	castShadows 0
-	lightmapAxis ( 0.000000 0.000000 -1.000000 )
-}
-
-250 // SURFACE_FACE V: 4 I: 6 planar
-{
-	shader textures/common/origin
 	entity 21
 	castShadows 0
 	lightmapAxis ( 0.000000 0.000000 1.000000 )
