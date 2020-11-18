@@ -96,15 +96,15 @@ w_glock_pickup(int new, int startammo)
 #ifdef SERVER
 	player pl = (player)self;
 
-	if (new) {
-		pl.glock_mag = 20;
-	} else {
-		if (pl.ammo_9mm < MAX_A_9MM) {
-			pl.ammo_9mm = bound(0, pl.ammo_9mm + 20, MAX_A_9MM);
-		} else {
-			return FALSE;
-		}
-	}
+	// if (new) {
+	// 	pl.glock_mag = 20;
+	// } else {
+	// 	if (pl.ammo_9mm < MAX_A_9MM) {
+	// 		pl.ammo_9mm = bound(0, pl.ammo_9mm + 20, MAX_A_9MM);
+	// 	} else {
+	// 		return FALSE;
+	// 	}
+	// }
 #endif
 	return TRUE;
 }
@@ -170,13 +170,13 @@ w_glock_primary(void)
 #ifdef CLIENT
 	pl.a_ammo1--;
 	View_SetMuzzleflash(MUZZLE_SMALL);
-//	Weapons_ViewPunchAngle([-2,0,0]);
+	Weapons_ViewPunchAngle([-2,0,0]);
 
-	//if (pl.a_ammo1) {
-//		Weapons_ViewAnimation(GLOCK_SHOOT);
-//	} else {
-//		Weapons_ViewAnimation(GLOCK_SHOOT_EMPTY);
-//	}
+	if (pl.a_ammo1) {
+		Weapons_ViewAnimation(GLOCK_SHOOT);
+	} else {
+		Weapons_ViewAnimation(GLOCK_SHOOT_EMPTY);
+	}
 #else
 	pl.glock_mag--;
 	TraceAttack_SetPenetrationPower(1);

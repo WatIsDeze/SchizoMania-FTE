@@ -193,3 +193,26 @@ exec postproc_none.cfg
 /map test_current
 /map test_current
 /map test_current
+/map test_current
+/map test_current
+/map test_current
+sv_forceweapondraw
+sv_forceweapondraw 0
+/map test_current
+/map test_current
+/map test_current
+/sv_forceweapondraw 
+/sv_forceweapondraw  0
+/sv_forceweapondraw 
+/map test_current
+/sv_forceweapondraw 
+/sv_forceweapondraw 
+/map test_current
+/map test_current
+/map test_current
+/map test_current
+/map test_current
+/map test_current
+/map test_current
+/map test_current
+/map test_current

@@ -67,7 +67,6 @@ dprint("===================\nDROPPED GLOKC\n=============");
 	Weapons_Holster();
 	Weapons_RemoveItem(pl, WEAPON_GLOCK);
 	pl.activeweapon = 0;
-
 #endif
 }
 
