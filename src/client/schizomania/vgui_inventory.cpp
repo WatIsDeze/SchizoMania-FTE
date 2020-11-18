@@ -69,10 +69,27 @@ VGUI_Inventory_Use()
 void
 VGUI_Inventory_Equip(void)
 {
+	player pl = (player)self;
+
 	if (!winInventory)
 		return;
 
-	// TODO: Implement.
+	if (!(selectedItemID >= 1 && selectedItemID < INVENTORY_ITEM_MAX))
+		return;
+	
+	// Drop the currently selected item.
+	sendevent("Equipitem", "i", (float)selectedItemID);
+
+	// TODO: Mark as EQUIPED for rendering.
+	itemButtons[selectedItemID].FlagRemove(ITEM_SELECTED);
+		
+	// Reset selected item ID.
+	selectedItemID = 0;
+
+	// Update item view.
+	VGUI_Inventory_UpdateItems();
+
+	// Hide item display.
 	winInventory.Hide();
 }
 

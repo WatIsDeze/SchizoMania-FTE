@@ -54,12 +54,13 @@ void Items_Event_Drop(void) {
     int itemID = readbyte();
     int itemAmount = readbyte();
 
-    // 
-    string playerName = getplayerkeyvalue(playerID, "name");
-    CSQC_Parse_Print(sprintf("%s dropped itemID: %i x %i", playerName, itemID, itemAmount), PRINT_CHAT);
-
     // Cast to player.
     player pl = (player)self;
+
+    // 
+    string playerName = getplayerkeyvalue(playerID, "name");
+     CSQC_Parse_Print(sprintf("%s %s", playerName, g_inventory_items[itemID].txtDrop), PRINT_CHAT);
+
 
     // Remove item from the player inventory.
     pl.inventory_items[itemID] = bound(0, pl.inventory_items[itemID] - itemAmount, 255);
@@ -69,8 +70,7 @@ void Items_Event_Drop(void) {
 // void Items_Event_Use(void) 
 //
 // Parses the EV_ITEM_USE message. 
-// Removes items from the client inventory and displays a 
-// "Player used ..." message.
+// Uses item on the client and removes it from the inventory.
 //=======================
 void Items_Event_Use(void) {
     // Read message values.
@@ -94,23 +94,21 @@ void Items_Event_Use(void) {
 // void Items_Event_Equip(void) 
 //
 // Parses the EV_ITEM_EQUIP message. 
-// Removes items from the client inventory and displays a 
-// "Player used ..." message.
+// Equips the player with the weapon itemID.
 //=======================
 void Items_Event_Equip(void) {
     // Read message values.
     int playerID = readbyte();
     int itemID = readbyte();
-    int itemAmount = readbyte();
 
     // 
     string playerName = "Player"; //getplayerkeyvalue(fSender, "name");
     CSQC_Parse_Print(sprintf("%s equiped %s", playerName, g_inventory_items[itemID].name), PRINT_CHAT);
 
-    // Cast to player.
+    // // Cast to player.
     player pl = (player)self;
 
-    // Ensure it is in bounds.
-    pl.inventory_items[itemID] = bound(0, pl.inventory_items[itemID] - itemAmount, 255);
-    // HUD_WeaponPickupNotify(w);
+    // // Ensure it is in bounds.
+    // pl.inventory_items[itemID] = bound(0, pl.inventory_items[itemID] - itemAmount, 255);
+    // // HUD_WeaponPickupNotify(w);
 }

@@ -58,6 +58,10 @@ inventory_item_t i_knife =
 	.ID			= INVENTORY_ITEM_KNIFE,
 
 	.use		= i_knife_use,
+	.pickup		= __NULL__,
+	.equip		= __NULL__,
+	.drop		= __NULL__,
+	
 	.precache	= i_knife_precache,
     .wmodel     = i_knife_wmodel
 };

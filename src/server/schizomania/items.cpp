@@ -17,11 +17,55 @@
 //=======================
 // void Item_Pickup(base_player pl, int itemID, int amount)
 //
+// Equip the selected item as the current active weapon.
+//=======================
+void
+Item_Equip(player pl, int itemID)
+{
+	// Call specific item pickup function.
+	if (g_inventory_items[itemID].pickup != __NULL__) {
+		g_inventory_items[itemID].equip(pl);
+	}
+
+	// // Write out EV_ITEM_PICKUP event.
+	WriteByte(MSG_MULTICAST, SVC_CGAMEPACKET);
+	WriteByte(MSG_MULTICAST, EV_ITEM_EQUIP);
+	WriteByte(MSG_MULTICAST, num_for_edict(pl) - 1); 
+	WriteByte(MSG_MULTICAST, itemID);
+	msg_entity = pl;
+
+	// Multicast it.
+	multicast([0,0,0], MULTICAST_ONE_R);
+}
+
+//=======================
+// void CSEv_Equipitem_i(float itemID)
+//
+// Equip the given item.
+//=======================
+void
+CSEv_Equipitem_i(float itemID)
+{
+	player pl = (player)self;
+	Item_Equip(pl, itemID);
+}
+
+//=======================
+// void Item_Pickup(base_player pl, int itemID, int amount)
+//
 // Uses the amount of items on the given player.
 //=======================
 void
 Item_Pickup(player pl, int itemID, int amount)
 {
+	// Loop for amount of items.
+	for (int i = 0; i < amount; i++) {
+		// Call specific item pickup function.
+		if (g_inventory_items[itemID].pickup != __NULL__) {
+			g_inventory_items[itemID].pickup(pl);
+		}
+	}
+
 	// Add item to the player inventory.
 	pl.inventory_items[itemID] = bound(0, pl.inventory_items[itemID] + amount, 255);
 
@@ -38,7 +82,7 @@ Item_Pickup(player pl, int itemID, int amount)
 	msg_entity = pl;
 
 	// Multicast it.
-	multicast([0,0,0], MULTICAST_ALL_R);
+	multicast([0,0,0], MULTICAST_ONE_R);
 }
 
 //=======================
@@ -82,7 +126,7 @@ Item_Use(player pl, int itemID, int amount)
 	msg_entity = pl;
 
 	// Multicast it.
-	multicast([0,0,0], MULTICAST_ALL_R);
+	multicast([0,0,0], MULTICAST_ONE_R);
 }
 
 //=======================
@@ -129,6 +173,14 @@ Item_Drop(player pl, int itemID, int amount)
 		return;
 	}
 
+	// Loop for amount of items.
+	for (int i = 0; i < amount; i++) {
+		// Call specific item drop function.
+		if (g_inventory_items[itemID].drop != __NULL__) {
+			g_inventory_items[itemID].drop(pl);
+		}
+	}
+
     // Remove item from the player inventory.
     pl.inventory_items[itemID] = bound(0, pl.inventory_items[itemID] - amount, 255);
 
@@ -158,7 +210,7 @@ Item_Drop(player pl, int itemID, int amount)
 	msg_entity = pl;
 
 	// Multicast it.
-	multicast([0,0,0], MULTICAST_ALL_R);
+	multicast([0,0,0], MULTICAST_ONE_R);
 }
 
 //=======================

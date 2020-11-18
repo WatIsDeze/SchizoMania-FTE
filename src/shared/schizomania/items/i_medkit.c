@@ -70,6 +70,10 @@ inventory_item_t i_medkit =
 	.ID			= INVENTORY_ITEM_MEDKIT,
 
 	.use		= i_medkit_use,
+	.pickup		= __NULL__,
+	.equip		= __NULL__,
+	.drop		= __NULL__,
+    
 	.precache	= i_medkit_precache,
     .wmodel     = i_medkit_wmodel
 };

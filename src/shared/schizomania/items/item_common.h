@@ -27,7 +27,10 @@ typedef struct {
     float ID;               // Item ENUM inventory Index.
 
     void(player) use;
-    void(void) precache;
+    void(player) pickup;
+    void(player) equip;
+    void(player) drop;
 
+    void(void) precache;
     string() wmodel;        // Returns weapon model.
 } inventory_item_t;

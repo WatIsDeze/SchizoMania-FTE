@@ -58,6 +58,10 @@ inventory_item_t i_winebottle =
 	.ID			= INVENTORY_ITEM_WINEBOTTLE,
 
 	.use		= i_winebottle_use,
+	.pickup		= __NULL__,
+	.equip		= __NULL__,
+	.drop		= __NULL__,
+	
 	.precache	= i_winebottle_precache,
     .wmodel     = i_winebottle_wmodel
 };

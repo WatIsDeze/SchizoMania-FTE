@@ -128,8 +128,8 @@ HLSingleplayerRules::SpawnInGamePlayer(base_player pp) {
 	// Setp new level params and decode em.
 	LevelNewParms();
 	LevelDecodeParms(pl);
-	pl.g_items = ITEM_CROWBAR | ITEM_GLOCK | ITEM_SUIT;
-	pl.activeweapon = WEAPON_GLOCK;
+	pl.g_items = ITEM_SUIT;
+	pl.activeweapon = 0;
 	pl.glock_mag = 18;
 	pl.ammo_9mm = 44;
 

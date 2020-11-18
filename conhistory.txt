@@ -180,3 +180,16 @@ exec postproc_none.cfg
 /map test_current
 /map test_current
 /map test_current
+/map test_current
+/map test_current
+/map test_current
+/map test_current
+/map test_current
+/map test_current
+/map test_current
+/map test_current
+/map test_current
+/map test_current
+/map test_current
+/map test_current
+/map test_current

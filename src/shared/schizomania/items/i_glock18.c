@@ -29,12 +29,46 @@ void i_glock18_precache(void) {
 }
 
 //=======================
-// void i_glock18_use(void)
+// void i_glock18_pickup(void)
 //
-// Use.
+// Pickup.
 //=======================
-void i_glock18_use(player pl) {
+void i_glock18_pickup(player pl) {
+#ifdef SERVER
+	Weapons_AddItem(pl, WEAPON_GLOCK, 20);
+#endif
+}
 
+//=======================
+// void i_glock18_equip(void)
+//
+// Equip..
+//=======================
+#ifdef SERVER
+// Predefine.
+void Weapons_Draw(void)
+#endif
+void i_glock18_equip(player pl) {
+#ifdef SERVER
+	pl.activeweapon = WEAPON_GLOCK;
+	Weapons_Draw();
+#endif
+}
+
+//=======================
+// void i_glock18_drop(void)
+//
+// Drop.
+//=======================
+void Weapons_Holster();
+void i_glock18_drop(player pl) {
+#ifdef SERVER
+dprint("===================\nDROPPED GLOKC\n=============");
+	Weapons_Holster();
+	Weapons_RemoveItem(pl, WEAPON_GLOCK);
+	pl.activeweapon = 0;
+
+#endif
 }
 
 //=======================
@@ -57,7 +91,11 @@ inventory_item_t i_glock18 =
 
 	.ID			= INVENTORY_ITEM_GLOCK,
 
-	.use		= i_glock18_use,
+	.use		= __NULL__,
+	.pickup		= i_glock18_pickup,
+	.equip		= i_glock18_equip,
+	.drop		= i_glock18_drop,
+
 	.precache	= i_glock18_precache,
     .wmodel     = i_glock18_wmodel
 };

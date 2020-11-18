@@ -61,6 +61,10 @@ inventory_item_t i_can =
 	.ID			= INVENTORY_ITEM_CAN,
 
 	.use		= i_can_use,
+	.pickup		= __NULL__,
+	.equip		= __NULL__,
+	.drop		= __NULL__,
+	
 	.precache	= i_can_precache,
     .wmodel     = i_can_wmodel
 };

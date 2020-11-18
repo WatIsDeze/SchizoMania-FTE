@@ -36,6 +36,10 @@ inventory_item_t i_null =
 	.ID			= INVENTORY_ITEM_NULL,
 
 	.use		= __NULL__,
+	.pickup		= __NULL__,
+	.equip		= __NULL__,
+	.drop		= __NULL__,
+	
 	.precache	= __NULL__,
     .wmodel     = i_null_wmodel
 };
