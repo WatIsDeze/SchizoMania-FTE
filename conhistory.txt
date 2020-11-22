@@ -71,3 +71,33 @@ r_showbboxes 0
 /r_showfields 0
 /map test_current
 /map test_current
+map test_scenes
+/r_deluxemapping 
+/r_deluxemapping  1
+vid_reload
+/map test_current
+/map test_scenes
+/map test_scenes
+r_deluxemapping 0
+/map test_current
+/map test_scenes
+/map test_scenes
+/map test_scenes
+/map test_current
+/map test_scenes
+/map test_current
+/map test_current
+/map test_current
+/map test_current
+/map test_scenes
+/map test_current
+/q3bsp_mergelightmaps 
+/q3bsp_mergelightmaps 0
+/map test_current
+/q3bsp_mergelightmaps 1
+/map test_current
+/q3bsp_mergelightmaps 1
+/q3bsp_mergelightmaps 0
+/map test_scenes
+/map test_scenes
+/map test_current
