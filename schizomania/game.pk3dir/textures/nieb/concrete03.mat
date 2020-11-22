@@ -1,6 +1,6 @@
 {
-	diffusemap textures/nieb/concrete03.jpg
-    normalmap textures/nieb/concrete03_normal.jpg
+	diffusemap textures/nieb/concrete03.tga
+    normalmap textures/nieb/concrete03_normal.tga
 
 	{
 		program lightmapped

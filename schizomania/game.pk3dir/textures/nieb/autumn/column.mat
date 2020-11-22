@@ -1,6 +1,6 @@
 {
-	diffusemap textures/nieb/autumn/column.jpg
-    normalmap textures/nieb/autumn/column_normal.jpg
+	diffusemap textures/nieb/autumn/column.tga
+    normalmap textures/nieb/autumn/column_normal.tga
 
 	{
 		program lightmapped

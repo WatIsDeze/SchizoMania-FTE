@@ -1,6 +1,6 @@
 {
-	diffusemap textures/nieb/garden/stone4.jpg
-    normalmap textures/nieb/garden/stone4_normal.jpg
+	diffusemap textures/nieb/garden/stone4.tga
+    normalmap textures/nieb/garden/stone4_normal.tga
 
 	{
 		program lightmapped

@@ -1,6 +1,6 @@
 {
-	diffusemap textures/nieb/bonepile.jpg
-    normalmap textures/nieb/bonepile_normal.jpg
+	diffusemap textures/nieb/bonepile.tga
+    normalmap textures/nieb/bonepile_normal.tga
 
 	{
 		program lightmapped

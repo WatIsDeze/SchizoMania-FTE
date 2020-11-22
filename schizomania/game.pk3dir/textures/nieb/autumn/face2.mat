@@ -1,6 +1,6 @@
 {
-	diffusemap textures/nieb/autumn/face2.jpg
-    normalmap textures/nieb/autumn/face2_normal.jpg
+	diffusemap textures/nieb/autumn/face2.tga
+    normalmap textures/nieb/autumn/face2_normal.tga
 
 	{
 		program lightmapped

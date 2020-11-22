@@ -1,6 +1,6 @@
 {
-	diffusemap textures/nieb/autumn/tile.jpg
-    normalmap textures/nieb/autumn/tile_normal.jpg
+	diffusemap textures/nieb/autumn/tile.tga
+    normalmap textures/nieb/autumn/tile_normal.tga
 
 	{
 		program lightmapped

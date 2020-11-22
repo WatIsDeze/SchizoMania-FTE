@@ -1,6 +1,6 @@
 {
-	diffusemap textures/nieb/rubber-trim.jpg
-    normalmap textures/nieb/rubber-trim_normal.jpg
+	diffusemap textures/nieb/rubber-trim.tga
+    normalmap textures/nieb/rubber-trim_normal.tga
 
 	{
 		program lightmapped

@@ -1,6 +1,6 @@
 {
-	diffusemap textures/mike/grafiti_door1.jpg
-    normalmap textures/mike/grafiti_door1_normal.jpg
+	diffusemap textures/mike/grafiti_door1.tga
+    normalmap textures/mike/grafiti_door1_normal.tga
 surfaceParm tile
 	{
 		program lightmapped

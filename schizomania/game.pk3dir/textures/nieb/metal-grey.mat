@@ -1,6 +1,6 @@
 {
-	diffusemap textures/nieb/metal-grey.jpg
-    normalmap textures/nieb/metal-grey_normal.jpg
+	diffusemap textures/nieb/metal-grey.tga
+    normalmap textures/nieb/metal-grey_normal.tga
 
 	{
 		program lightmapped

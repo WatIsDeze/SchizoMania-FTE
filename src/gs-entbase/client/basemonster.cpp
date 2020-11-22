@@ -145,7 +145,7 @@ CBaseMonster::AttackThink(void)
 			m_vecLKPos = [0,0,0];
 		}
 	} else {
-		m_iMState = MONSTER_AIMING;
+		m_iMState = MONSTER_CHASING;
 
 		/* make sure we remember the last known position. */
 		m_vecLKPos = m_eEnemy.origin;

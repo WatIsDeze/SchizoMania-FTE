@@ -1,6 +1,6 @@
 {
-	diffusemap textures/nieb/metal-door.jpg
-    normalmap textures/nieb/metal-door_normal.jpg
+	diffusemap textures/nieb/metal-door.tga
+    normalmap textures/nieb/metal-door_normal.tga
 
 	{
 		program lightmapped

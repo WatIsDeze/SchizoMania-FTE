@@ -1,6 +1,6 @@
 {
-	diffusemap textures/nieb/clone/box3a.tga
-	normalmap textures/nieb/clone/box3a_normal.tga
+	diffusemap textures/nieb/clone/box03a.tga
+	normalmap textures/nieb/clone/box03a_normal.tga
 
 	{
 		program lightmapped

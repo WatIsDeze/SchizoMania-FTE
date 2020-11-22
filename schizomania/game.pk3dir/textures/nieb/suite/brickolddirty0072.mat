@@ -1,6 +1,6 @@
 {
-	diffusemap textures/nieb/suit/brickolddirty0072.jpg
-    normalmap textures/nieb/suit/brickolddirty0072_normal.jpg
+	diffusemap textures/nieb/suite/brickolddirty0072.tga
+    normalmap textures/nieb/suite/brickolddirty0072_normal.tga
 
 	{
 		program lightmapped

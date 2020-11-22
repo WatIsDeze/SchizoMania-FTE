@@ -1,6 +1,6 @@
 {
-	diffusemap textures/nieb/autumn/leaves.jpg
-    normalmap textures/nieb/autumn/leaves_normal.jpg
+	diffusemap textures/nieb/autumn/leaves.tga
+    normalmap textures/nieb/autumn/leaves_normal.tga
 
 	{
 		program lightmapped

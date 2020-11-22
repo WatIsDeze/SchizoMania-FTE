@@ -1,6 +1,6 @@
 {
-	diffusemap textures/nieb/autumn/stone_rubble.jpg
-    normalmap textures/nieb/autumn/stone_rubble_normal.jpg
+	diffusemap textures/nieb/autumn/stone_rubble.tga
+    normalmap textures/nieb/autumn/stone_rubble_normal.tga
 
 	{
 		program lightmapped

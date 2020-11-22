@@ -22,52 +22,73 @@ Zombie
 
 */
 
-enum
-{
-	ZO_IDLE,
-	ZO_TURNLEFT,
-	ZO_TURNRIGHT,
-	ZO_FLINCHSM,
-	ZO_FLINCH,
-	ZO_FLINCHBIG,
-	ZO_RISE,
-	ZO_FALLING,
-	ZO_ATTACK1,
-	ZO_ATTACK2,
-	ZO_WALK,
-	ZO_FLINCHLA,
-	ZO_FLINCHRA,
-	ZO_FLINCHLEFT,
-	ZO_FLINCHRIGHT,
-	ZO_DIEHS,
-	ZO_DIEHS2,
-	ZO_DIE,
-	ZO_DIE2,
-	ZO_DIE3,
-	ZO_PAUSE,
-	ZO_WALLBUST,
-	ZO_WALLKICK,
-	ZO_WINDOWBUST,
-	ZO_SODA,
-	ZO_SLIDEIDLE,
-	ZO_SLIDE,
-	ZO_VENTIDLE,
-	ZO_VENT,
-	ZO_DEADIDLE,
-	ZO_DEAD,
-	ZO_FREAKDIE,
-	ZO_FREAK,
-	ZO_EATTABLE,
-	ZO_EAT,
-	ZO_EATSTAND,
-	ZO_DOORIP,
-	ZO_PULLSCI,
-	ZO_EAT2,
-	ZO_EAT2STAND,
-	ZO_VENT2IDLE,
-	ZO_VENT2,
-	ZO_HAUL,
-	ZO_RISESNACK
+// enum
+// {
+// 	ZO_IDLE,
+// 	ZO_TURNLEFT,
+// 	ZO_TURNRIGHT,
+// 	ZO_FLINCHSM,
+// 	ZO_FLINCH,
+// 	ZO_FLINCHBIG,
+// 	ZO_RISE,
+// 	ZO_FALLING,
+// 	ZO_ATTACK1,
+// 	ZO_ATTACK2,
+// 	ZO_WALK,
+// 	ZO_FLINCHLA,
+// 	ZO_FLINCHRA,
+// 	ZO_FLINCHLEFT,
+// 	ZO_FLINCHRIGHT,
+// 	ZO_DIEHS,
+// 	ZO_DIEHS2,
+// 	ZO_DIE,
+// 	ZO_DIE2,
+// 	ZO_DIE3,
+// 	ZO_PAUSE,
+// 	ZO_WALLBUST,
+// 	ZO_WALLKICK,
+// 	ZO_WINDOWBUST,
+// 	ZO_SODA,
+// 	ZO_SLIDEIDLE,
+// 	ZO_SLIDE,
+// 	ZO_VENTIDLE,
+// 	ZO_VENT,
+// 	ZO_DEADIDLE,
+// 	ZO_DEAD,
+// 	ZO_FREAKDIE,
+// 	ZO_FREAK,
+// 	ZO_EATTABLE,
+// 	ZO_EAT,
+// 	ZO_EATSTAND,
+// 	ZO_DOORIP,
+// 	ZO_PULLSCI,
+// 	ZO_EAT2,
+// 	ZO_EAT2STAND,
+// 	ZO_VENT2IDLE,
+// 	ZO_VENT2,
+// 	ZO_HAUL,
+// 	ZO_RISESNACK
+// };
+enum {
+	ZOMBIE_TPOSE,
+	ZOMBIE_AGONIZING,
+	ZOMBIE_ATTACK1,
+	ZOMBIE_ATTACK2,
+	ZOMBIE_DYING1,
+	ZOMBIE_DYING1_FAST,
+	ZOMBIE_DYING2,
+	ZOMBIE_DYING2_FAST,
+	ZOMBIE_HIT_REACT_A,
+	ZOMBIE_HIT_REACT_B,
+	ZOMBIE_IDLE1,
+	ZOMBIE_IDLE_HUNT,
+	ZOMBIE_IDLE_SCRATCH,
+	ZOMBIE_RUNNING1,
+	ZOMBIE_SCREAM,
+	ZOMBIE_TURN_BACKFACE,
+	ZOMBIE_WALKING1,
+	ZOMBIE_WALKING2,
+	ZOMBIE_WALKING3
 };
 
 class monster_zombie:CBaseMonster
@@ -92,43 +113,48 @@ class monster_zombie:CBaseMonster
 int
 monster_zombie::AnimIdle(void)
 {
-	return ZO_IDLE;
+	return ZOMBIE_IDLE1;
 }
 
 int
 monster_zombie::AnimWalk(void)
 {
-	return ZO_WALK;
+	return ZOMBIE_WALKING2;
 }
 
 int
 monster_zombie::AnimRun(void)
 {
-	return ZO_WALK;
+	return ZOMBIE_WALKING2;
 }
 
 int
 monster_zombie::AttackMelee(void)
 {
 	/* visual */
-	if (random() < 0.5)
-		AnimPlay(ZO_ATTACK1);
-	else
-		AnimPlay(ZO_ATTACK2);
+	//if (random() < 0.5)
+	//	AnimPlay(ZOMBIE_ATTACK1);
+	//else
+		AnimPlay(ZOMBIE_ATTACK2);
 
 	m_flAttackThink = m_flAnimTime;
 	Sound_Play(this, CHAN_VOICE, "monster_zombie.attack");
 
 	/* functional */
 	think = AttackFlail;
-	nextthink = 0.25f;
+	nextthink = time + 0.8f;
 	return TRUE;
 }
 
 void
 monster_zombie::AttackFlail(void)
 {
-	traceline(origin, m_eEnemy.origin, FALSE, this);
+	// Calculate attack trace, 64 distance.
+	makevectors(angles);
+	vector vecDest = origin + v_forward * 64;
+
+	// Do a trace.
+	traceline(origin, vecDest, FALSE, this);
 
 	if (trace_fraction >= 1.0 || trace_ent.takedamage != DAMAGE_YES) {
 		Sound_Play(this, CHAN_WEAPON, "monster_zombie.attackmiss");
@@ -148,13 +174,13 @@ monster_zombie::Pain(void)
 		return;
 	}
 
-	if (random() < 0.25f) {
+	if (random() < 0.65f) {
 		return;
 	}
 
 	Sound_Play(this, CHAN_VOICE, "monster_zombie.pain");
-	SetFrame(ZO_FLINCH + floor(random(0, 2)));
-	m_flAnimTime = time + 0.25f;
+	SetFrame(ZOMBIE_HIT_REACT_A);
+	m_flAnimTime = time + 0.20f;
 }
 
 void
@@ -165,12 +191,16 @@ monster_zombie::Death(void)
 		/* headshots == different animation */
 		if (g_dmg_iHitBody == BODY_HEAD) {
 			if (random() < 0.5) {
-				SetFrame(ZO_DIEHS);
+				SetFrame(ZOMBIE_DYING1_FAST);
 			} else {
-				SetFrame(ZO_DIEHS2);
+				SetFrame(ZOMBIE_DYING2_FAST);
 			}
 		} else {
-			 SetFrame(ZO_DIE + floor(random(0, 3)));
+			if (random() < 0.5) {
+				SetFrame(ZOMBIE_DYING1);
+			} else {
+				SetFrame(ZOMBIE_DYING2);
+			}
 		}
 
 		Sound_Play(this, CHAN_VOICE, "monster_zombie.pain");
@@ -200,7 +230,7 @@ void
 monster_zombie::Respawn(void)
 {
 	CBaseMonster::Respawn();
-	SetFrame(ZO_IDLE);
+	SetFrame(ZOMBIE_IDLE1);
 }
 
 void
@@ -212,11 +242,12 @@ monster_zombie::monster_zombie(void)
 	Sound_Precache("monster_zombie.attackmiss");
 	Sound_Precache("monster_zombie.idle");
 	Sound_Precache("monster_zombie.pain");
-	netname = "Zombie";
-	model = "models/zombie.mdl";
+	netname = "Zombie Derrick";
+	model = "models/zombie_derrick/zombie_derrick.vvm";
 	base_health = Skill_GetValue("zombie_health");
 	base_mins = [-16,-16,0];
 	base_maxs = [16,16,72];
+
 	m_iAlliance = MAL_ALIEN;
 	CBaseMonster::CBaseMonster();
 }

@@ -1,6 +1,6 @@
 {
-	diffusemap textures/nieb/floor1.jpg
-    normalmap textures/nieb/floor1_normal.jpg
+	diffusemap textures/nieb/floor1.tga
+    normalmap textures/nieb/floor1_normal.tga
 
 	{
 		program lightmapped

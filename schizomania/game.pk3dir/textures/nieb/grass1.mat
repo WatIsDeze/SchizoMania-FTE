@@ -1,6 +1,6 @@
 {
-	diffusemap textures/nieb/grass1.jpg
-    normalmap textures/nieb/grass1_normal.jpg
+	diffusemap textures/nieb/grass1.tga
+    normalmap textures/nieb/grass1_normal.tga
 
 	{
 		program lightmapped

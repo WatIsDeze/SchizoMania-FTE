@@ -1,6 +1,6 @@
 {
-	diffusemap textures/nieb/brick-red.jpg
-    normalmap textures/nieb/brick-red_normal.jpg
+	diffusemap textures/nieb/brick-red.tga
+    normalmap textures/nieb/brick-red_normal.tga
 
 	{
 		program lightmapped

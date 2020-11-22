@@ -1,6 +1,6 @@
 {
-	diffusemap textures/nieb/suit/rooftilesslate0045.jpg
-    normalmap textures/nieb/suit/rooftilesslate0045_normal.jpg
+	diffusemap textures/nieb/suite/rooftilesslate0045.tga
+    normalmap textures/nieb/suite/rooftilesslate0045_normal.tga
 
 	{
 		program lightmapped

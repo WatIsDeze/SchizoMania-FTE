@@ -1,6 +1,6 @@
 {
-	diffusemap textures/nieb/suit/ornamentborder0135.jpg
-    normalmap textures/nieb/suit/ornamentborder0135_normal.jpg
+	diffusemap textures/nieb/suite/ornamentborder0135.tga
+    normalmap textures/nieb/suite/ornamentborder0135_normal.tga
 
 	{
 		program lightmapped

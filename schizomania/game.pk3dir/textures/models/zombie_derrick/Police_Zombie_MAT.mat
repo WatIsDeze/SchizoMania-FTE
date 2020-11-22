@@ -1,0 +1,10 @@
+{
+	diffusemap textures/models/zombie_derrick/diffuse.tga
+	normalmap textures/models/zombie_derrick/normals.tga
+    
+	{
+		program vertexlit
+		map $diffuse
+		map $normalmap
+	}
+}

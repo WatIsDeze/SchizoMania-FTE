@@ -1,8 +1,10 @@
 {
 	diffusemap textures/nieb/base/base3.tga
+    normalmap textures/nieb/base/base3_normal.tga
+
 	{
-		program defaultwall
+		program lightmapped
 		map $diffuse
-		map $lightmap
+		map $normalmap
 	}
 }

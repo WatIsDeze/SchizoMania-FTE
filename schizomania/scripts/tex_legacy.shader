@@ -682,11 +682,29 @@ textures/measure/player
 
 textures/mike/grafiti_door1
 {
-	diffusemap textures/mike/grafiti_door1.jpg
+	diffusemap textures/mike/grafiti_door1.tga
 surfaceParm tile
 	{
 		map $diffuse
 surfaceParm tile
+	}
+}
+
+textures/models/zombie_derrick/Face_Police_Zombie_MAT
+{
+	diffusemap textures/models/zombie_derrick/diffuse.tga
+    
+	{
+		map $diffuse
+	}
+}
+
+textures/models/zombie_derrick/Police_Zombie_MAT
+{
+	diffusemap textures/models/zombie_derrick/diffuse.tga
+    
+	{
+		map $diffuse
 	}
 }
 
@@ -1151,9 +1169,18 @@ textures/next/rusty4
 	}
 }
 
+textures/nieb/light_glow
+{
+	diffusemap textures/nieb/light_glow.tga
+
+	{
+		map $diffuse
+	}
+}
+
 textures/nieb/box2_alt
 {
-	diffusemap textures/nieb/box2_alt.jpg
+	diffusemap textures/nieb/box2_alt.tga
 
 	{
 		map $diffuse
@@ -1162,7 +1189,7 @@ textures/nieb/box2_alt
 
 textures/nieb/concrete-dark
 {
-	diffusemap textures/nieb/concrete-dark.jpg
+	diffusemap textures/nieb/concrete-dark.tga
 
 	{
 		map $diffuse
@@ -1646,15 +1673,6 @@ textures/nieb/clone/sandstone09b
 	}
 }
 
-textures/nieb/clone/grass11
-{
-	diffusemap textures/nieb/clone/grass11.tga
-
-	{
-		map $diffuse
-	}
-}
-
 textures/nieb/clone/rock03
 {
 	diffusemap textures/nieb/clone/rock03.tga
@@ -1907,15 +1925,6 @@ textures/nieb/clone/wood03
 	}
 }
 
-textures/nieb/clone/sand06
-{
-	diffusemap textures/nieb/clone/sand06.tga
-
-	{
-		map $diffuse
-	}
-}
-
 textures/nieb/clone/brick07
 {
 	diffusemap textures/nieb/clone/brick07.tga
@@ -2044,7 +2053,7 @@ textures/nieb/clone/ceiling-tile01b
 
 textures/nieb/clone/box3a
 {
-	diffusemap textures/nieb/clone/box3a.tga
+	diffusemap textures/nieb/clone/box03a.tga
 
 	{
 		map $diffuse
@@ -2150,15 +2159,6 @@ textures/nieb/clone/trim07b
 	}
 }
 
-textures/nieb/clone/rock05
-{
-	diffusemap textures/nieb/clone/rock05.tga
-
-	{
-		map $diffuse
-	}
-}
-
 textures/nieb/clone/sand09
 {
 	diffusemap textures/nieb/clone/sand09.tga
@@ -2206,7 +2206,7 @@ textures/nieb/clone/concrete04
 
 textures/nieb/brick-tan
 {
-	diffusemap textures/nieb/brick-tan.jpg
+	diffusemap textures/nieb/brick-tan.tga
 
 	{
 		map $diffuse
@@ -2215,7 +2215,7 @@ textures/nieb/brick-tan
 
 textures/nieb/concrete02
 {
-	diffusemap textures/nieb/concrete02.jpg
+	diffusemap textures/nieb/concrete02.tga
 
 	{
 		map $diffuse
@@ -2224,7 +2224,7 @@ textures/nieb/concrete02
 
 textures/nieb/door1
 {
-	diffusemap textures/nieb/door1.jpg
+	diffusemap textures/nieb/door1.tga
 
 	{
 		map $diffuse
@@ -2233,7 +2233,7 @@ textures/nieb/door1
 
 textures/nieb/stone1b
 {
-	diffusemap textures/nieb/stone1b.jpg
+	diffusemap textures/nieb/stone1b.tga
 
 	{
 		map $diffuse
@@ -2242,7 +2242,7 @@ textures/nieb/stone1b
 
 textures/nieb/bonepile
 {
-	diffusemap textures/nieb/bonepile.jpg
+	diffusemap textures/nieb/bonepile.tga
 
 	{
 		map $diffuse
@@ -2251,7 +2251,7 @@ textures/nieb/bonepile
 
 textures/nieb/suite/floorsregular0100
 {
-	diffusemap textures/nieb/suit/floorsregular0100.jpg
+	diffusemap textures/nieb/suite/floorsregular0100.tga
 
 	{
 		map $diffuse
@@ -2260,7 +2260,7 @@ textures/nieb/suite/floorsregular0100
 
 textures/nieb/suite/brickolddirty0072
 {
-	diffusemap textures/nieb/suit/brickolddirty0072.jpg
+	diffusemap textures/nieb/suite/brickolddirty0072.tga
 
 	{
 		map $diffuse
@@ -2269,7 +2269,7 @@ textures/nieb/suite/brickolddirty0072
 
 textures/nieb/suite/concreterough0023
 {
-	diffusemap textures/nieb/suit/concreterough0023.jpg
+	diffusemap textures/nieb/suite/concreterough0023.tga
 
 	{
 		map $diffuse
@@ -2278,7 +2278,7 @@ textures/nieb/suite/concreterough0023
 
 textures/nieb/suite/rooftilesslate0045
 {
-	diffusemap textures/nieb/suit/rooftilesslate0045.jpg
+	diffusemap textures/nieb/suite/rooftilesslate0045.tga
 
 	{
 		map $diffuse
@@ -2287,7 +2287,7 @@ textures/nieb/suite/rooftilesslate0045
 
 textures/nieb/suite/brickolddirty0076
 {
-	diffusemap textures/nieb/suit/brickolddirty0076.jpg
+	diffusemap textures/nieb/suite/brickolddirty0076.tga
 
 	{
 		map $diffuse
@@ -2296,7 +2296,7 @@ textures/nieb/suite/brickolddirty0076
 
 textures/nieb/suite/ornamentborder0135
 {
-	diffusemap textures/nieb/suit/ornamentborder0135.jpg
+	diffusemap textures/nieb/suite/ornamentborder0135.tga
 
 	{
 		map $diffuse
@@ -2305,7 +2305,7 @@ textures/nieb/suite/ornamentborder0135
 
 textures/nieb/suite/brickolddirty0067
 {
-	diffusemap textures/nieb/suit/brickolddirty0067.jpg
+	diffusemap textures/nieb/suite/brickolddirty0067.tga
 
 	{
 		map $diffuse
@@ -2314,7 +2314,7 @@ textures/nieb/suite/brickolddirty0067
 
 textures/nieb/step-side
 {
-	diffusemap textures/nieb/step-side.jpg
+	diffusemap textures/nieb/step-side.tga
 
 	{
 		map $diffuse
@@ -2323,7 +2323,7 @@ textures/nieb/step-side
 
 textures/nieb/light
 {
-	diffusemap textures/nieb/light.jpg
+	diffusemap textures/nieb/light.tga
 
 	{
 		map $diffuse
@@ -2332,7 +2332,7 @@ textures/nieb/light
 
 textures/nieb/box1_alt
 {
-	diffusemap textures/nieb/box1_alt.jpg
+	diffusemap textures/nieb/box1_alt.tga
 
 	{
 		map $diffuse
@@ -2341,7 +2341,7 @@ textures/nieb/box1_alt
 
 textures/nieb/beam
 {
-	diffusemap textures/nieb/beam.jpg
+	diffusemap textures/nieb/beam.tga
 
 	{
 		map $diffuse
@@ -2350,7 +2350,7 @@ textures/nieb/beam
 
 textures/nieb/metal-door
 {
-	diffusemap textures/nieb/metal-door.jpg
+	diffusemap textures/nieb/metal-door.tga
 
 	{
 		map $diffuse
@@ -2359,7 +2359,7 @@ textures/nieb/metal-door
 
 textures/nieb/worldmap
 {
-	diffusemap textures/nieb/worldmap.jpg
+	diffusemap textures/nieb/worldmap.tga
 
 	{
 		map $diffuse
@@ -2368,7 +2368,7 @@ textures/nieb/worldmap
 
 textures/nieb/box2
 {
-	diffusemap textures/nieb/box2.jpg
+	diffusemap textures/nieb/box2.tga
 
 	{
 		map $diffuse
@@ -2377,7 +2377,7 @@ textures/nieb/box2
 
 textures/nieb/garden/stone4
 {
-	diffusemap textures/nieb/garden/stone4.jpg
+	diffusemap textures/nieb/garden/stone4.tga
 
 	{
 		map $diffuse
@@ -2386,7 +2386,7 @@ textures/nieb/garden/stone4
 
 textures/nieb/garden/stone6
 {
-	diffusemap textures/nieb/garden/stone6.jpg
+	diffusemap textures/nieb/garden/stone6.tga
 
 	{
 		map $diffuse
@@ -2395,7 +2395,7 @@ textures/nieb/garden/stone6
 
 textures/nieb/garden/grass1b
 {
-	diffusemap textures/nieb/garden/grass1b.jpg
+	diffusemap textures/nieb/garden/grass1b.tga
 
 	{
 		map $diffuse
@@ -2404,7 +2404,7 @@ textures/nieb/garden/grass1b
 
 textures/nieb/garden/stone1b
 {
-	diffusemap textures/nieb/garden/stone1b.jpg
+	diffusemap textures/nieb/garden/stone1b.tga
 
 	{
 		map $diffuse
@@ -2413,7 +2413,7 @@ textures/nieb/garden/stone1b
 
 textures/nieb/garden/stone1d
 {
-	diffusemap textures/nieb/garden/stone1d.jpg
+	diffusemap textures/nieb/garden/stone1d.tga
 
 	{
 		map $diffuse
@@ -2422,7 +2422,7 @@ textures/nieb/garden/stone1d
 
 textures/nieb/garden/stone1c
 {
-	diffusemap textures/nieb/garden/stone1c.jpg
+	diffusemap textures/nieb/garden/stone1c.tga
 
 	{
 		map $diffuse
@@ -2431,7 +2431,7 @@ textures/nieb/garden/stone1c
 
 textures/nieb/garden/grass1a
 {
-	diffusemap textures/nieb/garden/grass1a.jpg
+	diffusemap textures/nieb/garden/grass1a.tga
 
 	{
 		map $diffuse
@@ -2440,7 +2440,7 @@ textures/nieb/garden/grass1a
 
 textures/nieb/garden/fabric
 {
-	diffusemap textures/nieb/garden/fabric.jpg
+	diffusemap textures/nieb/garden/fabric.tga
 
 	{
 		map $diffuse
@@ -2449,7 +2449,7 @@ textures/nieb/garden/fabric
 
 textures/nieb/garden/stone5
 {
-	diffusemap textures/nieb/garden/stone5.jpg
+	diffusemap textures/nieb/garden/stone5.tga
 
 	{
 		map $diffuse
@@ -2458,7 +2458,7 @@ textures/nieb/garden/stone5
 
 textures/nieb/garden/grass2b
 {
-	diffusemap textures/nieb/garden/grass2b.jpg
+	diffusemap textures/nieb/garden/grass2b.tga
 
 	{
 		map $diffuse
@@ -2467,7 +2467,7 @@ textures/nieb/garden/grass2b
 
 textures/nieb/garden/stone12
 {
-	diffusemap textures/nieb/garden/stone12.jpg
+	diffusemap textures/nieb/garden/stone12.tga
 
 	{
 		map $diffuse
@@ -2476,7 +2476,7 @@ textures/nieb/garden/stone12
 
 textures/nieb/garden/bark1
 {
-	diffusemap textures/nieb/garden/bark1.jpg
+	diffusemap textures/nieb/garden/bark1.tga
 
 	{
 		map $diffuse
@@ -2485,7 +2485,7 @@ textures/nieb/garden/bark1
 
 textures/nieb/garden/stone2
 {
-	diffusemap textures/nieb/garden/stone2.jpg
+	diffusemap textures/nieb/garden/stone2.tga
 
 	{
 		map $diffuse
@@ -2494,7 +2494,7 @@ textures/nieb/garden/stone2
 
 textures/nieb/garden/stone11
 {
-	diffusemap textures/nieb/garden/stone11.jpg
+	diffusemap textures/nieb/garden/stone11.tga
 
 	{
 		map $diffuse
@@ -2503,7 +2503,7 @@ textures/nieb/garden/stone11
 
 textures/nieb/garden/grass2a
 {
-	diffusemap textures/nieb/garden/grass2a.jpg
+	diffusemap textures/nieb/garden/grass2a.tga
 
 	{
 		map $diffuse
@@ -2512,7 +2512,7 @@ textures/nieb/garden/grass2a
 
 textures/nieb/garden/stone3
 {
-	diffusemap textures/nieb/garden/stone3.jpg
+	diffusemap textures/nieb/garden/stone3.tga
 
 	{
 		map $diffuse
@@ -2521,7 +2521,7 @@ textures/nieb/garden/stone3
 
 textures/nieb/garden/stone7
 {
-	diffusemap textures/nieb/garden/stone7.jpg
+	diffusemap textures/nieb/garden/stone7.tga
 
 	{
 		map $diffuse
@@ -2530,7 +2530,7 @@ textures/nieb/garden/stone7
 
 textures/nieb/garden/sand1
 {
-	diffusemap textures/nieb/garden/sand1.jpg
+	diffusemap textures/nieb/garden/sand1.tga
 
 	{
 		map $diffuse
@@ -2539,7 +2539,7 @@ textures/nieb/garden/sand1
 
 textures/nieb/garden/stone9
 {
-	diffusemap textures/nieb/garden/stone9.jpg
+	diffusemap textures/nieb/garden/stone9.tga
 
 	{
 		map $diffuse
@@ -2548,7 +2548,7 @@ textures/nieb/garden/stone9
 
 textures/nieb/garden/stone8
 {
-	diffusemap textures/nieb/garden/stone8.jpg
+	diffusemap textures/nieb/garden/stone8.tga
 
 	{
 		map $diffuse
@@ -2557,7 +2557,7 @@ textures/nieb/garden/stone8
 
 textures/nieb/garden/stone10
 {
-	diffusemap textures/nieb/garden/stone10.jpg
+	diffusemap textures/nieb/garden/stone10.tga
 
 	{
 		map $diffuse
@@ -2566,7 +2566,7 @@ textures/nieb/garden/stone10
 
 textures/nieb/garden/bush1
 {
-	diffusemap textures/nieb/garden/bush1.jpg
+	diffusemap textures/nieb/garden/bush1.tga
 
 	{
 		map $diffuse
@@ -2575,7 +2575,7 @@ textures/nieb/garden/bush1
 
 textures/nieb/garden/stone1a
 {
-	diffusemap textures/nieb/garden/stone1a.jpg
+	diffusemap textures/nieb/garden/stone1a.tga
 
 	{
 		map $diffuse
@@ -2584,7 +2584,7 @@ textures/nieb/garden/stone1a
 
 textures/nieb/garden/metal1
 {
-	diffusemap textures/nieb/garden/metal1.jpg
+	diffusemap textures/nieb/garden/metal1.tga
 
 	{
 		map $diffuse
@@ -2593,7 +2593,7 @@ textures/nieb/garden/metal1
 
 textures/nieb/garden/stone13
 {
-	diffusemap textures/nieb/garden/stone13.jpg
+	diffusemap textures/nieb/garden/stone13.tga
 
 	{
 		map $diffuse
@@ -2602,7 +2602,7 @@ textures/nieb/garden/stone13
 
 textures/nieb/concrete-tan
 {
-	diffusemap textures/nieb/concrete-tan.jpg
+	diffusemap textures/nieb/concrete-tan.tga
 
 	{
 		map $diffuse
@@ -2611,7 +2611,7 @@ textures/nieb/concrete-tan
 
 textures/nieb/stone2
 {
-	diffusemap textures/nieb/stone2.jpg
+	diffusemap textures/nieb/stone2.tga
 
 	{
 		map $diffuse
@@ -2620,7 +2620,7 @@ textures/nieb/stone2
 
 textures/nieb/clock_face
 {
-	diffusemap textures/nieb/clock_face.jpg
+	diffusemap textures/nieb/clock_face.tga
 
 	{
 		map $diffuse
@@ -2629,7 +2629,7 @@ textures/nieb/clock_face
 
 textures/nieb/sand02
 {
-	diffusemap textures/nieb/sand02.jpg
+	diffusemap textures/nieb/sand02.tga
 
 	{
 		map $diffuse
@@ -2638,7 +2638,7 @@ textures/nieb/sand02
 
 textures/nieb/rock02
 {
-	diffusemap textures/nieb/rock02.jpg
+	diffusemap textures/nieb/rock02.tga
 
 	{
 		map $diffuse
@@ -2647,7 +2647,7 @@ textures/nieb/rock02
 
 textures/nieb/stone3
 {
-	diffusemap textures/nieb/stone3.jpg
+	diffusemap textures/nieb/stone3.tga
 
 	{
 		map $diffuse
@@ -2656,7 +2656,7 @@ textures/nieb/stone3
 
 textures/nieb/rubber-trim
 {
-	diffusemap textures/nieb/rubber-trim.jpg
+	diffusemap textures/nieb/rubber-trim.tga
 
 	{
 		map $diffuse
@@ -2684,9 +2684,9 @@ textures/nieb/base/base2
 textures/nieb/base/base3
 {
 	diffusemap textures/nieb/base/base3.tga
+
 	{
 		map $diffuse
-		map $lightmap
 	}
 }
 
@@ -2701,7 +2701,7 @@ textures/nieb/base/base1
 
 textures/nieb/autumn/tile
 {
-	diffusemap textures/nieb/autumn/tile.jpg
+	diffusemap textures/nieb/autumn/tile.tga
 
 	{
 		map $diffuse
@@ -2710,7 +2710,7 @@ textures/nieb/autumn/tile
 
 textures/nieb/autumn/face0c
 {
-	diffusemap textures/nieb/autumn/face0c.jpg
+	diffusemap textures/nieb/autumn/face0c.tga
 
 	{
 		map $diffuse
@@ -2719,7 +2719,7 @@ textures/nieb/autumn/face0c
 
 textures/nieb/autumn/face2
 {
-	diffusemap textures/nieb/autumn/face2.jpg
+	diffusemap textures/nieb/autumn/face2.tga
 
 	{
 		map $diffuse
@@ -2728,7 +2728,7 @@ textures/nieb/autumn/face2
 
 textures/nieb/autumn/bark01
 {
-	diffusemap textures/nieb/autumn/bark01.jpg
+	diffusemap textures/nieb/autumn/bark01.tga
 
 	{
 		map $diffuse
@@ -2737,7 +2737,7 @@ textures/nieb/autumn/bark01
 
 textures/nieb/autumn/leaves
 {
-	diffusemap textures/nieb/autumn/leaves.jpg
+	diffusemap textures/nieb/autumn/leaves.tga
 
 	{
 		map $diffuse
@@ -2746,7 +2746,7 @@ textures/nieb/autumn/leaves
 
 textures/nieb/autumn/face1
 {
-	diffusemap textures/nieb/autumn/face1.jpg
+	diffusemap textures/nieb/autumn/face1.tga
 
 	{
 		map $diffuse
@@ -2755,16 +2755,7 @@ textures/nieb/autumn/face1
 
 textures/nieb/autumn/face0a
 {
-	diffusemap textures/nieb/autumn/face0a.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/nieb/autumn/trim
-{
-	diffusemap textures/nieb/autumn/trim.jpg
+	diffusemap textures/nieb/autumn/face0a.tga
 
 	{
 		map $diffuse
@@ -2773,7 +2764,7 @@ textures/nieb/autumn/trim
 
 textures/nieb/autumn/stone_rubble
 {
-	diffusemap textures/nieb/autumn/stone_rubble.jpg
+	diffusemap textures/nieb/autumn/stone_rubble.tga
 
 	{
 		map $diffuse
@@ -2782,7 +2773,16 @@ textures/nieb/autumn/stone_rubble
 
 textures/nieb/autumn/stone_rough
 {
-	diffusemap textures/nieb/autumn/stone_rough.jpg
+	diffusemap textures/nieb/autumn/stone_rough.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/nieb/autumn/trim1
+{
+	diffusemap textures/nieb/autumn/trim1.tga
 
 	{
 		map $diffuse
@@ -2791,7 +2791,7 @@ textures/nieb/autumn/stone_rough
 
 textures/nieb/autumn/column
 {
-	diffusemap textures/nieb/autumn/column.jpg
+	diffusemap textures/nieb/autumn/column.tga
 
 	{
 		map $diffuse
@@ -2800,7 +2800,7 @@ textures/nieb/autumn/column
 
 textures/nieb/autumn/face0b
 {
-	diffusemap textures/nieb/autumn/face0b.jpg
+	diffusemap textures/nieb/autumn/face0b.tga
 
 	{
 		map $diffuse
@@ -2809,7 +2809,7 @@ textures/nieb/autumn/face0b
 
 textures/nieb/autumn/face3
 {
-	diffusemap textures/nieb/autumn/face3.jpg
+	diffusemap textures/nieb/autumn/face3.tga
 
 	{
 		map $diffuse
@@ -2818,7 +2818,7 @@ textures/nieb/autumn/face3
 
 textures/nieb/autumn/face4
 {
-	diffusemap textures/nieb/autumn/face4.jpg
+	diffusemap textures/nieb/autumn/face4.tga
 
 	{
 		map $diffuse
@@ -2827,7 +2827,7 @@ textures/nieb/autumn/face4
 
 textures/nieb/autumn/stone1
 {
-	diffusemap textures/nieb/autumn/stone1.jpg
+	diffusemap textures/nieb/autumn/stone1.tga
 
 	{
 		map $diffuse
@@ -2836,7 +2836,7 @@ textures/nieb/autumn/stone1
 
 textures/nieb/autumn/rock
 {
-	diffusemap textures/nieb/autumn/rock.jpg
+	diffusemap textures/nieb/autumn/rock.tga
 
 	{
 		map $diffuse
@@ -2845,7 +2845,7 @@ textures/nieb/autumn/rock
 
 textures/nieb/autumn/grass1
 {
-	diffusemap textures/nieb/autumn/grass1.jpg
+	diffusemap textures/nieb/autumn/grass1.tga
 
 	{
 		map $diffuse
@@ -2854,7 +2854,7 @@ textures/nieb/autumn/grass1
 
 textures/nieb/stripes
 {
-	diffusemap textures/nieb/stripes.jpg
+	diffusemap textures/nieb/stripes.tga
 
 	{
 		map $diffuse
@@ -2863,7 +2863,7 @@ textures/nieb/stripes
 
 textures/nieb/sand01
 {
-	diffusemap textures/nieb/sand01.jpg
+	diffusemap textures/nieb/sand01.tga
 
 	{
 		map $diffuse
@@ -2872,16 +2872,7 @@ textures/nieb/sand01
 
 textures/nieb/box1
 {
-	diffusemap textures/nieb/box1.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/nieb/light-glow
-{
-	diffusemap textures/nieb/light-glow.jpg
+	diffusemap textures/nieb/box1.tga
 
 	{
 		map $diffuse
@@ -2890,7 +2881,7 @@ textures/nieb/light-glow
 
 textures/nieb/rough01
 {
-	diffusemap textures/nieb/rough01.jpg
+	diffusemap textures/nieb/rough01.tga
 
 	{
 		map $diffuse
@@ -2899,7 +2890,7 @@ textures/nieb/rough01
 
 textures/nieb/step-top
 {
-	diffusemap textures/nieb/step-top.jpg
+	diffusemap textures/nieb/step-top.tga
 
 	{
 		map $diffuse
@@ -2908,7 +2899,7 @@ textures/nieb/step-top
 
 textures/nieb/floor1
 {
-	diffusemap textures/nieb/floor1.jpg
+	diffusemap textures/nieb/floor1.tga
 
 	{
 		map $diffuse
@@ -3043,7 +3034,7 @@ textures/nieb/complex/electrical-outlet
 
 textures/nieb/orange
 {
-	diffusemap textures/nieb/metal-orange.jpg
+	diffusemap textures/nieb/metal-orange.tga
 
 	{
 		map $diffuse
@@ -3052,7 +3043,7 @@ textures/nieb/orange
 
 textures/nieb/metal-grey
 {
-	diffusemap textures/nieb/metal-grey.jpg
+	diffusemap textures/nieb/metal-grey.tga
 
 	{
 		map $diffuse
@@ -3061,7 +3052,7 @@ textures/nieb/metal-grey
 
 textures/nieb/floor2
 {
-	diffusemap textures/nieb/floor2.jpg
+	diffusemap textures/nieb/floor2.tga
 
 	{
 		map $diffuse
@@ -3070,7 +3061,7 @@ textures/nieb/floor2
 
 textures/nieb/brick-red
 {
-	diffusemap textures/nieb/brick-red.jpg
+	diffusemap textures/nieb/brick-red.tga
 
 	{
 		map $diffuse
@@ -3079,7 +3070,7 @@ textures/nieb/brick-red
 
 textures/nieb/stone1
 {
-	diffusemap textures/nieb/stone1.jpg
+	diffusemap textures/nieb/stone1.tga
 
 	{
 		map $diffuse
@@ -3088,7 +3079,7 @@ textures/nieb/stone1
 
 textures/nieb/concrete-light
 {
-	diffusemap textures/nieb/concrete-light.jpg
+	diffusemap textures/nieb/concrete-light.tga
 
 	{
 		map $diffuse
@@ -3097,7 +3088,7 @@ textures/nieb/concrete-light
 
 textures/nieb/concrete03
 {
-	diffusemap textures/nieb/concrete03.jpg
+	diffusemap textures/nieb/concrete03.tga
 
 	{
 		map $diffuse
@@ -3106,7 +3097,7 @@ textures/nieb/concrete03
 
 textures/nieb/step-top2
 {
-	diffusemap textures/nieb/step-top2.jpg
+	diffusemap textures/nieb/step-top2.tga
 
 	{
 		map $diffuse
@@ -3115,7 +3106,7 @@ textures/nieb/step-top2
 
 textures/nieb/concrete-red
 {
-	diffusemap textures/nieb/concrete-red.jpg
+	diffusemap textures/nieb/concrete-red.tga
 
 	{
 		map $diffuse
@@ -3124,7 +3115,7 @@ textures/nieb/concrete-red
 
 textures/nieb/rock01
 {
-	diffusemap textures/nieb/rock01.jpg
+	diffusemap textures/nieb/rock01.tga
 
 	{
 		map $diffuse
@@ -3133,7 +3124,7 @@ textures/nieb/rock01
 
 textures/nieb/grass1
 {
-	diffusemap textures/nieb/grass1.jpg
+	diffusemap textures/nieb/grass1.tga
 
 	{
 		map $diffuse

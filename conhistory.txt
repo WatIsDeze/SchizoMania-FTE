@@ -1,8 +1,9 @@
-
 /map test_current
 /map test_current
 /map test_current
 /map test_current
+impulse 101
+impulse 101
 /map test_current
 /map test_current
 /map test_current
@@ -27,192 +28,46 @@
 /map test_current
 /map test_current
 /map test_current
-r_showbboxes 2
-r_showbboxes 1
-r_showbboxes 2
-r_showbboxes 1
-r_showbboxes 2
-r_showbboxes 2
 /map test_current
-r_showbboxes 1
 /map test_current
-r_showbboxes 1
-r_showbboxes 2
-r_showbboxes 2
 /map test_current
-r_showbboxes 2
-r_showbboxes 1
-r_showbboxes 2
-r_showbboxes 1
-r_showbboxes 2
-r_showbboxes 2
 /map test_current
 /map test_current
-r_showbboxes 2
-r_showbboxes 2
+god
+modelviewer models/zombie_derrick/zombie_derrick.vvm
+modelviewer models/zombie_derrick/zombie_derrick.vvm
+modelviewer models/zombie_derrick/zombie_derrick.vvm
+modelviewer models/zombie_derrick/zombie_derrick.vvm
+modelviewer models/zombie_derrick/zombie_derrick.vvm
+god
 /map test_current
-drop
-drop
 /map test_current
-drop
-drop
-drop
-drop
 /map test_current
-drop
-/r_showbboxes 2
-/r_showbboxes 2
-/r_showbboxes 1
-/r_showbboxes 2
-/r_showbboxes 1
-/r_showbboxes 2
-/r_showbboxes 2
 /map test_current
 /map test_current
-r_showfields 1
-sv_cheats 1
 /map test_current
-/con_textsize 1
-/con_textsize 112
-/con_textsize 12
-/con_textsize 10
-/con_textsize 12
 /map test_current
-r_showbboxes 2
 /map test_current
+god
+impulse 101
 /map test_current
-r_showbboxes 2
-r_showfields 1
-sv_cheats 1
 /map test_current
-noclpi
-nocli[
-noclip
-noclip
-r_showbboxes 2
 /map test_current
-r_showfields 1
-sv_cheats 1
-r_showbboxes 1
 /map test_current
 /map test_current
 /map test_current
 /map test_current
 /map test_current
-drop 1 1
-drop 1 1
-drop 1 1
 /map test_current
-drop 1 1
+r_showbboxes 0
+r_showbboxes 0
+r_showfields 0
 /map test_current
+r_showfields 0
 /map test_current
+r_showbboxes 0
 /map test_current
-r_showbboxes 2
 /map test_current
-r_showbboxes 2
-r_showbboxes 1
-r_showbboxes 1
-r_showbboxes 2
-/map test_current
-/map test_current
-r_showbboxes 1
-/map test_current
-/r_showfields 
-/r_showfields 2
-sv_cheats 1
-/map test_current
-/r_showfields 2
-/r_showfields 2
-sv_cheats 1
-/r_showfields 2
-/map test_current
-/map test_current
-/map test_current
-drop 1 1
-/map test_current
-/map test_current
-/map test_current
-/map test_current
-/map test_current
-/map test_current
-/map test_current
-/map test_current
-/map test_current
-/map test_current
-/map test_current
-/map test_current
-noclip
-/map test_current
-/map test_current
-/map test_current
-/map test_current
-/map test_current
-/map test_current
-/map test_current
-/map test_current
-/map test_current
-/map test_areaportal
-/map test_
-/map test_areaportal
-/map test_areaportal
-/map test_areaportal
-/map test_areaportal
-/map test_current
-/map test_current
-exec postproc_none.cfg
-/map test_current
-/map test_dlights
-/map test_dlights
-/map test_dlights
-/map test_current
-/map test_current
-/map test_current
-/map test_current
-/map test_current
-/map test_current
-/map test_current
-/map test_current
-/map test_current
-/map test_current
-/map test_current
-/map test_current
-/map test_current
-/map test_current
-/map test_current
-/map test_current
-/map test_current
-/map test_current
-/map test_current
-/map test_current
-/map test_current
-/map test_current
-/map test_current
-/map test_current
-/map test_current
-/map test_current
-/map test_current
-/map test_current
-/map test_current
-/map test_current
-/map test_current
-/map test_current
-sv_forceweapondraw
-sv_forceweapondraw 0
-/map test_current
-/map test_current
-/map test_current
-/sv_forceweapondraw 
-/sv_forceweapondraw  0
-/sv_forceweapondraw 
-/map test_current
-/sv_forceweapondraw 
-/sv_forceweapondraw 
-/map test_current
-/map test_current
-/map test_current
-/map test_current
-/map test_current
-/map test_current
-/map test_current
+/r_showfields 0
 /map test_current
 /map test_current

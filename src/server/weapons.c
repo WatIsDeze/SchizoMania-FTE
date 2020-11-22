@@ -103,8 +103,8 @@ Weapons_AddItem(base_player pl, int w, int startammo)
 
 			/* it's new, so autoswitch? */
 			if (pl.activeweapon == 0 && autocvar_sv_forceweapondraw == TRUE) {
-				pl.activeweapon = w;
-				Weapons_Draw();
+				// pl.activeweapon = w;
+				// Weapons_Draw();
 			} else {
 				Weapons_PickupNotify(pl, w);
 			}
@@ -120,8 +120,8 @@ Weapons_AddItem(base_player pl, int w, int startammo)
 
 			/* it's new, so autoswitch? */
 			if (pl.activeweapon == 0 && autocvar_sv_forceweapondraw == TRUE) {
-				pl.activeweapon = w;
-				Weapons_Draw();
+				// pl.activeweapon = w;
+				// Weapons_Draw();
 			} else {
 				Weapons_PickupNotify(pl, w);
 			}

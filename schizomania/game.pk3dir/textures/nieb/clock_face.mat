@@ -1,6 +1,6 @@
 {
-	diffusemap textures/nieb/clock_face.jpg
-    normalmap textures/nieb/clock_face_normal.jpg
+	diffusemap textures/nieb/clock_face.tga
+    normalmap textures/nieb/clock_face_normal.tga
 
 	{
 		program lightmapped

@@ -1,6 +1,6 @@
 {
-	diffusemap textures/nieb/box1.jpg
-    normalmap textures/nieb/box1_normal.jpg
+	diffusemap textures/nieb/box1.tga
+    normalmap textures/nieb/box1_normal.tga
 
 	{
 		program lightmapped

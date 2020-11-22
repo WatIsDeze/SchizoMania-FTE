@@ -53,7 +53,7 @@ class monster_gman:CBaseMonster
 int
 monster_gman::AnimIdle(void)
 {
-	return GMAN_IDLE;
+	return GMAN_IDLETIE;
 }
 
 int
@@ -72,16 +72,17 @@ void monster_gman::Respawn(void)
 {
 	/* he can't die, he's the G-Man! */
 	CBaseMonster::Respawn();
-	SetFrame(GMAN_IDLE);
-	takedamage = DAMAGE_NO;
-	iBleeds = FALSE;
+	SetFrame(GMAN_IDLETIE);
+	takedamage = DAMAGE_YES;
+	iBleeds = TRUE;
 }
 
 void monster_gman::monster_gman(void)
 {
 	netname = "G-Man";
-	model = "models/gman.mdl";
+	model = "models/zombie_derrick/zombie_derrick.vvm";
 	base_mins = [-16,-16,0];
 	base_maxs = [16,16,72];
+	
 	CBaseMonster::CBaseMonster();
 }

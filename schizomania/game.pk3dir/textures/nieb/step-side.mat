@@ -1,6 +1,6 @@
 {
-	diffusemap textures/nieb/step-side.jpg
-    normalmap textures/nieb/step-side_normal.jpg
+	diffusemap textures/nieb/step-side.tga
+    normalmap textures/nieb/step-side_normal.tga
 
 	{
 		program lightmapped
