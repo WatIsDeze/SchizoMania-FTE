@@ -508,12 +508,6 @@ CBaseMonster::touch(void)
 }
 
 void
-CBaseMonster::PlayerUse(void)
-{
-
-}
-
-void
 CBaseMonster::Pain(void)
 {
 	if (!m_eEnemy)
@@ -582,6 +576,23 @@ CBaseMonster::Respawn(void)
 	SetOrigin(m_oldOrigin);
 
 	droptofloor();
+}
+
+void
+CBaseMonster::SpawnKey(string strKey, string strValue)
+{
+	switch (strKey) {
+	/* The legacy GoldSrc trigger condition system */
+	case "TriggerCondition":
+		m_iTriggerCondition = stoi(strValue);
+		break;
+	case "TriggerTarget":
+		m_strTriggerTarget = strValue;
+		break;
+	default:
+		CBaseEntity::SpawnKey(strKey, strValue);
+		break;
+	}
 }
 
 void
