@@ -265,7 +265,8 @@ CBaseMonster::CheckRoute(void)
 	flDist = floor(vlen(evenpos - origin));
 
 	if (flDist < 8) {
-		dprint(sprintf("^2CBaseMonster::^3CheckRoute^7: %s reached node\n", this.targetname));
+		dprint(sprintf("^2CBaseMonster::^3CheckRoute^7: " \
+			"%s reached node\n", this.targetname));
 		m_iCurNode--;
 		velocity = [0,0,0]; /* clamp friction */
 
@@ -379,6 +380,7 @@ CBaseMonster::NewRoute(vector destination)
 		p.m_iCurNode = numnodes - 1;
 		p.m_pRoute = nodelist;
 
+		//traceline(p.origin, dest, MOVE_NORMAL, this);
 		tracebox(p.origin, p.mins, p.maxs, dest, MOVE_NORMAL, this);
 
 		/* can we walk directly to our target destination? */
@@ -387,10 +389,14 @@ CBaseMonster::NewRoute(vector destination)
 				"Walking directly to last node\n");
 			p.m_iCurNode = -1;
 		} else {
+			dprint("^2CBaseMonster::^3NewRoute^7: " \
+				"Path obstructed, calculating route\n");
+
 			/* run through all nodes, mark the closest direct path possible */
 			for (int i = 0; i < p.m_iNodes; i++) {
 				vector vecDest = p.m_pRoute[i].m_vecDest;
 				tracebox(p.origin, p.mins, p.maxs, vecDest, TRUE, p);
+				//traceline(p.origin, vecDest, MOVE_NORMAL, this);
 
 				if (trace_fraction == 1.0) {
 					p.m_iCurNode = i;
@@ -399,6 +405,9 @@ CBaseMonster::NewRoute(vector destination)
 			}
 		}
 	}
+
+	if (!g_nodes_present)
+		return;
 
 	ClearRoute();
 
@@ -451,6 +460,7 @@ CBaseMonster::Physics(void)
 			SeeThink();
 			AttackThink();
 		}
+
 		CheckRoute();
 		WalkRoute();
 		runstandardplayerphysics(this);
@@ -588,4 +598,5 @@ CBaseMonster::CBaseMonster(void)
 
 	/* give us a 65 degree view cone */
 	m_flFOV = 1.0 / 65;
+	m_flChaseSpeed = 140;
 }
