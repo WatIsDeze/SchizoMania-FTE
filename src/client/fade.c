@@ -60,7 +60,12 @@ Fade_Update (int x, int y, int w, int h)
 		if (pSeat->m_flFadeTime < pSeat->m_flFadeDuration) {
 			pSeat->m_flFadeAlpha = pSeat->m_flFadeTime * (1.0 / pSeat->m_flFadeDuration);
 		} else {
-			pSeat->m_flFadeAlpha = (pSeat->m_flFadeTime - pSeat->m_flFadeDuration) * (1.0 / pSeat->m_flFadeHold);
+			if ((pSeat->m_flFadeTime ) > pSeat->m_flFadeDuration + pSeat->m_flFadeHold) {
+				dprint("Fade_Update: Waiting...");
+			} else {
+				pSeat->m_flFadeAlpha = pSeat->m_flFadeTime * (-1.0 / pSeat->m_flFadeDuration);
+			}
+			// pSeat->m_flFadeAlpha = (pSeat->m_flFadeTime - pSeat->m_flFadeDuration) * (1.0 / pSeat->m_flFadeHold);
 		}
 	}
 

@@ -581,6 +581,7 @@
 "classname" "info_player_start"
 "origin" "-272.000000 320.000000 72.000000"
 "angle" "179.151321"
+"targetname" "info_player_start"
 }
 // entity 3
 {
@@ -679,46 +680,115 @@
 // entity 10
 {
 "classname" "env_fade"
-"origin" "-400.000000 320.000000 56.000000"
+"origin" "-240.000000 272.000000 56.000000"
 "targetname" "fade001"
 "rendercolor" "0 0 0"
-"duration" "2"
-"holdtime" "2"
-"target" "message1"
+"duration" "1"
+"holdtime" "0.5"
 "renderamt" "255"
 "spawnflags" "1"
 }
 // entity 11
 {
 "classname" "trigger_auto"
-"origin" "-264.000000 352.000000 56.000000"
-"target" "fade001"
+"origin" "-264.000000 360.000000 56.000000"
+"target" "mm_spawn"
 }
 // entity 12
 {
-"classname" "func_button"
-// brush 0
-{
-( -360 416 64 ) ( -360 408 64 ) ( -392 416 64 ) common/trigger [ 1 0 0 0 ] [ -0 -1 -0 0 ] -0 0.5 0.5 0 0 0
-( -360 416 64 ) ( -392 416 64 ) ( -360 416 56 ) common/trigger [ 1 0 0 0 ] [ -0 -0 -1 0 ] -0 0.5 0.5 0 0 0
-( -360 416 64 ) ( -360 416 56 ) ( -360 408 64 ) common/trigger [ 0 1 0 0 ] [ -0 -0 -1 0 ] -0 0.5 0.5 0 0 0
-( -392 408 56 ) ( -360 408 56 ) ( -392 416 56 ) common/trigger [ 1 0 0 0 ] [ -0 -1 -0 0 ] -0 0.5 0.5 0 0 0
-( -392 408 56 ) ( -392 408 64 ) ( -360 408 56 ) common/trigger [ 1 0 0 0 ] [ -0 -0 -1 0 ] -0 0.5 0.5 0 0 0
-( -392 408 56 ) ( -392 416 56 ) ( -392 408 64 ) common/trigger [ 0 1 0 0 ] [ -0 -0 -1 0 ] -0 0.5 0.5 0 0 0
-}
+"classname" "game_text"
+"origin" "-240.000000 240.000000 56.000000"
+"targetname" "message001"
+"spawnflags" "1"
+"message" "I'll be damned, how in the hell did I end up here?"
+"effect" "2"
+"fadein" "0.01"
+"fadeout" "1.5"
+"holdtime" "3.5"
+"color" "100 100 100"
+"x" "-1"
+"y" "-1"
+"color2" "240 110 0"
+"fxtime" "0.25"
 }
 // entity 13
 {
-"classname" "game_text"
-"origin" "-376.000000 312.000000 56.000000"
-"targetname" "message1"
+"classname" "multi_manager"
+"origin" "-304.000000 360.000000 56.000000"
 "spawnflags" "1"
-"message" "Well, it's dark alright, lol"
+"targetname" "mm_spawn"
+"message001" "1"
+"fade001" "0"
+"message002" "4.5"
+"fadein" "7.5"
+"fadeout" "9"
+}
+// entity 14
+{
+"classname" "game_text"
+"origin" "-272.000000 240.000000 56.000000"
+"targetname" "message002"
+"spawnflags" "1"
+"message" "Well fuck it, let's check this place out."
 "effect" "2"
-"fadein" "1"
-"fadeout" "1"
-"holdtime" "2"
-"color" "33 33 77"
-"x" "0.5"
-"y" "0.5"
+"fadein" "0.01"
+"fadeout" "1.5"
+"holdtime" "3.5"
+"color" "100 100 100"
+"x" "-1"
+"y" "-1"
+"color2" "240 110 0"
+"fxtime" "0.25"
+}
+// entity 15
+{
+"classname" "trigger_camera"
+"origin" "-432.000000 392.000000 104.000000"
+"targetname" "camera001"
+"wait" "11.5"
+"target" "info_player_start"
+"angles" "11.195179 15.488937 10.111864"
+"spawnflags" "4"
+"moveto" "pc_camera001_0"
+}
+// entity 16
+{
+"classname" "env_fade"
+"origin" "-272.000000 272.000000 56.000000"
+"targetname" "fadein"
+"rendercolor" "0 0 0"
+"duration" "1.5"
+"holdtime" "1"
+"renderamt" "255"
+}
+// entity 17
+{
+"classname" "trigger_once"
+"target" "camera001"
+// brush 0
+{
+( -240 336 64 ) ( -240 320 64 ) ( -280 336 64 ) common/trigger [ 1 0 0 32 ] [ -0 -1 -0 32 ] -0 0.5 0.5 0 0 0
+( -240 336 64 ) ( -280 336 64 ) ( -240 336 56 ) common/trigger [ 1 0 0 32 ] [ -0 -0 -1 0 ] -0 0.5 0.5 0 0 0
+( -248 336 64 ) ( -248 336 56 ) ( -248 320 64 ) common/trigger [ 0 1 0 32 ] [ -0 -0 -1 0 ] -0 0.5 0.5 0 0 0
+( -280 320 56 ) ( -240 320 56 ) ( -280 336 56 ) common/trigger [ 1 0 0 32 ] [ -0 -1 -0 32 ] -0 0.5 0.5 0 0 0
+( -280 304 56 ) ( -280 304 64 ) ( -240 304 56 ) common/trigger [ 1 0 0 32 ] [ -0 -0 -1 0 ] -0 0.5 0.5 0 0 0
+( -296 320 56 ) ( -296 336 56 ) ( -296 320 64 ) common/trigger [ 0 1 0 32 ] [ -0 -0 -1 0 ] -0 0.5 0.5 0 0 0
+}
+}
+// entity 18
+{
+"classname" "path_corner"
+"origin" "-360.000000 392.000000 104.000000"
+"targetname" "pc_camera001_0"
+}
+// entity 19
+{
+"classname" "env_fade"
+"origin" "-304.000000 272.000000 56.000000"
+"targetname" "fadeout"
+"rendercolor" "0 0 0"
+"duration" "1.5"
+"holdtime" "1"
+"renderamt" "255"
+"spawnflags" "1"
 }

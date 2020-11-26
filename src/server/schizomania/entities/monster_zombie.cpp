@@ -129,13 +129,13 @@ monster_zombie::Pain(void)
 		return;
 	}
 
-	if (random() < 0.65f) {
+	if (random() < 0.75f) {
 		return;
 	}
 
 	Sound_Play(this, CHAN_VOICE, "monster_zombie.pain");
 	SetFrame(ZOMBIE_HIT_REACT_A);
-	m_flAnimTime = time + 0.20f;
+	m_flAnimTime = time + 1.5f;
 }
 
 void
@@ -199,7 +199,7 @@ monster_zombie::monster_zombie(void)
 	Sound_Precache("monster_zombie.pain");
 	netname = "Zombie Derrick";
 	model = "models/zombie_derrick/zombie_derrick.vvm";
-	base_health = Skill_GetValue("zombie_health");
+	base_health = 100;//Skill_GetValue("zombie_health");
 	base_mins = [-16,-16,0];
 	base_maxs = [16,16,72];
 
