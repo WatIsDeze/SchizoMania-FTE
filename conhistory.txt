@@ -172,3 +172,4 @@ modelviewer models/barney.mdl
 /map test_current
 /sv_forceweapondraw 
 /map test_current
+/map test_dlights
