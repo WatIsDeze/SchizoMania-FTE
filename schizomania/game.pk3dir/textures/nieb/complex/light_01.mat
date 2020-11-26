@@ -2,6 +2,9 @@
 	diffusemap textures/nieb/complex/light_01.tga
 	normalmap textures/nieb/complex/light_01_normal.tga
 
+	vmap_surfaceLight 1000
+	vmap_lightRGB 1.0 0.8 0.6
+
 	{
 		program lightmapped
 		map $diffuse

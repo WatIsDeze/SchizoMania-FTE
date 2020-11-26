@@ -16,59 +16,13 @@
 
 /*QUAKED monster_zombie (0 0.8 0.8) (-16 -16 0) (16 16 72)
 
-HALF-LIFE (1998) ENTITY
+SCHIZOMANIA ENTITY
 
-Zombie
+Zombie Derrick from Mixamo. WIP: Has 2 melee attacks, can bite, neckbite,
+crawl, and foot bite.
 
 */
 
-// enum
-// {
-// 	ZO_IDLE,
-// 	ZO_TURNLEFT,
-// 	ZO_TURNRIGHT,
-// 	ZO_FLINCHSM,
-// 	ZO_FLINCH,
-// 	ZO_FLINCHBIG,
-// 	ZO_RISE,
-// 	ZO_FALLING,
-// 	ZO_ATTACK1,
-// 	ZO_ATTACK2,
-// 	ZO_WALK,
-// 	ZO_FLINCHLA,
-// 	ZO_FLINCHRA,
-// 	ZO_FLINCHLEFT,
-// 	ZO_FLINCHRIGHT,
-// 	ZO_DIEHS,
-// 	ZO_DIEHS2,
-// 	ZO_DIE,
-// 	ZO_DIE2,
-// 	ZO_DIE3,
-// 	ZO_PAUSE,
-// 	ZO_WALLBUST,
-// 	ZO_WALLKICK,
-// 	ZO_WINDOWBUST,
-// 	ZO_SODA,
-// 	ZO_SLIDEIDLE,
-// 	ZO_SLIDE,
-// 	ZO_VENTIDLE,
-// 	ZO_VENT,
-// 	ZO_DEADIDLE,
-// 	ZO_DEAD,
-// 	ZO_FREAKDIE,
-// 	ZO_FREAK,
-// 	ZO_EATTABLE,
-// 	ZO_EAT,
-// 	ZO_EATSTAND,
-// 	ZO_DOORIP,
-// 	ZO_PULLSCI,
-// 	ZO_EAT2,
-// 	ZO_EAT2STAND,
-// 	ZO_VENT2IDLE,
-// 	ZO_VENT2,
-// 	ZO_HAUL,
-// 	ZO_RISESNACK
-// };
 enum {
 	ZOMBIE_TPOSE,
 	ZOMBIE_AGONIZING,

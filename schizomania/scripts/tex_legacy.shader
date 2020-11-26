@@ -2324,6 +2324,9 @@ textures/nieb/step-side
 textures/nieb/light
 {
 	diffusemap textures/nieb/light.tga
+	
+	vmap_surfaceLight 5000
+	vmap_lightRGB 0.9 0.7 0.5
 
 	{
 		map $diffuse
@@ -2918,6 +2921,9 @@ textures/nieb/complex/wall_01
 textures/nieb/complex/light_01
 {
 	diffusemap textures/nieb/complex/light_01.tga
+
+	vmap_surfaceLight 1000
+	vmap_lightRGB 1.0 0.8 0.6
 
 	{
 		map $diffuse

@@ -1,6 +1,9 @@
 {
 	diffusemap textures/nieb/light.tga
     normalmap textures/nieb/light_normal.tga
+	
+	vmap_surfaceLight 5000
+	vmap_lightRGB 0.9 0.7 0.5
 
 	{
 		program lightmapped
