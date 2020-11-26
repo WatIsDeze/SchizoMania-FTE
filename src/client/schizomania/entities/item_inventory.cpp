@@ -38,7 +38,7 @@ class item_inventory:CGameEntity
 };
 
 //=======================
-// void item_inventory::SetItem(int itemID)
+// void SetItem(int itemID)
 //=======================
 void 
 item_inventory::SetItem(int itemID) {
@@ -50,7 +50,7 @@ item_inventory::SetItem(int itemID) {
 }
 
 //=======================
-// void item_inventory::SetAmount(int amount)
+// void SetAmount(int amount)
 //=======================
 void 
 item_inventory::SetAmount(int amount) {
@@ -59,7 +59,7 @@ item_inventory::SetAmount(int amount) {
 }
 
 //=======================
-// void item_inventory::SpawnKey(void)
+// void SpawnKey(void)
 //
 // Spawnkeys
 // - itemID: The item index number in the item (enum)database.
@@ -82,7 +82,7 @@ item_inventory::SpawnKey(string strKey, string strValue)
 }
 
 //=======================
-// void item_inventory::Respawn(void)
+// void Respawn(void)
 //
 // Respawn.
 //=======================
@@ -105,7 +105,7 @@ item_inventory::Respawn(void) {
 }
 
 //=======================
-// void item_inventory::item_inventory(void)
+// void item_inventory(void)
 //
 // Constructor.
 //=======================

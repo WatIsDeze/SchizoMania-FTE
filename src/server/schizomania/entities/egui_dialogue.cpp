@@ -28,28 +28,39 @@ class egui_dialogue:CBaseEntity
 	virtual void(void) Respawn;
 };
 
+//=======================
+// void Respawn(void)
+//
+// Respawn.
+//=======================
 void egui_dialogue::Respawn(void)
 {
 	SetSolid(SOLID_TRIGGER);
 	SetMovetype(MOVETYPE_TOSS);
 	SetSize([-16,-16,0],[16,16,16]);
-	SetOrigin(m_oldOrigin);
-	SetModel(m_oldModel);
+	// SetOrigin(m_oldOrigin);
+	// SetModel(m_oldModel);
 
-	think = __NULL__;
-	nextthink = -1;
+	// think = __NULL__;
+	// nextthink = -1;
 
-	if (!real_owner)
-		Sound_Play(this, CHAN_ITEM, "item.respawn");
+	// if (!real_owner)
+	// 	Sound_Play(this, CHAN_ITEM, "item.respawn");
 
-	droptofloor();
+	// droptofloor();
 }
 
+//=======================
+// void egui_dialogue(void)
+//
+// Constructor.
+//=======================
 void egui_dialogue::egui_dialogue(void)
 {
-	Sound_Precache("item.battery");
-	Sound_Precache("item.respawn");
-	model = "models/w_battery.mdl";
+    // Call Super class constructor. 
 	CBaseEntity::CBaseEntity();
+    classname = "egui_dialogue";
+
+    // Respawn.
 	egui_dialogue::Respawn();
 }
