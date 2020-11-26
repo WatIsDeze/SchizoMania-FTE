@@ -31,7 +31,7 @@ class item_inventory:CGameEntity
 	
 	void(void) item_inventory;
 	virtual void(void) Respawn;
-	virtual void(void) PlayerUse;
+	virtual void(void) OnPlayerUse;
 	virtual void(string, string) SpawnKey;
 
 	virtual void(int) SetItem;
@@ -42,7 +42,7 @@ class item_inventory:CGameEntity
 void Item_Pickup(player pl, int itemID, int amount);
 
 //=======================
-// void item_inventory::SetItem(int itemID)
+// void SetItem(int itemID)
 //=======================
 void item_inventory::SetItem(int itemID) {
 	// Ensure it is in bounds.
@@ -53,7 +53,7 @@ void item_inventory::SetItem(int itemID) {
 }
 
 //=======================
-// void item_inventory::SetAmount(int amount)
+// void SetAmount(int amount)
 //=======================
 void item_inventory::SetAmount(int amount) {
 	// Ensure it is in bounds.
@@ -61,7 +61,7 @@ void item_inventory::SetAmount(int amount) {
 }
 
 //=======================
-// void item_inventory::SpawnKey(void)
+// void SpawnKey(void)
 //
 // Spawnkeys
 // - itemID: The item index number in the item (enum)database.
@@ -83,14 +83,14 @@ void item_inventory::SpawnKey(string strKey, string strValue)
 }
 
 //=======================
-// void item_inventory::PlayerUse(void)
+// void OnPlayerUse(void)
 //
 // Executed only if used by a player, returns otherwise.
 //
 // Plays a pickup sound, logs the pickup event and sends a pickup event
 // off to the client.
 //=======================
-void item_inventory::PlayerUse(void)
+void item_inventory::OnPlayerUse(void)
 {
 	// Determine whether it is a player, AI etc don't interact with these.
 	if (eActivator.classname != "player") {
@@ -112,7 +112,7 @@ void item_inventory::PlayerUse(void)
 }
 
 //=======================
-// void item_inventory::Respawn(void)
+// void Respawn(void)
 //
 // Respawn.
 //=======================
@@ -126,10 +126,13 @@ void item_inventory::Respawn(void) {
 	SetSize([-8,-8,0], [8,8,16]);
 	SetSolid(SOLID_CORPSE);
 	SetMovetype(MOVETYPE_TOSS);
+
+	// Set PlayerUse
+	PlayerUse = OnPlayerUse;
 }
 
 //=======================
-// void item_inventory::item_inventory(void)
+// void item_inventory(void)
 //
 // Constructor.
 //=======================

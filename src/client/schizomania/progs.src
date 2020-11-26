@@ -44,5 +44,8 @@
 ../schizomania/vgui/ui_3ditem.cpp
 ../schizomania/vgui_inventory.cpp
 
+../schizomania/entities/egui_dialogue.cpp
+../schizomania/dialogue.c
+
 ../../shared/include.src
 #endlist

@@ -2,7 +2,5 @@
 - Item hover stuff in View+UpdateWeapon
 
 # Things to research/question:
-[needs hitboxess in the mesh, create a .iqm test mesh]
-- Fix the func_door_rotating
-- .iqm meshes, how to?
-- Fix barney/scientist UseNPC functionality.
+- Scripted Sequences with dialogues. (I suppose, an entity which'll send a dialogue event, back and forth? :) )
+- How to do a proper zombie walk animaton, use offsets so it "moves backwards", to counter the slide effect.

@@ -23,6 +23,6 @@ scene "iqe/running1.iqe" fps 30 loop
 scene "iqe/scream.iqe" fps 30 loop
 scene "iqe/turn_backface.iqe" fps 30 loop
 scene "iqe/walking1.iqe" fps 35 loop
-scene "iqe/walking2.iqe" fps 30 loop
+scene "iqe/walking2.iqe" fps 50 loop
 scene "iqe/walking3.iqe" fps 30 loop
 

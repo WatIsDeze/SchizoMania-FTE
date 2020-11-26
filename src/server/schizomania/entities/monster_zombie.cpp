@@ -73,6 +73,7 @@ monster_zombie::AnimIdle(void)
 int
 monster_zombie::AnimWalk(void)
 {
+	m_flChaseSpeed = 42;
 	return ZOMBIE_WALKING2;
 }
 
@@ -204,4 +205,6 @@ monster_zombie::monster_zombie(void)
 
 	m_iAlliance = MAL_ALIEN;
 	CBaseMonster::CBaseMonster();
+
+	m_flChaseSpeed = 40;
 }

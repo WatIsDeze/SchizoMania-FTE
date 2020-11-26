@@ -14,37 +14,42 @@
  * OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  */
 
-class CBaseEntity
+/*QUAKED item_battery (0 0 0.8) (-16 -16 0) (16 16 36)
+
+SCHIZOMANIA ENTITY
+
+Allows for a message dialogue to display. Makes for a conversation with
+NPC entities possible.
+
+*/
+class egui_dialogue:CBaseEntity
 {
-#ifdef GS_RENDERFX
-	int m_iRenderFX;
-	float m_iRenderMode;
-	float m_flRenderAmt;
-	vector m_vecRenderColor;
-#endif
+	void(void) egui_dialogue;
+	virtual void(void) Respawn;
+};
 
-	int m_iBody;
-	float m_flSentenceTime;
-	sound_t *m_pSentenceQue;
-	int m_iSentenceCount;
-	int m_iSentencePos;
+void egui_dialogue::Respawn(void)
+{
+	SetSolid(SOLID_TRIGGER);
+	SetMovetype(MOVETYPE_TOSS);
+	SetSize([-16,-16,0],[16,16,16]);
+	SetOrigin(m_oldOrigin);
+	SetModel(m_oldModel);
 
-	/* model events */
-	float m_flBaseTime;
+	think = __NULL__;
+	nextthink = -1;
 
-	void(void) CBaseEntity;
-	virtual void(void) Init;
-	virtual void(void) Initialized;
-	virtual void(string, string) SpawnKey;
-	virtual void(string) Sentence;
-	virtual void(void) ProcessWordQue;
-	virtual void(float flChanged) ReceiveEntity;
-	virtual float(void) predraw;
-	virtual void(void) postdraw;
-	virtual void(void) customphysics;
-	virtual void(float, int, string) ModelEvent;
+	if (!real_owner)
+		Sound_Play(this, CHAN_ITEM, "item.respawn");
 
-#ifdef GS_RENDERFX
-	virtual void(void) RenderFXPass;
-#endif
-}; 
+	droptofloor();
+}
+
+void egui_dialogue::egui_dialogue(void)
+{
+	Sound_Precache("item.battery");
+	Sound_Precache("item.respawn");
+	model = "models/w_battery.mdl";
+	CBaseEntity::CBaseEntity();
+	egui_dialogue::Respawn();
+}

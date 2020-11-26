@@ -174,3 +174,31 @@ modelviewer models/barney.mdl
 /map test_current
 /map test_dlights
 /map test_current
+/map test_current
+/map test_current
+/map test_current
+/map test_current
+/map test_current
+modelviewer /models/scientist.mdl
+modelviewer models/scientist.mdl
+modelviewer models/scientist.mdl
+/map test_current
+/map test_current
+/map test_current
+/modelviewer models/zombie_derrick/zombie_derrick.vvm
+/modelviewer models/zombie_derrick/zombie_derrick.vvm
+/map test_current
+/map test_current
+/map test_current
+/map test_current
+r_showbboxes 0
+god
+god
+/map test_current
+r_showbboxes 0
+god
+/map test_current
+/map test_current
+/r_showbboxes 0
+/r_showbboxes 0
+/map test_current
