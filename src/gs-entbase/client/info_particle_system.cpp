@@ -14,7 +14,7 @@
  * OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  */
 
-/* this has to match gs-entbase/server/light_dynamic.cpp! */
+/* this has to match gs-entbase/server/info_particle_system.cpp! */
 enumflags
 {
 	DLIGHTFL_CHANGED_ORIGIN,
@@ -29,7 +29,7 @@ enumflags
 	DLIGHTFL_CHANGED_STATE
 };
 
-class light_dynamic
+class info_particle_system
 {
 	vector m_vecLight;
 	float m_flIntensity;
@@ -40,14 +40,13 @@ class light_dynamic
 	float m_flStyle;
 	int m_iState;
 
-	void(void) light_dynamic;
+	void(void) info_particle_system;
 
 	virtual void(float) ReceiveEntity;
-	virtual float(void) predraw;
 };
 
 float
-light_dynamic::predraw(void)
+info_particle_system::predraw(void)
 {
 	if (!m_iState) {
 		return PREDRAW_NEXT;
@@ -61,7 +60,7 @@ light_dynamic::predraw(void)
 }
 
 void
-light_dynamic::ReceiveEntity(float flFlags)
+info_particle_system::ReceiveEntity(float flFlags)
 {
 	if (flFlags & DLIGHTFL_CHANGED_ORIGIN) {
 		origin[0] = readcoord();
@@ -97,11 +96,11 @@ light_dynamic::ReceiveEntity(float flFlags)
 	if (flFlags & DLIGHTFL_CHANGED_STATE)
 		m_iState = readbyte();
 
-	classname = "light_dynamic";
+	classname = "info_particle_system";
 }
 
 void
-light_dynamic::light_dynamic(void)
+info_particle_system::info_particle_system(void)
 {
 	drawmask = MASK_ENGINE;
 }

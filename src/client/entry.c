@@ -865,6 +865,13 @@ CSQC_Ent_Update(float new)
 		}
 		l.ReceiveEntity(readfloat());
 		break;
+	case ENT_PARTSYSTEM:
+		info_particle_system ips = (info_particle_system)self;
+		if (new) {
+			spawnfunc_info_particle_system();
+		}
+		ips.ReceiveEntity(readfloat());
+		break;
 	default:
 		if (Game_Entity_Update(t, new) == FALSE) {
 			error("Unknown entity type update received.\n");

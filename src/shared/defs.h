@@ -37,8 +37,8 @@ const vector VEC_CHULL_MIN = [-16,-16,-18];
 const vector VEC_CHULL_MAX = [16,16,18];
 
 // WatIs: Our own custom view pos, currently similar to C-Strike.
-const vector VEC_PLAYER_VIEWPOS =  [0,0,20];
-const vector VEC_PLAYER_CVIEWPOS = [0,0,12];
+const vector VEC_PLAYER_VIEWPOS =  [0,0,26];
+const vector VEC_PLAYER_CVIEWPOS = [0,0,18];	// For crouching, used to be 12, may need a reset in case heads go into ceilings :P
 
 /* Counter-Strike players are hunched over a little bit */
 //#ifdef CSTRIKE

@@ -21,6 +21,7 @@
 ../schizomania/defs.h
 
 ../schizomania/entities/gameentity.cpp
+../schizomania/entities/scene_cameraview.cpp
 ../schizomania/entities/egui_mainmenu.cpp
 
 ../schizomania/entities/monster_apache.cpp

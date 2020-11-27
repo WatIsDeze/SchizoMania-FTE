@@ -14,15 +14,18 @@
  * OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  */
 
-/*QUAKED monster_generic (1 0 0) (-8 -8 -8) (8 8 8) x x MGF_NONSOLID
-"targetname"    Name
-"angles"        Sets the pitch, yaw and roll angles of the model.
-"model"         Model file that will be displayed by the entity.
+/*QUAKED monster_generic (1 0 0) (-8 -8 -8) (8 8 8)
 
-Decorative, does nothing yet.
+SCHIZOMANIA ENTITY
 
-Trivia:
-This entity was introduced in Half-Life (1998).
+Causes the activators first-person camera to switch to the view of 
+this entity.
+- targetname: The entity trigger targetname.
+- angles:     Sets the pitch, yaw and roll angles of the entity.
+- model:      Model to display at start.
+
+Flags:
+	- MGF_NONSOLID 4
 */
 
 #define MGF_NONSOLID 4
@@ -31,6 +34,8 @@ class monster_generic:CBaseNPC
 {
 	void(void) monster_generic;
 
+	virtual void(void) Death;
+	virtual void(entity act, int state) Trigger;
 	virtual void(void) Respawn;
 };
 
@@ -47,16 +52,40 @@ monster_generic::Respawn(void)
 }
 
 void
+monster_generic::Death(void)
+{
+	m_iFlags = 0x0;
+
+
+	/* make sure we're not causing any more obituaries */
+	flags &= ~FL_MONSTER;
+	m_iFlags = 0x0;
+	// /* gibbing action */
+	// SetMovetype(MOVETYPE_NONE);
+	// SetSolid(SOLID_CORPSE);
+	// health = 50 + health; 
+	// style = MONSTER_DEAD;
+}
+
+void
+monster_generic::Trigger(entity act, int state)
+{
+	// UseTargets(act, TRIG_TOGGLE, 0);
+	SetModelindex(0);
+	SetSolid(SOLID_NOT);
+	SetMovetype(MOVETYPE_NONE);
+	customphysics = __NULL__;
+
+	//eActivator.view2 = this;
+
+	dprint(sprintf("^monster_generic::^3Trigger^7:\n"));
+}
+
+void
 monster_generic::monster_generic(void)
 {
-	/* hackhackhackhackack */
-	if (model == "models/player.mdl" || model == "models/holo.mdl") {
-		base_mins = VEC_HULL_MIN;
-		base_maxs = VEC_HULL_MAX;
-	} else {
-		base_mins = [-16,-16,0];
-		base_maxs = [16,16,72];
-	}
+	base_mins = [-16,-16,0];
+	base_maxs = [16,16,72];
 
 	spawnflags |= MSF_MULTIPLAYER;
 	CBaseNPC::CBaseNPC();

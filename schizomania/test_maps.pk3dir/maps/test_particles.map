@@ -67,8 +67,20 @@
 }
 // entity 3
 {
+"classname" "light"
+"origin" "192.000000 128.000000 64.000000"
+"light" "50"
+}
+// entity 4
+{
+"classname" "light"
+"origin" "192.000000 -128.000000 64.000000"
+"light" "50"
+}
+// entity 5
+{
 "classname" "func_button"
-"target" "foobar2"
+"OnPressed" "foobar,Stop,,0,-1"
 // brush 0
 {
 ( 88 -40 0 ) ( 88 -80 0 ) ( 48 -40 0 ) next/rusty7 [ 1 0 0 0 ] [ -0 -1 -0 0 ] -0 0.5 0.5 0 0 0
@@ -79,10 +91,10 @@
 ( 48 -80 64 ) ( 48 -40 64 ) ( 48 -80 72 ) next/rusty7 [ 0 1 0 0 ] [ -0 -0 -1 0 ] -0 0.5 0.5 0 0 0
 }
 }
-// entity 4
+// entity 6
 {
 "classname" "func_button"
-"target" "foobar1"
+"OnPressed" "foobar,Start,,0,-1"
 // brush 0
 {
 ( 88 152 0 ) ( 88 112 0 ) ( 48 152 0 ) next/rusty7 [ 1 0 0 0 ] [ -0 -1 -0 0 ] -0 0.5 0.5 0 0 0
@@ -93,74 +105,36 @@
 ( 48 112 64 ) ( 48 152 64 ) ( 48 112 72 ) next/rusty7 [ 0 1 0 0 ] [ -0 -0 -1 0 ] -0 0.5 0.5 0 0 0
 }
 }
-// entity 5
-{
-"classname" "point_message"
-"origin" "-160.000000 128.000000 32.000000"
-"message" "White dynamic light with no style pattern."
-}
-// entity 6
-{
-"classname" "dynamic_light"
-"origin" "-192.000000 128.000000 64.000000"
-"_light" "255 255 255"
-"brightness" "250"
-}
 // entity 7
 {
-"classname" "point_message"
-"origin" "-160.000000 -64.000000 32.000000"
-"message" "Small blinking yellow dynamic light."
+"classname" "light"
+"origin" "-192.000000 128.000000 64.000000"
+"light" "25"
 }
 // entity 8
 {
-"classname" "dynamic_light"
+"classname" "light"
 "origin" "-192.000000 -64.000000 64.000000"
+"light" "25"
 "style" "9"
-"_light" "255 255 128"
-"brightness" "150"
 }
 // entity 9
 {
 "classname" "point_message"
-"origin" "120.000000 128.000000 32.000000"
-"message" "Toggable white flickering dynamic light."
+"origin" "64.000000 128.000000 32.000000"
+"message" "Particle Emitter: On"
 }
 // entity 10
 {
-"classname" "dynamic_light"
-"origin" "192.000000 128.000000 64.000000"
-"targetname" "foobar1"
-"style" "1"
-"_light" "255 255 255"
-"brightness" "250"
+"classname" "point_message"
+"origin" "64.000000 -64.000000 32.000000"
+"message" "Particle Emitter: Off"
 }
 // entity 11
 {
-"classname" "point_message"
-"origin" "120.000000 -64.000000 32.000000"
-"message" "Toggable red slow pulsing dynamic light."
-}
-// entity 12
-{
-"classname" "dynamic_light"
-"origin" "192.000000 -128.000000 64.000000"
-"targetname" "foobar2"
-"style" "2"
-"_light" "255 0 0"
-"start_active" "0"
-"brightness" "250"
-}
-// entity 13
-{
-"classname" "prop_dynamic"
-"origin" "160.000000 0.000000 0.000000"
-"model" "models/logos/visions.vvm"
-"angles" "0 -90 0"
-"avelocity" "0 90 0"
-}
-// entity 14
-{
-"classname" "env_cubemap"
-"origin" "0 0 0"
+"classname" "info_particle_system"
+"origin" "128.000000 32.000000 32.000000"
+"targetname" "foobar"
+"effect_name" "test.ball"
+"interval" "0.25"
 }
