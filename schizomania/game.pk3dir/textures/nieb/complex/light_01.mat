@@ -6,7 +6,7 @@
 	vmap_lightRGB 1.0 0.8 0.6
 
 	{
-		program lightmapped
+		program unlit
 		map $diffuse
 		map $normalmap
 	}

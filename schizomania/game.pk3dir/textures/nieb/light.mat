@@ -1,13 +1,25 @@
 {
 	diffusemap textures/nieb/light.tga
-    normalmap textures/nieb/light_normal.tga
-	
-	vmap_surfaceLight 5000
-	vmap_lightRGB 0.9 0.7 0.5
+
+	// this TGA is the source for the color of the blended light
+	vmap_lightimage textures/nieb/light_glow.tga
+
+	// emitted light value of 10,000
+	vmap_surfacelight 1350
 
 	{
 		program lightmapped
-		map $diffuse
-		map $normalmap
+		map $diffusemap
+	}
+	{
+		program unlit
+		map textures/nieb/light.tga
+		blendFunc filter
+	}
+	{
+		program unlit
+		map textures/nieb/light_glow.tga
+		blendFunc add
 	}
 }
+

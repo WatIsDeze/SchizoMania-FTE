@@ -54,17 +54,17 @@ monster_generic::Respawn(void)
 void
 monster_generic::Death(void)
 {
-	m_iFlags = 0x0;
+	// m_iFlags = 0x0;
 
 
-	/* make sure we're not causing any more obituaries */
-	flags &= ~FL_MONSTER;
-	m_iFlags = 0x0;
-	// /* gibbing action */
-	// SetMovetype(MOVETYPE_NONE);
-	// SetSolid(SOLID_CORPSE);
-	// health = 50 + health; 
-	// style = MONSTER_DEAD;
+	// /* make sure we're not causing any more obituaries */
+	// flags &= ~FL_MONSTER;
+	// m_iFlags = 0x0;
+	// // /* gibbing action */
+	// // SetMovetype(MOVETYPE_NONE);
+	// // SetSolid(SOLID_CORPSE);
+	// // health = 50 + health; 
+	// // style = MONSTER_DEAD;
 }
 
 void
@@ -84,8 +84,8 @@ monster_generic::Trigger(entity act, int state)
 void
 monster_generic::monster_generic(void)
 {
-	base_mins = [-16,-16,0];
-	base_maxs = [16,16,72];
+	base_mins = [-16,-16,-36];
+	base_maxs = [16,16,36];
 
 	spawnflags |= MSF_MULTIPLAYER;
 	CBaseNPC::CBaseNPC();

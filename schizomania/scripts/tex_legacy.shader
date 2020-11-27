@@ -452,6 +452,24 @@ textures/dev/scripted_sequence
 	}
 }
 
+textures/doors/rusted_door_02
+{
+	diffusemap textures/doors/rusted_door_02.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/doors/rusted_door_01
+{
+	diffusemap textures/doors/rusted_door_01.tga
+
+	{
+		map $diffuse
+	}
+}
+
 textures/glass/glass_01
 {
     surfaceParm glass
@@ -2324,14 +2342,26 @@ textures/nieb/step-side
 textures/nieb/light
 {
 	diffusemap textures/nieb/light.tga
-	
-	vmap_surfaceLight 5000
-	vmap_lightRGB 0.9 0.7 0.5
+
+	// this TGA is the source for the color of the blended light
+	vmap_lightimage textures/nieb/light_glow.tga
+
+	// emitted light value of 10,000
+	vmap_surfacelight 1350
 
 	{
-		map $diffuse
+		map $diffusemap
+	}
+	{
+		map textures/nieb/light.tga
+		blendFunc filter
+	}
+	{
+		map textures/nieb/light_glow.tga
+		blendFunc add
 	}
 }
+
 
 textures/nieb/box1_alt
 {

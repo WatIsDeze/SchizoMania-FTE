@@ -2,2404 +2,6 @@
 // Please refer to the original documentation.
 // This is for development purposes ONLY.
 
-textures/platform/data.pk3dir/textures/dev/info_node_air
-{
-	diffusemap textures/dev/info_node_air.tga
-	
-	{
-		map $diffuse
-		blendFunc blend
-	}
-}
-
-textures/platform/data.pk3dir/textures/dev/info_node
-{
-	diffusemap textures/dev/info_node.tga
-	
-	{
-		map $diffuse
-		blendFunc blend
-	}
-}
-
-textures/platform/data.pk3dir/textures/dev/scripted_sequence
-{
-	diffusemap textures/dev/scripted_sequence.tga
-	
-	{
-		map $diffuse
-		blendFunc blend
-	}
-}
-
-textures/platform/data.pk3dir/textures/common/clipvehicle
-{
-	qer_editorImage "textures/common/clipvehicle.tga"
-	qer_trans 0.50
-	surfaceParm vehicleclip
-	surfaceParm nodraw
-	surfaceParm nonsolid
-	surfaceParm trans
-	nomipmaps
-}
-
-textures/platform/data.pk3dir/textures/common/hitmesh
-{
-	qer_editorImage "textures/common/hitmesh.tga"
-	surfaceParm nolightmap
-	surfaceParm nomarks
-	surfaceParm nodraw
-	surfaceParm nonsolid
-	surfaceParm noimpact
-	surfaceParm nodlight
-	nomipmaps
-}
-
-textures/platform/data.pk3dir/textures/common/clipglass
-{
-	qer_editorImage "textures/common/clip.tga"
-	qer_trans 0.50
-	surfaceParm nodraw
-	surfaceParm trans
-	surfaceParm glass
-	nomipmaps
-}
-
-textures/platform/data.pk3dir/textures/common/clipplayer
-{
-	qer_editorImage "textures/common/clipplayer.tga"
-	qer_trans 0.50
-	surfaceParm nodraw
-	surfaceParm trans
-	surfaceParm playerclip
-	nomipmaps
-}
-
-textures/platform/data.pk3dir/textures/common/lightgrid
-{
-	qer_editorImage "textures/common/lightgrid.tga"
-	surfaceParm nodraw
-	surfaceParm nolightmap
-	surfaceParm nonsolid
-	surfaceParm detail
-	surfaceParm nomarks
-	surfaceParm trans
-	surfaceParm lightgrid
-	nomipmaps
-}
-
-textures/platform/data.pk3dir/textures/common/climb
-{
-	qer_editorImage "textures/common/climb.tga"
-	qer_trans 0.50
-	surfaceParm climb
-	surfaceParm nodraw
-	surfaceParm trans
-	surfaceParm nonsolid
-	nomipmaps
-}
-
-textures/platform/data.pk3dir/textures/common/skyportal
-{
-	qer_editorImage "textures/common/skyportal.tga"
-	surfaceParm noimpact
-	surfaceParm nolightmap
-	surfaceParm sky
-	surfaceParm nodlight
-	nomipmaps
-	skyParms - 512 -
-}
-
-textures/platform/data.pk3dir/textures/common/clipsnow
-{
-	qer_editorImage "textures/common/clip.tga"
-	qer_trans 0.50
-	surfaceParm nodraw
-	surfaceParm trans
-	surfaceParm snow
-	nomipmaps
-}
-
-textures/platform/data.pk3dir/textures/common/alpha_0
-{
-	qer_editorImage "textures/common/alpha_0.tga"
-	vmap_alphaMod volume
-	vmap_alphaMod set 0.0
-	surfaceParm nodraw
-	surfaceParm nonsolid
-	surfaceParm trans
-	nomipmaps
-}
-
-textures/platform/data.pk3dir/textures/common/skip
-{
-	qer_editorImage "textures/common/skip.tga"
-	qer_trans 0.50
-	qer_noCarve
-	surfaceParm nodraw
-	surfaceParm nonsolid
-	surfaceParm structural
-	surfaceParm trans
-	nomipmaps
-}
-
-textures/platform/data.pk3dir/textures/common/nodraw
-{
-	qer_editorImage "textures/common/nodraw.tga"
-	qer_trans 0.50
-	surfaceParm nodraw
-	surfaceParm nonsolid
-	surfaceParm trans
-	surfaceParm nomarks
-	nomipmaps
-}
-
-textures/platform/data.pk3dir/textures/common/alpha_25
-{
-	qer_editorImage "textures/common/alpha_25.tga"
-	vmap_alphaMod volume
-	vmap_alphaMod set 0.25
-	surfaceParm nodraw
-	surfaceParm nonsolid
-	surfaceParm trans
-	nomipmaps
-}
-
-textures/platform/data.pk3dir/textures/common/donotenter
-{
-	qer_editorImage "textures/common/donotenter.tga"
-	qer_trans 0.50
-	surfaceparm nodraw
-	surfaceparm nonsolid
-	surfaceparm trans
-	surfaceparm nomarks
-	surfaceparm detail
-	surfaceparm donotenter
-	nomipmaps
-}
-
-textures/platform/data.pk3dir/textures/common/areaportal
-{
-	qer_editorImage "textures/common/areaportal.tga"
-	surfaceParm nodraw
-	surfaceParm nonsolid
-	surfaceParm structural
-	surfaceParm trans
-	surfaceParm nomarks
-	surfaceParm areaportal
-}
-
-textures/platform/data.pk3dir/textures/common/caulkslime
-{
-	qer_editorImage "textures/common/caulkslime.tga"
-	qer_trans 0.50
-	surfaceParm nodraw
-	surfaceParm nonsolid
-	surfaceParm trans
-	surfaceParm slime
-	nomipmaps
-}
-
-textures/platform/data.pk3dir/textures/common/blank
-{
-	{
-		map $whiteimage
-		rgbGen vertex
-		alphaGen vertex
-	}
-}
-
-textures/platform/data.pk3dir/textures/common/alpha_100
-{
-	qer_editorImage "textures/common/alpha_100.tga"
-	vmap_alphaMod volume
-	vmap_alphaMod set 1.0
-	surfaceParm nodraw
-	surfaceParm nonsolid
-	surfaceParm trans
-	nomipmaps
-}
-
-textures/platform/data.pk3dir/textures/common/origin
-{
-	qer_editorImage "textures/common/origin.tga"
-	qer_trans 0.50
-	qer_noCarve
-	surfaceParm nodraw
-	surfaceParm nonsolid
-	surfaceParm origin
-	nomipmaps
-}
-
-textures/platform/data.pk3dir/textures/common/hint
-{
-	qer_editorImage "textures/common/hint.tga"
-	qer_trans 0.50
-	qer_noCarve	
-	surfaceParm nodraw
-	surfaceParm nonsolid
-	surfaceParm structural
-	surfaceParm trans
-	surfaceParm noimpact
-	nomipmaps
-}
-
-textures/platform/data.pk3dir/textures/common/terrain
-{
-	qer_editorImage "textures/common/terrain.tga"
-	vmap_terrain
-	surfaceParm nodraw
-	surfaceParm nomarks
-	surfaceParm nolightmap
-	nomipmaps
-}
-
-textures/platform/data.pk3dir/textures/common/alpha_75
-{
-	qer_editorImage "textures/common/alpha_75.tga"
-	vmap_alphaMod volume
-	vmap_alphaMod set 0.75
-	surfaceParm nodraw
-	surfaceParm nonsolid
-	surfaceParm trans
-	nomipmaps
-}
-
-textures/platform/data.pk3dir/textures/common/caulkwater
-{
-	qer_editorImage "textures/common/caulkwater.tga"
-	qer_trans 0.50
-	surfaceParm nodraw
-	surfaceParm nonsolid
-	surfaceParm trans
-	surfaceParm water
-	nomipmaps
-
-	fogParms ( 0 0 0 ) 128
-	surfaceParm fog
-}
-
-textures/platform/data.pk3dir/textures/common/blocklight
-{
-	qer_editorImage "textures/common/blocklight.tga"
-	surfaceParm nonsolid
-	surfaceParm nomarks
-	nomipmaps
-}
-
-textures/platform/data.pk3dir/textures/common/clipdirt
-{
-	qer_editorImage "textures/common/clip.tga"
-	qer_trans 0.50
-	surfaceParm nodraw
-	surfaceParm trans
-	surfaceParm dirt
-	nomipmaps
-}
-
-textures/platform/data.pk3dir/textures/common/alpha_50
-{
-	qer_editorImage "textures/common/alpha_50.tga"
-	vmap_alphaMod volume
-	vmap_alphaMod set 0.5
-	surfaceParm nodraw
-	surfaceParm nonsolid
-	surfaceParm trans
-	nomipmaps
-}
-
-textures/platform/data.pk3dir/textures/common/clip
-{
-	qer_editorImage "textures/common/clip.tga"
-	surfaceParm nodraw
-	surfaceParm trans
-	nomipmaps
-}
-
-textures/platform/data.pk3dir/textures/common/caulk
-{
-	qer_editorImage "textures/common/caulk.tga"
-	qer_trans 0.50
-	surfaceParm nodraw
-	surfaceParm nomarks
-	surfaceParm nolightmap
-	nomipmaps
-}
-
-textures/platform/data.pk3dir/textures/common/trigger
-{
-	qer_editorImage "textures/common/trigger.tga"
-	qer_trans 0.50
-	qer_noCarve
-	surfaceParm nodraw
-	nomipmaps
-}
-
-textures/platform/data.pk3dir/textures/common/clipwood
-{
-	qer_editorImage "textures/common/clipwood.tga"
-	qer_trans 0.50
-	surfaceParm nodraw
-	surfaceParm trans
-	surfaceParm wood
-	nomipmaps
-}
-
-textures/platform/data.pk3dir/textures/common/terrain2
-{
-	qer_editorImage "textures/common/terrain.tga"
-	vmap_terrain
-	surfaceParm dust
-	surfaceParm nodraw
-	surfaceParm nomarks
-	surfaceParm nolightmap
-	nomipmaps
-}
-
-textures/platform/data.pk3dir/textures/common/cliptile
-{
-	qer_editorImage "textures/common/clip.tga"
-	qer_trans 0.50
-	surfaceParm nodraw
-	surfaceParm trans
-	surfaceParm tile
-	nomipmaps
-}
-
-textures/platform/data.pk3dir/textures/common/rtsurface
-{
-	qer_editorImage "textures/common/rtsurface.tga"
-	{
-		map $rt:base
-	}
-}
-
-textures/platform/data.pk3dir/textures/common/clipmetal
-{
-	qer_editorImage "textures/common/clipmetal.tga"
-	qer_trans 0.50
-	surfaceParm nodraw
-	surfaceParm trans
-	surfaceParm metal
-	nomipmaps
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/box2_alt
-{
-	diffusemap textures/nieb/box2_alt.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/concrete-dark
-{
-	diffusemap textures/nieb/concrete-dark.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/clone/concrete05
-{
-	diffusemap textures/nieb/clone/concrete05.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/clone/sandstone07
-{
-	diffusemap textures/nieb/clone/sandstone07.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/clone/trim09b
-{
-	diffusemap textures/nieb/clone/trim09b.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/clone/metal_plate01-tan
-{
-	diffusemap textures/nieb/clone/metal_plate01-tan.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/clone/trim07a
-{
-	diffusemap textures/nieb/clone/trim07a.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/clone/trim08
-{
-	diffusemap textures/nieb/clone/trim08.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/clone/sandstone09
-{
-	diffusemap textures/nieb/clone/sandstone09.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/clone/grass06
-{
-	diffusemap textures/nieb/clone/grass06.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/clone/concrete10
-{
-	diffusemap textures/nieb/clone/concrete10.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/clone/sandstone11a
-{
-	diffusemap textures/nieb/clone/sandstone11a.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/clone/sandstone09a
-{
-	diffusemap textures/nieb/clone/sandstone09a.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/clone/ceiling-tile01c
-{
-	diffusemap textures/nieb/clone/ceiling-tile01c.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/clone/brick05
-{
-	diffusemap textures/nieb/clone/brick05.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/clone/brick02
-{
-	diffusemap textures/nieb/clone/brick02.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/clone/wood01
-{
-	diffusemap textures/nieb/clone/wood01.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/clone/brick10
-{
-	diffusemap textures/nieb/clone/brick10.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/clone/road01
-{
-	diffusemap textures/nieb/clone/road01.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/clone/sandstone10a
-{
-	diffusemap textures/nieb/clone/sandstone10a.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/clone/leaf02
-{
-	diffusemap textures/nieb/clone/leaf02.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/clone/brick08
-{
-	diffusemap textures/nieb/clone/brick08.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/clone/concrete11
-{
-	diffusemap textures/nieb/clone/concrete11.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/clone/sand07
-{
-	diffusemap textures/nieb/clone/sand07.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/clone/concrete03-moss
-{
-	diffusemap textures/nieb/clone/concrete03-moss.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/clone/grass10
-{
-	diffusemap textures/nieb/clone/grass10.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/clone/wood02
-{
-	diffusemap textures/nieb/clone/wood02.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/clone/plaster01
-{
-	diffusemap textures/nieb/clone/plaster01.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/clone/rock06
-{
-	diffusemap textures/nieb/clone/rock06.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/clone/door02
-{
-	diffusemap textures/nieb/clone/door02.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/clone/sandstone06
-{
-	diffusemap textures/nieb/clone/sandstone06.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/clone/grass02
-{
-	diffusemap textures/nieb/clone/grass02.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/clone/wood04
-{
-	diffusemap textures/nieb/clone/wood04.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/clone/grass09
-{
-	diffusemap textures/nieb/clone/grass09.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/clone/wood-floor01
-{
-	diffusemap textures/nieb/clone/wood-floor01.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/clone/container01-end3
-{
-	diffusemap textures/nieb/clone/container01-end3.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/clone/brick03
-{
-	diffusemap textures/nieb/clone/brick03.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/clone/plaster08
-{
-	diffusemap textures/nieb/clone/plaster08.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/clone/stone01
-{
-	diffusemap textures/nieb/clone/stone01.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/clone/concrete09
-{
-	diffusemap textures/nieb/clone/concrete09.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/clone/ceiling-tile01a
-{
-	diffusemap textures/nieb/clone/ceiling-tile01a.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/clone/grass03
-{
-	diffusemap textures/nieb/clone/grass03.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/clone/container01-top-end
-{
-	diffusemap textures/nieb/clone/container01-top-end.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/clone/metal02
-{
-	diffusemap textures/nieb/clone/metal02.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/clone/tarp01
-{
-	diffusemap textures/nieb/clone/tarp01.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/clone/concrete08
-{
-	diffusemap textures/nieb/clone/concrete08.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/clone/container01-top
-{
-	diffusemap textures/nieb/clone/container01-top.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/clone/plaster04
-{
-	diffusemap textures/nieb/clone/plaster04.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/clone/concrete07
-{
-	diffusemap textures/nieb/clone/concrete07.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/clone/dirt02
-{
-	diffusemap textures/nieb/clone/dirt02.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/clone/trim09c
-{
-	diffusemap textures/nieb/clone/trim09c.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/clone/trim02
-{
-	diffusemap textures/nieb/clone/trim02.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/clone/sand05
-{
-	diffusemap textures/nieb/clone/sand05.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/clone/trim06
-{
-	diffusemap textures/nieb/clone/trim06.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/clone/container01-end2
-{
-	diffusemap textures/nieb/clone/container01-end2.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/clone/trim04
-{
-	diffusemap textures/nieb/clone/trim04.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/clone/sandstone09b
-{
-	diffusemap textures/nieb/clone/sandstone09b.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/clone/grass11
-{
-	diffusemap textures/nieb/clone/grass11.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/clone/rock03
-{
-	diffusemap textures/nieb/clone/rock03.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/clone/trim10
-{
-	diffusemap textures/nieb/clone/trim10.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/clone/concrete12
-{
-	diffusemap textures/nieb/clone/concrete12.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/clone/plaster09
-{
-	diffusemap textures/nieb/clone/plaster09.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/clone/sandstone05
-{
-	diffusemap textures/nieb/clone/sandstone05.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/clone/sandstone01
-{
-	diffusemap textures/nieb/clone/sandstone01.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/clone/brick06
-{
-	diffusemap textures/nieb/clone/brick06.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/clone/sandstone12
-{
-	diffusemap textures/nieb/clone/sandstone12.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/clone/plaster10
-{
-	diffusemap textures/nieb/clone/plaster10.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/clone/grass07
-{
-	diffusemap textures/nieb/clone/grass07.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/clone/sand02
-{
-	diffusemap textures/nieb/clone/sand02.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/clone/container01
-{
-	diffusemap textures/nieb/clone/container01.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/clone/grass05
-{
-	diffusemap textures/nieb/clone/grass05.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/clone/leaf01
-{
-	diffusemap textures/nieb/clone/leaf01.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/clone/brick07_top
-{
-	diffusemap textures/nieb/clone/brick07_top.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/clone/grass12
-{
-	diffusemap textures/nieb/clone/grass12.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/clone/sand04
-{
-	diffusemap textures/nieb/clone/sand04.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/clone/plaster06
-{
-	diffusemap textures/nieb/clone/plaster06.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/clone/woodchip01
-{
-	diffusemap textures/nieb/clone/woodchip01.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/clone/container01-end1
-{
-	diffusemap textures/nieb/clone/container01-end1.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/clone/gravel05
-{
-	diffusemap textures/nieb/clone/gravel05.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/clone/sandstone02
-{
-	diffusemap textures/nieb/clone/sandstone02.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/clone/trim03
-{
-	diffusemap textures/nieb/clone/trim03.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/clone/rock04
-{
-	diffusemap textures/nieb/clone/rock04.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/clone/sand08
-{
-	diffusemap textures/nieb/clone/sand08.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/clone/plaster07
-{
-	diffusemap textures/nieb/clone/plaster07.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/clone/target01
-{
-	diffusemap textures/nieb/clone/target01.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/clone/wood03
-{
-	diffusemap textures/nieb/clone/wood03.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/clone/sand06
-{
-	diffusemap textures/nieb/clone/sand06.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/clone/brick07
-{
-	diffusemap textures/nieb/clone/brick07.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/clone/trim11
-{
-	diffusemap textures/nieb/clone/trim11.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/clone/plaster05
-{
-	diffusemap textures/nieb/clone/plaster05.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/clone/sandstone03
-{
-	diffusemap textures/nieb/clone/sandstone03.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/clone/carpet01
-{
-	diffusemap textures/nieb/clone/carpet01.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/clone/wall01
-{
-	diffusemap textures/nieb/clone/wall01.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/clone/wall02
-{
-	diffusemap textures/nieb/clone/wall02.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/clone/brick09
-{
-	diffusemap textures/nieb/clone/brick09.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/clone/gravel01
-{
-	diffusemap textures/nieb/clone/gravel01.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/clone/sandstone10b
-{
-	diffusemap textures/nieb/clone/sandstone10b.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/clone/trim05
-{
-	diffusemap textures/nieb/clone/trim05.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/clone/trim09a
-{
-	diffusemap textures/nieb/clone/trim09a.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/clone/concrete06
-{
-	diffusemap textures/nieb/clone/concrete06.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/clone/ceiling-tile01b
-{
-	diffusemap textures/nieb/clone/ceiling-tile01b.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/clone/box3a
-{
-	diffusemap textures/nieb/clone/box3a.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/clone/door03
-{
-	diffusemap textures/nieb/clone/door03.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/clone/brick04
-{
-	diffusemap textures/nieb/clone/brick04.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/clone/grass08
-{
-	diffusemap textures/nieb/clone/grass08.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/clone/plaster03
-{
-	diffusemap textures/nieb/clone/plaster03.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/clone/gravel02
-{
-	diffusemap textures/nieb/clone/gravel02.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/clone/metal_plate02
-{
-	diffusemap textures/nieb/clone/metal_plate02.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/clone/sand03
-{
-	diffusemap textures/nieb/clone/sand03.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/clone/sandstone04
-{
-	diffusemap textures/nieb/clone/sandstone04.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/clone/woodchip02
-{
-	diffusemap textures/nieb/clone/woodchip02.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/clone/plaster02
-{
-	diffusemap textures/nieb/clone/plaster02.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/clone/trim07b
-{
-	diffusemap textures/nieb/clone/trim07b.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/clone/rock05
-{
-	diffusemap textures/nieb/clone/rock05.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/clone/sand09
-{
-	diffusemap textures/nieb/clone/sand09.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/clone/rock01
-{
-	diffusemap textures/nieb/clone/rock01.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/clone/sandstone08
-{
-	diffusemap textures/nieb/clone/sandstone08.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/clone/window01
-{
-	diffusemap textures/nieb/clone/window01.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/clone/concrete04
-{
-	diffusemap textures/nieb/clone/concrete04.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/brick-tan
-{
-	diffusemap textures/nieb/brick-tan.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/concrete02
-{
-	diffusemap textures/nieb/concrete02.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/door1
-{
-	diffusemap textures/nieb/door1.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/stone1b
-{
-	diffusemap textures/nieb/stone1b.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/bonepile
-{
-	diffusemap textures/nieb/bonepile.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/suite/floorsregular0100
-{
-	diffusemap textures/nieb/suit/floorsregular0100.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/suite/brickolddirty0072
-{
-	diffusemap textures/nieb/suit/brickolddirty0072.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/suite/concreterough0023
-{
-	diffusemap textures/nieb/suit/concreterough0023.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/suite/rooftilesslate0045
-{
-	diffusemap textures/nieb/suit/rooftilesslate0045.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/suite/brickolddirty0076
-{
-	diffusemap textures/nieb/suit/brickolddirty0076.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/suite/ornamentborder0135
-{
-	diffusemap textures/nieb/suit/ornamentborder0135.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/suite/brickolddirty0067
-{
-	diffusemap textures/nieb/suit/brickolddirty0067.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/step-side
-{
-	diffusemap textures/nieb/step-side.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/light
-{
-	diffusemap textures/nieb/light.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/box1_alt
-{
-	diffusemap textures/nieb/box1_alt.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/beam
-{
-	diffusemap textures/nieb/beam.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/metal-door
-{
-	diffusemap textures/nieb/metal-door.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/worldmap
-{
-	diffusemap textures/nieb/worldmap.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/box2
-{
-	diffusemap textures/nieb/box2.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/garden/stone4
-{
-	diffusemap textures/nieb/garden/stone4.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/garden/stone6
-{
-	diffusemap textures/nieb/garden/stone6.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/garden/grass1b
-{
-	diffusemap textures/nieb/garden/grass1b.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/garden/stone1b
-{
-	diffusemap textures/nieb/garden/stone1b.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/garden/stone1d
-{
-	diffusemap textures/nieb/garden/stone1d.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/garden/stone1c
-{
-	diffusemap textures/nieb/garden/stone1c.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/garden/grass1a
-{
-	diffusemap textures/nieb/garden/grass1a.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/garden/fabric
-{
-	diffusemap textures/nieb/garden/fabric.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/garden/stone5
-{
-	diffusemap textures/nieb/garden/stone5.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/garden/grass2b
-{
-	diffusemap textures/nieb/garden/grass2b.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/garden/stone12
-{
-	diffusemap textures/nieb/garden/stone12.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/garden/bark1
-{
-	diffusemap textures/nieb/garden/bark1.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/garden/stone2
-{
-	diffusemap textures/nieb/garden/stone2.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/garden/stone11
-{
-	diffusemap textures/nieb/garden/stone11.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/garden/grass2a
-{
-	diffusemap textures/nieb/garden/grass2a.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/garden/stone3
-{
-	diffusemap textures/nieb/garden/stone3.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/garden/stone7
-{
-	diffusemap textures/nieb/garden/stone7.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/garden/sand1
-{
-	diffusemap textures/nieb/garden/sand1.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/garden/stone9
-{
-	diffusemap textures/nieb/garden/stone9.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/garden/stone8
-{
-	diffusemap textures/nieb/garden/stone8.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/garden/stone10
-{
-	diffusemap textures/nieb/garden/stone10.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/garden/bush1
-{
-	diffusemap textures/nieb/garden/bush1.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/garden/stone1a
-{
-	diffusemap textures/nieb/garden/stone1a.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/garden/metal1
-{
-	diffusemap textures/nieb/garden/metal1.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/garden/stone13
-{
-	diffusemap textures/nieb/garden/stone13.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/concrete-tan
-{
-	diffusemap textures/nieb/concrete-tan.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/stone2
-{
-	diffusemap textures/nieb/stone2.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/clock_face
-{
-	diffusemap textures/nieb/clock_face.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/sand02
-{
-	diffusemap textures/nieb/sand02.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/rock02
-{
-	diffusemap textures/nieb/rock02.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/stone3
-{
-	diffusemap textures/nieb/stone3.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/rubber-trim
-{
-	diffusemap textures/nieb/rubber-trim.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/base/base4
-{
-	diffusemap textures/nieb/base/base4.tga
-	{
-		map $diffuse
-		map $lightmap
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/base/base2
-{
-	diffusemap textures/nieb/base/base2.tga
-	{
-		map $diffuse
-		map $lightmap
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/base/base3
-{
-	diffusemap textures/nieb/base/base3.tga
-	{
-		map $diffuse
-		map $lightmap
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/base/base1
-{
-	diffusemap textures/nieb/base/base1.tga
-	{
-		map $diffuse
-		map $lightmap
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/autumn/tile
-{
-	diffusemap textures/nieb/autumn/tile.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/autumn/face0c
-{
-	diffusemap textures/nieb/autumn/face0c.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/autumn/face2
-{
-	diffusemap textures/nieb/autumn/face2.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/autumn/bark01
-{
-	diffusemap textures/nieb/autumn/bark01.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/autumn/leaves
-{
-	diffusemap textures/nieb/autumn/leaves.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/autumn/face1
-{
-	diffusemap textures/nieb/autumn/face1.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/autumn/face0a
-{
-	diffusemap textures/nieb/autumn/face0a.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/autumn/trim
-{
-	diffusemap textures/nieb/autumn/trim.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/autumn/stone_rubble
-{
-	diffusemap textures/nieb/autumn/stone_rubble.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/autumn/stone_rough
-{
-	diffusemap textures/nieb/autumn/stone_rough.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/autumn/column
-{
-	diffusemap textures/nieb/autumn/column.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/autumn/face0b
-{
-	diffusemap textures/nieb/autumn/face0b.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/autumn/face3
-{
-	diffusemap textures/nieb/autumn/face3.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/autumn/face4
-{
-	diffusemap textures/nieb/autumn/face4.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/autumn/stone1
-{
-	diffusemap textures/nieb/autumn/stone1.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/autumn/rock
-{
-	diffusemap textures/nieb/autumn/rock.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/autumn/grass1
-{
-	diffusemap textures/nieb/autumn/grass1.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/stripes
-{
-	diffusemap textures/nieb/stripes.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/sand01
-{
-	diffusemap textures/nieb/sand01.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/box1
-{
-	diffusemap textures/nieb/box1.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/light-glow
-{
-	diffusemap textures/nieb/light-glow.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/rough01
-{
-	diffusemap textures/nieb/rough01.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/step-top
-{
-	diffusemap textures/nieb/step-top.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/floor1
-{
-	diffusemap textures/nieb/floor1.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/complex/wall_01
-{
-	diffusemap textures/scma/wall_01.tga
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/complex/light_01
-{
-	diffusemap textures/scma/light_01.tga
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/complex/door_rail
-{
-	diffusemap textures/scma/door_rail.tga
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/complex/tile01
-{
-	diffusemap textures/scma/tile01.tga
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/complex/woodfloor03
-{
-	diffusemap textures/nieb/complex/woodfloor03.tga
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/complex/step02
-{
-	diffusemap textures/scma/step02.tga
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/complex/woodfloor01
-{
-	diffusemap textures/nieb/complex/woodfloor01.tga
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/complex/step01
-{
-	diffusemap textures/scma/step01.tga
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/complex/woodfloor02
-{
-	diffusemap textures/nieb/complex/woodfloor02.tga
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/complex/step03
-{
-	diffusemap textures/scma/step03.tga
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/complex/light-switch_01
-{
-	diffusemap textures/scma/light-switch_01.tga
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/complex/vent
-{
-	diffusemap textures/scma/vent.tga
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/complex/tile02
-{
-	diffusemap textures/scma/tile02.tga
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/complex/electrical-outlet
-{
-	diffusemap textures/scma/electrical-outlet.tga
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/orange
-{
-	diffusemap textures/nieb/metal-orange.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/metal-grey
-{
-	diffusemap textures/nieb/metal-grey.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/floor2
-{
-	diffusemap textures/nieb/floor2.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/brick-red
-{
-	diffusemap textures/nieb/brick-red.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/stone1
-{
-	diffusemap textures/nieb/stone1.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/concrete-light
-{
-	diffusemap textures/nieb/concrete-light.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/concrete03
-{
-	diffusemap textures/nieb/concrete03.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/step-top2
-{
-	diffusemap textures/nieb/step-top2.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/concrete-red
-{
-	diffusemap textures/nieb/concrete-red.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/rock01
-{
-	diffusemap textures/nieb/rock01.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/nieb/grass1
-{
-	diffusemap textures/nieb/grass1.jpg
-
-	{
-		map $diffuse
-	}
-}
-
-textures/schizomania/assets_free.pk3dir/textures/mike/grafiti_door1
-{
-	diffusemap textures/mike/grafiti_door1.jpg
-
-	{
-		map $diffuse
-	}
-}
-
 textures/schizomania/base_textures.pk3dir/textures/sfx/reflection
 {
 	polygonOffset 1
@@ -2464,6 +66,16 @@ textures/schizomania/base_textures.pk3dir/textures/dev/info_node_air
 textures/schizomania/base_textures.pk3dir/textures/dev/info_node
 {
 	diffusemap textures/dev/info_node.tga
+	
+	{
+		map $diffuse
+		blendFunc blend
+	}
+}
+
+textures/schizomania/base_textures.pk3dir/textures/dev/model_bone
+{
+	diffusemap textures/dev/model_bone.tga
 	
 	{
 		map $diffuse
@@ -3015,17 +627,30 @@ textures/schizomania/base_textures.pk3dir/textures/ui/m_lineright
 textures/schizomania/base_textures.pk3dir/textures/decals/impact_wood
 {
 	polygonOffset 1
-	surfaceParm noshadows
+	surfaceParm nodlight
 	{
 		map "textures/decals/impact_wood.tga"
 		blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
 	}
 }
 
+textures/schizomania/base_textures.pk3dir/textures/decals/blood
+{
+	polygonOffset 4
+	surfaceParm nodlight
+	surfaceParm noshadows
+	sort decal
+
+	{
+		map "textures/decals/blood.tga"
+		blendfunc GL_ZERO GL_ONE_MINUS_SRC_COLOR
+	}
+}
+
 textures/schizomania/base_textures.pk3dir/textures/decals/impact_metal
 {
 	polygonOffset 1
-	surfaceParm noshadows
+	surfaceParm nodlight
 	{
 		map "textures/decals/impact_metal.tga"
 		blendfunc GL_ZERO GL_ONE_MINUS_SRC_COLOR
@@ -3035,7 +660,7 @@ textures/schizomania/base_textures.pk3dir/textures/decals/impact_metal
 textures/schizomania/base_textures.pk3dir/textures/decals/impact_glass
 {
 	polygonOffset 1
-	surfaceParm noshadows
+	surfaceParm nodlight
 	{
 		map "textures/decals/impact_glass.tga"
 		blendFunc GL_ONE GL_ONE
@@ -3045,7 +670,9 @@ textures/schizomania/base_textures.pk3dir/textures/decals/impact_glass
 textures/schizomania/base_textures.pk3dir/textures/decals/impact_default
 {
 	polygonOffset 1
-	surfaceParm noshadows
+	surfaceParm nodlight
+
+    surfaceParm noshadows
 	{
 		map "textures/decals/impact_default.tga"
 		blendfunc GL_ZERO GL_ONE_MINUS_SRC_COLOR
@@ -3055,7 +682,7 @@ textures/schizomania/base_textures.pk3dir/textures/decals/impact_default
 textures/schizomania/base_textures.pk3dir/textures/decals/impact_tile
 {
 	polygonOffset 1
-	surfaceParm noshadows
+	surfaceParm nodlight
 	{
 		map "textures/decals/impact_tile.tga"
 		blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
@@ -3267,6 +894,2004 @@ textures/schizomania/game.pk3dir/textures/liquid/water2
 		map $reflection
 		map $refraction
 		map "textures/liquid/water1_n.tga"
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/light_glow
+{
+	diffusemap textures/nieb/light_glow.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/box2_alt
+{
+	diffusemap textures/nieb/box2_alt.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/concrete-dark
+{
+	diffusemap textures/nieb/concrete-dark.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/clone/concrete05
+{
+	diffusemap textures/nieb/clone/concrete05.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/clone/sandstone07
+{
+	diffusemap textures/nieb/clone/sandstone07.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/clone/trim09b
+{
+	diffusemap textures/nieb/clone/trim09b.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/clone/metal_plate01-tan
+{
+	diffusemap textures/nieb/clone/metal_plate01-tan.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/clone/trim07a
+{
+	diffusemap textures/nieb/clone/trim07a.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/clone/trim08
+{
+	diffusemap textures/nieb/clone/trim08.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/clone/grass06
+{
+	diffusemap textures/nieb/clone/grass06.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/clone/concrete10
+{
+	diffusemap textures/nieb/clone/concrete10.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/clone/sandstone11a
+{
+	diffusemap textures/nieb/clone/sandstone11a.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/clone/sandstone09a
+{
+	diffusemap textures/nieb/clone/sandstone09a.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/clone/ceiling-tile01c
+{
+	diffusemap textures/nieb/clone/ceiling-tile01c.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/clone/brick05
+{
+	diffusemap textures/nieb/clone/brick05.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/clone/brick02
+{
+	diffusemap textures/nieb/clone/brick02.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/clone/wood01
+{
+	diffusemap textures/nieb/clone/wood01.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/clone/brick10
+{
+	diffusemap textures/nieb/clone/brick10.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/clone/road01
+{
+	diffusemap textures/nieb/clone/road01.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/clone/sandstone10a
+{
+	diffusemap textures/nieb/clone/sandstone10a.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/clone/leaf02
+{
+	diffusemap textures/nieb/clone/leaf02.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/clone/brick08
+{
+	diffusemap textures/nieb/clone/brick08.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/clone/concrete11
+{
+	diffusemap textures/nieb/clone/concrete11.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/clone/sand07
+{
+	diffusemap textures/nieb/clone/sand07.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/clone/concrete03-moss
+{
+	diffusemap textures/nieb/clone/concrete03-moss.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/clone/grass10
+{
+	diffusemap textures/nieb/clone/grass10.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/clone/wood02
+{
+	diffusemap textures/nieb/clone/wood02.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/clone/plaster01
+{
+	diffusemap textures/nieb/clone/plaster01.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/clone/rock06
+{
+	diffusemap textures/nieb/clone/rock06.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/clone/door02
+{
+	diffusemap textures/nieb/clone/door02.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/clone/grass02
+{
+	diffusemap textures/nieb/clone/grass02.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/clone/wood04
+{
+	diffusemap textures/nieb/clone/wood04.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/clone/grass09
+{
+	diffusemap textures/nieb/clone/grass09.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/clone/wood-floor01
+{
+	diffusemap textures/nieb/clone/wood-floor01.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/clone/container01-end3
+{
+	diffusemap textures/nieb/clone/container01-end3.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/clone/brick03
+{
+	diffusemap textures/nieb/clone/brick03.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/clone/plaster08
+{
+	diffusemap textures/nieb/clone/plaster08.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/clone/stone01
+{
+	diffusemap textures/nieb/clone/stone01.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/clone/concrete09
+{
+	diffusemap textures/nieb/clone/concrete09.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/clone/ceiling-tile01a
+{
+	diffusemap textures/nieb/clone/ceiling-tile01a.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/clone/grass03
+{
+	diffusemap textures/nieb/clone/grass03.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/clone/container01-top-end
+{
+	diffusemap textures/nieb/clone/container01-top-end.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/clone/metal02
+{
+	diffusemap textures/nieb/clone/metal02.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/clone/tarp01
+{
+	diffusemap textures/nieb/clone/tarp01.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/clone/concrete08
+{
+	diffusemap textures/nieb/clone/concrete08.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/clone/container01-top
+{
+	diffusemap textures/nieb/clone/container01-top.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/clone/plaster04
+{
+	diffusemap textures/nieb/clone/plaster04.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/clone/concrete07
+{
+	diffusemap textures/nieb/clone/concrete07.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/clone/dirt02
+{
+	diffusemap textures/nieb/clone/dirt02.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/clone/trim09c
+{
+	diffusemap textures/nieb/clone/trim09c.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/clone/trim02
+{
+	diffusemap textures/nieb/clone/trim02.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/clone/sand05
+{
+	diffusemap textures/nieb/clone/sand05.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/clone/trim06
+{
+	diffusemap textures/nieb/clone/trim06.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/clone/container01-end2
+{
+	diffusemap textures/nieb/clone/container01-end2.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/clone/trim04
+{
+	diffusemap textures/nieb/clone/trim04.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/clone/sandstone09b
+{
+	diffusemap textures/nieb/clone/sandstone09b.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/clone/rock03
+{
+	diffusemap textures/nieb/clone/rock03.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/clone/trim10
+{
+	diffusemap textures/nieb/clone/trim10.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/clone/concrete12
+{
+	diffusemap textures/nieb/clone/concrete12.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/clone/plaster09
+{
+	diffusemap textures/nieb/clone/plaster09.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/clone/sandstone05
+{
+	diffusemap textures/nieb/clone/sandstone05.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/clone/sandstone01
+{
+	diffusemap textures/nieb/clone/sandstone01.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/clone/brick06
+{
+	diffusemap textures/nieb/clone/brick06.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/clone/sandstone12
+{
+	diffusemap textures/nieb/clone/sandstone12.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/clone/plaster10
+{
+	diffusemap textures/nieb/clone/plaster10.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/clone/grass07
+{
+	diffusemap textures/nieb/clone/grass07.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/clone/sand02
+{
+	diffusemap textures/nieb/clone/sand02.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/clone/container01
+{
+	diffusemap textures/nieb/clone/container01.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/clone/grass05
+{
+	diffusemap textures/nieb/clone/grass05.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/clone/leaf01
+{
+	diffusemap textures/nieb/clone/leaf01.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/clone/brick07_top
+{
+	diffusemap textures/nieb/clone/brick07_top.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/clone/grass12
+{
+	diffusemap textures/nieb/clone/grass12.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/clone/sand04
+{
+	diffusemap textures/nieb/clone/sand04.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/clone/plaster06
+{
+	diffusemap textures/nieb/clone/plaster06.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/clone/woodchip01
+{
+	diffusemap textures/nieb/clone/woodchip01.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/clone/container01-end1
+{
+	diffusemap textures/nieb/clone/container01-end1.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/clone/gravel05
+{
+	diffusemap textures/nieb/clone/gravel05.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/clone/sandstone02
+{
+	diffusemap textures/nieb/clone/sandstone02.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/clone/trim03
+{
+	diffusemap textures/nieb/clone/trim03.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/clone/rock04
+{
+	diffusemap textures/nieb/clone/rock04.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/clone/sand08
+{
+	diffusemap textures/nieb/clone/sand08.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/clone/plaster07
+{
+	diffusemap textures/nieb/clone/plaster07.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/clone/target01
+{
+	diffusemap textures/nieb/clone/target01.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/clone/wood03
+{
+	diffusemap textures/nieb/clone/wood03.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/clone/brick07
+{
+	diffusemap textures/nieb/clone/brick07.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/clone/trim11
+{
+	diffusemap textures/nieb/clone/trim11.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/clone/plaster05
+{
+	diffusemap textures/nieb/clone/plaster05.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/clone/sandstone03
+{
+	diffusemap textures/nieb/clone/sandstone03.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/clone/carpet01
+{
+	diffusemap textures/nieb/clone/carpet01.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/clone/wall01
+{
+	diffusemap textures/nieb/clone/wall01.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/clone/wall02
+{
+	diffusemap textures/nieb/clone/wall02.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/clone/brick09
+{
+	diffusemap textures/nieb/clone/brick09.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/clone/gravel01
+{
+	diffusemap textures/nieb/clone/gravel01.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/clone/sandstone10b
+{
+	diffusemap textures/nieb/clone/sandstone10b.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/clone/trim05
+{
+	diffusemap textures/nieb/clone/trim05.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/clone/trim09a
+{
+	diffusemap textures/nieb/clone/trim09a.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/clone/concrete06
+{
+	diffusemap textures/nieb/clone/concrete06.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/clone/ceiling-tile01b
+{
+	diffusemap textures/nieb/clone/ceiling-tile01b.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/clone/box3a
+{
+	diffusemap textures/nieb/clone/box03a.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/clone/door03
+{
+	diffusemap textures/nieb/clone/door03.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/clone/brick04
+{
+	diffusemap textures/nieb/clone/brick04.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/clone/grass08
+{
+	diffusemap textures/nieb/clone/grass08.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/clone/plaster03
+{
+	diffusemap textures/nieb/clone/plaster03.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/clone/gravel02
+{
+	diffusemap textures/nieb/clone/gravel02.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/clone/metal_plate02
+{
+	diffusemap textures/nieb/clone/metal_plate02.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/clone/sand03
+{
+	diffusemap textures/nieb/clone/sand03.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/clone/sandstone04
+{
+	diffusemap textures/nieb/clone/sandstone04.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/clone/woodchip02
+{
+	diffusemap textures/nieb/clone/woodchip02.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/clone/plaster02
+{
+	diffusemap textures/nieb/clone/plaster02.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/clone/trim07b
+{
+	diffusemap textures/nieb/clone/trim07b.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/clone/sand09
+{
+	diffusemap textures/nieb/clone/sand09.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/clone/rock01
+{
+	diffusemap textures/nieb/clone/rock01.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/clone/sandstone08
+{
+	diffusemap textures/nieb/clone/sandstone08.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/clone/window01
+{
+	diffusemap textures/nieb/clone/window01.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/clone/concrete04
+{
+	diffusemap textures/nieb/clone/concrete04.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/brick-tan
+{
+	diffusemap textures/nieb/brick-tan.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/concrete02
+{
+	diffusemap textures/nieb/concrete02.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/door1
+{
+	diffusemap textures/nieb/door1.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/stone1b
+{
+	diffusemap textures/nieb/stone1b.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/bonepile
+{
+	diffusemap textures/nieb/bonepile.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/suite/floorsregular0100
+{
+	diffusemap textures/nieb/suite/floorsregular0100.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/suite/brickolddirty0072
+{
+	diffusemap textures/nieb/suite/brickolddirty0072.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/suite/concreterough0023
+{
+	diffusemap textures/nieb/suite/concreterough0023.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/suite/rooftilesslate0045
+{
+	diffusemap textures/nieb/suite/rooftilesslate0045.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/suite/brickolddirty0076
+{
+	diffusemap textures/nieb/suite/brickolddirty0076.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/suite/ornamentborder0135
+{
+	diffusemap textures/nieb/suite/ornamentborder0135.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/suite/brickolddirty0067
+{
+	diffusemap textures/nieb/suite/brickolddirty0067.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/step-side
+{
+	diffusemap textures/nieb/step-side.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/light
+{
+	diffusemap textures/nieb/light.tga
+	
+	vmap_surfaceLight 650
+	vmap_lightRGB 0.9 0.7 0.5
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/box1_alt
+{
+	diffusemap textures/nieb/box1_alt.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/beam
+{
+	diffusemap textures/nieb/beam.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/metal-door
+{
+	diffusemap textures/nieb/metal-door.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/worldmap
+{
+	diffusemap textures/nieb/worldmap.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/box2
+{
+	diffusemap textures/nieb/box2.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/garden/stone4
+{
+	diffusemap textures/nieb/garden/stone4.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/garden/stone6
+{
+	diffusemap textures/nieb/garden/stone6.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/garden/grass1b
+{
+	diffusemap textures/nieb/garden/grass1b.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/garden/stone1b
+{
+	diffusemap textures/nieb/garden/stone1b.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/garden/stone1d
+{
+	diffusemap textures/nieb/garden/stone1d.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/garden/stone1c
+{
+	diffusemap textures/nieb/garden/stone1c.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/garden/grass1a
+{
+	diffusemap textures/nieb/garden/grass1a.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/garden/fabric
+{
+	diffusemap textures/nieb/garden/fabric.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/garden/stone5
+{
+	diffusemap textures/nieb/garden/stone5.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/garden/grass2b
+{
+	diffusemap textures/nieb/garden/grass2b.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/garden/stone12
+{
+	diffusemap textures/nieb/garden/stone12.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/garden/bark1
+{
+	diffusemap textures/nieb/garden/bark1.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/garden/stone2
+{
+	diffusemap textures/nieb/garden/stone2.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/garden/stone11
+{
+	diffusemap textures/nieb/garden/stone11.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/garden/grass2a
+{
+	diffusemap textures/nieb/garden/grass2a.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/garden/stone3
+{
+	diffusemap textures/nieb/garden/stone3.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/garden/stone7
+{
+	diffusemap textures/nieb/garden/stone7.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/garden/sand1
+{
+	diffusemap textures/nieb/garden/sand1.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/garden/stone9
+{
+	diffusemap textures/nieb/garden/stone9.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/garden/stone8
+{
+	diffusemap textures/nieb/garden/stone8.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/garden/stone10
+{
+	diffusemap textures/nieb/garden/stone10.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/garden/bush1
+{
+	diffusemap textures/nieb/garden/bush1.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/garden/stone1a
+{
+	diffusemap textures/nieb/garden/stone1a.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/garden/metal1
+{
+	diffusemap textures/nieb/garden/metal1.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/garden/stone13
+{
+	diffusemap textures/nieb/garden/stone13.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/concrete-tan
+{
+	diffusemap textures/nieb/concrete-tan.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/stone2
+{
+	diffusemap textures/nieb/stone2.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/clock_face
+{
+	diffusemap textures/nieb/clock_face.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/sand02
+{
+	diffusemap textures/nieb/sand02.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/rock02
+{
+	diffusemap textures/nieb/rock02.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/stone3
+{
+	diffusemap textures/nieb/stone3.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/rubber-trim
+{
+	diffusemap textures/nieb/rubber-trim.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/base/base4
+{
+	diffusemap textures/nieb/base/base4.tga
+	{
+		map $diffuse
+		map $lightmap
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/base/base2
+{
+	diffusemap textures/nieb/base/base2.tga
+	{
+		map $diffuse
+		map $lightmap
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/base/base3
+{
+	diffusemap textures/nieb/base/base3.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/base/base1
+{
+	diffusemap textures/nieb/base/base1.tga
+	{
+		map $diffuse
+		map $lightmap
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/autumn/tile
+{
+	diffusemap textures/nieb/autumn/tile.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/autumn/face0c
+{
+	diffusemap textures/nieb/autumn/face0c.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/autumn/face2
+{
+	diffusemap textures/nieb/autumn/face2.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/autumn/bark01
+{
+	diffusemap textures/nieb/autumn/bark01.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/autumn/leaves
+{
+	diffusemap textures/nieb/autumn/leaves.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/autumn/face1
+{
+	diffusemap textures/nieb/autumn/face1.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/autumn/face0a
+{
+	diffusemap textures/nieb/autumn/face0a.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/autumn/stone_rubble
+{
+	diffusemap textures/nieb/autumn/stone_rubble.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/autumn/stone_rough
+{
+	diffusemap textures/nieb/autumn/stone_rough.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/autumn/trim1
+{
+	diffusemap textures/nieb/autumn/trim1.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/autumn/column
+{
+	diffusemap textures/nieb/autumn/column.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/autumn/face0b
+{
+	diffusemap textures/nieb/autumn/face0b.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/autumn/face3
+{
+	diffusemap textures/nieb/autumn/face3.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/autumn/face4
+{
+	diffusemap textures/nieb/autumn/face4.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/autumn/stone1
+{
+	diffusemap textures/nieb/autumn/stone1.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/autumn/rock
+{
+	diffusemap textures/nieb/autumn/rock.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/autumn/grass1
+{
+	diffusemap textures/nieb/autumn/grass1.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/stripes
+{
+	diffusemap textures/nieb/stripes.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/sand01
+{
+	diffusemap textures/nieb/sand01.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/box1
+{
+	diffusemap textures/nieb/box1.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/rough01
+{
+	diffusemap textures/nieb/rough01.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/step-top
+{
+	diffusemap textures/nieb/step-top.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/floor1
+{
+	diffusemap textures/nieb/floor1.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/complex/wall_01
+{
+	diffusemap textures/nieb/complex/wall_01.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/complex/light_01
+{
+	diffusemap textures/nieb/complex/light_01.tga
+
+	vmap_surfaceLight 1000
+	vmap_lightRGB 1.0 0.8 0.6
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/complex/door_rail
+{
+	diffusemap textures/nieb/complex/door_rail.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/complex/tile01
+{
+	diffusemap textures/nieb/complex/tile01.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/complex/woodfloor03
+{
+	diffusemap textures/nieb/complex/woodfloor03.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/complex/step02
+{
+	diffusemap textures/nieb/complex/step02.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/complex/woodfloor01
+{
+	diffusemap textures/nieb/complex/woodfloor01.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/complex/step01
+{
+	diffusemap textures/nieb/complex/step01.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/complex/woodfloor02
+{
+	diffusemap textures/nieb/complex/woodfloor02.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/complex/step03
+{
+	diffusemap textures/nieb/complex/step03.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/complex/light-switch_01
+{
+	diffusemap textures/nieb/complex/light-switch_01.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/complex/vent
+{
+	diffusemap textures/nieb/complex/vent.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/complex/tile02
+{
+	diffusemap textures/nieb/complex/tile02.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/complex/electrical-outlet
+{
+	diffusemap textures/nieb/complex/electrical-outlet.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/orange
+{
+	diffusemap textures/nieb/metal-orange.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/metal-grey
+{
+	diffusemap textures/nieb/metal-grey.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/floor2
+{
+	diffusemap textures/nieb/floor2.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/brick-red
+{
+	diffusemap textures/nieb/brick-red.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/stone1
+{
+	diffusemap textures/nieb/stone1.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/concrete-light
+{
+	diffusemap textures/nieb/concrete-light.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/concrete03
+{
+	diffusemap textures/nieb/concrete03.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/step-top2
+{
+	diffusemap textures/nieb/step-top2.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/concrete-red
+{
+	diffusemap textures/nieb/concrete-red.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/rock01
+{
+	diffusemap textures/nieb/rock01.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/nieb/grass1
+{
+	diffusemap textures/nieb/grass1.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/dev/info_node_air
+{
+	diffusemap textures/dev/info_node_air.tga
+	
+	{
+		map $diffuse
+		blendFunc blend
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/dev/info_node
+{
+	diffusemap textures/dev/info_node.tga
+	
+	{
+		map $diffuse
+		blendFunc blend
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/dev/scripted_sequence
+{
+	diffusemap textures/dev/scripted_sequence.tga
+	
+	{
+		map $diffuse
+		blendFunc blend
 	}
 }
 
@@ -3772,6 +3397,34 @@ textures/schizomania/game.pk3dir/textures/skies/yukongold
 	}
 }
 
+textures/schizomania/game.pk3dir/textures/mike/grafiti_door1
+{
+	diffusemap textures/mike/grafiti_door1.tga
+surfaceParm tile
+	{
+		map $diffuse
+surfaceParm tile
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/models/zombie_derrick/Face_Police_Zombie_MAT
+{
+	diffusemap textures/models/zombie_derrick/diffuse.tga
+    
+	{
+		map $diffuse
+	}
+}
+
+textures/schizomania/game.pk3dir/textures/models/zombie_derrick/Police_Zombie_MAT
+{
+	diffusemap textures/models/zombie_derrick/diffuse.tga
+    
+	{
+		map $diffuse
+	}
+}
+
 textures/schizomania/game.pk3dir/textures/next/dirty3
 {
 	diffusemap textures/next/dirty3.tga
@@ -4185,6 +3838,35 @@ textures/schizomania/game.pk3dir/textures/next/rusty4
 	{
 		map $diffuse
 	}
+}
+
+textures/schizomania/test_maps.pk3dir/models/logos/visions_glow
+{
+	{
+		clampmap models/logos/visions_glow.ktx
+		blendFunc add
+		rgbGen wave sin 1 0.2 1 .8
+		tcMod rotate 50
+	}
+}
+
+textures/schizomania/test_maps.pk3dir/models/logos/visions_eye
+{
+	diffusemap models/logos/visions_eye.ktx
+
+	{
+	}
+	{
+		clampmap models/logos/visions_eye.tga
+		blendFunc add
+		rgbGen wave sin 1 0.2 1 .8
+	}
+}
+
+textures/schizomania/test_maps.pk3dir/models/logos/visions_chrome
+{
+	diffusemap models/logos/visions_chrome.ktx
+	fullbrightmap models/logos/visions_chrome.ktx
 }
 
 textures/schizomania/test_maps.pk3dir/textures/measure/desk

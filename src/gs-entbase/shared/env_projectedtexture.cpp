@@ -14,7 +14,7 @@
  * OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  */
 
-/*QUAKED light_dynamic (1 0 0) (-8 -8 -8) (8 8 8)
+/*QUAKED env_projectedtexture (1 0 0) (-8 -8 -8) (8 8 8)
 "targetname"        Name
 "target"            Name of an entity in the map that light will point at.
 "_light"            Color of the spotlight in RGB255 format.
@@ -38,22 +38,20 @@ This entity was introduced in Half-Life 2 (2004).
 
 enumflags
 {
-	DLIGHTFL_CHANGED_ORIGIN,
-	DLIGHTFL_CHANGED_ANGLES,
-	DLIGHTFL_CHANGED_LIGHT,
-	DLIGHTFL_CHANGED_INTENSITY,
-	DLIGHTFL_CHANGED_INNERCONE,
-	DLIGHTFL_CHANGED_CONE,
-	DLIGHTFL_CHANGED_DISTANCE,
-	DLIGHTFL_CHANGED_RADIUS,
-	DLIGHTFL_CHANGED_STYLE,
-	DLIGHTFL_CHANGED_STATE
+	PRTEXFL_CHANGED_ORIGIN,
+	PRTEXFL_CHANGED_ANGLES,
+	PRTEXFL_CHANGED_LIGHT,
+	PRTEXFL_CHANGED_INTENSITY,
+	PRTEXFL_CHANGED_STYLE,
+	PRTEXFL_CHANGED_STATE,
+	PRTEXFL_CHANGED_TEXTURE,
+	PRTEXFL_CHANGED_FOV
 };
 
 #ifdef CLIENT
-class light_dynamic
+class env_projectedtexture
 #else
-class light_dynamic:CBaseTrigger
+class env_projectedtexture:CBaseTrigger
 #endif
 {
 	vector m_vecLight;
@@ -63,9 +61,11 @@ class light_dynamic:CBaseTrigger
 	float m_flDistance;
 	float m_flRadius;
 	float m_flStyle;
+	string m_strTextureName;
+	float m_flFOV;
 	int m_iState;
 
-	void(void) light_dynamic;
+	void(void) env_projectedtexture;
 
 #ifdef CLIENT
 	virtual void(float) ReceiveEntity;
@@ -84,81 +84,85 @@ class light_dynamic:CBaseTrigger
 
 #ifdef CLIENT
 float
-light_dynamic::predraw(void)
+env_projectedtexture::predraw(void)
 {
 	if (!m_iState) {
 		return PREDRAW_NEXT;
 	}
 
 	/* TODO: We need to handle the second cone light */
-	dynamiclight_add(origin, m_flDistance, m_vecLight, m_flStyle);
+	float p = dynamiclight_add(origin, 512, m_vecLight, m_flStyle, m_strTextureName);
+	dynamiclight_set(p, LFIELD_ANGLES, angles);
+	dynamiclight_set(p, LFIELD_FLAGS, LFLAG_NORMALMODE | LFLAG_REALTIMEMODE | LFLAG_SHADOWMAP);
+
+	if (!m_flStyle)
+		dynamiclight_set(p, LFIELD_STYLESTRING, "z");
 
 	addentity(this);
 	return PREDRAW_NEXT;
 }
 
 void
-light_dynamic::ReceiveEntity(float flFlags)
+env_projectedtexture::ReceiveEntity(float flFlags)
 {
-	if (flFlags & DLIGHTFL_CHANGED_ORIGIN) {
+	if (flFlags & PRTEXFL_CHANGED_ORIGIN) {
 		origin[0] = readcoord();
 		origin[1] = readcoord();
 		origin[2] = readcoord();
 		setorigin(this, origin);
 	}
 
-	if (flFlags & DLIGHTFL_CHANGED_ANGLES) {
+	if (flFlags & PRTEXFL_CHANGED_ANGLES) {
 		angles[0] = readfloat();
 		angles[1] = readfloat();
 		angles[2] = readfloat();
 	}
 
-	if (flFlags & DLIGHTFL_CHANGED_LIGHT) {
+	if (flFlags & PRTEXFL_CHANGED_LIGHT) {
 		m_vecLight[0] = readbyte() / 255;
 		m_vecLight[1] = readbyte() / 255;
 		m_vecLight[2] = readbyte() / 255;
 	}
 
-	if (flFlags & DLIGHTFL_CHANGED_INTENSITY)
+	if (flFlags & PRTEXFL_CHANGED_INTENSITY)
 		m_flIntensity = readfloat();
-	if (flFlags & DLIGHTFL_CHANGED_INNERCONE)
-		m_flInnerCone = readfloat();
-	if (flFlags & DLIGHTFL_CHANGED_CONE)
-		m_flCone = readfloat();
-	if (flFlags & DLIGHTFL_CHANGED_DISTANCE)
-		m_flDistance = readfloat();
-	if (flFlags & DLIGHTFL_CHANGED_RADIUS)
-		m_flRadius = readfloat();
-	if (flFlags & DLIGHTFL_CHANGED_STYLE)
+	if (flFlags & PRTEXFL_CHANGED_STYLE)
 		m_flStyle = readbyte();
-	if (flFlags & DLIGHTFL_CHANGED_STATE)
+	if (flFlags & PRTEXFL_CHANGED_STATE)
 		m_iState = readbyte();
+	if (flFlags & PRTEXFL_CHANGED_TEXTURE)
+		m_strTextureName = readstring();
+	if (flFlags & PRTEXFL_CHANGED_FOV)
+		m_flFOV = readfloat();
 
-	classname = "light_dynamic";
+	classname = "env_projectedtexture";
 }
 #else
 void
-light_dynamic::ParentUpdate(void)
+env_projectedtexture::ParentUpdate(void)
 {
 	if (net_origin != origin) {
 		net_origin = origin;
-		SendFlags |= DLIGHTFL_CHANGED_ORIGIN;
+		SendFlags |= PRTEXFL_CHANGED_ORIGIN;
 	}
 	if (net_angles != angles) {
 		net_angles = angles;
-		SendFlags |= DLIGHTFL_CHANGED_ANGLES;
+		SendFlags |= PRTEXFL_CHANGED_ANGLES;
 	}
 
 	if (m_parent) {
 		entity p = find(world, ::targetname, m_parent);
 
-		if (p)
-			SetOrigin(p.origin);
+		if (p) {
+			CBaseEntity t = (CBaseEntity)p;
+			vector ofs = m_oldOrigin - t.m_oldOrigin;
+			SetOrigin(p.origin + ofs);
+		}
 	}
 }
 
 void
-light_dynamic::Trigger(entity act, int state)
+env_projectedtexture::Trigger(entity act, int state)
 {
 	switch (state) {
 	case TRIG_OFF:
@@ -171,82 +175,62 @@ light_dynamic::Trigger(entity act, int state)
 		m_iState = 1 - m_iState;
 	}
 
-	SendFlags |= DLIGHTFL_CHANGED_STATE;
+	SendFlags |= PRTEXFL_CHANGED_STATE;
 }
 
 float
-light_dynamic::SendEntity(entity ePVSEnt, float flFlags)
+env_projectedtexture::SendEntity(entity ePVSEnt, float flFlags)
 {
-	WriteByte(MSG_ENTITY, ENT_DLIGHT);
+	WriteByte(MSG_ENTITY, ENT_PROJECTEDTEXTURE);
 	WriteFloat(MSG_ENTITY, flFlags);
 
-	if (flFlags & DLIGHTFL_CHANGED_ORIGIN) {
+	if (flFlags & PRTEXFL_CHANGED_ORIGIN) {
 		WriteCoord(MSG_ENTITY, origin[0]);
 		WriteCoord(MSG_ENTITY, origin[1]);
 		WriteCoord(MSG_ENTITY, origin[2]);
 	}
 
-	if (flFlags & DLIGHTFL_CHANGED_ANGLES) {
+	if (flFlags & PRTEXFL_CHANGED_ANGLES) {
 		WriteFloat(MSG_ENTITY, angles[0]);
 		WriteFloat(MSG_ENTITY, angles[1]);
 		WriteFloat(MSG_ENTITY, angles[2]);
 	}
 
-	if (flFlags & DLIGHTFL_CHANGED_LIGHT) {
+	if (flFlags & PRTEXFL_CHANGED_LIGHT) {
 		WriteByte(MSG_ENTITY, m_vecLight[0]);
 		WriteByte(MSG_ENTITY, m_vecLight[1]);
 		WriteByte(MSG_ENTITY, m_vecLight[2]);
 	}
 
-	if (flFlags & DLIGHTFL_CHANGED_INTENSITY)
+	if (flFlags & PRTEXFL_CHANGED_INTENSITY)
 		WriteFloat(MSG_ENTITY, m_flIntensity);
-	if (flFlags & DLIGHTFL_CHANGED_INNERCONE)
-		WriteFloat(MSG_ENTITY, m_flInnerCone);
-	if (flFlags & DLIGHTFL_CHANGED_CONE)
-		WriteFloat(MSG_ENTITY, m_flCone);
-	if (flFlags & DLIGHTFL_CHANGED_DISTANCE)
-		WriteFloat(MSG_ENTITY, m_flDistance);
-	if (flFlags & DLIGHTFL_CHANGED_RADIUS)
-		WriteFloat(MSG_ENTITY, m_flRadius);
-	if (flFlags & DLIGHTFL_CHANGED_STYLE)
+	if (flFlags & PRTEXFL_CHANGED_STYLE)
 		WriteByte(MSG_ENTITY, m_flStyle);
-	if (flFlags & DLIGHTFL_CHANGED_STATE)
+	if (flFlags & PRTEXFL_CHANGED_STATE)
 		WriteByte(MSG_ENTITY, m_iState);
+	if (flFlags & PRTEXFL_CHANGED_TEXTURE)
+		WriteString(MSG_ENTITY, m_strTextureName);
+	if (flFlags & PRTEXFL_CHANGED_FOV)
+		WriteFloat(MSG_ENTITY, m_flFOV);
 
 	return TRUE;
 }
 
 void
-light_dynamic::Input(entity eAct, string strInput, string strData)
+env_projectedtexture::Input(entity eAct, string strInput, string strData)
 {
 	switch (strInput) {
 	case "Color":
 		m_vecLight = stov(strData);
-		SendFlags |= DLIGHTFL_CHANGED_LIGHT;
+		SendFlags |= PRTEXFL_CHANGED_LIGHT;
 		break;
 	case "brightness":
 		m_flIntensity = stof(strData);
-		SendFlags |= DLIGHTFL_CHANGED_INTENSITY;
-		break;
-	case "distance":
-		m_flDistance = stof(strData);
-		SendFlags |= DLIGHTFL_CHANGED_DISTANCE;
-		break;
-	case "_inner_cone":
-		m_flInnerCone = stof(strData);
-		SendFlags |= DLIGHTFL_CHANGED_INNERCONE;
-		break;
-	case "_cone":
-		m_flCone = stof(strData);
-		SendFlags |= DLIGHTFL_CHANGED_CONE;
-		break;
-	case "spotlight_radius":
-		m_flRadius = stof(strData);
-		SendFlags |= DLIGHTFL_CHANGED_RADIUS;
+		SendFlags |= PRTEXFL_CHANGED_INTENSITY;
 		break;
 	case "style":
 		m_flStyle = stof(strData);
-		SendFlags |= DLIGHTFL_CHANGED_STYLE;
+		SendFlags |= PRTEXFL_CHANGED_STYLE;
 		break;
 	case "TurnOn":
 		Trigger(eAct, TRIG_ON);
@@ -263,30 +247,24 @@ light_dynamic::Input(entity eAct, string strInput, string strData)
 }
 
 void
-light_dynamic::SpawnKey(string strKey, string strValue)
+env_projectedtexture::SpawnKey(string strKey, string strValue)
 {
 	switch (strKey) {
-	case "_light":
-		m_vecLight = stov(strValue);
-		break;
-	case "light":
-	case "brightness":
-		m_flIntensity = stof(strValue);
-		break;
-	case "_inner_cone":
-		m_flInnerCone = stof(strValue);
-		break;
-	case "_cone":
-		m_flCone = stof(strValue);
-		break;
-	case "distance":
-		m_flDistance = stof(strValue);
-		break;
-	case "spotlight_radius":
-		m_flRadius = stof(strValue);
+	case "lightcolor":
+		tokenize(strValue);
+		m_vecLight[0] = stof(argv(0));
+		m_vecLight[1] = stof(argv(1));
+		m_vecLight[2] = stof(argv(2));
+		m_flIntensity = stof(argv(3));
 		break;
 	case "style":
 		m_flStyle = stof(strValue);
+		break;
+	case "texturename":
+		m_strTextureName = strValue;
+		break;
+	case "lightfov":
+		m_flFOV = stof(strValue);
 		break;
 	/* out-of-spec */
 	case "start_active":
@@ -298,7 +276,7 @@ light_dynamic::SpawnKey(string strKey, string strValue)
 }
 
 void
-light_dynamic::Respawn(void)
+env_projectedtexture::Respawn(void)
 {
 	SetSolid(SOLID_NOT);
 	SetSize([-16,-16,-16], [16,16,16]);
@@ -306,36 +284,21 @@ light_dynamic::Respawn(void)
 	SetAngles(m_oldAngle);
 
 	m_iState = (m_iStartActive == 1) ? 1 : 0;
-
-	SendFlags = DLIGHTFL_CHANGED_ORIGIN | \
-		DLIGHTFL_CHANGED_ANGLES | \
-		DLIGHTFL_CHANGED_LIGHT | \
-		DLIGHTFL_CHANGED_INTENSITY | \
-		DLIGHTFL_CHANGED_INNERCONE | \
-		DLIGHTFL_CHANGED_CONE | \
-		DLIGHTFL_CHANGED_DISTANCE | \
-		DLIGHTFL_CHANGED_RADIUS | \
-		DLIGHTFL_CHANGED_STYLE | \
-		DLIGHTFL_CHANGED_STATE;
 }
 #endif
 
 void
-light_dynamic::light_dynamic(void)
+env_projectedtexture::env_projectedtexture(void)
 {
 #ifdef CLIENT
 	drawmask = MASK_ENGINE;
 #else
 	m_vecLight = [255,255,255];
-	m_flDistance = 256;
+	m_flIntensity = 512;
 	m_iStartActive = 1;
+	m_strTextureName = "textures/flashlight";
+	m_flFOV = 90;
 
 	CBaseTrigger::CBaseTrigger();
 #endif
 }
-
-/* workaround for q3map2, as it turns any entity starting with light*
-   into a generic static world light. */
-#ifndef CLIENT
-CLASSEXPORT(dynamic_light, light_dynamic)
-#endif
