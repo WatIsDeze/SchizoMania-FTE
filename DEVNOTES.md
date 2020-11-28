@@ -11,8 +11,15 @@ my own ADHD good.
 # Things to research/question (medium priority):
 - How to do a proper zombie walk animaton, use offsets so it "moves backwards", to counter the slide effect.
 
-# Things to do for test_prototype map (high priority):
-## Mapping for test_prototype.
+# Prototype - Alpha - 0.1
+## Inventory/Player in-game menu.
+- Use images for buttons. (Maybe a hover glow? effect)
+- Use sound for the hover, and click etc!
+- Render a player mesh, and health/ammo status.
+    -- In the future, make him draw a weapon, or play a heavy breathing animation in case he is hurt etc.
+- Make item list scrollable.
+
+## Map: test_prototype.
 - Get a basic fade, screen text, and sequences scene going for prototype. [
     -- Needs a player mesh, doing some idle animations.
     -- Needs work on trigger_playerfreeze (crouching disable, mouse disable, inventory disable.
@@ -23,6 +30,8 @@ my own ADHD good.
 - Implement Scripted Sequences with dialogues. (I suppose, an entity which'll send a dialogue event, back and forth? :) )
 
 ## Assets.
+- Acquire gfx for preferably a blue-ish, black, based in-game menu.
+- Acquire sfx for in-game menu.
 - Acquire a few Mixamo models, for AI, and NPC's. (Also thus, Brian, the player model)
 - Acquire first person view models for a knife, and a pistol. Maybe use Mixamo meshes for the arms/hands?
 - Acquire basic sounds for doors, footsteps, ambiance.

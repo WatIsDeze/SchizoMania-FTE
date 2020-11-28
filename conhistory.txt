@@ -128,3 +128,5 @@ impulse 101
 /modelviewer models/player.mdl
 map test_dlights
 noclip
+noclip
+/map test_scenes
