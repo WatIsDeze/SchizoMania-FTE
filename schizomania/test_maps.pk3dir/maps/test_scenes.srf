@@ -614,26 +614,20 @@ default
 
 101 // SURFACE_FACE V: 4 I: 6 planar
 {
-	shader textures/nieb/complex/light-switch_01
-	entity 6
-	castShadows 0
+	shader textures/liquid/water1
 	lightmapAxis ( -1.000000 0.000000 0.000000 )
 }
 
 102 // SURFACE_FACE V: 4 I: 6 planar
 {
-	shader textures/nieb/complex/light-switch_01
-	entity 6
-	castShadows 0
+	shader textures/liquid/water1
 	lightmapAxis ( 1.000000 0.000000 0.000000 )
 }
 
 103 // SURFACE_FACE V: 4 I: 6 planar
 {
-	shader textures/nieb/complex/light-switch_01
-	entity 6
-	castShadows 0
-	lightmapAxis ( 0.000000 -1.000000 0.000000 )
+	shader textures/liquid/water1
+	lightmapAxis ( 0.000000 0.000000 1.000000 )
 }
 
 104 // SURFACE_FACE V: 4 I: 6 planar
@@ -641,7 +635,7 @@ default
 	shader textures/nieb/complex/light-switch_01
 	entity 6
 	castShadows 0
-	lightmapAxis ( 0.000000 1.000000 0.000000 )
+	lightmapAxis ( -1.000000 0.000000 0.000000 )
 }
 
 105 // SURFACE_FACE V: 4 I: 6 planar
@@ -649,7 +643,7 @@ default
 	shader textures/nieb/complex/light-switch_01
 	entity 6
 	castShadows 0
-	lightmapAxis ( 0.000000 0.000000 -1.000000 )
+	lightmapAxis ( 1.000000 0.000000 0.000000 )
 }
 
 106 // SURFACE_FACE V: 4 I: 6 planar
@@ -657,31 +651,31 @@ default
 	shader textures/nieb/complex/light-switch_01
 	entity 6
 	castShadows 0
-	lightmapAxis ( 0.000000 0.000000 1.000000 )
+	lightmapAxis ( 0.000000 -1.000000 0.000000 )
 }
 
 107 // SURFACE_FACE V: 4 I: 6 planar
 {
-	shader textures/doors/rusted_door_02
-	entity 20
+	shader textures/nieb/complex/light-switch_01
+	entity 6
 	castShadows 0
-	lightmapAxis ( -1.000000 0.000000 0.000000 )
+	lightmapAxis ( 0.000000 1.000000 0.000000 )
 }
 
 108 // SURFACE_FACE V: 4 I: 6 planar
 {
-	shader textures/doors/rusted_door_02
-	entity 20
+	shader textures/nieb/complex/light-switch_01
+	entity 6
 	castShadows 0
-	lightmapAxis ( 1.000000 0.000000 0.000000 )
+	lightmapAxis ( 0.000000 0.000000 -1.000000 )
 }
 
 109 // SURFACE_FACE V: 4 I: 6 planar
 {
-	shader textures/doors/rusted_door_02
-	entity 20
+	shader textures/nieb/complex/light-switch_01
+	entity 6
 	castShadows 0
-	lightmapAxis ( 0.000000 -1.000000 0.000000 )
+	lightmapAxis ( 0.000000 0.000000 1.000000 )
 }
 
 110 // SURFACE_FACE V: 4 I: 6 planar
@@ -689,7 +683,7 @@ default
 	shader textures/doors/rusted_door_02
 	entity 20
 	castShadows 0
-	lightmapAxis ( 0.000000 1.000000 0.000000 )
+	lightmapAxis ( -1.000000 0.000000 0.000000 )
 }
 
 111 // SURFACE_FACE V: 4 I: 6 planar
@@ -697,10 +691,34 @@ default
 	shader textures/doors/rusted_door_02
 	entity 20
 	castShadows 0
-	lightmapAxis ( 0.000000 0.000000 -1.000000 )
+	lightmapAxis ( 1.000000 0.000000 0.000000 )
 }
 
 112 // SURFACE_FACE V: 4 I: 6 planar
+{
+	shader textures/doors/rusted_door_02
+	entity 20
+	castShadows 0
+	lightmapAxis ( 0.000000 -1.000000 0.000000 )
+}
+
+113 // SURFACE_FACE V: 4 I: 6 planar
+{
+	shader textures/doors/rusted_door_02
+	entity 20
+	castShadows 0
+	lightmapAxis ( 0.000000 1.000000 0.000000 )
+}
+
+114 // SURFACE_FACE V: 4 I: 6 planar
+{
+	shader textures/doors/rusted_door_02
+	entity 20
+	castShadows 0
+	lightmapAxis ( 0.000000 0.000000 -1.000000 )
+}
+
+115 // SURFACE_FACE V: 4 I: 6 planar
 {
 	shader textures/doors/rusted_door_02
 	entity 20

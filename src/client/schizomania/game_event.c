@@ -139,9 +139,9 @@ Game_Parse_Event(float fHeader)
 	case EV_WEAPON_PICKUP:
 		int w = readbyte();
 
-		if (autocvar_cl_autoweaponswitch == 1) {
-			sendevent("PlayerSwitchWeapon", "i", w);
-		}
+		// if (autocvar_cl_autoweaponswitch == 1) {
+		// 	sendevent("PlayerSwitchWeapon", "i", w);
+		// }
 
 		HUD_WeaponPickupNotify(w);
 		break;

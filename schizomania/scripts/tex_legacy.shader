@@ -3192,6 +3192,31 @@ textures/skies/ulukai
 	}
 }
 
+textures/skies/space
+{
+	qer_editorImage textures/skies/space.tga
+	skyParms textures/skies/space/space 1024 -
+	vmap_globalTexture
+
+	surfaceParm noimpact
+	surfaceParm nolightmap
+	surfaceParm sky
+	surfaceParm nodlight
+
+	vmap_skylight 800 4
+	vmap_lightrgb .8 .4 .1
+	vmap_sunext	1 1 0.8 60 30 90 2 3
+	//vmap_sunExt 1 0.084 0.084 140 -35 25 3 16
+	nopicmip
+	nomipmaps
+
+	{
+		map $cube:textures/skies/space/space
+		map $blackimage
+		map $blackimage
+	}
+}
+
 textures/skies/smudge
 // Vera Visions Material
 {

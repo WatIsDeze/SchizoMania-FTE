@@ -12,6 +12,10 @@ my own ADHD good.
 - How to do a proper zombie walk animaton, use offsets so it "moves backwards", to counter the slide effect.
 
 # Prototype - Alpha - 0.1
+## Weapons.
+- Adjust damage values, also in Traceattack.c for when a specific bodypart has been hit.
+    -- It multiplies the damage usually by 0.4* etc, which means if a 9mm does like 9 damage... It takes a good 40 hits to kill lol
+
 ## Inventory/Player in-game menu.
 - Use images for buttons. (Maybe a hover glow? effect)
 - Use sound for the hover, and click etc!

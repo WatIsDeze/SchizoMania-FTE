@@ -199,7 +199,7 @@ monster_zombie::monster_zombie(void)
 	Sound_Precache("monster_zombie.pain");
 	netname = "Zombie Derrick";
 	model = "models/zombie_derrick/zombie_derrick.vvm";
-	base_health = 100;//Skill_GetValue("zombie_health");
+	base_health = Skill_GetValue("zombie_derrick_health");
 	base_mins = [-16,-16,0];
 	base_maxs = [16,16,72];
 

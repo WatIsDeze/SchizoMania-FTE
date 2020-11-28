@@ -1,0 +1,760 @@
+default
+{
+	castShadows 1
+	receiveShadows 1
+	sampleSize 8
+	longestCurve 0.000000
+}
+
+0 // SURFACE_PATCH V: 9 I: 0 planar
+{
+	shader textures/nieb/clone/trim05
+	longestCurve 152.145691
+	lightmapAxis ( 0.000000 0.000000 1.000000 )
+}
+
+1 // SURFACE_PATCH V: 9 I: 0 planar
+{
+	shader textures/nieb/clone/trim05
+	longestCurve 152.145691
+	lightmapAxis ( 0.000000 0.000000 -1.000000 )
+}
+
+2 // SURFACE_PATCH V: 9 I: 0 planar
+{
+	shader textures/nieb/clone/trim05
+	longestCurve 152.145691
+	lightmapAxis ( 0.000000 0.000000 -1.000000 )
+}
+
+3 // SURFACE_PATCH V: 9 I: 0 
+{
+	shader textures/nieb/clone/trim05
+	longestCurve 152.145691
+}
+
+4 // SURFACE_PATCH V: 9 I: 0 planar
+{
+	shader textures/nieb/floor1
+	longestCurve 143.195938
+	lightmapAxis ( 0.000000 0.000000 1.000000 )
+}
+
+5 // SURFACE_PATCH V: 9 I: 0 planar
+{
+	shader textures/nieb/floor1
+	longestCurve 152.145691
+	lightmapAxis ( 0.000000 0.000000 -1.000000 )
+}
+
+6 // SURFACE_PATCH V: 9 I: 0 
+{
+	shader textures/nieb/floor1
+	longestCurve 143.195938
+}
+
+7 // SURFACE_PATCH V: 9 I: 0 planar
+{
+	shader textures/nieb/clone/trim05
+	longestCurve 89.497475
+	lightmapAxis ( 0.000000 0.000000 1.000000 )
+}
+
+8 // SURFACE_PATCH V: 9 I: 0 
+{
+	shader textures/nieb/clone/trim05
+	longestCurve 89.497475
+}
+
+9 // SURFACE_PATCH V: 9 I: 0 planar
+{
+	shader textures/nieb/clone/trim05
+	longestCurve 89.497475
+	lightmapAxis ( 0.000000 0.000000 1.000000 )
+}
+
+10 // SURFACE_PATCH V: 9 I: 0 planar
+{
+	shader textures/nieb/clone/trim05
+	longestCurve 89.497475
+	lightmapAxis ( 0.000000 0.000000 -1.000000 )
+}
+
+11 // SURFACE_PATCH V: 9 I: 0 
+{
+	shader textures/nieb/clone/trim05
+	longestCurve 89.497475
+}
+
+12 // SURFACE_FACE V: 4 I: 6 planar
+{
+	shader textures/nieb/clone/brick08
+	lightmapAxis ( -1.000000 0.000000 0.000000 )
+}
+
+13 // SURFACE_FACE V: 4 I: 6 planar
+{
+	shader textures/nieb/clone/brick08
+	lightmapAxis ( 1.000000 0.000000 0.000000 )
+}
+
+14 // SURFACE_FACE V: 6 I: 12 planar
+{
+	shader textures/nieb/clone/brick08
+	lightmapAxis ( 0.000000 1.000000 0.000000 )
+}
+
+15 // SURFACE_FACE V: 4 I: 6 planar
+{
+	shader textures/nieb/clone/brick08
+	lightmapAxis ( 0.000000 0.000000 1.000000 )
+}
+
+16 // SURFACE_FACE V: 5 I: 9 planar
+{
+	shader textures/nieb/clone/trim05
+	lightmapAxis ( 1.000000 0.000000 0.000000 )
+}
+
+17 // SURFACE_FACE V: 5 I: 9 planar
+{
+	shader textures/nieb/clone/trim05
+	lightmapAxis ( 0.000000 -1.000000 0.000000 )
+}
+
+18 // SURFACE_FACE V: 6 I: 12 planar
+{
+	shader textures/nieb/clone/trim05
+	lightmapAxis ( 0.000000 0.000000 1.000000 )
+}
+
+19 // SURFACE_FACE V: 4 I: 6 planar
+{
+	shader textures/nieb/clone/trim05
+	lightmapAxis ( 1.000000 0.000000 0.000000 )
+}
+
+20 // SURFACE_FACE V: 5 I: 9 planar
+{
+	shader textures/nieb/clone/trim05
+	lightmapAxis ( 0.000000 1.000000 0.000000 )
+}
+
+21 // SURFACE_FACE V: 6 I: 12 planar
+{
+	shader textures/nieb/clone/trim05
+	lightmapAxis ( 0.000000 0.000000 1.000000 )
+}
+
+22 // SURFACE_FACE V: 7 I: 15 planar
+{
+	shader textures/nieb/clone/trim05
+	lightmapAxis ( 1.000000 0.000000 0.000000 )
+}
+
+23 // SURFACE_FACE V: 6 I: 12 planar
+{
+	shader textures/nieb/clone/trim05
+	lightmapAxis ( 0.000000 0.000000 1.000000 )
+}
+
+24 // SURFACE_FACE V: 4 I: 6 planar
+{
+	shader textures/nieb/autumn/tile
+	lightmapAxis ( 0.000000 1.000000 0.000000 )
+}
+
+25 // SURFACE_FACE V: 4 I: 6 planar
+{
+	shader textures/nieb/autumn/tile
+	lightmapAxis ( 0.000000 0.000000 1.000000 )
+}
+
+26 // SURFACE_FACE V: 4 I: 6 planar
+{
+	shader textures/nieb/clone/brick08
+	lightmapAxis ( 0.000000 -1.000000 0.000000 )
+}
+
+27 // SURFACE_FACE V: 4 I: 6 planar
+{
+	shader textures/nieb/clone/brick08
+	lightmapAxis ( 0.000000 1.000000 0.000000 )
+}
+
+28 // SURFACE_FACE V: 4 I: 6 planar
+{
+	shader textures/nieb/clone/brick08
+	lightmapAxis ( 0.000000 0.000000 1.000000 )
+}
+
+29 // SURFACE_FACE V: 6 I: 12 planar
+{
+	shader textures/nieb/clone/brick08
+	lightmapAxis ( -1.000000 0.000000 0.000000 )
+}
+
+30 // SURFACE_FACE V: 6 I: 12 planar
+{
+	shader textures/nieb/clone/brick08
+	lightmapAxis ( 1.000000 0.000000 0.000000 )
+}
+
+31 // SURFACE_FACE V: 4 I: 6 planar
+{
+	shader textures/nieb/clone/brick08
+	lightmapAxis ( 0.000000 -1.000000 0.000000 )
+}
+
+32 // SURFACE_FACE V: 8 I: 18 planar
+{
+	shader textures/nieb/clone/brick08
+	lightmapAxis ( 0.000000 1.000000 0.000000 )
+}
+
+33 // SURFACE_FACE V: 5 I: 9 planar
+{
+	shader textures/nieb/clone/brick08
+	lightmapAxis ( 0.000000 0.000000 1.000000 )
+}
+
+34 // SURFACE_FACE V: 7 I: 15 planar
+{
+	shader textures/nieb/floor1
+	lightmapAxis ( 1.000000 0.000000 0.000000 )
+}
+
+35 // SURFACE_FACE V: 4 I: 6 planar
+{
+	shader textures/nieb/floor1
+	lightmapAxis ( 0.000000 -1.000000 0.000000 )
+}
+
+36 // SURFACE_FACE V: 4 I: 6 planar
+{
+	shader textures/nieb/floor1
+	lightmapAxis ( 0.000000 0.000000 -1.000000 )
+}
+
+37 // SURFACE_FACE V: 5 I: 9 planar
+{
+	shader textures/nieb/floor1
+	lightmapAxis ( 0.000000 0.000000 1.000000 )
+}
+
+38 // SURFACE_FACE V: 4 I: 6 planar
+{
+	shader textures/nieb/clone/brick08
+	lightmapAxis ( -1.000000 0.000000 0.000000 )
+}
+
+39 // SURFACE_FACE V: 5 I: 9 planar
+{
+	shader textures/nieb/clone/brick08
+	lightmapAxis ( 1.000000 0.000000 0.000000 )
+}
+
+40 // SURFACE_FACE V: 5 I: 9 planar
+{
+	shader textures/nieb/clone/brick08
+	lightmapAxis ( 0.000000 -1.000000 0.000000 )
+}
+
+41 // SURFACE_FACE V: 4 I: 6 planar
+{
+	shader textures/nieb/clone/brick08
+	lightmapAxis ( 0.000000 0.000000 1.000000 )
+}
+
+42 // SURFACE_FACE V: 5 I: 9 planar
+{
+	shader textures/nieb/clone/gravel02
+	lightmapAxis ( 1.000000 0.000000 0.000000 )
+}
+
+43 // SURFACE_FACE V: 5 I: 9 planar
+{
+	shader textures/nieb/clone/gravel02
+	lightmapAxis ( 0.000000 1.000000 0.000000 )
+}
+
+44 // SURFACE_FACE V: 5 I: 9 planar
+{
+	shader textures/nieb/clone/gravel02
+	lightmapAxis ( 0.000000 0.000000 1.000000 )
+}
+
+45 // SURFACE_FACE V: 4 I: 6 planar
+{
+	shader textures/nieb/floor1
+	lightmapAxis ( -1.000000 0.000000 0.000000 )
+}
+
+46 // SURFACE_FACE V: 4 I: 6 planar
+{
+	shader textures/nieb/floor1
+	lightmapAxis ( 0.000000 0.000000 -1.000000 )
+}
+
+47 // SURFACE_FACE V: 4 I: 6 planar
+{
+	shader textures/nieb/floor1
+	lightmapAxis ( 0.000000 0.000000 1.000000 )
+}
+
+48 // SURFACE_FACE V: 4 I: 6 planar
+{
+	shader textures/nieb/floor1
+	lightmapAxis ( 0.000000 -1.000000 0.000000 )
+}
+
+49 // SURFACE_FACE V: 6 I: 12 planar
+{
+	shader textures/nieb/floor1
+	lightmapAxis ( 0.000000 1.000000 0.000000 )
+}
+
+50 // SURFACE_FACE V: 7 I: 15 planar
+{
+	shader textures/nieb/floor1
+	lightmapAxis ( 0.000000 0.000000 -1.000000 )
+}
+
+51 // SURFACE_FACE V: 5 I: 9 planar
+{
+	shader textures/nieb/floor1
+	lightmapAxis ( 0.000000 0.000000 1.000000 )
+}
+
+52 // SURFACE_FACE V: 6 I: 12 planar
+{
+	shader textures/nieb/floor1
+	lightmapAxis ( 1.000000 0.000000 0.000000 )
+}
+
+53 // SURFACE_FACE V: 4 I: 6 planar
+{
+	shader textures/nieb/floor1
+	lightmapAxis ( 0.000000 0.000000 -1.000000 )
+}
+
+54 // SURFACE_FACE V: 4 I: 6 planar
+{
+	shader textures/nieb/floor1
+	lightmapAxis ( 0.000000 0.000000 1.000000 )
+}
+
+55 // SURFACE_FACE V: 5 I: 9 planar
+{
+	shader textures/nieb/floor1
+	lightmapAxis ( -1.000000 0.000000 0.000000 )
+}
+
+56 // SURFACE_FACE V: 6 I: 12 planar
+{
+	shader textures/nieb/floor1
+	lightmapAxis ( 1.000000 0.000000 0.000000 )
+}
+
+57 // SURFACE_FACE V: 5 I: 9 planar
+{
+	shader textures/nieb/floor1
+	lightmapAxis ( 0.000000 -1.000000 0.000000 )
+}
+
+58 // SURFACE_FACE V: 4 I: 6 planar
+{
+	shader textures/nieb/floor1
+	lightmapAxis ( 0.000000 1.000000 0.000000 )
+}
+
+59 // SURFACE_FACE V: 5 I: 9 planar
+{
+	shader textures/nieb/floor1
+	lightmapAxis ( 0.000000 0.000000 1.000000 )
+}
+
+60 // SURFACE_FACE V: 4 I: 6 planar
+{
+	shader textures/nieb/floor1
+	lightmapAxis ( -1.000000 0.000000 0.000000 )
+}
+
+61 // SURFACE_FACE V: 4 I: 6 planar
+{
+	shader textures/nieb/floor1
+	lightmapAxis ( 0.000000 1.000000 0.000000 )
+}
+
+62 // SURFACE_FACE V: 4 I: 6 planar
+{
+	shader textures/nieb/floor1
+	lightmapAxis ( 0.000000 0.000000 -1.000000 )
+}
+
+63 // SURFACE_FACE V: 4 I: 6 planar
+{
+	shader textures/nieb/floor1
+	lightmapAxis ( 0.000000 0.000000 1.000000 )
+}
+
+64 // SURFACE_FACE V: 4 I: 6 planar
+{
+	shader textures/nieb/floor1
+	lightmapAxis ( -1.000000 0.000000 0.000000 )
+}
+
+65 // SURFACE_FACE V: 4 I: 6 planar
+{
+	shader textures/nieb/floor1
+	lightmapAxis ( 0.000000 -1.000000 0.000000 )
+}
+
+66 // SURFACE_FACE V: 4 I: 6 planar
+{
+	shader textures/nieb/floor1
+	lightmapAxis ( 0.000000 1.000000 0.000000 )
+}
+
+67 // SURFACE_FACE V: 6 I: 12 planar
+{
+	shader textures/nieb/floor1
+	lightmapAxis ( 0.000000 0.000000 -1.000000 )
+}
+
+68 // SURFACE_FACE V: 6 I: 12 planar
+{
+	shader textures/nieb/floor1
+	lightmapAxis ( 0.000000 0.000000 1.000000 )
+}
+
+69 // SURFACE_FACE V: 6 I: 12 planar
+{
+	shader textures/nieb/clone/gravel02
+	lightmapAxis ( -1.000000 0.000000 0.000000 )
+}
+
+70 // SURFACE_FACE V: 4 I: 6 planar
+{
+	shader textures/nieb/clone/gravel02
+	lightmapAxis ( 1.000000 0.000000 0.000000 )
+}
+
+71 // SURFACE_FACE V: 5 I: 9 planar
+{
+	shader textures/nieb/clone/gravel02
+	lightmapAxis ( 0.000000 -1.000000 0.000000 )
+}
+
+72 // SURFACE_FACE V: 6 I: 12 planar
+{
+	shader textures/nieb/clone/gravel02
+	lightmapAxis ( 0.000000 1.000000 0.000000 )
+}
+
+73 // SURFACE_FACE V: 8 I: 18 planar
+{
+	shader textures/nieb/clone/gravel02
+	lightmapAxis ( 0.000000 0.000000 1.000000 )
+}
+
+74 // SURFACE_FACE V: 8 I: 18 planar
+{
+	shader textures/nieb/clone/brick10
+	lightmapAxis ( -1.000000 0.000000 0.000000 )
+}
+
+75 // SURFACE_FACE V: 8 I: 18 planar
+{
+	shader textures/nieb/clone/brick10
+	lightmapAxis ( 0.000000 -1.000000 0.000000 )
+}
+
+76 // SURFACE_FACE V: 6 I: 12 planar
+{
+	shader textures/nieb/clone/brick10
+	lightmapAxis ( 0.000000 1.000000 0.000000 )
+}
+
+77 // SURFACE_FACE V: 4 I: 6 planar
+{
+	shader textures/nieb/clone/brick10
+	lightmapAxis ( 0.000000 0.000000 1.000000 )
+}
+
+78 // SURFACE_FACE V: 4 I: 6 planar
+{
+	shader textures/nieb/clone/brick08
+	lightmapAxis ( -1.000000 0.000000 0.000000 )
+}
+
+79 // SURFACE_FACE V: 6 I: 12 planar
+{
+	shader textures/nieb/clone/brick08
+	lightmapAxis ( 1.000000 0.000000 0.000000 )
+}
+
+80 // SURFACE_FACE V: 6 I: 12 planar
+{
+	shader textures/nieb/clone/brick08
+	lightmapAxis ( 0.000000 -1.000000 0.000000 )
+}
+
+81 // SURFACE_FACE V: 4 I: 6 planar
+{
+	shader textures/nieb/clone/brick08
+	lightmapAxis ( 0.000000 1.000000 0.000000 )
+}
+
+82 // SURFACE_FACE V: 4 I: 6 planar
+{
+	shader textures/nieb/clone/brick08
+	lightmapAxis ( 0.000000 0.000000 1.000000 )
+}
+
+83 // SURFACE_FACE V: 7 I: 15 planar
+{
+	shader textures/nieb/clone/brick10
+	lightmapAxis ( -1.000000 0.000000 0.000000 )
+}
+
+84 // SURFACE_FACE V: 5 I: 9 planar
+{
+	shader textures/nieb/clone/brick10
+	lightmapAxis ( 1.000000 0.000000 0.000000 )
+}
+
+85 // SURFACE_FACE V: 6 I: 12 planar
+{
+	shader textures/nieb/clone/brick10
+	lightmapAxis ( 0.000000 -1.000000 0.000000 )
+}
+
+86 // SURFACE_FACE V: 4 I: 6 planar
+{
+	shader textures/nieb/clone/brick10
+	lightmapAxis ( 0.000000 1.000000 0.000000 )
+}
+
+87 // SURFACE_FACE V: 5 I: 9 planar
+{
+	shader textures/nieb/clone/brick10
+	lightmapAxis ( 0.000000 0.000000 1.000000 )
+}
+
+88 // SURFACE_FACE V: 6 I: 12 planar
+{
+	shader textures/nieb/clone/brick08
+	lightmapAxis ( -1.000000 0.000000 0.000000 )
+}
+
+89 // SURFACE_FACE V: 6 I: 12 planar
+{
+	shader textures/nieb/clone/brick08
+	lightmapAxis ( 1.000000 0.000000 0.000000 )
+}
+
+90 // SURFACE_FACE V: 4 I: 6 planar
+{
+	shader textures/nieb/clone/brick08
+	lightmapAxis ( 0.000000 -1.000000 0.000000 )
+}
+
+91 // SURFACE_FACE V: 8 I: 18 planar
+{
+	shader textures/nieb/clone/brick08
+	lightmapAxis ( 0.000000 1.000000 0.000000 )
+}
+
+92 // SURFACE_FACE V: 5 I: 9 planar
+{
+	shader textures/nieb/clone/brick08
+	lightmapAxis ( 0.000000 0.000000 1.000000 )
+}
+
+93 // SURFACE_FACE V: 4 I: 6 planar
+{
+	shader textures/skies/space
+	sampleSize 0
+}
+
+94 // SURFACE_FACE V: 4 I: 6 planar
+{
+	shader textures/skies/space
+	sampleSize 0
+}
+
+95 // SURFACE_FACE V: 4 I: 6 planar
+{
+	shader textures/skies/space
+	sampleSize 0
+}
+
+96 // SURFACE_FACE V: 4 I: 6 planar
+{
+	shader textures/skies/space
+	sampleSize 0
+}
+
+97 // SURFACE_FACE V: 4 I: 6 planar
+{
+	shader textures/skies/space
+	sampleSize 0
+}
+
+98 // SURFACE_FACE V: 4 I: 6 planar
+{
+	shader textures/nieb/clone/rock01
+	lightmapAxis ( 0.000000 -1.000000 0.000000 )
+}
+
+99 // SURFACE_FACE V: 4 I: 6 planar
+{
+	shader textures/nieb/clone/rock01
+	lightmapAxis ( 0.000000 1.000000 0.000000 )
+}
+
+100 // SURFACE_FACE V: 4 I: 6 planar
+{
+	shader textures/nieb/clone/rock01
+	lightmapAxis ( -1.000000 0.000000 0.000000 )
+}
+
+101 // SURFACE_FACE V: 4 I: 6 planar
+{
+	shader textures/nieb/clone/rock01
+	lightmapAxis ( 1.000000 0.000000 0.000000 )
+}
+
+102 // SURFACE_FACE V: 4 I: 6 planar
+{
+	shader textures/nieb/clone/rock01
+	lightmapAxis ( 0.000000 0.000000 1.000000 )
+}
+
+103 // SURFACE_FACE V: 5 I: 9 planar
+{
+	shader textures/nieb/clone/grass02
+	lightmapAxis ( 0.000000 0.000000 1.000000 )
+}
+
+104 // SURFACE_FACE V: 5 I: 9 planar
+{
+	shader textures/nieb/clone/grass02
+	lightmapAxis ( 0.000000 0.000000 1.000000 )
+}
+
+105 // SURFACE_FACE V: 4 I: 6 planar
+{
+	shader textures/nieb/clone/grass02
+	lightmapAxis ( 0.000000 0.000000 1.000000 )
+}
+
+106 // SURFACE_FACE V: 4 I: 6 planar
+{
+	shader textures/nieb/clone/grass02
+	lightmapAxis ( 0.000000 0.000000 1.000000 )
+}
+
+107 // SURFACE_FACE V: 4 I: 6 planar
+{
+	shader textures/nieb/clone/grass02
+	lightmapAxis ( 0.000000 0.000000 1.000000 )
+}
+
+108 // SURFACE_FACE V: 4 I: 6 planar
+{
+	shader textures/nieb/clone/grass02
+	lightmapAxis ( 0.000000 0.000000 1.000000 )
+}
+
+109 // SURFACE_FACE V: 4 I: 6 planar
+{
+	shader textures/nieb/clone/grass02
+	lightmapAxis ( 0.000000 0.000000 1.000000 )
+}
+
+110 // SURFACE_FACE V: 4 I: 6 planar
+{
+	shader textures/nieb/clone/grass02
+	lightmapAxis ( 0.000000 0.000000 1.000000 )
+}
+
+111 // SURFACE_FACE V: 6 I: 12 planar
+{
+	shader textures/nieb/clone/grass02
+	lightmapAxis ( 0.000000 0.000000 1.000000 )
+}
+
+112 // SURFACE_FACE V: 6 I: 12 planar
+{
+	shader textures/nieb/clone/grass02
+	lightmapAxis ( 0.000000 0.000000 1.000000 )
+}
+
+113 // SURFACE_FACE V: 8 I: 18 planar
+{
+	shader textures/nieb/clone/grass02
+	lightmapAxis ( 0.000000 0.000000 1.000000 )
+}
+
+114 // SURFACE_FACE V: 6 I: 12 planar
+{
+	shader textures/nieb/clone/grass02
+	lightmapAxis ( 0.000000 0.000000 1.000000 )
+}
+
+115 // SURFACE_FACE V: 4 I: 6 planar
+{
+	shader textures/nieb/clone/grass02
+	lightmapAxis ( 0.000000 0.000000 1.000000 )
+}
+
+116 // SURFACE_FACE V: 4 I: 6 planar
+{
+	shader textures/skies/space
+	sampleSize 0
+}
+
+117 // SURFACE_FACE V: 7 I: 15 planar
+{
+	shader textures/skies/space
+	sampleSize 0
+}
+
+118 // SURFACE_FACE V: 7 I: 15 planar
+{
+	shader textures/skies/space
+	sampleSize 0
+}
+
+119 // SURFACE_FACE V: 7 I: 15 planar
+{
+	shader textures/skies/space
+	sampleSize 0
+}
+
+120 // SURFACE_FACE V: 7 I: 15 planar
+{
+	shader textures/skies/space
+	sampleSize 0
+}
+
+121 // SURFACE_FACE V: 5 I: 9 planar
+{
+	shader textures/nieb/clone/grass02
+	lightmapAxis ( 0.000000 0.000000 1.000000 )
+}
+
+122 // SURFACE_FACE V: 4 I: 6 planar
+{
+	shader textures/nieb/clone/grass02
+	lightmapAxis ( 0.000000 0.000000 1.000000 )
+}
+
+123 // SURFACE_FACE V: 7 I: 15 planar
+{
+	shader textures/nieb/clone/grass02
+	lightmapAxis ( 0.000000 0.000000 1.000000 )
+}
+

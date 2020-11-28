@@ -61,7 +61,7 @@ TraceAttack_FireSingle(vector vecPos, vector vAngle, int iDamage, int iWeapon)
 			// 	trace_ent.items &= ~ITEM_HELMET;
 			// 	return;
 			// } else {
-				iDamage *= 4;
+				iDamage *= 2;
 			//}
 			break;
 		case BODY_STOMACH:

@@ -147,12 +147,11 @@ Player_ReceiveEntity(float new)
 		pl.a_ammo3 = readbyte();
 
 
-	// <WatIs>
+	// <SCMA>
 	if (fl & PLAYER_CSSHOT)
 		pl.scma_shotmultiplier = readbyte();
 	if (fl & PLAYER_CSSHOTTIME)
 		pl.scma_shottime = readfloat();
-	
 	// </SCMA>
 
 	setorigin(pl, pl.origin);
