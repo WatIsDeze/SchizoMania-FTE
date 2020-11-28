@@ -130,3 +130,15 @@ map test_dlights
 noclip
 noclip
 /map test_scenes
+/map test_scenes
+/map test_scenes
+/map test_scenes
+/map test_scenes
+/map test_current
+noclip
+noclip
+noclip
+/map test_current
+/map test_current
+impulse 101
+/map test_current
