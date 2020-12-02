@@ -98,4 +98,4 @@ prop_dynamic::prop_dynamic(void)
 	Init();
 }
 
-//CLASSEXPORT(prop_static, prop_dynamic)
+CLASSEXPORT(prop_static, prop_dynamic)

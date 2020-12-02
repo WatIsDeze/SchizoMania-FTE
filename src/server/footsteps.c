@@ -253,9 +253,9 @@ Footsteps_Update(void)
 	pl = (base_player)self;
 
 	if (pl.movetype == MOVETYPE_WALK) {
-		//if ((pl.velocity[0] == 0 && pl.velocity[1] == 0) || pl.step_time > time) {
-		if ((fabs(pl.velocity[0]) <= 0.12 || fabs(pl.velocity[1]) <= 0.12) || pl.step_time > time) {
-			dprint(sprintf("pl.steptime = %f - time = %f - %f - %f\n", pl.step_time, time, pl.velocity[0], pl.velocity[1]));
+		if ((pl.velocity[0] == 0 && pl.velocity[1] == 0) || pl.step_time > time) {
+		//if ((fabs(pl.velocity[0]) <= 0.12 || fabs(pl.velocity[1]) <= 0.12) || pl.step_time > time) {
+			//dprint(sprintf("pl.steptime = %f - time = %f - %f - %f\n", pl.step_time, time, pl.velocity[0], pl.velocity[1]));
 		
 			return;
 		}
@@ -267,7 +267,7 @@ Footsteps_Update(void)
 		}
 
 		/* the footsteps call might overwrite this later */
-		pl.step_time = time + 0.35;
+		pl.step_time = time + 0.55;
 
 		switch (serverkeyfloat("*bspversion")) {
 		case 30: /* HL */

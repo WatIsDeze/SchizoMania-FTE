@@ -317,6 +317,8 @@ CSQC_UpdateView(float w, float h, float focus)
 			CSQC_RenderScene();
 		}
 
+		RenderTarget_Monitor_Update();
+
 		for (entity b = world; (b = findfloat(b, ::isCSQC, 1));) {
 			CBaseEntity pf = (CBaseEntity) b;
 			pf.postdraw();
@@ -846,6 +848,13 @@ CSQC_Ent_Update(float new)
 			spawnfunc_trigger_camera();
 		}
 		tc.ReceiveEntity(readfloat());
+		break;
+	case ENT_MONITOR:
+		func_monitor fc = (func_monitor)self;
+		if (new) {
+			spawnfunc_func_monitor();
+		}
+		fc.ReceiveEntity(readfloat());
 		break;
 	case ENT_DLIGHT:
 		light_dynamic dl = (light_dynamic)self;

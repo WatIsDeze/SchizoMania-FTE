@@ -1,0 +1,10 @@
+{
+	diffusemap textures/models/weapons/knife/arms_diffuse.tga
+	normalmap textures/models/weapons/knife/arms_normals.tga
+    
+	{
+		program vertexlit
+		map $diffuse
+		map $normalmap
+	}
+}

@@ -26,8 +26,6 @@
 #include "vehicles.h"
 #include "traceattack.h"
 
-#define CLASSEXPORT(classname,classa) void classname(void) { spawnfunc_##classa(); }
-
 #define AREAPORTAL_CLOSED 0
 #define AREAPORTAL_OPEN 1
 

@@ -25,8 +25,9 @@ Crowbar Weapon
 
 enum
 {
-	CBAR_IDLE,
-	CBAR_DRAW,
+	CBAR_TPOSE,
+	CBAR_IDLE1,
+	CBAR_ATTACK1,
 	CBAR_HOLSTER,
 	CBAR_ATTACK1HIT,
 	CBAR_ATTACK1MISS,
@@ -80,13 +81,13 @@ void
 w_crowbar_draw(void)
 {
 	Weapons_SetModel("models/weapons/knife/arms.vvm");
-	Weapons_ViewAnimation(CBAR_DRAW);
+	Weapons_ViewAnimation(CBAR_IDLE1);
 }
 
 void
 w_crowbar_holster(void)
 {
-	Weapons_ViewAnimation(CBAR_HOLSTER);
+	Weapons_ViewAnimation(CBAR_IDLE1);
 }
 
 void
@@ -119,13 +120,13 @@ w_crowbar_primary(void)
 	int r = (float)input_sequence % 3;
 	switch (r) {
 	case 0:
-		Weapons_ViewAnimation(trace_fraction >= 1 ? CBAR_ATTACK1MISS:CBAR_ATTACK1HIT);
+		Weapons_ViewAnimation(trace_fraction >= 1 ? CBAR_ATTACK1:CBAR_ATTACK1);
 		break;
 	case 1:
-		Weapons_ViewAnimation(trace_fraction >= 1 ? CBAR_ATTACK2MISS:CBAR_ATTACK2HIT);
+		Weapons_ViewAnimation(trace_fraction >= 1 ? CBAR_ATTACK1:CBAR_ATTACK1);
 		break;
 	default:
-		Weapons_ViewAnimation(trace_fraction >= 1 ? CBAR_ATTACK3MISS:CBAR_ATTACK3HIT);
+		Weapons_ViewAnimation(trace_fraction >= 1 ? CBAR_ATTACK1:CBAR_ATTACK1);
 	}
 
 #ifdef SERVER
@@ -168,14 +169,15 @@ w_crowbar_release(void)
 		return;
 	}
 
-	Weapons_ViewAnimation(CBAR_IDLE + 1);
+	Weapons_ViewAnimation(CBAR_IDLE1);
 	pl.w_idle_next = 15.0f;
 }
 
 float
 w_crowbar_aimanim(void)
 {
-	return self.flags & FL_CROUCHING ? ANIM_CR_AIMCROWBAR : ANIM_AIMCROWBAR;
+	return CBAR_IDLE1;
+//	return self.flags & FL_CROUCHING ? ANIM_CR_AIMCROWBAR : ANIM_AIMCROWBAR;
 }
 
 void
