@@ -1,0 +1,8 @@
+{
+	diffusemap textures/windows/wood_window_small_03_bottom.tga
+
+	{
+		program lightmapped
+		map $diffuse
+	}
+}

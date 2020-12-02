@@ -1,0 +1,8 @@
+{
+	diffusemap textures/skyroom/city_appartment_006.tga
+
+	{
+		program lightmapped
+		map $diffuse
+	}
+}

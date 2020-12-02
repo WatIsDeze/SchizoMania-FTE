@@ -452,6 +452,24 @@ textures/dev/scripted_sequence
 	}
 }
 
+textures/doors/wood_door_03
+{
+	diffusemap textures/doors/wood_door_03.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/doors/wood_door_01
+{
+	diffusemap textures/doors/wood_door_01.tga
+
+	{
+		map $diffuse
+	}
+}
+
 textures/doors/rusted_door_02
 {
 	diffusemap textures/doors/rusted_door_02.tga
@@ -464,6 +482,56 @@ textures/doors/rusted_door_02
 textures/doors/rusted_door_01
 {
 	diffusemap textures/doors/rusted_door_01.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/doors/wood_door_02
+{
+	diffusemap textures/doors/wood_door_02.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/fences/fence001
+{
+	diffusemap textures/fences/fence001.tga
+
+    surfaceParm trans
+    surfaceParm nomarks
+    surfaceParm noimpact
+    
+	{
+		map $diffuse
+        blendfunc blend
+	}
+}
+
+textures/floors/tiled_pavement_gray
+{
+	diffusemap textures/floors/tiled_pavement_01_gray.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/floors/tiled_pavement_white
+{
+	diffusemap textures/floors/tiled_pavement_01_white.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/floors/stone1b
+{
+	diffusemap textures/floors/tiled_pavement_01_gray.tga
 
 	{
 		map $diffuse
@@ -701,10 +769,9 @@ textures/measure/player
 textures/mike/grafiti_door1
 {
 	diffusemap textures/mike/grafiti_door1.tga
-surfaceParm tile
+
 	{
 		map $diffuse
-surfaceParm tile
 	}
 }
 
@@ -3307,6 +3374,132 @@ textures/skies/yukongold
 		map $blackimage
 		map $cube:textures/skies/yukongold/bg
 		map $cube:textures/skies/yukongold/fg
+	}
+}
+
+textures/skyroom/city_appartment_004
+{
+	diffusemap textures/skyroom/city_appartment_004.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/skyroom/city_appartment_002
+{
+	diffusemap textures/skyroom/city_appartment_002.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/skyroom/city_appartment_007
+{
+	diffusemap textures/skyroom/city_appartment_007.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/skyroom/city_appartment_001
+{
+	diffusemap textures/skyroom/city_appartment_001.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/skyroom/city_appartment_006
+{
+	diffusemap textures/skyroom/city_appartment_006.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/skyroom/city_appartment_005
+{
+	diffusemap textures/skyroom/city_appartment_005.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/skyroom/city_appartment_003
+{
+	diffusemap textures/skyroom/city_appartment_003.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/windows/wood_window_small_02_bottom
+{
+	diffusemap textures/windows/wood_window_small_02_bottom.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/windows/wood_window_small_03_bottom
+{
+	diffusemap textures/windows/wood_window_small_03_bottom.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/windows/wood_window_small_01
+{
+	diffusemap textures/windows/wood_window_small_01.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/windows/window_fence_01_top
+{
+	diffusemap textures/windows/window_fence_01_top.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/windows/wood_window_small_02_top
+{
+	diffusemap textures/windows/wood_window_small_02_top.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/windows/window_fence_01_bottom
+{
+	diffusemap textures/windows/window_fence_01_bottom.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/windows/wood_window_small_03_top
+{
+	diffusemap textures/windows/wood_window_small_03_top.tga
+
+	{
+		map $diffuse
 	}
 }
 

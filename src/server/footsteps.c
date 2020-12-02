@@ -253,7 +253,10 @@ Footsteps_Update(void)
 	pl = (base_player)self;
 
 	if (pl.movetype == MOVETYPE_WALK) {
-		if ((pl.velocity[0] == 0 && pl.velocity[1] == 0) || pl.step_time > time) {
+		//if ((pl.velocity[0] == 0 && pl.velocity[1] == 0) || pl.step_time > time) {
+		if ((fabs(pl.velocity[0]) <= 0.12 || fabs(pl.velocity[1]) <= 0.12) || pl.step_time > time) {
+			dprint(sprintf("pl.steptime = %f - time = %f - %f - %f\n", pl.step_time, time, pl.velocity[0], pl.velocity[1]));
+		
 			return;
 		}
 

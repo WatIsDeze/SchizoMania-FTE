@@ -32,6 +32,9 @@ When the PC_TELEPORT flag is set, the train passing this node will immediately
 teleport to the position of the next node (target).
 
 With the PC_FIREONCE flag set, it'll only fire its target (message) once.
+
+Trivia:
+This entity was introduced in Quake (1996).
 */
 
 #ifdef DEVELOPER
@@ -63,7 +66,7 @@ path_corner::Trigger(entity act, int state)
 {
 	entity a;
 
-	if ((spawnflags & PC_FIREONCE) && (m_iFired)) {
+	if ((spawnflags & PC_FIREONCE) && m_iFired) {
 		return;
 	}
 
@@ -111,5 +114,6 @@ void
 path_corner::path_corner(void)
 {
 	m_flWait = 1.0f;
+	m_flSpeed = 100.0f;
 	CBaseTrigger::CBaseTrigger();
 }

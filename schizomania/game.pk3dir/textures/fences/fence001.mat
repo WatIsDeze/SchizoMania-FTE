@@ -1,0 +1,14 @@
+{
+	diffusemap textures/fences/fence001.tga
+    normalmap texture/fences/fence001_normal.tga
+
+    surfaceParm trans
+    surfaceParm nomarks
+    surfaceParm noimpact
+    
+	{
+		program lightmapped
+		map $diffuse
+        blendfunc blend
+	}
+}

@@ -1,11 +1,10 @@
 {
 	diffusemap textures/mike/grafiti_door1.tga
     normalmap textures/mike/grafiti_door1_normal.tga
-surfaceParm tile
+
 	{
 		program lightmapped
 		map $diffuse
 		map $normalmap
-surfaceParm tile
 	}
 }

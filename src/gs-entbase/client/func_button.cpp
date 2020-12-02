@@ -27,6 +27,13 @@
 "sounds"        Obsolete legacy key for HL/Q1 style buttons to decide
                 which sounds to play.
 
+Outputs:
+"OnDamaged"     Fired when the button is damaged.
+"OnPressed"     Fired when the button is pressed.
+"OnUseLocked"   Fired when the button is used while locked.
+"OnIn"          Fired when the button reaches the in/pressed position.
+"OnOut"         Fired when the button reaches the out/released position.
+                
 A brush entity which can be used either by touching, interaction (via a games'
 use-key/button or other targetting methods.
 It will then travel, similar to a door to a specified direction.
@@ -44,6 +51,9 @@ When SF_BTT_SPARKS is set, the button will create a bunch of sparks when used.
 
 When SF_BTT_TOUCH_ONLY is set, the use key/button cannot be used to interact
 with the button, it has to collide against a player.
+
+Trivia:
+This entity was introduced in Quake (1996).
 */
 
 enumflags
@@ -91,6 +101,13 @@ class func_button:CBaseTrigger
 	string m_strSndPressed;
 	string m_strSndUnpressed;
 
+	/* input/output */
+	string m_strOnPressed;
+	string m_strOnDamaged;
+	string m_strOnUseLocked;
+	string m_strOnIn;
+	string m_strOnOut;
+
 	virtual void(void) Respawn;
 	virtual void(void) Arrived;
 	virtual void(void) Returned;
@@ -114,6 +131,7 @@ func_button::Arrived(void)
 	velocity = [0,0,0];
 	nextthink = 0;
 
+	UseOutput(this, m_strOnIn);
 	m_iState = STATE_RAISED;
 	
 	if (spawnflags & SF_BTT_TOUCH_ONLY) {
@@ -135,6 +153,7 @@ func_button::Arrived(void)
 void
 func_button::Returned(void)
 {
+	UseOutput(this, m_strOnOut);
 	SetOrigin(m_vecDest);
 	velocity = [0,0,0];
 	nextthink = 0;
@@ -194,6 +213,9 @@ func_button::MoveAway(void)
 void
 func_button::Trigger(entity act, int state)
 {
+	
+	UseOutput(act, m_strOnUseLocked);
+
 	if (m_flNextTrigger > time) {
 		return;
 	}
@@ -211,6 +233,8 @@ func_button::Trigger(entity act, int state)
 		Sound_Play(this, CHAN_VOICE, m_strSndPressed);
 
 	MoveAway();
+
+	UseOutput(act, m_strOnPressed);
 	UseTargets(act, TRIG_TOGGLE, m_flDelay);
 }
 
@@ -235,7 +259,11 @@ func_button::Use(void)
 void
 func_button::Death(void)
 {
-	Trigger(g_dmg_eAttacker, TRIG_TOGGLE);
+	if (m_strOnOut)
+		UseOutput(g_dmg_eAttacker, m_strOnDamaged);
+	else
+		Trigger(g_dmg_eAttacker, TRIG_TOGGLE);
+
 	health = m_oldHealth;
 }
 
@@ -363,6 +391,27 @@ func_button::SpawnKey(string strKey, string strValue)
 	case "wait":
 		m_flWait = stof(strValue);
 		break;
+	/* input/output */
+	case "OnPressed":
+		strValue = strreplace(",", ",_", strValue);
+		m_strOnPressed = strcat(m_strOnPressed, ",_", strValue);
+		break;
+	case "OnDamaged":
+		strValue = strreplace(",", ",_", strValue);
+		m_strOnDamaged = strcat(m_strOnDamaged, ",_", strValue);
+		break;
+	case "OnUseLocked":
+		strValue = strreplace(",", ",_", strValue);
+		m_strOnUseLocked = strcat(m_strOnUseLocked, ",_", strValue);
+		break;
+	case "OnIn":
+		strValue = strreplace(",", ",_", strValue);
+		m_strOnIn = strcat(m_strOnIn, ",_", strValue);
+		break;
+	case "OnOut":
+		strValue = strreplace(",", ",_", strValue);
+		m_strOnOut = strcat(m_strOnOut, ",_", strValue);
+		break;
 	/* compatibility */
 	case "sounds":
 		m_strSndPressed = sprintf("func_button.hlsfx_%i", stoi(strValue) + 1i);
@@ -379,9 +428,14 @@ func_button::func_button(void)
 
 	CBaseTrigger::CBaseTrigger();
 
-	if (m_strSndPressed)
-		Sound_Precache(m_strSndPressed);
+	/* sounds */
+	Sound_Precache(m_strSndPressed);
+	Sound_Precache(m_strSndUnpressed);
 
-	if (m_strSndUnpressed)
-		Sound_Precache(m_strSndUnpressed);
+	/* input/output */
+	m_strOnPressed = CreateOutput(m_strOnPressed);
+	m_strOnDamaged = CreateOutput(m_strOnDamaged);
+	m_strOnUseLocked = CreateOutput(m_strOnUseLocked);
+	m_strOnIn = CreateOutput(m_strOnIn);
+	m_strOnOut = CreateOutput(m_strOnOut);
 }

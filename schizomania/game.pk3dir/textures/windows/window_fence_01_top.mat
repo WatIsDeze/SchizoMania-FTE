@@ -1,0 +1,10 @@
+{
+	diffusemap textures/windows/window_fence_01_top.tga
+	normalmap textures/windowss/window_fence_01_top_normal.tga
+
+	{
+		program lightmapped
+		map $diffuse
+		map $normalmap
+	}
+}

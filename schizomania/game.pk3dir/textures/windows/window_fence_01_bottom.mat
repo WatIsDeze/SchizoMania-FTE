@@ -1,0 +1,8 @@
+{
+	diffusemap textures/windows/window_fence_01_bottom.tga
+
+	{
+		program lightmapped
+		map $diffuse
+	}
+}

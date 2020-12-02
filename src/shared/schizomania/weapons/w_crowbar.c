@@ -45,7 +45,8 @@ w_crowbar_precache(void)
 	Sound_Precache("weapon_crowbar.hitbody");
 	precache_model("models/w_crowbar.mdl");
 #else
-	precache_model("models/v_crowbar.mdl");
+	precache_model("models/weapons/knife/arms.vvm");
+	precache_model("models/weapons/knife/knife.vvm");
 	precache_model("models/p_crowbar.mdl");
 #endif
 }
@@ -78,7 +79,7 @@ w_crowbar_deathmsg(void)
 void
 w_crowbar_draw(void)
 {
-	Weapons_SetModel("models/v_crowbar.mdl");
+	Weapons_SetModel("models/weapons/knife/arms.vvm");
 	Weapons_ViewAnimation(CBAR_DRAW);
 }
 
@@ -167,7 +168,7 @@ w_crowbar_release(void)
 		return;
 	}
 
-	Weapons_ViewAnimation(CBAR_IDLE);
+	Weapons_ViewAnimation(CBAR_IDLE + 1);
 	pl.w_idle_next = 15.0f;
 }
 

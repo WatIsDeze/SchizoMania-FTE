@@ -1,0 +1,10 @@
+{
+	diffusemap textures/doors/wood_door_03.tga
+	normalmap textures/doors/wood_door_03_normal.tga
+
+	{
+		program lightmapped
+		map $diffuse
+		map $normalmap
+	}
+}

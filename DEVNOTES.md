@@ -13,6 +13,8 @@ my own ADHD good.
 
 # Prototype - Alpha - 0.1
 ## Weapons.
+- Flashlight, not a weapon per se.
+    -- Make it flicker/blink more when battery runs low.
 - Adjust damage values, also in Traceattack.c for when a specific bodypart has been hit.
     -- It multiplies the damage usually by 0.4* etc, which means if a 9mm does like 9 damage... It takes a good 40 hits to kill lol
 

@@ -39,7 +39,7 @@ Player_PreDraw(base_player pl, int thirdperson)
 			float p = dynamiclight_add(src, 512, [1,0.8,0.6], 0, "textures/flashlight");
 			dynamiclight_set(p, LFIELD_ANGLES, ang);
 			dynamiclight_set(p, LFIELD_FLAGS, LFLAG_NORMALMODE | LFLAG_REALTIMEMODE);
-			dynamiclight_set(p, LFIELD_STYLESTRING, "kkkkiiikklllklliikllll");
+			dynamiclight_set(p, LFIELD_STYLESTRING, "kkkllliiillkklllkkklliillkkllll");
 		}
 	}
 }
