@@ -553,6 +553,21 @@ textures/glass/glass_01
         blendFunc GL_ONE GL_ONE
     }
 }
+textures/lights/city/light_streetlamp001
+{
+	qer_editorImage textures/lights/city/light_streetlamp001.tga
+	qer_trans 0.50
+	
+	surfaceParm nonsolid
+	surfaceParm trans
+	surfaceParm nomarks
+    surfaceParm noshadows
+    nomipmaps
+
+    vmap_surfaceLight 65
+    vmap_lightImage textures/lights/city/light_streetlamp001.tga
+}
+
 textures/liquid/water1
 // Vera Visions Material
 {
@@ -756,6 +771,16 @@ textures/measure/wall128_blend
 	}
 }
 
+textures/measure/rtsurface
+// Vera Visions Material
+{
+	qer_editorimage "textures/measure/rtsurface.tga"
+
+	{
+		map $rt:base
+	}
+}
+
 textures/measure/player
 // Vera Visions Material
 {
@@ -775,6 +800,24 @@ textures/mike/grafiti_door1
 	}
 }
 
+textures/models/city/streetlamp001/streetlamp001_light
+{
+	diffusemap textures/models/city/streetlamp001/streetlamp001_light.tga
+    
+	{
+		map $diffuse
+	}
+}
+
+textures/models/city/streetlamp001/streetlamp001
+{
+	diffusemap textures/models/city/streetlamp001/streetlamp001.tga
+    
+	{
+		map $diffuse
+	}
+}
+
 textures/models/zombie_derrick/Face_Police_Zombie_MAT
 {
 	diffusemap textures/models/zombie_derrick/diffuse.tga
@@ -787,6 +830,33 @@ textures/models/zombie_derrick/Face_Police_Zombie_MAT
 textures/models/zombie_derrick/Police_Zombie_MAT
 {
 	diffusemap textures/models/zombie_derrick/diffuse.tga
+    
+	{
+		map $diffuse
+	}
+}
+
+textures/models/weapons/pistol/pistol
+{
+	diffusemap textures/models/weapons/pistol/pistol_diffuse.tga
+    
+	{
+		map $diffuse
+	}
+}
+
+textures/models/weapons/pistol/arms
+{
+	diffusemap textures/models/weapons/pistol/arms_diffuse.tga
+    
+	{
+		map $diffuse
+	}
+}
+
+textures/models/weapons/knife/arms
+{
+	diffusemap textures/models/weapons/knife/arms_diffuse.tga
     
 	{
 		map $diffuse
@@ -3374,6 +3444,30 @@ textures/skies/yukongold
 		map $blackimage
 		map $cube:textures/skies/yukongold/bg
 		map $cube:textures/skies/yukongold/fg
+	}
+}
+
+textures/skies/sundown
+// Vera Visions Material
+{
+	qer_editorImage textures/skies/sundown/250th/bg_ft.tga
+	skyParms - 256 -
+	vmap_globalTexture
+
+	surfaceParm sky
+	surfaceParm noimpact
+	surfaceParm nolightmap
+	surfaceParm nodlight
+
+	nopicmip
+	nomipmaps
+
+	{
+		map $cube:textures/skies/sundown/40th/bg
+		map $cube:textures/skies/sundown/250th/bg
+		map $cube:textures/skies/sundown/1600th/bg
+		map textures/skies/clouds/dunecloud.tga
+		map textures/skies/clouds/dunecloud_layer.tga
 	}
 }
 

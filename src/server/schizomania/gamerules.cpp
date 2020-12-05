@@ -54,6 +54,8 @@ HLGameRules::LevelDecodeParms(base_player pp)
 	pl.rpg_mag = parm29;
 	pl.satchel_chg = parm30;
 
+	pl.flashlight_battery = parm31;
+
 	if (pl.flags & FL_CROUCHING) {
 		setsize(pl, VEC_CHULL_MIN, VEC_CHULL_MAX);
 	} else {
@@ -96,6 +98,7 @@ HLGameRules::LevelChangeParms(base_player pp)
 	parm28 = pl.crossbow_mag;
 	parm29 = pl.rpg_mag;
 	parm30 = pl.satchel_chg;
+	parm31 = pl.flashlight_battery;
 }
 
 void
@@ -190,6 +193,9 @@ HLGameRules::PlayerPostFrame(base_player pp)
 	if (pl.old_a_ammo3 != pl.a_ammo3)
 		pl.SendFlags |= PLAYER_AMMO3;
 
+	if (pl.old_flashlight_battery != pl.flashlight_battery)
+		pl.SendFlags |= PLAYER_FLASHLIGHT_BATTERY;
+
 	pl.old_modelindex = pl.modelindex;
 	pl.old_origin = pl.origin;
 	pl.old_angles = pl.angles;
@@ -212,6 +218,7 @@ HLGameRules::PlayerPostFrame(base_player pp)
 	// <WatIs>
 	pl.old_scma_shotmultiplier = pl.scma_shotmultiplier;
 	pl.old_scma_shottime = pl.scma_shottime;
+	pl.old_flashlight_battery = pl.flashlight_battery;
 	// </SCMA>
 }
 

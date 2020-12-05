@@ -80,7 +80,7 @@ void monster_gman::Respawn(void)
 void monster_gman::monster_gman(void)
 {
 	netname = "G-Man";
-	model = "models/zombie_derrick/zombie_derrick.vvm";
+	model = "models/monsters/zombie_derrick/zombie_derrick.vvm";
 	base_mins = [-16,-16,0];
 	base_maxs = [16,16,72];
 	

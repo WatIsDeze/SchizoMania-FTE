@@ -10,6 +10,8 @@ my own ADHD good.
 
 # Things to research/question (medium priority):
 - How to do a proper zombie walk animaton, use offsets so it "moves backwards", to counter the slide effect.
+- Currently, shadows are disabled since the brush used to cast extra light for streetlamps, is somehow tagged along with it.
+  We gotta fix that..
 
 # Prototype - Alpha - 0.1
 ## Weapons.

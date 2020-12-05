@@ -14,9 +14,36 @@
  * OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  */
 
+//=======================
+// void PlayerPreFrame(base_player bp)
+//
+// Handles preframe functionality, such as decreasing
+// flashlight battery life.
+//=======================
 void
-HLSingleplayerRules::PlayerDeath(base_player pl)
+HLSingleplayerRules::PlayerPreFrame(base_player bp)
 {
+	player pl = (player)bp;
+
+	// Deplete flashlight battery if its turned on.
+	if (pl.gflags & GF_FLASHLIGHT) {
+		pl.flashlight_battery = bound(0, pl.flashlight_battery -  10 * frametime, FLASHLIGHT_BATTERY_MAX);
+
+		// Debug print battery life.
+		dprint(sprintf("Flashlight Battery: %f\n", pl.flashlight_battery));
+	}
+}
+
+//=======================
+// void PlayerDeath(base_player bp)
+//
+// Default death handling.
+//=======================
+void
+HLSingleplayerRules::PlayerDeath(base_player bp)
+{
+	player pl = (player)bp;
+
 	/* obituary networking */
 	WriteByte(MSG_MULTICAST, SVC_CGAMEPACKET);
 	WriteByte(MSG_MULTICAST, EV_OBITUARY);
@@ -83,13 +110,11 @@ HLSingleplayerRules::PlayerDeath(base_player pl)
 	corpse.velocity = pl.velocity;
 }
 
-/*
-============================
-SpawnInGamePlayer
-
-Spawn the client's player entity.
-============================
-*/
+//=======================
+// void SpawnInGamePlayer(base_player pp)
+//
+// Spawn the client's player entity.
+//=======================
 void
 HLSingleplayerRules::SpawnInGamePlayer(base_player pp) {
 	// Cast.
@@ -133,6 +158,7 @@ HLSingleplayerRules::SpawnInGamePlayer(base_player pp) {
 	pl.activeweapon = ITEM_CROWBAR;
 	pl.glock_mag = 18;
 	pl.ammo_9mm = 44;
+	pl.flashlight_battery = 100;
 
 	/* this is where the mods want to deviate */
 	entity spot;
@@ -152,14 +178,12 @@ HLSingleplayerRules::SpawnInGamePlayer(base_player pp) {
 	Client_FixAngle(pl, pl.angles);
 }
 
-/*
-============================
-SpawnInMenuCameraPlayer
-
-Spawn the client's camera player entity, used for the mainmenu where we
-don't want the player to use userinput.
-============================
-*/
+//=======================
+// void SpawnInMenuCameraPlayer(base_player pp)
+//
+// Spawn the client's camera player entity, used for the mainmenu where we
+// don't want the player to use userinput.
+//=======================
 void
 HLSingleplayerRules::SpawnInMenuCameraPlayer(base_player pp, entity eMainmenu) {
 	// Cast.

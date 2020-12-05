@@ -1,8 +1,0 @@
-{
-	diffusemap textures/models/city/lightbulb/lightbulb.tga
-    
-	{
-		program vertexlit
-		map $diffuse
-	}
-}

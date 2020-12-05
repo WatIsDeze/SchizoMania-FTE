@@ -14,4 +14,5 @@
  * OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  */
 
+// Toggle function.
 void Flashlight_Toggle(void); 

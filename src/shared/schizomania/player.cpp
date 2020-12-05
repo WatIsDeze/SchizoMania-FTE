@@ -22,7 +22,8 @@ class player:base_player
 	//
 	int scma_shotmultiplier;
 	float scma_shottime;
-
+	float flashlight_battery;
+	
 	// <WatIs>
 	// Inv system of INVENTORY_ITEM_MAX items. int is the count of.
 	//
@@ -81,6 +82,7 @@ class player:base_player
 
 	int old_scma_shotmultiplier;
 	float old_scma_shottime;
+	float old_flashlight_battery;
 	// </SCMA>
 #endif
 };

@@ -1,0 +1,8 @@
+{
+	diffusemap textures/models/city/streetlamp001/streetlamp001.tga
+    
+	{
+		program lightmapped
+		map $diffuse
+	}
+}

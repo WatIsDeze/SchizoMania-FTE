@@ -15,31 +15,42 @@
  */
 
 void
-Player_PreDraw(base_player pl, int thirdperson)
+Player_PreDraw(base_player bp, int thirdperson)
 {
 	/* Handle the flashlights... */
-	if (pl.gflags & GF_FLASHLIGHT) {
+	if (bp.gflags & GF_FLASHLIGHT) {
 		vector src;
 		vector ang;
 		
-		if (pl.entnum != player_localentnum) {
-			src = pl.origin + pl.view_ofs;
-			ang = [pl.pitch, pl.angles[1], pl.angles[2]];
+		if (bp.entnum != player_localentnum) {
+			src = bp.origin + bp.view_ofs;
+			ang = [bp.pitch, bp.angles[1], bp.angles[2]];
 		} else {
 			src = pSeat->m_vecPredictedOrigin + [0,0,-8];
 			ang = view_angles;
 		}
 
 		makevectors(ang);
-		traceline(src, src + (v_forward * 8096), MOVE_NORMAL, pl);
+		traceline(src, src + (v_forward * 8096), MOVE_NORMAL, bp);
 
 		if (serverkeyfloat("*bspversion") == 30) {
 			dynamiclight_add(trace_endpos + (v_forward * -2), 128, [1,1,1]);
 		} else {
-			float p = dynamiclight_add(src, 512, [1,0.8,0.6], 0, "textures/flashlight");
+			float p = dynamiclight_add(src, 256, [1,0.8,0.6], 0, "textures/flashlight");
 			dynamiclight_set(p, LFIELD_ANGLES, ang);
 			dynamiclight_set(p, LFIELD_FLAGS, LFLAG_NORMALMODE | LFLAG_REALTIMEMODE);
-			dynamiclight_set(p, LFIELD_STYLESTRING, "kkkllliiillkklllkkklliillkkllll");
+
+			player pl = (player)bp;
+			if (pl.flashlight_battery >= 60) {
+				dynamiclight_set(p, LFIELD_STYLESTRING, "lllllllkkllllll");
+			} else if (pl.flashlight_battery >= 30) {
+				dynamiclight_set(p, LFIELD_STYLESTRING, "kkkllliiillkklllkkklliillkkllll");
+			} else if (pl.flashlight_battery >= 10) {
+				dynamiclight_set(p, LFIELD_STYLESTRING, "fffggghhhhggffgggfffgghhffgghhhhh");
+			} else {
+				dynamiclight_set(p, LFIELD_STYLESTRING, "ccccdddddcccccddddddd");
+			}
+			//dynamiclight_set(p, LFIELD_STYLESTRING, "kkkllliiillkklllkkklliillkkllll");
 		}
 	}
 }
@@ -152,6 +163,8 @@ Player_ReceiveEntity(float new)
 		pl.scma_shotmultiplier = readbyte();
 	if (fl & PLAYER_CSSHOTTIME)
 		pl.scma_shottime = readfloat();
+	if (fl & PLAYER_FLASHLIGHT_BATTERY)
+		pl.flashlight_battery = readfloat();
 	// </SCMA>
 
 	setorigin(pl, pl.origin);

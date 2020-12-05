@@ -161,6 +161,9 @@ float Player_SendEntity(entity ePEnt, float fChanged)
 	if (fChanged & PLAYER_CSSHOTTIME) {
 		WriteFloat(MSG_ENTITY, pl.scma_shottime);
 	}
+	if (fChanged & PLAYER_FLASHLIGHT_BATTERY) {
+		WriteFloat(MSG_ENTITY, pl.flashlight_battery);
+	}
 	// </WatIs>
 
 	return TRUE;

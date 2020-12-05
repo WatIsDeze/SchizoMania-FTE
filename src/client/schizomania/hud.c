@@ -411,7 +411,7 @@ HUD_Draw(void)
 
 	//HUD_DrawHealth();
 	//HUD_DrawArmor();
-	//HUD_DrawFlashlight();
+	HUD_DrawFlashlight();
 	HUD_DrawNotify();
 	Damage_Draw();
 }

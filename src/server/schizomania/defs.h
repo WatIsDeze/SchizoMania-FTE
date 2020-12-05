@@ -16,3 +16,8 @@
 
 #include "gamerules.h"
 #include "items.h"
+
+
+// Define flashlight battery life.
+#define FLASHLIGHT_BATTERY_MAX 100  // Full maximum battery power.
+#define FLASHLIGHT_BATTERY_DEC 1.5  // How much to decrement it with each second.
