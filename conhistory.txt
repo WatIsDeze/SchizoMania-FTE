@@ -29,3 +29,37 @@
 /map test_prototype
 /map test_prototype
 /map test_prototype
+map mainmenu
+map mainmenu
+map mainmenu
+map mainmenu
+
+map mainmenu
+map mainmenu
+map mainmenu
+map mainmenu
+map mainmenu
+map mainmenu
+map mainmenu
+map mainmenu
+map mainmenu
+map mainmenu
+map mainmenu
+map mainmenu
+map mainmenu
+map mainmenu
+map mainmenu
+/map test_dlights
+map mainmenu
+pr_debugger true
+pr_debugger trace
+map mainmenu
+map mainmenu
+map mainmenu
+/r_deluxemapping 0
+/r_deluxemapping 1
+vid_reload
+/r_deluxemapping 1
+map mainmenu
+/map test_prototype
+map mainmenu
