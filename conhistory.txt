@@ -66,3 +66,49 @@ map mainmenu
 /map test_prototype
 /map test_prototype
 /map test_current
+/map test_prototype_indoor
+/map test_prototype_indoor
+/map test_prototype_indoor
+/map test_prototype_indoor
+/map test_prototype_indoor
+/map test_prototype_indoor
+noclip
+noclip
+noclip
+noclip
+/map test_prototype_indoor
+/map test_prototype_indoor
+/map test_prototype_indoor
+/map test_prototype_indoor
+/map test_prototype_indoor
+/map test_prototype_indoor
+/map test_prototype_indoor
+/map test_prototype_indoor
+/map test_prototype_indoor
+/map test_prototype_indoor
+
+/map test_prototype_indoor
+/map test_prototype_indoor
+/map test_prototype_indoor
+/map test_prototype_indoor
+/map test_prototype_indoor
+/map test_prototype_indoor
+/map test_prototype_indoor
+/map test_prototype_indoor
+/map test_prototype_indoor
+/map test_prototype_indoor
+/map test_prototype_indoor
+/map test_prototype_indoor
+/map test_prototype_indoor
+/map test_prototype_indoor
+/map test_prototype_indoor
+/map test_prototype_indoor
+/map test_prototype_indoor
+/map test_prototype_indoor
+/con_color 
+/con_color 
+/map test_prototype_indoor
+/map test_prototype_indoor
+/map test_prototype_indoor
+/map test_prototype_indoor
+/map test_prototype_indoor

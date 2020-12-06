@@ -24,6 +24,8 @@
 ../schizomania/entities/scene_cameraview.cpp
 ../schizomania/entities/egui_mainmenu.cpp
 
+../schizomania/entities/func_locked_door.cpp
+
 ../schizomania/entities/monster_apache.cpp
 ../schizomania/entities/monster_alien_controller.cpp
 ../schizomania/entities/monster_alien_grunt.cpp

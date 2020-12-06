@@ -35,3 +35,4 @@ INSTALL "cstrike_essential;valve_essential;free_essential"
 RTCBROKER master.frag-net.com:27950
 PROTOCOLNAME "Nuclide"
 MAINCONFIG nuclide.cfg
+

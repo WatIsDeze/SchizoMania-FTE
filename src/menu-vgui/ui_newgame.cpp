@@ -82,12 +82,12 @@ void UI_NewGame_Show ( void )
 		lblSelectChapter.SetPos( '32 32' );
 
 		radChapter1 = spawn( CUIRadio );
-		radChapter1.SetTitle( "Chapter 1 - Prototype" );
+		radChapter1.SetTitle( "Chapter 1 - The Indoors" );
 		radChapter1.SetSize( '176 16' );
 		radChapter1.SetPos( '8 56' );
 
 		radChapter2 = spawn( CUIRadio );
-		radChapter2.SetTitle( "Chapter 2 - Unimplemented" );
+		radChapter2.SetTitle( "Chapter 2 - The Outdoors" );
 		radChapter2.SetSize( '176 16' );
 		radChapter2.SetPos( '8 80' );
 

@@ -1,0 +1,5 @@
+func_locked_door.wood01
+{
+	sample doors/wood001/locked.wav
+}
+

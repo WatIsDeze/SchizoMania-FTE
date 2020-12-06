@@ -1,0 +1,12 @@
+{
+    qer_editorImage "textures/fabric/frabic002.tga"
+
+	diffusemap textures/fabric/fabric002.tga
+    normalmap textures/fabric/fabric002_normal.tga
+
+	{
+		program lightmapped
+		map $diffuse
+		map $normalmap
+	}
+}

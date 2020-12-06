@@ -497,6 +497,61 @@ textures/doors/wood_door_02
 	}
 }
 
+textures/fabric/fabric004
+{
+    qer_editorImage "textures/fabric/frabic004.tga"
+
+	diffusemap textures/fabric/fabric004.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/fabric/fabric005
+{
+    qer_editorImage "textures/fabric/frabic005.tga"
+
+	diffusemap textures/fabric/fabric005.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/fabric/fabric002
+{
+    qer_editorImage "textures/fabric/frabic002.tga"
+
+	diffusemap textures/fabric/fabric002.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/fabric/fabric003
+{
+    qer_editorImage "textures/fabric/frabic003.tga"
+
+	diffusemap textures/fabric/fabric003.tga
+
+	{
+		map $diffuse
+	}
+}
+
+textures/fabric/fabric001
+{
+    qer_editorImage "textures/fabric/frabic001.tga"
+
+	diffusemap textures/fabric/fabric001.tga
+
+	{
+		map $diffuse
+	}
+}
+
 textures/fences/fence001
 {
 	diffusemap textures/fences/fence001.tga
