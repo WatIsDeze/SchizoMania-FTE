@@ -112,3 +112,18 @@ noclip
 /map test_prototype_indoor
 /map test_prototype_indoor
 /map test_prototype_indoor
+/map test_prototype_indoor
+crosshair
+crosshair 3
+crosshair 1
+crosshaircolor
+crosshairsize
+crosshairsize 2
+crosshairsize 8
+crosshairsize 8
+/map test_prototype_indoor
+/map test_prototype_indoor
+/map test_prototype_indoor
+/map test_prototype_indoor
+/map test_prototype_indoor
+/map test_prototype_indoor

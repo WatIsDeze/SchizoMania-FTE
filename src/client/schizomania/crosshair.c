@@ -14,8 +14,8 @@
  * OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  */
 
-#define CS_CROSS_COLOR [0,1,0]
-#define CS_CROSS_ALPHA 1.0f
+#define CS_CROSS_COLOR [1,0,0]
+#define CS_CROSS_ALPHA 0.8f
 
 void
 SCMA_DrawCrosshair(void)

@@ -28,13 +28,19 @@ void UI_NewGame_Show ( void )
 
 	static void NewGame_Play ( void ) {	
 		if (radChapter1.GetValue() != TRUE) {
-			dprint("Unimplemented Chapter selected.\n");
+			localcmd("stopmusic\n");
+			//localcmd("set skill 1; maxplayers 1\n");
+			localcmd( "maxplayers 1\ncoop 0\n"); 
+			localcmd( "map test_prototype_outdoor\n" );
 			return;
 		}
-		localcmd("stopmusic\n");
-		//localcmd("set skill 1; maxplayers 1\n");
-		localcmd( "maxplayers 1\ncoop 0\n"); 
-		localcmd( "map test_prototype\n" );
+		if (radChapter2.GetValue() != TRUE) {
+			localcmd("stopmusic\n");
+			//localcmd("set skill 1; maxplayers 1\n");
+			localcmd( "maxplayers 1\ncoop 0\n"); 
+			localcmd( "map test_prototype_indoor\n" );
+			return;
+		}
 		winNewGame.Hide();
 	}
 	static void NewGame_Cancel ( void ) {
@@ -107,6 +113,9 @@ void UI_NewGame_Show ( void )
 		winNewGame.Add( radChapter2 );
 		winNewGame.Add( radChapter3 );
 		winNewGame.Add( lblSelectChapter );
+
+		// Select chapter 1 by default.
+		NewGame_Check_Chapter1();
 	}
 
 	winNewGame.Show();
