@@ -84,7 +84,7 @@ CUIButton::SetTitle(string strName)
 	int scale;
 
 	m_strTitle = strName;
-	m_strTitleActive = sprintf("^3%s", m_strTitle);
+	m_strTitleActive = sprintf("^xF00%s", m_strTitle);
 	drawfont = g_fntDefault.iID;
 
 	scale = g_fntDefault.iScale;

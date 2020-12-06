@@ -63,3 +63,6 @@ vid_reload
 map mainmenu
 /map test_prototype
 map mainmenu
+/map test_prototype
+/map test_prototype
+/map test_current

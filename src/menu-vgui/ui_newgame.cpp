@@ -27,11 +27,14 @@ void UI_NewGame_Show ( void )
 	static CUIRadio radChapter3;
 
 	static void NewGame_Play ( void ) {	
-		// TODO: Load in the proper chapter map.
+		if (radChapter1.GetValue() != TRUE) {
+			dprint("Unimplemented Chapter selected.\n");
+			return;
+		}
 		localcmd("stopmusic\n");
 		//localcmd("set skill 1; maxplayers 1\n");
 		localcmd( "maxplayers 1\ncoop 0\n"); 
-		localcmd( "map test_item_inventory\n" );
+		localcmd( "map test_prototype\n" );
 		winNewGame.Hide();
 	}
 	static void NewGame_Cancel ( void ) {
@@ -79,19 +82,19 @@ void UI_NewGame_Show ( void )
 		lblSelectChapter.SetPos( '32 32' );
 
 		radChapter1 = spawn( CUIRadio );
-		radChapter1.SetTitle( "Chapter 1" );
-		radChapter1.SetSize( '96 16' );
-		radChapter1.SetPos( '32 56' );
+		radChapter1.SetTitle( "Chapter 1 - Prototype" );
+		radChapter1.SetSize( '176 16' );
+		radChapter1.SetPos( '8 56' );
 
 		radChapter2 = spawn( CUIRadio );
-		radChapter2.SetTitle( "Chapter 2" );
-		radChapter2.SetSize( '96 16' );
-		radChapter2.SetPos( '32 80' );
+		radChapter2.SetTitle( "Chapter 2 - Unimplemented" );
+		radChapter2.SetSize( '176 16' );
+		radChapter2.SetPos( '8 80' );
 
 		radChapter3 = spawn( CUIRadio );
-		radChapter3.SetTitle( "Chapter 3" );
-		radChapter3.SetSize( '96 16' );
-		radChapter3.SetPos( '32 104' );
+		radChapter3.SetTitle( "Chapter 3 - Unimplemented" );
+		radChapter3.SetSize( '176 16' );
+		radChapter3.SetPos( '8 104' );
 		radChapter3.SetValue( TRUE );
 
 		radChapter1.SetFunc( NewGame_Check_Chapter1 );

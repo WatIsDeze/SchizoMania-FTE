@@ -1,7 +1,7 @@
 #pragma target fte
 #pragma progs_dat  "../../platform/data.pk3dir/menu.dat"
 #define MENU
-
+#define CLASSIC_VGUI
 #includelist
 ../shared/fteextensions.qc
 defs.h

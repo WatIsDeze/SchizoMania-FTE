@@ -37,8 +37,8 @@ Font_Load (string strFile, font_s &fntNew)
 #ifdef CLASSIC_VGUI
 	fntNew.iID = (int)loadfont("", "gfx/conchars", "12", -1, 0, 0);
 	fntNew.iScale = 12;
-	fntNew.vecColor = [255,200,0] / 255;
-	fntNew.flAlpha = 1.0f;
+	fntNew.vecColor = [1,1,1];
+	fntNew.flAlpha = 0.85f;
 	fntNew.iFlags = 0;
 #else
 	string strTemp = "";

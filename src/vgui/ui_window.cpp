@@ -189,10 +189,10 @@ void CUIWindow::Draw(void)
 
 	if (m_strTitle) {
 		if (m_strIcon) {
-			Font_DrawText(m_vecOrigin + [26, 8], m_strTitle, g_fntDefault);
+			Font_DrawText(m_vecOrigin + [26, 8], strcat("^xF00", m_strTitle), g_fntDefault);
 			drawpic(m_vecOrigin + [4, 4], m_strIcon, [16,16], [1,1,1], 1.0f, 0);
 		} else {
-			Font_DrawText(m_vecOrigin + [8, 8], m_strTitle, g_fntDefault);
+			Font_DrawText(m_vecOrigin + [8, 8], strcat("^xF00", m_strTitle), g_fntDefault);
 		}
 	}
 	
