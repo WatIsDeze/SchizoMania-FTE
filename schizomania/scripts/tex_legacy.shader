@@ -603,11 +603,12 @@ textures/glass/glass_01
     qer_editorImage "textures/glass/glass_01.tga"
     {
         map "textures/glass/glass_01.tga"
-        map "textures/sfx/glass_01_normal.tga"
+        map "textures/glass/glass_01_normal.tga"
         map $reflectcube
         blendFunc GL_ONE GL_ONE
     }
 }
+
 textures/lights/city/light_streetlamp001
 {
 	qer_editorImage textures/lights/city/light_streetlamp001.tga

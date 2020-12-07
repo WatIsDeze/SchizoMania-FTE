@@ -75,6 +75,7 @@ class light_dynamic:CBaseTrigger
 	float m_flDistance;
 	float m_flRadius;
 	float m_flStyle;
+	string m_strStyle;
 	int m_iState;
 
 	void(void) light_dynamic;
@@ -103,8 +104,12 @@ light_dynamic::predraw(void)
 	}
 
 	/* TODO: We need to handle the second cone light */
-	dynamiclight_add(origin, m_flDistance, m_vecLight, m_flStyle);
+	float p = dynamiclight_add(origin, m_flDistance, m_vecLight, m_flStyle);
 
+	// We can probably safely assume 
+	if (m_flStyle == 0 && m_strStyle != "") {
+		dynamiclight_set(p, LFIELD_STYLESTRING, m_strStyle);
+	}
 	addentity(this);
 	return PREDRAW_NEXT;
 }
@@ -141,8 +146,10 @@ light_dynamic::ReceiveEntity(float flFlags)
 		m_flDistance = readfloat();
 	if (flFlags & DLIGHTFL_CHANGED_RADIUS)
 		m_flRadius = readfloat();
-	if (flFlags & DLIGHTFL_CHANGED_STYLE)
+	if (flFlags & DLIGHTFL_CHANGED_STYLE) {
 		m_flStyle = readbyte();
+		m_strStyle = readstring();
+	}
 	if (flFlags & DLIGHTFL_CHANGED_STATE)
 		m_iState = readbyte();
 
@@ -220,8 +227,10 @@ light_dynamic::SendEntity(entity ePVSEnt, float flFlags)
 		WriteFloat(MSG_ENTITY, m_flDistance);
 	if (flFlags & DLIGHTFL_CHANGED_RADIUS)
 		WriteFloat(MSG_ENTITY, m_flRadius);
-	if (flFlags & DLIGHTFL_CHANGED_STYLE)
+	if (flFlags & DLIGHTFL_CHANGED_STYLE) {
 		WriteByte(MSG_ENTITY, m_flStyle);
+		WriteString(MSG_ENTITY, m_strStyle);
+	}
 	if (flFlags & DLIGHTFL_CHANGED_STATE)
 		WriteByte(MSG_ENTITY, m_iState);
 
@@ -258,6 +267,7 @@ light_dynamic::Input(entity eAct, string strInput, string strData)
 		break;
 	case "style":
 		m_flStyle = stof(strData);
+		m_strStyle = strData;
 		SendFlags |= DLIGHTFL_CHANGED_STYLE;
 		break;
 	case "TurnOn":
@@ -298,6 +308,7 @@ light_dynamic::SpawnKey(string strKey, string strValue)
 		m_flRadius = stof(strValue);
 		break;
 	case "style":
+		m_strStyle = strValue;
 		m_flStyle = stof(strValue);
 		break;
 	/* out-of-spec */
