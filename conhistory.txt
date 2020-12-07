@@ -1,91 +1,3 @@
-/map test_prototype
-/map test_prototype
-/map test_prototype
-/map test_prototype
-/map test_prototype
-/map test_prototype
-/map test_prototype
-/map test_prototype
-/map test_prototype
-/map test_prototype
-/map test_prototype
-/map test_prototype
-/map test_prototype
-/map test_prototype
-/map test_prototype
-/map test_prototype
-/map test_prototype
-/map test_prototype
-/map test_prototype
-/map test_prototype
-/map test_prototype
-/map test_prototype
-/map test_prototype
-/map test_prototype
-/map test_prototype
-/map test_prototype
-/map test_prototype
-/map test_prototype
-/map test_prototype
-/map test_prototype
-/map test_prototype
-map mainmenu
-map mainmenu
-map mainmenu
-map mainmenu
-
-map mainmenu
-map mainmenu
-map mainmenu
-map mainmenu
-map mainmenu
-map mainmenu
-map mainmenu
-map mainmenu
-map mainmenu
-map mainmenu
-map mainmenu
-map mainmenu
-map mainmenu
-map mainmenu
-map mainmenu
-/map test_dlights
-map mainmenu
-pr_debugger true
-pr_debugger trace
-map mainmenu
-map mainmenu
-map mainmenu
-/r_deluxemapping 0
-/r_deluxemapping 1
-vid_reload
-/r_deluxemapping 1
-map mainmenu
-/map test_prototype
-map mainmenu
-/map test_prototype
-/map test_prototype
-/map test_current
-/map test_prototype_indoor
-/map test_prototype_indoor
-/map test_prototype_indoor
-/map test_prototype_indoor
-/map test_prototype_indoor
-/map test_prototype_indoor
-noclip
-noclip
-noclip
-noclip
-/map test_prototype_indoor
-/map test_prototype_indoor
-/map test_prototype_indoor
-/map test_prototype_indoor
-/map test_prototype_indoor
-/map test_prototype_indoor
-/map test_prototype_indoor
-/map test_prototype_indoor
-/map test_prototype_indoor
-/map test_prototype_indoor
 
 /map test_prototype_indoor
 /map test_prototype_indoor
@@ -99,28 +11,13 @@ noclip
 /map test_prototype_indoor
 /map test_prototype_indoor
 /map test_prototype_indoor
+/r_showbboxes 1
+/r_showbboxes 1
 /map test_prototype_indoor
 /map test_prototype_indoor
 /map test_prototype_indoor
-/map test_prototype_indoor
-/map test_prototype_indoor
-/map test_prototype_indoor
-/con_color 
-/con_color 
-/map test_prototype_indoor
-/map test_prototype_indoor
-/map test_prototype_indoor
-/map test_prototype_indoor
-/map test_prototype_indoor
-/map test_prototype_indoor
-crosshair
-crosshair 3
-crosshair 1
-crosshaircolor
-crosshairsize
-crosshairsize 2
-crosshairsize 8
-crosshairsize 8
+/r_showbboxes 2
+/r_showbboxes 2
 /map test_prototype_indoor
 /map test_prototype_indoor
 /map test_prototype_indoor
@@ -143,33 +40,6 @@ crosshairsize 8
 /map test_prototype_indoor
 /map test_prototype_indoor
 /map test_prototype_indoor
-/map test_prototype_indoor
-/map test_prototype_indoor
-/map test_prototype_indoor
-
-/map test_prototype_indoor
-/map test_prototype_indoor
-/map test_prototype_indoor
-/map test_prototype_indoor
-developer
-developer
-/map test_prototype_indoor
-/map test_prototype_indoor
-/map test_prototype_indoor
-/map test_prototype_indoor
-/map test_prototype_indoor
-/map test_prototype_indoor
-/map test_prototype_indoor
-/map test_prototype_indoor
-/map test_prototype_indoor
-/map test_prototype_indoor
-/map test_prototype_indoor
-/map test_prototype_indoor
-/map test_prototype_indoor
-/map test_prototype_indoor
-/map test_prototype_indoor
-/map test_skyroom
-/map test_skyroom
 /map test_prototype_indoor
 /map test_prototype_indoor
 /map test_prototype_indoor
