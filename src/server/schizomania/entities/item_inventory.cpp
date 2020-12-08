@@ -123,9 +123,8 @@ void item_inventory::Respawn(void) {
 	// Set defaults.
 	SetModel(g_inventory_items[m_iItemID].wmodel());
 	SetGFlags(gflags | GF_HOVER_FULLBRIGHT);
-	SetSize([-8,-8,0], [8,8,7]);
+	SetSize([-8,-8,0], [8,8,8]);
 	SetSolid(SOLID_CORPSE);
-	self.solid = SOLID_CORPSE;
 	SetMovetype(MOVETYPE_TOSS);
 
 	// Set PlayerUse

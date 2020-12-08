@@ -14,31 +14,37 @@ my own ADHD good.
   We gotta fix that..
 
 # Prototype - Alpha - 0.1
-## Weapons.
+## Improvements:
+- Currently picking up an item out of a drawer is hell to design properly.
+
+## Weapons:
 - Flashlight - Improve flickering per battery power stage.
 - Adjust damage values, also in Traceattack.c for when a specific bodypart has been hit.
     -- It multiplies the damage usually by 0.4* etc, which means if a 9mm does like 9 damage... It takes a good 40 hits to kill lol
-
 - Implement knife, pistol, rifle.
 
-## Inventory/Player in-game menu.
+## Inventory/Player in-game menu:
 - Use images for buttons. (Maybe a hover glow? effect)
 - Use sound for the hover, and click etc!
 - Render a player mesh, and health/ammo status.
     -- In the future, make him draw a weapon, or play a heavy breathing animation in case he is hurt etc.
 - Make item list scrollable.
 
-## Map: test_prototype.
-- Get a basic fade, screen text, and sequences scene going for prototype. [
-    -- Needs a player mesh, doing some idle animations.
-    -- Needs work on trigger_playerfreeze (crouching disable, mouse disable, inventory disable.
-    -- Do some story sentences, and shift back to fps)
-]
+## Map: test_prototype_indoor:
+- Basic fade screen intro, with animations of the player waking up hungover and confused lololol.
+- Finish bathroom cupboard, add a medkit.
 
-## Code for test_prototype
+### Events:
+- #1 Must pickup all items before entering livingroom, maybe make the player complain about having lost his shit.
+- #2 Enter the livingroom, stare out the window for a view secs before he decides to leave the appartment.
+- #3 Uh oh, zombie ahead! Scary effects, breaking light, electricity, flashing light.
+- #4 [Something related to another appartment?]?
+- #5 Uh oh, zombie down the stairs! Tries to creep up on ya from the right!
+
+## Code for test_prototype:
 - Implement Scripted Sequences with dialogues. (I suppose, an entity which'll send a dialogue event, back and forth? :) )
 
-## Assets.
+## Assets:
 - Acquire gfx for preferably a blue-ish, black, based in-game menu.
 - Acquire sfx for in-game menu.
 - Acquire a few Mixamo models, for AI, and NPC's. (Also thus, Brian, the player model)
