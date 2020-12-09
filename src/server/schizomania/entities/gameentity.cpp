@@ -16,9 +16,10 @@
 
 //=========================================================================
 // Game entity server class. Handles networking for gflags and flags
-// accordingly
+// accordingly. Used for pickups, or anything else that requires a trigger
+// to network flags.
 //
-// Any game entity should be derived from this class.
+// Any game trigger that requires so,  should be derived from this class.
 //=========================================================================
 class CGameEntity:CBaseEntity
 {

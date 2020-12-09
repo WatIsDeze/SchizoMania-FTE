@@ -19,13 +19,22 @@
 // Defines the model for each item in the item "database".
 //=======================
 typedef struct {
+    //
+    // Gameplay Item Properties.
+    //
     string name;            // Item name.
     string txtPickup;       // Text for display when a player picks up this item.
-    string txtDrop;          // Text for display when a player drops this item.
+    string txtDrop;         // Text for display when a player drops this item.
     string txtUse;          // Text for display when a player uses this item.
-    string txtDescription;   // Text for display when item is being viewed in inventory.
-    float ID;               // Item ENUM inventory Index.
+    string txtDescription;  // Text for display when item is being viewed in inventory.
 
+    //
+    // Game Technical Properties.
+    //
+    float ID;               // Item ENUM inventory Index.
+    vector mins;            // The mins bounding box used for this item.
+    vector maxs;            // The maxs bounding box used for this item.
+    
     void(player) use;
     void(player) pickup;
     void(player) equip;

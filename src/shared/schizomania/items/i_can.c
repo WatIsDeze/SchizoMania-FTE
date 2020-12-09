@@ -59,6 +59,8 @@ inventory_item_t i_can =
 	.txtDescription = "A can of Soda. Its refreshing drink is capable of healing 5 points.",
 
 	.ID			= INVENTORY_ITEM_CAN,
+	.mins		= [-8,-8, 0],
+	.maxs		= [8, 8, 8],
 
 	.use		= i_can_use,
 	.pickup		= __NULL__,

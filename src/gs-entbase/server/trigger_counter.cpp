@@ -14,7 +14,7 @@
  * OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  */
 
-/*QUAKED trigger_counter (0 .5 .8) ? TRCNT_SILENT TRCNT_NOCLIENTS TRCNT_PUSHABLES
+/*QUAKED trigger_counter (1 0 0) (-8 -8 -8) (8 8 8) ? TRCNT_SILENT TRCNT_NOCLIENTS TRCNT_PUSHABLES
 "targetname"    Name
 "target"        Target when triggered.
 "killtarget"    Target to kill when triggered.

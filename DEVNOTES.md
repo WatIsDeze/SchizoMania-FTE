@@ -15,7 +15,8 @@ my own ADHD good.
 
 # Prototype - Alpha - 0.1
 ## Improvements:
-- Currently picking up an item out of a drawer is hell to design properly.
+- Currently picking up an item out of a drawers is hell to design properly.
+- Replace the drawers in the bathroom with a cupboard, but func_door_rotating seems to not appreciate that much.
 
 ## Weapons:
 - Flashlight - Improve flickering per battery power stage.

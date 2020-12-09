@@ -34,7 +34,9 @@ inventory_item_t i_null =
 	.txtDescription = "NULL ITEM",
 
 	.ID			= INVENTORY_ITEM_NULL,
-
+	.mins		= [-8,-8, 0],
+	.maxs		= [8, 8, 8],
+	
 	.use		= __NULL__,
 	.pickup		= __NULL__,
 	.equip		= __NULL__,

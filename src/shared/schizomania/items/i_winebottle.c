@@ -56,7 +56,9 @@ inventory_item_t i_winebottle =
 	.txtDescription = "A sweet and old red wine from 1926, containing a 7.8 percentage alcohol volume.",
 
 	.ID			= INVENTORY_ITEM_WINEBOTTLE,
-
+	.mins		= [-8,-8, 0],
+	.maxs		= [8, 8, 8],
+	
 	.use		= i_winebottle_use,
 	.pickup		= __NULL__,
 	.equip		= __NULL__,

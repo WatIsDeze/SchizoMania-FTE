@@ -56,7 +56,9 @@ inventory_item_t i_knife =
 	.txtDescription = "A sharp hunting knife, good for... 'hunting'.",
 
 	.ID			= INVENTORY_ITEM_KNIFE,
-
+	.mins		= [-8,-8, 0],
+	.maxs		= [8, 8, 8],
+	
 	.use		= i_knife_use,
 	.pickup		= __NULL__,
 	.equip		= __NULL__,

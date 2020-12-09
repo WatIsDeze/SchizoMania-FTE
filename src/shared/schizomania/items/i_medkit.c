@@ -68,6 +68,8 @@ inventory_item_t i_medkit =
 	.txtDescription = "Capable of healing 20 points on use.",
 
 	.ID			= INVENTORY_ITEM_MEDKIT,
+	.mins		= [-6,-6, 0],
+	.maxs		= [6, 6, 8],
 
 	.use		= i_medkit_use,
 	.pickup		= __NULL__,

@@ -89,7 +89,9 @@ inventory_item_t i_glock18 =
 	.txtDescription = "The Glock 18 is a powerful tool in combat.",
 
 	.ID			= INVENTORY_ITEM_GLOCK,
-
+	.mins		= [-8,-8, 0],
+	.maxs		= [8, 8, 8],
+	
 	.use		= __NULL__,
 	.pickup		= i_glock18_pickup,
 	.equip		= i_glock18_equip,
