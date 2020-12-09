@@ -14,6 +14,27 @@ my own ADHD good.
   We gotta fix that..
 
 # Prototype - Alpha - 0.1
+## MUST DO LIST:
+-
+- We'll figure out those Outputs too.
+-
+- The following entities below need additions. Before we can move on.
+- We'll likely add our own env_fade too. It kinda sucks we need to
+- deviate, but we seek more features than the core gs-entbase has atm.
+-
+- Implement custom game_text, which DOES also trigger targets.
+  -- Implement with the typical quake font the UI uses already, but
+     larger. Maybe let text scroll in a bit. Possibly have a small shadowy background layer made in Krita to drop below it.
+     
+- Implement a custom func_door/func_door_rotating with extra sound and trigger options.
+  -- Locked door sound for example
+  -- Closing door sound.
+  -- Hurt/Touch/Knock sound?
+  --- Maybe try and get a door with a doorknob? (This is a tricky one?
+  Or require a door to be triggered, and add a func_button but can it move with the door?)
+
+- Improve the UI, glowy hover buttons?
+
 ## Improvements:
 - Currently picking up an item out of a drawers is hell to design properly.
 - Replace the drawers in the bathroom with a cupboard, but func_door_rotating seems to not appreciate that much.

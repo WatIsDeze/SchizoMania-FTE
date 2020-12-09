@@ -19,9 +19,9 @@
 // accordingly. Used for pickups, or anything else that requires a trigger
 // to network flags.
 //
-// Any game trigger that requires so,  should be derived from this class.
+// Any game trigger that should be derived from this class.
 //=========================================================================
-class CGameEntity:CBaseEntity
+class CGameEntity:CBaseTrigger
 {
 	float m_iFlags;
 	float m_iGFlags;
@@ -71,10 +71,10 @@ CGameEntity::SetGFlags(float fGFlags) {
 //=======================
 float 
 CGameEntity::SendEntity(entity ePEnt, float fChanged) {
-	// if (!CBaseEntity::SendEntity(ePEnt, fChanged)) {
+	// if (!CBaseTrigger::SendEntity(ePEnt, fChanged)) {
 	// 	return FALSE;
 	// }
-	// CBaseEntity::SendEntity(ePEnt, fChanged);
+	// CBaseTrigger::SendEntity(ePEnt, fChanged);
 
 	WriteByte(MSG_ENTITY, ENT_GAMEENTITY);
 	WriteFloat(MSG_ENTITY, fChanged);
@@ -161,7 +161,7 @@ CGameEntity::SendEntity(entity ePEnt, float fChanged) {
 //=======================
 void 
 CGameEntity::Respawn(void) {
-    CBaseEntity::Respawn();
+    CBaseTrigger::Respawn();
 }
 
 //=======================
@@ -172,7 +172,7 @@ CGameEntity::Respawn(void) {
 void
 CGameEntity::SpawnKey(string strKey, string strValue)
 {
-	CBaseEntity::SpawnKey(strKey, strValue);
+	CBaseTrigger::SpawnKey(strKey, strValue);
 	// switch (strKey) {
 	// case "classname":
 	// case "spawnflags":
@@ -192,7 +192,7 @@ CGameEntity::SpawnKey(string strKey, string strValue)
 void CGameEntity::CGameEntity(void)
 {	
 	// Call Super class constructor. 
-	CBaseEntity::CBaseEntity(); 
+	CBaseTrigger::CBaseTrigger(); 
 	classname = "CGameEntity";
 
 }

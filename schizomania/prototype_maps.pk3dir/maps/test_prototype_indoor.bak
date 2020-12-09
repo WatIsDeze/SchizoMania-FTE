@@ -1816,6 +1816,8 @@ nieb/metal-grey
 "distance" "90"
 "movesnd" "101"
 "targetname" "intro_door_1"
+"master" "mm_item_counter"
+"target" "message_door_1"
 // brush 0
 {
 ( -1192 2718 216 ) ( -1192 2662 216 ) ( -1208 2718 216 ) doors/wood_door_01 [ 1 0 0 256 ] [ -0 -1 -0 196.9267578125 ] -0 0.0078125 0.0507812463 0 0 0
@@ -2049,6 +2051,7 @@ nieb/metal-grey
 "angle" "-122.197067"
 "amount" "1"
 "targetname" "item_glock18"
+"target" "mm_item_counter"
 }
 // entity 37
 {
@@ -2302,7 +2305,8 @@ fabric/fabric005
 "itemID" "5"
 "angle" "-32.197063"
 "amount" "1"
-"targetname" "item_glock1"
+"targetname" "item_healthkit1"
+"target" "mm_item_counter"
 }
 // entity 46
 {
@@ -2648,10 +2652,25 @@ fabric/fabric005
 }
 // entity 60
 {
-"classname" "trigger_counter"
-"spawnflags" "2"
-"count" "3"
-"targetname" "intro_item_counter"
-"target" "intro_door_1"
-"origin" "-1240.000000 2648.000000 0.000000"
+"classname" "multisource"
+"count" "2"
+"targetname" "mm_item_counter"
+"origin" "-1272.000000 2648.000000 144.000000"
+}
+// entity 61
+{
+"classname" "game_text"
+"origin" "-1272.000000 2648.000000 184.000000"
+"targetname" "message_door_1"
+"spawnflags" "1"
+"message" "asdfasdfasdfasfd"
+"effect" "2"
+"fadein" "0.01"
+"fadeout" "0.5"
+"holdtime" "2.5"
+"color" "100 100 100"
+"x" "-1"
+"y" "-1"
+"color2" "240 110 0"
+"fxtime" "0.25"
 }

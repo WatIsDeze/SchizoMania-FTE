@@ -20,7 +20,7 @@ SCHIZOMANIA ENTITY:
 
 Entity for pickup items which go in the inventory.
 - target: Triggered when picked up.
-- killtarget: Kills the target entity when picked up. [TODO: Implement]
+- killtarget: Kills the target entity when picked up. 
 - itemID: The item index number in the item (enum)database.
 - amount: The amount of 'itemid' items that are contained in this
           pickup.
@@ -31,8 +31,6 @@ class item_inventory:CGameEntity
     int m_iItemID;             			// Item ID for the game item database.
     int m_iAmount;          			// Amount to give for the game item database.
 	
-	string m_strTarget;					// Targetname of the entity to trigger when item is picked up.
-	string m_strKillTarget;				// Targetname of the entity to kill when triggered.
 	void(void) item_inventory;
 	virtual void(void) Respawn;
 	virtual void(void) OnPlayerUse;
@@ -109,8 +107,12 @@ void item_inventory::OnPlayerUse(void)
 	// Cast to player.
 	player pl = (player)eActivator;
 
+	// Pick up event.
 	Item_Pickup(pl, m_iItemID, m_iAmount);
 
+	// Activate target.
+	UseTargets(eActivator, TRIG_ON, 0);
+	
 	// Remove from world, we don't want to pick it up twice.
 	remove(this);
 }
