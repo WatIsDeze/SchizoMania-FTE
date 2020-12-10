@@ -2025,7 +2025,7 @@ nieb/metal-grey
 "angle" "-122.197067"
 "amount" "1"
 "targetname" "item_glock18"
-"target" "mm_item_counter"
+"target" "mm_bedroom"
 }
 // entity 36
 {
@@ -2280,7 +2280,7 @@ fabric/fabric005
 "angle" "-32.197063"
 "amount" "1"
 "targetname" "item_healthkit1"
-"target" "mm_item_counter"
+"target" "mm_bedroom"
 }
 // entity 45
 {
@@ -2660,6 +2660,8 @@ fabric/fabric005
 "targetname" "door_bedroom1"
 "direction" "-90"
 "snd_close" "1"
+"target" "hud_not_open"
+"master" "mm_bedroom"
 // brush 0
 {
 ( -1250 2888 216 ) ( -1306 2888 216 ) ( -1250 2904 216 ) doors/wood_door_01 [ 0 -1 0 256 ] [ -1 0 0 905.8498535156 ] -0 0.0078125 0.0507812463 0 0 0
@@ -2696,4 +2698,19 @@ fabric/fabric005
 "targetname" "hud_not_closed"
 "duration" "2"
 "style" "0"
+}
+// entity 64
+{
+"classname" "hud_notification"
+"origin" "-1264.000000 3008.000000 224.000000"
+"message" "The ^xF42door^xFFF is open."
+"targetname" "hud_not_open"
+"style" "0"
+"duration" "2"
+}
+// entity 65
+{
+"classname" "multisource"
+"origin" "-1216.000000 2904.000000 224.000000"
+"targetname" "mm_bedroom"
 }

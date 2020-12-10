@@ -2659,7 +2659,8 @@ fabric/fabric005
 "snd_locked" "1"
 "targetname" "door_bedroom1"
 "direction" "-90"
-"snd_closed" "1"
+"snd_close" "1"
+"target" "hud_not_open"
 // brush 0
 {
 ( -1250 2888 216 ) ( -1306 2888 216 ) ( -1250 2904 216 ) doors/wood_door_01 [ 0 -1 0 256 ] [ -1 0 0 905.8498535156 ] -0 0.0078125 0.0507812463 0 0 0
@@ -2696,4 +2697,13 @@ fabric/fabric005
 "targetname" "hud_not_closed"
 "duration" "2"
 "style" "0"
+}
+// entity 64
+{
+"classname" "hud_notification"
+"origin" "-1264.000000 3008.000000 224.000000"
+"message" "The ^xF42door^xFFF is open."
+"targetname" "hud_not_open"
+"style" "0"
+"duration" "2"
 }

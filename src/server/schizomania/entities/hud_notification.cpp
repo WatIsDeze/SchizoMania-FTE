@@ -51,7 +51,7 @@ void hud_notification::Trigger(entity act, int state)
 	WriteByte(MSG_MULTICAST, SVC_CGAMEPACKET);
 	WriteByte(MSG_MULTICAST, EV_HUD_NOTIFICATION);
 
-    WriteFloat(MSG_MULTICAST, m_iStyle);
+    WriteByte(MSG_MULTICAST, m_iStyle);
     WriteFloat(MSG_MULTICAST, m_flDuration);
 	WriteString(MSG_MULTICAST, m_strMessage);
 

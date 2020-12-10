@@ -285,6 +285,11 @@ void game_door_rotating::Touch(void)
 		return;
 	}
 	if (m_iLocked) {
+		if (m_strSndLocked) {
+			Sound_Play(this, CHAN_VOICE, m_strSndLocked);
+		} else {
+			sound(this, CHAN_VOICE, "common/null.wav", 1.0f, ATTN_NORM);
+		}
         if (targetLocked) {
             for (entity f = world; (f = find(f, ::targetname, targetLocked));) {
                 CBaseTrigger trigger = (CBaseTrigger)f;
