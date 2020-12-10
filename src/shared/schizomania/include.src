@@ -8,6 +8,7 @@
 ../../shared/schizomania/animations.h
 ../../shared/schizomania/animations.c
 ../../shared/schizomania/pmove.c
+../../shared/schizomania/pmove_water.c
 
 ../../shared/schizomania/fx/fx_blood.c
 ../../shared/schizomania/fx/fx_breakmodel.c
