@@ -1,0 +1,20 @@
+game_door_rotating.move_1
+{
+	sample doors/wood001/move.wav
+}
+
+game_door_rotating.close_1
+{
+	sample doors/wood001/close.wav
+}
+
+game_door_rotating.locked_1
+{
+	sample doors/wood001/locked.wav
+}
+
+game_door_rotating.move_11
+{
+	sample doors/metal001/open.wav
+}
+

@@ -17,15 +17,10 @@
 /*QUAKED hud_notification (1 0 0) (-8 -8 -8) (8 8 8) GTF_ALLPLAYERS
 "targetname"    Name
 "target"        Target to trigger when triggered.
-"delay"			TODO: Dun work yet? - How long to wait before triggering.
-"effect"        Effect to apply to the text.
-                    Valid values:
-                        0 = Fade In/Out
-                        1 = Credits
-                        2 = Scan Out
-"color"         The main colour in RGB8.
-"color2"        The highlight colour in RGB8.
-"position"      0 = Top, 1 = Right, 2 = Bottom, 3 = Left.
+"wait"			TODO: Dun work yet? - How long to wait before triggering.
+"duration"      How long the notification is displayed.
+"message"       Message, supports multiline and ^x### hex codes for coloring.
+"style"         0 = SMALL, 1 = LARGE.
 
 Displays HUD update messages.
 For example, when picking up an item.
@@ -43,6 +38,7 @@ enumflags
 class hud_notification:CBaseTrigger
 {
     float m_flDuration;
+    int m_iStyle;
 
 	void(void) hud_notification;
 
@@ -54,6 +50,8 @@ void hud_notification::Trigger(entity act, int state)
 {
 	WriteByte(MSG_MULTICAST, SVC_CGAMEPACKET);
 	WriteByte(MSG_MULTICAST, EV_HUD_NOTIFICATION);
+
+    WriteFloat(MSG_MULTICAST, m_iStyle);
     WriteFloat(MSG_MULTICAST, m_flDuration);
 	WriteString(MSG_MULTICAST, m_strMessage);
 
@@ -76,6 +74,9 @@ hud_notification::SpawnKey(string strKey, string strValue)
     case "duration":
         m_flDuration = stof(strValue);
     break;
+    case "style":
+        m_iStyle = stoi(strValue);
+        break;
 	default:
 		CBaseTrigger::SpawnKey(strKey, strValue);
 	}
@@ -83,5 +84,7 @@ hud_notification::SpawnKey(string strKey, string strValue)
 
 void hud_notification::hud_notification(void)
 {
+    m_flDuration = 2;
+    m_iStyle = 1;
 	CBaseTrigger::CBaseTrigger();
 }

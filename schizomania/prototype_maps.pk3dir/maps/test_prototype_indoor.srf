@@ -3044,56 +3044,56 @@ default
 
 492 // SURFACE_FACE V: 4 I: 6 planar
 {
-	shader textures/doors/wood_door_01
-	entity 33
-	castShadows 0
-	lightmapAxis ( -1.000000 0.000000 0.000000 )
-}
-
-493 // SURFACE_FACE V: 4 I: 6 planar
-{
-	shader textures/doors/wood_door_01
-	entity 33
-	castShadows 0
-	lightmapAxis ( 1.000000 0.000000 0.000000 )
-}
-
-494 // SURFACE_FACE V: 4 I: 6 planar
-{
-	shader textures/doors/wood_door_01
-	entity 33
+	shader textures/nieb/clone/wood-floor01
+	entity 36
 	castShadows 0
 	lightmapAxis ( 0.000000 -1.000000 0.000000 )
 }
 
-495 // SURFACE_FACE V: 4 I: 6 planar
+493 // SURFACE_FACE V: 4 I: 6 planar
 {
-	shader textures/doors/wood_door_01
-	entity 33
+	shader textures/nieb/clone/wood-floor01
+	entity 36
 	castShadows 0
 	lightmapAxis ( 0.000000 1.000000 0.000000 )
 }
 
-496 // SURFACE_FACE V: 4 I: 6 planar
+494 // SURFACE_FACE V: 4 I: 6 planar
 {
-	shader textures/doors/wood_door_01
-	entity 33
+	shader textures/nieb/clone/wood-floor01
+	entity 36
 	castShadows 0
 	lightmapAxis ( 0.000000 0.000000 -1.000000 )
 }
 
-497 // SURFACE_FACE V: 4 I: 6 planar
+495 // SURFACE_FACE V: 4 I: 6 planar
 {
-	shader textures/doors/wood_door_01
-	entity 33
+	shader textures/nieb/clone/wood-floor01
+	entity 36
 	castShadows 0
 	lightmapAxis ( 0.000000 0.000000 1.000000 )
+}
+
+496 // SURFACE_FACE V: 8 I: 18 planar
+{
+	shader textures/nieb/clone/wood-floor01
+	entity 36
+	castShadows 0
+	lightmapAxis ( -1.000000 0.000000 0.000000 )
+}
+
+497 // SURFACE_FACE V: 4 I: 6 planar
+{
+	shader textures/nieb/clone/wood-floor01
+	entity 36
+	castShadows 0
+	lightmapAxis ( 1.000000 0.000000 0.000000 )
 }
 
 498 // SURFACE_FACE V: 4 I: 6 planar
 {
 	shader textures/nieb/clone/wood-floor01
-	entity 37
+	entity 36
 	castShadows 0
 	lightmapAxis ( 0.000000 -1.000000 0.000000 )
 }
@@ -3101,87 +3101,87 @@ default
 499 // SURFACE_FACE V: 4 I: 6 planar
 {
 	shader textures/nieb/clone/wood-floor01
-	entity 37
+	entity 36
 	castShadows 0
 	lightmapAxis ( 0.000000 1.000000 0.000000 )
 }
 
-500 // SURFACE_FACE V: 4 I: 6 planar
+500 // SURFACE_FACE V: 6 I: 12 planar
 {
 	shader textures/nieb/clone/wood-floor01
-	entity 37
+	entity 36
 	castShadows 0
 	lightmapAxis ( 0.000000 0.000000 -1.000000 )
 }
 
-501 // SURFACE_FACE V: 4 I: 6 planar
+501 // SURFACE_FACE V: 6 I: 12 planar
 {
 	shader textures/nieb/clone/wood-floor01
-	entity 37
+	entity 36
 	castShadows 0
 	lightmapAxis ( 0.000000 0.000000 1.000000 )
 }
 
-502 // SURFACE_FACE V: 8 I: 18 planar
+502 // SURFACE_FACE V: 4 I: 6 planar
 {
 	shader textures/nieb/clone/wood-floor01
-	entity 37
+	entity 36
 	castShadows 0
-	lightmapAxis ( -1.000000 0.000000 0.000000 )
+	lightmapAxis ( 0.000000 0.000000 -1.000000 )
 }
 
 503 // SURFACE_FACE V: 4 I: 6 planar
 {
 	shader textures/nieb/clone/wood-floor01
-	entity 37
+	entity 36
 	castShadows 0
-	lightmapAxis ( 1.000000 0.000000 0.000000 )
+	lightmapAxis ( 0.000000 0.000000 1.000000 )
 }
 
 504 // SURFACE_FACE V: 4 I: 6 planar
 {
 	shader textures/nieb/clone/wood-floor01
-	entity 37
+	entity 36
+	castShadows 0
+	lightmapAxis ( -1.000000 0.000000 0.000000 )
+}
+
+505 // SURFACE_FACE V: 8 I: 18 planar
+{
+	shader textures/nieb/clone/wood-floor01
+	entity 36
+	castShadows 0
+	lightmapAxis ( 1.000000 0.000000 0.000000 )
+}
+
+506 // SURFACE_FACE V: 4 I: 6 planar
+{
+	shader textures/nieb/clone/wood-floor01
+	entity 36
 	castShadows 0
 	lightmapAxis ( 0.000000 -1.000000 0.000000 )
 }
 
-505 // SURFACE_FACE V: 4 I: 6 planar
+507 // SURFACE_FACE V: 4 I: 6 planar
 {
 	shader textures/nieb/clone/wood-floor01
-	entity 37
+	entity 36
 	castShadows 0
 	lightmapAxis ( 0.000000 1.000000 0.000000 )
 }
 
-506 // SURFACE_FACE V: 6 I: 12 planar
+508 // SURFACE_FACE V: 6 I: 12 planar
 {
 	shader textures/nieb/clone/wood-floor01
-	entity 37
+	entity 36
 	castShadows 0
 	lightmapAxis ( 0.000000 0.000000 -1.000000 )
 }
 
-507 // SURFACE_FACE V: 6 I: 12 planar
+509 // SURFACE_FACE V: 6 I: 12 planar
 {
 	shader textures/nieb/clone/wood-floor01
-	entity 37
-	castShadows 0
-	lightmapAxis ( 0.000000 0.000000 1.000000 )
-}
-
-508 // SURFACE_FACE V: 4 I: 6 planar
-{
-	shader textures/nieb/clone/wood-floor01
-	entity 37
-	castShadows 0
-	lightmapAxis ( 0.000000 0.000000 -1.000000 )
-}
-
-509 // SURFACE_FACE V: 4 I: 6 planar
-{
-	shader textures/nieb/clone/wood-floor01
-	entity 37
+	entity 36
 	castShadows 0
 	lightmapAxis ( 0.000000 0.000000 1.000000 )
 }
@@ -3189,87 +3189,87 @@ default
 510 // SURFACE_FACE V: 4 I: 6 planar
 {
 	shader textures/nieb/clone/wood-floor01
-	entity 37
+	entity 36
 	castShadows 0
-	lightmapAxis ( -1.000000 0.000000 0.000000 )
+	lightmapAxis ( 0.000000 -1.000000 0.000000 )
 }
 
-511 // SURFACE_FACE V: 8 I: 18 planar
+511 // SURFACE_FACE V: 4 I: 6 planar
 {
 	shader textures/nieb/clone/wood-floor01
-	entity 37
+	entity 36
 	castShadows 0
-	lightmapAxis ( 1.000000 0.000000 0.000000 )
+	lightmapAxis ( 0.000000 1.000000 0.000000 )
 }
 
 512 // SURFACE_FACE V: 4 I: 6 planar
 {
 	shader textures/nieb/clone/wood-floor01
-	entity 37
+	entity 36
 	castShadows 0
-	lightmapAxis ( 0.000000 -1.000000 0.000000 )
+	lightmapAxis ( 0.000000 0.000000 -1.000000 )
 }
 
 513 // SURFACE_FACE V: 4 I: 6 planar
 {
 	shader textures/nieb/clone/wood-floor01
-	entity 37
-	castShadows 0
-	lightmapAxis ( 0.000000 1.000000 0.000000 )
-}
-
-514 // SURFACE_FACE V: 6 I: 12 planar
-{
-	shader textures/nieb/clone/wood-floor01
-	entity 37
-	castShadows 0
-	lightmapAxis ( 0.000000 0.000000 -1.000000 )
-}
-
-515 // SURFACE_FACE V: 6 I: 12 planar
-{
-	shader textures/nieb/clone/wood-floor01
-	entity 37
+	entity 36
 	castShadows 0
 	lightmapAxis ( 0.000000 0.000000 1.000000 )
+}
+
+514 // SURFACE_FACE V: 4 I: 6 planar
+{
+	shader textures/nieb/clone/wood-floor01
+	entity 38
+	castShadows 0
+	lightmapAxis ( 0.000000 -1.000000 0.000000 )
+}
+
+515 // SURFACE_FACE V: 4 I: 6 planar
+{
+	shader textures/nieb/clone/wood-floor01
+	entity 38
+	castShadows 0
+	lightmapAxis ( 0.000000 1.000000 0.000000 )
 }
 
 516 // SURFACE_FACE V: 4 I: 6 planar
 {
 	shader textures/nieb/clone/wood-floor01
-	entity 37
+	entity 38
 	castShadows 0
-	lightmapAxis ( 0.000000 -1.000000 0.000000 )
+	lightmapAxis ( 0.000000 0.000000 -1.000000 )
 }
 
 517 // SURFACE_FACE V: 4 I: 6 planar
 {
 	shader textures/nieb/clone/wood-floor01
-	entity 37
+	entity 38
 	castShadows 0
-	lightmapAxis ( 0.000000 1.000000 0.000000 )
+	lightmapAxis ( 0.000000 0.000000 1.000000 )
 }
 
-518 // SURFACE_FACE V: 4 I: 6 planar
+518 // SURFACE_FACE V: 8 I: 18 planar
 {
 	shader textures/nieb/clone/wood-floor01
-	entity 37
+	entity 38
 	castShadows 0
-	lightmapAxis ( 0.000000 0.000000 -1.000000 )
+	lightmapAxis ( -1.000000 0.000000 0.000000 )
 }
 
 519 // SURFACE_FACE V: 4 I: 6 planar
 {
 	shader textures/nieb/clone/wood-floor01
-	entity 37
+	entity 38
 	castShadows 0
-	lightmapAxis ( 0.000000 0.000000 1.000000 )
+	lightmapAxis ( 1.000000 0.000000 0.000000 )
 }
 
 520 // SURFACE_FACE V: 4 I: 6 planar
 {
 	shader textures/nieb/clone/wood-floor01
-	entity 39
+	entity 38
 	castShadows 0
 	lightmapAxis ( 0.000000 -1.000000 0.000000 )
 }
@@ -3277,87 +3277,87 @@ default
 521 // SURFACE_FACE V: 4 I: 6 planar
 {
 	shader textures/nieb/clone/wood-floor01
-	entity 39
+	entity 38
 	castShadows 0
 	lightmapAxis ( 0.000000 1.000000 0.000000 )
 }
 
-522 // SURFACE_FACE V: 4 I: 6 planar
+522 // SURFACE_FACE V: 6 I: 12 planar
 {
 	shader textures/nieb/clone/wood-floor01
-	entity 39
+	entity 38
 	castShadows 0
 	lightmapAxis ( 0.000000 0.000000 -1.000000 )
 }
 
-523 // SURFACE_FACE V: 4 I: 6 planar
+523 // SURFACE_FACE V: 6 I: 12 planar
 {
 	shader textures/nieb/clone/wood-floor01
-	entity 39
+	entity 38
 	castShadows 0
 	lightmapAxis ( 0.000000 0.000000 1.000000 )
 }
 
-524 // SURFACE_FACE V: 8 I: 18 planar
+524 // SURFACE_FACE V: 4 I: 6 planar
 {
 	shader textures/nieb/clone/wood-floor01
-	entity 39
+	entity 38
 	castShadows 0
-	lightmapAxis ( -1.000000 0.000000 0.000000 )
+	lightmapAxis ( 0.000000 0.000000 -1.000000 )
 }
 
 525 // SURFACE_FACE V: 4 I: 6 planar
 {
 	shader textures/nieb/clone/wood-floor01
-	entity 39
+	entity 38
 	castShadows 0
-	lightmapAxis ( 1.000000 0.000000 0.000000 )
+	lightmapAxis ( 0.000000 0.000000 1.000000 )
 }
 
 526 // SURFACE_FACE V: 4 I: 6 planar
 {
 	shader textures/nieb/clone/wood-floor01
-	entity 39
+	entity 38
+	castShadows 0
+	lightmapAxis ( -1.000000 0.000000 0.000000 )
+}
+
+527 // SURFACE_FACE V: 8 I: 18 planar
+{
+	shader textures/nieb/clone/wood-floor01
+	entity 38
+	castShadows 0
+	lightmapAxis ( 1.000000 0.000000 0.000000 )
+}
+
+528 // SURFACE_FACE V: 4 I: 6 planar
+{
+	shader textures/nieb/clone/wood-floor01
+	entity 38
 	castShadows 0
 	lightmapAxis ( 0.000000 -1.000000 0.000000 )
 }
 
-527 // SURFACE_FACE V: 4 I: 6 planar
+529 // SURFACE_FACE V: 4 I: 6 planar
 {
 	shader textures/nieb/clone/wood-floor01
-	entity 39
+	entity 38
 	castShadows 0
 	lightmapAxis ( 0.000000 1.000000 0.000000 )
 }
 
-528 // SURFACE_FACE V: 6 I: 12 planar
+530 // SURFACE_FACE V: 6 I: 12 planar
 {
 	shader textures/nieb/clone/wood-floor01
-	entity 39
+	entity 38
 	castShadows 0
 	lightmapAxis ( 0.000000 0.000000 -1.000000 )
 }
 
-529 // SURFACE_FACE V: 6 I: 12 planar
+531 // SURFACE_FACE V: 6 I: 12 planar
 {
 	shader textures/nieb/clone/wood-floor01
-	entity 39
-	castShadows 0
-	lightmapAxis ( 0.000000 0.000000 1.000000 )
-}
-
-530 // SURFACE_FACE V: 4 I: 6 planar
-{
-	shader textures/nieb/clone/wood-floor01
-	entity 39
-	castShadows 0
-	lightmapAxis ( 0.000000 0.000000 -1.000000 )
-}
-
-531 // SURFACE_FACE V: 4 I: 6 planar
-{
-	shader textures/nieb/clone/wood-floor01
-	entity 39
+	entity 38
 	castShadows 0
 	lightmapAxis ( 0.000000 0.000000 1.000000 )
 }
@@ -3365,99 +3365,99 @@ default
 532 // SURFACE_FACE V: 4 I: 6 planar
 {
 	shader textures/nieb/clone/wood-floor01
-	entity 39
+	entity 38
 	castShadows 0
-	lightmapAxis ( -1.000000 0.000000 0.000000 )
+	lightmapAxis ( 0.000000 -1.000000 0.000000 )
 }
 
-533 // SURFACE_FACE V: 8 I: 18 planar
+533 // SURFACE_FACE V: 4 I: 6 planar
 {
 	shader textures/nieb/clone/wood-floor01
-	entity 39
+	entity 38
 	castShadows 0
-	lightmapAxis ( 1.000000 0.000000 0.000000 )
+	lightmapAxis ( 0.000000 1.000000 0.000000 )
 }
 
 534 // SURFACE_FACE V: 4 I: 6 planar
 {
 	shader textures/nieb/clone/wood-floor01
-	entity 39
+	entity 38
 	castShadows 0
-	lightmapAxis ( 0.000000 -1.000000 0.000000 )
+	lightmapAxis ( 0.000000 0.000000 -1.000000 )
 }
 
 535 // SURFACE_FACE V: 4 I: 6 planar
 {
 	shader textures/nieb/clone/wood-floor01
-	entity 39
-	castShadows 0
-	lightmapAxis ( 0.000000 1.000000 0.000000 )
-}
-
-536 // SURFACE_FACE V: 6 I: 12 planar
-{
-	shader textures/nieb/clone/wood-floor01
-	entity 39
-	castShadows 0
-	lightmapAxis ( 0.000000 0.000000 -1.000000 )
-}
-
-537 // SURFACE_FACE V: 6 I: 12 planar
-{
-	shader textures/nieb/clone/wood-floor01
-	entity 39
+	entity 38
 	castShadows 0
 	lightmapAxis ( 0.000000 0.000000 1.000000 )
+}
+
+536 // SURFACE_PATCH V: 75 I: 0 
+{
+	shader textures/fabric/fabric005
+	entity 40
+	castShadows 0
+	longestCurve 8.401837
+	lightmapAxis ( 0.000000 -1.000000 0.000000 )
+}
+
+537 // SURFACE_PATCH V: 75 I: 0 
+{
+	shader textures/fabric/fabric005
+	entity 40
+	castShadows 0
+	longestCurve 8.401837
+	lightmapAxis ( 0.000000 1.000000 0.000000 )
 }
 
 538 // SURFACE_FACE V: 4 I: 6 planar
 {
-	shader textures/nieb/clone/wood-floor01
-	entity 39
+	shader textures/nieb/clone/wood02
+	entity 41
 	castShadows 0
-	lightmapAxis ( 0.000000 -1.000000 0.000000 )
+	lightmapAxis ( -1.000000 0.000000 0.000000 )
 }
 
 539 // SURFACE_FACE V: 4 I: 6 planar
 {
-	shader textures/nieb/clone/wood-floor01
-	entity 39
+	shader textures/nieb/clone/wood02
+	entity 41
 	castShadows 0
-	lightmapAxis ( 0.000000 1.000000 0.000000 )
+	lightmapAxis ( 1.000000 0.000000 0.000000 )
 }
 
 540 // SURFACE_FACE V: 4 I: 6 planar
 {
-	shader textures/nieb/clone/wood-floor01
-	entity 39
+	shader textures/nieb/clone/wood02
+	entity 41
 	castShadows 0
-	lightmapAxis ( 0.000000 0.000000 -1.000000 )
+	lightmapAxis ( 0.000000 -1.000000 0.000000 )
 }
 
 541 // SURFACE_FACE V: 4 I: 6 planar
 {
-	shader textures/nieb/clone/wood-floor01
-	entity 39
+	shader textures/nieb/clone/wood02
+	entity 41
+	castShadows 0
+	lightmapAxis ( 0.000000 1.000000 0.000000 )
+}
+
+542 // SURFACE_FACE V: 4 I: 6 planar
+{
+	shader textures/nieb/clone/wood02
+	entity 41
+	castShadows 0
+	lightmapAxis ( 0.000000 0.000000 -1.000000 )
+}
+
+543 // SURFACE_FACE V: 4 I: 6 planar
+{
+	shader textures/nieb/clone/wood02
+	entity 41
 	castShadows 0
 	lightmapAxis ( 0.000000 0.000000 1.000000 )
-}
-
-542 // SURFACE_PATCH V: 75 I: 0 
-{
-	shader textures/fabric/fabric005
-	entity 41
-	castShadows 0
-	longestCurve 8.401837
-	lightmapAxis ( 0.000000 -1.000000 0.000000 )
-}
-
-543 // SURFACE_PATCH V: 75 I: 0 
-{
-	shader textures/fabric/fabric005
-	entity 41
-	castShadows 0
-	longestCurve 8.401837
-	lightmapAxis ( 0.000000 1.000000 0.000000 )
 }
 
 544 // SURFACE_FACE V: 4 I: 6 planar
@@ -3559,7 +3559,7 @@ default
 556 // SURFACE_FACE V: 4 I: 6 planar
 {
 	shader textures/nieb/clone/wood02
-	entity 44
+	entity 43
 	castShadows 0
 	lightmapAxis ( -1.000000 0.000000 0.000000 )
 }
@@ -3567,7 +3567,7 @@ default
 557 // SURFACE_FACE V: 4 I: 6 planar
 {
 	shader textures/nieb/clone/wood02
-	entity 44
+	entity 43
 	castShadows 0
 	lightmapAxis ( 1.000000 0.000000 0.000000 )
 }
@@ -3575,7 +3575,7 @@ default
 558 // SURFACE_FACE V: 4 I: 6 planar
 {
 	shader textures/nieb/clone/wood02
-	entity 44
+	entity 43
 	castShadows 0
 	lightmapAxis ( 0.000000 -1.000000 0.000000 )
 }
@@ -3583,7 +3583,7 @@ default
 559 // SURFACE_FACE V: 4 I: 6 planar
 {
 	shader textures/nieb/clone/wood02
-	entity 44
+	entity 43
 	castShadows 0
 	lightmapAxis ( 0.000000 1.000000 0.000000 )
 }
@@ -3591,7 +3591,7 @@ default
 560 // SURFACE_FACE V: 4 I: 6 planar
 {
 	shader textures/nieb/clone/wood02
-	entity 44
+	entity 43
 	castShadows 0
 	lightmapAxis ( 0.000000 0.000000 -1.000000 )
 }
@@ -3599,87 +3599,87 @@ default
 561 // SURFACE_FACE V: 4 I: 6 planar
 {
 	shader textures/nieb/clone/wood02
-	entity 44
+	entity 43
 	castShadows 0
 	lightmapAxis ( 0.000000 0.000000 1.000000 )
 }
 
 562 // SURFACE_FACE V: 4 I: 6 planar
 {
-	shader textures/nieb/clone/wood02
-	entity 44
+	shader textures/nieb/clone/wood-floor01
+	entity 45
 	castShadows 0
 	lightmapAxis ( -1.000000 0.000000 0.000000 )
 }
 
 563 // SURFACE_FACE V: 4 I: 6 planar
 {
-	shader textures/nieb/clone/wood02
-	entity 44
+	shader textures/nieb/clone/wood-floor01
+	entity 45
 	castShadows 0
 	lightmapAxis ( 1.000000 0.000000 0.000000 )
 }
 
 564 // SURFACE_FACE V: 4 I: 6 planar
 {
-	shader textures/nieb/clone/wood02
-	entity 44
-	castShadows 0
-	lightmapAxis ( 0.000000 -1.000000 0.000000 )
-}
-
-565 // SURFACE_FACE V: 4 I: 6 planar
-{
-	shader textures/nieb/clone/wood02
-	entity 44
-	castShadows 0
-	lightmapAxis ( 0.000000 1.000000 0.000000 )
-}
-
-566 // SURFACE_FACE V: 4 I: 6 planar
-{
-	shader textures/nieb/clone/wood02
-	entity 44
+	shader textures/nieb/clone/wood-floor01
+	entity 45
 	castShadows 0
 	lightmapAxis ( 0.000000 0.000000 -1.000000 )
 }
 
-567 // SURFACE_FACE V: 4 I: 6 planar
+565 // SURFACE_FACE V: 4 I: 6 planar
 {
-	shader textures/nieb/clone/wood02
-	entity 44
+	shader textures/nieb/clone/wood-floor01
+	entity 45
 	castShadows 0
 	lightmapAxis ( 0.000000 0.000000 1.000000 )
 }
 
-568 // SURFACE_FACE V: 4 I: 6 planar
+566 // SURFACE_FACE V: 4 I: 6 planar
 {
 	shader textures/nieb/clone/wood-floor01
-	entity 46
+	entity 45
 	castShadows 0
 	lightmapAxis ( -1.000000 0.000000 0.000000 )
+}
+
+567 // SURFACE_FACE V: 4 I: 6 planar
+{
+	shader textures/nieb/clone/wood-floor01
+	entity 45
+	castShadows 0
+	lightmapAxis ( 1.000000 0.000000 0.000000 )
+}
+
+568 // SURFACE_FACE V: 8 I: 18 planar
+{
+	shader textures/nieb/clone/wood-floor01
+	entity 45
+	castShadows 0
+	lightmapAxis ( 0.000000 -1.000000 0.000000 )
 }
 
 569 // SURFACE_FACE V: 4 I: 6 planar
 {
 	shader textures/nieb/clone/wood-floor01
-	entity 46
+	entity 45
 	castShadows 0
-	lightmapAxis ( 1.000000 0.000000 0.000000 )
+	lightmapAxis ( 0.000000 1.000000 0.000000 )
 }
 
-570 // SURFACE_FACE V: 4 I: 6 planar
+570 // SURFACE_FACE V: 6 I: 12 planar
 {
 	shader textures/nieb/clone/wood-floor01
-	entity 46
+	entity 45
 	castShadows 0
 	lightmapAxis ( 0.000000 0.000000 -1.000000 )
 }
 
-571 // SURFACE_FACE V: 4 I: 6 planar
+571 // SURFACE_FACE V: 6 I: 12 planar
 {
 	shader textures/nieb/clone/wood-floor01
-	entity 46
+	entity 45
 	castShadows 0
 	lightmapAxis ( 0.000000 0.000000 1.000000 )
 }
@@ -3687,63 +3687,63 @@ default
 572 // SURFACE_FACE V: 4 I: 6 planar
 {
 	shader textures/nieb/clone/wood-floor01
-	entity 46
+	entity 45
 	castShadows 0
-	lightmapAxis ( -1.000000 0.000000 0.000000 )
+	lightmapAxis ( 0.000000 0.000000 -1.000000 )
 }
 
 573 // SURFACE_FACE V: 4 I: 6 planar
 {
 	shader textures/nieb/clone/wood-floor01
-	entity 46
+	entity 45
 	castShadows 0
-	lightmapAxis ( 1.000000 0.000000 0.000000 )
+	lightmapAxis ( 0.000000 0.000000 1.000000 )
 }
 
-574 // SURFACE_FACE V: 8 I: 18 planar
+574 // SURFACE_FACE V: 4 I: 6 planar
 {
 	shader textures/nieb/clone/wood-floor01
-	entity 46
+	entity 45
 	castShadows 0
-	lightmapAxis ( 0.000000 -1.000000 0.000000 )
+	lightmapAxis ( -1.000000 0.000000 0.000000 )
 }
 
 575 // SURFACE_FACE V: 4 I: 6 planar
 {
 	shader textures/nieb/clone/wood-floor01
-	entity 46
+	entity 45
+	castShadows 0
+	lightmapAxis ( 1.000000 0.000000 0.000000 )
+}
+
+576 // SURFACE_FACE V: 4 I: 6 planar
+{
+	shader textures/nieb/clone/wood-floor01
+	entity 45
+	castShadows 0
+	lightmapAxis ( 0.000000 -1.000000 0.000000 )
+}
+
+577 // SURFACE_FACE V: 8 I: 18 planar
+{
+	shader textures/nieb/clone/wood-floor01
+	entity 45
 	castShadows 0
 	lightmapAxis ( 0.000000 1.000000 0.000000 )
 }
 
-576 // SURFACE_FACE V: 6 I: 12 planar
+578 // SURFACE_FACE V: 6 I: 12 planar
 {
 	shader textures/nieb/clone/wood-floor01
-	entity 46
+	entity 45
 	castShadows 0
 	lightmapAxis ( 0.000000 0.000000 -1.000000 )
 }
 
-577 // SURFACE_FACE V: 6 I: 12 planar
+579 // SURFACE_FACE V: 6 I: 12 planar
 {
 	shader textures/nieb/clone/wood-floor01
-	entity 46
-	castShadows 0
-	lightmapAxis ( 0.000000 0.000000 1.000000 )
-}
-
-578 // SURFACE_FACE V: 4 I: 6 planar
-{
-	shader textures/nieb/clone/wood-floor01
-	entity 46
-	castShadows 0
-	lightmapAxis ( 0.000000 0.000000 -1.000000 )
-}
-
-579 // SURFACE_FACE V: 4 I: 6 planar
-{
-	shader textures/nieb/clone/wood-floor01
-	entity 46
+	entity 45
 	castShadows 0
 	lightmapAxis ( 0.000000 0.000000 1.000000 )
 }
@@ -3751,7 +3751,7 @@ default
 580 // SURFACE_FACE V: 4 I: 6 planar
 {
 	shader textures/nieb/clone/wood-floor01
-	entity 46
+	entity 45
 	castShadows 0
 	lightmapAxis ( -1.000000 0.000000 0.000000 )
 }
@@ -3759,7 +3759,7 @@ default
 581 // SURFACE_FACE V: 4 I: 6 planar
 {
 	shader textures/nieb/clone/wood-floor01
-	entity 46
+	entity 45
 	castShadows 0
 	lightmapAxis ( 1.000000 0.000000 0.000000 )
 }
@@ -3767,95 +3767,95 @@ default
 582 // SURFACE_FACE V: 4 I: 6 planar
 {
 	shader textures/nieb/clone/wood-floor01
-	entity 46
-	castShadows 0
-	lightmapAxis ( 0.000000 -1.000000 0.000000 )
-}
-
-583 // SURFACE_FACE V: 8 I: 18 planar
-{
-	shader textures/nieb/clone/wood-floor01
-	entity 46
-	castShadows 0
-	lightmapAxis ( 0.000000 1.000000 0.000000 )
-}
-
-584 // SURFACE_FACE V: 6 I: 12 planar
-{
-	shader textures/nieb/clone/wood-floor01
-	entity 46
+	entity 45
 	castShadows 0
 	lightmapAxis ( 0.000000 0.000000 -1.000000 )
 }
 
-585 // SURFACE_FACE V: 6 I: 12 planar
+583 // SURFACE_FACE V: 4 I: 6 planar
 {
 	shader textures/nieb/clone/wood-floor01
-	entity 46
+	entity 45
 	castShadows 0
 	lightmapAxis ( 0.000000 0.000000 1.000000 )
+}
+
+584 // SURFACE_FACE V: 4 I: 6 planar
+{
+	shader textures/nieb/clone/wood-floor01
+	entity 47
+	castShadows 0
+	lightmapAxis ( -1.000000 0.000000 0.000000 )
+}
+
+585 // SURFACE_FACE V: 4 I: 6 planar
+{
+	shader textures/nieb/clone/wood-floor01
+	entity 47
+	castShadows 0
+	lightmapAxis ( 1.000000 0.000000 0.000000 )
 }
 
 586 // SURFACE_FACE V: 4 I: 6 planar
 {
 	shader textures/nieb/clone/wood-floor01
-	entity 46
+	entity 47
 	castShadows 0
-	lightmapAxis ( -1.000000 0.000000 0.000000 )
+	lightmapAxis ( 0.000000 0.000000 -1.000000 )
 }
 
 587 // SURFACE_FACE V: 4 I: 6 planar
 {
 	shader textures/nieb/clone/wood-floor01
-	entity 46
+	entity 47
 	castShadows 0
-	lightmapAxis ( 1.000000 0.000000 0.000000 )
+	lightmapAxis ( 0.000000 0.000000 1.000000 )
 }
 
 588 // SURFACE_FACE V: 4 I: 6 planar
 {
 	shader textures/nieb/clone/wood-floor01
-	entity 46
+	entity 47
 	castShadows 0
-	lightmapAxis ( 0.000000 0.000000 -1.000000 )
+	lightmapAxis ( -1.000000 0.000000 0.000000 )
 }
 
 589 // SURFACE_FACE V: 4 I: 6 planar
 {
 	shader textures/nieb/clone/wood-floor01
-	entity 46
+	entity 47
 	castShadows 0
-	lightmapAxis ( 0.000000 0.000000 1.000000 )
+	lightmapAxis ( 1.000000 0.000000 0.000000 )
 }
 
-590 // SURFACE_FACE V: 4 I: 6 planar
+590 // SURFACE_FACE V: 8 I: 18 planar
 {
 	shader textures/nieb/clone/wood-floor01
-	entity 48
+	entity 47
 	castShadows 0
-	lightmapAxis ( -1.000000 0.000000 0.000000 )
+	lightmapAxis ( 0.000000 -1.000000 0.000000 )
 }
 
 591 // SURFACE_FACE V: 4 I: 6 planar
 {
 	shader textures/nieb/clone/wood-floor01
-	entity 48
+	entity 47
 	castShadows 0
-	lightmapAxis ( 1.000000 0.000000 0.000000 )
+	lightmapAxis ( 0.000000 1.000000 0.000000 )
 }
 
-592 // SURFACE_FACE V: 4 I: 6 planar
+592 // SURFACE_FACE V: 6 I: 12 planar
 {
 	shader textures/nieb/clone/wood-floor01
-	entity 48
+	entity 47
 	castShadows 0
 	lightmapAxis ( 0.000000 0.000000 -1.000000 )
 }
 
-593 // SURFACE_FACE V: 4 I: 6 planar
+593 // SURFACE_FACE V: 6 I: 12 planar
 {
 	shader textures/nieb/clone/wood-floor01
-	entity 48
+	entity 47
 	castShadows 0
 	lightmapAxis ( 0.000000 0.000000 1.000000 )
 }
@@ -3863,63 +3863,63 @@ default
 594 // SURFACE_FACE V: 4 I: 6 planar
 {
 	shader textures/nieb/clone/wood-floor01
-	entity 48
+	entity 47
 	castShadows 0
-	lightmapAxis ( -1.000000 0.000000 0.000000 )
+	lightmapAxis ( 0.000000 0.000000 -1.000000 )
 }
 
 595 // SURFACE_FACE V: 4 I: 6 planar
 {
 	shader textures/nieb/clone/wood-floor01
-	entity 48
+	entity 47
 	castShadows 0
-	lightmapAxis ( 1.000000 0.000000 0.000000 )
+	lightmapAxis ( 0.000000 0.000000 1.000000 )
 }
 
-596 // SURFACE_FACE V: 8 I: 18 planar
+596 // SURFACE_FACE V: 4 I: 6 planar
 {
 	shader textures/nieb/clone/wood-floor01
-	entity 48
+	entity 47
 	castShadows 0
-	lightmapAxis ( 0.000000 -1.000000 0.000000 )
+	lightmapAxis ( -1.000000 0.000000 0.000000 )
 }
 
 597 // SURFACE_FACE V: 4 I: 6 planar
 {
 	shader textures/nieb/clone/wood-floor01
-	entity 48
+	entity 47
+	castShadows 0
+	lightmapAxis ( 1.000000 0.000000 0.000000 )
+}
+
+598 // SURFACE_FACE V: 4 I: 6 planar
+{
+	shader textures/nieb/clone/wood-floor01
+	entity 47
+	castShadows 0
+	lightmapAxis ( 0.000000 -1.000000 0.000000 )
+}
+
+599 // SURFACE_FACE V: 8 I: 18 planar
+{
+	shader textures/nieb/clone/wood-floor01
+	entity 47
 	castShadows 0
 	lightmapAxis ( 0.000000 1.000000 0.000000 )
 }
 
-598 // SURFACE_FACE V: 6 I: 12 planar
+600 // SURFACE_FACE V: 6 I: 12 planar
 {
 	shader textures/nieb/clone/wood-floor01
-	entity 48
+	entity 47
 	castShadows 0
 	lightmapAxis ( 0.000000 0.000000 -1.000000 )
 }
 
-599 // SURFACE_FACE V: 6 I: 12 planar
+601 // SURFACE_FACE V: 6 I: 12 planar
 {
 	shader textures/nieb/clone/wood-floor01
-	entity 48
-	castShadows 0
-	lightmapAxis ( 0.000000 0.000000 1.000000 )
-}
-
-600 // SURFACE_FACE V: 4 I: 6 planar
-{
-	shader textures/nieb/clone/wood-floor01
-	entity 48
-	castShadows 0
-	lightmapAxis ( 0.000000 0.000000 -1.000000 )
-}
-
-601 // SURFACE_FACE V: 4 I: 6 planar
-{
-	shader textures/nieb/clone/wood-floor01
-	entity 48
+	entity 47
 	castShadows 0
 	lightmapAxis ( 0.000000 0.000000 1.000000 )
 }
@@ -3927,7 +3927,7 @@ default
 602 // SURFACE_FACE V: 4 I: 6 planar
 {
 	shader textures/nieb/clone/wood-floor01
-	entity 48
+	entity 47
 	castShadows 0
 	lightmapAxis ( -1.000000 0.000000 0.000000 )
 }
@@ -3935,7 +3935,7 @@ default
 603 // SURFACE_FACE V: 4 I: 6 planar
 {
 	shader textures/nieb/clone/wood-floor01
-	entity 48
+	entity 47
 	castShadows 0
 	lightmapAxis ( 1.000000 0.000000 0.000000 )
 }
@@ -3943,63 +3943,63 @@ default
 604 // SURFACE_FACE V: 4 I: 6 planar
 {
 	shader textures/nieb/clone/wood-floor01
-	entity 48
-	castShadows 0
-	lightmapAxis ( 0.000000 -1.000000 0.000000 )
-}
-
-605 // SURFACE_FACE V: 8 I: 18 planar
-{
-	shader textures/nieb/clone/wood-floor01
-	entity 48
-	castShadows 0
-	lightmapAxis ( 0.000000 1.000000 0.000000 )
-}
-
-606 // SURFACE_FACE V: 6 I: 12 planar
-{
-	shader textures/nieb/clone/wood-floor01
-	entity 48
+	entity 47
 	castShadows 0
 	lightmapAxis ( 0.000000 0.000000 -1.000000 )
 }
 
-607 // SURFACE_FACE V: 6 I: 12 planar
+605 // SURFACE_FACE V: 4 I: 6 planar
 {
 	shader textures/nieb/clone/wood-floor01
-	entity 48
+	entity 47
 	castShadows 0
 	lightmapAxis ( 0.000000 0.000000 1.000000 )
 }
 
-608 // SURFACE_FACE V: 4 I: 6 planar
+606 // SURFACE_FACE V: 4 I: 6 planar
 {
-	shader textures/nieb/clone/wood-floor01
-	entity 48
+	shader textures/nieb/clone/wood02
+	entity 49
 	castShadows 0
 	lightmapAxis ( -1.000000 0.000000 0.000000 )
 }
 
-609 // SURFACE_FACE V: 4 I: 6 planar
+607 // SURFACE_FACE V: 4 I: 6 planar
 {
-	shader textures/nieb/clone/wood-floor01
-	entity 48
+	shader textures/nieb/clone/wood02
+	entity 49
 	castShadows 0
 	lightmapAxis ( 1.000000 0.000000 0.000000 )
 }
 
+608 // SURFACE_FACE V: 4 I: 6 planar
+{
+	shader textures/nieb/clone/wood02
+	entity 49
+	castShadows 0
+	lightmapAxis ( 0.000000 -1.000000 0.000000 )
+}
+
+609 // SURFACE_FACE V: 4 I: 6 planar
+{
+	shader textures/nieb/clone/wood02
+	entity 49
+	castShadows 0
+	lightmapAxis ( 0.000000 1.000000 0.000000 )
+}
+
 610 // SURFACE_FACE V: 4 I: 6 planar
 {
-	shader textures/nieb/clone/wood-floor01
-	entity 48
+	shader textures/nieb/clone/wood02
+	entity 49
 	castShadows 0
 	lightmapAxis ( 0.000000 0.000000 -1.000000 )
 }
 
 611 // SURFACE_FACE V: 4 I: 6 planar
 {
-	shader textures/nieb/clone/wood-floor01
-	entity 48
+	shader textures/nieb/clone/wood02
+	entity 49
 	castShadows 0
 	lightmapAxis ( 0.000000 0.000000 1.000000 )
 }
@@ -4103,7 +4103,7 @@ default
 624 // SURFACE_FACE V: 4 I: 6 planar
 {
 	shader textures/nieb/clone/wood02
-	entity 52
+	entity 51
 	castShadows 0
 	lightmapAxis ( -1.000000 0.000000 0.000000 )
 }
@@ -4111,7 +4111,7 @@ default
 625 // SURFACE_FACE V: 4 I: 6 planar
 {
 	shader textures/nieb/clone/wood02
-	entity 52
+	entity 51
 	castShadows 0
 	lightmapAxis ( 1.000000 0.000000 0.000000 )
 }
@@ -4119,7 +4119,7 @@ default
 626 // SURFACE_FACE V: 4 I: 6 planar
 {
 	shader textures/nieb/clone/wood02
-	entity 52
+	entity 51
 	castShadows 0
 	lightmapAxis ( 0.000000 -1.000000 0.000000 )
 }
@@ -4127,7 +4127,7 @@ default
 627 // SURFACE_FACE V: 4 I: 6 planar
 {
 	shader textures/nieb/clone/wood02
-	entity 52
+	entity 51
 	castShadows 0
 	lightmapAxis ( 0.000000 1.000000 0.000000 )
 }
@@ -4135,7 +4135,7 @@ default
 628 // SURFACE_FACE V: 4 I: 6 planar
 {
 	shader textures/nieb/clone/wood02
-	entity 52
+	entity 51
 	castShadows 0
 	lightmapAxis ( 0.000000 0.000000 -1.000000 )
 }
@@ -4143,63 +4143,63 @@ default
 629 // SURFACE_FACE V: 4 I: 6 planar
 {
 	shader textures/nieb/clone/wood02
-	entity 52
+	entity 51
 	castShadows 0
 	lightmapAxis ( 0.000000 0.000000 1.000000 )
 }
 
 630 // SURFACE_FACE V: 4 I: 6 planar
 {
-	shader textures/nieb/clone/wood02
-	entity 52
-	castShadows 0
-	lightmapAxis ( -1.000000 0.000000 0.000000 )
-}
-
-631 // SURFACE_FACE V: 4 I: 6 planar
-{
-	shader textures/nieb/clone/wood02
-	entity 52
-	castShadows 0
-	lightmapAxis ( 1.000000 0.000000 0.000000 )
-}
-
-632 // SURFACE_FACE V: 4 I: 6 planar
-{
-	shader textures/nieb/clone/wood02
+	shader textures/nieb/clone/wood-floor01
 	entity 52
 	castShadows 0
 	lightmapAxis ( 0.000000 -1.000000 0.000000 )
 }
 
-633 // SURFACE_FACE V: 4 I: 6 planar
+631 // SURFACE_FACE V: 4 I: 6 planar
 {
-	shader textures/nieb/clone/wood02
+	shader textures/nieb/clone/wood-floor01
 	entity 52
 	castShadows 0
 	lightmapAxis ( 0.000000 1.000000 0.000000 )
 }
 
-634 // SURFACE_FACE V: 4 I: 6 planar
+632 // SURFACE_FACE V: 4 I: 6 planar
 {
-	shader textures/nieb/clone/wood02
+	shader textures/nieb/clone/wood-floor01
 	entity 52
 	castShadows 0
 	lightmapAxis ( 0.000000 0.000000 -1.000000 )
 }
 
-635 // SURFACE_FACE V: 4 I: 6 planar
+633 // SURFACE_FACE V: 4 I: 6 planar
 {
-	shader textures/nieb/clone/wood02
+	shader textures/nieb/clone/wood-floor01
 	entity 52
 	castShadows 0
 	lightmapAxis ( 0.000000 0.000000 1.000000 )
 }
 
+634 // SURFACE_FACE V: 8 I: 18 planar
+{
+	shader textures/nieb/clone/wood-floor01
+	entity 52
+	castShadows 0
+	lightmapAxis ( -1.000000 0.000000 0.000000 )
+}
+
+635 // SURFACE_FACE V: 4 I: 6 planar
+{
+	shader textures/nieb/clone/wood-floor01
+	entity 52
+	castShadows 0
+	lightmapAxis ( 1.000000 0.000000 0.000000 )
+}
+
 636 // SURFACE_FACE V: 4 I: 6 planar
 {
 	shader textures/nieb/clone/wood-floor01
-	entity 53
+	entity 52
 	castShadows 0
 	lightmapAxis ( 0.000000 -1.000000 0.000000 )
 }
@@ -4207,87 +4207,87 @@ default
 637 // SURFACE_FACE V: 4 I: 6 planar
 {
 	shader textures/nieb/clone/wood-floor01
-	entity 53
+	entity 52
 	castShadows 0
 	lightmapAxis ( 0.000000 1.000000 0.000000 )
 }
 
-638 // SURFACE_FACE V: 4 I: 6 planar
+638 // SURFACE_FACE V: 6 I: 12 planar
 {
 	shader textures/nieb/clone/wood-floor01
-	entity 53
+	entity 52
 	castShadows 0
 	lightmapAxis ( 0.000000 0.000000 -1.000000 )
 }
 
-639 // SURFACE_FACE V: 4 I: 6 planar
+639 // SURFACE_FACE V: 6 I: 12 planar
 {
 	shader textures/nieb/clone/wood-floor01
-	entity 53
+	entity 52
 	castShadows 0
 	lightmapAxis ( 0.000000 0.000000 1.000000 )
 }
 
-640 // SURFACE_FACE V: 8 I: 18 planar
+640 // SURFACE_FACE V: 4 I: 6 planar
 {
 	shader textures/nieb/clone/wood-floor01
-	entity 53
+	entity 52
 	castShadows 0
-	lightmapAxis ( -1.000000 0.000000 0.000000 )
+	lightmapAxis ( 0.000000 0.000000 -1.000000 )
 }
 
 641 // SURFACE_FACE V: 4 I: 6 planar
 {
 	shader textures/nieb/clone/wood-floor01
-	entity 53
+	entity 52
 	castShadows 0
-	lightmapAxis ( 1.000000 0.000000 0.000000 )
+	lightmapAxis ( 0.000000 0.000000 1.000000 )
 }
 
 642 // SURFACE_FACE V: 4 I: 6 planar
 {
 	shader textures/nieb/clone/wood-floor01
-	entity 53
+	entity 52
+	castShadows 0
+	lightmapAxis ( -1.000000 0.000000 0.000000 )
+}
+
+643 // SURFACE_FACE V: 8 I: 18 planar
+{
+	shader textures/nieb/clone/wood-floor01
+	entity 52
+	castShadows 0
+	lightmapAxis ( 1.000000 0.000000 0.000000 )
+}
+
+644 // SURFACE_FACE V: 4 I: 6 planar
+{
+	shader textures/nieb/clone/wood-floor01
+	entity 52
 	castShadows 0
 	lightmapAxis ( 0.000000 -1.000000 0.000000 )
 }
 
-643 // SURFACE_FACE V: 4 I: 6 planar
+645 // SURFACE_FACE V: 4 I: 6 planar
 {
 	shader textures/nieb/clone/wood-floor01
-	entity 53
+	entity 52
 	castShadows 0
 	lightmapAxis ( 0.000000 1.000000 0.000000 )
 }
 
-644 // SURFACE_FACE V: 6 I: 12 planar
+646 // SURFACE_FACE V: 6 I: 12 planar
 {
 	shader textures/nieb/clone/wood-floor01
-	entity 53
+	entity 52
 	castShadows 0
 	lightmapAxis ( 0.000000 0.000000 -1.000000 )
 }
 
-645 // SURFACE_FACE V: 6 I: 12 planar
+647 // SURFACE_FACE V: 6 I: 12 planar
 {
 	shader textures/nieb/clone/wood-floor01
-	entity 53
-	castShadows 0
-	lightmapAxis ( 0.000000 0.000000 1.000000 )
-}
-
-646 // SURFACE_FACE V: 4 I: 6 planar
-{
-	shader textures/nieb/clone/wood-floor01
-	entity 53
-	castShadows 0
-	lightmapAxis ( 0.000000 0.000000 -1.000000 )
-}
-
-647 // SURFACE_FACE V: 4 I: 6 planar
-{
-	shader textures/nieb/clone/wood-floor01
-	entity 53
+	entity 52
 	castShadows 0
 	lightmapAxis ( 0.000000 0.000000 1.000000 )
 }
@@ -4295,87 +4295,87 @@ default
 648 // SURFACE_FACE V: 4 I: 6 planar
 {
 	shader textures/nieb/clone/wood-floor01
-	entity 53
+	entity 52
 	castShadows 0
-	lightmapAxis ( -1.000000 0.000000 0.000000 )
+	lightmapAxis ( 0.000000 -1.000000 0.000000 )
 }
 
-649 // SURFACE_FACE V: 8 I: 18 planar
+649 // SURFACE_FACE V: 4 I: 6 planar
 {
 	shader textures/nieb/clone/wood-floor01
-	entity 53
+	entity 52
 	castShadows 0
-	lightmapAxis ( 1.000000 0.000000 0.000000 )
+	lightmapAxis ( 0.000000 1.000000 0.000000 )
 }
 
 650 // SURFACE_FACE V: 4 I: 6 planar
 {
 	shader textures/nieb/clone/wood-floor01
-	entity 53
+	entity 52
 	castShadows 0
-	lightmapAxis ( 0.000000 -1.000000 0.000000 )
+	lightmapAxis ( 0.000000 0.000000 -1.000000 )
 }
 
 651 // SURFACE_FACE V: 4 I: 6 planar
 {
 	shader textures/nieb/clone/wood-floor01
-	entity 53
-	castShadows 0
-	lightmapAxis ( 0.000000 1.000000 0.000000 )
-}
-
-652 // SURFACE_FACE V: 6 I: 12 planar
-{
-	shader textures/nieb/clone/wood-floor01
-	entity 53
-	castShadows 0
-	lightmapAxis ( 0.000000 0.000000 -1.000000 )
-}
-
-653 // SURFACE_FACE V: 6 I: 12 planar
-{
-	shader textures/nieb/clone/wood-floor01
-	entity 53
+	entity 52
 	castShadows 0
 	lightmapAxis ( 0.000000 0.000000 1.000000 )
+}
+
+652 // SURFACE_FACE V: 4 I: 6 planar
+{
+	shader textures/nieb/clone/wood-floor01
+	entity 54
+	castShadows 0
+	lightmapAxis ( 0.000000 -1.000000 0.000000 )
+}
+
+653 // SURFACE_FACE V: 4 I: 6 planar
+{
+	shader textures/nieb/clone/wood-floor01
+	entity 54
+	castShadows 0
+	lightmapAxis ( 0.000000 1.000000 0.000000 )
 }
 
 654 // SURFACE_FACE V: 4 I: 6 planar
 {
 	shader textures/nieb/clone/wood-floor01
-	entity 53
+	entity 54
 	castShadows 0
-	lightmapAxis ( 0.000000 -1.000000 0.000000 )
+	lightmapAxis ( 0.000000 0.000000 -1.000000 )
 }
 
 655 // SURFACE_FACE V: 4 I: 6 planar
 {
 	shader textures/nieb/clone/wood-floor01
-	entity 53
+	entity 54
 	castShadows 0
-	lightmapAxis ( 0.000000 1.000000 0.000000 )
+	lightmapAxis ( 0.000000 0.000000 1.000000 )
 }
 
-656 // SURFACE_FACE V: 4 I: 6 planar
+656 // SURFACE_FACE V: 8 I: 18 planar
 {
 	shader textures/nieb/clone/wood-floor01
-	entity 53
+	entity 54
 	castShadows 0
-	lightmapAxis ( 0.000000 0.000000 -1.000000 )
+	lightmapAxis ( -1.000000 0.000000 0.000000 )
 }
 
 657 // SURFACE_FACE V: 4 I: 6 planar
 {
 	shader textures/nieb/clone/wood-floor01
-	entity 53
+	entity 54
 	castShadows 0
-	lightmapAxis ( 0.000000 0.000000 1.000000 )
+	lightmapAxis ( 1.000000 0.000000 0.000000 )
 }
 
 658 // SURFACE_FACE V: 4 I: 6 planar
 {
 	shader textures/nieb/clone/wood-floor01
-	entity 55
+	entity 54
 	castShadows 0
 	lightmapAxis ( 0.000000 -1.000000 0.000000 )
 }
@@ -4383,87 +4383,87 @@ default
 659 // SURFACE_FACE V: 4 I: 6 planar
 {
 	shader textures/nieb/clone/wood-floor01
-	entity 55
+	entity 54
 	castShadows 0
 	lightmapAxis ( 0.000000 1.000000 0.000000 )
 }
 
-660 // SURFACE_FACE V: 4 I: 6 planar
+660 // SURFACE_FACE V: 6 I: 12 planar
 {
 	shader textures/nieb/clone/wood-floor01
-	entity 55
+	entity 54
 	castShadows 0
 	lightmapAxis ( 0.000000 0.000000 -1.000000 )
 }
 
-661 // SURFACE_FACE V: 4 I: 6 planar
+661 // SURFACE_FACE V: 6 I: 12 planar
 {
 	shader textures/nieb/clone/wood-floor01
-	entity 55
+	entity 54
 	castShadows 0
 	lightmapAxis ( 0.000000 0.000000 1.000000 )
 }
 
-662 // SURFACE_FACE V: 8 I: 18 planar
+662 // SURFACE_FACE V: 4 I: 6 planar
 {
 	shader textures/nieb/clone/wood-floor01
-	entity 55
+	entity 54
 	castShadows 0
-	lightmapAxis ( -1.000000 0.000000 0.000000 )
+	lightmapAxis ( 0.000000 0.000000 -1.000000 )
 }
 
 663 // SURFACE_FACE V: 4 I: 6 planar
 {
 	shader textures/nieb/clone/wood-floor01
-	entity 55
+	entity 54
 	castShadows 0
-	lightmapAxis ( 1.000000 0.000000 0.000000 )
+	lightmapAxis ( 0.000000 0.000000 1.000000 )
 }
 
 664 // SURFACE_FACE V: 4 I: 6 planar
 {
 	shader textures/nieb/clone/wood-floor01
-	entity 55
+	entity 54
+	castShadows 0
+	lightmapAxis ( -1.000000 0.000000 0.000000 )
+}
+
+665 // SURFACE_FACE V: 8 I: 18 planar
+{
+	shader textures/nieb/clone/wood-floor01
+	entity 54
+	castShadows 0
+	lightmapAxis ( 1.000000 0.000000 0.000000 )
+}
+
+666 // SURFACE_FACE V: 4 I: 6 planar
+{
+	shader textures/nieb/clone/wood-floor01
+	entity 54
 	castShadows 0
 	lightmapAxis ( 0.000000 -1.000000 0.000000 )
 }
 
-665 // SURFACE_FACE V: 4 I: 6 planar
+667 // SURFACE_FACE V: 4 I: 6 planar
 {
 	shader textures/nieb/clone/wood-floor01
-	entity 55
+	entity 54
 	castShadows 0
 	lightmapAxis ( 0.000000 1.000000 0.000000 )
 }
 
-666 // SURFACE_FACE V: 6 I: 12 planar
+668 // SURFACE_FACE V: 6 I: 12 planar
 {
 	shader textures/nieb/clone/wood-floor01
-	entity 55
+	entity 54
 	castShadows 0
 	lightmapAxis ( 0.000000 0.000000 -1.000000 )
 }
 
-667 // SURFACE_FACE V: 6 I: 12 planar
+669 // SURFACE_FACE V: 6 I: 12 planar
 {
 	shader textures/nieb/clone/wood-floor01
-	entity 55
-	castShadows 0
-	lightmapAxis ( 0.000000 0.000000 1.000000 )
-}
-
-668 // SURFACE_FACE V: 4 I: 6 planar
-{
-	shader textures/nieb/clone/wood-floor01
-	entity 55
-	castShadows 0
-	lightmapAxis ( 0.000000 0.000000 -1.000000 )
-}
-
-669 // SURFACE_FACE V: 4 I: 6 planar
-{
-	shader textures/nieb/clone/wood-floor01
-	entity 55
+	entity 54
 	castShadows 0
 	lightmapAxis ( 0.000000 0.000000 1.000000 )
 }
@@ -4471,79 +4471,79 @@ default
 670 // SURFACE_FACE V: 4 I: 6 planar
 {
 	shader textures/nieb/clone/wood-floor01
-	entity 55
+	entity 54
 	castShadows 0
-	lightmapAxis ( -1.000000 0.000000 0.000000 )
+	lightmapAxis ( 0.000000 -1.000000 0.000000 )
 }
 
-671 // SURFACE_FACE V: 8 I: 18 planar
+671 // SURFACE_FACE V: 4 I: 6 planar
 {
 	shader textures/nieb/clone/wood-floor01
-	entity 55
+	entity 54
 	castShadows 0
-	lightmapAxis ( 1.000000 0.000000 0.000000 )
+	lightmapAxis ( 0.000000 1.000000 0.000000 )
 }
 
 672 // SURFACE_FACE V: 4 I: 6 planar
 {
 	shader textures/nieb/clone/wood-floor01
-	entity 55
+	entity 54
 	castShadows 0
-	lightmapAxis ( 0.000000 -1.000000 0.000000 )
+	lightmapAxis ( 0.000000 0.000000 -1.000000 )
 }
 
 673 // SURFACE_FACE V: 4 I: 6 planar
 {
 	shader textures/nieb/clone/wood-floor01
-	entity 55
-	castShadows 0
-	lightmapAxis ( 0.000000 1.000000 0.000000 )
-}
-
-674 // SURFACE_FACE V: 6 I: 12 planar
-{
-	shader textures/nieb/clone/wood-floor01
-	entity 55
-	castShadows 0
-	lightmapAxis ( 0.000000 0.000000 -1.000000 )
-}
-
-675 // SURFACE_FACE V: 6 I: 12 planar
-{
-	shader textures/nieb/clone/wood-floor01
-	entity 55
+	entity 54
 	castShadows 0
 	lightmapAxis ( 0.000000 0.000000 1.000000 )
 }
 
+674 // SURFACE_FACE V: 4 I: 6 planar
+{
+	shader textures/nieb/clone/wood02
+	entity 56
+	castShadows 0
+	lightmapAxis ( -1.000000 0.000000 0.000000 )
+}
+
+675 // SURFACE_FACE V: 4 I: 6 planar
+{
+	shader textures/nieb/clone/wood02
+	entity 56
+	castShadows 0
+	lightmapAxis ( 1.000000 0.000000 0.000000 )
+}
+
 676 // SURFACE_FACE V: 4 I: 6 planar
 {
-	shader textures/nieb/clone/wood-floor01
-	entity 55
+	shader textures/nieb/clone/wood02
+	entity 56
 	castShadows 0
 	lightmapAxis ( 0.000000 -1.000000 0.000000 )
 }
 
 677 // SURFACE_FACE V: 4 I: 6 planar
 {
-	shader textures/nieb/clone/wood-floor01
-	entity 55
+	shader textures/nieb/clone/wood02
+	entity 56
 	castShadows 0
 	lightmapAxis ( 0.000000 1.000000 0.000000 )
 }
 
 678 // SURFACE_FACE V: 4 I: 6 planar
 {
-	shader textures/nieb/clone/wood-floor01
-	entity 55
+	shader textures/nieb/clone/wood02
+	entity 56
 	castShadows 0
 	lightmapAxis ( 0.000000 0.000000 -1.000000 )
 }
 
 679 // SURFACE_FACE V: 4 I: 6 planar
 {
-	shader textures/nieb/clone/wood-floor01
-	entity 55
+	shader textures/nieb/clone/wood02
+	entity 56
 	castShadows 0
 	lightmapAxis ( 0.000000 0.000000 1.000000 )
 }
@@ -4647,7 +4647,7 @@ default
 692 // SURFACE_FACE V: 4 I: 6 planar
 {
 	shader textures/nieb/clone/wood02
-	entity 59
+	entity 58
 	castShadows 0
 	lightmapAxis ( -1.000000 0.000000 0.000000 )
 }
@@ -4655,7 +4655,7 @@ default
 693 // SURFACE_FACE V: 4 I: 6 planar
 {
 	shader textures/nieb/clone/wood02
-	entity 59
+	entity 58
 	castShadows 0
 	lightmapAxis ( 1.000000 0.000000 0.000000 )
 }
@@ -4663,7 +4663,7 @@ default
 694 // SURFACE_FACE V: 4 I: 6 planar
 {
 	shader textures/nieb/clone/wood02
-	entity 59
+	entity 58
 	castShadows 0
 	lightmapAxis ( 0.000000 -1.000000 0.000000 )
 }
@@ -4671,7 +4671,7 @@ default
 695 // SURFACE_FACE V: 4 I: 6 planar
 {
 	shader textures/nieb/clone/wood02
-	entity 59
+	entity 58
 	castShadows 0
 	lightmapAxis ( 0.000000 1.000000 0.000000 )
 }
@@ -4679,7 +4679,7 @@ default
 696 // SURFACE_FACE V: 4 I: 6 planar
 {
 	shader textures/nieb/clone/wood02
-	entity 59
+	entity 58
 	castShadows 0
 	lightmapAxis ( 0.000000 0.000000 -1.000000 )
 }
@@ -4687,102 +4687,54 @@ default
 697 // SURFACE_FACE V: 4 I: 6 planar
 {
 	shader textures/nieb/clone/wood02
-	entity 59
+	entity 58
 	castShadows 0
 	lightmapAxis ( 0.000000 0.000000 1.000000 )
 }
 
 698 // SURFACE_FACE V: 4 I: 6 planar
 {
-	shader textures/nieb/clone/wood02
-	entity 59
+	shader textures/doors/wood_door_01
+	entity 61
 	castShadows 0
 	lightmapAxis ( -1.000000 0.000000 0.000000 )
 }
 
 699 // SURFACE_FACE V: 4 I: 6 planar
 {
-	shader textures/nieb/clone/wood02
-	entity 59
+	shader textures/doors/wood_door_01
+	entity 61
 	castShadows 0
 	lightmapAxis ( 1.000000 0.000000 0.000000 )
 }
 
 700 // SURFACE_FACE V: 4 I: 6 planar
 {
-	shader textures/nieb/clone/wood02
-	entity 59
+	shader textures/doors/wood_door_01
+	entity 61
 	castShadows 0
 	lightmapAxis ( 0.000000 -1.000000 0.000000 )
 }
 
 701 // SURFACE_FACE V: 4 I: 6 planar
 {
-	shader textures/nieb/clone/wood02
-	entity 59
+	shader textures/doors/wood_door_01
+	entity 61
 	castShadows 0
 	lightmapAxis ( 0.000000 1.000000 0.000000 )
 }
 
 702 // SURFACE_FACE V: 4 I: 6 planar
 {
-	shader textures/nieb/clone/wood02
-	entity 59
+	shader textures/doors/wood_door_01
+	entity 61
 	castShadows 0
 	lightmapAxis ( 0.000000 0.000000 -1.000000 )
 }
 
 703 // SURFACE_FACE V: 4 I: 6 planar
 {
-	shader textures/nieb/clone/wood02
-	entity 59
-	castShadows 0
-	lightmapAxis ( 0.000000 0.000000 1.000000 )
-}
-
-704 // SURFACE_FACE V: 4 I: 6 planar
-{
-	shader textures/nieb/complex/light-switch_01
-	entity 61
-	castShadows 0
-	lightmapAxis ( -1.000000 0.000000 0.000000 )
-}
-
-705 // SURFACE_FACE V: 4 I: 6 planar
-{
-	shader textures/nieb/complex/light-switch_01
-	entity 61
-	castShadows 0
-	lightmapAxis ( 1.000000 0.000000 0.000000 )
-}
-
-706 // SURFACE_FACE V: 4 I: 6 planar
-{
-	shader textures/nieb/complex/light-switch_01
-	entity 61
-	castShadows 0
-	lightmapAxis ( 0.000000 -1.000000 0.000000 )
-}
-
-707 // SURFACE_FACE V: 4 I: 6 planar
-{
-	shader textures/nieb/complex/light-switch_01
-	entity 61
-	castShadows 0
-	lightmapAxis ( 0.000000 1.000000 0.000000 )
-}
-
-708 // SURFACE_FACE V: 4 I: 6 planar
-{
-	shader textures/nieb/complex/light-switch_01
-	entity 61
-	castShadows 0
-	lightmapAxis ( 0.000000 0.000000 -1.000000 )
-}
-
-709 // SURFACE_FACE V: 4 I: 6 planar
-{
-	shader textures/nieb/complex/light-switch_01
+	shader textures/doors/wood_door_01
 	entity 61
 	castShadows 0
 	lightmapAxis ( 0.000000 0.000000 1.000000 )

@@ -14,20 +14,49 @@
  * OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  */
 
-/*QUAKED game_door_rotating (0 .5 .8) ?
+/*QUAKED game_door_rotating (0 .5 .8) ? SF_ROT_OPEN SF_ROT_BACKWARDS SF_ROT_UNUSED1 SF_ROT_PASSABLE SF_ROT_ONEWAY SF_ROT_TOGGLE SF_ROT_ZAXIS SF_ROT_XAXIS SF_ROT_USE SF_ROT_NOMONSTERS SF_ROT_LOCKED
 "targetname"    Name
 "target"        Target when triggered.
 "killtarget"    Target to kill when triggered.
+"closetarget"   Target to trigger when the door is closed.
+"lockedtarget"  Target to trigger when the door is locked.
 
-STUB!
+"snd_move"      Sound to play when the door is moving.
+                For an open sound, ensure the door its speed matches the audio length.
+"snd_stop"      Sound to play when the door stops moving.
+"snd_close"     Sound to play when the door is closed.
+"snd_locked"    Sound to play when the door is locked.
 
-Trivia:
-This entity was introduced in Quake II (1997).
+A rotating door entity.
+
+The audio keys relate to the shader names in game_door_rotating.sndshd
+
+When SF_ROT_OPEN is set, the door starts 'open'. This helps getting the surface
+of the door lit properly before hiding it away somewhere.
+
+When SF_ROT_PASSABLE is set, the door won't have any collision.
+
+When SF_ROT_TOGGLE is set, the door cannot be opened by any conventional means.
+It will have to be triggered by another map entity.
+
+When SF_ROT_USE is set, the door can be triggered by a player using the 'use'
+key/button.
+
+When SF_ROT_ONEWAY is set, the door will only move into one direction.
+
+When SF_ROT_NOMONSTERS is set, no monsters can use this door.
+
+When SF_ROT_LOCKED is set, the door needs to be unlocked by an other entity.
+TODO: Implement a lockitem field, so the door can be opened if this item is in posession.
+
+When SF_ROT_ZAXIS is set, the door rotates around the Z axis.
+
+When SF_ROT_XAXIS is set, the door rotates around the X axis.
 */
 
 enumflags
 {
-	SF_ROT_OPEN,
+	SF_ROT_OPEN,        
 	SF_ROT_BACKWARDS,
 	SF_ROT_UNUSED1,
 	SF_ROT_PASSABLE,
@@ -36,7 +65,8 @@ enumflags
 	SF_ROT_ZAXIS,
 	SF_ROT_XAXIS,
 	SF_ROT_USE,
-	SF_ROT_NOMONSTERS
+	SF_ROT_NOMONSTERS,
+    SF_ROT_LOCKED
 };
 
 #define SF_DOOR_SILENT 0x80000000i
@@ -44,8 +74,13 @@ enumflags
 class game_door_rotating:CBaseTrigger
 {
 	string targetClose;
+    string targetLocked;
+
+    string m_strSndClose;
 	string m_strSndMove;
 	string m_strSndStop;
+    string m_strSndLocked;
+
 	int m_iDamage;
 	int m_iLocked;
 	float m_flDistance;
@@ -148,12 +183,15 @@ void game_door_rotating::Returned(void)
 void game_door_rotating::Back(void)
 {
 	if (!(spawnflags & SF_DOOR_SILENT)) {
-		
-		if (m_strSndMove) {
-			Sound_Play(this, CHAN_VOICE, m_strSndMove);
-		} else {
-			sound(this, CHAN_VOICE, "common/null.wav", 1.0f, ATTN_NORM);
-		}
+        if (m_strSndClose) {
+            Sound_Play(this, CHAN_VOICE, m_strSndClose);
+        } else {
+            if (m_strSndMove) {
+                Sound_Play(this, CHAN_VOICE, m_strSndMove);
+            } else {
+                sound(this, CHAN_VOICE, "common/null.wav", 1.0f, ATTN_NORM);
+            }
+        }
 	}
 
 	if (!(spawnflags & SF_ROT_USE)) {
@@ -173,11 +211,11 @@ void game_door_rotating::Away(void)
 	}
 
 	if (!(spawnflags & SF_DOOR_SILENT)) {
-		if (m_strSndMove) {
-			Sound_Play(this, CHAN_VOICE, m_strSndMove);
-		} else {
-			sound(this, CHAN_VOICE, "common/null.wav", 1.0f, ATTN_NORM);
-		}
+        if (m_strSndMove) {
+            Sound_Play(this, CHAN_VOICE, m_strSndMove);
+        } else {
+            sound(this, CHAN_VOICE, "common/null.wav", 1.0f, ATTN_NORM);
+        }
 	}
   
 	if (m_iState == STATE_RAISED) {
@@ -247,6 +285,14 @@ void game_door_rotating::Touch(void)
 		return;
 	}
 	if (m_iLocked) {
+        if (targetLocked) {
+            for (entity f = world; (f = find(f, ::targetname, targetLocked));) {
+                CBaseTrigger trigger = (CBaseTrigger)f;
+                if (trigger.Trigger != __NULL__) {
+                    trigger.Trigger(this, TRIG_TOGGLE);
+                }
+            }
+        }
 		return;
 	}
 
@@ -370,9 +416,6 @@ game_door_rotating::SpawnKey(string strKey, string strValue)
 	case "speed":
 		m_flSpeed = stof(strValue);
 		break;
-	/*case "lip":
-		m_flLip = stof(strValue);
-		break;*/
 	case "noise1":
 		m_strSndMove = strValue;
 		break;
@@ -380,11 +423,19 @@ game_door_rotating::SpawnKey(string strKey, string strValue)
 		m_strSndStop = strValue;
 		break;
 	/* GoldSrc compat */
-	case "movesnd":
+	case "snd_move":
 		x = stoi(strValue);
 		m_strSndMove = sprintf("game_door_rotating.move_%i", x);
 		break;
-	case "stopsnd":
+	case "snd_close":
+		x = stoi(strValue);
+		m_strSndClose = sprintf("game_door_rotating.close_%i", x);
+		break;
+	case "snd_locked":
+		x = stoi(strValue);
+		m_strSndLocked = sprintf("game_door_rotating.locked_%i", x);
+		break;
+	case "snd_stop":
 		x = stoi(strValue);
 		m_strSndStop = sprintf("game_door_rotating.stop_%i", x);
 		break;
@@ -397,9 +448,12 @@ game_door_rotating::SpawnKey(string strKey, string strValue)
 	case "wait":
 		m_flWait = stof(strValue);
 		break;
-	case "netname":
+	case "closetarget":
 		targetClose = strValue;
 		break;
+    case "lockedtarget":
+        targetLocked = strValue;
+        break;
 	default:
 		CBaseTrigger::SpawnKey(strKey, strValue);
 	}
@@ -415,6 +469,13 @@ void game_door_rotating::game_door_rotating(void)
 
 	if (m_strSndMove)
 		Sound_Precache(m_strSndMove);
+	if (m_strSndClose)
+		Sound_Precache(m_strSndClose);
+	if (m_strSndLocked)
+		Sound_Precache(m_strSndLocked);
 	if (m_strSndStop)
 		Sound_Precache(m_strSndStop);
 }
+
+
+CLASSEXPORT(game_door_rotating, game_door_rotating);

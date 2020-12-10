@@ -25,6 +25,7 @@
 ../schizomania/entities/egui_mainmenu.cpp
 
 ../schizomania/entities/func_locked_door.cpp
+../schizomania/entities/game_door_rotating.cpp
 
 ../schizomania/entities/hud_notification.cpp
 ../schizomania/entities/hud_textmessage.cpp

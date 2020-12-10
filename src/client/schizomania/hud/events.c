@@ -55,15 +55,9 @@ HUD_Event_Message(void)
 void 
 HUD_Event_Notification(void) 
 {
+	int style = readbyte();
 	float duration = readfloat();
 	string message = strreplace("\\n", "\n", readstring());
 
-	HUDNotification_PushNotification(message, duration, HUD_NOTIFICATION_LARGE);
-
-//	g_hudnotifications[position].m_iPosition = position;
- //   g_hudnotifications[position].m_flDuration = readfloat();
-//	g_hudnotifications[position].m_strMessage = strreplace("\\n", "\n", readstring());
-	// //g_hudnotifications[position].m_strMessage = "Lorem ipsum dolor \nsit amec avec un grande dildo ich ficke deine mutti mit das groBn dildo ja!";//Titles_ParseFunString(readstring());
-	// g_hudnotifications[position].m_flTotalTime = 0;
-	// g_hudnotifications[position].m_flFadeTime = 0;
+	HUDNotification_PushNotification(message, duration, style);
 }
