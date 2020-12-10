@@ -4740,3 +4740,51 @@ default
 	lightmapAxis ( 0.000000 0.000000 1.000000 )
 }
 
+704 // SURFACE_FACE V: 4 I: 6 planar
+{
+	shader textures/nieb/complex/light-switch_01
+	entity 61
+	castShadows 0
+	lightmapAxis ( -1.000000 0.000000 0.000000 )
+}
+
+705 // SURFACE_FACE V: 4 I: 6 planar
+{
+	shader textures/nieb/complex/light-switch_01
+	entity 61
+	castShadows 0
+	lightmapAxis ( 1.000000 0.000000 0.000000 )
+}
+
+706 // SURFACE_FACE V: 4 I: 6 planar
+{
+	shader textures/nieb/complex/light-switch_01
+	entity 61
+	castShadows 0
+	lightmapAxis ( 0.000000 -1.000000 0.000000 )
+}
+
+707 // SURFACE_FACE V: 4 I: 6 planar
+{
+	shader textures/nieb/complex/light-switch_01
+	entity 61
+	castShadows 0
+	lightmapAxis ( 0.000000 1.000000 0.000000 )
+}
+
+708 // SURFACE_FACE V: 4 I: 6 planar
+{
+	shader textures/nieb/complex/light-switch_01
+	entity 61
+	castShadows 0
+	lightmapAxis ( 0.000000 0.000000 -1.000000 )
+}
+
+709 // SURFACE_FACE V: 4 I: 6 planar
+{
+	shader textures/nieb/complex/light-switch_01
+	entity 61
+	castShadows 0
+	lightmapAxis ( 0.000000 0.000000 1.000000 )
+}
+

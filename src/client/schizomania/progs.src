@@ -27,15 +27,17 @@
 ../schizomania/player.c
 ../schizomania/entities.c
 ../schizomania/cmds.c
-../schizomania/events_items.c
-../schizomania/game_event.c
+    ../schizomania/hud/hud_messages.c
+    ../schizomania/hud/hud.c
+    ../schizomania/hud/hud_weaponselect.c
+    ../schizomania/hud/events.c
+    ../schizomania/items/events.c
 ../schizomania/view.c
 ../schizomania/crosshair.c
 ../schizomania/obituary.c
-../schizomania/hud.c
-../schizomania/hud_weaponselect.c
 ../schizomania/scoreboard.c
 ../schizomania/input.c
+../schizomania/game_events.c
 
 ../schizomania/entities/item_inventory.cpp
 

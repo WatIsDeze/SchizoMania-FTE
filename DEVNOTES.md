@@ -22,10 +22,14 @@ my own ADHD good.
 - We'll likely add our own env_fade too. It kinda sucks we need to
 - deviate, but we seek more features than the core gs-entbase has atm.
 -
-- Implement custom game_text, which DOES also trigger targets.
+-
+- remove OLD HUD STUFF.
+-
+- Implement custom hud_textmessage, which DOES also trigger targets.
   -- Implement with the typical quake font the UI uses already, but
      larger. Maybe let text scroll in a bit. Possibly have a small shadowy background layer made in Krita to drop below it.
-     
+  -- TODO: Fix trigger delay issue.
+
 - Implement a custom func_door/func_door_rotating with extra sound and trigger options.
   -- Locked door sound for example
   -- Closing door sound.

@@ -17,8 +17,19 @@
 #include "obituary.h"
 #include "particles.h"
 
+//-----------------------
+// CUSTOM HUD FONTS.
+//-----------------------
+float FONT_HUD_MESSAGES;
+
+//-----------------------
+// AUTO CVARS
+//-----------------------
 var int autocvar_cl_autoweaponswitch = TRUE;
 
+//-----------------------
+// OLD HUD STUFF.
+//-----------------------
 vector g_hud_color;
 vector g_hudmins;
 vector g_hudres;

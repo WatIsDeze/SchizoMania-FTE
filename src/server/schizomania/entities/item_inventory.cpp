@@ -111,7 +111,7 @@ void item_inventory::OnPlayerUse(void)
 	Item_Pickup(pl, m_iItemID, m_iAmount);
 
 	// Activate target.
-	UseTargets(eActivator, TRIG_ON, 0);
+	UseTargets(eActivator, TRIG_TOGGLE, 0);
 	
 	// Remove from world, we don't want to pick it up twice.
 	remove(this);

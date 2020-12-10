@@ -25,4 +25,11 @@ enum
 	EV_ITEM_DROP,				// Dropping an item from inventory event.
 	EV_ITEM_USE,				// Using an item event.
 	EV_ITEM_EQUIP,				// Equiping an item event.
+
+	//================
+	// GAME TEXT EVENTS.
+	//
+	// TODO: INCLUDES HUD NOTIFICATIONS.
+	//================
+	EV_HUD_MESSAGE,				// Displaying a player speak text message on screen.
 };

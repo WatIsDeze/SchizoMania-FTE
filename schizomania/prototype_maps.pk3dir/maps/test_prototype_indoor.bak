@@ -1816,8 +1816,7 @@ nieb/metal-grey
 "distance" "90"
 "movesnd" "101"
 "targetname" "intro_door_1"
-"master" "mm_item_counter"
-"target" "message_door_1"
+"master" "hud_msg_intro2"
 // brush 0
 {
 ( -1192 2718 216 ) ( -1192 2662 216 ) ( -1208 2718 216 ) doors/wood_door_01 [ 1 0 0 256 ] [ -0 -1 -0 196.9267578125 ] -0 0.0078125 0.0507812463 0 0 0
@@ -1983,6 +1982,8 @@ nieb/metal-grey
 "spawnflags" "256"
 "distance" "90"
 "movesnd" "101"
+"targetname" "door_x"
+"master" "xx"
 // brush 0
 {
 ( -1250 2888 216 ) ( -1306 2888 216 ) ( -1250 2904 216 ) doors/wood_door_01 [ 0 -1 0 256 ] [ -1 0 0 905.8498535156 ] -0 0.0078125 0.0507812463 0 0 0
@@ -2652,25 +2653,66 @@ fabric/fabric005
 }
 // entity 60
 {
-"classname" "multisource"
-"count" "2"
-"targetname" "mm_item_counter"
-"origin" "-1272.000000 2648.000000 144.000000"
+"classname" "hud_textmessage"
+"origin" "-1256.000000 3032.000000 208.000000"
+"targetname" "hud_msg_intro1"
+"target" "xx"
+"message" "I'll be damned, how in the hell did I end up here?"
+"x" "-1"
+"y" "-1"
+"color" "222 222 222"
+"color2" "150 0 0"
+"effect" "2"
+"fadein" "0.01"
+"fadeout" "1.5"
+"fxtime" "0.25"
+"holdtime" "3.5"
+"delay" "3.5"
 }
 // entity 61
 {
-"classname" "game_text"
-"origin" "-1272.000000 2648.000000 184.000000"
-"targetname" "message_door_1"
-"spawnflags" "1"
-"message" "asdfasdfasdfasfd"
+"classname" "func_button"
+"target" "hud_msg_intro1"
+// brush 0
+{
+( -1184 3048 176 ) ( -1184 3032 176 ) ( -1208 3048 176 ) nieb/complex/light-switch_01 [ 1 0 0 0 ] [ -0 -1 -0 0 ] -0 0.0625 0.0625 0 0 0
+( -1232 3040 176 ) ( -1256 3040 176 ) ( -1232 3040 48 ) nieb/complex/light-switch_01 [ 1 0 0 0 ] [ -0 -0 -1 0 ] -0 0.0625 0.0625 0 0 0
+( -1248 3048 176 ) ( -1248 3048 48 ) ( -1248 3032 176 ) nieb/complex/light-switch_01 [ 0 1 0 -0 ] [ -0 -0 -1 0 ] -0 0.0625 0.0625 0 0 0
+( -1208 3032 168 ) ( -1184 3032 168 ) ( -1208 3048 168 ) nieb/complex/light-switch_01 [ 1 0 0 0 ] [ -0 -1 -0 0 ] -0 0.0625 0.0625 0 0 0
+( -1224 3032 48 ) ( -1224 3032 176 ) ( -1200 3032 48 ) nieb/complex/light-switch_01 [ 1 0 0 0 ] [ -0 -0 -1 0 ] -0 0.0625 0.0625 0 0 0
+( -1256 3032 48 ) ( -1256 3048 48 ) ( -1256 3032 176 ) nieb/complex/light-switch_01 [ 0 1 0 -0 ] [ -0 -0 -1 0 ] -0 0.0625 0.0625 0 0 0
+}
+}
+// entity 62
+{
+"classname" "hud_textmessage"
+"origin" "-1272.000000 2648.000000 208.000000"
+"targetname" "hud_msg_intro2"
+"target" "intro_door_1"
+"color" "100 100 100"
+"color2" "240 110 0"
 "effect" "2"
 "fadein" "0.01"
-"fadeout" "0.5"
-"holdtime" "2.5"
-"color" "100 100 100"
+"fadeout" "1.5"
+"fxtime" "0.25"
+"holdtime" "3.5"
 "x" "-1"
 "y" "-1"
-"color2" "240 110 0"
-"fxtime" "0.25"
+"message" "Great, just my lucky day... Let's see what the fuck is going on out there."
+}
+// entity 63
+{
+"classname" "trigger_counter"
+"count" "2"
+"targetname" "mm_item_counter"
+"origin" "-1272.000000 2648.000000 144.000000"
+"target" "hud_msg_intro2"
+}
+// entity 64
+{
+"classname" "multisource"
+"origin" "-1256.000000 3000.000000 208.000000"
+"targetname" "xx"
+"target" "hud_msg_intro1"
+"count" "0"
 }

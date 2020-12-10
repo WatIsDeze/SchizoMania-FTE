@@ -14,9 +14,10 @@
  * OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  */
 
-/*QUAKED game_textmessage (1 0 0) (-8 -8 -8) (8 8 8) GTF_ALLPLAYERS
+/*QUAKED hud_textmessage (1 0 0) (-8 -8 -8) (8 8 8) GTF_ALLPLAYERS
 "targetname"    Name
 "target"        Target to trigger when triggered.
+"delay"			TODO: Dun work yet? - How long to wait before triggering.
 "x"             Horizontal position of text. 
                     (0 - 1.0 = left to right, -1 = center)
 "y"             Vertical position of text.
@@ -50,7 +51,7 @@ enumflags
 	GTF_ALLPLAYERS
 };
 
-class game_textmessage:CBaseTrigger
+class hud_textmessage:CBaseTrigger
 {
 	float m_flPosX;
 	float m_flPosY;
@@ -63,16 +64,16 @@ class game_textmessage:CBaseTrigger
 	float m_flFXTime;
 	int m_iChannel;
 		
-	void(void) game_textmessage;
+	void(void) hud_textmessage;
 
 	virtual void(entity, int) Trigger;
 	virtual void(string, string) SpawnKey;
 };
 
-void game_textmessage::Trigger(entity act, int state)
+void hud_textmessage::Trigger(entity act, int state)
 {
 	WriteByte(MSG_MULTICAST, SVC_CGAMEPACKET);
-	WriteByte(MSG_MULTICAST, EV_TEXT);
+	WriteByte(MSG_MULTICAST, EV_HUD_MESSAGE);
 	WriteByte(MSG_MULTICAST, m_iChannel);
 	WriteString(MSG_MULTICAST, m_strMessage);
 	WriteFloat(MSG_MULTICAST, m_flPosX);
@@ -96,10 +97,13 @@ void game_textmessage::Trigger(entity act, int state)
 		msg_entity = act;
 		multicast(origin, MULTICAST_ONE_R);
 	}
+
+	// Trigger target.
+	UseTargets(msg_entity, TRIG_TOGGLE, m_flDelay);
 }
 
 void
-game_textmessage::SpawnKey(string strKey, string strValue)
+hud_textmessage::SpawnKey(string strKey, string strValue)
 {
 	switch (strKey) {
 	case "x":
@@ -137,7 +141,7 @@ game_textmessage::SpawnKey(string strKey, string strValue)
 	}
 }
 
-void game_textmessage::game_textmessage(void)
+void hud_textmessage::hud_textmessage(void)
 {
 	CBaseTrigger::CBaseTrigger();
 }

@@ -25,7 +25,7 @@ Game_Parse_Event(float fHeader)
 	switch (fHeader) {
 
 	//-------------------------
-	// SCMA events.
+	// ITEM EVENTS:
 	//-------------------------
 	case EV_ITEM_PICKUP:
 		Items_Event_Pickup();
@@ -40,6 +40,12 @@ Game_Parse_Event(float fHeader)
 		Items_Event_Equip();
 		break;
 
+	//-------------------------
+	// HUD EVENTS.
+	//-------------------------
+	case EV_HUD_MESSAGE:
+		HUD_Event_Message();
+		break;
 	//-------------------------
 	// Stock FreeCS events.
 	//-------------------------
