@@ -28,6 +28,7 @@
 ../schizomania/entities.c
 ../schizomania/cmds.c
     ../schizomania/hud/hud_messages.c
+    ../schizomania/hud/hud_notifications.c
     ../schizomania/hud/hud.c
     ../schizomania/hud/hud_weaponselect.c
     ../schizomania/hud/events.c

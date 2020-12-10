@@ -25,6 +25,9 @@ my own ADHD good.
 -
 - remove OLD HUD STUFF.
 -
+
+- FIX bug that one can use any item (at least, it removes them lol) 
+
 - Implement custom hud_textmessage, which DOES also trigger targets.
   -- Implement with the typical quake font the UI uses already, but
      larger. Maybe let text scroll in a bit. Possibly have a small shadowy background layer made in Krita to drop below it.

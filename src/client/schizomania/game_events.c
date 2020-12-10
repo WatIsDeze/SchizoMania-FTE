@@ -46,6 +46,10 @@ Game_Parse_Event(float fHeader)
 	case EV_HUD_MESSAGE:
 		HUD_Event_Message();
 		break;
+	case EV_HUD_NOTIFICATION:
+		HUD_Event_Notification();
+		break;
+
 	//-------------------------
 	// Stock FreeCS events.
 	//-------------------------

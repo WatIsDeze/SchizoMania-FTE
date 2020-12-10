@@ -13,6 +13,8 @@
  * IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING
  * OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  */
+string Titles_ParseFunString(string);
+
 //=======================================================================//
 //
 // CLIENT SIDE HUD EVENT IMPLEMENTATIONS.
@@ -21,32 +23,48 @@
 //=======================
 // void HUD_Event_Message(void) 
 //
-// Parses the EV_ITEM_PICKUP message. Adds items to client inventory and
-// informs the client about the picked up item.
+// Parses the EV_HUD_MESSAGE event appropriately.
 //=======================
-string Titles_ParseFunString(string);
-
 void 
 HUD_Event_Message(void) 
 {
 	int chan = readbyte();
 	
-    g_hudchannels[chan].m_strMessage = Titles_ParseFunString(readstring());
-    // TODO: Do we still need these if we set them by default?
-    g_hudchannels[chan].m_flPosX = readfloat();
-	g_hudchannels[chan].m_flPosY = readfloat();
-    g_hudchannels[chan].m_flPosX = -1.0f;
-	g_hudchannels[chan].m_flPosY = 0.8f;
-	g_hudchannels[chan].m_iEffect = readbyte();
-	g_hudchannels[chan].m_vecColor1[0] = readbyte() / 255;
-	g_hudchannels[chan].m_vecColor1[1] = readbyte() / 255;
-	g_hudchannels[chan].m_vecColor1[2] = readbyte() / 255;
-	g_hudchannels[chan].m_vecColor2[0] = readbyte() / 255;
-	g_hudchannels[chan].m_vecColor2[1] = readbyte() / 255;
-	g_hudchannels[chan].m_vecColor2[2] = readbyte() / 255;
-	g_hudchannels[chan].m_flFadeIn = readfloat();
-	g_hudchannels[chan].m_flFadeOut = readfloat();
-	g_hudchannels[chan].m_flHoldTime = readfloat();
-	g_hudchannels[chan].m_flFXTime = readfloat();
-	g_hudchannels[chan].m_flTime = 0.0f;
+    g_hudmessage_channels[chan].m_strMessage = Titles_ParseFunString(readstring());
+    g_hudmessage_channels[chan].m_flPosX = readfloat();
+	g_hudmessage_channels[chan].m_flPosY = readfloat();
+	g_hudmessage_channels[chan].m_iEffect = readbyte();
+	g_hudmessage_channels[chan].m_vecColor1[0] = readbyte() / 255;
+	g_hudmessage_channels[chan].m_vecColor1[1] = readbyte() / 255;
+	g_hudmessage_channels[chan].m_vecColor1[2] = readbyte() / 255;
+	g_hudmessage_channels[chan].m_vecColor2[0] = readbyte() / 255;
+	g_hudmessage_channels[chan].m_vecColor2[1] = readbyte() / 255;
+	g_hudmessage_channels[chan].m_vecColor2[2] = readbyte() / 255;
+	g_hudmessage_channels[chan].m_flFadeIn = readfloat();
+	g_hudmessage_channels[chan].m_flFadeOut = readfloat();
+	g_hudmessage_channels[chan].m_flHoldTime = readfloat();
+	g_hudmessage_channels[chan].m_flFXTime = readfloat();
+	g_hudmessage_channels[chan].m_flTime = 0.0f;
+}
+
+//=======================
+// void HUD_Event_Notification(void) 
+//
+// Parses the EV_HUD_NOTIFICATION event appropriately.
+//=======================
+void 
+HUD_Event_Notification(void) 
+{
+	int chan = readbyte();
+	
+    g_hudnotification_channels[chan].m_strMessage = Titles_ParseFunString(readstring());
+	g_hudnotification_channels[chan].m_iPosition = readbyte();
+	g_hudnotification_channels[chan].m_iEffect = readbyte();
+	g_hudnotification_channels[chan].m_vecColor1[0] = readbyte() / 255;
+	g_hudnotification_channels[chan].m_vecColor1[1] = readbyte() / 255;
+	g_hudnotification_channels[chan].m_vecColor1[2] = readbyte() / 255;
+	g_hudnotification_channels[chan].m_vecColor2[0] = readbyte() / 255;
+	g_hudnotification_channels[chan].m_vecColor2[1] = readbyte() / 255;
+	g_hudnotification_channels[chan].m_vecColor2[2] = readbyte() / 255;
+	g_hudnotification_channels[chan].m_flTime = 0.0f;
 }

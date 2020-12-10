@@ -26,6 +26,7 @@
 
 ../schizomania/entities/func_locked_door.cpp
 
+../schizomania/entities/hud_notification.cpp
 ../schizomania/entities/hud_textmessage.cpp
 
 ../schizomania/entities/monster_apache.cpp

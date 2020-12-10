@@ -31,5 +31,6 @@ enum
 	//
 	// TODO: INCLUDES HUD NOTIFICATIONS.
 	//================
-	EV_HUD_MESSAGE,				// Displaying a player speak text message on screen.
+	EV_HUD_MESSAGE,				// Displaying a player/npc speak text message on screen.
+	EV_HUD_NOTIFICATION,		// Displays a notification, such as input instructions, door is locked, pickups etc.
 };

@@ -14,14 +14,10 @@
  * OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  */
 
-/*QUAKED hud_textmessage (1 0 0) (-8 -8 -8) (8 8 8) GTF_ALLPLAYERS
+/*QUAKED hud_notification (1 0 0) (-8 -8 -8) (8 8 8) GTF_ALLPLAYERS
 "targetname"    Name
 "target"        Target to trigger when triggered.
 "delay"			TODO: Dun work yet? - How long to wait before triggering.
-"x"             Horizontal position of text. 
-                    (0 - 1.0 = left to right, -1 = center)
-"y"             Vertical position of text.
-                    (0 - 1.0 = top to bottom, -1 = center)
 "effect"        Effect to apply to the text.
                     Valid values:
                         0 = Fade In/Out
@@ -29,18 +25,11 @@
                         2 = Scan Out
 "color"         The main colour in RGB8.
 "color2"        The highlight colour in RGB8.
-"fadein"        Time taken to fade in each character.
-"fadeout"       Time taken to fade out message.
-"holdtime"      Length of time to hold message on screen after fading in.
-"fxtime"        Time the highlight lags behind the leading edge of the text in
-                seconds.
-"channel"       Message channel to use. Meant for overriding messages.
+"position"      0 = Top, 1 = Right, 2 = Bottom, 3 = Left.
 
-This entity displays a message on the screen, usually centered.
-It is meant for dialogues, when the player is conversing.
-Talking to other entities, and/or himself.
-
-TODO: Change font style maybe when he talks to himself?
+Displays HUD update messages.
+For example, when picking up an item.
+When a door is locked, or a key is required etc.
 
 If GTF_ALLPLAYERS is set, it'll display the message to not just the activator,
 but all players on the level.
@@ -51,33 +40,25 @@ enumflags
 	GTF_ALLPLAYERS
 };
 
-class hud_textmessage:CBaseTrigger
+class hud_notification:CBaseTrigger
 {
-	float m_flPosX;
-	float m_flPosY;
+    int m_iPosition;
 	int m_iEffect;
 	vector m_vecColor1;
 	vector m_vecColor2;
-	float m_flFadeIn;
-	float m_flFadeOut;
-	float m_flHoldTime;
-	float m_flFXTime;
-	int m_iChannel;
 		
-	void(void) hud_textmessage;
+	void(void) hud_notification;
 
 	virtual void(entity, int) Trigger;
 	virtual void(string, string) SpawnKey;
 };
 
-void hud_textmessage::Trigger(entity act, int state)
+void hud_notification::Trigger(entity act, int state)
 {
 	WriteByte(MSG_MULTICAST, SVC_CGAMEPACKET);
-	WriteByte(MSG_MULTICAST, EV_HUD_MESSAGE);
-	WriteByte(MSG_MULTICAST, m_iChannel);
+	WriteByte(MSG_MULTICAST, EV_HUD_NOTIFICATION);
 	WriteString(MSG_MULTICAST, m_strMessage);
-	WriteFloat(MSG_MULTICAST, m_flPosX);
-	WriteFloat(MSG_MULTICAST, m_flPosY);
+	WriteByte(MSG_MULTICAST, m_iPosition);
 	WriteByte(MSG_MULTICAST, m_iEffect);
 	WriteByte(MSG_MULTICAST, m_vecColor1[0]);
 	WriteByte(MSG_MULTICAST, m_vecColor1[1]);
@@ -85,10 +66,6 @@ void hud_textmessage::Trigger(entity act, int state)
 	WriteByte(MSG_MULTICAST, m_vecColor2[0]);
 	WriteByte(MSG_MULTICAST, m_vecColor2[1]);
 	WriteByte(MSG_MULTICAST, m_vecColor2[2]);
-	WriteFloat(MSG_MULTICAST, m_flFadeIn);
-	WriteFloat(MSG_MULTICAST, m_flFadeOut);
-	WriteFloat(MSG_MULTICAST, m_flHoldTime);
-	WriteFloat(MSG_MULTICAST, m_flFXTime);
 
 	if (spawnflags & GTF_ALLPLAYERS) {
 		msg_entity = this;
@@ -103,15 +80,12 @@ void hud_textmessage::Trigger(entity act, int state)
 }
 
 void
-hud_textmessage::SpawnKey(string strKey, string strValue)
+hud_notification::SpawnKey(string strKey, string strValue)
 {
 	switch (strKey) {
-	case "x":
-		m_flPosX = stof(strValue);
-		break;
-	case "y":
-		m_flPosY = stof(strValue);
-		break;
+    case "position":
+        m_iPosition = stoi(strValue);
+    break;
 	case "effect":
 		m_iEffect = stoi(strValue);
 		break;
@@ -121,39 +95,18 @@ hud_textmessage::SpawnKey(string strKey, string strValue)
 	case "color2":
 		m_vecColor2 = stov(strValue);
 		break;
-	case "fadein":
-		m_flFadeIn = stof(strValue);
-		break;
-	case "fadeout":
-		m_flFadeOut = stof(strValue);
-		break;
-	case "holdtime":
-		m_flHoldTime = stof(strValue);
-		break;
-	case "fxtime":
-		m_flFXTime = stof(strValue);
-		break;
-	case "channel":
-		m_iChannel = stoi(strValue);
-		break;
 	default:
 		CBaseTrigger::SpawnKey(strKey, strValue);
 	}
 }
 
-void hud_textmessage::hud_textmessage(void)
+void hud_notification::hud_notification(void)
 {
 	CBaseTrigger::CBaseTrigger();
 
-	// Default position of the hud textmessages.
-	m_flPosX = -1.0f;
-	m_flPosY = 0.8f;
+	// Default hud notification.
+    m_iPosition = 1;
+	m_iEffect = 2;
 	m_vecColor1 = [255, 255, 255];
 	m_vecColor2 = [180, 0, 0];
-	m_flDelay = 2.5f;
-	m_iEffect = 2;
-	m_flFXTime = 0.25f;
-	m_flFadeIn = 0.01f;
-	m_flFadeOut = 1.5f;
-	m_flHoldTime = 2.5f;
 }

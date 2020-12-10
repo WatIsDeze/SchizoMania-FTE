@@ -2658,21 +2658,11 @@ fabric/fabric005
 "targetname" "hud_msg_intro1"
 "target" "xx"
 "message" "I'll be damned, how in the hell did I end up here?"
-"x" "-1"
-"y" "0.8"
-"color" "222 222 222"
-"color2" "150 0 0"
-"effect" "2"
-"fadein" "0.01"
-"fadeout" "1.5"
-"fxtime" "0.25"
-"holdtime" "3.5"
-"delay" "3.5"
 }
 // entity 61
 {
 "classname" "func_button"
-"target" "hud_msg_intro1"
+"target" "hudnoti_1"
 // brush 0
 {
 ( -1184 3048 176 ) ( -1184 3032 176 ) ( -1208 3048 176 ) nieb/complex/light-switch_01 [ 1 0 0 0 ] [ -0 -1 -0 0 ] -0 0.0625 0.0625 0 0 0
@@ -2715,4 +2705,10 @@ fabric/fabric005
 "targetname" "xx"
 "target" "door_x"
 "count" "1"
+}
+// entity 65
+{
+"classname" "hud_notification"
+"origin" "-1240.000000 3064.000000 0.000000"
+"targetname" "hudnoti_1"
 }

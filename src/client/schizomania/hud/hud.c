@@ -402,7 +402,8 @@ HUD_Draw(void)
 {
 	// player pl = (player)pSeat->m_ePlayer;
     HUDMessage_Draw();
-
+    HUDNotification_Draw();
+    
 	// g_hud_color = autocvar_con_color * (1 / 255);
 
 	// /* little point in not drawing these, even if you don't have a suit */

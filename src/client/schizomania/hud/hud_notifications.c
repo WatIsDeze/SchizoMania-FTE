@@ -18,6 +18,8 @@ typedef struct
 	string m_strMessage;
 	float m_flPosX;
 	float m_flPosY;
+    
+    int m_iPosition;
 	int m_iEffect;
 	vector m_vecColor1;
 	vector m_vecColor2;
@@ -26,12 +28,12 @@ typedef struct
 	float m_flHoldTime;
 	float m_flFXTime;
 	float m_flTime;
-} hudmessage_t;
-hudmessage_t g_hudmessage_channels[5];
+} HUDNotification_t;
+HUDNotification_t g_hudnotification_channels[5];
 
 /* for effect 2 */
 int
-HUDMessage_CharCount(float fadein, float timer, string msg)
+HUDNotification_CharCount(float fadein, float timer, string msg)
 {
 	float len = (timer / fadein);
 
@@ -43,7 +45,7 @@ HUDMessage_CharCount(float fadein, float timer, string msg)
 
 /* the engine its drawstring doesn't like newlines that much */
 void
-HUDMessage_DrawString(vector pos, string msg, vector col, float alpha)
+HUDNotification_DrawString(vector pos, string msg, vector col, float alpha)
 {
 	vector rpos;
 	int c = tokenizebyseparator(msg, "\n");
@@ -74,7 +76,7 @@ HUDMessage_DrawString(vector pos, string msg, vector col, float alpha)
 }
 
 void
-HUDMessage_DrawMessage(int i, float timer, int highlight, int drawbg)
+HUDNotification_DrawMessage(int i, float timer, int highlight, int drawbg)
 {
 	float a = 0.0f;
 	vector rpos;
@@ -82,41 +84,41 @@ HUDMessage_DrawMessage(int i, float timer, int highlight, int drawbg)
 	float btime;
 	string finalstring;
 
-	if (g_hudmessage_channels[i].m_iEffect == 2) {
+	if (g_hudnotification_channels[i].m_iEffect == 2) {
 		/* scan out */
-		finalstring = substring(g_hudmessage_channels[i].m_strMessage, 0,
-			HUDMessage_CharCount(g_hudmessage_channels[i].m_flFadeIn, timer,
-				g_hudmessage_channels[i].m_strMessage));
+		finalstring = substring(g_hudnotification_channels[i].m_strMessage, 0,
+			HUDNotification_CharCount(g_hudnotification_channels[i].m_flFadeIn, timer,
+				g_hudnotification_channels[i].m_strMessage));
 	} else {
-		finalstring = g_hudmessage_channels[i].m_strMessage;
+		finalstring = g_hudnotification_channels[i].m_strMessage;
 	}
 
 	timer = max(0, timer);
 
 	if (highlight) {
-		btime = g_hudmessage_channels[i].m_flFadeIn * strlen(g_hudmessage_channels[i].m_strMessage);
-		mtime = btime + g_hudmessage_channels[i].m_flFadeOut;
+		btime = g_hudnotification_channels[i].m_flFadeIn * strlen(g_hudnotification_channels[i].m_strMessage);
+		mtime = btime + g_hudnotification_channels[i].m_flFadeOut;
 	} else {
-		mtime = g_hudmessage_channels[i].m_flFadeIn + g_hudmessage_channels[i].m_flHoldTime + g_hudmessage_channels[i].m_flFadeOut;
-		btime = g_hudmessage_channels[i].m_flFadeIn + g_hudmessage_channels[i].m_flHoldTime;
+		mtime = g_hudnotification_channels[i].m_flFadeIn + g_hudnotification_channels[i].m_flHoldTime + g_hudnotification_channels[i].m_flFadeOut;
+		btime = g_hudnotification_channels[i].m_flFadeIn + g_hudnotification_channels[i].m_flHoldTime;
 	}
 
 	if (timer > mtime) {
 		return;
 	}
 
-	if (timer < g_hudmessage_channels[i].m_flFadeIn) {
-		a = (timer / g_hudmessage_channels[i].m_flFadeIn);
+	if (timer < g_hudnotification_channels[i].m_flFadeIn) {
+		a = (timer / g_hudnotification_channels[i].m_flFadeIn);
 	} else if (timer < btime) {
 		a = 1.0f;
 	} else if (timer < mtime) {
-		if (g_hudmessage_channels[i].m_flFadeOut) {
-			a = 1 - (timer - btime) / g_hudmessage_channels[i].m_flFadeOut;
+		if (g_hudnotification_channels[i].m_flFadeOut) {
+			a = 1 - (timer - btime) / g_hudnotification_channels[i].m_flFadeOut;
 		}
 	}
 
-	rpos[0] = g_hudmessage_channels[i].m_flPosX;
-	rpos[1] = g_hudmessage_channels[i].m_flPosY;
+	rpos[0] = g_hudnotification_channels[i].m_flPosX;
+	rpos[1] = g_hudnotification_channels[i].m_flPosY;
 
     // // Draw background.
     // vector bgPos;
@@ -180,20 +182,20 @@ HUDMessage_DrawMessage(int i, float timer, int highlight, int drawbg)
     // }
 
 	if (highlight) {
-		HUDMessage_DrawString(rpos, finalstring, g_hudmessage_channels[i].m_vecColor2, a);
+		HUDNotification_DrawString(rpos, finalstring, g_hudnotification_channels[i].m_vecColor2, a);
 	} else {
-		HUDMessage_DrawString(rpos, finalstring, g_hudmessage_channels[i].m_vecColor1, a);
+		HUDNotification_DrawString(rpos, finalstring, g_hudnotification_channels[i].m_vecColor1, a);
 	}
 }
 
 void
-HUDMessage_Draw(void)
+HUDNotification_Draw(void)
 {
 	drawfont = FONT_HUD_MESSAGES;
 	for (int i = 0; i < 5; i++) {
-		HUDMessage_DrawMessage(i, g_hudmessage_channels[i].m_flTime - g_hudmessage_channels[i].m_flFXTime, 0, 1);
-		HUDMessage_DrawMessage(i, g_hudmessage_channels[i].m_flTime, 1, 0);
-		g_hudmessage_channels[i].m_flTime += clframetime;
+		HUDNotification_DrawMessage(i, g_hudnotification_channels[i].m_flTime - g_hudnotification_channels[i].m_flFXTime, 0, 1);
+		HUDNotification_DrawMessage(i, g_hudnotification_channels[i].m_flTime, 1, 0);
+		g_hudnotification_channels[i].m_flTime += clframetime;
 	}
 
 	drawfont = FONT_CON;
