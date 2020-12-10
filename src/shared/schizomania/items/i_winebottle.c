@@ -50,10 +50,10 @@ inventory_item_t i_winebottle =
 {
 	.name		= "Wine Bottle",
 
-    .txtPickup	= "picked up a Wine Bottle",  
-	.txtDrop	= "dropped a Bottle of Wine",
-    .txtUse		= "drank a Bottle of Wine",
-	.txtDescription = "A sweet and old red wine from 1926, containing a 7.8 percentage alcohol volume.",
+    .txtPickup	= "picked up a ^xF42Wine Bottle",  
+	.txtDrop	= "dropped a ^xF42Bottle of Wine",
+    .txtUse		= "drank a ^xF42Bottle of Wine",
+	.txtDescription = "A sweet and old ^xF42Red Wine^xFFF from 1926, containing a 7.8 percentage alcohol volume.",
 
 	.ID			= INVENTORY_ITEM_WINEBOTTLE,
 	.mins		= [-8,-8, 0],

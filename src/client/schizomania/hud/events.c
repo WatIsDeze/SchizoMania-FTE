@@ -55,16 +55,15 @@ HUD_Event_Message(void)
 void 
 HUD_Event_Notification(void) 
 {
-	int chan = readbyte();
-	
-    g_hudnotification_channels[chan].m_strMessage = Titles_ParseFunString(readstring());
-	g_hudnotification_channels[chan].m_iPosition = readbyte();
-	g_hudnotification_channels[chan].m_iEffect = readbyte();
-	g_hudnotification_channels[chan].m_vecColor1[0] = readbyte() / 255;
-	g_hudnotification_channels[chan].m_vecColor1[1] = readbyte() / 255;
-	g_hudnotification_channels[chan].m_vecColor1[2] = readbyte() / 255;
-	g_hudnotification_channels[chan].m_vecColor2[0] = readbyte() / 255;
-	g_hudnotification_channels[chan].m_vecColor2[1] = readbyte() / 255;
-	g_hudnotification_channels[chan].m_vecColor2[2] = readbyte() / 255;
-	g_hudnotification_channels[chan].m_flTime = 0.0f;
+	float duration = readfloat();
+	string message = strreplace("\\n", "\n", readstring());
+
+	HUDNotification_PushNotification(message, duration, HUD_NOTIFICATION_LARGE);
+
+//	g_hudnotifications[position].m_iPosition = position;
+ //   g_hudnotifications[position].m_flDuration = readfloat();
+//	g_hudnotifications[position].m_strMessage = strreplace("\\n", "\n", readstring());
+	// //g_hudnotifications[position].m_strMessage = "Lorem ipsum dolor \nsit amec avec un grande dildo ich ficke deine mutti mit das groBn dildo ja!";//Titles_ParseFunString(readstring());
+	// g_hudnotifications[position].m_flTotalTime = 0;
+	// g_hudnotifications[position].m_flFadeTime = 0;
 }

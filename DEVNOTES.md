@@ -15,23 +15,22 @@ my own ADHD good.
 
 # Prototype - Alpha - 0.1
 ## MUST DO LIST:
--
 - We'll figure out those Outputs too.
--
+
 - The following entities below need additions. Before we can move on.
-- We'll likely add our own env_fade too. It kinda sucks we need to
-- deviate, but we seek more features than the core gs-entbase has atm.
--
--
+We'll likely add our own env_fade too. It kinda sucks we need to
+deviate, but we seek more features than the core gs-entbase has atm.
+
 - remove OLD HUD STUFF.
--
+
+- Add KEY support to the strings in HUD_Notifications.
 
 - FIX bug that one can use any item (at least, it removes them lol) 
 
 - Implement custom hud_textmessage, which DOES also trigger targets.
   -- Implement with the typical quake font the UI uses already, but
      larger. Maybe let text scroll in a bit. Possibly have a small shadowy background layer made in Krita to drop below it.
-  -- TODO: Fix trigger delay issue.
+  [75%]
 
 - Implement a custom func_door/func_door_rotating with extra sound and trigger options.
   -- Locked door sound for example

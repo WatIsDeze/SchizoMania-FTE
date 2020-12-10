@@ -2709,6 +2709,9 @@ fabric/fabric005
 // entity 65
 {
 "classname" "hud_notification"
-"origin" "-1240.000000 3064.000000 0.000000"
+"origin" "-1248.000000 3064.000000 192.000000"
 "targetname" "hudnoti_1"
+"position" "3"
+"message" "Use the ^xF42MOUSE^xFFF and the ^xF42WASD^xFFF keys\nto move around."
+"duration" "5.5"
 }

@@ -13,190 +13,176 @@
  * IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING
  * OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  */
+//=========================================================================
+// HUD NOTIFICATION IMPLEMENTATION.
+//
+// Events, such as during the introduction scene where the player gets
+// instructions about the gameplay controls. Or, when picking up an item,
+// and other interactions that may want to inform the player.
+//
+// It works as a stash list, it'll work all the events in FIFO order.
+// In case an animation is finished, it's state is set to inactive and
+// a new slot frees up again for a new notification push.
+//=========================================================================
+// Notification sizes.
+#define HUD_NOTIFICATION_SMALL 0
+#define HUD_NOTIFICATION_LARGE 1
+
+// Notification struct and list.
 typedef struct
 {
 	string m_strMessage;
-	float m_flPosX;
-	float m_flPosY;
-    
-    int m_iPosition;
-	int m_iEffect;
-	vector m_vecColor1;
-	vector m_vecColor2;
-	float m_flFadeIn;
-	float m_flFadeOut;
-	float m_flHoldTime;
-	float m_flFXTime;
-	float m_flTime;
+
+    int m_iStyle;
+    int m_iIsActive;
+
+    float m_flAlpha;
+	float m_flTotalTime;
+    float m_flFadeTime;
+    float m_flDuration;
 } HUDNotification_t;
-HUDNotification_t g_hudnotification_channels[5];
+HUDNotification_t g_hudnotifications[5];
 
-/* for effect 2 */
-int
-HUDNotification_CharCount(float fadein, float timer, string msg)
+// Counter used to identify which last slot is free.
+static int g_hudnotification_count;
+
+//=======================
+// void HUDNotification_Init(void) 
+//
+// Ensures our list has free slots.
+//=======================
+void
+HUDNotification_Init()
 {
-	float len = (timer / fadein);
-
-	if (!fadein || len > strlen(msg))
-		return strlen(msg);
-	else 
-		return len;
+    for (int i = 0; i < 5; i++) {
+        g_hudnotifications[i].m_iIsActive = FALSE;
+    }
 }
 
-/* the engine its drawstring doesn't like newlines that much */
+//=======================
+// void HUDNotification_PushNotification(string message, float duration, int style) 
+//
+// Adds a hud notification to the stack, with the given duration and style.
+//
+// Style options:
+// - HUD_NOTIFICATION_SMALL useful for one lines, like picking up items.
+// - HUD_NOTIFICATION_LARGE useful for larger information such as player instructions.
+//=======================
+void 
+HUDNotification_PushNotification(string message, float duration, int style) 
+{
+    // Find a notification slot that isn't active.
+    int position = -1;
+    for (int i = 0; i < 5; i++) {
+        if (g_hudnotifications[i].m_iIsActive == FALSE) {
+            position = i;
+            break;
+        }
+    }
+
+    if (position == -1) {
+        dprint(sprintf("Too many hud notifications stashed, disregarding message: '%s'\n", message));
+        return;
+    }
+    g_hudnotifications[position].m_iStyle      = style;
+    g_hudnotifications[position].m_iIsActive   = TRUE;
+ 	g_hudnotifications[position].m_strMessage  = message;
+    g_hudnotifications[position].m_flDuration  = duration;
+	g_hudnotifications[position].m_flTotalTime = 0;
+	g_hudnotifications[position].m_flFadeTime  = 0;
+
+}
+
+//=======================
+// void HUDNotification_DrawString(vector pos, string msg, vector col, float alpha)
+//
+// Draws the given string accordingly with new lines support.
+//
+// TODO: Implement a max size rect, so it automatically goes to new lines
+// if the last word exceeds the allowed limits.
+//=======================
 void
 HUDNotification_DrawString(vector pos, string msg, vector col, float alpha)
 {
 	vector rpos;
 	int c = tokenizebyseparator(msg, "\n");
 	
+    // Hack:
+    // Clamp alpha to prevent it from bugging it.
+    if (alpha < 0)
+        alpha = 0;
+    if (alpha > 1)
+        alpha = 1;
+
 	for (int i = 0; i < c; i++) {
-		float strwidth = stringwidth(argv(i), TRUE, [20,20]);
-
-		if (pos[0] == -1) {
-			rpos[0] = g_hudmins[0] + (g_hudres[0] / 2) - (strwidth/2);
-		} else {
-			rpos[0] = g_hudmins[0] + g_hudres[0] * pos[0];
-
-			if (pos[0] >= 0.5) {
-				rpos[0] -= strwidth;
-			}
-		}
-
-		if (pos[1] == -1) {
-			rpos[1] = g_hudmins[1] + (g_hudres[1] / 2) - 6;
-		} else {
-			rpos[1] = g_hudmins[1] + ((g_hudres[1] - 12) * pos[1]);
-		}
-		rpos[1] += 20 * i;
-		rpos[1] -= (20 * c) / 2;
-		drawstring(rpos, argv(i), '20 20', col, alpha,
-			DRAWFLAG_ADDITIVE);
+		float strwidth = stringwidth(argv(i), TRUE, [18,18]);
+		pos[1] += 18 * i;
+		drawstring(pos, argv(i), '18 18', col, alpha,
+			0);
 	}
 }
 
+//=======================
+// void HUDNotification_DrawNotification(int i)
+//
+// Draws the given notification.
+//
+// Automatically handles the time, and resets the state when
+// the notification has completed.
+//=======================
 void
-HUDNotification_DrawMessage(int i, float timer, int highlight, int drawbg)
+HUDNotification_DrawNotification(int i)
 {
-	float a = 0.0f;
-	vector rpos;
-	float mtime;
-	float btime;
-	string finalstring;
+    float totalTime = g_hudnotifications[i].m_flTotalTime;
+    float fadeTime = g_hudnotifications[i].m_flFadeTime;
+    float duration = g_hudnotifications[i].m_flDuration;
 
-	if (g_hudnotification_channels[i].m_iEffect == 2) {
-		/* scan out */
-		finalstring = substring(g_hudnotification_channels[i].m_strMessage, 0,
-			HUDNotification_CharCount(g_hudnotification_channels[i].m_flFadeIn, timer,
-				g_hudnotification_channels[i].m_strMessage));
-	} else {
-		finalstring = g_hudnotification_channels[i].m_strMessage;
-	}
+    vector pos;
+    float a = 0.0f;    
 
-	timer = max(0, timer);
+    if (totalTime < duration) {
+        // Fade in.
+        if (totalTime < 0.35) {
+            g_hudnotifications[i].m_flAlpha += (1.0 / 0.35) * clframetime;
+        }
 
-	if (highlight) {
-		btime = g_hudnotification_channels[i].m_flFadeIn * strlen(g_hudnotification_channels[i].m_strMessage);
-		mtime = btime + g_hudnotification_channels[i].m_flFadeOut;
-	} else {
-		mtime = g_hudnotification_channels[i].m_flFadeIn + g_hudnotification_channels[i].m_flHoldTime + g_hudnotification_channels[i].m_flFadeOut;
-		btime = g_hudnotification_channels[i].m_flFadeIn + g_hudnotification_channels[i].m_flHoldTime;
-	}
+        // Fade out.
+        if (totalTime > duration - 0.35) {
+            g_hudnotifications[i].m_flAlpha -= (1.0 / 0.35) * clframetime;
+        }
 
-	if (timer > mtime) {
-		return;
-	}
+        // Render appropriate background.
+        if (g_hudnotifications[i].m_iStyle == HUD_NOTIFICATION_SMALL) {
+            drawpic([0, 0], "textures/hud/hud_notification_lt_small.tga", [512, 192], [1,1,1], g_hudnotifications[i].m_flAlpha, 0);
+        }
+        if (g_hudnotifications[i].m_iStyle == HUD_NOTIFICATION_LARGE) {
+            drawpic([0, 0], "textures/hud/hud_notification_lt_large.tga", [512, 512], [1,1,1], g_hudnotifications[i].m_flAlpha, 0);
+        }
 
-	if (timer < g_hudnotification_channels[i].m_flFadeIn) {
-		a = (timer / g_hudnotification_channels[i].m_flFadeIn);
-	} else if (timer < btime) {
-		a = 1.0f;
-	} else if (timer < mtime) {
-		if (g_hudnotification_channels[i].m_flFadeOut) {
-			a = 1 - (timer - btime) / g_hudnotification_channels[i].m_flFadeOut;
-		}
-	}
-
-	rpos[0] = g_hudnotification_channels[i].m_flPosX;
-	rpos[1] = g_hudnotification_channels[i].m_flPosY;
-
-    // // Draw background.
-    // vector bgPos;
-
-    // if (rpos[0] == -1) {
-	// 	bgPos[0] = g_hudmins[0] + (g_hudres[0] / 2);
-    // } else {
-
-    // }
-
-    // if (rpos[1] == -1) {
-    //     bgPos[1] = g_hudmins[1] + (g_hudres[1] / 2);
-    // } else {
-
-    // }
-
-    // // Positions.
-    // vector leftPos;
-    // vector centerPos;
-    // vector centerSize;
-    // vector rightPos;
-
-    // // Get string width.
-    // float strWidth = stringwidth(finalstring, TRUE, [20,20]);
-
-    // // Is string smaller than 256?
-    // if (strWidth < 256) {
-    //     leftPos[0] = bgPos[0] - 192;
-    //     leftPos[1] = bgPos[1] - 64;
-
-    //     centerPos[0] = bgPos[0] - 32;
-    //     centerPos[1] = bgPos[1] - 64;
-    //     centerSize[0] = 512;
-    //     centerSize[1] = 128;
-        
-    //     rightPos[0] = bgPos[0] + 192;
-    //     rightPos[1] = bgPos[1] - 64;
-    // } else {
-    //     float strHalfWidth = strWidth / 2;
-        
-    //     leftPos[0] = bgPos[0] - strHalfWidth - 128;
-    //     leftPos[1] = bgPos[1] - 64;
-
-    //     centerPos[0] = bgPos[0] - strHalfWidth;
-    //     centerPos[1] = bgPos[1] - 64;
-    //     centerSize[0] = strWidth;
-    //     centerSize[1] = 128;
-        
-    //     rightPos[0] = bgPos[0] + strHalfWidth;
-    //     rightPos[1] = bgPos[1] - 64;
-
-    // }
-
-    // // Left
-    
-    // // Center.
-    // if (drawbg){
-    //     drawpic(leftPos, "textures/hud/hud_message_left.tga", [128,128], [1,1,1], a, 0);
-    //     drawpic(centerPos, "textures/hud/hud_message_center.tga", centerSize, [1,1,1], a, 0);
-    //     drawpic(rightPos, "textures/hud/hud_message_right.tga", [128,128], [1,1,1], a, 0);
-    // }
-
-	if (highlight) {
-		HUDNotification_DrawString(rpos, finalstring, g_hudnotification_channels[i].m_vecColor2, a);
-	} else {
-		HUDNotification_DrawString(rpos, finalstring, g_hudnotification_channels[i].m_vecColor1, a);
-	}
+        // Last but not least, our sweet text.
+        HUDNotification_DrawString([24, 24], g_hudnotifications[i].m_strMessage, [1, 1, 1], g_hudnotifications[i].m_flAlpha);
+    } else {
+        g_hudnotifications[i].m_iIsActive = FALSE;
+    }
 }
 
+//=======================
+// void HUDNotification_Draw(void)
+//
+// Called each frame to render notifications.
+// Stops at the first sign of finding an active notification.
+// The other in-line will have to wait :)
+//=======================
 void
 HUDNotification_Draw(void)
 {
-	drawfont = FONT_HUD_MESSAGES;
+	drawfont = FONT_HUD_NOTIFICATION;
 	for (int i = 0; i < 5; i++) {
-		HUDNotification_DrawMessage(i, g_hudnotification_channels[i].m_flTime - g_hudnotification_channels[i].m_flFXTime, 0, 1);
-		HUDNotification_DrawMessage(i, g_hudnotification_channels[i].m_flTime, 1, 0);
-		g_hudnotification_channels[i].m_flTime += clframetime;
+        if (g_hudnotifications[i].m_iIsActive == TRUE) {
+            HUDNotification_DrawNotification(i);
+            g_hudnotifications[i].m_flTotalTime += clframetime;
+            break;
+        }
 	}
-
 	drawfont = FONT_CON;
 }

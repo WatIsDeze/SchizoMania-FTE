@@ -62,10 +62,10 @@ inventory_item_t i_medkit =
 {
 	.name		= "Medkit",
 
-    .txtPickup	= "picked up a Medkit",
-    .txtDrop	= "dropped a Medkit",
-    .txtUse		= "used a Medkit",
-	.txtDescription = "Capable of healing 20 points on use.",
+    .txtPickup	= "picked up a ^xF42Medkit",
+    .txtDrop	= "dropped a ^xF42Medkit",
+    .txtUse		= "used a ^xF42Medkit",
+	.txtDescription = "A ^xF42Medkit,^xFFFcapable of healing 20 points on use.",
 
 	.ID			= INVENTORY_ITEM_MEDKIT,
 	.mins		= [-6,-6, 0],

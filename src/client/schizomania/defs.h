@@ -20,7 +20,8 @@
 //-----------------------
 // CUSTOM HUD FONTS.
 //-----------------------
-float FONT_HUD_MESSAGES;
+float FONT_HUD_MESSAGE;
+float FONT_HUD_NOTIFICATION;
 
 //-----------------------
 // AUTO CVARS

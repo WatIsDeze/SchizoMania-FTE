@@ -42,11 +42,8 @@ enumflags
 
 class hud_notification:CBaseTrigger
 {
-    int m_iPosition;
-	int m_iEffect;
-	vector m_vecColor1;
-	vector m_vecColor2;
-		
+    float m_flDuration;
+
 	void(void) hud_notification;
 
 	virtual void(entity, int) Trigger;
@@ -57,15 +54,8 @@ void hud_notification::Trigger(entity act, int state)
 {
 	WriteByte(MSG_MULTICAST, SVC_CGAMEPACKET);
 	WriteByte(MSG_MULTICAST, EV_HUD_NOTIFICATION);
+    WriteFloat(MSG_MULTICAST, m_flDuration);
 	WriteString(MSG_MULTICAST, m_strMessage);
-	WriteByte(MSG_MULTICAST, m_iPosition);
-	WriteByte(MSG_MULTICAST, m_iEffect);
-	WriteByte(MSG_MULTICAST, m_vecColor1[0]);
-	WriteByte(MSG_MULTICAST, m_vecColor1[1]);
-	WriteByte(MSG_MULTICAST, m_vecColor1[2]);
-	WriteByte(MSG_MULTICAST, m_vecColor2[0]);
-	WriteByte(MSG_MULTICAST, m_vecColor2[1]);
-	WriteByte(MSG_MULTICAST, m_vecColor2[2]);
 
 	if (spawnflags & GTF_ALLPLAYERS) {
 		msg_entity = this;
@@ -83,18 +73,9 @@ void
 hud_notification::SpawnKey(string strKey, string strValue)
 {
 	switch (strKey) {
-    case "position":
-        m_iPosition = stoi(strValue);
+    case "duration":
+        m_flDuration = stof(strValue);
     break;
-	case "effect":
-		m_iEffect = stoi(strValue);
-		break;
-	case "color":
-		m_vecColor1 = stov(strValue);
-		break;
-	case "color2":
-		m_vecColor2 = stov(strValue);
-		break;
 	default:
 		CBaseTrigger::SpawnKey(strKey, strValue);
 	}
@@ -103,10 +84,4 @@ hud_notification::SpawnKey(string strKey, string strValue)
 void hud_notification::hud_notification(void)
 {
 	CBaseTrigger::CBaseTrigger();
-
-	// Default hud notification.
-    m_iPosition = 1;
-	m_iEffect = 2;
-	m_vecColor1 = [255, 255, 255];
-	m_vecColor2 = [180, 0, 0];
 }

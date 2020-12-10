@@ -74,19 +74,11 @@ float spr_flash2[4] = {
 void
 HUD_Init(void)
 {
-	FONT_HUD_MESSAGES = loadfont("font", "", "20", -1);
-	// FONT_20 = loadfont("cr", "creditsfont?fmt=h", "20", -1);
-	// FONT_CON = loadfont("font", "", "12", -1);
-	// drawfont = FONT_CON;
-	// g_cross_spr = spriteframe("sprites/crosshairs.spr", 0, 0.0f);
-	// g_laser_spr = spriteframe("sprites/laserdot.spr", 0, 0.0f);
-	// g_hud1_spr = spriteframe("sprites/640hud1.spr", 0, 0.0f);
-	// g_hud2_spr = spriteframe("sprites/640hud2.spr", 0, 0.0f);
-	// g_hud3_spr = spriteframe("sprites/640hud3.spr", 0, 0.0f);
-	// g_hud4_spr = spriteframe("sprites/640hud4.spr", 0, 0.0f);
-	// g_hud5_spr = spriteframe("sprites/640hud5.spr", 0, 0.0f);
-	// g_hud6_spr = spriteframe("sprites/640hud6.spr", 0, 0.0f);
-	// g_hud7_spr = spriteframe("sprites/640hud7.spr", 0, 0.0f);
+	FONT_HUD_MESSAGE = loadfont("font", "", "20", -1);
+	FONT_HUD_NOTIFICATION = loadfont("font", "", "18", -1);
+    
+    // Initialize notification list.
+    HUDNotification_Init();
 }
 
 /* seperator for mainly ammo */
@@ -403,7 +395,7 @@ HUD_Draw(void)
 	// player pl = (player)pSeat->m_ePlayer;
     HUDMessage_Draw();
     HUDNotification_Draw();
-    
+
 	// g_hud_color = autocvar_con_color * (1 / 255);
 
 	// /* little point in not drawing these, even if you don't have a suit */

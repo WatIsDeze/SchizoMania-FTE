@@ -118,67 +118,6 @@ HUDMessage_DrawMessage(int i, float timer, int highlight, int drawbg)
 	rpos[0] = g_hudmessage_channels[i].m_flPosX;
 	rpos[1] = g_hudmessage_channels[i].m_flPosY;
 
-    // // Draw background.
-    // vector bgPos;
-
-    // if (rpos[0] == -1) {
-	// 	bgPos[0] = g_hudmins[0] + (g_hudres[0] / 2);
-    // } else {
-
-    // }
-
-    // if (rpos[1] == -1) {
-    //     bgPos[1] = g_hudmins[1] + (g_hudres[1] / 2);
-    // } else {
-
-    // }
-
-    // // Positions.
-    // vector leftPos;
-    // vector centerPos;
-    // vector centerSize;
-    // vector rightPos;
-
-    // // Get string width.
-    // float strWidth = stringwidth(finalstring, TRUE, [20,20]);
-
-    // // Is string smaller than 256?
-    // if (strWidth < 256) {
-    //     leftPos[0] = bgPos[0] - 192;
-    //     leftPos[1] = bgPos[1] - 64;
-
-    //     centerPos[0] = bgPos[0] - 32;
-    //     centerPos[1] = bgPos[1] - 64;
-    //     centerSize[0] = 512;
-    //     centerSize[1] = 128;
-        
-    //     rightPos[0] = bgPos[0] + 192;
-    //     rightPos[1] = bgPos[1] - 64;
-    // } else {
-    //     float strHalfWidth = strWidth / 2;
-        
-    //     leftPos[0] = bgPos[0] - strHalfWidth - 128;
-    //     leftPos[1] = bgPos[1] - 64;
-
-    //     centerPos[0] = bgPos[0] - strHalfWidth;
-    //     centerPos[1] = bgPos[1] - 64;
-    //     centerSize[0] = strWidth;
-    //     centerSize[1] = 128;
-        
-    //     rightPos[0] = bgPos[0] + strHalfWidth;
-    //     rightPos[1] = bgPos[1] - 64;
-
-    // }
-
-    // // Left
-    
-    // // Center.
-    // if (drawbg){
-    //     drawpic(leftPos, "textures/hud/hud_message_left.tga", [128,128], [1,1,1], a, 0);
-    //     drawpic(centerPos, "textures/hud/hud_message_center.tga", centerSize, [1,1,1], a, 0);
-    //     drawpic(rightPos, "textures/hud/hud_message_right.tga", [128,128], [1,1,1], a, 0);
-    // }
-
 	if (highlight) {
 		HUDMessage_DrawString(rpos, finalstring, g_hudmessage_channels[i].m_vecColor2, a);
 	} else {
@@ -189,7 +128,7 @@ HUDMessage_DrawMessage(int i, float timer, int highlight, int drawbg)
 void
 HUDMessage_Draw(void)
 {
-	drawfont = FONT_HUD_MESSAGES;
+	drawfont = FONT_HUD_MESSAGE;
 	for (int i = 0; i < 5; i++) {
 		HUDMessage_DrawMessage(i, g_hudmessage_channels[i].m_flTime - g_hudmessage_channels[i].m_flFXTime, 0, 1);
 		HUDMessage_DrawMessage(i, g_hudmessage_channels[i].m_flTime, 1, 0);

@@ -2662,7 +2662,7 @@ fabric/fabric005
 // entity 61
 {
 "classname" "func_button"
-"target" "hud_msg_intro1"
+"target" "hudnoti_1"
 // brush 0
 {
 ( -1184 3048 176 ) ( -1184 3032 176 ) ( -1208 3048 176 ) nieb/complex/light-switch_01 [ 1 0 0 0 ] [ -0 -1 -0 0 ] -0 0.0625 0.0625 0 0 0
@@ -2705,4 +2705,13 @@ fabric/fabric005
 "targetname" "xx"
 "target" "door_x"
 "count" "1"
+}
+// entity 65
+{
+"classname" "hud_notification"
+"origin" "-1248.000000 3064.000000 192.000000"
+"targetname" "hudnoti_1"
+"position" "3"
+"message" "To move around, use the ^xF42MOUSE^xFFF and the ^xF42WASD^xFFF keys."
+"duration" "5.5"
 }

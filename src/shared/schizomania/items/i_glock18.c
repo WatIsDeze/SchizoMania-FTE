@@ -83,10 +83,10 @@ inventory_item_t i_glock18 =
 {
 	.name		= "Glock 18",
 
-    .txtPickup	= "picked up a Glock 18",
-	.txtDrop	= "dropped a Glock 18",
-    .txtUse		= "used a Glock 18",
-	.txtDescription = "The Glock 18 is a powerful tool in combat.",
+    .txtPickup	= "picked up a ^xF42Glock 18",
+	.txtDrop	= "dropped a ^xF42Glock 18",
+    .txtUse		= "used a ^xF42Glock 18",
+	.txtDescription = "The ^xF42Glock 18^FFF is a powerful tool in combat.",
 
 	.ID			= INVENTORY_ITEM_GLOCK,
 	.mins		= [-8,-8, 0],

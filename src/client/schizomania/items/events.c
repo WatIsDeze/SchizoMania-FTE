@@ -30,16 +30,25 @@ void Items_Event_Pickup(void) {
     int itemID = readbyte();
     int itemAmount = readbyte();
 
-    // Fetch name of the player that picked it up.
-    string playerName = getplayerkeyvalue(playerID, "name");
-    CSQC_Parse_Print(sprintf("%s %s", playerName, g_inventory_items[itemID].txtPickup), PRINT_CHAT);
-
     // Cast to player.
     player pl = (player)self;
 
     // Add item to the player inventory.
     pl.inventory_items[itemID] = bound(0, pl.inventory_items[itemID] + itemAmount, 255);
-    // HUD_WeaponPickupNotify(w);
+
+    // Fetch name of the player that picked it up.
+    string playerName = getplayerkeyvalue(playerID, "name");
+    
+    // Push equip notification.
+    HUDNotification_PushNotification(
+        sprintf(
+            "%s %s", 
+            playerName, 
+            g_inventory_items[itemID].txtPickup
+        ),
+        1.5,
+        HUD_NOTIFICATION_SMALL
+    );
 }
 
 //=======================
@@ -57,13 +66,22 @@ void Items_Event_Drop(void) {
     // Cast to player.
     player pl = (player)self;
 
-    // 
-    string playerName = getplayerkeyvalue(playerID, "name");
-     CSQC_Parse_Print(sprintf("%s %s", playerName, g_inventory_items[itemID].txtDrop), PRINT_CHAT);
-
-
     // Remove item from the player inventory.
     pl.inventory_items[itemID] = bound(0, pl.inventory_items[itemID] - itemAmount, 255);
+
+    // Fetch name of the player that picked it up.
+    string playerName = getplayerkeyvalue(playerID, "name");
+    
+    // Push equip notification.
+    HUDNotification_PushNotification(
+        sprintf(
+            "%s %s", 
+            playerName, 
+            g_inventory_items[itemID].txtDrop
+        ),
+        1.5,
+        HUD_NOTIFICATION_SMALL
+    );
 }
 
 //=======================
@@ -78,16 +96,25 @@ void Items_Event_Use(void) {
     int itemID = readbyte();
     int itemAmount = readbyte();
 
-    // Fetch name of the player that picked it up.
-    string playerName = getplayerkeyvalue(playerID, "name");
-    CSQC_Parse_Print(sprintf("%s %s", playerName, g_inventory_items[itemID].txtUse), PRINT_CHAT);
-
     // Cast to player.
     player pl = (player)self;
 
     // Ensure it is in bounds.
     pl.inventory_items[itemID] = bound(0, pl.inventory_items[itemID] - itemAmount, 255);
-    // HUD_WeaponPickupNotify(w);
+    
+    // Fetch name of the player that picked it up.
+    string playerName = getplayerkeyvalue(playerID, "name");
+
+    // Push equip notification.
+    HUDNotification_PushNotification(
+        sprintf(
+            "%s %s", 
+            playerName, 
+            g_inventory_items[itemID].txtUse
+        ),
+        1.5,
+        HUD_NOTIFICATION_SMALL
+    );
 }
 
 //=======================
@@ -101,14 +128,20 @@ void Items_Event_Equip(void) {
     int playerID = readbyte();
     int itemID = readbyte();
 
-    // 
-    string playerName = "Player"; //getplayerkeyvalue(fSender, "name");
-    CSQC_Parse_Print(sprintf("%s equiped %s", playerName, g_inventory_items[itemID].name), PRINT_CHAT);
-
-    // // Cast to player.
+    // Cast to player.
     player pl = (player)self;
 
-    // // Ensure it is in bounds.
-    // pl.inventory_items[itemID] = bound(0, pl.inventory_items[itemID] - itemAmount, 255);
-    // // HUD_WeaponPickupNotify(w);
+    // Fetch name of the player that picked it up.
+    string playerName = getplayerkeyvalue(playerID, "name");
+
+    // Push equip notification.
+    HUDNotification_PushNotification(
+        sprintf(
+            "%s equiped ^xF42%s", 
+            playerName, 
+            g_inventory_items[itemID].name
+        ),
+        1.5,
+        HUD_NOTIFICATION_SMALL
+    );
 }

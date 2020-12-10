@@ -28,10 +28,10 @@ inventory_item_t i_null =
 {
 	.name		= "NULL ITEM",
     
-	.txtPickup	= "picked up a NULL ITEM",
-    .txtUse		= "used a NULL ITEM",       
-	.txtDrop	= "dropped a NULL ITEM",
-	.txtDescription = "NULL ITEM",
+	.txtPickup	= "picked up a ^xF42NULL ITEM",
+    .txtUse		= "used a ^xF42NULL ITEM",       
+	.txtDrop	= "dropped a ^xF42NULL ITEM",
+	.txtDescription = "^xF42NULL ITEM",
 
 	.ID			= INVENTORY_ITEM_NULL,
 	.mins		= [-8,-8, 0],

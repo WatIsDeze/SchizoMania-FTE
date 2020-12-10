@@ -50,10 +50,10 @@ inventory_item_t i_knife =
 {
 	.name		= "Knife",
 
-    .txtPickup	= "pickd up a Knife",
-    .txtDrop	= "dropped a Knife",
-	.txtUse		= "used a Knife",
-	.txtDescription = "A sharp hunting knife, good for... 'hunting'.",
+    .txtPickup	= "pickd up a ^xF42Knife",
+    .txtDrop	= "dropped a ^xF42Knife",
+	.txtUse		= "used a ^xF42Knife",
+	.txtDescription = "A sharp hunting ^xF42knife^xFFF, good for... 'hunting'.",
 
 	.ID			= INVENTORY_ITEM_KNIFE,
 	.mins		= [-8,-8, 0],
