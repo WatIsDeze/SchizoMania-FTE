@@ -2659,7 +2659,7 @@ fabric/fabric005
 "target" "xx"
 "message" "I'll be damned, how in the hell did I end up here?"
 "x" "-1"
-"y" "-1"
+"y" "-0.8"
 "color" "222 222 222"
 "color2" "150 0 0"
 "effect" "2"
@@ -2713,6 +2713,6 @@ fabric/fabric005
 "classname" "multisource"
 "origin" "-1256.000000 3000.000000 208.000000"
 "targetname" "xx"
-"target" "hud_msg_intro1"
-"count" "0"
+"target" "door_x"
+"count" "1"
 }
