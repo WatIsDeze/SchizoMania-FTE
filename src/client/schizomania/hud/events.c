@@ -24,6 +24,8 @@
 // Parses the EV_ITEM_PICKUP message. Adds items to client inventory and
 // informs the client about the picked up item.
 //=======================
+string Titles_ParseFunString(string);
+
 void 
 HUD_Event_Message(void) 
 {

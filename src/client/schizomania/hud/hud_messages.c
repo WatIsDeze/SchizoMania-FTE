@@ -198,31 +198,3 @@ HUDMessage_Draw(void)
 
 	drawfont = FONT_CON;
 }
-
-string
-Titles_ParseFunString(string temp);
-
-void
-HUDMessage_Parse(void)
-{
-	int chan = readbyte();
-	
-    g_hudchannels[chan].m_strMessage = Titles_ParseFunString(readstring());
-    // TODO: Do we still need these if we set them by default?
-    g_hudchannels[chan].m_flPosX = readfloat();
-	g_hudchannels[chan].m_flPosY = readfloat();
-    g_hudchannels[chan].m_flPosX = -1.0f;
-	g_hudchannels[chan].m_flPosY = 0.8f;
-	g_hudchannels[chan].m_iEffect = readbyte();
-	g_hudchannels[chan].m_vecColor1[0] = readbyte() / 255;
-	g_hudchannels[chan].m_vecColor1[1] = readbyte() / 255;
-	g_hudchannels[chan].m_vecColor1[2] = readbyte() / 255;
-	g_hudchannels[chan].m_vecColor2[0] = readbyte() / 255;
-	g_hudchannels[chan].m_vecColor2[1] = readbyte() / 255;
-	g_hudchannels[chan].m_vecColor2[2] = readbyte() / 255;
-	g_hudchannels[chan].m_flFadeIn = readfloat();
-	g_hudchannels[chan].m_flFadeOut = readfloat();
-	g_hudchannels[chan].m_flHoldTime = readfloat();
-	g_hudchannels[chan].m_flFXTime = readfloat();
-	g_hudchannels[chan].m_flTime = 0.0f;
-}

@@ -224,7 +224,7 @@
 {
 "classname" "dynamic_light"
 "origin" "-192.000000 -64.000000 64.000000"
-"style" "9"
+"pattern" "zm"
 "_light" "255 255 128"
 "brightness" "150"
 }
@@ -266,6 +266,7 @@
 "model" "models/logos/visions.vvm"
 "angles" "0 -90 0"
 "avelocity" "0 90 0"
+"shadows" "1"
 }
 // entity 14
 {
@@ -279,6 +280,8 @@
 "texturename" "textures/skies/smudge/bg"
 "lightcolor" "255 255 255 1024"
 "parentname" "trainy"
+"targetname" "sky_cube"
+"spawnflags" "1"
 }
 // entity 16
 {
@@ -286,6 +289,7 @@
 "origin" "192.000000 -576.000000 32.000000"
 "model" "models/logos/visions.vvm"
 "avelocity" "0 90 0"
+"shadows" "1"
 }
 // entity 17
 {
@@ -338,10 +342,28 @@
 "classname" "env_projectedtexture"
 "origin" "40.000000 -504.000000 24.000000"
 "parentname" "trainy"
+"spawnflags" "1"
 }
 // entity 22
 {
 "classname" "env_projectedtexture"
 "origin" "40.000000 -648.000000 24.000000"
 "parentname" "trainy"
+"spawnflags" "1"
+}
+// entity 23
+{
+"classname" "func_button"
+"OnPressed" "sky_cube,SpotlightTexture,textures/skies/yukongold/bg,0,-1"
+"OnPressed" "sky_cube,SpotlightTexture,textures/skies/dune_hdr/250th/bg,2.5,-1"
+"OnPressed" "sky_cube,SpotlightTexture,textures/skies/smudge/bg,5,-1"
+// brush 0
+{
+( -16 -760 8 ) ( -16 -768 8 ) ( -32 -760 8 ) measure/counter [ 1 0 0 0 ] [ -0 -1 -0 0 ] -0 0.5 0.5 0 0 0
+( -16 -760 64 ) ( -32 -760 64 ) ( -16 -760 -64 ) measure/counter [ 1 0 0 0 ] [ -0 -0 -1 0 ] -0 0.5 0.5 0 0 0
+( -16 -760 64 ) ( -16 -760 -64 ) ( -16 -768 64 ) measure/counter [ 0 1 0 0 ] [ -0 -0 -1 0 ] -0 0.5 0.5 0 0 0
+( -24 -768 -8 ) ( -8 -768 -8 ) ( -24 -760 -8 ) measure/counter [ 1 0 0 48 ] [ -0 -1 -0 0 ] -0 0.5 0.5 0 0 0
+( -32 -768 -64 ) ( -32 -768 64 ) ( -16 -768 -64 ) measure/counter [ 1 0 0 0 ] [ -0 -0 -1 0 ] -0 0.5 0.5 0 0 0
+( -32 -768 -64 ) ( -32 -760 -64 ) ( -32 -768 64 ) measure/counter [ 0 1 0 0 ] [ -0 -0 -1 0 ] -0 0.5 0.5 0 0 0
+}
 }
