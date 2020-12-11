@@ -59,5 +59,5 @@ HUD_Event_Notification(void)
 	float duration = readfloat();
 	string message = strreplace("\\n", "\n", readstring());
 
-	HUDNotification_PushNotification(message, duration, style);
+	//HUDNotification_PushNotification(message, duration, style);
 }

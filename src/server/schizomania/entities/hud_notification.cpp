@@ -42,9 +42,40 @@ class hud_notification:CBaseTrigger
 
 	void(void) hud_notification;
 
+	virtual void(entity act, string intype, string data) Input;
 	virtual void(entity, int) Trigger;
 	virtual void(string, string) SpawnKey;
 };
+
+/* entities receive the inputs here and need to act on intype and data
+   accordingly. this is just a stub for unknown event troubleshooting */
+void
+hud_notification::Input(entity act, string intype, string data)
+{
+	// Call by default.
+	CBaseTrigger::Input(act, intype, data);
+
+	// Show HUD notification.
+	//if (intype == "OnTrigger") {
+		WriteByte(MSG_MULTICAST, SVC_CGAMEPACKET);
+		WriteByte(MSG_MULTICAST, EV_HUD_NOTIFICATION);
+
+		WriteByte(MSG_MULTICAST, m_iStyle);
+		WriteFloat(MSG_MULTICAST, m_flDuration);
+		WriteString(MSG_MULTICAST, m_strMessage);
+
+		if (spawnflags & GTF_ALLPLAYERS) {
+			msg_entity = this;
+			multicast(origin, MULTICAST_ALL);
+		} else {
+			msg_entity = act;
+			multicast(origin, MULTICAST_ONE_R);
+		}
+
+		// Trigger target.
+		UseTargets(msg_entity, TRIG_TOGGLE, m_flDelay);
+	//}
+}
 
 void hud_notification::Trigger(entity act, int state)
 {

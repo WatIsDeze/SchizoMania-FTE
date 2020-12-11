@@ -73,9 +73,16 @@ enumflags
 
 class game_door_rotating:CBaseTrigger
 {
+	// Old Target Architecture.
 	string targetClose;
     string targetLocked;
 
+	// New Target Architecture.
+	string m_strOnClose;		// On Return
+	string m_strOnLockedUse;	// On Use, when Locked.
+	string m_strOnOpen;			// On Arrive.
+
+	// Sounds.
     string m_strSndClose;
 	string m_strSndMove;
 	string m_strSndStop;
@@ -132,7 +139,12 @@ void game_door_rotating::Arrived(void)
 	nextthink = 0.0f;
 
 	m_iState = STATE_RAISED;
-
+	if (m_strOnOpen) {
+		dprint("================\n");
+		dprint(sprintf("m_strOnOpen: %s\n", m_strOnOpen));
+		UseOutput(this, m_strOnOpen);
+		dprint("================\n");
+	}
 	if (m_strSndStop) {
 		Sound_Play(this, CHAN_VOICE, m_strSndStop);
 	} else {
@@ -166,15 +178,13 @@ void game_door_rotating::Returned(void)
 		sound(this, CHAN_VOICE, "common/null.wav", 1.0f, ATTN_NORM);
 	}
 
-	if (targetClose)
-	for (entity f = world; (f = find(f, ::targetname, targetClose));) {
-		CBaseTrigger trigger = (CBaseTrigger)f;
-		if (trigger.Trigger != __NULL__) {
-			trigger.Trigger(this, TRIG_TOGGLE);
-		}
-	}
-    
 	m_iState = STATE_LOWERED;
+	if (m_strOnClose) {
+		dprint("================\n");
+		dprint(sprintf("m_strOnClose: %s\n", m_strOnClose));
+		UseOutput(this, m_strOnClose);
+		dprint("================\n");
+	}
 
 	setorigin(this, origin);
 	openportal(this, AREAPORTAL_CLOSED);
@@ -276,7 +286,22 @@ void game_door_rotating::Trigger(entity act, int state)
 void game_door_rotating::Use(void)
 {
 	eActivator.flags &= ~FL_USE_RELEASED;
-	Trigger(eActivator, TRIG_TOGGLE);
+
+	if (GetMaster() == FALSE) {
+		if (m_strOnLockedUse) {
+			dprint("================\n");
+			dprint(sprintf("m_strOnLockedUse: %s\n", m_strOnLockedUse));
+			UseOutput(this, m_strOnLockedUse);
+			dprint("================\n");
+		}
+		if (m_strSndLocked) {
+			Sound_Play(this, CHAN_VOICE, m_strSndLocked);
+		} else {
+			sound(this, CHAN_VOICE, "common/null.wav", 1.0f, ATTN_NORM);
+		}
+	} else {
+		Trigger(eActivator, TRIG_TOGGLE);
+	}
 }
 
 void game_door_rotating::Touch(void)
@@ -285,19 +310,6 @@ void game_door_rotating::Touch(void)
 		return;
 	}
 	if (m_iLocked) {
-		if (m_strSndLocked) {
-			Sound_Play(this, CHAN_VOICE, m_strSndLocked);
-		} else {
-			sound(this, CHAN_VOICE, "common/null.wav", 1.0f, ATTN_NORM);
-		}
-        if (targetLocked) {
-            for (entity f = world; (f = find(f, ::targetname, targetLocked));) {
-                CBaseTrigger trigger = (CBaseTrigger)f;
-                if (trigger.Trigger != __NULL__) {
-                    trigger.Trigger(this, TRIG_TOGGLE);
-                }
-            }
-        }
 		return;
 	}
 
@@ -406,9 +418,9 @@ void game_door_rotating::Respawn(void)
 		SetSolid(SOLID_NOT);
 	}
 
-	if (targetname) {
-		m_iLocked = TRUE;
-	}
+	// if (targetname) {
+	// 	m_iLocked = TRUE;
+	// }
 
 	SetAngles(m_vecPos1);
 }
@@ -459,6 +471,22 @@ game_door_rotating::SpawnKey(string strKey, string strValue)
     case "lockedtarget":
         targetLocked = strValue;
         break;
+
+	//------------------
+	// Input/Output.
+	//------------------
+	case "OnClose":
+		strValue = strreplace(",", ",_", strValue);
+		m_strOnClose = strcat(m_strOnClose, ",_", strValue);
+		break;
+	case "OnLockedUse":
+		strValue = strreplace(",", ",_", strValue);
+		m_strOnLockedUse = strcat(m_strOnLockedUse, ",_", strValue);
+		break;
+	case "OnOpen":
+		strValue = strreplace(",", ",_", strValue);
+		m_strOnOpen = strcat(m_strOnOpen, ",_", strValue);
+		break;
 	default:
 		CBaseTrigger::SpawnKey(strKey, strValue);
 	}
@@ -467,11 +495,12 @@ game_door_rotating::SpawnKey(string strKey, string strValue)
 void game_door_rotating::game_door_rotating(void)
 {
 	m_flSpeed = 100;
-	m_flDelay = 4;
+	m_flDelay = 0;
 	m_flDistance = 90;
 
 	CBaseTrigger::CBaseTrigger();
 
+	// Precache sounds if available.
 	if (m_strSndMove)
 		Sound_Precache(m_strSndMove);
 	if (m_strSndClose)
@@ -480,6 +509,11 @@ void game_door_rotating::game_door_rotating(void)
 		Sound_Precache(m_strSndLocked);
 	if (m_strSndStop)
 		Sound_Precache(m_strSndStop);
+
+	// Input/Output triggers.
+	m_strOnClose = CreateOutput(m_strOnClose);
+	m_strOnLockedUse = CreateOutput(m_strOnLockedUse);
+	m_strOnOpen = CreateOutput(m_strOnOpen);
 }
 
 

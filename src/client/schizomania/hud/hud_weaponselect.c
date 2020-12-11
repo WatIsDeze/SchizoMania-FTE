@@ -101,7 +101,7 @@ HUD_DrawWeaponSelect_Last(void)
 void
 HUD_DrawWeaponSelect_Num(vector vecPos, float fValue)
 {
-	drawsubpic(vecPos, [20,20], g_hud7_spr, g_vecHUDNums[fValue], [20/256, 20/128], g_hud_color, 1, DRAWFLAG_ADDITIVE);
+//	drawsubpic(vecPos, [20,20], g_hud7_spr, g_vecHUDNums[fValue], [20/256, 20/128], g_hud_color, 1, DRAWFLAG_ADDITIVE);
 }
 
 int
@@ -194,35 +194,35 @@ HUD_DrawWeaponSelect(void)
 	int b;
 	int wantslot = g_weapons[pSeat->m_iHUDWeaponSelected].slot;
 	int wantpos = g_weapons[pSeat->m_iHUDWeaponSelected].slot_pos;
-	for (int i = 0; i < 5; i++) {
-		int slot_selected = 0;
-		vecPos[1] = g_hudmins[1] + 16;
-		HUD_DrawWeaponSelect_Num(vecPos, i);
-		vecPos[1] += 20;
-		for (int x = 0; x < 32; x++) {
-			if (i == wantslot) {
-				slot_selected = TRUE;
-				if (x == wantpos) {
-					// Selected Sprite
-					Weapons_HUDPic(pSeat->m_iHUDWeaponSelected, 1, vecPos, 1.0f);
-					drawsubpic(vecPos, [170,45], g_hud3_spr, 
-								[0,180/256], [170/256,45/256], g_hud_color, 1, DRAWFLAG_ADDITIVE);
-					vecPos[1] += 50;
-				} else if ((b=HUD_InSlotPos(i, x)) != -1) {
-					// Unselected Sprite
-					Weapons_HUDPic(b, 0, vecPos, 1.0f);
-					vecPos[1] += 50;
-				}
-			} else if (HUD_InSlotPos(i, x) != -1) {
-				HUD_DrawWeaponSelect_Num(vecPos, 5);
-				vecPos[1] += 25;
-			}
-		}
+	// for (int i = 0; i < 5; i++) {
+	// 	int slot_selected = 0;
+	// 	vecPos[1] = g_hudmins[1] + 16;
+	// 	HUD_DrawWeaponSelect_Num(vecPos, i);
+	// 	vecPos[1] += 20;
+	// 	for (int x = 0; x < 32; x++) {
+	// 		if (i == wantslot) {
+	// 			slot_selected = TRUE;
+	// 			if (x == wantpos) {
+	// 				// Selected Sprite
+	// 				Weapons_HUDPic(pSeat->m_iHUDWeaponSelected, 1, vecPos, 1.0f);
+	// 				drawsubpic(vecPos, [170,45], g_hud3_spr, 
+	// 							[0,180/256], [170/256,45/256], g_hud_color, 1, DRAWFLAG_ADDITIVE);
+	// 				vecPos[1] += 50;
+	// 			} else if ((b=HUD_InSlotPos(i, x)) != -1) {
+	// 				// Unselected Sprite
+	// 				Weapons_HUDPic(b, 0, vecPos, 1.0f);
+	// 				vecPos[1] += 50;
+	// 			}
+	// 		} else if (HUD_InSlotPos(i, x) != -1) {
+	// 			HUD_DrawWeaponSelect_Num(vecPos, 5);
+	// 			vecPos[1] += 25;
+	// 		}
+	// 	}
 
-		if (slot_selected == TRUE) {
-			vecPos[0] += 175;
-		} else {
-			vecPos[0] += 25;
-		}
-	}
+	// 	if (slot_selected == TRUE) {
+	// 		vecPos[0] += 175;
+	// 	} else {
+	// 		vecPos[0] += 25;
+	// 	}
+	// }
 }

@@ -77,7 +77,7 @@ Footsteps_HLBSP(base_player target)
 	string mat_name = "";
 	string tex_name = "";
 
-	traceline(target.origin + target.view_ofs, target.origin + [0,0,-48], FALSE, target);
+	traceline(target.origin + target.view_ofs, target.origin + [0,0,-54], FALSE, target);
 	tex_name = getsurfacetexture(trace_ent, getsurfacenearpoint(trace_ent, trace_endpos));
 
 	if (target.flags & FL_ONGROUND) {

@@ -1978,38 +1978,13 @@ nieb/metal-grey
 }
 // entity 32
 {
-"classname" "func_door_rotating"
-"spawnflags" "256"
-"distance" "90"
-"movesnd" "101"
-// brush 0
-{
-( -1480 3006 216 ) ( -1496 2950 216 ) ( -1496 3006 216 ) doors/wood_door_01 [ -1 0 0 256 ] [ 0 -1 0 748.3125 ] -0 0.0078125 0.0507812463 0 0 0
-( -1504 3002 128 ) ( -1488 3002 256 ) ( -1504 3002 256 ) doors/wood_door_01 [ -1 0 0 256 ] [ 0 0 -1 465.4543457031 ] -0 0.0078125 0.0859375149 0 0 0
-( -1482 2950 256 ) ( -1482 3006 128 ) ( -1482 3006 256 ) doors/wood_door_01 [ 0 1 0 137.84765625 ] [ 0 0 -1 465.4543457031 ] -0 0.1015625075 0.0859375075 0 0 0
-( -1472 3006 128 ) ( -1488 2950 128 ) ( -1472 2950 128 ) doors/wood_door_01 [ -1 0 0 256 ] [ 0 -1 0 748.3125 ] -0 0.0078125 0.0507812463 0 0 0
-( -1488 2950 128 ) ( -1472 2950 256 ) ( -1472 2950 128 ) doors/wood_door_01 [ -1 0 0 256 ] [ 0 0 -1 465.4543457031 ] -0 0.0078125 0.0859375149 0 0 0
-( -1478 2950 256 ) ( -1478 3006 128 ) ( -1478 2950 128 ) doors/wood_door_01 [ 0 1 0 137.84765625 ] [ 0 0 -1 465.4543457031 ] -0 0.1015625075 0.0859375075 0 0 0
-}
-// brush 1
-{
-( -1480 3004 216 ) ( -1496 2948 216 ) ( -1496 3004 216 ) common/origin [ -1 0 0 0 ] [ 0 -1 0 4.921875 ] -0 0.0078125 0.0507812463 0 0 0
-( -1512 2952 128 ) ( -1496 2952 256 ) ( -1512 2952 256 ) common/origin [ -1 0 0 0 ] [ 0 0 -1 17.4543457031 ] -0 0.0078125 0.0859375149 0 0 0
-( -1482 2948 256 ) ( -1482 3004 128 ) ( -1482 3004 256 ) common/origin [ 0 1 0 29.54296875 ] [ 0 0 -1 17.4543457031 ] -0 0.1015625075 0.0859375075 0 0 0
-( -1472 3004 128 ) ( -1488 2948 128 ) ( -1472 2948 128 ) common/origin [ -1 0 0 0 ] [ 0 -1 0 4.921875 ] -0 0.0078125 0.0507812463 0 0 0
-( -1488 2948 128 ) ( -1472 2948 256 ) ( -1472 2948 128 ) common/origin [ -1 0 0 0 ] [ 0 0 -1 17.4543457031 ] -0 0.0078125 0.0859375149 0 0 0
-( -1478 2948 256 ) ( -1478 3004 128 ) ( -1478 2948 128 ) common/origin [ 0 1 0 29.54296875 ] [ 0 0 -1 17.4543457031 ] -0 0.1015625075 0.0859375075 0 0 0
-}
-}
-// entity 33
-{
 "classname" "light"
 "origin" "-1344.000000 3056.000000 232.000000"
 "light" "35"
 "radius" "32"
 "_color" "0.9 0.7 0.5"
 }
-// entity 34
+// entity 33
 {
 "classname" "light"
 "origin" "-1544.000000 3024.000000 192.000000"
@@ -2017,7 +1992,7 @@ nieb/metal-grey
 "radius" "32"
 "_color" "0.9 0.7 0.5"
 }
-// entity 35
+// entity 34
 {
 "classname" "item_inventory"
 "origin" "-1252.000000 3112.000000 151.000000"
@@ -2025,9 +2000,9 @@ nieb/metal-grey
 "angle" "-122.197067"
 "amount" "1"
 "targetname" "item_glock18"
-"target" "mm_item_counter"
+"target" "mm_bedroom"
 }
-// entity 36
+// entity 35
 {
 "classname" "func_door"
 "spawnflags" "257"
@@ -2080,14 +2055,14 @@ nieb/metal-grey
 ( -1358 3149 152 ) ( -1238 3149 152 ) ( -1358 3149 168 ) nieb/clone/wood-floor01 [ 1 0 0 24 ] [ 0 0 -1 128 ] -0 0.25 0.25 0 0 0
 }
 }
-// entity 37
+// entity 36
 {
 "classname" "trigger_auto"
 "origin" "-1252.000000 3136.000000 206.000000"
 "target" "drawer1"
 "delay" "0.2"
 }
-// entity 38
+// entity 37
 {
 "classname" "func_door"
 "spawnflags" "257"
@@ -2140,14 +2115,14 @@ nieb/metal-grey
 ( -1358 3149 140 ) ( -1238 3149 140 ) ( -1358 3149 156 ) nieb/clone/wood-floor01 [ 1 0 0 24 ] [ 0 0 -1 80 ] -0 0.25 0.25 0 0 0
 }
 }
-// entity 39
+// entity 38
 {
 "classname" "trigger_auto"
 "origin" "-1252.000000 3136.000000 226.000000"
 "target" "drawer2"
 "delay" "0.2"
 }
-// entity 40
+// entity 39
 {
 "classname" "func_brush"
 "Solidity" "2"
@@ -2222,7 +2197,7 @@ fabric/fabric005
 }
 }
 }
-// entity 41
+// entity 40
 {
 "classname" "func_illusionary"
 "excludenpc" "item_glock18"
@@ -2236,7 +2211,7 @@ fabric/fabric005
 ( -1268 2998 156 ) ( -1268 3118 156 ) ( -1268 2998 172 ) nieb/clone/wood02 [ 0 1 0 8 ] [ -0 -0 -1 144 ] -0 0.25 0.25 0 0 0
 }
 }
-// entity 42
+// entity 41
 {
 "classname" "func_illusionary"
 "Solidity" "1"
@@ -2250,7 +2225,7 @@ fabric/fabric005
 ( -1268 2998 154 ) ( -1268 3118 154 ) ( -1268 2998 170 ) nieb/clone/wood02 [ 0 1 0 8 ] [ -0 -0 -1 136 ] -0 0.25 0.25 0 0 0
 }
 }
-// entity 43
+// entity 42
 {
 "classname" "func_illusionary"
 // brush 0
@@ -2272,7 +2247,7 @@ fabric/fabric005
 ( -1236 2998 128 ) ( -1236 3118 128 ) ( -1236 2998 144 ) nieb/clone/wood02 [ 0 1 0 8 ] [ -0 -0 -1 32 ] -0 0.25 0.25 0 0 0
 }
 }
-// entity 44
+// entity 43
 {
 "classname" "item_inventory"
 "origin" "-1560.000000 3036.000000 151.000000"
@@ -2280,9 +2255,9 @@ fabric/fabric005
 "angle" "-32.197063"
 "amount" "1"
 "targetname" "item_healthkit1"
-"target" "mm_item_counter"
+"target" "mm_bedroom"
 }
-// entity 45
+// entity 44
 {
 "classname" "func_door"
 "spawnflags" "257"
@@ -2335,7 +2310,7 @@ fabric/fabric005
 ( -1597 2930 152 ) ( -1597 3050 152 ) ( -1597 2930 168 ) nieb/clone/wood-floor01 [ 0 1 0 280 ] [ 0 0 -1 128 ] -0 0.25 0.25 0 0 0
 }
 }
-// entity 46
+// entity 45
 {
 "classname" "trigger_auto"
 "origin" "-1584.000000 3036.000000 206.000000"
@@ -2343,7 +2318,7 @@ fabric/fabric005
 "delay" "0.2"
 "angle" "90.000000"
 }
-// entity 47
+// entity 46
 {
 "classname" "func_door"
 "spawnflags" "257"
@@ -2396,7 +2371,7 @@ fabric/fabric005
 ( -1597 2930 140 ) ( -1597 3050 140 ) ( -1597 2930 156 ) nieb/clone/wood-floor01 [ 0 1 0 280 ] [ 0 0 -1 80 ] -0 0.25 0.25 0 0 0
 }
 }
-// entity 48
+// entity 47
 {
 "classname" "trigger_auto"
 "origin" "-1584.000000 3036.000000 226.000000"
@@ -2404,7 +2379,7 @@ fabric/fabric005
 "delay" "0.2"
 "angle" "90.000000"
 }
-// entity 49
+// entity 48
 {
 "classname" "func_illusionary"
 "excludenpc" "item_glock18"
@@ -2418,7 +2393,7 @@ fabric/fabric005
 ( -1446 3020 156 ) ( -1566 3020 156 ) ( -1446 3020 172 ) nieb/clone/wood02 [ -1 0 0 72 ] [ 0 0 -1 144 ] -0 0.25 0.25 0 0 0
 }
 }
-// entity 50
+// entity 49
 {
 "classname" "func_illusionary"
 "Solidity" "1"
@@ -2432,7 +2407,7 @@ fabric/fabric005
 ( -1446 3020 154 ) ( -1566 3020 154 ) ( -1446 3020 170 ) nieb/clone/wood02 [ -1 0 0 72 ] [ 0 0 -1 136 ] -0 0.25 0.25 0 0 0
 }
 }
-// entity 51
+// entity 50
 {
 "classname" "func_illusionary"
 // brush 0
@@ -2454,7 +2429,7 @@ fabric/fabric005
 ( -1446 3052 128 ) ( -1566 3052 128 ) ( -1446 3052 144 ) nieb/clone/wood02 [ -1 0 0 72 ] [ 0 0 -1 32 ] -0 0.25 0.25 0 0 0
 }
 }
-// entity 52
+// entity 51
 {
 "classname" "func_door"
 "spawnflags" "257"
@@ -2507,14 +2482,14 @@ fabric/fabric005
 ( -1550 3149 152 ) ( -1430 3149 152 ) ( -1550 3149 168 ) nieb/clone/wood-floor01 [ 1 0 0 280 ] [ 0 0 -1 128 ] -0 0.25 0.25 0 0 0
 }
 }
-// entity 53
+// entity 52
 {
 "classname" "trigger_auto"
 "origin" "-1444.000000 3136.000000 206.000000"
 "target" "drawer7"
 "delay" "0.2"
 }
-// entity 54
+// entity 53
 {
 "classname" "func_door"
 "spawnflags" "257"
@@ -2567,14 +2542,14 @@ fabric/fabric005
 ( -1550 3149 140 ) ( -1430 3149 140 ) ( -1550 3149 156 ) nieb/clone/wood-floor01 [ 1 0 0 280 ] [ 0 0 -1 80 ] -0 0.25 0.25 0 0 0
 }
 }
-// entity 55
+// entity 54
 {
 "classname" "trigger_auto"
 "origin" "-1444.000000 3136.000000 226.000000"
 "target" "drawer8"
 "delay" "0.2"
 }
-// entity 56
+// entity 55
 {
 "classname" "func_illusionary"
 "excludenpc" "item_glock18"
@@ -2588,7 +2563,7 @@ fabric/fabric005
 ( -1460 2998 156 ) ( -1460 3118 156 ) ( -1460 2998 172 ) nieb/clone/wood02 [ 0 1 0 8 ] [ -0 -0 -1 144 ] -0 0.25 0.25 0 0 0
 }
 }
-// entity 57
+// entity 56
 {
 "classname" "func_illusionary"
 "Solidity" "1"
@@ -2602,7 +2577,7 @@ fabric/fabric005
 ( -1460 2998 154 ) ( -1460 3118 154 ) ( -1460 2998 170 ) nieb/clone/wood02 [ 0 1 0 8 ] [ -0 -0 -1 136 ] -0 0.25 0.25 0 0 0
 }
 }
-// entity 58
+// entity 57
 {
 "classname" "func_illusionary"
 // brush 0
@@ -2624,7 +2599,7 @@ fabric/fabric005
 ( -1428 2998 128 ) ( -1428 3118 128 ) ( -1428 2998 144 ) nieb/clone/wood02 [ 0 1 0 8 ] [ -0 -0 -1 32 ] -0 0.25 0.25 0 0 0
 }
 }
-// entity 59
+// entity 58
 {
 "classname" "hud_textmessage"
 "origin" "-1272.000000 2648.000000 208.000000"
@@ -2641,7 +2616,7 @@ fabric/fabric005
 "y" "-1"
 "message" "Great, just my lucky day... Let's see what the fuck is going on out there."
 }
-// entity 60
+// entity 59
 {
 "classname" "trigger_counter"
 "count" "2"
@@ -2649,18 +2624,18 @@ fabric/fabric005
 "origin" "-1272.000000 2648.000000 144.000000"
 "target" "hud_msg_intro2"
 }
-// entity 61
+// entity 60
 {
 "classname" "game_door_rotating"
 "spawnflags" "256"
-"lockedtarget" "hud_not_locked"
-"closetarget" "hud_not_closed"
 "snd_move" "1"
 "snd_locked" "1"
-"targetname" "door_bedroom1"
 "direction" "-90"
 "snd_close" "1"
-"target" "hud_not_open"
+"master" "mm_bedroom"
+"OnOpen" "hud_not_open,OnTrigger,open,0.1,-1"
+"OnClose" "hud_not_close,OnTrigger,close,0.1,-1"
+"OnLockedUse" "hud_not_locked,OnTrigger,locked,0.1,-1"
 // brush 0
 {
 ( -1250 2888 216 ) ( -1306 2888 216 ) ( -1250 2904 216 ) doors/wood_door_01 [ 0 -1 0 256 ] [ -1 0 0 905.8498535156 ] -0 0.0078125 0.0507812463 0 0 0
@@ -2680,30 +2655,67 @@ fabric/fabric005
 ( -1308 2906 128 ) ( -1252 2906 128 ) ( -1308 2906 256 ) common/origin [ 1 0 0 14.7705078125 ] [ 0 0 -1 17.4543457031 ] -0 0.1015625075 0.0859375075 0 0 0
 }
 }
-// entity 62
+// entity 61
 {
 "classname" "hud_notification"
-"origin" "-1224.000000 2960.000000 176.000000"
+"origin" "-1584.000000 2928.000000 176.000000"
 "message" "The ^xF42door^xFFF is locked."
 "targetname" "hud_not_locked"
 "style" "0"
 "duration" "2"
 }
-// entity 63
+// entity 62
 {
 "classname" "hud_notification"
-"origin" "-1224.000000 2984.000000 168.000000"
+"origin" "-1584.000000 2928.000000 200.000000"
 "message" "The ^xF42door^xFFF is closed."
 "targetname" "hud_not_closed"
 "duration" "2"
 "style" "0"
 }
-// entity 64
+// entity 63
 {
 "classname" "hud_notification"
-"origin" "-1264.000000 3008.000000 224.000000"
+"origin" "-1584.000000 2928.000000 224.000000"
 "message" "The ^xF42door^xFFF is open."
 "targetname" "hud_not_open"
 "style" "0"
 "duration" "2"
+}
+// entity 64
+{
+"classname" "multisource"
+"origin" "-1232.000000 2928.000000 224.000000"
+"targetname" "mm_bedroom"
+}
+// entity 65
+{
+"classname" "game_door_rotating"
+"spawnflags" "256"
+"snd_move" "1"
+"snd_locked" "1"
+"targetname" "door_bedroom2"
+"direction" "-90"
+"snd_close" "1"
+"OnOpen" "hud_not_open,OnTrigger,open,0.1,-1"
+"OnClose" "hud_not_close,OnTrigger,close,0.1,-1"
+"OnLockedUse" "hud_not_locked,OnTrigger,locked,0.1,-1"
+// brush 0
+{
+( -1464 3006 216 ) ( -1464 2950 216 ) ( -1480 3006 216 ) doors/wood_door_01 [ 1 0 0 256 ] [ 0 -1 0 748.3125 ] -0 0.0078125 0.0507812463 0 0 0
+( -1456 3002 256 ) ( -1472 3002 256 ) ( -1456 3002 128 ) doors/wood_door_01 [ 1 0 0 256 ] [ 0 0 -1 465.4543457031 ] -0 0.0078125 0.0859375149 0 0 0
+( -1478 3006 256 ) ( -1478 3006 128 ) ( -1478 2950 256 ) doors/wood_door_01 [ 0 1 0 137.84765625 ] [ 0 0 -1 465.4543457031 ] -0 0.1015625075 0.0859375075 0 0 0
+( -1488 2950 128 ) ( -1472 2950 128 ) ( -1488 3006 128 ) doors/wood_door_01 [ 1 0 0 256 ] [ 0 -1 0 748.3125 ] -0 0.0078125 0.0507812463 0 0 0
+( -1488 2950 128 ) ( -1488 2950 256 ) ( -1472 2950 128 ) doors/wood_door_01 [ 1 0 0 256 ] [ 0 0 -1 465.4543457031 ] -0 0.0078125 0.0859375149 0 0 0
+( -1482 2950 128 ) ( -1482 3006 128 ) ( -1482 2950 256 ) doors/wood_door_01 [ 0 1 0 137.84765625 ] [ 0 0 -1 465.4543457031 ] -0 0.1015625075 0.0859375075 0 0 0
+}
+// brush 1
+{
+( -1464 3004 216 ) ( -1464 2948 216 ) ( -1480 3004 216 ) common/origin [ 1 0 0 0 ] [ 0 -1 0 4.921875 ] -0 0.0078125 0.0507812463 0 0 0
+( -1448 2952 256 ) ( -1464 2952 256 ) ( -1448 2952 128 ) common/origin [ 1 0 0 0 ] [ 0 0 -1 17.4543457031 ] -0 0.0078125 0.0859375149 0 0 0
+( -1478 3004 256 ) ( -1478 3004 128 ) ( -1478 2948 256 ) common/origin [ 0 1 0 29.54296875 ] [ 0 0 -1 17.4543457031 ] -0 0.1015625075 0.0859375075 0 0 0
+( -1488 2948 128 ) ( -1472 2948 128 ) ( -1488 3004 128 ) common/origin [ 1 0 0 0 ] [ 0 -1 0 4.921875 ] -0 0.0078125 0.0507812463 0 0 0
+( -1488 2948 128 ) ( -1488 2948 256 ) ( -1472 2948 128 ) common/origin [ 1 0 0 0 ] [ 0 0 -1 17.4543457031 ] -0 0.0078125 0.0859375149 0 0 0
+( -1482 2948 128 ) ( -1482 3004 128 ) ( -1482 2948 256 ) common/origin [ 0 1 0 29.54296875 ] [ 0 0 -1 17.4543457031 ] -0 0.1015625075 0.0859375075 0 0 0
+}
 }
