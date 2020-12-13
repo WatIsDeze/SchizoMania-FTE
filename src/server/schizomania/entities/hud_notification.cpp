@@ -56,7 +56,7 @@ hud_notification::Input(entity act, string intype, string data)
 	CBaseTrigger::Input(act, intype, data);
 
 	// Show HUD notification.
-	//if (intype == "OnTrigger") {
+	if (intype == "OnTrigger") {
 		WriteByte(MSG_MULTICAST, SVC_CGAMEPACKET);
 		WriteByte(MSG_MULTICAST, EV_HUD_NOTIFICATION);
 
@@ -66,15 +66,12 @@ hud_notification::Input(entity act, string intype, string data)
 
 		if (spawnflags & GTF_ALLPLAYERS) {
 			msg_entity = this;
-			multicast(origin, MULTICAST_ALL);
+			multicast(origin, MULTICAST_ALL_R);
 		} else {
 			msg_entity = act;
 			multicast(origin, MULTICAST_ONE_R);
 		}
-
-		// Trigger target.
-		UseTargets(msg_entity, TRIG_TOGGLE, m_flDelay);
-	//}
+	}
 }
 
 void hud_notification::Trigger(entity act, int state)
@@ -88,7 +85,7 @@ void hud_notification::Trigger(entity act, int state)
 
 	if (spawnflags & GTF_ALLPLAYERS) {
 		msg_entity = this;
-		multicast(origin, MULTICAST_ALL);
+		multicast(origin, MULTICAST_ALL_R);
 	} else {
 		msg_entity = act;
 		multicast(origin, MULTICAST_ONE_R);

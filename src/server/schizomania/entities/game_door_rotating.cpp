@@ -78,6 +78,7 @@ class game_door_rotating:CBaseTrigger
     string targetLocked;
 
 	// New Target Architecture.
+	entity e_lastActivator;		// Entity referencing to who last activated this door.
 	string m_strOnClose;		// On Return
 	string m_strOnLockedUse;	// On Use, when Locked.
 	string m_strOnOpen;			// On Arrive.
@@ -140,10 +141,7 @@ void game_door_rotating::Arrived(void)
 
 	m_iState = STATE_RAISED;
 	if (m_strOnOpen) {
-		dprint("================\n");
-		dprint(sprintf("m_strOnOpen: %s\n", m_strOnOpen));
-		UseOutput(this, m_strOnOpen);
-		dprint("================\n");
+		UseOutput(e_lastActivator, m_strOnOpen);
 	}
 	if (m_strSndStop) {
 		Sound_Play(this, CHAN_VOICE, m_strSndStop);
@@ -180,10 +178,7 @@ void game_door_rotating::Returned(void)
 
 	m_iState = STATE_LOWERED;
 	if (m_strOnClose) {
-		dprint("================\n");
-		dprint(sprintf("m_strOnClose: %s\n", m_strOnClose));
-		UseOutput(this, m_strOnClose);
-		dprint("================\n");
+		UseOutput(e_lastActivator, m_strOnClose);
 	}
 
 	setorigin(this, origin);
@@ -285,14 +280,14 @@ void game_door_rotating::Trigger(entity act, int state)
 
 void game_door_rotating::Use(void)
 {
+	// Store last activator, so that in case the returned and arrived
+	// function want to use their output functionality.
+	e_lastActivator = eActivator;
 	eActivator.flags &= ~FL_USE_RELEASED;
 
 	if (GetMaster() == FALSE) {
 		if (m_strOnLockedUse) {
-			dprint("================\n");
-			dprint(sprintf("m_strOnLockedUse: %s\n", m_strOnLockedUse));
-			UseOutput(this, m_strOnLockedUse);
-			dprint("================\n");
+			UseOutput(eActivator, m_strOnLockedUse);
 		}
 		if (m_strSndLocked) {
 			Sound_Play(this, CHAN_VOICE, m_strSndLocked);
