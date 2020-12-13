@@ -182,3 +182,13 @@ name Dave
 /map test_prototype_indoor
 /map test_prototype_indoor
 /map test_prototype_indoor
+/map test_prototype_indoor
+noclip
+/map test_prototype_indoor
+/map test_dlights
+/map test_lightstyles
+/map test_dlights
+/map test_patchblend
+/map test_patchblend
+/map test_prototype_indoor
+god
