@@ -25,10 +25,12 @@ View_Init(void)
 			pSeat->m_eViewModel = spawn();
 			pSeat->m_eViewModel.classname = "vm";
 			pSeat->m_eViewModel.renderflags = RF_DEPTHHACK;
+			pSeat->m_eViewModel.effects |= EF_NOSHADOW;
 			
 			pSeat->m_eMuzzleflash = spawn();
 			pSeat->m_eMuzzleflash.classname = "mflash";
 			pSeat->m_eMuzzleflash.renderflags = RF_ADDITIVE;
+			pSeat->m_eMuzzleflash.effects |= EF_NOSHADOW;
 			pSeat->m_pWeaponFX = spawn(CBaseFX);
 		}
 	}
@@ -123,53 +125,6 @@ View_CalcRoll(void)
 	return autocvar_v_camroll ? roll : 0;
 }
 
-//=======================
-// void View_DrawHoveredItem(void)
-//
-// Does a trace check to see if an item is in range and hovered.
-// If it is, give it a shell.
-//=======================
-entity oldItemTraceEnt;
-
-void View_DrawHoveredItem(void) {
-	player pl = (player) self;
-
-	// Prep vectors.
-	vector vecAng = [pl.pitch, pl.angles[1], pl.angles[2]];
-	vector vecSrc = pl.origin + pl.view_ofs;
-	makevectors(vecAng);
-
-	// Do the entity trace.
-	traceline(vecSrc, vecSrc + (v_forward * 64), MOVE_NORMAL, self);
-		
-	// In case we traced a previous entity, undo its effects.
-	if (oldItemTraceEnt != trace_ent) {
-		if (oldItemTraceEnt.gflags & GF_HOVER_FULLBRIGHT) {
-			// Remove effect.
-			if (oldItemTraceEnt.effects & EF_FULLBRIGHT) {
-				oldItemTraceEnt.effects &= ~EF_FULLBRIGHT;
-			}
-		}
-
-		// Reset entity reference.
-		oldItemTraceEnt = __NULL__;
-	}
-
-	// If we hit a trace, and it had GF_HOVER_FULLBRIGHT, EF_FULLBRIGHT it.
-	if (trace_ent != world) {
-		// All of the below fail, exception for CBaseEntity.
-		if (trace_ent.gflags & GF_HOVER_FULLBRIGHT) {
-			//dprint(trace_ent.classname);
-			if (!trace_ent.effects & EF_FULLBRIGHT)
-				trace_ent.effects |= EF_FULLBRIGHT;
-		}
-		
-		// Store it so we can remove effect when unhovered.
-		oldItemTraceEnt = trace_ent;
-	}
-}
-
-
 /*
 ====================
 View_DrawViewModel
@@ -192,11 +147,7 @@ void View_DrawViewModel(void)
 	if (cvar("r_drawviewmodel") == 0 || autocvar_cl_thirdperson == TRUE) {
 		return;
 	}
-	
-	// Give "aimed at/hovered" items a "shell" effect.
-	View_DrawHoveredItem();
 
-	// Update Bob and View.
 	View_CalcBob();
 	View_UpdateWeapon(m_eViewModel, m_eMuzzleflash);
 	float fBaseTime = m_eViewModel.frame1time;
@@ -234,9 +185,6 @@ void View_DrawViewModel(void)
 			m_eViewModel.renderflags &= ~RF_USEAXIS;
 		}
 	}
-
-	// <WatIs>: Don't want the view model to cast shadows.
-	m_eViewModel.renderflags |= RF_NOSHADOW;
 
 	// Only bother when zoomed out
 	if (pl.viewzoom == 1.0f) {

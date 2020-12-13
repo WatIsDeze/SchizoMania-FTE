@@ -167,21 +167,7 @@ CSQC_UpdateView(float w, float h, float focus)
 		setproperty(VF_ENVMAP, "$whiteimage");
 		setproperty(VF_ORIGIN, g_vecCubePos);
 		setproperty(VF_AFOV, 90);
-		if (g_skyscale != 0 && g_skypos) {
-			vector porg;
-			vector realpos;
-			
-			if (autocvar_dev_skyscale) {
-				realpos[0] = g_vecCubePos[0] / autocvar_dev_skyscale;
-				realpos[1] = g_vecCubePos[1] / autocvar_dev_skyscale;
-				realpos[2] = g_vecCubePos[2] / autocvar_dev_skyscale;
-			} else {
-				realpos[0] = g_vecCubePos[0] / g_skyscale;
-				realpos[1] = g_vecCubePos[1] / g_skyscale;
-				realpos[2] = g_vecCubePos[2] / g_skyscale;
-			}
-			setproperty(VF_SKYROOM_CAMERA, g_skypos + realpos);
-		}
+		SkyCamera_Setup();
 		renderscene();
 		return;
 	}
@@ -292,6 +278,14 @@ CSQC_UpdateView(float w, float h, float focus)
 				view_angles += [sin(time), sin(time * 2)] * 5;
 				setproperty(VF_ORIGIN, pSeat->m_vecCameraOrigin);
 				setproperty(VF_CL_VIEWANGLES, view_angles);
+			}
+			if (pSeat->m_flShakeDuration > 0.0) {
+				vector vecShake = [0,0,0];
+				vecShake[0] += random() * 3;
+				vecShake[1] += random() * 3;
+				vecShake[2] += random() * 3;
+				pl.punchangle += (vecShake * pSeat->m_flShakeAmp) * (pSeat->m_flShakeDuration / pSeat->m_flShakeTime);
+				pSeat->m_flShakeDuration -= clframetime;
 			}
 			setproperty(VF_ANGLES, view_angles + pl.punchangle);
 		}
@@ -603,11 +597,10 @@ CSQC_Parse_Event(void)
 		setproperty(VF_ANGLES, a);
 		break;
 	case EV_SHAKE:
-		float rad, amp, dur, freq;
-		rad = readfloat();
-		amp = readfloat();
-		dur = readfloat();
-		freq = readfloat();
+		pSeat->m_flShakeFreq = readfloat();
+		pSeat->m_flShakeDuration = readfloat();
+		pSeat->m_flShakeAmp = readfloat();
+		pSeat->m_flShakeTime = pSeat->m_flShakeDuration;
 	default:
 		Game_Parse_Event(fHeader);
 	}
@@ -917,7 +910,7 @@ void
 CSQC_WorldLoaded(void)
 {
 	/* Primarily for the flashlight */
-	if (serverkeyfloat("*bspversion") != 30) {
+	if (serverkeyfloat("*bspversion") != BSPVER_HL) {
 		localcmd("r_shadow_realtime_dlight 1\n");
 	} else {
 		localcmd("r_shadow_realtime_dlight 0\n");

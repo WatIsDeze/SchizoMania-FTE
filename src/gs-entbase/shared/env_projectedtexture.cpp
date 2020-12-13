@@ -14,26 +14,30 @@
  * OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  */
 
-/*QUAKED env_projectedtexture (1 0 0) (-8 -8 -8) (8 8 8)
+/*QUAKED env_projectedtexture (1 0 0) (-8 -8 -8) (8 8 8) PRTEXSF_STARTON
 "targetname"        Name
 "target"            Name of an entity in the map that light will point at.
-"_light"            Color of the spotlight in RGB255 format.
-"brightness"        Intensity of the spotlight.
-"_inner_cone"       Angles of the inner spotlight beam. 0 = omnidirectional.
-"_cone"             Angles of the outer spotlight beam. 0 = omnidirectional.
-"distance"          Distance that light is allowed to cast, in inches.
-"spotlight_radius"  Radius of the resulting spotlight that's cast at a wall.
-"style"             Select one of the hard-coded lightstyles.
-"start_active"      Override for if the entity should start on or off.
+"lightcolor"        Color of the projected texture light + intensity (unused?)
+"style"             Light appearance style of the projected texture.
+"texturename"       Name of the texture to be cast as a light.
+"farz"              Distance to which this projected light will be cast.
+"nearz"             Clipping distance for near objects that won't get lit.
 
-Dynamic light entity. Can be parented to things, it even has some inputs that
-may be interesting.
+Inputs:
+"TurnOff"           Turns the entity off.
+"TurnOn"            Turns the entity on.
+"Toggle"            Toggles the entity to an on/off state.
+"SpotlightTexture"  Sets the projected texture to a specified path.
+"LightColor"        Sets the color of the light in RGB255 form.
+"SetLightStyle"     Sets the light appearance integer.
+"SetNearZ"          Sets clipping distance for near objects that won't get lit.
+"SetFarZ"           Sets distance to which this projected light will be cast.
 
-The 'start_active' is a Nuclide specific one. There is no way in Source engine
-games to tell the entity to start inactive as far as I can tell.
+Textured light projected. This is the type of lighting that's used for
+flashlights, lamp spotlights and so on.
 
 Trivia:
-This entity was introduced in Half-Life 2 (2004).
+This entity was introduced in Half-Life 2: Episode One (2006).
 */
 
 enumflags
@@ -42,10 +46,13 @@ enumflags
 	PRTEXFL_CHANGED_ANGLES,
 	PRTEXFL_CHANGED_LIGHT,
 	PRTEXFL_CHANGED_INTENSITY,
+	PRTEXFL_CHANGED_FARZ,
+	PRTEXFL_CHANGED_NEARZ,
 	PRTEXFL_CHANGED_STYLE,
 	PRTEXFL_CHANGED_STATE,
 	PRTEXFL_CHANGED_TEXTURE,
-	PRTEXFL_CHANGED_FOV
+	PRTEXFL_CHANGED_FOV,
+	PRTEXFL_CHANGED_PATTERN
 };
 
 #ifdef CLIENT
@@ -58,9 +65,11 @@ class env_projectedtexture:CBaseTrigger
 	float m_flIntensity;
 	float m_flInnerCone;
 	float m_flCone;
-	float m_flDistance;
+	float m_flFarZ;
+	float m_flNearZ;
 	float m_flRadius;
 	float m_flStyle;
+	string m_strPattern;
 	string m_strTextureName;
 	float m_flFOV;
 	int m_iState;
@@ -71,7 +80,6 @@ class env_projectedtexture:CBaseTrigger
 	virtual void(float) ReceiveEntity;
 	virtual float(void) predraw;
 #else
-	int m_iStartActive;
 
 	virtual void(entity, int) Trigger;
 	virtual void(void) Respawn;
@@ -91,12 +99,11 @@ env_projectedtexture::predraw(void)
 	}
 
 	/* TODO: We need to handle the second cone light */
-	float p = dynamiclight_add(origin, 512, m_vecLight, m_flStyle, m_strTextureName);
+	float p = dynamiclight_add(origin, m_flFarZ, m_vecLight, m_flStyle, m_strTextureName);
 	dynamiclight_set(p, LFIELD_ANGLES, angles);
 	dynamiclight_set(p, LFIELD_FLAGS, LFLAG_NORMALMODE | LFLAG_REALTIMEMODE | LFLAG_SHADOWMAP);
-
-	if (!m_flStyle)
-		dynamiclight_set(p, LFIELD_STYLESTRING, "z");
+	dynamiclight_set(p, LFIELD_NEARCLIP, m_flNearZ);
+	dynamiclight_set(p, LFIELD_STYLESTRING, m_strPattern);
 
 	addentity(this);
 	return PREDRAW_NEXT;
@@ -126,6 +133,10 @@ env_projectedtexture::ReceiveEntity(float flFlags)
 
 	if (flFlags & PRTEXFL_CHANGED_INTENSITY)
 		m_flIntensity = readfloat();
+	if (flFlags & PRTEXFL_CHANGED_FARZ)
+		m_flFarZ = readfloat();
+	if (flFlags & PRTEXFL_CHANGED_NEARZ)
+		m_flNearZ = readfloat();
 	if (flFlags & PRTEXFL_CHANGED_STYLE)
 		m_flStyle = readbyte();
 	if (flFlags & PRTEXFL_CHANGED_STATE)
@@ -134,6 +145,8 @@ env_projectedtexture::ReceiveEntity(float flFlags)
 		m_strTextureName = readstring();
 	if (flFlags & PRTEXFL_CHANGED_FOV)
 		m_flFOV = readfloat();
+	if (flFlags & PRTEXFL_CHANGED_PATTERN)
+		m_strPattern = readstring();
 
 	classname = "env_projectedtexture";
 }
@@ -204,6 +217,10 @@ env_projectedtexture::SendEntity(entity ePVSEnt, float flFlags)
 
 	if (flFlags & PRTEXFL_CHANGED_INTENSITY)
 		WriteFloat(MSG_ENTITY, m_flIntensity);
+	if (flFlags & PRTEXFL_CHANGED_FARZ)
+		WriteFloat(MSG_ENTITY, m_flFarZ);
+	if (flFlags & PRTEXFL_CHANGED_NEARZ)
+		WriteFloat(MSG_ENTITY, m_flNearZ);
 	if (flFlags & PRTEXFL_CHANGED_STYLE)
 		WriteByte(MSG_ENTITY, m_flStyle);
 	if (flFlags & PRTEXFL_CHANGED_STATE)
@@ -212,6 +229,8 @@ env_projectedtexture::SendEntity(entity ePVSEnt, float flFlags)
 		WriteString(MSG_ENTITY, m_strTextureName);
 	if (flFlags & PRTEXFL_CHANGED_FOV)
 		WriteFloat(MSG_ENTITY, m_flFOV);
+	if (flFlags & PRTEXFL_CHANGED_PATTERN)
+		WriteString(MSG_ENTITY, m_strPattern);
 
 	return TRUE;
 }
@@ -220,17 +239,29 @@ void
 env_projectedtexture::Input(entity eAct, string strInput, string strData)
 {
 	switch (strInput) {
-	case "Color":
+	case "LightColor":
 		m_vecLight = stov(strData);
 		SendFlags |= PRTEXFL_CHANGED_LIGHT;
 		break;
-	case "brightness":
-		m_flIntensity = stof(strData);
-		SendFlags |= PRTEXFL_CHANGED_INTENSITY;
+	case "SetNearZ":
+		m_flNearZ = stof(strData);
+		SendFlags |= PRTEXFL_CHANGED_NEARZ;
 		break;
-	case "style":
+	case "SetFarZ":
+		m_flFarZ = stof(strData);
+		SendFlags |= PRTEXFL_CHANGED_FARZ;
+		break;
+	case "SetLightStyle":
 		m_flStyle = stof(strData);
 		SendFlags |= PRTEXFL_CHANGED_STYLE;
+		break;
+	case "SpotlightTexture":
+		m_strTextureName = strData;
+		SendFlags |= PRTEXFL_CHANGED_TEXTURE;
+		break;
+	case "SetPattern":
+		m_strPattern = strData;
+		SendFlags |= PRTEXFL_CHANGED_PATTERN;
 		break;
 	case "TurnOn":
 		Trigger(eAct, TRIG_ON);
@@ -266,9 +297,14 @@ env_projectedtexture::SpawnKey(string strKey, string strValue)
 	case "lightfov":
 		m_flFOV = stof(strValue);
 		break;
-	/* out-of-spec */
-	case "start_active":
-		m_iStartActive = stoi(strValue);
+	case "farz":
+		m_flFarZ = stof(strValue);
+		break;
+	case "nearz":
+		m_flNearZ = stof(strValue);
+		break;
+	case "pattern":
+		m_strPattern = strValue;
 		break;
 	default:
 		CBaseTrigger::SpawnKey(strKey, strValue);
@@ -283,7 +319,7 @@ env_projectedtexture::Respawn(void)
 	SetOrigin(m_oldOrigin);
 	SetAngles(m_oldAngle);
 
-	m_iState = (m_iStartActive == 1) ? 1 : 0;
+	m_iState = (spawnflags & 1) ? 1 : 0;
 }
 #endif
 
@@ -293,12 +329,17 @@ env_projectedtexture::env_projectedtexture(void)
 #ifdef CLIENT
 	drawmask = MASK_ENGINE;
 #else
+	m_strPattern = "z";
 	m_vecLight = [255,255,255];
 	m_flIntensity = 512;
-	m_iStartActive = 1;
+	m_flFarZ = 512;
+	m_flNearZ = 0;
 	m_strTextureName = "textures/flashlight";
 	m_flFOV = 90;
 
 	CBaseTrigger::CBaseTrigger();
+
+	if (m_flStyle > 0 && m_flStyle < 12)
+		m_strPattern = getlightstyle(m_flStyle);
 #endif
 }

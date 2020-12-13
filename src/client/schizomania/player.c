@@ -33,7 +33,7 @@ Player_PreDraw(base_player bp, int thirdperson)
 		makevectors(ang);
 		traceline(src, src + (v_forward * 8096), MOVE_NORMAL, bp);
 
-		if (serverkeyfloat("*bspversion") == 30) {
+		if (serverkeyfloat("*bspversion") == BSPVER_HL) {
 			dynamiclight_add(trace_endpos + (v_forward * -2), 128, [1,1,1]);
 		} else {
 			float p = dynamiclight_add(src, 256, [1,0.8,0.6], 0, "textures/flashlight");

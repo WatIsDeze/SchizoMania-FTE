@@ -177,3 +177,8 @@ name Dave
 /map test_prototype_indoor
 /map test_prototype_indoor
 /map test_prototype_indoor
+/map test_prototype_indoor
+/map test_prototype_indoor
+/map test_prototype_indoor
+/map test_prototype_indoor
+/map test_prototype_indoor

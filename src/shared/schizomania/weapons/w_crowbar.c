@@ -25,9 +25,8 @@ Crowbar Weapon
 
 enum
 {
-	CBAR_TPOSE,
-	CBAR_IDLE1,
-	CBAR_ATTACK1,
+	CBAR_IDLE,
+	CBAR_DRAW,
 	CBAR_HOLSTER,
 	CBAR_ATTACK1HIT,
 	CBAR_ATTACK1MISS,
@@ -46,8 +45,7 @@ w_crowbar_precache(void)
 	Sound_Precache("weapon_crowbar.hitbody");
 	precache_model("models/w_crowbar.mdl");
 #else
-	precache_model("models/weapons/knife/arms.vvm");
-	precache_model("models/weapons/knife/knife.vvm");
+	precache_model("models/v_crowbar.mdl");
 	precache_model("models/p_crowbar.mdl");
 #endif
 }
@@ -80,14 +78,14 @@ w_crowbar_deathmsg(void)
 void
 w_crowbar_draw(void)
 {
-	Weapons_SetModel("models/weapons/knife/arms.vvm");
-	Weapons_ViewAnimation(CBAR_IDLE1);
+	Weapons_SetModel("models/v_crowbar.mdl");
+	Weapons_ViewAnimation(CBAR_DRAW);
 }
 
 void
 w_crowbar_holster(void)
 {
-	Weapons_ViewAnimation(CBAR_IDLE1);
+	Weapons_ViewAnimation(CBAR_HOLSTER);
 }
 
 void
@@ -120,13 +118,13 @@ w_crowbar_primary(void)
 	int r = (float)input_sequence % 3;
 	switch (r) {
 	case 0:
-		Weapons_ViewAnimation(trace_fraction >= 1 ? CBAR_ATTACK1:CBAR_ATTACK1);
+		Weapons_ViewAnimation(trace_fraction >= 1 ? CBAR_ATTACK1MISS:CBAR_ATTACK1HIT);
 		break;
 	case 1:
-		Weapons_ViewAnimation(trace_fraction >= 1 ? CBAR_ATTACK1:CBAR_ATTACK1);
+		Weapons_ViewAnimation(trace_fraction >= 1 ? CBAR_ATTACK2MISS:CBAR_ATTACK2HIT);
 		break;
 	default:
-		Weapons_ViewAnimation(trace_fraction >= 1 ? CBAR_ATTACK1:CBAR_ATTACK1);
+		Weapons_ViewAnimation(trace_fraction >= 1 ? CBAR_ATTACK3MISS:CBAR_ATTACK3HIT);
 	}
 
 #ifdef SERVER
@@ -150,7 +148,7 @@ w_crowbar_primary(void)
 	}
 
 	if (trace_ent.takedamage) {
-		Damage_Apply(trace_ent, pl, Skill_GetValue("plr_crowbar"), WEAPON_CROWBAR, DMG_BLUNT);
+		Damage_Apply(trace_ent, pl, Skill_GetValue("plr_crowbar", 10), WEAPON_CROWBAR, DMG_BLUNT);
 		if (trace_ent.iBleeds) {
 			Sound_Play(self, CHAN_WEAPON, "weapon_crowbar.hitbody");
 		}
@@ -169,15 +167,14 @@ w_crowbar_release(void)
 		return;
 	}
 
-	Weapons_ViewAnimation(CBAR_IDLE1);
+	Weapons_ViewAnimation(CBAR_IDLE);
 	pl.w_idle_next = 15.0f;
 }
 
 float
 w_crowbar_aimanim(void)
 {
-	return CBAR_IDLE1;
-//	return self.flags & FL_CROUCHING ? ANIM_CR_AIMCROWBAR : ANIM_AIMCROWBAR;
+	return self.flags & FL_CROUCHING ? ANIM_CR_AIMCROWBAR : ANIM_AIMCROWBAR;
 }
 
 void

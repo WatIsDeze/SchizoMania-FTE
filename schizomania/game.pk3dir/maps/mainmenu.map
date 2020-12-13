@@ -72,6 +72,7 @@
 "texturename" "textures/ui/mainmenu/title"
 "brightness" "85"
 "style" "6"
+"spawnflags" "1"
 }
 // entity 3
 {

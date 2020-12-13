@@ -68,7 +68,7 @@
 "classname" "env_projectedtexture"
 "origin" "0.000000 -40.000000 176.000000"
 "angle" "174.169556"
-"lightcolor" "255 255 255 1536"
+"lightcolor" "255 255 255 2500"
 "texturename" "textures/ui/mainmenu/title"
 "brightness" "85"
 "style" "6"
