@@ -1665,7 +1665,7 @@ nieb/metal-grey
 // entity 1
 {
 "classname" "info_player_start"
-"origin" "-1280.000000 2936.000000 192.000000"
+"origin" "-1520.000000 2664.000000 192.000000"
 "angle" "37.926086"
 }
 // entity 2

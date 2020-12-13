@@ -14,7 +14,14 @@ my own ADHD good.
   We gotta fix that..
 
 # Prototype - Alpha - 0.1
+## NOTES FOR ANYONE WITH QUESTIONS:
+- GUI Images may be incomplete if you scale the HUD.
+
+## MUST DO TO FIX NOTES LIST:
+- GUI Images which are more cohersive with hud aspect ratios.
+
 ## MUST DO LIST:
+
 - We'll figure out those Outputs too.
 
 - The following entities below need additions. Before we can move on.
