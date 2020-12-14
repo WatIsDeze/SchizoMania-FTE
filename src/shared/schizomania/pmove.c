@@ -14,9 +14,32 @@
  * OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  */
 
-#define PHY_JUMP_CHAINWINDOW	0.5
-#define PHY_JUMP_CHAIN			100
-#define PHY_JUMP_CHAINDECAY		50
+// Custom SchizoMania fine tuned.
+#define PMOVE_STEPHEIGHT 18
+#define PMOVE_AIRSTEPHEIGHT 18
+#define PMOVE_FRICTION 4
+#define PMOVE_EDGEFRICTION 1
+#define PMOVE_STOPSPEED 75
+#define PMOVE_GRAVITY 800
+#define PMOVE_AIRACCELERATE 10
+#define PMOVE_WATERACCELERATE 8
+#define PMOVE_ACCELERATE 8
+#define PMOVE_MAXSPEED 270
+#define PMOVE_STEP_WALKSPEED 125
+#define PMOVE_STEP_RUNSPEED 220
+
+// #define PMOVE_STEPHEIGHT 18
+// #define PMOVE_AIRSTEPHEIGHT 18
+// #define PMOVE_FRICTION 4
+// #define PMOVE_EDGEFRICTION 1
+// #define PMOVE_STOPSPEED 75
+// #define PMOVE_GRAVITY 800
+// #define PMOVE_AIRACCELERATE 10
+// #define PMOVE_WATERACCELERATE 8
+// #define PMOVE_ACCELERATE 8
+// #define PMOVE_MAXSPEED 270
+// #define PMOVE_STEP_WALKSPEED 135
+// #define PMOVE_STEP_RUNSPEED 220
 
 .float waterlevel;
 .float watertype;
@@ -88,32 +111,4 @@ void GamePMove_Jump(player target)
 		target.velocity *= 0.80f;
 		target.velocity[2] += 220;
 	}
-// 	float flJumptimeDelta;
-// 	float flChainBonus;
-
-// 	if (target.waterlevel >= 2) {
-// 		if (target.watertype == CONTENT_WATER) {
-// 			target.velocity[2] = 100;
-// 		} else if (target.watertype == CONTENT_SLIME) {
-// 			target.velocity[2] = 80;
-// 		} else {
-// 			target.velocity[2] = 50;
-// 		}
-// 	} else {
-// 		/* Half-Life: Longjump module */
-// #ifdef VALVE
-// 		if (target.flags & FL_CROUCHING && target.g_items & 0x00008000i) {
-// 			target.velocity = v_forward * 512;
-// 			target.velocity[2] += 100;
-// 		}
-// #endif
-// 		target.velocity[2] += 240;
-// 	}
-
-// 	if (target.jumptime > 0) {
-// 		flJumptimeDelta = 0 - (target.jumptime - PHY_JUMP_CHAINWINDOW);
-// 		flChainBonus = PHY_JUMP_CHAIN - (((PHY_JUMP_CHAINWINDOW - (PHY_JUMP_CHAINWINDOW - flJumptimeDelta)) * 2) * PHY_JUMP_CHAINDECAY);
-// 		target.velocity[2] += flChainBonus;
-// 	}
-// 	target.jumptime = PHY_JUMP_CHAINWINDOW;
 }

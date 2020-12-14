@@ -25,12 +25,9 @@ HLSingleplayerRules::PlayerPreFrame(base_player bp)
 {
 	player pl = (player)bp;
 
-	// Deplete flashlight battery if its turned on.
+	// Deplete player flashlight battery life, when turned on.
 	if (pl.gflags & GF_FLASHLIGHT) {
 		pl.flashlight_battery = bound(0, pl.flashlight_battery -  10 * frametime, FLASHLIGHT_BATTERY_MAX);
-
-		// Debug print battery life.
-		dprint(sprintf("Flashlight Battery: %f\n", pl.flashlight_battery));
 	}
 }
 

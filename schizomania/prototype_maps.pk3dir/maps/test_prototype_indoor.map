@@ -1266,8 +1266,8 @@
 // entity 1
 {
 "classname" "info_player_start"
-"origin" "-1520.000000 2664.000000 192.000000"
-"angle" "37.926086"
+"origin" "-1544.000000 2712.000000 200.000000"
+"angle" "-90.015030"
 }
 // entity 2
 {
@@ -1440,7 +1440,7 @@
 "origin" "-1352.000000 2760.000000 200.000000"
 "light" "35"
 "radius" "512"
-"_color" "0.6 0.4 0.3"
+"_color" "0.9 0.7 0.5"
 }
 // entity 19
 {
@@ -1532,7 +1532,7 @@
 {
 "classname" "ambient_generic"
 "origin" "-1568.000000 2760.000000 184.000000"
-"message" "ambient/city/police_siren.wav"
+"message" "sound/ambient/city/police_siren.wav"
 "targetname" "ambient_police_sirens"
 "volume" "1.0"
 "pitch" "1.0"
@@ -1628,8 +1628,8 @@
 "classname" "func_door"
 "spawnflags" "257"
 "angle" "-90"
-"lips" "48"
 "targetname" "drawer2"
+"lip" "12"
 // brush 0
 {
 ( -1238 3043 144 ) ( -1358 3043 144 ) ( -1238 3147 144 ) nieb/clone/wood-floor01 [ 0 -1 0 332 ] [ -1 0 0 8 ] -0 0.25 0.25 0 0 0
@@ -1884,8 +1884,8 @@ fabric/fabric005
 "classname" "func_door"
 "spawnflags" "257"
 "angle" "360"
-"lips" "48"
 "targetname" "drawer6"
+"lip" "12"
 // brush 0
 {
 ( -1491 3050 144 ) ( -1491 2930 144 ) ( -1595 3050 144 ) nieb/clone/wood-floor01 [ 1 0 0 268 ] [ 0 -1 0 264 ] -0 0.25 0.25 0 0 0
@@ -2055,8 +2055,8 @@ fabric/fabric005
 "classname" "func_door"
 "spawnflags" "257"
 "angle" "-90"
-"lips" "48"
 "targetname" "drawer8"
+"lip" "12"
 // brush 0
 {
 ( -1430 3043 144 ) ( -1550 3043 144 ) ( -1430 3147 144 ) nieb/clone/wood-floor01 [ 0 -1 0 332 ] [ -1 0 0 264 ] -0 0.25 0.25 0 0 0
@@ -2873,4 +2873,9 @@ nieb/metal-grey
 "origin" "-1408.000000 2768.000000 192.000000"
 "angle" "1.254663"
 "scale" "256"
+}
+// entity 77
+{
+"classname" "hud_textmessage"
+"origin" "-1360.000000 3056.000000 200.000000"
 }

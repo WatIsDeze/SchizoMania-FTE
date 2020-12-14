@@ -77,7 +77,7 @@ Footsteps_HLBSP(base_player target)
 	string mat_name = "";
 	string tex_name = "";
 
-	traceline(target.origin + target.view_ofs, target.origin + [0,0,-54], FALSE, target);
+	traceline(target.origin + target.view_ofs, target.origin + [0,0,-48], FALSE, target);
 	tex_name = getsurfacetexture(trace_ent, getsurfacenearpoint(trace_ent, trace_endpos));
 
 	if (target.flags & FL_ONGROUND) {
@@ -228,7 +228,7 @@ Footsteps_Default(base_player target)
 		mat_name = "step_ladder";
 	}
 
-	if (target.step) {
+	if (target.step < 0) {
 		Sound_Play(target, CHAN_BODY, sprintf("%s.left", mat_name));
 	} else {
 		Sound_Play(target, CHAN_BODY, sprintf("%s.right", mat_name));
@@ -254,9 +254,6 @@ Footsteps_Update(void)
 
 	if (pl.movetype == MOVETYPE_WALK) {
 		if ((pl.velocity[0] == 0 && pl.velocity[1] == 0) || pl.step_time > time) {
-		//if ((fabs(pl.velocity[0]) <= 0.12 || fabs(pl.velocity[1]) <= 0.12) || pl.step_time > time) {
-			//dprint(sprintf("pl.steptime = %f - time = %f - %f - %f\n", pl.step_time, time, pl.velocity[0], pl.velocity[1]));
-		
 			return;
 		}
 
@@ -266,8 +263,12 @@ Footsteps_Update(void)
 			return;
 		}
 
-		/* the footsteps call might overwrite this later */
-		pl.step_time = time + 0.55;
+		// Play the sound with shorter intervals if we're running.
+		if (vlen(pl.velocity) > 220) {
+			pl.step_time = time + 0.40;
+		} else {
+			pl.step_time = time + 0.62;
+		}
 
 		switch (serverkeyfloat("*bspversion")) {
 		case BSPVER_HL:
@@ -278,9 +279,15 @@ Footsteps_Update(void)
 		case BSPVER_RBSP: /* RFVBSP */
 			Footsteps_VVBSP(pl);
 			break;
+		default:
+			Footsteps_Default(pl);
 		}
 
 		/* switch between feet */
-		pl.step = 1 - pl.step;
+		//pl.step = 0.05 - pl.step;
+		if (pl.step > 0)
+			pl.step = -1;
+		else
+			pl.step = 1;
 	}
 }
