@@ -599,14 +599,16 @@ textures/glass/glass_01
     surfaceParm trans
     surfaceParm alphashadow
 
-	polygonOffset 1
+    cull back
+
     diffusemap "textures/glass/glass_01.tga"
 
     qer_editorImage "textures/glass/glass_01.tga"
     {
         map $diffuse
+        map "textures/glass/glass_01_normal.tga"
         map $reflectcube
-        blendFunc GL_ONE GL_ONE
+        blendFunc GL_ONE GL_DST_COLOR
     }
 }
 

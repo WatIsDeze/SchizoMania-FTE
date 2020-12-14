@@ -2,7 +2,7 @@
     qer_editorImage "textures/fabric/frabic003.tga"
 
 	diffusemap textures/fabric/fabric003.tga
-    normalmap textures/fabric/fabric003_normal.tga
+    normalmap textures/fabric/fabric002_normal.tga
 
 	{
 		program lightmapped

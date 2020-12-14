@@ -388,6 +388,38 @@ HUD_WeaponPickupNotify(int w)
 	// pSeat->m_flPickupAlpha = 1.0f;
 }
 
+//=========================================================================
+// void HUD_Flashlight_Draw(void)
+//
+// A temporary, very simple, and slightly messy function.
+//=========================================================================
+void
+HUD_Flashlight_Draw(void) {
+	// Fetch player.
+	player pl = (player)pSeat->m_ePlayer;
+
+	// Ensure it ain't world or __NULL__
+	if (pl == world || pl == __NULL__) 
+		return;
+	
+	// Cast to int, so it's neatly rounded for sprintf.
+	int battery = pl.flashlight_battery;
+
+	// Generate the display string.
+	string strBatteryLife = strcat(sprintf("Flashlight: %i", battery), "%");
+
+	// Last but not least, calculate its width and position.
+	int strWidth = stringwidth(strBatteryLife, TRUE, [20, 20]);
+	vector pos;
+	pos[0] = g_hudmins[0] + (g_hudres[0]) - (strWidth + 20);
+	pos[1] = 20;
+
+	// Render time!
+	drawfont = FONT_HUD_MESSAGE;
+	drawstring(pos, strBatteryLife, '20 20', [1, 1, 1], 0.75, DRAWFLAG_ADDITIVE);
+	drawfont = FONT_CON;
+}
+
 /* main entry */
 void
 HUD_Draw(void)
@@ -395,6 +427,7 @@ HUD_Draw(void)
 	// player pl = (player)pSeat->m_ePlayer;
     HUDMessage_Draw();
     HUDNotification_Draw();
+	HUD_Flashlight_Draw();
 
 	// g_hud_color = autocvar_con_color * (1 / 255);
 

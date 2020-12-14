@@ -3,13 +3,16 @@
     surfaceParm trans
     surfaceParm alphashadow
 
+    cull back
+
     diffusemap "textures/glass/glass_01.tga"
+    normalmap "textures/glass/glass_01_normal.tga"
 
     qer_editorImage "textures/glass/glass_01.tga"
     {
         program reflect
         map $diffuse
-        map "textures/glass/glass_01_normal.tga"
+        map $normalmap
         map $reflectcube
         blendFunc GL_ONE GL_DST_COLOR
     }
