@@ -2,3 +2,97 @@
 /map test_prototype_
 /map test_prototype_indoor
 /map test_prototype_indoor
+/map test_prototype_indoor
+/map test_prototype_indoor
+/map test_prototype_indoor
+/map test_prototype_indoor
+/map test_prototype_indoor
+/map test_prototype_indoor
+/map test_prototype_indoor
+/map test_prototype_indoor
+/map test_prototype_indoor
+/map test_prototype_indoor
+/map test_prototype_indoor
+/map test_prototype_indoor
+/map test_prototype_indoor
+noclip
+noclip
+noclip
+/map test_prototype_indoor
+/map test_prototype_indoor
+/map test_prototype_indoor
+/map test_prototype_indoor
+/map test_prototype_indoor
+/map test_prototype_indoor
+noclip
+noclip
+noclip
+/map test_prototype_indoor
+noclip
+noclip
+/map test_prototype_indoor
+/map test_prototype_indoor
+noclip
+noclip
+/map test_prototype_indoor
+noclip
+noclip
+noclip
+noclip
+/map test_prototype_indoor
+noclip
+noclip
+noclip
+/map test_prototype_indoor
+noclip
+noclip
+noclip
+/map test_prototype_indoor
+god
+god
+/map test_prototype_indoor
+/map test_prototype_indoor
+/map test_prototype_indoor
+/map test_prototype_indoor
+/map test_prototype_indoor
+/map test_prototype_indoor
+noclip
+noclip
+noclip
+noclip
+
+noclip
+noclip
+/map test_prototype_indoor
+noclip
+noclip
+/map test_prototype_indoor
+/map test_prototype_indoor
+noclip
+noclip
+/map test_prototype_indoor
+noclip
+/map test_prototype_indoor
+noclip
+/map test_prototype_indoor
+noclip
+/map test_prototype_indoor
+noclip
+/map test_prototype_indoor
+/map test_prototype_indoor
+/map test_prototype_indoor
+/map test_prototype_indoor
+/map test_prototype_indoor
+/map test_prototype_indoor
+/map test_prototype_indoor
+/map test_prototype_indoor
+/map test_prototype_indoor
+/map test_prototype_indoor
+/map test_prototype_indoor
+/map test_prototype_indoor
+/map test_prototype_indoor
+/map test_prototype_indoor
+/map test_prototype_indoor
+/map test_prototype_indoor
+/map test_prototype_indoor
+/map test_prototype_indoor

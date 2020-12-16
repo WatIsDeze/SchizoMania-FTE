@@ -1,6 +1,6 @@
 // Vera Visions Material
 {
-	qer_editorImage "textures/liquid/water2.tga"
+	qer_editorImage textures/liquid/water2.tga
 	sort banner
 	qer_trans 0.8
 	surfaceParm nonsolid
@@ -12,6 +12,6 @@
 		program water_high
 		map $reflection
 		map $refraction
-		map "textures/liquid/water1_n.tga"
+		map textures/liquid/water1_normal.tga
 	}
 }

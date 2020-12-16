@@ -1,0 +1,12 @@
+{
+	diffusemap textures/lights/indoor/light_test.tga
+
+    vmap_surfaceLight 4800
+
+	{
+		program unlit
+		map $diffuse
+        
+        blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
+	}
+}
