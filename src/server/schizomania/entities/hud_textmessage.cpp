@@ -66,12 +66,17 @@ class hud_textmessage:CBaseTrigger
 		
 	void(void) hud_textmessage;
 
+	// Base class funcs.
+	virtual void (entity act, string intype, string data) Input;
 	virtual void(entity, int) Trigger;
 	virtual void(string, string) SpawnKey;
+
+	// Text message funcs.
+	virtual void(entity act) ShowTextMessage;
+
 };
 
-void hud_textmessage::Trigger(entity act, int state)
-{
+void hud_textmessage::ShowTextMessage(entity act) {
 	WriteByte(MSG_MULTICAST, SVC_CGAMEPACKET);
 	WriteByte(MSG_MULTICAST, EV_HUD_MESSAGE);
 	WriteByte(MSG_MULTICAST, m_iChannel);
@@ -100,6 +105,25 @@ void hud_textmessage::Trigger(entity act, int state)
 
 	// Trigger target.
 	UseTargets(msg_entity, TRIG_TOGGLE, m_flDelay);
+}
+/* entities receive the inputs here and need to act on intype and data
+   accordingly. this is just a stub for unknown event troubleshooting */
+void
+hud_textmessage::Input(entity act, string intype, string data)
+{
+	// Call by default.
+	CBaseTrigger::Input(act, intype, data);
+
+	// Show HUD notification.
+	if (intype == "OnTrigger") {
+		ShowTextMessage(act);
+	}
+}
+
+void hud_textmessage::Trigger(entity act, int state)
+{
+	dprint("I am triggered by %s", act.classname);
+	ShowTextMessage(act);
 }
 
 void

@@ -511,5 +511,4 @@ void game_door_rotating::game_door_rotating(void)
 	m_strOnOpen = CreateOutput(m_strOnOpen);
 }
 
-
 CLASSEXPORT(game_door_rotating, game_door_rotating);

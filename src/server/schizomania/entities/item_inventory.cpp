@@ -111,6 +111,7 @@ void item_inventory::OnPlayerUse(void)
 	Item_Pickup(pl, m_iItemID, m_iAmount);
 
 	// Activate target.
+	m_iValue = TRIG_ON;
 	UseTargets(eActivator, TRIG_TOGGLE, 0);
 	
 	// Remove from world, we don't want to pick it up twice.
@@ -123,6 +124,8 @@ void item_inventory::OnPlayerUse(void)
 // Respawn.
 //=======================
 void item_inventory::Respawn(void) {
+	CGameEntity::Respawn();
+
 	// Ensure item ID is in bounds.
 	m_iItemID = bound(0, m_iItemID, INVENTORY_ITEM_MAX - 1);
 

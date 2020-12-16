@@ -1,0 +1,12 @@
+textures/newmap/mj_tporter
+{
+   qer_editorimage textures/newmap/mj_tp01.tga
+   q3map_lightimage textures/newmap/mj_tp01.tga
+   surfaceparm trans
+   surfaceparm nomarks
+   surfaceparm nolightmap
+   {
+      animMap 8 textures/newmap/mj_tp01.tga textures/newmap/mj_tp02.tga textures/newmap/mj_tp03.tga textures/newmap/mj_tp04.tga textures/newmap/mj_tp05.tga textures/newmap/mj_tp06.tga textures/newmap/mj_tp07.tga textures/newmap/mj_tp08.tga
+      blendfunc add
+   }
+}

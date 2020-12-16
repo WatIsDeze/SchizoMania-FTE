@@ -210,5 +210,5 @@ ambient_generic::ambient_generic(void)
 		m_flRadius = ATTN_STATIC;
 	}
 
-	// pvsflags = PVSF_USEPHS;
+	pvsflags = PVSF_USEPHS;
 }
