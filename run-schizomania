@@ -1,0 +1,12 @@
+#!/bin/sh
+set -e
+SCRPATH="$( cd "$( dirname $(readlink -nf $0) )" && pwd )"
+PATH="$SCRPATH"/bin:"$PATH"
+
+cd "$SCRPATH"
+
+if [ -f "$SCRPATH"/bin/fteqw ]; then
+	fteqw -manifest schizomania.fmf $*
+else
+	printf "Engine is not present, please run build_engine.sh\n"
+fi
