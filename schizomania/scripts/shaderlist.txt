@@ -1,1 +1,1 @@
-tex_legacy
+tex_legacy.shader

@@ -3,6 +3,9 @@ all:
 	make games
 	make plugins
 
+menu-valve:
+	cd menu-fn && $(MAKE)
+
 menu:
 	cd menu-vgui && $(MAKE)
 

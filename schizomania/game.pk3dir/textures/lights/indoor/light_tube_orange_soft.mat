@@ -3,14 +3,10 @@
 	qer_trans 0.75
 
     vmap_surfaceLight 3250
-    vmap_lightStyle 3
-    q3map_lightStyle 3
-    q3map_lightstyle 3
-    vmap_lightstyle 3
     alphaGen const 0.75
 
 	{
-		program lightmapped
+		program unlit
 		map $diffuse
         blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
 	}

@@ -96,3 +96,52 @@ noclip
 /map test_prototype_indoor
 /map test_prototype_indoor
 /map test_prototype_indoor
+/map test_prototype_indoor
+noclip
+noclip
+noclip
+/map test_prototype_indoor
+/map test_prototype_indoor
+noclip
+noclip
+god
+god
+noclip
+noclip
+/map test_prototype_indoor
+/map test_prototype_indoor
+/map test_prototype_indoor
+/map test_prototype_indoor
+/map test_prototype_indoor
+/map test_prototype_indoor
+god
+noclip
+noclip
+god
+/map test_prototype_indoor
+/map test_prototype_indoor
+/map test_prototype_indoor
+noclip
+noclip
+/map test_prototype_indoor
+noclip
+noclip
+/map test_prototype_indoor
+/map test_prototype_indoor
+/map test_prototype_indoor
+/map test_prototype_indoor
+/map test_prototype_indoor
+/map test_prototype_indoor
+/map test_prototype_indoor
+/map test_prototype_indoor
+/map test_prototype_indoor
+/map test_prototype_indoor
+/map test_prototype_indoor
+/map test_prototype_indoor
+/map test_prototype_indoor
+noclip
+noclip
+/map test_prototype_indoor
+/map test_prototype_indoor
+/map test_prototype_indoor
+/map test_prototype_indoor
