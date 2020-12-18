@@ -38,6 +38,8 @@ Util_MouseAbove(vector vecMousePos, vector vecPos, vector vecSize)
 
 class CUIWidget
 {
+	void(void) CUIWidget;
+
 	vector m_vecOrigin;
 	vector m_vecAbsoluteOrigin;
 	CUIWidget m_next;
@@ -47,15 +49,25 @@ class CUIWidget
 	virtual void(CUIWidget) Add;
 	virtual void(int) FlagAdd;
 	virtual void(int) FlagRemove;
+
 	virtual void(vector) SetPos;
 	virtual vector() GetPos;
 	virtual vector() GetAbsolutePos;
 	virtual int(void) GetPosWidth;
 	virtual int(void) GetPosHeight;
+
+	virtual int(void) IsVisible;
 	virtual void(void) Draw;
 	virtual void(float, float, float, float) Input;
 };
 
+void
+CUIWidget::CUIWidget(void)
+{
+	m_parent = 0;
+	m_next = 0;
+	FlagAdd(1);
+}
 void
 CUIWidget::SetPos(vector vecPos)
 {
@@ -110,14 +122,25 @@ CUIWidget::Add(CUIWidget wNew)
 	wNew.m_parent = this;
 }
 
+int
+CUIWidget::IsVisible(void)
+{
+	if (m_parent) {
+		if (!(m_parent.IsVisible()))
+			return 0;
+	}
+
+	return (m_iFlags & 1 ? 1 : 0);
+}
 void
 CUIWidget::Draw(void)
 {
 	CUIWidget wNext = this;
 	do {
 		wNext = wNext.m_next;
-		if (wNext && wNext.m_iFlags & 1 && wNext.m_parent.m_iFlags & 1) {
-			wNext.Draw();
+		if (wNext) {
+			if (wNext.IsVisible())
+				wNext.Draw();
 		}
 	} while (wNext);
 }
@@ -130,9 +153,11 @@ CUIWidget::Input(float flEVType, float flKey, float flChar, float flDevID)
 	g_vguiWidgetCount = 0;
 	do {
 		wNext = wNext.m_next;
-		if (wNext && wNext.m_iFlags & 1 && wNext.m_parent.m_iFlags & 1) {
-			g_vguiWidgetCount++;
-			wNext.Input(flEVType, flKey, flChar, flDevID);
+		if (wNext) {
+			if (wNext.IsVisible()) {
+				g_vguiWidgetCount++;
+				wNext.Input(flEVType, flKey, flChar, flDevID);
+			}
 		}
 	} while (wNext);
 }

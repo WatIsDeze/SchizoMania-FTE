@@ -163,3 +163,5 @@ vid_restart
 vid_restart
 show_fps 1
 vid_restart
+noclip
+impulse 101
