@@ -17,6 +17,7 @@ ui_newgame.cpp
 ui_quitgame.cpp
 ui_createserver.cpp
 ui_findservers.cpp
+ui_options.cpp
 ui_musicplayer.cpp
 ui_modelviewer.cpp
 desktop.cpp

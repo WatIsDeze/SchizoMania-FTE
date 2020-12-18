@@ -657,29 +657,39 @@ textures/lightbrushes/light_streetlamp001
 
 textures/lights/indoor/light_tube_orange_softer
 {
-	diffusemap textures/lights/indoor/light_tube_orange_soft.tga
+	qer_editorImage textures/lights/indoor/light_tube_orange.tga
 	qer_trans 0.75
 
-    vmap_surfaceLight 2050
-    alphaGen const 0.75
+	diffusemap textures/lights/indoor/light_tube_orange.tga
+
+	surfaceParm trans
+	surfaceParm nolightmap
+
+    vmap_surfaceLight 2450
+	vmap_lightImage textures/lights/colors/orange_soft.tga
 
 	{
 		map $diffuse
-        blendFunc blend
+		blendFunc blend
 	}
 }
 
 textures/lights/indoor/light_tube_orange_soft
 {
-	diffusemap textures/lights/indoor/light_tube_orange_soft.tga
+	qer_editorImage textures/lights/indoor/light_tube_orange.tga
+
+	diffusemap textures/lights/indoor/light_tube_orange.tga
 	qer_trans 0.75
 
+	surfaceParm trans
+	surfaceParm nolightmap
+
     vmap_surfaceLight 3250
-    alphaGen const 0.75
+	vmap_lightImage textures/lights/colors/orange_soft.tga
 
 	{
 		map $diffuse
-        blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
+		blendFunc blend
 	}
 }
 

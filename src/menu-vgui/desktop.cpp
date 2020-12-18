@@ -61,8 +61,6 @@ static void Desktop_PositionButtons( void ) {
 
 void Desktop_Init ( void )
 {
-
-
 	g_uiDesktop = spawn( CUIWidget );
 	g_uiDesktop.SetPos( '0 0');
 	g_uiDesktop.FlagAdd( 1 );
@@ -78,7 +76,6 @@ void Desktop_Init ( void )
 	btnDisconnect = spawn( CUIMenuButton );
 	btnDisconnect.SetTitle( "Disconnect" );
 	btnDisconnect.SetSize( '96 24' );
-
 	btnDisconnect.SetFunc( Desktop_DisconnectGame );
 	btnDisconnect.FlagRemove( MBUTTON_SHOWOFFLINE );
 	btnDisconnect.FlagAdd( MBUTTON_TEXTONLY );
@@ -92,21 +89,19 @@ void Desktop_Init ( void )
 	btnFindserver = spawn( CUIMenuButton );
 	btnFindserver.SetTitle( "Find Servers" );
 	btnFindserver.SetSize( '96 24' );
-
 	btnFindserver.SetFunc( UI_FindServers_Show );
 	btnFindserver.FlagAdd( MBUTTON_TEXTONLY );
 
 	btnCreateserver = spawn( CUIMenuButton );
 	btnCreateserver.SetTitle( "Create Server" );
 	btnCreateserver.SetSize( '96 24' );
-
 	btnCreateserver.SetFunc( UI_CreateServer_Show );
 	btnCreateserver.FlagAdd( MBUTTON_TEXTONLY );
 
 	btnOptions = spawn( CUIMenuButton );
 	btnOptions.SetTitle( "Options" );
 	btnOptions.SetSize( '96 24' );
-
+	btnOptions.SetFunc( UI_Options_Show );
 	btnOptions.FlagAdd( MBUTTON_TEXTONLY );
 
 	btnQuit = spawn( CUIMenuButton );

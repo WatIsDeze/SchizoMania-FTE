@@ -145,3 +145,21 @@ noclip
 /map test_prototype_indoor
 /map test_prototype_indoor
 /map test_prototype_indoor
+/map test_prototype_indoor
+/map test_prototype_indoor
+/map test_prototype_indoor
+/map test_prototype_indoor
+/map test_prototype_indoor
+noclip
+noclip
+/map test_prototype_indoor
+/map test_prototype_indoor
+vid_restart
+/map test_prototype_indoor
+vid_restart
+vid_restart
+vid_restart
+vid_restart
+vid_restart
+show_fps 1
+vid_restart

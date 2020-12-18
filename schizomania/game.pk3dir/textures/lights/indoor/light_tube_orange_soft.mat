@@ -1,13 +1,18 @@
 {
-	diffusemap textures/lights/indoor/light_tube_orange_soft.tga
+	qer_editorImage textures/lights/indoor/light_tube_orange.tga
+
+	diffusemap textures/lights/indoor/light_tube_orange.tga
 	qer_trans 0.75
 
+	surfaceParm trans
+	surfaceParm nolightmap
+
     vmap_surfaceLight 3250
-    alphaGen const 0.75
+	vmap_lightImage textures/lights/colors/orange_soft.tga
 
 	{
-		program unlit
+		program lightmapped
 		map $diffuse
-        blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
+		blendFunc blend
 	}
 }

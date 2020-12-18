@@ -14,63 +14,80 @@
  * OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  */
 
+enumflags
+{
+	TABVIEW_VISIBLE
+};
+
 class CUITabView:CUIWidget
 {
 	vector m_vecSize;
-	vector m_vecOutlineSize;
-	vector m_vecOutlinePos;
+	vector m_vecColor;
 	string m_strTitle;
 	
+	// A bit of a cheesy hack, but it works.
+	int m_iTotalButtonWidth;
+
 	void(void) CUITabView;
+
+	virtual CUITabButton(string title, void(void) vFunc) AddTabButton;
+
 	virtual void(void) Draw;
 	virtual void(vector) SetPos;
-	virtual vector() GetPos;
 	virtual void(vector) SetSize;
-	virtual vector() GetSize;
 	virtual void(string) SetTitle;
 	virtual void(float, float, float, float) Input;
 };
 
 void CUITabView::CUITabView(void)
 {
-	m_vecSize = [96,16];
-	m_iFlags = BUTTON_VISIBLE;
+	m_vecColor = UI_MAINCOLOR;
+	m_vecSize = [320,240];
+	m_iTotalButtonWidth = 0;
+	m_iFlags = TABVIEW_VISIBLE;
 }
 
-void CUITabView::SetPos (vector vecSize)
+CUITabButton CUITabView::AddTabButton(string title, void(void) vFunc)
 {
-	m_vecOrigin = vecSize;
-	m_vecOutlinePos = m_vecOrigin + [0, 20];
-}
-vector CUITabView::GetPos(void)
-{
-	return m_vecOrigin;
+	// Create our tab widget.
+	CUITabButton tabBtn = spawn( CUITabButton );
+	tabBtn.SetTitle(title);
+	tabBtn.SetPos([m_iTotalButtonWidth, 0]);
+	tabBtn.SetFunc(vFunc);
+	
+	// Increment nextbutton pos.
+	m_iTotalButtonWidth += tabBtn.GetSize()[0] + 1;
+	
+	// Add as a tab child widget.
+	Add(tabBtn);
+	
+	// Return.
+	return tabBtn;
 }
 
+void CUITabView::SetPos(vector vecPos)
+{
+	m_vecOrigin = vecPos;
+}
 void CUITabView::SetSize (vector vecSize)
 {
 	m_vecSize = vecSize;
-	m_vecOutlineSize = m_vecSize - [0, 20];
 }
-vector CUITabView::GetSize(void)
-{
-	return m_vecSize;
-}
-
 void CUITabView::SetTitle (string strName)
 {
+	// We set the title, but it's not being used for the Tab control.
 	m_strTitle = strName;
-	SetSize([stringwidth(m_strTitle, TRUE, [g_fntDefault.iScale, g_fntDefault.iScale]), 16]);
 }
+
 void CUITabView::Draw(void)
 {
-	
-	//drawfill(m_parent.m_vecOrigin + m_vecOutlinePos, [m_vecOutlineSize[0], 1], [1,1,1], 0.5f);
-	drawfill(m_parent.m_vecOrigin + m_vecOutlinePos + [0, m_vecOutlineSize[1] - 1], [m_vecOutlineSize[0], 1], [0,0,0], 0.5f);
-	drawfill(m_parent.m_vecOrigin + m_vecOutlinePos + [0, 1], [1, m_vecOutlineSize[1] - 2], [1,1,1], 0.5f);
-	drawfill(m_parent.m_vecOrigin + m_vecOutlinePos + [m_vecOutlineSize[0] - 1, 1], [1, m_vecOutlineSize[1] - 2], [0,0,0], 0.5f);
-	
-	//Font_DrawText(m_parent.m_vecOrigin + m_vecOrigin + [8, 8], m_strTitle, g_fntDefault);
+	CUIWidget::Draw();
+
+	// Draw.
+	drawfill(GetAbsolutePos() + [0, m_vecSize[1]], [m_vecSize[0], 1], m_vecColor, 1.0f);
+	drawfill(GetAbsolutePos() + [m_iTotalButtonWidth, 23], [m_vecSize[0] - m_iTotalButtonWidth, 1], m_vecColor, 1.0f);
+	drawfill(GetAbsolutePos() + [0, 24], [1, m_vecSize[1] - 24], m_vecColor, 1.0f);
+	drawfill(GetAbsolutePos() + [m_vecSize[0], 24], [1, m_vecSize[1] - 23], m_vecColor, 1.0f);
 }
 
 void CUITabView::Input (float flEVType, float flKey, float flChar, float flDevID)

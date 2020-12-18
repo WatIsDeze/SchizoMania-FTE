@@ -13,5 +13,6 @@
 ../vgui/ui_list.cpp
 ../vgui/ui_listbox.cpp
 ../vgui/ui_textbox.cpp
+../vgui/ui_tabbutton.cpp
 ../vgui/ui_tabview.cpp
 #endlist

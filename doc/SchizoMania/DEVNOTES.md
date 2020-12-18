@@ -7,6 +7,7 @@ my own ADHD good.
 
 # Things to do (low priority list):
 - Move item hover code to View+UpdateWeapon
+- See how we can get Trenchbroom up and running.
 
 # Things to research/question (medium priority):
 - How to do a proper zombie walk animaton, use offsets so it "moves backwards", to counter the slide effect.
@@ -68,14 +69,6 @@ deviate, but we seek more features than the core gs-entbase has atm.
 ## Map: test_prototype_indoor:
 - Basic fade screen intro, with animations of the player waking up hungover and confused lololol.
 - Finish bathroom cupboard, add a medkit.
-
-### Events:
-- #1 Must pickup all items before entering livingroom, maybe make the player complain about having lost his shit.
-- #2 Enter the livingroom, stare out the window for a view secs before he decides to leave the appartment.
-- #3 Uh oh, zombie ahead! Scary effects, breaking light, electricity, flashing light.
-- #4 [Something related to another appartment?]?
-- #5 Uh oh, zombie down the stairs! Tries to creep up on ya from the right!
-
 ## Code for test_prototype:
 - Implement Scripted Sequences with dialogues. (I suppose, an entity which'll send a dialogue event, back and forth? :) )
 

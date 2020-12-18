@@ -16,23 +16,22 @@
 
 enumflags
 {
-	BUTTON_VISIBLE,
-	BUTTON_HOVER,
-	BUTTON_DOWN,
-	BUTTON_LASTACTIVE
+	TABBUTTON_VISIBLE,
+	TABBUTTON_HOVER,
+	TABBUTTON_DOWN,
+	TABBUTTON_ACTIVE
 };
 
-class CUIButton:CUIWidget
+class CUITabButton:CUIWidget
 {
 	vector m_vecColor;
 	float m_flAlpha;
 	vector m_vecSize;
-	vector m_vecButtonSize;
 	string m_strTitle;
 	string m_strTitleActive;
 	string m_strIcon;
 
-	void(void) CUIButton;
+	void(void) CUITabButton;
 	virtual void(void) m_vFunc = 0;
 	virtual void(void) Draw;
 	virtual vector() GetSize;
@@ -46,46 +45,46 @@ class CUIButton:CUIWidget
 };
 
 void
-CUIButton::CUIButton(void)
+CUITabButton::CUITabButton(void)
 {
 	m_vecColor = UI_MAINCOLOR;
 	m_flAlpha = 1.0f;
 	m_vecSize = [96,24];
-	m_iFlags = BUTTON_VISIBLE;
+	m_iFlags = TABBUTTON_VISIBLE;
 }
 
 void
-CUIButton::SetSize(vector vecSize)
+CUITabButton::SetSize(vector vecSize)
 {
 	m_vecSize = vecSize;
 }
 
 vector
-CUIButton::GetSize(void)
+CUITabButton::GetSize(void)
 {
 	return m_vecSize;
 }
 
 int
-CUIButton::GetSizeWidth(void)
+CUITabButton::GetSizeWidth(void)
 {
 	return m_vecSize[0];
 }
 
 int
-CUIButton::GetSizeHeight(void)
+CUITabButton::GetSizeHeight(void)
 {
 	return m_vecSize[1];
 }
 
 void
-CUIButton::SetTitle(string strName)
+CUITabButton::SetTitle(string strName)
 {
 	vector newsize;
 	int scale;
 
 	m_strTitle = strName;
-	m_strTitleActive = sprintf("^xF00%s", m_strTitle);
+	m_strTitleActive = sprintf("^xFFF%s", m_strTitle);
 	drawfont = g_fntDefault.iID;
 
 	scale = g_fntDefault.iScale;
@@ -94,75 +93,82 @@ CUIButton::SetTitle(string strName)
 	SetSize(newsize);
 }
 void
-CUIButton::SetIcon(string strName)
+CUITabButton::SetIcon(string strName)
 {
 	m_strIcon = strName;
 }
 void
-CUIButton::SetFunc(void(void) vFunc)
+CUITabButton::SetFunc(void(void) vFunc)
 {
 	m_vFunc = vFunc;
 }
 
 void
-CUIButton::Draw(void)
+CUITabButton::Draw(void)
 {
-
 #ifndef CLASSIC_VGUI
-	drawfill(m_parent.m_vecOrigin + m_vecOrigin, m_vecSize, m_vecColor, m_flAlpha);
+	drawfill(m_parent.m_parent.m_vecOrigin + m_vecOrigin, m_vecSize, m_vecColor, m_flAlpha);
 
-	if (m_iFlags & BUTTON_DOWN) {
-		drawfill(m_parent.m_vecOrigin + m_vecOrigin + [0, m_vecSize[1] - 1], [m_vecSize[0], 1], [1,1,1], 0.5f);
+	if (m_iFlags & TABBUTTON_DOWN) {
+	//	drawfill(m_parent.m_vecOrigin + m_vecOrigin + [0, m_vecSize[1] - 1], [m_vecSize[0], 1], [1,1,1], 0.5f);
 		drawfill(m_parent.m_vecOrigin + m_vecOrigin, [m_vecSize[0], 1], [0,0,0], 0.5f);
 		drawfill(m_parent.m_vecOrigin + m_vecOrigin + [0, 1], [1, m_vecSize[1] - 2], [0,0,0], 0.5f);
 		drawfill(m_parent.m_vecOrigin + m_vecOrigin + [m_vecSize[0] - 1, 1], [1, m_vecSize[1] - 2], [1,1,1], 0.5f);
 	} else {
-		drawfill(m_parent.m_vecOrigin + m_vecOrigin + [0, m_vecSize[1] - 1], [m_vecSize[0], 1], [0,0,0], 0.5f);
+	//	drawfill(m_parent.m_vecOrigin + m_vecOrigin + [0, m_vecSize[1] - 1], [m_vecSize[0], 1], [0,0,0], 0.5f);
 		drawfill(m_parent.m_vecOrigin + m_vecOrigin, [m_vecSize[0], 1], [1,1,1], 0.5f);
 		drawfill(m_parent.m_vecOrigin + m_vecOrigin + [0, 1], [1, m_vecSize[1] - 2], [1,1,1], 0.5f);
 		drawfill(m_parent.m_vecOrigin + m_vecOrigin + [m_vecSize[0] - 1, 1], [1, m_vecSize[1] - 2], [0,0,0], 0.5f);
 	}
 #else
-	if (m_iFlags & BUTTON_DOWN) {
-		drawfill(m_parent.m_vecOrigin + m_vecOrigin, m_vecSize, m_vecColor, 0.25f);
+	if (m_iFlags & TABBUTTON_DOWN) {
+		drawfill(GetAbsolutePos(), m_vecSize, m_vecColor, 0.25f);
 	}
-	drawfill(m_parent.m_vecOrigin + m_vecOrigin + [0, m_vecSize[1] - 1], [m_vecSize[0], 1], m_vecColor, 1.0f);
-	drawfill(m_parent.m_vecOrigin + m_vecOrigin, [m_vecSize[0], 1], m_vecColor, 1.0f);
-	drawfill(m_parent.m_vecOrigin + m_vecOrigin + [0, 1], [1, m_vecSize[1] - 2], m_vecColor, 1.0f);
-	drawfill(m_parent.m_vecOrigin + m_vecOrigin + [m_vecSize[0] - 1, 1], [1, m_vecSize[1] - 2], m_vecColor, 1.0f);
+    if (m_iFlags & TABBUTTON_ACTIVE) {
+    	drawfill(GetAbsolutePos(), m_vecSize - [0, 1], m_vecColor, 0.75f);	
+        //drawfill(m_parent.m_parent.m_vecOrigin + m_vecOrigin + [0, m_vecSize[1] - 1], [m_vecSize[0], 1], m_vecColor, 1.0f);
+    }
+    if (!(m_iFlags & TABBUTTON_ACTIVE)) {
+        drawfill(GetAbsolutePos() + [0, m_vecSize[1] - 1], [m_vecSize[0], 1], m_vecColor, 1.0f);
+    }
+    
+	drawfill(GetAbsolutePos(), [m_vecSize[0], 1], m_vecColor, 1.0f);
+	drawfill(GetAbsolutePos() + [0, 1], [1, m_vecSize[1] - 2], m_vecColor, 1.0f);
+	drawfill(GetAbsolutePos() + [m_vecSize[0] - 1, 1], [1, m_vecSize[1] - 2], m_vecColor, 1.0f);
 #endif
 
 	if (m_strTitle) {
-		if (m_iFlags & BUTTON_LASTACTIVE) {
-			Font_DrawText(m_parent.m_vecOrigin + m_vecOrigin + [8, 8], m_strTitleActive, g_fntDefault);
+		if (m_iFlags & TABBUTTON_ACTIVE) {
+			Font_DrawText(GetAbsolutePos() + [8, 8], m_strTitleActive, g_fntDefault);
 		} else {
-			Font_DrawText(m_parent.m_vecOrigin + m_vecOrigin + [8, 8], m_strTitle, g_fntDefault);
+			Font_DrawText(GetAbsolutePos() + [8, 8], m_strTitle, g_fntDefault);
 		}
 	}
 	if (m_strIcon) {
-		drawpic(m_parent.m_vecOrigin + m_vecOrigin + [2,2], m_strIcon, [16,16], [1,1,1], 1.0f, 0);
+		drawpic(GetAbsolutePos() + [2,2], m_strIcon, [16,16], [1,1,1], 1.0f, 0);
 	}
+    Font_DrawText([8, video_res[1] - 42], sprintf("Mouse Position: %d, %d\n", getmousepos()[0], getmousepos()[1]), g_fntDefault);
 }
 
 void
-CUIButton::Input(float flEVType, float flKey, float flChar, float flDevID)
+CUITabButton::Input(float flEVType, float flKey, float flChar, float flDevID)
 {
 	if (flEVType == IE_KEYDOWN) {
 		if (flKey == K_MOUSE1) {
-			FlagRemove(BUTTON_LASTACTIVE);
-			if (Util_MouseAbove(getmousepos(), m_parent.m_vecOrigin + m_vecOrigin, m_vecSize)) {
-				FlagAdd(BUTTON_DOWN);
-				FlagAdd(BUTTON_LASTACTIVE);
+			FlagRemove(TABBUTTON_ACTIVE);
+			if (Util_MouseAbove(getmousepos(), GetAbsolutePos(), m_vecSize)) {
+				FlagAdd(TABBUTTON_DOWN);
 			}
 		}
 	} else if (flEVType == IE_KEYUP) {
 		if (flKey == K_MOUSE1) {
-			if (m_iFlags & BUTTON_DOWN && Util_MouseAbove(getmousepos(), m_parent.m_vecOrigin + m_vecOrigin, m_vecSize)) {
-				if (m_vFunc) {
+			if (m_iFlags & TABBUTTON_DOWN && Util_MouseAbove(getmousepos(), GetAbsolutePos(), m_vecSize)) {
+				FlagAdd(TABBUTTON_ACTIVE);
+                if (m_vFunc) {
 					m_vFunc();
 				}
 			}
-			FlagRemove(BUTTON_DOWN);
+			FlagRemove(TABBUTTON_DOWN);
 		}
 	}
 }

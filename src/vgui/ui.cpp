@@ -39,6 +39,7 @@ Util_MouseAbove(vector vecMousePos, vector vecPos, vector vecSize)
 class CUIWidget
 {
 	vector m_vecOrigin;
+	vector m_vecAbsoluteOrigin;
 	CUIWidget m_next;
 	CUIWidget m_parent;
 	int m_iFlags;
@@ -48,6 +49,7 @@ class CUIWidget
 	virtual void(int) FlagRemove;
 	virtual void(vector) SetPos;
 	virtual vector() GetPos;
+	virtual vector() GetAbsolutePos;
 	virtual int(void) GetPosWidth;
 	virtual int(void) GetPosHeight;
 	virtual void(void) Draw;
@@ -64,6 +66,11 @@ vector
 CUIWidget::GetPos(void)
 {
 	return m_vecOrigin;
+}
+vector
+CUIWidget::GetAbsolutePos(void)
+{
+	return (m_parent != __NULL__ ? m_parent.GetAbsolutePos() + m_vecOrigin : m_vecOrigin);
 }
 
 int
