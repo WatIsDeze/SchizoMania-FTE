@@ -67,6 +67,8 @@ class CUIWindow:CUIWidget
 
 void CUIWindow::CUIWindow(void)
 {
+	CUIWidget::CUIWidget();
+	
 	static void WindowButtonClose(void) {
 		m_parent.m_iFlags -= (m_parent.m_iFlags & WINDOW_VISIBLE);
 	}

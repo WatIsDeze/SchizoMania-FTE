@@ -16,6 +16,11 @@
 
 font_s g_fntDefault;
 var int g_vguiWidgetCount;
+var CUIGroupList g_vguiGroupList;
+
+// Visible groups are used, an example is for tab areas.
+// it is a bit of a hacky system. Since it is limited to the
+// amount of bits we can have..
 
 #ifdef CLASSIC_VGUI
 	#define UI_MAINCOLOR [255, 0, 17] / 255
@@ -27,8 +32,6 @@ var int g_vguiWidgetCount;
 
 enumflags
 {
-	UI_HIDE_CHILDREN,
-
 	// Last flag, any other ctrl flags start here.
 	UI_VISIBLE
 };
@@ -53,6 +56,7 @@ class CUIWidget
 	CUIWidget m_next;
 	CUIWidget m_parent;
 	int m_iFlags;
+	string m_strGroupName;
 
 	virtual void(CUIWidget) Add;
 	virtual void(int) FlagAdd;
@@ -74,8 +78,8 @@ CUIWidget::CUIWidget(void)
 {
 	m_parent = 0;
 	m_next = 0;
+	m_strGroupName = "default";
 	FlagAdd(UI_VISIBLE);
-	FlagRemove(UI_HIDE_CHILDREN);
 }
 void
 CUIWidget::SetPos(vector vecPos)
@@ -148,7 +152,7 @@ CUIWidget::Draw(void)
 	do {
 		wNext = wNext.m_next;
 		if (wNext) {
-			if (wNext.IsVisible() && !(wNext.m_iFlags & UI_HIDE_CHILDREN))
+			if (wNext.IsVisible() && g_vguiGroupList.IsVisible(wNext.m_strGroupName))
 				wNext.Draw();
 		}
 	} while (wNext);
@@ -163,7 +167,7 @@ CUIWidget::Input(float flEVType, float flKey, float flChar, float flDevID)
 	do {
 		wNext = wNext.m_next;
 		if (wNext) {
-			if (wNext.IsVisible() && !(wNext.m_iFlags & UI_HIDE_CHILDREN)) {
+			if (wNext.IsVisible() && g_vguiGroupList.IsVisible(wNext.m_strGroupName)) {
 				g_vguiWidgetCount++;
 				wNext.Input(flEVType, flKey, flChar, flDevID);
 			}
@@ -174,6 +178,9 @@ CUIWidget::Input(float flEVType, float flKey, float flChar, float flDevID)
 void
 UISystem_Init(void)
 {
+	g_vguiGroupList = spawn (CUIGroupList);
+	g_vguiGroupList.Add("default");
+	g_vguiGroupList.SetVisible("default", 1);
 	/* we support fancier stuff in non-classic mode */
 #ifndef CLASSIC_VGUI
 	string strTemp;

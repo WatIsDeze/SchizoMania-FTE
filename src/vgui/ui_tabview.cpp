@@ -24,6 +24,9 @@ class CUITabView:CUIWidget
 	vector m_vecColor;
 	string m_strTitle;
 	
+	// Reference to currently active tab.
+	CUITabArea m_tabActive;
+
 	// A bit of a cheesy hack, but it works.
 	int m_iTotalButtonWidth;
 
@@ -44,7 +47,7 @@ void CUITabView::CUITabView(void)
 	m_vecColor = UI_MAINCOLOR;
 	m_vecSize = [320,240];
 	m_iTotalButtonWidth = 0;
-	m_iFlags = TABVIEW_VISIBLE | UI_HIDE_CHILDREN;
+	m_iFlags = TABVIEW_VISIBLE;
 }
 
 CUITabArea CUITabView::AddTabButton(string title, void(void) vFunc)
@@ -60,14 +63,21 @@ CUITabArea CUITabView::AddTabButton(string title, void(void) vFunc)
 	
 	// Add as a tab child widget.
 	Add(tabArea);
-	
+
+	// Latest added tab is active by default.
+	SwitchActiveTab(tabArea);
+
 	// Return.
 	return tabArea;
 }
 
 void CUITabView::SwitchActiveTab(CUITabArea tabArea)
 {
-	FlagRemove(UI_HIDE_CHILDREN);
+	if (m_tabActive)
+		g_vguiGroupList.SetVisible(m_tabActive.m_strChildrenGroupName, 0);
+		
+	g_vguiGroupList.SetVisible(tabArea.m_strChildrenGroupName, 1);
+	m_tabActive = tabArea;
 }
 void CUITabView::SetPos(vector vecPos)
 {

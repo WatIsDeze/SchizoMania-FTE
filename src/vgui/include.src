@@ -1,5 +1,6 @@
 #includelist
 ../vgui/font.cpp
+../vgui/ui_grouplist.cpp
 ../vgui/ui.cpp
 ../vgui/ui_button.cpp
 ../vgui/ui_menubutton.cpp
