@@ -30,7 +30,7 @@ class CUITabView:CUIWidget
 
 	void(void) CUITabView;
 
-	virtual CUITabButton(string title, void(void) vFunc) AddTabButton;
+	virtual CUITabArea(string title, void(void) vFunc) AddTabButton;
 
 	virtual void(void) Draw;
 	virtual void(vector) SetPos;
@@ -47,22 +47,22 @@ void CUITabView::CUITabView(void)
 	m_iFlags = TABVIEW_VISIBLE;
 }
 
-CUITabButton CUITabView::AddTabButton(string title, void(void) vFunc)
+CUITabArea CUITabView::AddTabButton(string title, void(void) vFunc)
 {
 	// Create our tab widget.
-	CUITabButton tabBtn = spawn( CUITabButton );
-	tabBtn.SetTitle(title);
-	tabBtn.SetPos([m_iTotalButtonWidth, 0]);
-	tabBtn.SetFunc(vFunc);
+	CUITabArea tabArea = spawn( CUITabArea );
+	tabArea.SetTitle(title);
+	tabArea.SetPos([m_iTotalButtonWidth, 0]);
+	tabArea.SetFunc(vFunc);
 	
 	// Increment nextbutton pos.
-	m_iTotalButtonWidth += tabBtn.GetSize()[0] + 1;
+	m_iTotalButtonWidth += tabArea.GetSize()[0] + 1;
 	
 	// Add as a tab child widget.
-	Add(tabBtn);
+	Add(tabArea);
 	
 	// Return.
-	return tabBtn;
+	return tabArea;
 }
 
 void CUITabView::SetPos(vector vecPos)

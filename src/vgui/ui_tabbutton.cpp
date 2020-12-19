@@ -22,7 +22,7 @@ enumflags
 	TABBUTTON_ACTIVE
 };
 
-class CUITabButton:CUIWidget
+class CUITabArea:CUIWidget
 {
 	vector m_vecColor;
 	float m_flAlpha;
@@ -31,7 +31,7 @@ class CUITabButton:CUIWidget
 	string m_strTitleActive;
 	string m_strIcon;
 
-	void(void) CUITabButton;
+	void(void) CUITabArea;
 	virtual void(void) m_vFunc = 0;
 	virtual void(void) Draw;
 	virtual vector() GetSize;
@@ -45,7 +45,7 @@ class CUITabButton:CUIWidget
 };
 
 void
-CUITabButton::CUITabButton(void)
+CUITabArea::CUITabArea(void)
 {
 	m_vecColor = UI_MAINCOLOR;
 	m_flAlpha = 1.0f;
@@ -54,31 +54,31 @@ CUITabButton::CUITabButton(void)
 }
 
 void
-CUITabButton::SetSize(vector vecSize)
+CUITabArea::SetSize(vector vecSize)
 {
 	m_vecSize = vecSize;
 }
 
 vector
-CUITabButton::GetSize(void)
+CUITabArea::GetSize(void)
 {
 	return m_vecSize;
 }
 
 int
-CUITabButton::GetSizeWidth(void)
+CUITabArea::GetSizeWidth(void)
 {
 	return m_vecSize[0];
 }
 
 int
-CUITabButton::GetSizeHeight(void)
+CUITabArea::GetSizeHeight(void)
 {
 	return m_vecSize[1];
 }
 
 void
-CUITabButton::SetTitle(string strName)
+CUITabArea::SetTitle(string strName)
 {
 	vector newsize;
 	int scale;
@@ -93,18 +93,18 @@ CUITabButton::SetTitle(string strName)
 	SetSize(newsize);
 }
 void
-CUITabButton::SetIcon(string strName)
+CUITabArea::SetIcon(string strName)
 {
 	m_strIcon = strName;
 }
 void
-CUITabButton::SetFunc(void(void) vFunc)
+CUITabArea::SetFunc(void(void) vFunc)
 {
 	m_vFunc = vFunc;
 }
 
 void
-CUITabButton::Draw(void)
+CUITabArea::Draw(void)
 {
 #ifndef CLASSIC_VGUI
 	drawfill(m_parent.m_parent.m_vecOrigin + m_vecOrigin, m_vecSize, m_vecColor, m_flAlpha);
@@ -121,18 +121,19 @@ CUITabButton::Draw(void)
 		drawfill(m_parent.m_vecOrigin + m_vecOrigin + [m_vecSize[0] - 1, 1], [1, m_vecSize[1] - 2], [0,0,0], 0.5f);
 	}
 #else
+	// Background.
 	if (m_iFlags & TABBUTTON_DOWN) {
-		drawfill(GetAbsolutePos(), m_vecSize, m_vecColor, 0.25f);
+		drawfill(GetAbsolutePos(), m_vecSize, m_vecColor, 0.35f);
+	} else if (m_iFlags & TABBUTTON_ACTIVE) {
+    	drawfill(GetAbsolutePos(), m_vecSize - [0, 1], m_vecColor, 0.55f);	
+    } else {
+		drawfill(GetAbsolutePos(), m_vecSize - [0, 1], m_vecColor, 0.15f);	
 	}
-    if (m_iFlags & TABBUTTON_ACTIVE) {
-    	drawfill(GetAbsolutePos(), m_vecSize - [0, 1], m_vecColor, 0.75f);	
-        //drawfill(m_parent.m_parent.m_vecOrigin + m_vecOrigin + [0, m_vecSize[1] - 1], [m_vecSize[0], 1], m_vecColor, 1.0f);
-    }
+    
+	drawfill(GetAbsolutePos(), [m_vecSize[0], 1], m_vecColor, 1.0f);
     if (!(m_iFlags & TABBUTTON_ACTIVE)) {
         drawfill(GetAbsolutePos() + [0, m_vecSize[1] - 1], [m_vecSize[0], 1], m_vecColor, 1.0f);
     }
-    
-	drawfill(GetAbsolutePos(), [m_vecSize[0], 1], m_vecColor, 1.0f);
 	drawfill(GetAbsolutePos() + [0, 1], [1, m_vecSize[1] - 2], m_vecColor, 1.0f);
 	drawfill(GetAbsolutePos() + [m_vecSize[0] - 1, 1], [1, m_vecSize[1] - 2], m_vecColor, 1.0f);
 #endif
@@ -151,7 +152,7 @@ CUITabButton::Draw(void)
 }
 
 void
-CUITabButton::Input(float flEVType, float flKey, float flChar, float flDevID)
+CUITabArea::Input(float flEVType, float flKey, float flChar, float flDevID)
 {
 	if (flEVType == IE_KEYDOWN) {
 		if (flKey == K_MOUSE1) {

@@ -32,10 +32,10 @@ void UI_Options_Show ( void )
     //
     // Tab Area Buttons.
     //
-    static CUITabButton tabBtnVideo;
-    static CUITabButton tabBtnAudio;
-    static CUITabButton tabBtnInput;
-    static CUITabButton tabBtnOther;
+    static CUITabArea tabAreaVideo;
+    static CUITabArea tabAreaAudio;
+    static CUITabArea tabAreaInput;
+    static CUITabArea tabAreaOther;
 
     //
     // Game Options Controls.
@@ -148,8 +148,7 @@ void UI_Options_Show ( void )
 		winOptions.SetTitle( "Options" );
 		winOptions.SetSize( '420 320' );
 		winOptions.SetIcon( "textures/ui/icons/gear" );
-		g_uiDesktop.Add( winOptions );
-	winOptions.SetPos( ( video_res / 2 ) - ( winOptions.GetSize() / 2 ) );
+
         tabOptions = spawn( CUITabView );
         tabOptions.SetSize('340 240');
         tabOptions.SetPos(winOptions.GetSize() - '410 290');
@@ -169,12 +168,12 @@ void UI_Options_Show ( void )
         winOptions.Add(btnApply);
         winOptions.Add(btnCancel);
         winOptions.Add(tabOptions);
+		g_uiDesktop.Add( winOptions );
 
-        tabBtnVideo = tabOptions.AddTabButton("Video", Options_Tab_Video_Show);
-        tabBtnAudio = tabOptions.AddTabButton("Audio", Options_Tab_Audio_Show);
-        tabBtnInput = tabOptions.AddTabButton("Input", Options_Tab_Input_Show);
-        tabBtnOther = tabOptions.AddTabButton("Other", Options_Tab_Other_Show);
-
+        tabAreaVideo = tabOptions.AddTabButton("Video", Options_Tab_Video_Show);
+        tabAreaAudio = tabOptions.AddTabButton("Audio", Options_Tab_Audio_Show);
+        tabAreaInput = tabOptions.AddTabButton("Input", Options_Tab_Input_Show);
+        tabAreaOther = tabOptions.AddTabButton("Other", Options_Tab_Other_Show);
 	}
 
 	winOptions.Show();
