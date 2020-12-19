@@ -16,9 +16,8 @@
 
 enumflags
 {
-	TABVIEW_VISIBLE
+	TABVIEW_VISIBLE = UI_VISIBLE
 };
-
 class CUITabView:CUIWidget
 {
 	vector m_vecSize;
@@ -31,6 +30,7 @@ class CUITabView:CUIWidget
 	void(void) CUITabView;
 
 	virtual CUITabArea(string title, void(void) vFunc) AddTabButton;
+	virtual void(CUITabArea) SwitchActiveTab;
 
 	virtual void(void) Draw;
 	virtual void(vector) SetPos;
@@ -44,7 +44,7 @@ void CUITabView::CUITabView(void)
 	m_vecColor = UI_MAINCOLOR;
 	m_vecSize = [320,240];
 	m_iTotalButtonWidth = 0;
-	m_iFlags = TABVIEW_VISIBLE;
+	m_iFlags = TABVIEW_VISIBLE | UI_HIDE_CHILDREN;
 }
 
 CUITabArea CUITabView::AddTabButton(string title, void(void) vFunc)
@@ -56,7 +56,7 @@ CUITabArea CUITabView::AddTabButton(string title, void(void) vFunc)
 	tabArea.SetFunc(vFunc);
 	
 	// Increment nextbutton pos.
-	m_iTotalButtonWidth += tabArea.GetSize()[0] + 1;
+	m_iTotalButtonWidth += tabArea.GetButtonSize()[0] + 1;
 	
 	// Add as a tab child widget.
 	Add(tabArea);
@@ -65,6 +65,10 @@ CUITabArea CUITabView::AddTabButton(string title, void(void) vFunc)
 	return tabArea;
 }
 
+void CUITabView::SwitchActiveTab(CUITabArea tabArea)
+{
+	FlagRemove(UI_HIDE_CHILDREN);
+}
 void CUITabView::SetPos(vector vecPos)
 {
 	m_vecOrigin = vecPos;

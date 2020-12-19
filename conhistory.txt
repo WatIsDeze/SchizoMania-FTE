@@ -165,3 +165,9 @@ show_fps 1
 vid_restart
 noclip
 impulse 101
+quit
+vid_restart
+quit
+quit
+quit
+quit

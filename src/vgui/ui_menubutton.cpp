@@ -18,7 +18,7 @@
 enumflags
 {
 	// Button states.
-	MBUTTON_VISIBLE,
+	MBUTTON_VISIBLE = UI_VISIBLE,
 	MBUTTON_HOVER,
 	MBUTTON_DOWN,
 

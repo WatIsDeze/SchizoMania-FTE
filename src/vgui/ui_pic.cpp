@@ -16,7 +16,7 @@
 
 enumflags
 {
-	IMAGE_VISIBLE
+	IMAGE_VISIBLE = UI_VISIBLE
 };
 
 class CUIPic:CUIWidget

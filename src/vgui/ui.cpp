@@ -25,6 +25,14 @@ var int g_vguiWidgetCount;
 	var float UI_MAINALPHA;
 #endif
 
+enumflags
+{
+	UI_HIDE_CHILDREN,
+
+	// Last flag, any other ctrl flags start here.
+	UI_VISIBLE
+};
+
 int
 Util_MouseAbove(vector vecMousePos, vector vecPos, vector vecSize)
 {
@@ -66,7 +74,8 @@ CUIWidget::CUIWidget(void)
 {
 	m_parent = 0;
 	m_next = 0;
-	FlagAdd(1);
+	FlagAdd(UI_VISIBLE);
+	FlagRemove(UI_HIDE_CHILDREN);
 }
 void
 CUIWidget::SetPos(vector vecPos)
@@ -130,7 +139,7 @@ CUIWidget::IsVisible(void)
 			return 0;
 	}
 
-	return (m_iFlags & 1 ? 1 : 0);
+	return (m_iFlags & UI_VISIBLE ? 1 : 0);
 }
 void
 CUIWidget::Draw(void)
@@ -139,7 +148,7 @@ CUIWidget::Draw(void)
 	do {
 		wNext = wNext.m_next;
 		if (wNext) {
-			if (wNext.IsVisible())
+			if (wNext.IsVisible() && !(wNext.m_iFlags & UI_HIDE_CHILDREN))
 				wNext.Draw();
 		}
 	} while (wNext);
@@ -154,7 +163,7 @@ CUIWidget::Input(float flEVType, float flKey, float flChar, float flDevID)
 	do {
 		wNext = wNext.m_next;
 		if (wNext) {
-			if (wNext.IsVisible()) {
+			if (wNext.IsVisible() && !(wNext.m_iFlags & UI_HIDE_CHILDREN)) {
 				g_vguiWidgetCount++;
 				wNext.Input(flEVType, flKey, flChar, flDevID);
 			}

@@ -13,6 +13,9 @@
 ../vgui/ui_list.cpp
 ../vgui/ui_listbox.cpp
 ../vgui/ui_textbox.cpp
-../vgui/ui_tabbutton.cpp
+
+../vgui/ui_tabarea.h
 ../vgui/ui_tabview.cpp
+../vgui/ui_tabarea.cpp
+../vgui/ui_tabarea_fn_input.cpp
 #endlist

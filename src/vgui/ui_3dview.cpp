@@ -23,7 +23,7 @@ noref .float frame, frame2, lerpfrac, renderflags, frame1time;
 
 enumflags
 {
-	VIEW_VISIBLE
+	VIEW_VISIBLE = UI_VISIBLE
 };
 
 class CUI3DView:CUIWidget

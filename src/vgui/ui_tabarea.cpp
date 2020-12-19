@@ -14,67 +14,54 @@
  * OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  */
 
-enumflags
-{
-	TABBUTTON_VISIBLE,
-	TABBUTTON_HOVER,
-	TABBUTTON_DOWN,
-	TABBUTTON_ACTIVE
-};
-
-class CUITabArea:CUIWidget
-{
-	vector m_vecColor;
-	float m_flAlpha;
-	vector m_vecSize;
-	string m_strTitle;
-	string m_strTitleActive;
-	string m_strIcon;
-
-	void(void) CUITabArea;
-	virtual void(void) m_vFunc = 0;
-	virtual void(void) Draw;
-	virtual vector() GetSize;
-	virtual int(void) GetSizeWidth;
-	virtual int(void) GetSizeHeight;
-	virtual void(vector) SetSize;
-	virtual void(string) SetTitle;
-	virtual void(string) SetIcon;
-	virtual void(void(void)) SetFunc;
-	virtual void(float, float, float, float) Input;
-};
-
 void
 CUITabArea::CUITabArea(void)
 {
 	m_vecColor = UI_MAINCOLOR;
 	m_flAlpha = 1.0f;
-	m_vecSize = [96,24];
+	m_vecButtonSize = [96,24];
 	m_iFlags = TABBUTTON_VISIBLE;
 }
 
 void
 CUITabArea::SetSize(vector vecSize)
 {
-	m_vecSize = vecSize;
+	m_vecAreaSize = vecSize;
 }
 
 vector
-CUITabArea::GetSize(void)
+CUITabArea::GetButtonSize(void)
 {
-	return m_vecSize;
+	return m_vecButtonSize;
 }
 
 int
-CUITabArea::GetSizeWidth(void)
+CUITabArea::GetButtonSizeWidth(void)
 {
-	return m_vecSize[0];
+	return m_vecButtonSize[0];
+}
+
+int CUITabArea::GetButtonSizeHeight(void)
+{
+	return m_vecButtonSize[1];
+}
+
+vector
+CUITabArea::GetAreaSize(void)
+{
+	return m_vecAreaSize;
 }
 
 int
-CUITabArea::GetSizeHeight(void)
+CUITabArea::GetAreaSizeWidth(void)
 {
-	return m_vecSize[1];
+	return m_vecAreaSize[0];
+}
+
+int
+CUITabArea::GetAreaSizeHeight(void)
+{
+	return m_vecAreaSize[1];
 }
 
 void
@@ -88,9 +75,8 @@ CUITabArea::SetTitle(string strName)
 	drawfont = g_fntDefault.iID;
 
 	scale = g_fntDefault.iScale;
-	newsize[0] = stringwidth(m_strTitle, TRUE, [scale, scale]) + 16;
-	newsize[1] = 24;
-	SetSize(newsize);
+	m_vecButtonSize[0] = stringwidth(m_strTitle, TRUE, [scale, scale]) + 16;
+	m_vecButtonSize[1] = 24;
 }
 void
 CUITabArea::SetIcon(string strName)
@@ -123,19 +109,19 @@ CUITabArea::Draw(void)
 #else
 	// Background.
 	if (m_iFlags & TABBUTTON_DOWN) {
-		drawfill(GetAbsolutePos(), m_vecSize, m_vecColor, 0.35f);
+		drawfill(GetAbsolutePos(), m_vecButtonSize, m_vecColor, 0.35f);
 	} else if (m_iFlags & TABBUTTON_ACTIVE) {
-    	drawfill(GetAbsolutePos(), m_vecSize - [0, 1], m_vecColor, 0.55f);	
+    	drawfill(GetAbsolutePos(), m_vecButtonSize - [0, 1], m_vecColor, 0.55f);	
     } else {
-		drawfill(GetAbsolutePos(), m_vecSize - [0, 1], m_vecColor, 0.15f);	
+		drawfill(GetAbsolutePos(), m_vecButtonSize - [0, 1], m_vecColor, 0.15f);	
 	}
     
-	drawfill(GetAbsolutePos(), [m_vecSize[0], 1], m_vecColor, 1.0f);
+	drawfill(GetAbsolutePos(), [m_vecButtonSize[0], 1], m_vecColor, 1.0f);
     if (!(m_iFlags & TABBUTTON_ACTIVE)) {
-        drawfill(GetAbsolutePos() + [0, m_vecSize[1] - 1], [m_vecSize[0], 1], m_vecColor, 1.0f);
+        drawfill(GetAbsolutePos() + [0, m_vecButtonSize[1] - 1], [m_vecButtonSize[0], 1], m_vecColor, 1.0f);
     }
-	drawfill(GetAbsolutePos() + [0, 1], [1, m_vecSize[1] - 2], m_vecColor, 1.0f);
-	drawfill(GetAbsolutePos() + [m_vecSize[0] - 1, 1], [1, m_vecSize[1] - 2], m_vecColor, 1.0f);
+	drawfill(GetAbsolutePos() + [0, 1], [1, m_vecButtonSize[1] - 2], m_vecColor, 1.0f);
+	drawfill(GetAbsolutePos() + [m_vecButtonSize[0] - 1, 1], [1, m_vecButtonSize[1] - 2], m_vecColor, 1.0f);
 #endif
 
 	if (m_strTitle) {
@@ -157,14 +143,20 @@ CUITabArea::Input(float flEVType, float flKey, float flChar, float flDevID)
 	if (flEVType == IE_KEYDOWN) {
 		if (flKey == K_MOUSE1) {
 			FlagRemove(TABBUTTON_ACTIVE);
-			if (Util_MouseAbove(getmousepos(), GetAbsolutePos(), m_vecSize)) {
+			if (Util_MouseAbove(getmousepos(), GetAbsolutePos(), m_vecButtonSize)) {
 				FlagAdd(TABBUTTON_DOWN);
 			}
 		}
 	} else if (flEVType == IE_KEYUP) {
 		if (flKey == K_MOUSE1) {
-			if (m_iFlags & TABBUTTON_DOWN && Util_MouseAbove(getmousepos(), GetAbsolutePos(), m_vecSize)) {
+			if (m_iFlags & TABBUTTON_DOWN && Util_MouseAbove(getmousepos(), GetAbsolutePos(), m_vecButtonSize)) {
 				FlagAdd(TABBUTTON_ACTIVE);
+
+				// We're gonna inform the parent TabView that this button got activated.
+				// It'll hide all others.
+				CUITabView parent = (CUITabView)m_parent;
+				parent.SwitchActiveTab(this);
+
                 if (m_vFunc) {
 					m_vFunc();
 				}

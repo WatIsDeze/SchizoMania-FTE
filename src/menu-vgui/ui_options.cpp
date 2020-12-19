@@ -44,6 +44,11 @@ void UI_Options_Show ( void )
     //
     // Video Options Controls.
     //
+    static CUIList lsbResolutions;
+    static CUIButton btnTestVideo;
+    static CUIButton btnTestAudio;
+    static CUIButton btnTestInput;
+    static CUIButton btnTestOther;
 
     //
     // Audio Options Controls.
@@ -82,6 +87,69 @@ void UI_Options_Show ( void )
 	static void Options_Cancel ( void ) {
 		winOptions.Hide();
 	}
+
+    //=====================================================
+    // VIDEO OPTIONS MENU CONTROLS.
+    //=====================================================
+    static void CreateVideoOptions() {
+        btnTestVideo = spawn( CUIButton );
+        btnTestVideo.SetSize('96 24');
+        // TODO: Let CUIWidget have a GetChildrenOffset function, 
+        // which will add itself to the result in GetAbsolutePositions
+        // this way we'll never have to bother doing these things by hand again.
+        //
+        // It'll add the offset by itself when calculating render/input phases,
+        // as a result we can just write SetPos('10 10') instead.
+        btnTestVideo.SetPos('10 10' + [0, tabAreaVideo.GetButtonSizeHeight()]);
+        btnTestVideo.SetTitle("Testing...");
+
+        tabAreaVideo.Add(btnTestVideo);
+	   	// searchhandle shMaps = search_begin( "maps/*.bsp", TRUE, TRUE );
+		// lsbMaps = spawn( CUIList );
+		// lsbMaps.SetSize( '10 10' );
+		// lsbMaps.SetPos( '100 220 ' );
+		// // lsbMaps.SetItemCount( search_getsize( shMaps ) );
+        // lsbMaps.SetItemCount(3);
+		// //lsbMaps.CallOnScroll( CreateServer_Scrolled );
+		// lsbMaps.SetSelected( 0 );
+
+		// lsbMaps.AddItem( "Item 1" );
+        // lsbMaps.AddItem( "Item 2" );
+        // lsbMaps.AddItem( "Item 3" );
+    }
+
+    //=====================================================
+    // AUDIO OPTIONS MENU CONTROLS.
+    //=====================================================
+    static void CreateAudioOptions() {
+        btnTestAudio = spawn( CUIButton );
+        btnTestAudio.SetSize('96 24');
+        btnTestAudio.SetPos('67 54' + [0, tabAreaAudio.GetButtonSizeHeight()]);
+        btnTestAudio.SetTitle("Testing Audio Options :D !!..");
+        tabAreaAudio.Add(btnTestAudio);
+    }
+
+    //=====================================================
+    // INPUT OPTIONS MENU CONTROLS.
+    //=====================================================
+    static void CreateInputOptions() {
+        btnTestInput = spawn( CUIButton );
+        btnTestInput.SetSize('96 24');
+        btnTestInput.SetPos('47 110' + [0, tabAreaInput.GetButtonSizeHeight()]);
+        btnTestInput.SetTitle("Input's gonna suck :D !!..");
+        tabAreaInput.Add(btnTestInput);
+    }
+
+    //=====================================================
+    // AUDIO OPTIONS MENU CONTROLS.
+    //=====================================================
+    static void CreateOtherOptions() {
+        btnTestOther = spawn( CUIButton );
+        btnTestOther.SetSize('96 24');
+        btnTestOther.SetPos('35 144' + [0, tabAreaOther.GetButtonSizeHeight()]);
+        btnTestOther.SetTitle("w00t Other Options xD !!..");
+        tabAreaOther.Add(btnTestOther);
+    }
 
     //-----------------------------------------------------
     // Options Hide Tab Funcs.
@@ -150,7 +218,7 @@ void UI_Options_Show ( void )
 		winOptions.SetIcon( "textures/ui/icons/gear" );
 
         tabOptions = spawn( CUITabView );
-        tabOptions.SetSize('340 240');
+        tabOptions.SetSize('400 240');
         tabOptions.SetPos(winOptions.GetSize() - '410 290');
 
 		btnApply = spawn( CUIButton );
@@ -174,7 +242,13 @@ void UI_Options_Show ( void )
         tabAreaAudio = tabOptions.AddTabButton("Audio", Options_Tab_Audio_Show);
         tabAreaInput = tabOptions.AddTabButton("Input", Options_Tab_Input_Show);
         tabAreaOther = tabOptions.AddTabButton("Other", Options_Tab_Other_Show);
-	}
+        tabOptions.SwitchActiveTab(tabAreaVideo);
+        
+        CreateVideoOptions();
+        CreateAudioOptions();
+        CreateInputOptions();
+        CreateOtherOptions();
+    }
 
 	winOptions.Show();
 	winOptions.SetPos( ( video_res / 2 ) - ( winOptions.GetSize() / 2 ) );
