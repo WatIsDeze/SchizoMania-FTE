@@ -17,7 +17,6 @@ CUIGroupList::CUIGroupList(void)
 int
 CUIGroupList::IsVisible(string name)
 {
-    dprint(sprintf("%f\n", (float)hash_get(m_hashGroupList, name)));
     if ((float)hash_get(m_hashGroupList, name) == 1)
         return 1;
     else

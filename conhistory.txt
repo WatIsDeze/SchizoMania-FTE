@@ -207,3 +207,4 @@ quit
 quit
 quit
 vid_restart
+quit

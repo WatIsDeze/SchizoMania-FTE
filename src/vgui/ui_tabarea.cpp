@@ -28,11 +28,11 @@ void
 CUITabArea::Add(CUIWidget wNew)
 {
 	// TODO: Maybe make a get/set for this.
+	// Assign the children group name to the child controls.
 	wNew.m_strGroupName = m_strChildrenGroupName;
-	
 	g_vguiGroupList.Add(m_strChildrenGroupName);
-	dprint("===============");
-	dprint(sprintf("wNew.m_strGroupName = %s\n", wNew.m_strGroupName));
+
+	// Last but not least, resort to the default Add behavior.
 	CUIWidget::Add(wNew);
 }
 
@@ -108,7 +108,8 @@ CUITabArea::SetFunc(void(void) vFunc)
 void
 CUITabArea::Draw(void)
 {
-	if (g_vguiGroupList.IsVisible(m_strGroupName)) {
+	// This is used to determine whether the area should be rendered as active.
+	if (g_vguiGroupList.IsVisible(m_strChildrenGroupName)) {
 		FlagAdd(TABAREA_ACTIVE);
 	} else {
 		FlagRemove(TABAREA_ACTIVE);
@@ -163,8 +164,6 @@ CUITabArea::Input(float flEVType, float flKey, float flChar, float flDevID)
 {
 	if (flEVType == IE_KEYDOWN) {
 		if (flKey == K_MOUSE1) {
-			// Only remove if the mouse is out of bounds.
-			// FlagRemove(TABAREA_ACTIVE);
 			if (Util_MouseAbove(getmousepos(), GetAbsolutePos(), m_vecButtonSize)) {
 				FlagAdd(TABAREA_DOWN);
 			}
@@ -172,13 +171,10 @@ CUITabArea::Input(float flEVType, float flKey, float flChar, float flDevID)
 	} else if (flEVType == IE_KEYUP) {
 		if (flKey == K_MOUSE1) {
 			if (m_iFlags & TABAREA_DOWN && Util_MouseAbove(getmousepos(), GetAbsolutePos(), m_vecButtonSize)) {
-				// FlagAdd(TABAREA_ACTIVE);
-
-				// We're gonna inform the parent TabView that this button got activated.
-				// It'll hide all others.
 				CUITabView parent = (CUITabView)m_parent;
 				parent.SwitchActiveTab(this);
 
+				// No reason to remove this. One might want a callback.
                 if (m_vFunc) {
 					m_vFunc();
 				}
