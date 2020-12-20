@@ -62,35 +62,36 @@ void CUIList::Draw(void)
 	}
 	
 #ifdef CLASSIC_VGUI
-	drawfill(m_parent.m_vecOrigin + m_vecOrigin + [0, m_vecSize[1] - 1], [m_vecSize[0], 1], UI_MAINCOLOR, 1.0f);
-	drawfill(m_parent.m_vecOrigin + m_vecOrigin, [m_vecSize[0], 1], UI_MAINCOLOR, 1.0f);
-	drawfill(m_parent.m_vecOrigin + m_vecOrigin + [0, 1], [1, m_vecSize[1] - 2], UI_MAINCOLOR, 1.0f);
-	drawfill(m_parent.m_vecOrigin + m_vecOrigin + [m_vecSize[0] - 1, 1], [1, m_vecSize[1] - 2], UI_MAINCOLOR, 1.0f);
+	drawfill(GetAbsolutePos() + [0, m_vecSize[1] - 1], [m_vecSize[0], 1], UI_MAINCOLOR, 1.0f);
+	drawfill(GetAbsolutePos(), [m_vecSize[0], 1], UI_MAINCOLOR, 1.0f);
+	drawfill(GetAbsolutePos() + [0, 1], [1, m_vecSize[1] - 2], UI_MAINCOLOR, 1.0f);
+	drawfill(GetAbsolutePos() + [m_vecSize[0] - 1, 1], [1, m_vecSize[1] - 2], UI_MAINCOLOR, 1.0f);
 #else
-	drawfill(m_parent.m_vecOrigin + m_vecOrigin, m_vecSize, [0,0,0], 0.25f);
-	drawfill(m_parent.m_vecOrigin + m_vecOrigin, [m_vecSize[0], 1], [0,0,0], 0.5f);
-	drawfill(m_parent.m_vecOrigin + m_vecOrigin + [0, m_vecSize[1] - 1], [m_vecSize[0], 1], [1,1,1], 0.5f);
-	drawfill(m_parent.m_vecOrigin + m_vecOrigin + [0, 1], [1, m_vecSize[1] - 2], [0,0,0], 0.5f);
-	drawfill(m_parent.m_vecOrigin + m_vecOrigin + [m_vecSize[0] - 1, 1], [1, m_vecSize[1] - 2], [1,1,1], 0.5f);
+	drawfill(GetAbsolutePos(), m_vecSize, [0,0,0], 0.25f);
+	drawfill(GetAbsolutePos(), [m_vecSize[0], 1], [0,0,0], 0.5f);
+	drawfill(GetAbsolutePos() + [0, m_vecSize[1] - 1], [m_vecSize[0], 1], [1,1,1], 0.5f);
+	drawfill(GetAbsolutePos() + [0, 1], [1, m_vecSize[1] - 2], [0,0,0], 0.5f);
+	drawfill(GetAbsolutePos() + [m_vecSize[0] - 1, 1], [1, m_vecSize[1] - 2], [1,1,1], 0.5f);
 #endif
 
 	vector vecOffset = [8,8];
 	
 	iMaxDisplay = bound(0, m_iItemCount, floor(m_vecSize[1] / 20));
 
-	drawsetcliparea(m_parent.m_vecOrigin[0] + m_vecOrigin[0],m_parent.m_vecOrigin[1] + m_vecOrigin[1], m_vecSize[0] - 1, m_vecSize[1]);
+//	drawsetcliparea(m_parent.m_vecOrigin[0] + m_vecOrigin[0],m_parent.m_vecOrigin[1] + m_vecOrigin[1], m_vecSize[0] - 1, m_vecSize[1]);
+	drawsetcliparea(GetAbsolutePos()[0], GetAbsolutePos()[1], m_vecSize[0] - 1, m_vecSize[1]);
 	for (int i = m_iDrawOffset; i < iMaxDisplay + m_iDrawOffset; i++) {
 		if (!m_strItems[i]) {
 			break;
 		}
 		
 		if (m_iSelected == i) {
-			drawfill(m_parent.m_vecOrigin + m_vecOrigin + vecOffset + [-7,-3], [m_vecSize[0] - 2, 18], [1,1,1], 0.5f);
+			drawfill(GetAbsolutePos() + vecOffset + [-7,-3], [m_vecSize[0] - 2, 18], [1,1,1], 0.5f);
 		} else if (i & 1) {
-			drawfill(m_parent.m_vecOrigin + m_vecOrigin + vecOffset + [-7,-3], [m_vecSize[0] - 2, 18], [1,1,1], 0.1f);
+			drawfill(GetAbsolutePos() + vecOffset + [-7,-3], [m_vecSize[0] - 2, 18], [1,1,1], 0.1f);
 		}
 		
-		Font_DrawText(m_parent.m_vecOrigin + m_vecOrigin + vecOffset, m_strItems[i], g_fntDefault);
+		Font_DrawText(GetAbsolutePos() + vecOffset, m_strItems[i], g_fntDefault);
 		vecOffset[1] += 20;
 	}
 	drawresetcliparea();
@@ -99,14 +100,14 @@ void CUIList::Draw(void)
 void CUIList::Input (float flEVType, float flKey, float flChar, float flDevID)
 {
 	int iMaxDisplay;
-	int iMouseOver = Util_MouseAbove(getmousepos(), m_parent.m_vecOrigin + m_vecOrigin, m_vecSize);
+	int iMouseOver = Util_MouseAbove(getmousepos(), GetAbsolutePos(), m_vecSize);
 	iMaxDisplay = bound(0, m_iItemCount, floor(m_vecSize[1] / 20));
 	
 	vector vecOffset = [8,8];
 	if (flEVType == IE_KEYDOWN) {
 		if (flKey == K_MOUSE1) {
 			for (int i = m_iDrawOffset; i < iMaxDisplay + m_iDrawOffset; i++) {
-				if (Util_MouseAbove(getmousepos(), m_parent.m_vecOrigin + m_vecOrigin + vecOffset, [m_vecSize[0] - 16, 20])) {
+				if (Util_MouseAbove(getmousepos(), GetAbsolutePos() + vecOffset, [m_vecSize[0] - 16, 20])) {
 					m_iSelected = i;
 					return;
 				}

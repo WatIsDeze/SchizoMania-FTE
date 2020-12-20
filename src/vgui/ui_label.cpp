@@ -52,7 +52,7 @@ void CUILabel::SetTitle (string strName)
 void CUILabel::Draw(void)
 {
 	if (m_strTitle) {
-		Font_DrawField(m_parent.m_vecOrigin + m_vecOrigin, m_vecSize, m_strTitle, g_fntDefault, 0);
+		Font_DrawField(GetAbsolutePos(), m_vecSize, m_strTitle, g_fntDefault, 0);
 	}
 }
 

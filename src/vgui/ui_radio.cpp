@@ -80,35 +80,35 @@ void CUIRadio::SetFunc (void(void) vFunc)
 void CUIRadio::Draw(void)
 {
 #ifndef CLASSIC_VGUI
-	drawfill(m_parent.m_vecOrigin + m_vecOrigin, m_vecSize, m_vecColor, m_flAlpha);
+	drawfill(GetAbsolutePos(), m_vecSize, m_vecColor, m_flAlpha);
 	
 	if (m_iFlags & RADIO_DOWN) {
-		drawfill(m_parent.m_vecOrigin + m_vecOrigin, [m_vecSize[0], 1], [0,0,0], 0.5f);
-		drawfill(m_parent.m_vecOrigin + m_vecOrigin + [0, m_vecSize[1] - 1], [m_vecSize[0], 1], [1,1,1], 0.5f);
-		drawfill(m_parent.m_vecOrigin + m_vecOrigin + [0, 1], [1, m_vecSize[1] - 2], [0,0,0], 0.5f);
-		drawfill(m_parent.m_vecOrigin + m_vecOrigin + [m_vecSize[0] - 1, 1], [1, m_vecSize[1] - 2], [1,1,1], 0.5f);
+		drawfill(GetAbsolutePos(), [m_vecSize[0], 1], [0,0,0], 0.5f);
+		drawfill(GetAbsolutePos() + [0, m_vecSize[1] - 1], [m_vecSize[0], 1], [1,1,1], 0.5f);
+		drawfill(GetAbsolutePos() + [0, 1], [1, m_vecSize[1] - 2], [0,0,0], 0.5f);
+		drawfill(GetAbsolutePos() + [m_vecSize[0] - 1, 1], [1, m_vecSize[1] - 2], [1,1,1], 0.5f);
 	}
 	if (m_iFlags & RADIO_ACTIVE) {
-		drawpic(m_parent.m_vecOrigin + m_vecOrigin, "textures/ui/steam/icon_radiosel", [16,16], [1,1,1], 1.0f, 0);
+		drawpic(GetAbsolutePos(), "textures/ui/steam/icon_radiosel", [16,16], [1,1,1], 1.0f, 0);
 	} else {
-		drawpic(m_parent.m_vecOrigin + m_vecOrigin, "textures/ui/steam/icon_radiounsel", [16,16], [1,1,1], 1.0f, 0);
+		drawpic(GetAbsolutePos(), "textures/ui/steam/icon_radiounsel", [16,16], [1,1,1], 1.0f, 0);
 	}
 #else
 	if (m_iFlags & RADIO_DOWN) {
-		drawfill(m_parent.m_vecOrigin + m_vecOrigin, [m_vecSize[0], 1], m_vecColor, 1.0f);
-		drawfill(m_parent.m_vecOrigin + m_vecOrigin + [0, m_vecSize[1] - 1], [m_vecSize[0], 1], m_vecColor, 1.0f, 0);
-		drawfill(m_parent.m_vecOrigin + m_vecOrigin + [0, 1], [1, m_vecSize[1] - 2], m_vecColor, 1.0f);
-		drawfill(m_parent.m_vecOrigin + m_vecOrigin + [m_vecSize[0] - 1, 1], [1, m_vecSize[1] - 2], m_vecColor, 1.0f, 0);
+		drawfill(GetAbsolutePos(), [m_vecSize[0], 1], m_vecColor, 1.0f);
+		drawfill(GetAbsolutePos() + [0, m_vecSize[1] - 1], [m_vecSize[0], 1], m_vecColor, 1.0f, 0);
+		drawfill(GetAbsolutePos() + [0, 1], [1, m_vecSize[1] - 2], m_vecColor, 1.0f);
+		drawfill(GetAbsolutePos() + [m_vecSize[0] - 1, 1], [1, m_vecSize[1] - 2], m_vecColor, 1.0f, 0);
 	}
 	if (m_iFlags & RADIO_ACTIVE) {
-		drawpic(m_parent.m_vecOrigin + m_vecOrigin, "textures/ui/steam/icon_radiosel", [16,16], m_vecColor, 1.0f, 0);
+		drawpic(GetAbsolutePos(), "textures/ui/steam/icon_radiosel", [16,16], m_vecColor, 1.0f, 0);
 	} else {
-		drawpic(m_parent.m_vecOrigin + m_vecOrigin, "textures/ui/steam/icon_radiounsel", [16,16], m_vecColor, 1.0f, 0);
+		drawpic(GetAbsolutePos(), "textures/ui/steam/icon_radiounsel", [16,16], m_vecColor, 1.0f, 0);
 	}
 #endif
 
 	if (m_strTitle) {
-		Font_DrawText(m_parent.m_vecOrigin + m_vecOrigin + [24, 3], m_strTitle, g_fntDefault);
+		Font_DrawText(GetAbsolutePos() + [24, 3], m_strTitle, g_fntDefault);
 	}
 }
 
@@ -116,13 +116,13 @@ void CUIRadio::Input (float flEVType, float flKey, float flChar, float flDevID)
 {
 	if (flEVType == IE_KEYDOWN) {
 		if (flKey == K_MOUSE1) {
-			if (Util_MouseAbove(getmousepos(), m_parent.m_vecOrigin + m_vecOrigin, m_vecSize)) {
+			if (Util_MouseAbove(getmousepos(), GetAbsolutePos(), m_vecSize)) {
 				m_iFlags |= RADIO_DOWN;
 			}
 		}
 	} else if (flEVType == IE_KEYUP) {
 		if (flKey == K_MOUSE1) {
-			if (m_iFlags & RADIO_DOWN && Util_MouseAbove(getmousepos(), m_parent.m_vecOrigin + m_vecOrigin, m_vecSize)) {
+			if (m_iFlags & RADIO_DOWN && Util_MouseAbove(getmousepos(), GetAbsolutePos(), m_vecSize)) {
 				if (m_vFunc) {
 					m_vFunc();
 				}

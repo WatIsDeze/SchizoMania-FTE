@@ -70,49 +70,49 @@ void CUIMenuButton::Draw(void)
 	
 	if (!(m_iFlags & MBUTTON_TEXTONLY)) {
 		#ifndef CLASSIC_VGUI
-			drawfill(m_parent.m_vecOrigin + m_vecOrigin, m_vecSize, m_vecColor, m_flAlpha);
+			drawfill(GetAbsolutePos(), m_vecSize, m_vecColor, m_flAlpha);
 
 			if (m_iFlags & BUTTON_DOWN) {
-				drawfill(m_parent.m_vecOrigin + m_vecOrigin + [0, m_vecSize[1] - 1], [m_vecSize[0], 1], [1,1,1], 0.5f);
-				drawfill(m_parent.m_vecOrigin + m_vecOrigin, [m_vecSize[0], 1], [0,0,0], 0.5f);
-				drawfill(m_parent.m_vecOrigin + m_vecOrigin + [0, 1], [1, m_vecSize[1] - 2], [0,0,0], 0.5f);
-				drawfill(m_parent.m_vecOrigin + m_vecOrigin + [m_vecSize[0] - 1, 1], [1, m_vecSize[1] - 2], [1,1,1], 0.5f);
+				drawfill(GetAbsolutePos() + [0, m_vecSize[1] - 1], [m_vecSize[0], 1], [1,1,1], 0.5f);
+				drawfill(GetAbsolutePos(), [m_vecSize[0], 1], [0,0,0], 0.5f);
+				drawfill(GetAbsolutePos() + [0, 1], [1, m_vecSize[1] - 2], [0,0,0], 0.5f);
+				drawfill(GetAbsolutePos() + [m_vecSize[0] - 1, 1], [1, m_vecSize[1] - 2], [1,1,1], 0.5f);
 			} else {
-				drawfill(m_parent.m_vecOrigin + m_vecOrigin + [0, m_vecSize[1] - 1], [m_vecSize[0], 1], [0,0,0], 0.5f);
-				drawfill(m_parent.m_vecOrigin + m_vecOrigin, [m_vecSize[0], 1], [1,1,1], 0.5f);
-				drawfill(m_parent.m_vecOrigin + m_vecOrigin + [0, 1], [1, m_vecSize[1] - 2], [1,1,1], 0.5f);
-				drawfill(m_parent.m_vecOrigin + m_vecOrigin + [m_vecSize[0] - 1, 1], [1, m_vecSize[1] - 2], [0,0,0], 0.5f);
+				drawfill(GetAbsolutePos() + [0, m_vecSize[1] - 1], [m_vecSize[0], 1], [0,0,0], 0.5f);
+				drawfill(GetAbsolutePos(), [m_vecSize[0], 1], [1,1,1], 0.5f);
+				drawfill(GetAbsolutePos() + [0, 1], [1, m_vecSize[1] - 2], [1,1,1], 0.5f);
+				drawfill(GetAbsolutePos() + [m_vecSize[0] - 1, 1], [1, m_vecSize[1] - 2], [0,0,0], 0.5f);
 			}
 		#else
 			if (m_iFlags & BUTTON_DOWN) {
-				drawfill(m_parent.m_vecOrigin + m_vecOrigin, m_vecSize, m_vecColor, 0.25f);
+				drawfill(GetAbsolutePos(), m_vecSize, m_vecColor, 0.25f);
 			}
-			drawfill(m_parent.m_vecOrigin + m_vecOrigin + [0, m_vecSize[1] - 1], [m_vecSize[0], 1], m_vecColor, 1.0f);
-			drawfill(m_parent.m_vecOrigin + m_vecOrigin, [m_vecSize[0], 1], m_vecColor, 1.0f);
-			drawfill(m_parent.m_vecOrigin + m_vecOrigin + [0, 1], [1, m_vecSize[1] - 2], m_vecColor, 1.0f);
-			drawfill(m_parent.m_vecOrigin + m_vecOrigin + [m_vecSize[0] - 1, 1], [1, m_vecSize[1] - 2], m_vecColor, 1.0f);
+			drawfill(GetAbsolutePos() + [0, m_vecSize[1] - 1], [m_vecSize[0], 1], m_vecColor, 1.0f);
+			drawfill(GetAbsolutePos(), [m_vecSize[0], 1], m_vecColor, 1.0f);
+			drawfill(GetAbsolutePos() + [0, 1], [1, m_vecSize[1] - 2], m_vecColor, 1.0f);
+			drawfill(GetAbsolutePos() + [m_vecSize[0] - 1, 1], [1, m_vecSize[1] - 2], m_vecColor, 1.0f);
 		#endif
 
 			
 			if (m_strIcon) {
-				drawpic(m_parent.m_vecOrigin + m_vecOrigin + [4, 4], m_strIcon, [16,16], [1,1,1], 1.0f);
+				drawpic(GetAbsolutePos() + [4, 4], m_strIcon, [16,16], [1,1,1], 1.0f);
 				if (m_strTitle) {
-					Font_DrawText(m_parent.m_vecOrigin + m_vecOrigin + [26, 8], m_strTitle, g_fntDefault);
+					Font_DrawText(GetAbsolutePos() + [26, 8], m_strTitle, g_fntDefault);
 				}
 			} else {
 				if (m_strTitle) {
-					Font_DrawText(m_parent.m_vecOrigin + m_vecOrigin + [8, 8], m_strTitle, g_fntDefault);
+					Font_DrawText(GetAbsolutePos() + [8, 8], m_strTitle, g_fntDefault);
 				}
 			}
 	} else {
 		if (m_iFlags & MBUTTON_HOVER) {
 			if (m_strTitle) {
-				Font_DrawText(m_parent.m_vecOrigin + m_vecOrigin + [8, 8], strcat("^xF00", m_strTitle), g_fntDefault);
+				Font_DrawText(GetAbsolutePos() + [8, 8], strcat("^xF00", m_strTitle), g_fntDefault);
 				//Font_DrawText(m_parent.m_vecOrigin + m_vecOrigin + [8, 256], "^xF00 One, ^2 Two, ^3 Three, ^4 Four, ^5 Five, ^6 Six, ^7 Seven", g_fntDefault);
 			}
 		} else {
 			if (m_strTitle) {
-				Font_DrawText(m_parent.m_vecOrigin + m_vecOrigin + [8, 8], m_strTitle, g_fntDefault);
+				Font_DrawText(GetAbsolutePos() + [8, 8], m_strTitle, g_fntDefault);
 			}
 		}
 	}
@@ -132,7 +132,7 @@ void CUIMenuButton::Input (float flEVType, float flKey, float flChar, float flDe
 	}
 
 	// Set the hover flag, in case, we hover...
-	if (Util_MouseAbove(getmousepos(), m_parent.m_vecOrigin + m_vecOrigin, m_vecSize)) {
+	if (Util_MouseAbove(getmousepos(), GetAbsolutePos(), m_vecSize)) {
 		if (!(m_iFlags & MBUTTON_HOVER))
 			m_iFlags |= MBUTTON_HOVER;
 	} else {
@@ -143,13 +143,13 @@ void CUIMenuButton::Input (float flEVType, float flKey, float flChar, float flDe
 	// Handle mouse button down on hover, and if released within button, execute a click event.
 	if (flEVType == IE_KEYDOWN) {
 		if (flKey == K_MOUSE1) {
-			if (Util_MouseAbove(getmousepos(), m_parent.m_vecOrigin + m_vecOrigin, m_vecSize)) {
+			if (Util_MouseAbove(getmousepos(), GetAbsolutePos(), m_vecSize)) {
 				m_iFlags |= MBUTTON_DOWN;
 			}
 		}
 	} else if (flEVType == IE_KEYUP) {
 		if (flKey == K_MOUSE1) {
-			if (m_iFlags & MBUTTON_DOWN && Util_MouseAbove(getmousepos(), m_parent.m_vecOrigin + m_vecOrigin, m_vecSize)) {
+			if (m_iFlags & MBUTTON_DOWN && Util_MouseAbove(getmousepos(), GetAbsolutePos(), m_vecSize)) {
 				if (m_vFunc) {
 					m_vFunc();
 				}

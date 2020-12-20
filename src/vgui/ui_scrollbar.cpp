@@ -66,29 +66,29 @@ void CUIScrollbar::Draw(void)
 	vector vecSize = [20, m_iLength];
 
 #ifndef CLASSIC_VGUI
-	drawfill(m_parent.m_vecOrigin + m_vecOrigin, vecSize, m_vecColor, m_flAlpha);
+	drawfill(GetAbsolutePos(), vecSize, m_vecColor, m_flAlpha);
 
 	if (m_iFlags & BUTTON_DOWN) {
-		drawfill(m_parent.m_vecOrigin + m_vecOrigin + [0, vecSize[1] - 1], [vecSize[0], 1], [1,1,1], 0.5f);
-		drawfill(m_parent.m_vecOrigin + m_vecOrigin, [vecSize[0], 1], [0,0,0], 0.5f);
-		drawfill(m_parent.m_vecOrigin + m_vecOrigin + [0, 1], [1, vecSize[1] - 2], [0,0,0], 0.5f);
-		drawfill(m_parent.m_vecOrigin + m_vecOrigin + [vecSize[0] - 1, 1], [1, vecSize[1] - 2], [1,1,1], 0.5f);
+		drawfill(GetAbsolutePos() + [0, vecSize[1] - 1], [vecSize[0], 1], [1,1,1], 0.5f);
+		drawfill(GetAbsolutePos(), [vecSize[0], 1], [0,0,0], 0.5f);
+		drawfill(GetAbsolutePos() + [0, 1], [1, vecSize[1] - 2], [0,0,0], 0.5f);
+		drawfill(GetAbsolutePos() + [vecSize[0] - 1, 1], [1, vecSize[1] - 2], [1,1,1], 0.5f);
 	} else {
-		drawfill(m_parent.m_vecOrigin + m_vecOrigin + [0, vecSize[1] - 1], [vecSize[0], 1], [0,0,0], 0.5f);
-		drawfill(m_parent.m_vecOrigin + m_vecOrigin, [vecSize[0], 1], [1,1,1], 0.5f);
-		drawfill(m_parent.m_vecOrigin + m_vecOrigin + [0, 1], [1, vecSize[1] - 2], [1,1,1], 0.5f);
-		drawfill(m_parent.m_vecOrigin + m_vecOrigin + [vecSize[0] - 1, 1], [1, vecSize[1] - 2], [0,0,0], 0.5f);
+		drawfill(GetAbsolutePos() + [0, vecSize[1] - 1], [vecSize[0], 1], [0,0,0], 0.5f);
+		drawfill(GetAbsolutePos(), [vecSize[0], 1], [1,1,1], 0.5f);
+		drawfill(GetAbsolutePos() + [0, 1], [1, vecSize[1] - 2], [1,1,1], 0.5f);
+		drawfill(GetAbsolutePos() + [vecSize[0] - 1, 1], [1, vecSize[1] - 2], [0,0,0], 0.5f);
 	}
 #else
-	drawfill(m_parent.m_vecOrigin + m_vecOrigin + [0, vecSize[1] - 1], [vecSize[0], 1], m_vecColor, 1.0f);
-	drawfill(m_parent.m_vecOrigin + m_vecOrigin, [vecSize[0], 1], m_vecColor, 1.0f);
-	drawfill(m_parent.m_vecOrigin + m_vecOrigin + [0, 1], [1, vecSize[1] - 2], m_vecColor, 1.0f);
-	drawfill(m_parent.m_vecOrigin + m_vecOrigin + [vecSize[0] - 1, 1], [1, vecSize[1] - 2], m_vecColor, 1.0f);
+	drawfill(GetAbsolutePos() + [0, vecSize[1] - 1], [vecSize[0], 1], m_vecColor, 1.0f);
+	drawfill(GetAbsolutePos(), [vecSize[0], 1], m_vecColor, 1.0f);
+	drawfill(GetAbsolutePos() + [0, 1], [1, vecSize[1] - 2], m_vecColor, 1.0f);
+	drawfill(GetAbsolutePos() + [vecSize[0] - 1, 1], [1, vecSize[1] - 2], m_vecColor, 1.0f);
 #endif
 
-	vector vecUpPos = m_parent.m_vecOrigin + m_vecOrigin;
-	vector vecDownPos = m_parent.m_vecOrigin + m_vecOrigin + [0, m_iLength - 20];
-	vector vecSliderPos = m_parent.m_vecOrigin + m_vecOrigin + [0, 20];
+	vector vecUpPos = GetAbsolutePos();
+	vector vecDownPos = GetAbsolutePos() + [0, m_iLength - 20];
+	vector vecSliderPos = GetAbsolutePos() + [0, 20];
 	
 	vecSliderPos[1] += (m_iLength - 60) * (m_flValue / m_flMax);
 	
@@ -170,8 +170,8 @@ void CUIScrollbar::Draw(void)
 
 void CUIScrollbar::Input (float flEVType, float flKey, float flChar, float flDevID)
 {
-	vector vecUpPos = m_parent.m_vecOrigin + m_vecOrigin;
-	vector vecDownPos = m_parent.m_vecOrigin + m_vecOrigin + [0, m_iLength - 20];
+	vector vecUpPos = GetAbsolutePos();
+	vector vecDownPos = GetAbsolutePos() + [0, m_iLength - 20];
 	
 	if (flEVType == IE_KEYDOWN) {
 		if (flKey == K_MOUSE1) {
@@ -190,9 +190,9 @@ void CUIScrollbar::Input (float flEVType, float flKey, float flChar, float flDev
 			}
 			m_iFlags -= (m_iFlags & SCROLLBAR_UP_DOWN);
 			m_iFlags -= (m_iFlags & SCROLLBAR_DN_DOWN);
-		} else if (flKey == K_MWHEELDOWN && Util_MouseAbove(getmousepos(), m_parent.m_vecOrigin + m_vecOrigin, [20, m_iLength])) {
+		} else if (flKey == K_MWHEELDOWN && Util_MouseAbove(getmousepos(), GetAbsolutePos(), [20, m_iLength])) {
 			SetValue(GetValue() + GetStep(), TRUE);
-		} else if (flKey == K_MWHEELUP && Util_MouseAbove(getmousepos(), m_parent.m_vecOrigin + m_vecOrigin, [20, m_iLength])) {
+		} else if (flKey == K_MWHEELUP && Util_MouseAbove(getmousepos(), GetAbsolutePos(), [20, m_iLength])) {
 			SetValue(GetValue() - GetStep(), TRUE);
 		}
 	}
