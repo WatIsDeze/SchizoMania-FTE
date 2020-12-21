@@ -18,3 +18,120 @@ noclip
 noclip
 noclip
 /map test_prototype_indoor
+/map test_prototype_indoor
+/map test_prototype_indoor
+/map test_prototype_indoor
+noclip
+noclip
+noclip
+/map test_prototype_indoor
+/map test_prototype_indoor
+/buildcubemaps 
+/map test_prototype_indoor
+/map test_prototype_indoor
+/buildcubemaps 
+/map test_prototype_indoor
+noclip
+noclip
+/buildcubemaps 
+/map test_prototype_indoor
+/buildcubemaps 
+/map test_prototype_indoor
+noclip
+noclip
+noclip
+noclip
+/map test_prototype_indoor
+/buildcubemaps 
+/map test_prototype_indoor
+noclip
+noclip
+/map test_prototype_indoor
+buildcubemaps
+noclip
+/map test_prototype_indoor
+noclip
+/map test_prototype_indoor
+buildcubemaps
+/buildcubemaps 
+/map test_prototype_indoor
+noclip
+/map test_prototype_indoor
+/buildcubemaps 
+noclip
+/map test_prototype_indoor
+/buildcubemaps 
+/map test_prototype_indoor
+noclip
+noclip
+/map test_prototype_indoor
+/buildcubemaps 
+/map test_prototype_indoor
+noclip
+noclip
+/map test_prototype_indoor
+noclip
+noclip
+noclip
+/map test_prototype_indoor
+quit
+quit
+/map test_prototype_indoor
+/map test_prototype_indoor
+/map test_prototype_indoor
+/buildcubemaps 
+/map test_prototype_indoor
+quit
+/map test_prototype_indoor
+/map test_prototype_indoor
+/map test_prototype_indoor
+/map test_prototype_indoor
+/map test_prototype_indoor
+/map test_prototype_indoor
+quit
+quit
+/map test_prototype_indoor
+/map test_prototype_indoor
+/map test_prototype_indoor
+/map test_prototype_indoor
+/map test_prototype_indoor
+/map test_prototype_indoor
+quit
+/map test_prototype_indoor
+quit
+/map test_prototype_indoor
+/map test_prototype_indoor
+/map test_prototype_indoor
+/map test_prototype_indoor
+/buildcubemaps 
+/map test_prototype_indoor
+/map test_prototype_indoor
+/map test_prototype_indoor
+/map test_prototype_indoor
+/map test_prototype_indoor
+/map test_prototype_indoor
+/map test_prototype_indoor
+/map test_prototype_indoor
+/map test_prototype_indoor
+/map test_prototype_indoor
+/map test_prototype_indoor
+quit
+quit
+/map test_prototype_indoor
+quit
+quit
+/map test_prototype_indoor
+/map test_prototype_indoor
+/map test_prototype_indoor
+buildcubemaps
+/map test_prototype_indoor
+quit
+/map test_prototype_indoor
+noclip
+noclip
+noclip
+noclip
+noclip
+noclip
+noclip
+noclip

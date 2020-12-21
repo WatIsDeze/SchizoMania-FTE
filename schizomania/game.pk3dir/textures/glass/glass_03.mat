@@ -1,0 +1,14 @@
+foo
+{
+program defaultwall //the glsl to use to draw this surface. use defaultskin for mdls/iqms.
+diffusemap foo
+normalmap foo_norm //alpha should be height values for offsetmapping
+specularmap foo_gloss //alpha is an exponent multiplier
+fullbrightmap foo_luma
+//uppermap foo_upper //not normally needed for walls
+//lowermap foo_lower //not normally needed for walls
+reflectmask foo_mask //mask for cubemap reflections
+reflectcube somecubemap //better to set VF_ENVMAP in csqc than use this
+width 64 //explicit sizes avoids weirdness with .maps (which lack the size info from embedded mips)
+height 64
+}
