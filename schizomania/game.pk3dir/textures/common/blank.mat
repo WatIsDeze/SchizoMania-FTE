@@ -1,8 +1,10 @@
-// Vera Visions Material
 {
+	qer_editorImage textures/common/white.tga
+
+	diffusemap textures/common/white.tga
+
 	{
-		map $whiteimage
-		rgbGen vertex
-		alphaGen vertex
+		program lightmapped
+		map $diffuse
 	}
 }

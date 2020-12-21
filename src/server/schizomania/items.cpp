@@ -47,6 +47,7 @@ void
 CSEv_Equipitem_i(float itemID)
 {
 	player pl = (player)self;
+	
 	Item_Equip(pl, itemID);
 }
 

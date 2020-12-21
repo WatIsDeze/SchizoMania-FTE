@@ -16,6 +16,40 @@
 
 int g_iOptionsInitialized;
 
+static string g_resolutions[] = {
+	"640x480 (4:3)",
+	"800x600 (4:3)",
+	"960x720 (4:3)",
+	"1024x768 (4:3)",
+	"1152x864 (4:3)",
+	"1280x960 (4:3)",
+	"1440x1080 (4:3)",
+	"1600x1200 (4:3)",
+	"1920x1440 (4:3)",
+	"2048x1536 (4:3)",
+	"1280x1024 (5:4)",
+	"1800x1440 (5:4)",
+	"2560x2048 (5:4)",
+	"856x480 (16:9)",
+	"1024x576 (16:9)",
+	"1280x720 (16:9)",
+	"1366x768 (16:9)",
+	"1600x900 (16:9)",
+	"1920x1080 (16:9)",
+	"2048x1152 (16:9)",
+	"2560x1440 (16:9)",
+	"3840x2160 (16:9)",
+	"4096x2304 (16:9)",
+	"1024x640 (16x10)",
+	"1152x720 (16x10)",
+	"1280x800 (16x10)",
+	"1440x900 (16x10)",
+	"1680x1050 (16x10)",
+	"1920x1200 (16x10)",
+	"2304x1440 (16x10)",
+	"2560x1600 (16x10)"
+};
+
 //=========================================================================
 // A big ass Options menu function, oh lawd, holy QC.
 //=========================================================================
@@ -44,7 +78,7 @@ void UI_Options_Show ( void )
     //
     // Video Options Controls.
     //
-    static CUIList lsbResolutions;
+    static CUIListBox lsbResolutions;
     static CUIButton btnTestVideo;
     static CUIButton btnTestAudio;
     static CUIButton btnTestInput;
@@ -66,8 +100,23 @@ void UI_Options_Show ( void )
 	// static CUIRadio radChapter1;
 	// static CUIRadio radChapter2;
 	// static CUIRadio radChapter3;
+    static void Apply_VideoOptions(void) {
+        string res = lsbResolutions.GetItem(lsbResolutions.GetSelected());
+        print("Switching resolution to ");
+        print(res);
+        print("\n");
 
+        // if (res) {
+        //     tokenizebyseparator(res, "x");
+        //     localcmd(sprintf("vid_width %s\n", argv(0)));
+        //     localcmd(sprintf("vid_height %s\n", argv(1)));
+        //     localcmd("vid_restart\n");
+        // }
+    }
 	static void Options_Apply ( void ) {	
+        // Apply all new video changes.
+        Apply_VideoOptions();
+
 		// if (radChapter1.GetValue() != TRUE) {
 		// 	localcmd("stopmusic\n");
 		// 	//localcmd("set skill 1; maxplayers 1\n");
@@ -103,7 +152,15 @@ void UI_Options_Show ( void )
         btnTestVideo.SetPos('10 10' + [0, tabAreaVideo.GetButtonSizeHeight()]);
         btnTestVideo.SetTitle("Testing...");
 
-        tabAreaVideo.Add(btnTestVideo);
+        lsbResolutions = spawn ( CUIListBox );
+        lsbResolutions.SetPos('10 10' + [0, tabAreaVideo.GetButtonSizeHeight()]);
+        lsbResolutions.SetSize('10 10');
+        lsbResolutions.SetItemCount(31);
+
+        for (int i = 0; i < 31; i++) {
+            lsbResolutions.AddItem(g_resolutions[i]);
+        }
+        tabAreaVideo.Add(lsbResolutions);
 	   	// searchhandle shMaps = search_begin( "maps/*.bsp", TRUE, TRUE );
 		// lsbMaps = spawn( CUIList );
 		// lsbMaps.SetSize( '10 10' );
