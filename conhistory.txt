@@ -12,3 +12,30 @@ god
 god
 /map test_prototype_indoor
 /map test_prototype_indoor
+/map test_prototype_indoor
+/map test_prototype_indoor
+/map test_prototype_indoor
+/map test_prototype_indoor
+/map test_prototype_indoor
+god
+god
+/map test_prototype_indoor
+/map test_prototype_indoor
+/map test_prototype_indoor
+/map test_prototype_indoor
+/map test_prototype_indoor
+/map test_prototype_indoor
+quit
+quit
+/map test_prototype_indoor
+/map test_prototype_indoor
+/map test_prototype_indoor
+qujit
+quit
+quit
+/map test_prototype_indoor
+/map test_prototype_indoor
+/map test_prototype_indoor
+/map test_prototype_indoor
+/map test_prototype_indoor
+quit

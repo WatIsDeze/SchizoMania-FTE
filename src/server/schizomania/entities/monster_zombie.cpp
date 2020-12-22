@@ -69,6 +69,7 @@ class monster_zombie:CBaseMonster
 int
 monster_zombie::AnimIdle(void)
 {
+	m_flChaseSpeed = 42;
 	return ZOMBIE_IDLE1;
 }
 
@@ -130,26 +131,45 @@ monster_zombie::AttackThink(void)
 			m = AttackMelee();
 		else {
 			m = AttackRanged();
-
-			/* if we don't have the desired attack mode, walk */
-			if (m == FALSE)
-				m_iMState = MONSTER_CHASING;	
-
 		}
+	
+		/* if we don't have the desired attack mode, walk */
+		if (m == FALSE)
+			m_iMState = MONSTER_CHASING;	
 	}
 }
 
 int
 monster_zombie::AttackMelee(void)
 {
+	// Monster distance between player..
+	float dist = vlen(origin - m_eEnemy.origin);
 
-	if (random() < 0.5) {
+	// Attack number, depends on distance.
+	int attackNr = 2;
+	dprint(sprintf("%d\n", dist));
+
+	// If the player is still too far away, unlike what CBaseMonster thinks, return FALSE.
+	if (dist > 71) {
+		return FALSE;
+	}
+
+	// If the player is too close, roll the dice for a heavy attack. (ATTACK1)
+	if (dist <= 64) {
+		if (random() < 0.75)
+			attackNr = 1;
+	}
+
+	// Attack 1
+	if (attackNr == 1) {
 		AnimPlay(ZOMBIE_ATTACK1);
 
 		// Setup the hit function. (TODO: Maybe use a model event?)
 		think = AttackFlailOne;
 		nextthink = time + 1.0;
-	} else {
+	} 
+	// Attack 2
+	else {
 		AnimPlay(ZOMBIE_ATTACK2);
 	
 		// Setup the hit function. (TODO: Maybe use a model event?)
@@ -168,7 +188,7 @@ monster_zombie::AttackFlailOne(void)
 {
 	// Calculate attack trace, 64 distance.
 	makevectors(angles);
-	vector vecDest = origin + v_forward * 32;
+	vector vecDest = origin + v_forward * 36;
 
 	// Do a trace.
 	traceline(origin, vecDest, FALSE, this);
@@ -178,7 +198,7 @@ monster_zombie::AttackFlailOne(void)
 		return;
 	}
 
-	Damage_Apply(trace_ent, this, 25, 0, 0);
+	Damage_Apply(trace_ent, this, 35, 0, 0);
 	Sound_Play(this, CHAN_WEAPON, "monster_zombie.attackhit");
 }
 
@@ -187,7 +207,7 @@ monster_zombie::AttackFlailTwo(void)
 {
 	// Calculate attack trace, 64 distance.
 	makevectors(angles);
-	vector vecDest = origin + v_forward * 42;
+	vector vecDest = origin + v_forward * 46;
 
 	// Do a trace.
 	traceline(origin, vecDest, FALSE, this);
