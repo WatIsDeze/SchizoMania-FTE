@@ -39,3 +39,6 @@ quit
 /map test_prototype_indoor
 /map test_prototype_indoor
 quit
+quit
+/map test_prototype_indoor
+/map test_prototype_indoor

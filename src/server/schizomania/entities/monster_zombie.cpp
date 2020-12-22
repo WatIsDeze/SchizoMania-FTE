@@ -188,7 +188,7 @@ monster_zombie::AttackFlailOne(void)
 {
 	// Calculate attack trace, 64 distance.
 	makevectors(angles);
-	vector vecDest = origin + v_forward * 36;
+	vector vecDest = origin + v_forward * 40;
 
 	// Do a trace.
 	traceline(origin, vecDest, FALSE, this);
