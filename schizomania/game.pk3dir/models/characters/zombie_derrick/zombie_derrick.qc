@@ -8,7 +8,7 @@ rotate 0 -90 0
 
 
 scene "iqe/agonizing.iqe" fps 30
-scene "iqe/attack1.iqe" fps 30
+scene "iqe/attack1.iqe" fps 55
 scene "iqe/attack2.iqe" fps 30
 scene "iqe/dying1.iqe" fps 30
 scene "iqe/dying1_fast.iqe" fps 30

@@ -60,8 +60,10 @@ class monster_zombie:CBaseMonster
 	virtual int(void) AnimWalk;
 	virtual int(void) AnimRun;
 
+	virtual void(void) AttackThink;
 	virtual int(void) AttackMelee;
-	virtual void(void) AttackFlail;
+	virtual void(void) AttackFlailOne;
+	virtual void(void) AttackFlailTwo;
 };
 
 int
@@ -80,33 +82,112 @@ monster_zombie::AnimWalk(void)
 int
 monster_zombie::AnimRun(void)
 {
+	m_flChaseSpeed = 46;
 	return ZOMBIE_WALKING2;
+}
+
+void
+monster_zombie::AttackThink(void)
+{
+	if (m_iSequenceState != SEQUENCESTATE_NONE)
+		return;
+
+	if (m_flAttackThink > time) {
+		return;
+	}
+
+	/* reset */
+	if (m_eEnemy.solid == SOLID_CORPSE || (m_eEnemy && m_eEnemy.health <= 0)) {
+		m_eEnemy = __NULL__;
+		ClearRoute();
+	}
+
+	/* do we have a clear shot? */
+	other = world;
+	traceline(origin, m_eEnemy.origin, MOVE_OTHERONLY, this);
+
+	/* something is blocking us */
+	if (trace_fraction < 1.0f) {
+		m_iMState = MONSTER_IDLE;
+
+		/* FIXME: This is unreliable, but unlikely that a player ever is here */
+		if (m_vecLKPos != [0,0,0]) {
+			ClearRoute();
+			NewRoute(m_vecLKPos);
+			m_flSequenceSpeed = 140;
+			m_vecLKPos = [0,0,0];
+		}
+	} else {
+		m_iMState = MONSTER_AIMING;
+
+		/* make sure we remember the last known position. */
+		m_vecLKPos = m_eEnemy.origin;
+	}
+
+	if (m_iMState == MONSTER_AIMING) {
+		int m;
+		if (vlen(origin - m_eEnemy.origin) < 96)
+			m = AttackMelee();
+		else {
+			m = AttackRanged();
+
+			/* if we don't have the desired attack mode, walk */
+			if (m == FALSE)
+				m_iMState = MONSTER_CHASING;	
+
+		}
+	}
 }
 
 int
 monster_zombie::AttackMelee(void)
 {
-	/* visual */
-	//if (random() < 0.5)
-	//	AnimPlay(ZOMBIE_ATTACK1);
-	//else
+
+	if (random() < 0.5) {
+		AnimPlay(ZOMBIE_ATTACK1);
+
+		// Setup the hit function. (TODO: Maybe use a model event?)
+		think = AttackFlailOne;
+		nextthink = time + 1.0;
+	} else {
 		AnimPlay(ZOMBIE_ATTACK2);
+	
+		// Setup the hit function. (TODO: Maybe use a model event?)
+		think = AttackFlailTwo;
+		nextthink = time + 0.8;
+	}
 
 	m_flAttackThink = m_flAnimTime;
 	Sound_Play(this, CHAN_VOICE, "monster_zombie.attack");
-
-	/* functional */
-	think = AttackFlail;
-	nextthink = time + 0.8f;
+	
 	return TRUE;
 }
 
 void
-monster_zombie::AttackFlail(void)
+monster_zombie::AttackFlailOne(void)
 {
 	// Calculate attack trace, 64 distance.
 	makevectors(angles);
-	vector vecDest = origin + v_forward * 64;
+	vector vecDest = origin + v_forward * 32;
+
+	// Do a trace.
+	traceline(origin, vecDest, FALSE, this);
+
+	if (trace_fraction >= 1.0 || trace_ent.takedamage != DAMAGE_YES) {
+		Sound_Play(this, CHAN_WEAPON, "monster_zombie.attackmiss");
+		return;
+	}
+
+	Damage_Apply(trace_ent, this, 25, 0, 0);
+	Sound_Play(this, CHAN_WEAPON, "monster_zombie.attackhit");
+}
+
+void
+monster_zombie::AttackFlailTwo(void)
+{
+	// Calculate attack trace, 64 distance.
+	makevectors(angles);
+	vector vecDest = origin + v_forward * 42;
 
 	// Do a trace.
 	traceline(origin, vecDest, FALSE, this);
@@ -206,5 +287,5 @@ monster_zombie::monster_zombie(void)
 	m_iAlliance = MAL_ALIEN;
 	CBaseMonster::CBaseMonster();
 
-	m_flChaseSpeed = 40;
+	m_flChaseSpeed = 42;
 }

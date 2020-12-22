@@ -65,6 +65,7 @@ server/func_pendulum.cpp
 server/func_vehicle.cpp
 server/func_vehiclecontrols.cpp
 server/light.cpp
+server/light_surface.cpp
 server/stubs.cpp
 server/infodecal.cpp
 server/player_weaponstrip.cpp

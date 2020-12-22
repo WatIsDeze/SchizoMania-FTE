@@ -1,0 +1,10 @@
+{
+	diffusemap textures/bricks/brick_moss_01.tga
+    normalmap textures/bricks/brick_moss_01_normal.tga
+
+	{
+		program lightmapped
+		map $diffuse
+		map $normalmap
+	}
+}
