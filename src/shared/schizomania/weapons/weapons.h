@@ -20,7 +20,7 @@
 // Need to rename these in the future to prevent name collisions
 // with the new inventory item system.
 //=======================
-#define ITEM_CROWBAR		0x00000001i
+#define ITEM_KNIFE			0x00000001i
 #define ITEM_GLOCK			0x00000002i
 #define ITEM_PYTHON			0x00000004i
 #define ITEM_MP5			0x00000008i
@@ -62,7 +62,7 @@
 enum
 {
 	WEAPON_NONE,
-	WEAPON_CROWBAR,
+	WEAPON_KNIFE,
 	WEAPON_GLOCK,
 	WEAPON_PYTHON,
 	WEAPON_MP5,

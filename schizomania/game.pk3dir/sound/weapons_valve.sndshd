@@ -30,20 +30,20 @@ weapon_crossbow.reload
 	sample weapons/xbow_reload1.wav
 }
 
-weapon_crowbar.hit
+WEAPON_KNIFE.hit
 {
 	sample weapons/cbar_hit1.wav
 	sample weapons/cbar_hit2.wav
 }
 
-weapon_crowbar.hitbody
+WEAPON_KNIFE.hitbody
 {
 	sample weapons/cbar_hitbod1.wav
 	sample weapons/cbar_hitbod2.wav
 	sample weapons/cbar_hitbod3.wav
 }
 
-weapon_crowbar.miss
+WEAPON_KNIFE.miss
 {
 	sample weapons/cbar_miss1.wav
 }

@@ -5478,3 +5478,19 @@ nieb/metal-grey
 "origin" "-971.841064 2209.116211 -16.000000"
 "angle" "32.846497"
 }
+// entity 106
+{
+"classname" "monster_zombie"
+"origin" "-1148.744629 2366.602783 144.000000"
+"angle" "88.308403"
+}
+// entity 107
+{
+"classname" "item_inventory"
+"origin" "-1140.000000 2600.000000 151.000000"
+"itemID" "3"
+"angle" "-122.197067"
+"amount" "1"
+"targetname" "item_knife1"
+"target" "mm_door2"
+}

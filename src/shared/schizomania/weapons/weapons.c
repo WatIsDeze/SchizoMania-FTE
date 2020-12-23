@@ -17,7 +17,7 @@
 weapon_t w_null = {};
 weapon_t g_weapons[] = {
 	w_null,
-	w_crowbar,
+	w_knife,
 	w_glock,
 	w_python,
 	w_mp5,

@@ -38,6 +38,49 @@ void i_knife_use(player pl) {
 }
 
 //=======================
+// void i_glock18_pickup(void)
+//
+// Pickup.
+//=======================
+void i_knife_pickup(player pl) {
+#ifdef SERVER
+	Weapons_AddItem(pl, WEAPON_KNIFE, 20);
+#endif
+}
+
+//=======================
+// void i_glock18_equip(void)
+//
+// Equip..
+//=======================
+#ifdef SERVER
+// Predefine.
+void Weapons_Draw(void)
+#endif
+void i_knife_equip(player pl) {
+#ifdef SERVER
+//	Weapons_Holster();
+	pl.activeweapon = WEAPON_KNIFE;
+	Weapons_Draw();
+#endif
+}
+
+//=======================
+// void i_glock18_drop(void)
+//
+// Drop.
+//=======================
+void Weapons_Holster();
+void i_knife_drop(player pl) {
+#ifdef SERVER
+dprint("===================\nDROPPED GLOKC\n=============");
+	Weapons_Holster();
+	Weapons_RemoveItem(pl, WEAPON_KNIFE);
+	pl.activeweapon = 0;
+#endif
+}
+
+//=======================
 // string i_knife_wmodel(void)
 //
 // Return item model string path.
@@ -60,9 +103,9 @@ inventory_item_t i_knife =
 	.maxs		= [8, 8, 8],
 	
 	.use		= i_knife_use,
-	.pickup		= __NULL__,
-	.equip		= __NULL__,
-	.drop		= __NULL__,
+	.pickup		= i_knife_pickup,
+	.equip		= i_knife_equip,
+	.drop		= i_knife_drop,
 	
 	.precache	= i_knife_precache,
     .wmodel     = i_knife_wmodel

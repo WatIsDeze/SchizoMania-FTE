@@ -31,12 +31,12 @@
 ../../shared/schizomania/weapons/weapons.h
 ../../shared/schizomania/weapons/weapons_schizomania.c
 ../../shared/schizomania/weapons/w_crossbow.c
-../../shared/schizomania/weapons/w_crowbar.c
 ../../shared/schizomania/weapons/w_egon.c
 ../../shared/schizomania/weapons/w_gauss.c
 ../../shared/schizomania/weapons/w_glock.c
 ../../shared/schizomania/weapons/w_handgrenade.c
 ../../shared/schizomania/weapons/w_hornetgun.c
+../../shared/schizomania/weapons/w_knife.c
 ../../shared/schizomania/weapons/w_mp5.c
 ../../shared/schizomania/weapons/w_python.c
 ../../shared/schizomania/weapons/w_rpg.c

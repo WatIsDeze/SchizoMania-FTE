@@ -14,7 +14,7 @@
  * OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  */
 
-/*QUAKED weapon_crowbar (0 0 1) (-16 -16 0) (16 16 32)
+/*QUAKED WEAPON_KNIFE (0 0 1) (-16 -16 0) (16 16 32)
 "model" "models/w_crowbar.mdl"
 
 HALF-LIFE (1998) ENTITY
@@ -40,9 +40,9 @@ void
 w_crowbar_precache(void)
 {
 #ifdef SERVER
-	Sound_Precache("weapon_crowbar.hit");
-	Sound_Precache("weapon_crowbar.miss");
-	Sound_Precache("weapon_crowbar.hitbody");
+	Sound_Precache("WEAPON_KNIFE.hit");
+	Sound_Precache("WEAPON_KNIFE.miss");
+	Sound_Precache("WEAPON_KNIFE.hitbody");
 	precache_model("models/w_crowbar.mdl");
 #else
 	precache_model("models/v_crowbar.mdl");
@@ -134,7 +134,7 @@ w_crowbar_primary(void)
 		Animation_PlayerTopTemp(ANIM_CR_SHOOTCROWBAR, 0.42f);
 	}
 
-	Sound_Play(self, CHAN_WEAPON, "weapon_crowbar.miss");
+	Sound_Play(self, CHAN_WEAPON, "WEAPON_KNIFE.miss");
 
 	if (trace_fraction >= 1.0) {
 		return;
@@ -148,12 +148,12 @@ w_crowbar_primary(void)
 	}
 
 	if (trace_ent.takedamage) {
-		Damage_Apply(trace_ent, pl, Skill_GetValue("plr_crowbar", 10), WEAPON_CROWBAR, DMG_BLUNT);
+		Damage_Apply(trace_ent, pl, Skill_GetValue("plr_crowbar", 10), WEAPON_KNIFE, DMG_BLUNT);
 		if (trace_ent.iBleeds) {
-			Sound_Play(self, CHAN_WEAPON, "weapon_crowbar.hitbody");
+			Sound_Play(self, CHAN_WEAPON, "WEAPON_KNIFE.hitbody");
 		}
 	} else {
-		Sound_Play(self, CHAN_WEAPON, "weapon_crowbar.hit");
+		Sound_Play(self, CHAN_WEAPON, "WEAPON_KNIFE.hit");
 	}
 #endif
 }
@@ -210,7 +210,7 @@ w_crowbar_hudpic(int selected, vector pos, float a)
 weapon_t w_crowbar =
 {
 	.name		= "crowbar",
-	.id		= ITEM_CROWBAR,
+	.id		= ITEM_KNIFE,
 	.slot		= 0,
 	.slot_pos	= 0,
 	.draw		= w_crowbar_draw,
@@ -233,8 +233,8 @@ weapon_t w_crowbar =
 /* entity definitions for pickups */
 #ifdef SERVER
 void
-weapon_crowbar(void)
+WEAPON_KNIFE(void)
 {
-	Weapons_InitItem(WEAPON_CROWBAR);
+	Weapons_InitItem(WEAPON_KNIFE);
 }
 #endif

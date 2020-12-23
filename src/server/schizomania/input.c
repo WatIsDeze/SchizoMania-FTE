@@ -56,7 +56,7 @@ void Game_Input(void)
 			pl.health = 100;
 			pl.armor = 100;
 			pl.g_items |= ITEM_SUIT;
-			Weapons_AddItem(pl, WEAPON_CROWBAR, -1);
+			Weapons_AddItem(pl, WEAPON_KNIFE, -1);
 			Weapons_AddItem(pl, WEAPON_GLOCK, -1);
 			Weapons_AddItem(pl, WEAPON_PYTHON, -1);
 			Weapons_AddItem(pl, WEAPON_MP5, -1);

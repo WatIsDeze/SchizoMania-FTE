@@ -14,29 +14,23 @@
  * OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  */
 
-/*QUAKED weapon_knife (0 0 1) (-16 -16 0) (16 16 32)
-"model" "models/w_knife.mdl"
-
-COUNTER-STRIKE (1999) ENTITY
-
-Knife Weapon
-
-Default arsenal on both teams
-
-*/
-
 enum
 {
+	KNIFE_TPOSE,
 	KNIFE_IDLE1,
-	KNIFE_SLASH1,
-	KNIFE_SLASH2,
-	KNIFE_DRAW,
-	KNIFE_STAB,
-	KNIFE_STAB_MISS,
-	KNIFE_MIDSLASH1,
-	KNIFE_MIDSLASH2
+	KNIFE_ATTACK1,
+	KNIFE_ATTACK2,
+	KNIFE_ATTACK3,
+	KNIFE_ATTACK4,
+	KNIFE_DRAW1,
+	KNIFE_HOLSTER1
 };
 
+//=======================================================================//
+// w_knife_precache
+//
+// Precaches all knife audio, and models.
+//=======================================================================//
 void
 w_knife_precache(void)
 {
@@ -47,11 +41,16 @@ w_knife_precache(void)
 	Sound_Precache("weapon_knife.miss");
 	precache_model("models/w_knife.mdl");
 #else
-	precache_model("models/v_knife.mdl");
+	precache_model("models/weapons/knife/v_knife.mdl");
 	precache_model("models/p_knife.mdl");
 #endif
 }
 
+//=======================================================================//
+// w_knife_updateammo
+//
+// Updates ammo. No need for this with the knife.
+//=======================================================================//
 void
 w_knife_updateammo(player pl)
 {
@@ -60,33 +59,58 @@ w_knife_updateammo(player pl)
 #endif
 }
 
+//=======================================================================//
+// w_knife_wmodel
+//
+// Return string path to knife world model.
+//=======================================================================//
 string
 w_knife_wmodel(void)
 {
 	return "models/w_knife.mdl";
 }
 
+//=======================================================================//
+// w_knife_wmodel
+//
+// Return string path to knife player model.
+//=======================================================================//
 string
 w_knife_pmodel(void)
 {
 	return "models/p_knife.mdl";
 }
 
+//=======================================================================//
+// w_knife_wmodel
+//
+// Message for obituary, death msg.
+//=======================================================================//
 string
 w_knife_deathmsg(void)
 {
 	return "";
 }
 
+//=======================================================================//
+// w_knife_draw
+//
+// Weapon DRAW function, not as in rendering, but fetching it from your pockets.
+//=======================================================================//
 void
 w_knife_draw(void)
 {
 #ifdef CLIENT
-	Weapons_SetModel("models/v_knife.mdl");
-	Weapons_ViewAnimation(KNIFE_DRAW);
+	Weapons_SetModel("models/weapons/knife/v_knife.mdl");
+	Weapons_ViewAnimation(KNIFE_DRAW1);
 #endif
 }
 
+//=======================================================================//
+// w_knife_primary
+//
+// Primary shot action.
+//=======================================================================//
 void
 w_knife_primary(void)
 {
@@ -99,12 +123,13 @@ w_knife_primary(void)
 	int r = (float)input_sequence % 2;
 	switch (r) {
 	case 0:
-		Weapons_ViewAnimation(KNIFE_SLASH1);
+		Weapons_ViewAnimation(KNIFE_ATTACK1);
 		break;
 	default:
-		Weapons_ViewAnimation(KNIFE_SLASH2);
+		Weapons_ViewAnimation(KNIFE_ATTACK2);
 		break;
 	}
+	pl.w_idle_next = 1.0f;
 	pl.w_attack_next = 0.7f;
 
 #ifdef SERVER
@@ -116,9 +141,9 @@ w_knife_primary(void)
 	Sound_Play(pl, CHAN_WEAPON, "weapon_knife.miss");
 
 	if (self.flags & FL_CROUCHING)
-		Animation_PlayerTopTemp(ANIM_CROUCH_SHOOT_KNIFE, 0.45f);
+		Animation_PlayerTopTemp(ANIM_SHOOTCROWBAR, 0.45f);
 	else
-		Animation_PlayerTopTemp(ANIM_SHOOT_KNIFE, 0.45f);
+		Animation_PlayerTopTemp(ANIM_CR_SHOOTCROWBAR, 0.45f);
 
 	if (trace_fraction >= 1.0) {
 		return;
@@ -137,6 +162,11 @@ w_knife_primary(void)
 #endif
 }
 
+//=======================================================================//
+// w_knife_secondary
+//
+// Seconday shot action.
+//=======================================================================//
 void
 w_knife_secondary(void)
 {
@@ -146,7 +176,16 @@ w_knife_secondary(void)
 		return;
 	}
 
-	Weapons_ViewAnimation(KNIFE_STAB);
+	int r = (float)input_sequence % 2;
+	switch (r) {
+	case 0:
+		Weapons_ViewAnimation(KNIFE_ATTACK3);
+		break;
+	default:
+		Weapons_ViewAnimation(KNIFE_ATTACK4);
+		break;
+	}
+	pl.w_idle_next = 1.0f;
 	pl.w_attack_next = 1.2f;
 
 #ifdef SERVER
@@ -175,40 +214,66 @@ w_knife_secondary(void)
 #endif
 }
 
+//=======================================================================//
+// w_snark_release
+//
+// Called whenever a weapon's fire button (primary, secondary) has been released.
+//=======================================================================//
+void w_knife_release(void)
+{
+	player pl = (player)self;
+	if (pl.w_idle_next > 0.0) {
+		return;
+	}
+
+	Weapons_ViewAnimation(KNIFE_IDLE1);
+	pl.w_idle_next = 0.1f;
+}
+
+//=======================================================================//
+// w_knife_aimanim
+//
+// Returns player model aim animation to use.
+//=======================================================================//
 float
 w_knife_aimanim(void)
 {
-	return self.flags & FL_CROUCHING ? ANIM_CROUCH_AIM_KNIFE : ANIM_AIM_KNIFE;
+	return self.flags & FL_CROUCHING ? ANIM_CR_AIMCROWBAR : ANIM_AIMCROWBAR;
 }
 
+//=======================================================================//
+// w_knife_hudpic
+//
+// We won't be using this...
+//=======================================================================//
 void
 w_knife_hudpic(int selected, vector pos, float a)
 {
-#ifdef CLIENT
-	if (selected) {
-		drawsubpic(
-			pos,
-			[170,45],
-			g_hud11_spr,
-			[0,135/256],
-			[170/256,45/256],
-			g_hud_color,
-			1.0f,
-			DRAWFLAG_ADDITIVE
-		);
-	} else {
-		drawsubpic(
-			pos,
-			[170,45],
-			g_hud10_spr,
-			[0,135/256],
-			[170/256,45/256],
-			g_hud_color,
-			1.0f,
-			DRAWFLAG_ADDITIVE
-		);
-	}
-#endif
+// #ifdef CLIENT
+// 	if (selected) {
+// 		drawsubpic(
+// 			pos,
+// 			[170,45],
+// 			g_hud11_spr,
+// 			[0,135/256],
+// 			[170/256,45/256],
+// 			g_hud_color,
+// 			1.0f,
+// 			DRAWFLAG_ADDITIVE
+// 		);
+// 	} else {
+// 		drawsubpic(
+// 			pos,
+// 			[170,45],
+// 			g_hud10_spr,
+// 			[0,135/256],
+// 			[170/256,45/256],
+// 			g_hud_color,
+// 			1.0f,
+// 			DRAWFLAG_ADDITIVE
+// 		);
+// 	}
+// #endif
 }
 
 weapon_t w_knife =

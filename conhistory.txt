@@ -42,3 +42,93 @@ quit
 quit
 /map test_prototype_indoor
 /map test_prototype_indoor
+/map test_prototype_indoor
+modelviewer models/weapons/knife/weapon_knife_wip.fbx
+/modelviewer models/weapons/knife/
+/map test_prototype_indoor
+/modelviewer models/weapon_knife_wip.md3 
+/modelviewer models/weapon_knife_wip.md3 
+/modelviewer models/weapon_knife_wip.md3 
+modelviewer models/weapons/knife/arms.vvm
+modelviewer models/weapons/knife/arms.vvm
+modelviewer models/weapons/knife/arms.vvm
+modelviewer models/weapons/knife/arms.vvm
+quit
+/modelviewer models/weapons/knife/arms@knifeout.iqm 
+/modelviewer models/weapons/knife/arms.vvm
+/modelviewer models/weapons/knife/arms.vvm
+/modelviewer models/weapons/knife/arms.vvm
+/modelviewer models/weapons/knife/aa.fbx
+/modelviewer models/weapons/knife/aa.fbx
+/modelviewer models/weapons/knife/arms.vvm
+/modelviewer models/weapons/knife/arms.vvm
+/modelviewer models/weapons/knife/arms.vvm
+/modelviewer models/weapons/knife/knife.iqe
+/modelviewer models/weapons/knife/knife.iqm
+/modelviewer models/weapons/knife/arms.vvm
+/modelviewer models/weapons/knife/arms.vvm
+/modelviewer models/weapons/knife/arms.vvm
+/modelviewer models/weapons/knife/arms.vvm
+quit
+/modelviewer models/weapons/knife/arms.vvm
+/modelviewer models/weapons/knife/arms.vvm
+/modelviewer models/weapons/knife/arms.vvm
+/modelviewer models/weapons/knife/arms.vvm
+/modelviewer models/weapons/knife/knife.vvm
+/modelviewer models/weapons/knife/v_knife.vvm
+/modelviewer models/weapons/knife/v_knife.vvm
+map test_prototype_indoor
+impulse 101
+impulse 101
+map test_prototype_indoor
+impulse 101
+map test_prototype_indoor
+quit
+map test_prototype_indoor
+map test_prototype_indoor
+map test_prototype_indoor
+map test_prototype_indoor
+map test_prototype_indoor
+map test_prototype_indoor
+map test_prototype_indoor
+map test_prototype_indoor
+map test_prototype_indoor
+map test_prototype_indoor
+map test_prototype_indoor
+map test_prototype_indoor
+map test_prototype_indoor
+map test_prototype_indoor
+map test_prototype_indoor
+map test_prototype_indoor
+map test_prototype_indoor
+map test_prototype_indoor
+map test_prototype_indoor
+map test_prototype_indoor
+map test_prototype_indoor
+map test_prototype_indoor
+map test_prototype_indoor
+map test_prototype_indoor
+map test_prototype_indoor
+map test_prototype_indoor
+map test_prototype_indoor
+map test_prototype_indoor
+map test_prototype_indoor
+map test_prototype_indoor
+map test_prototype_indoor
+map test_prototype_indoor
+map test_prototype_indoor
+map test_prototype_indoor
+map test_prototype_indoor
+quit
+quit
+map test_prototype_indoor
+map test_prototype_indoor
+map test_prototype_indoor
+map test_prototype_indoor
+map test_prototype_indoor
+map test_prototype_indoor
+map test_prototype_indoor
+map test_prototype_indoor
+noclip
+
+noclip
