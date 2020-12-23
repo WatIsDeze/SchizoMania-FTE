@@ -35,10 +35,13 @@ void
 w_knife_precache(void)
 {
 #ifdef SERVER
-	Sound_Precache("weapon_knife.hit");
-	Sound_Precache("weapon_knife.hitbody");
-	Sound_Precache("weapon_knife.hithard");
+
+	Sound_Precache("weapon_knife.swing");
+	Sound_Precache("weapon_knife.swinghit");
+	Sound_Precache("weapon_knife.stab");
+	Sound_Precache("weapon_knife.stabhit");
 	Sound_Precache("weapon_knife.miss");
+
 	precache_model("models/w_knife.mdl");
 #else
 	precache_model("models/weapons/knife/v_knife.mdl");
@@ -138,7 +141,7 @@ w_knife_primary(void)
 	src = pl.origin + pl.view_ofs;
 	traceline(src, src + (v_forward * 32), FALSE, pl);
 
-	Sound_Play(pl, CHAN_WEAPON, "weapon_knife.miss");
+	Sound_Play(pl, CHAN_WEAPON, "weapon_knife.swing");
 
 	if (self.flags & FL_CROUCHING)
 		Animation_PlayerTopTemp(ANIM_SHOOTCROWBAR, 0.45f);
@@ -151,7 +154,7 @@ w_knife_primary(void)
 
 	if (trace_ent.iBleeds) {
 		FX_Blood(trace_endpos, [1,0,0]);
-		Sound_Play(pl, CHAN_WEAPON, "weapon_knife.hitbody");
+		Sound_Play(pl, CHAN_WEAPON, "weapon_knife.swinghit");
 	} else {
 		Sound_Play(pl, CHAN_WEAPON, "weapon_knife.hit");
 	}
@@ -227,7 +230,22 @@ void w_knife_release(void)
 	}
 
 	Weapons_ViewAnimation(KNIFE_IDLE1);
-	pl.w_idle_next = 0.1f;
+	pl.w_idle_next = 3.2f;
+	// r = (float)input_sequence % 3;
+	// switch (r) {
+	// case 0:
+	// 	Weapons_ViewAnimation(KNIFE_IDLE1);
+	// 	pl.w_idle_next = 1.2f;
+	// 	break;
+	// case 1:
+	// 	Weapons_ViewAnimation(KNIFE_IDLE1);
+	// 	pl.w_idle_next = 2.1f;
+	// 	break;
+	// default:
+	// 	Weapons_ViewAnimation(KNIFE_IDLE1);
+	// 	pl.w_idle_next = 1.8f;
+	// 	break;
+	// }
 }
 
 //=======================================================================//
@@ -288,7 +306,7 @@ weapon_t w_knife =
 	.primary	= w_knife_primary,
 	.secondary	= w_knife_secondary,
 	.reload		= __NULL__,
-	.release	= __NULL__,
+	.release	= w_knife_release,
 	.crosshair	= __NULL__,
 	.precache	= w_knife_precache,
 	.pickup		= __NULL__,

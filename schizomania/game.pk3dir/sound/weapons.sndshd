@@ -1,0 +1,28 @@
+weapon_knife.swing
+{
+    sample weapons/knife/swish1.wav
+    sample weapons/knife/swish2.wav
+}
+
+weapon_knife.swinghit
+{
+	sample weapons/knife/stab1.wav
+	sample weapons/knife/stab2.wav
+}
+
+weapon_knife.stab
+{
+    sample weapons/knife/swish1.wav
+    sample weapons/knife/swish2.wav
+}
+
+weapon_knife.stabhit
+{
+	sample weapons/knife/stab1.wav
+	sample weapons/knife/stab2.wav
+}
+
+weapon_knife.miss
+{
+	sample weapons/cbar_miss1.wav
+}
