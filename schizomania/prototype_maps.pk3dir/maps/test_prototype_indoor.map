@@ -3741,10 +3741,10 @@ nieb/metal-grey
 {
 "classname" "ambient_generic"
 "origin" "-1576.000000 2752.000000 184.000000"
-"message" "ambiance/police_siren.wav1"
+"message" "ambiance/police_siren.wav"
 "targetname" "ambient_police_sirens1"
 "pitch" "1"
-"volume" "0.75"
+"volume" "0.15"
 "spawnflags" "2"
 }
 // entity 78

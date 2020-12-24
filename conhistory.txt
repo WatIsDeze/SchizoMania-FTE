@@ -166,3 +166,23 @@ noclip
 noclikp
 noclip
 noclip
+noclip
+map test_prototype_indoor
+noclip
+noclip
+map test_prototype_indoor
+map test_prototype_indoor
+map test_prototype_indoor
+map test_prototype_indoor
+map test_prototype_indoor
+map test_prototype_indoor
+map test_prototype_indoor
+map test_prototype_indoor
+map test_prototype_indoor
+map test_prototype_indoor
+map test_prototype_indoor
+map test_prototype_indoor
+map test_prototype_indoor
+map test_prototype_indoor
+map test_prototype_indoor
+map test_prototype_indoor

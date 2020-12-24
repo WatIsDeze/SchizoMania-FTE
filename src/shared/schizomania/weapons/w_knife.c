@@ -36,11 +36,12 @@ w_knife_precache(void)
 {
 #ifdef SERVER
 
-	Sound_Precache("weapon_knife.swing");
-	Sound_Precache("weapon_knife.swinghit");
+	Sound_Precache("weapon_knife.slash");
+	Sound_Precache("weapon_knife.slashhit");
 	Sound_Precache("weapon_knife.stab");
 	Sound_Precache("weapon_knife.stabhit");
-	Sound_Precache("weapon_knife.miss");
+	Sound_Precache("weapon_knife.hit");
+	Sound_Precache("weapon_knife.deploy");
 
 	precache_model("models/w_knife.mdl");
 #else
@@ -141,7 +142,7 @@ w_knife_primary(void)
 	src = pl.origin + pl.view_ofs;
 	traceline(src, src + (v_forward * 32), FALSE, pl);
 
-	Sound_Play(pl, CHAN_WEAPON, "weapon_knife.swing");
+	Sound_Play(pl, CHAN_WEAPON, "weapon_knife.slash");
 
 	if (self.flags & FL_CROUCHING)
 		Animation_PlayerTopTemp(ANIM_SHOOTCROWBAR, 0.45f);
@@ -154,7 +155,7 @@ w_knife_primary(void)
 
 	if (trace_ent.iBleeds) {
 		FX_Blood(trace_endpos, [1,0,0]);
-		Sound_Play(pl, CHAN_WEAPON, "weapon_knife.swinghit");
+		Sound_Play(pl, CHAN_WEAPON, "weapon_knife.slashhit");
 	} else {
 		Sound_Play(pl, CHAN_WEAPON, "weapon_knife.hit");
 	}
@@ -197,7 +198,8 @@ w_knife_secondary(void)
 	src = pl.origin + pl.view_ofs;
 	traceline(src, src + (v_forward * 32), FALSE, pl);
 
-	Sound_Play(pl, CHAN_WEAPON, "weapon_knife.miss");
+	//Sound_Play(pl, CHAN_WEAPON, "weapon_knife.miss");
+	Sound_Play(pl, CHAN_WEAPON, "weapon_knife.stab");
 
 	if (trace_fraction >= 1.0) {
 		return;
@@ -206,7 +208,7 @@ w_knife_secondary(void)
 	/* don't bother with decals, we got squibs */
 	if (trace_ent.iBleeds) {
 		FX_Blood(trace_endpos, [1,0,0]);
-		Sound_Play(pl, CHAN_WEAPON, "weapon_knife.hitbody");
+		Sound_Play(pl, CHAN_WEAPON, "weapon_knife.stabhit");
 	} else {
 		Sound_Play(pl, CHAN_WEAPON, "weapon_knife.hit");
 	}

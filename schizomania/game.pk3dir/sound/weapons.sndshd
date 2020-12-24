@@ -1,28 +1,33 @@
-weapon_knife.swing
+weapon_knife.deply
 {
-    sample weapons/knife/swish1.wav
-    sample weapons/knife/swish2.wav
+    sample weapons/knife/deploy1.wav
+}
+weapon_knife.slash
+{
+    sample weapons/knife/slash1.wav
+    sample weapons/knife/slash2.wav
 }
 
-weapon_knife.swinghit
+weapon_knife.slashhit
 {
-	sample weapons/knife/stab1.wav
-	sample weapons/knife/stab2.wav
+	sample weapons/knife/hit_flesh_slash1.wav
+	sample weapons/knife/hit_flesh_slash2.wav
 }
 
 weapon_knife.stab
 {
-    sample weapons/knife/swish1.wav
-    sample weapons/knife/swish2.wav
+    sample weapons/knife/slash1.wav
+    sample weapons/knife/slash2.wav
 }
 
 weapon_knife.stabhit
 {
-	sample weapons/knife/stab1.wav
-	sample weapons/knife/stab2.wav
+	sample weapons/knife/hit_flesh_stab1.wav
+	sample weapons/knife/hit_flesh_stab2.wav
 }
 
-weapon_knife.miss
+weapon_knife.hit
 {
-	sample weapons/cbar_miss1.wav
+	sample weapons/knife/hit_world1.wav
 }
+
