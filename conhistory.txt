@@ -227,3 +227,11 @@ map test_prototype_indoor
 /r_showbboxes 1
 map test_prototype_indoor
 map test_prototype_indoor
+map test_prototype_indoor
+modelviewer models/weapons/knife/v_knife.vvm
+modelviewer models/weapons/knife/v_knife.vvm
+map test_prototype_indoor
+map test_prototype_indoor
+map test_prototype_indoor
+map test_prototype_indoor
+map test_prototype_indoor
