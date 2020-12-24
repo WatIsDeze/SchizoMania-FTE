@@ -2,6 +2,8 @@
 	diffusemap textures/nieb/clone/sand08.tga
 	normalmap textures/nieb/clone/sand08_normal.tga
 
+	surfaceParm sand
+	
 	{
 		program lightmapped
 		map $diffuse

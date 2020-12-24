@@ -2,6 +2,8 @@
 	diffusemap textures/nieb/clone/grass02.tga
 	normalmap textures/nieb/clone/grass02_normal.tga
 
+	surfaceParm foliage
+	
 	{
 		program lightmapped
 		map $diffuse

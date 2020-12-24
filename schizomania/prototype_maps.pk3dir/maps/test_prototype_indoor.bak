@@ -5481,8 +5481,8 @@ nieb/metal-grey
 // entity 106
 {
 "classname" "monster_zombie"
-"origin" "-1148.744629 2366.602783 144.000000"
-"angle" "88.308403"
+"origin" "-1155.028320 2369.838135 144.000000"
+"angle" "-99.719536"
 }
 // entity 107
 {

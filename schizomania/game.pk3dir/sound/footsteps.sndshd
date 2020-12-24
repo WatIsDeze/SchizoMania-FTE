@@ -2,253 +2,208 @@ step_default.left
 {
 	attenuation static
 	footstep
-	sample player/pl_step1.wav
-	sample player/pl_step2.wav
+	sample footsteps/tile1.wav
+	sample footsteps/tile2.wav
 }
 step_default.right
 {
 	attenuation static
 	footstep
-	sample player/pl_step3.wav
-	sample player/pl_step4.wav
-}
-
-step_alien.left
-{
-	attenuation static
-	footstep
-	sample player/pl_step1.wav
-	sample player/pl_step2.wav
-}
-step_alien.right
-{
-	attenuation static
-	footstep
-	sample player/pl_step3.wav
-	sample player/pl_step4.wav
-}
-
-step_bloodyflesh.left
-{
-	attenuation static
-	footstep
-	sample player/pl_step1.wav
-	sample player/pl_step2.wav
-}
-step_bloodyflesh.right
-{
-	attenuation static
-	footstep
-	sample player/pl_step3.wav
-	sample player/pl_step4.wav
-}
-
-step_computer.left
-{
-	attenuation static
-	footstep
-	sample player/pl_step1.wav
-	sample player/pl_step2.wav
-}
-step_computer.right
-{
-	attenuation static
-	footstep
-	sample player/pl_step3.wav
-	sample player/pl_step4.wav
+	sample footsteps/tile3.wav
+	sample footsteps/tile4.wav
 }
 
 step_concrete.left
 {
 	attenuation static
 	footstep
-	sample player/pl_step1.wav
-	sample player/pl_step2.wav
+	sample footsteps/concrete1.wav
+	sample footsteps/concrete2.wav
 }
 step_concrete.right
 {
 	attenuation static
 	footstep
-	sample player/pl_step3.wav
-	sample player/pl_step4.wav
+	sample footsteps/concrete3.wav
+	sample footsteps/concrete4.wav
 }
 
 step_dirt.left
 {
 	attenuation static
 	footstep
-	sample player/pl_dirt1.wav
-	sample player/pl_dirt2.wav
+	sample footsteps/dirt1.wav
+	sample footsteps/dirt2.wav
 }
 step_dirt.right
 {
 	attenuation static
 	footstep
-	sample player/pl_dirt3.wav
-	sample player/pl_dirt4.wav
-}
-
-step_flesh.left
-{
-	attenuation static
-	footstep
-	sample player/pl_step1.wav
-	sample player/pl_step2.wav
-}
-step_flesh.right
-{
-	attenuation static
-	footstep
-	sample player/pl_step3.wav
-	sample player/pl_step4.wav
+	sample footsteps/dirt3.wav
+	sample footsteps/dirt4.wav
 }
 
 step_foliage.left
 {
 	attenuation static
 	footstep
-	sample player/pl_step1.wav
-	sample player/pl_step2.wav
+	sample footsteps/grass1.wav
+	sample footsteps/grass2.wav
 }
 step_foliage.right
 {
 	attenuation static
 	footstep
-	sample player/pl_step3.wav
-	sample player/pl_step4.wav
-}
-
-step_glass.left
-{
-	attenuation static
-	footstep
-	sample player/pl_step1.wav
-	sample player/pl_step2.wav
-}
-step_glass.right
-{
-	attenuation static
-	footstep
-	sample player/pl_step3.wav
-	sample player/pl_step4.wav
+	sample footsteps/grass3.wav
+	sample footsteps/grass4.wav
 }
 
 step_grate.left
 {
 	attenuation static
 	footstep
-	sample player/pl_grate1.wav
-	sample player/pl_grate2.wav
+	sample footsteps/grate1.wav
+	sample footsteps/grate2.wav
 }
 step_grate.right
 {
 	attenuation static
 	footstep
-	sample player/pl_grate3.wav
-	sample player/pl_grate4.wav
+	sample footsteps/grate3.wav
+	sample footsteps/grate4.wav
+}
+
+step_gravel.left
+{
+	attenuation static
+	footstep
+	sample footsteps/gravel1.wav
+	sample footsteps/gravel2.wav
+}
+step_gravel.right
+{
+	attenuation static
+	footstep
+	sample footsteps/gravel3.wav
+	sample footsteps/gravel4.wav
 }
 
 step_metal.left
 {
 	attenuation static
 	footstep
-	sample player/pl_metal1.wav
-	sample player/pl_metal2.wav
+	sample footsteps/metal1.wav
+	sample footsteps/metal2.wav
 }
 step_metal.right
 {
 	attenuation static
 	footstep
-	sample player/pl_metal3.wav
-	sample player/pl_metal4.wav
+	sample footsteps/metal3.wav
+	sample footsteps/metal4.wav
 }
 
 step_slosh.left
 {
 	attenuation static
 	footstep
-	sample player/pl_slosh1.wav
-	sample player/pl_slosh2.wav
+	sample footsteps/slosh1.wav
+	sample footsteps/slosh2.wav
 }
 step_slosh.right
 {
 	attenuation static
 	footstep
-	sample player/pl_slosh3.wav
-	sample player/pl_slosh4.wav
+	sample footsteps/slosh3.wav
+	sample footsteps/slosh4.wav
 }
 
 step_snow.left
 {
 	attenuation static
 	footstep
-	sample player/pl_snow1.wav
-	sample player/pl_snow2.wav
+	sample footsteps/snow1.wav
+	sample footsteps/snow2.wav
 }
 step_snow.right
 {
 	attenuation static
 	footstep
-	sample player/pl_snow3.wav
-	sample player/pl_snow4.wav
+	sample footsteps/snow3.wav
+	sample footsteps/snow4.wav
 }
 
 step_tile.left
 {
 	attenuation static
 	footstep
-	sample player/pl_tile1.wav
-	sample player/pl_tile2.wav
+	sample footsteps/tile1.wav
+	sample footsteps/tile2.wav
 }
 step_tile.right
 {
 	attenuation static
 	footstep
-	sample player/pl_tile3.wav
-	sample player/pl_tile4.wav
+	sample footsteps/tile3.wav
+	sample footsteps/tile4.wav
 }
 
 step_vent.left
 {
 	attenuation static
 	footstep
-	sample player/pl_duct1.wav
-	sample player/pl_duct2.wav
+	sample footsteps/duct1.wav
+	sample footsteps/duct2.wav
 }
 step_vent.right
 {
 	attenuation static
 	footstep
-	sample player/pl_duct3.wav
-	sample player/pl_duct4.wav
+	sample footsteps/duct3.wav
+	sample footsteps/duct4.wav
 }
 
 step_wood.left
 {
 	attenuation static
 	footstep
-	sample player/pl_step1.wav
-	sample player/pl_step2.wav
+	sample footsteps/wood1.wav
+	sample footsteps/wood2.wav
 }
 step_wood.right
 {
 	attenuation static
 	footstep
-	sample player/pl_step3.wav
-	sample player/pl_step4.wav
+	sample footsteps/wood3.wav
+	sample footsteps/wood4.wav
+}
+
+step_woodpanel.left
+{
+	attenuation static
+	footstep
+	sample footsteps/woodpanel1.wav
+	sample footsteps/woodpanel2.wav
+}
+step_woodpanel.right
+{
+	attenuation static
+	footstep
+	sample footsteps/woodpanel3.wav
+	sample footsteps/woodpanel4.wav
 }
 
 step_ladder.left
 {
 	attenuation static
 	footstep
-	sample player/pl_ladder1.wav
-	sample player/pl_ladder2.wav
+	sample footsteps/metalladder1.wav
+	sample footsteps/metalladder2.wav
 }
 step_ladder.right
 {
 	attenuation static
 	footstep
-	sample player/pl_ladder3.wav
-	sample player/pl_ladder4.wav
+	sample footsteps/metalladder3.wav
+	sample footsteps/metalladder4.wav
 }

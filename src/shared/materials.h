@@ -64,10 +64,10 @@ enum
 
 /* material surfaceflags (need to be masked) */
 #define SURF_MASK			0x0FFFFFFFi
-#define SURF_ALIEN			0x10000000i
-#define SURF_FLESH			0x20000000i
+#define SURF_GRAVEL			0x10000000i // #define SURF_ALIEN			0x10000000i
+#define SURF_WOODPANEL		0x20000000i // #define SURF_FLESH			0x20000000i
 #define SURF_FOLIAGE		0x30000000i
-#define SURF_COMPUTER		0x40000000i
+// #define SURF_COMPUTER		0x40000000i
 #define SURF_DIRT			0x50000000i
 #define SURF_VENT			0x60000000i
 #define SURF_GRATE			0x70000000i

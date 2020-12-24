@@ -36,22 +36,22 @@ Footsteps_Init(void)
 {
 	Sound_Precache("step_default.left");
 	Sound_Precache("step_default.right");
-	Sound_Precache("step_alien.left");
-	Sound_Precache("step_alien.right");
-	Sound_Precache("step_bloodyflesh.left");
-	Sound_Precache("step_bloodyflesh.right");
-	Sound_Precache("step_computer.left");
-	Sound_Precache("step_computer.right");
+	// Sound_Precache("step_alien.left");
+	// Sound_Precache("step_alien.right");
+	// Sound_Precache("step_bloodyflesh.left");
+	// Sound_Precache("step_bloodyflesh.right");
+	// Sound_Precache("step_computer.left");
+	// Sound_Precache("step_computer.right");
 	Sound_Precache("step_concrete.left");
 	Sound_Precache("step_concrete.right");
 	Sound_Precache("step_dirt.left");
 	Sound_Precache("step_dirt.right");
-	Sound_Precache("step_flesh.left");
-	Sound_Precache("step_flesh.right");
+	// Sound_Precache("step_flesh.left");
+	// Sound_Precache("step_flesh.right");
 	Sound_Precache("step_foliage.left");
 	Sound_Precache("step_foliage.right");
-	Sound_Precache("step_glass.left");
-	Sound_Precache("step_glass.right");
+	// Sound_Precache("step_glass.left");
+	// Sound_Precache("step_glass.right");
 	Sound_Precache("step_grate.left");
 	Sound_Precache("step_grate.right");
 	Sound_Precache("step_metal.left");
@@ -66,6 +66,8 @@ Footsteps_Init(void)
 	Sound_Precache("step_vent.right");
 	Sound_Precache("step_wood.left");
 	Sound_Precache("step_wood.right");
+	Sound_Precache("step_woodpanel.left");
+	Sound_Precache("step_woodpanel.right");
 	Sound_Precache("step_ladder.left");
 	Sound_Precache("step_ladder.right");
 }
@@ -156,18 +158,18 @@ Footsteps_VVBSP(base_player target)
 		trace_surfaceflagsi &= ~SURF_MASK;
 
 		switch (trace_surfaceflagsi) {
-		case SURF_ALIEN:
-			mat_name = "step_alien";
-			break;
-		case SURF_FLESH:
-			mat_name = "step_flesh";
-			break;
+		// case SURF_ALIEN:
+		// 	mat_name = "step_alien";
+		// 	break;
+		// case SURF_FLESH:
+		// 	mat_name = "step_flesh";
+		// 	break;
 		case SURF_FOLIAGE:
 			mat_name = "step_foliage";
 			break;
-		case SURF_COMPUTER:
-			mat_name = "step_computer";
-			break;
+		// case SURF_COMPUTER:
+		// 	mat_name = "step_computer";
+		// 	break;
 		case SURF_DIRT:
 			mat_name = "step_dirt";
 			break;
@@ -177,12 +179,15 @@ Footsteps_VVBSP(base_player target)
 		case SURF_GRATE:
 			mat_name = "step_grate";
 			break;
+		case SURF_GRAVEL:
+			mat_name = "step_gravel";
+			break;
 		case SURF_METAL:
 			mat_name = "step_metal";
 			break;
-		case SURF_GLASS:
-			mat_name = "step_glass";
-			break;
+		// case SURF_GLASS:
+		// 	mat_name = "step_glass";
+		// 	break;
 		case SURF_SAND:
 			mat_name = "step_sand";
 			break;
@@ -197,6 +202,9 @@ Footsteps_VVBSP(base_player target)
 			break;
 		case SURF_WOOD:
 			mat_name = "step_wood";
+			break;
+		case SURF_WOODPANEL:
+			mat_name = "step_woodpanel";
 			break;
 		case SURF_CONCRETE:
 			mat_name = "step_concrete";

@@ -1,7 +1,9 @@
 {
 	diffusemap textures/floors/tiled_travertine_01.tga
     normalmap textures/floors/tiled_travertine_01_normal.tga
-
+	
+	surfaceParm tile
+	
 	{
 		program lightmapped
 		map $diffuse

@@ -2,6 +2,8 @@
 	diffusemap textures/nieb/clone/metal_plate02.tga
 	normalmap textures/nieb/clone/metal_plate02_normal.tga
 
+	surfaceParm metal
+	
 	{
 		program lightmapped
 		map $diffuse

@@ -2,6 +2,8 @@
 	diffusemap textures/nieb/clone/gravel01.tga
 	normalmap textures/nieb/clone/gravel01_normal.tga
 
+	surfaceParm gravel
+
 	{
 		program lightmapped
 		map $diffuse

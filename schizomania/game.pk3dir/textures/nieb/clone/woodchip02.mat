@@ -2,6 +2,8 @@
 	diffusemap textures/nieb/clone/woodchip02.tga
 	normalmap textures/nieb/clone/woodchip02_normal.tga
 
+	surfaceParm woodpanel
+	
 	{
 		program lightmapped
 		map $diffuse

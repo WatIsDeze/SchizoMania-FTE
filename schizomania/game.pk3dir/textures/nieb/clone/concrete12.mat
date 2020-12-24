@@ -1,7 +1,9 @@
 {
 	diffusemap textures/nieb/clone/concrete12.tga
 	normalmap textures/nieb/clone/concrete12_normal.tga
-
+	
+	surfaceParm concrete
+	
 	{
 		program lightmapped
 		map $diffuse

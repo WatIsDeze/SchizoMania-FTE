@@ -157,3 +157,12 @@ map test_prototype_indoor
 map test_prototype_indoor
 map test_prototype_indoor
 map test_prototype_indoor
+map test_prototype_indoor
+map test_prototype_indoor
+noclip
+noclip
+noclip
+noclip
+noclikp
+noclip
+noclip

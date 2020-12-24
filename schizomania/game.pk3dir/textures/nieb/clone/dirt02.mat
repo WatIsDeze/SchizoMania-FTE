@@ -2,6 +2,8 @@
 	diffusemap textures/nieb/clone/dirt02.tga
 	normalmap textures/nieb/clone/dirt02_normal.tga
 
+	surfaceParm dirt
+
 	{
 		program lightmapped
 		map $diffuse
