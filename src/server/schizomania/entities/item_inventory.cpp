@@ -135,6 +135,7 @@ void item_inventory::Respawn(void) {
 	SetSize(g_inventory_items[m_iItemID].mins, g_inventory_items[m_iItemID].maxs);
 	SetSolid(SOLID_CORPSE);
 	SetMovetype(MOVETYPE_TOSS);
+	droptofloor();
 
 	// Set PlayerUse
 	PlayerUse = OnPlayerUse;

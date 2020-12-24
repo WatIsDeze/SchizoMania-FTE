@@ -3,7 +3,7 @@
 	normalmap textures/nieb/clone/brick08_normal.tga
 
 	{
-		program lightmapped
+		program defaultwall
 		map $diffuse
 		map $normalmap
 	}

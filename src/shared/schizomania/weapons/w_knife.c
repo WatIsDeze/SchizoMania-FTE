@@ -104,6 +104,10 @@ w_knife_deathmsg(void)
 void
 w_knife_draw(void)
 {
+	player pl = (player)self;
+#ifdef SERVER
+	Sound_Play(pl, CHAN_WEAPON, "weapon_knife.deploy");
+#endif
 #ifdef CLIENT
 	Weapons_SetModel("models/weapons/knife/v_knife.mdl");
 	Weapons_ViewAnimation(KNIFE_DRAW1);

@@ -186,3 +186,44 @@ map test_prototype_indoor
 map test_prototype_indoor
 map test_prototype_indoor
 map test_prototype_indoor
+noclip
+noclip
+map test_prototype_indoor
+quit
+map test_prototype_indoor
+map test_prototype_indoor
+map test_prototype_indoor
+map test_prototype_indoor
+map test_prototype_indoor
+quit
+quit
+quit
+quit
+vid_reload
+vid_reload
+vid_reload
+quit
+vid_reload
+vid_reload
+quit
+quit
+quit
+map test_prototype_indoor
+map test_prototype_indoor
+map test_prototype_indoor
+modelviewer models/weapons/knife/w_knife.vvm
+modelviewer models/weapons/knife/w_knife.vvm
+modelviewer models/weapons/knife/w_knife.vvm
+quit
+modelviewer models/weapons/knife/w_knife.vvm
+modelviewer models/weapons/knife/w_knife.vvm
+modelviewer models/weapons/knife/w_knife.vvm
+modelviewer models/weapons/knife/w_knife.vvm
+map test_prototype_indoor
+/r_showbboxes 
+/r_showbboxes 1
+map test_prototype_indoor
+/r_showbboxes 1
+/r_showbboxes 1
+map test_prototype_indoor
+map test_prototype_indoor

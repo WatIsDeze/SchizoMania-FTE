@@ -21,10 +21,9 @@
 //=======================
 void i_knife_precache(void) {
 #ifdef SERVER
-	Sound_Precache("item_glock.use");
-	precache_model("models/w_knife.mdl");
+	precache_model("models/weapons/knife/w_knife.vvm");
 #else
-	precache_model("models/w_knife.mdl");
+	precache_model("models/weapons/knife/w_knife.vvm");
 #endif
 }
 
@@ -86,7 +85,7 @@ dprint("===================\nDROPPED GLOKC\n=============");
 // Return item model string path.
 //=======================
 string i_knife_wmodel(void) {
-    return "models/w_knife.mdl";
+    return "models/weapons/knife/w_knife.vvm";
 }
 
 inventory_item_t i_knife = 
@@ -99,8 +98,8 @@ inventory_item_t i_knife =
 	.txtDescription = "A sharp hunting ^xF42knife^xFFF, good for... 'hunting'.",
 
 	.ID			= INVENTORY_ITEM_KNIFE,
-	.mins		= [-8,-8, 0],
-	.maxs		= [8, 8, 8],
+	.mins		= [-6, -6, 0],
+	.maxs		= [6, 6, 10],
 	
 	.use		= i_knife_use,
 	.pickup		= i_knife_pickup,
