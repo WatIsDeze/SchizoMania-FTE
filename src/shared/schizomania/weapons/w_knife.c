@@ -115,6 +115,25 @@ w_knife_draw(void)
 }
 
 //=======================================================================//
+// w_knife_holster
+//
+// Weapon HOLSTER function, not as in rendering, but putting it back in
+// your pockets.
+//=======================================================================//
+void
+w_knife_holster(void)
+{
+	player pl = (player)self;
+#ifdef SERVER
+	Sound_Play(pl, CHAN_WEAPON, "weapon_knife.deploy");
+#endif
+//#ifdef CLIENT
+//	Weapons_SetModel("models/weapons/knife/v_knife.mdl");
+	Weapons_ViewAnimation(KNIFE_HOLSTER1);
+//#endif
+}
+
+//=======================================================================//
 // w_knife_primary
 //
 // Primary shot action.
@@ -308,7 +327,7 @@ weapon_t w_knife =
 	.slot_pos	= 0,
 	.allow_drop	= FALSE,
 	.draw		= w_knife_draw,
-	.holster	= __NULL__,
+	.holster	= w_knife_holster,
 	.primary	= w_knife_primary,
 	.secondary	= w_knife_secondary,
 	.reload		= __NULL__,

@@ -1,0 +1,14 @@
+{
+    qer_editorImage "textures/floors/tiled_planks_03.tga"
+
+	diffusemap "textures/floors/tiled_planks_03.tga"
+    normalmap "textures/floors/tiled_planks_03_normal.tga"
+	
+	surfaceParm wood
+	
+	{
+		program lightmapped
+		map $diffuse
+		map $normalmap
+	}
+}

@@ -140,6 +140,9 @@ void View_DrawViewModel(void)
 	
 	player pl = (player) self;
 
+	// It makes sense to do this here.
+	View_DrawHoveredItem();
+
 	if (pl.health <= 0) {
 		return;
 	}

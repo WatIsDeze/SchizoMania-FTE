@@ -113,7 +113,7 @@ void item_inventory::OnPlayerUse(void)
 	// Activate target.
 	m_iValue = TRIG_ON;
 	UseTargets(eActivator, TRIG_TOGGLE, 0);
-	
+
 	// Remove from world, we don't want to pick it up twice.
 	remove(this);
 }
@@ -133,8 +133,8 @@ void item_inventory::Respawn(void) {
 	SetModel(g_inventory_items[m_iItemID].wmodel());
 	SetGFlags(gflags | GF_HOVER_FULLBRIGHT);
 	SetSize(g_inventory_items[m_iItemID].mins, g_inventory_items[m_iItemID].maxs);
-	SetSolid(SOLID_CORPSE);
-	SetMovetype(MOVETYPE_TOSS);
+	SetSolid(SOLID_BSP);
+	SetMovetype(MOVETYPE_PUSH);
 	droptofloor();
 
 	// Set PlayerUse

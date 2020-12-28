@@ -116,7 +116,7 @@ item_inventory::item_inventory(void)
 	CGameEntity::CGameEntity();
 	classname = "item_inventory";	
 // 	solid = SOLID_CORPSE;
-
+	Respawn();
 //  setorigin(this, [0, 0, 0]);
 //  setsize(this, [-8, -8, 0], [8 , 8, 16]);
 

@@ -1,237 +1,191 @@
+/map test_prototype_indoor
+/map test_prototype_indoor
+/map test_prototype_indoor
+noclip
+noclip
+/map test_prototype_indoor
+quit
+/map test_prototype_indoor
+/modelviewer models/indoor/old_couche_1.obj 
+/modelviewer models/indoor/old_couche_1.obj 
+/map test_prototype_indoor
+noclip
+noclip
+/map test_prototype_indoor
+noclip
+/map test_prototype_indoor
+noclip
+/map test_prototype_indoor
+noclip
+/map test_prototype_indoor
+noclip
+/map test_prototype_indoor
+noclip
+noclip
+/map test_prototype_indoor
+noclip
+/map test_prototype_indoor
+noclip
+/map test_prototype_indoor
+noclip
+noclip
+/map test_prototype_indoor
+noclip
+/map test_prototype_indoor
+noclip
+/modelviewer models/indoor/old_couche_001/old_couche_001.obj
+/modelviewer models/indoor/old_couche_001/old_couche_001.obj
+/map test_prototype_indoor
+/modelviewer models/indoor/old_couche_001/old_couche_001.obj
+noclip
+/modelviewer models/indoor/old_couche_001/old_couche_001.obj
+/modelviewer models/indoor/old_couche_001/old_couche_001.obj
+/modelviewer models/indoor/old_couche_001/old_couche_001.obj
+/map test_prototype_indoor
+noclip
+/modelviewer models/indoor/old_couche_001/old_couche_001.obj
+/modelviewer models/indoor/old_couche_001/old_couche_001.vvm
+/modelviewer models/indoor/old_couche_001/old_couche_001.vvm
+/modelviewer models/indoor/old_couche_001/old_couche_001.vvm
+/modelviewer models/indoor/old_couche_001/old_couche_001.vvm
+/modelviewer models/indoor/old_couche_001/old_couche_001.vvm
+/map test_prototype_indoor
+noclip
+noclip
+noclip
+/map test_prototype_indoor
+noclip
+/map test_prototype_indoor
+noclip
+/map test_prototype_indoor
+noclip
+/modelviewer models/indoor/old_couche_001/old_couche_001.vvm
+/modelviewer models/indoor/old_couche_001/old_couche_001.vvm
+/modelviewer models/indoor/old_couche_001/old_couche_001.vvm
+/modelviewer models/indoor/old_couche_001/old_couche_001.vvm
+/map test_prototype_indoor
+noclip
+noclip
+/map test_prototype_indoor
+noclip
+/modelviewer models/indoor/old_couche_001/old_couche_001.obj
+/map test_prototype_indoor
+noclip
+/map test_prototype_indoor
+noclip
+/modelviewer models/characters/zombie_derrick/zombie_derrick.vvm
+/modelviewer models/characters/zombie_derrick/zombie_derrick.vvm
+/modelviewer models/indoor/old_couche_001/old_couche_001.obj
+/modelviewer models/indoor/old_couche_001/old_couche_001.obj
+/modelviewer models/indoor/old_couche_001/old_couche_001.obj
+vid_restart
+/modelviewer models/indoor/old_couche_001/old_couche_001.obj
+/modelviewer models/indoor/old_couche_001/old_couche_001.obj
+vid_restart
+/modelviewer models/indoor/old_couche_001/old_couche_001.obj
+/modelviewer models/indoor/old_couche_001/old_couche_001.vvm
+/modelviewer models/indoor/old_couche_001/old_couche_001.iqm
+/modelviewer models/indoor/old_couche_001/old_couche_001.iqe
+/modelviewer models/indoor/old_couche_001/old_couche_001.obj
+/modelviewer models/indoor/old_couche_001/old_couche_001.obj
+/modelviewer models/indoor/old_couche_001/old_couche_001.obj
+/modelviewer models/indoor/old_couche_001/old_couche_001.obj
+/modelviewer models/indoor/old_couche_001/old_couche_001.vvm
+/modelviewer models/indoor/old_couche_001/old_couche_001.obj
+/modelviewer models/indoor/old_couche_001/old_couche_001.obj
+/map test_prototype_indoor
+noclip
+/map test_prototype_indoor
+noclip
+/modelviewer models/indoor/old_couche_001/old_couche_001.vvm
+/map test_prototype_indoor
+noclip
+/map test_prototype_indoor
+noclip
+/map test_prototype_indoor
+noclip
+/map test_prototype_indoor
+noclip
+/map test_prototype_indoor
+noclip
+/map test_prototype_indoor
+noclip
+/map test_prototype_indoor
+noclip
+/map test_prototype_indoor
+/modelviewer models/indoor/old_couche_001/old_couche_001.vvm
+/con_textsize
+/con_textsize 14
+/con_textsize 16
+/modelviewer models/indoor/old_couche_001/old_couche_001.vvm
+/modelviewer models/indoor/old_couche_001/old_couche_001.obj
+/modelviewer models/indoor/old_couche_001/old_couche_001.obj
+/modelviewer models/indoor/old_couche_001/old_couche_001.obj
+/map test_prototype_indoor
+/map test_prototype_indoor.map
+noclip
+/map test_prototype_indoor
+noclip
+/map test_prototype_indoor
+noclip
+quit
+/map test_prototype_indoor
+quit
+quit
+quit
+/map test_prototype_
+/map test_prototype_indoor
+quit
+/map test_prototype_indoor
+noclip
+/map test_prototype_indoor
+/map test_prototype_outdoor
+/map test_prototype_indoor
+/map test_prototype_indoor
+/map test_prototype_indoor
+/map test_prototype_indoor
+/map test_prototype_indoor
+noclip
+noclip
+/map test_prototype_indoor
+/map test_prototype_indoor
+/map test_prototype_indoor
+/map test_prototype_indoor
+/map test_prototype_indoor
+/map test_prototype_indoor
+modelviewer models/indoor/old_couche_001/old_couche_001.vvm
+modelviewer models/characters/zombie_derrick/zombie_derrick.vvm
+noclip
+noclip
 god
-god
-god
-/map test_prototype_indoor
-/map test_prototype_indoor
-/map test_prototype_indoor
-/map test_prototype_indoor
-/map test_prototype_indoor
-/map test_prototype_indoor
-/map test_prototype_indoor
-god
-god
-/map test_prototype_indoor
-/map test_prototype_indoor
-/map test_prototype_indoor
-/map test_prototype_indoor
-/map test_prototype_indoor
-/map test_prototype_indoor
-/map test_prototype_indoor
-god
-god
-/map test_prototype_indoor
-/map test_prototype_indoor
-/map test_prototype_indoor
-/map test_prototype_indoor
-/map test_prototype_indoor
-/map test_prototype_indoor
-quit
-quit
-/map test_prototype_indoor
-/map test_prototype_indoor
-/map test_prototype_indoor
-qujit
-quit
-quit
-/map test_prototype_indoor
-/map test_prototype_indoor
-/map test_prototype_indoor
-/map test_prototype_indoor
-/map test_prototype_indoor
-quit
-quit
-/map test_prototype_indoor
-/map test_prototype_indoor
-/map test_prototype_indoor
-modelviewer models/weapons/knife/weapon_knife_wip.fbx
-/modelviewer models/weapons/knife/
-/map test_prototype_indoor
-/modelviewer models/weapon_knife_wip.md3 
-/modelviewer models/weapon_knife_wip.md3 
-/modelviewer models/weapon_knife_wip.md3 
-modelviewer models/weapons/knife/arms.vvm
-modelviewer models/weapons/knife/arms.vvm
-modelviewer models/weapons/knife/arms.vvm
-modelviewer models/weapons/knife/arms.vvm
-quit
-/modelviewer models/weapons/knife/arms@knifeout.iqm 
-/modelviewer models/weapons/knife/arms.vvm
-/modelviewer models/weapons/knife/arms.vvm
-/modelviewer models/weapons/knife/arms.vvm
-/modelviewer models/weapons/knife/aa.fbx
-/modelviewer models/weapons/knife/aa.fbx
-/modelviewer models/weapons/knife/arms.vvm
-/modelviewer models/weapons/knife/arms.vvm
-/modelviewer models/weapons/knife/arms.vvm
-/modelviewer models/weapons/knife/knife.iqe
-/modelviewer models/weapons/knife/knife.iqm
-/modelviewer models/weapons/knife/arms.vvm
-/modelviewer models/weapons/knife/arms.vvm
-/modelviewer models/weapons/knife/arms.vvm
-/modelviewer models/weapons/knife/arms.vvm
-quit
-/modelviewer models/weapons/knife/arms.vvm
-/modelviewer models/weapons/knife/arms.vvm
-/modelviewer models/weapons/knife/arms.vvm
-/modelviewer models/weapons/knife/arms.vvm
-/modelviewer models/weapons/knife/knife.vvm
-/modelviewer models/weapons/knife/v_knife.vvm
-/modelviewer models/weapons/knife/v_knife.vvm
-map test_prototype_indoor
+/map test_solid_bsp
+noclip
+noclip
+/map test_solid_bsp
+/map test_solid_bsp
+/map test_solid_bsp
+modelviewer models/indoor/old_couche_001/old_couche_001.vvm
+map test_solid_bsp
+/map test_vphysics
+impulse 101
+/sv_cheats 
 impulse 101
 impulse 101
-map test_prototype_indoor
-impulse 101
-map test_prototype_indoor
-quit
-map test_prototype_indoor
-map test_prototype_indoor
-map test_prototype_indoor
-map test_prototype_indoor
-map test_prototype_indoor
-map test_prototype_indoor
-map test_prototype_indoor
-map test_prototype_indoor
-map test_prototype_indoor
-map test_prototype_indoor
-map test_prototype_indoor
-map test_prototype_indoor
-map test_prototype_indoor
-map test_prototype_indoor
-map test_prototype_indoor
-map test_prototype_indoor
-map test_prototype_indoor
-map test_prototype_indoor
-map test_prototype_indoor
-map test_prototype_indoor
-map test_prototype_indoor
-map test_prototype_indoor
-map test_prototype_indoor
-map test_prototype_indoor
-map test_prototype_indoor
-map test_prototype_indoor
-map test_prototype_indoor
-map test_prototype_indoor
-map test_prototype_indoor
-map test_prototype_indoor
-map test_prototype_indoor
-map test_prototype_indoor
-map test_prototype_indoor
-map test_prototype_indoor
-map test_prototype_indoor
-quit
-quit
-map test_prototype_indoor
-map test_prototype_indoor
-map test_prototype_indoor
-map test_prototype_indoor
-map test_prototype_indoor
-map test_prototype_indoor
-map test_prototype_indoor
-map test_prototype_indoor
-noclip
-
-noclip
-noclip
-map test_prototype_indoor
-map test_prototype_indoor
-map test_prototype_indoor
-map test_prototype_indoor
-modelviewer models/weapons/knife/v_knife.vvm
-modelviewer models/weapons/knife/v_knife.vvm
-map test_prototype_indoor
-map test_prototype_indoor
-map test_prototype_indoor
-map test_prototype_indoor
-map test_prototype_indoor
-quit
-map test_prototype_indoor
-map test_prototype_indoor
-map test_prototype_indoor
-map test_prototype_indoor
-map test_prototype_indoor
-map test_prototype_indoor
-quit
-map test_prototype_indoor
-map test_prototype_indoor
-map test_prototype_indoor
-map test_prototype_indoor
-map test_prototype_indoor
-map test_prototype_indoor
-map test_prototype_indoor
-noclip
-noclip
-noclip
-noclip
-noclikp
-noclip
-noclip
-noclip
-map test_prototype_indoor
-noclip
-noclip
-map test_prototype_indoor
-map test_prototype_indoor
-map test_prototype_indoor
-map test_prototype_indoor
-map test_prototype_indoor
-map test_prototype_indoor
-map test_prototype_indoor
-map test_prototype_indoor
-map test_prototype_indoor
-map test_prototype_indoor
-map test_prototype_indoor
-map test_prototype_indoor
-map test_prototype_indoor
-map test_prototype_indoor
-map test_prototype_indoor
-map test_prototype_indoor
-noclip
-noclip
-map test_prototype_indoor
-quit
-map test_prototype_indoor
-map test_prototype_indoor
-map test_prototype_indoor
-map test_prototype_indoor
-map test_prototype_indoor
-quit
-quit
-quit
-quit
-vid_reload
-vid_reload
-vid_reload
-quit
-vid_reload
-vid_reload
-quit
-quit
-quit
-map test_prototype_indoor
-map test_prototype_indoor
-map test_prototype_indoor
+/map test_vphysics
+/map test_vphysics
+/map test_prototype_indoor
+/map test_prototype_indoor
+map test_solid_bsp
 modelviewer models/weapons/knife/w_knife.vvm
-modelviewer models/weapons/knife/w_knife.vvm
-modelviewer models/weapons/knife/w_knife.vvm
-quit
-modelviewer models/weapons/knife/w_knife.vvm
-modelviewer models/weapons/knife/w_knife.vvm
-modelviewer models/weapons/knife/w_knife.vvm
-modelviewer models/weapons/knife/w_knife.vvm
-map test_prototype_indoor
-/r_showbboxes 
-/r_showbboxes 1
-map test_prototype_indoor
-/r_showbboxes 1
-/r_showbboxes 1
-map test_prototype_indoor
-map test_prototype_indoor
-map test_prototype_indoor
-modelviewer models/weapons/knife/v_knife.vvm
-modelviewer models/weapons/knife/v_knife.vvm
-map test_prototype_indoor
-map test_prototype_indoor
-map test_prototype_indoor
-map test_prototype_indoor
-map test_prototype_indoor
+map test_solid_bsp
+map test_solid_bsp
+map test_solid_bsp
+map test_solid_bsp
+map test_solid_bsp
+map test_solid_bsp
+map test_solid_bsp
+map test_solid_bsp
+map test_solid_bsp
+map test_solid_bsp
+vid_restart
+map test_solid_bsp

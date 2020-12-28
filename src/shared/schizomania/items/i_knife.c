@@ -72,7 +72,7 @@ void i_knife_equip(player pl) {
 void Weapons_Holster();
 void i_knife_drop(player pl) {
 #ifdef SERVER
-dprint("===================\nDROPPED GLOKC\n=============");
+dprint("===================\nDROPPED KNIFE\n=============");
 	Weapons_Holster();
 	Weapons_RemoveItem(pl, WEAPON_KNIFE);
 	pl.activeweapon = 0;

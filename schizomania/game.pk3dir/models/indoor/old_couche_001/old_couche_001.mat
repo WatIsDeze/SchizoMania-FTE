@@ -1,0 +1,10 @@
+{
+	diffusemap models/indoor/old_couche_001/diffuse.tga
+	normalmap models/indoor/old_couche_001/normal.tga
+    
+	{
+		program vertexlit
+		map models/indoor/old_couche_001/diffuse.tga
+		map models/indoor/old_couche_001/normal.tga
+	}
+}

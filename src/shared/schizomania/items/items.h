@@ -16,7 +16,7 @@
 //=======================
 // ACTUAL ITEM DATABASE.
 //
-// Currently item indexes are Written and ead as byte.
+// Currently item indexes are Written and Read as byte.
 // 
 // DO NOT EXCEED 255, OR EXPECT TROUBLE
 //=======================

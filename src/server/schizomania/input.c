@@ -56,20 +56,14 @@ void Game_Input(void)
 			pl.health = 100;
 			pl.armor = 100;
 			pl.g_items |= ITEM_SUIT;
+			pl.g_items |= ITEM_KNIFE;
+			pl.g_items |= ITEM_GLOCK;
 			Weapons_AddItem(pl, WEAPON_KNIFE, -1);
 			Weapons_AddItem(pl, WEAPON_GLOCK, -1);
-			Weapons_AddItem(pl, WEAPON_PYTHON, -1);
 			Weapons_AddItem(pl, WEAPON_MP5, -1);
 			Weapons_AddItem(pl, WEAPON_SHOTGUN, -1);
-			Weapons_AddItem(pl, WEAPON_CROSSBOW, -1);
 			Weapons_AddItem(pl, WEAPON_RPG, -1);
-			Weapons_AddItem(pl, WEAPON_GAUSS, -1);
-			Weapons_AddItem(pl, WEAPON_EGON, -1);
-			Weapons_AddItem(pl, WEAPON_HORNETGUN, -1);
 			Weapons_AddItem(pl, WEAPON_HANDGRENADE, -1);
-			Weapons_AddItem(pl, WEAPON_SATCHEL, -1);
-			Weapons_AddItem(pl, WEAPON_TRIPMINE, -1);
-			Weapons_AddItem(pl, WEAPON_SNARK, -1);
 		}
 
 		if (self.impulse == 102) {

@@ -1,0 +1,10 @@
+{
+	diffusemap textures/models/indoor/old_couche_001/diffuse.tga
+	normalmap textures/models/indoor/old_couche_001/normal.tga
+    
+	{
+		program lightmapped
+		map $diffuse
+		map $normalmap
+	}
+}

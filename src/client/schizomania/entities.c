@@ -18,9 +18,6 @@ int
 Game_Entity_Update(float id, float new)
 {
 	switch (id) {
-	case ENT_TRIPMINE:
-		w_tripmine_parse();
-		break;
 	case ENT_GAMEENTITY:
 		CGameEntity gent = (CGameEntity)self;
 		if (new) {

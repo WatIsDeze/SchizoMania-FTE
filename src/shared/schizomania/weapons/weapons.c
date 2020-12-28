@@ -19,16 +19,8 @@ weapon_t g_weapons[] = {
 	w_null,
 	w_knife,
 	w_glock,
-	w_python,
 	w_mp5,
 	w_shotgun,
-	w_crossbow,
 	w_rpg,
-	w_gauss,
-	w_egon,
-	w_hornetgun,
 	w_handgrenade,
-	w_satchel,
-	w_tripmine,
-	w_snark
 };

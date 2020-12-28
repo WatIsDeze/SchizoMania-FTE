@@ -55,6 +55,7 @@
 ../schizomania/entities/monster_sentry.cpp
 ../schizomania/entities/monster_tentacle.cpp
 ../schizomania/entities/monster_zombie.cpp
+../schizomania/entities/solid_bsp_test.cpp
 
 ../schizomania/player.c
 ../schizomania/spectator.c

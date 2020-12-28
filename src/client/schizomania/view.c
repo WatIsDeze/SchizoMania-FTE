@@ -20,42 +20,50 @@
 // Does a trace check to see if an item is in range and hovered.
 // If it is, give it a shell.
 //=======================
-// entity oldItemTraceEnt;
-// void View_DrawHoveredItem(void) {
-// 	player pl = (player)pSeat->m_ePlayer;
+entity oldItemTraceEnt;
+void View_DrawHoveredItem(void) {
+	player pl = (player)pSeat->m_ePlayer;
 
-// 	// Prep vectors.
-// 	vector vecAng = [pl.pitch, pl.angles[1], pl.angles[2]];
-// 	vector vecSrc = pl.origin + pl.view_ofs;
-// 	makevectors(vecAng);
+	// Prep vectors.
+	vector vecAng = [pl.pitch, pl.angles[1], pl.angles[2]];
+	vector vecSrc = pl.origin + pl.view_ofs;
+	makevectors(vecAng);
 
-// 	// Do the entity trace.
-// 	traceline(vecSrc, vecSrc + (v_forward * 64), MOVE_HITMODEL, self);
+	// Do the entity trace.
+	traceline(vecSrc, vecSrc + (v_forward * 64), MOVE_EVERYTHING, self);
 
-// 	// In case we traced a previous entity, undo its effects.
-// 	if (oldItemTraceEnt != __NULL__) {
-// 		if (oldItemTraceEnt.gflags & GF_HOVER_FULLBRIGHT) {
-// 			// Remove effect.
-// 			oldItemTraceEnt.effects &= ~EF_FULLBRIGHT;
-// 		}
+	dprint("Default: %i\n", trace_ent);
 
-// 		// Reset entity reference.
-// 		oldItemTraceEnt = __NULL__;
-// 	}
+	// In case we traced a previous entity, undo its effects.
+	if (oldItemTraceEnt != __NULL__) {
+		dprint("OldItem_Trace_Ent: %i\n", oldItemTraceEnt);
 
-// 	// If we hit a trace, and it had GF_HOVER_FULLBRIGHT, EF_FULLBRIGHT it.
-// 	if (trace_ent != world) {
+		if (oldItemTraceEnt.gflags & GF_HOVER_FULLBRIGHT) {
+			// Remove effect.
+			oldItemTraceEnt.effects &= ~EF_FULLBRIGHT;
+			dprint("OldItem_Trace_Ent: %i has GFlags!\n", oldItemTraceEnt);
+		}
 		
-// 		// All of the below fail, exception for CBaseEntity.
-// 		if (trace_ent.gflags & GF_HOVER_FULLBRIGHT) {
-// 			//dprint(trace_ent.classname);
-// 			trace_ent.effects |= EF_FULLBRIGHT;
-// 		}
+
+		// Reset entity reference.
+		oldItemTraceEnt = __NULL__;
+	}
+
+	// If we hit a trace, and it had GF_HOVER_FULLBRIGHT, EF_FULLBRIGHT it.
+	if (trace_ent != world) {
+		dprint("trace_ent: %i\n", oldItemTraceEnt);
+		// All of the below fail, exception for CBaseEntity.
+		if (trace_ent.gflags & GF_HOVER_FULLBRIGHT) {
+			dprint(trace_ent.classname);
+			trace_ent.effects |= EF_FULLBRIGHT;
+
+			dprint("trace_ent: %i has GFlags!\n", oldItemTraceEnt);
+		}
 		
-// 		// Store it so we can remove effect when unhovered.
-// 		oldItemTraceEnt = trace_ent;
-// 	}
-// }
+		// Store it so we can remove effect when unhovered.
+		oldItemTraceEnt = trace_ent;
+	}
+}
 
 void
 View_UpdateWeapon(entity vm, entity mflash)
@@ -91,7 +99,4 @@ View_UpdateWeapon(entity vm, entity mflash)
 	mflash.skeletonindex = skel_create(vm.modelindex);
 	pSeat->m_iVMBones = skel_get_numbones(mflash.skeletonindex) + 1;
 	pSeat->m_iVMEjectBone = pSeat->m_iVMBones + 1;
-
-	// Should be done here.
-//	View_DrawHoveredItem();
 }
