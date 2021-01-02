@@ -710,6 +710,8 @@ CBaseEntity::ParentUpdate(void)
 		SendFlags |= BASEFL_CHANGED_ANGLES;
 	}
 
+frame1time += frametime;
+
 	if (m_parent) {
 		entity p = find(world, ::targetname, m_parent);
 

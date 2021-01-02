@@ -1,0 +1,10 @@
+{
+	diffusemap /models/characters/zombie_derrick/diffuse.tga
+	normalmap /models/characters/zombie_derrick/normals.tga
+    
+	{
+		program vertexlit
+		map $diffuse
+		map $normalmap
+	}
+}

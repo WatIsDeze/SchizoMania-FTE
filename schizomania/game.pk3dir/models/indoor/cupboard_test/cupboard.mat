@@ -1,0 +1,8 @@
+{
+	diffusemap models/indoor/cupboard_test/cupboard.tga
+    
+	{
+		program vertexlit
+		map $diffuse
+	}
+}

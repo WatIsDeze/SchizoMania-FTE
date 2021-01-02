@@ -53,17 +53,22 @@ void Game_Input(void)
 	if (cvar("sv_cheats") == 1) {
 		player pl = (player)self;
 		if (self.impulse == 101) {
-			pl.health = 100;
-			pl.armor = 100;
-			pl.g_items |= ITEM_SUIT;
-			pl.g_items |= ITEM_KNIFE;
-			pl.g_items |= ITEM_GLOCK;
-			Weapons_AddItem(pl, WEAPON_KNIFE, -1);
-			Weapons_AddItem(pl, WEAPON_GLOCK, -1);
-			Weapons_AddItem(pl, WEAPON_MP5, -1);
-			Weapons_AddItem(pl, WEAPON_SHOTGUN, -1);
-			Weapons_AddItem(pl, WEAPON_RPG, -1);
-			Weapons_AddItem(pl, WEAPON_HANDGRENADE, -1);
+			// pl.health = 100;
+			// pl.armor = 100;
+			// pl.g_items |= ITEM_SUIT;
+			// pl.g_items |= ITEM_KNIFE;
+			// pl.g_items |= ITEM_GLOCK;
+			// Weapons_AddItem(pl, WEAPON_KNIFE, -1);
+			// Weapons_AddItem(pl, WEAPON_GLOCK, -1);
+			// Weapons_AddItem(pl, WEAPON_MP5, -1);
+			// Weapons_AddItem(pl, WEAPON_SHOTGUN, -1);
+			// Weapons_AddItem(pl, WEAPON_RPG, -1);
+			// Weapons_AddItem(pl, WEAPON_HANDGRENADE, -1);
+			// Pick up event.
+			Item_Pickup(pl, INVENTORY_ITEM_KNIFE, 1); // Knife
+
+			// Pick up event.
+			Item_Pickup(pl, INVENTORY_ITEM_GLOCK, 1); // Glock
 		}
 
 		if (self.impulse == 102) {

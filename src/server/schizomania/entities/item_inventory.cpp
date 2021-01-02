@@ -132,7 +132,7 @@ void item_inventory::Respawn(void) {
 	// Set defaults.
 	SetModel(g_inventory_items[m_iItemID].wmodel());
 	SetGFlags(gflags | GF_HOVER_FULLBRIGHT);
-	SetSize(g_inventory_items[m_iItemID].mins, g_inventory_items[m_iItemID].maxs);
+	//SetSize(g_inventory_items[m_iItemID].mins, g_inventory_items[m_iItemID].maxs);
 	SetSolid(SOLID_BSP);
 	SetMovetype(MOVETYPE_PUSH);
 	droptofloor();

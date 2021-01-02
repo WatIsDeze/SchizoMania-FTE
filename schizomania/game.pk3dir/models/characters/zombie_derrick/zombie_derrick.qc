@@ -1,5 +1,5 @@
 output zombie_derrick.vvm
-materialprefix /textures/models/zombie_derrick/
+materialprefix /models/characters/zombie_derrick/
 
 scene "iqe/tpose.iqe"
 

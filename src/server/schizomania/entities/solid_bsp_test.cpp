@@ -26,6 +26,11 @@ Entity for pickup items which go in the inventory.
           pickup.
 
 */
+enum {
+    TPOSE,
+    OPEN_FRONT
+};
+
 class solid_bsp_test:CBaseEntity
 {
 	void(void) solid_bsp_test;
@@ -75,7 +80,7 @@ void solid_bsp_test::OnPlayerUse(void)
 
     // Let us know something.
     dprint("I am triggered by %s", pl.classname);
-	
+	SetFrame(OPEN_FRONT);
 	// Remove from world, we don't want to pick it up twice.
 //	remove(this);
 }
@@ -92,7 +97,7 @@ void solid_bsp_test::Respawn(void) {
 	SetModel(model);
 //	SetGFlags(gflags | GF_HOVER_FULLBRIGHT);
 	// SetSize(g_inventory_items[m_iItemID].mins, g_inventory_items[m_iItemID].maxs);
-	SetSolid(SOLID_SLIDEBOX);
+	SetSolid(SOLID_BSP);
 	SetMovetype(MOVETYPE_PUSH);
 //	droptofloor();
 
