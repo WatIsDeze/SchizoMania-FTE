@@ -13,16 +13,16 @@
  * IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING
  * OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  */
-class item_pickup:CBaseTrigger
-{
-	int m_bFloating;
-	int m_iClip;
-	int m_iWasDropped;
-	int id;
-	void(void) item_pickup;
+// class item_pickup:CBaseTrigger
+// {
+// 	int m_bFloating;
+// 	int m_iClip;
+// 	int m_iWasDropped;
+// 	int id;
+// 	void(void) item_pickup;
 
-	virtual void(void) touch;
-	virtual void(int i) SetItem;
-	virtual void(void) Respawn;
-	virtual void(int) SetFloating;
-};
+// 	virtual void(void) touch;
+// 	virtual void(int i) SetItem;
+// 	virtual void(void) Respawn;
+// 	virtual void(int) SetFloating;
+// };

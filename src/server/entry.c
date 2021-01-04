@@ -158,63 +158,51 @@ void initents(void)
 {
 	iprint("Initializing Entities");
 
-	/* sound shader init */
+	// sound shader init.
 	Sound_Init();
 
-	if (serverkeyfloat("*bspversion") == BSPVER_HL) {
-		/* load materials.txt because someone thought this was the best idea */
-		filestream fileMaterial = fopen("sound/materials.txt", FILE_READ);
-		hashMaterials = __NULL__;
-		hashMaterials = hash_createtab(2, HASH_ADD);
-
-		if (fileMaterial >= 0) {
-			string sTemp;
-			while ((sTemp = fgets(fileMaterial))) {
-				/* tokenize and just parse this stuff in */
-				if (tokenize_console(sTemp) == 2) {
-					hash_add(hashMaterials, strtolower(argv(1)), str2chr(argv(0), 0));
-				}
-			}
-			fclose(fileMaterial);
-		} else {
-			print("Failed to load sound/materials.txt!\n");
-		}
-	}
-
+	// PMove Init.
 	PMove_Init();
 
-	/* TODO: turn these effects into sound shaders */
-	precache_sound("weapons/explode3.wav");
-	precache_sound("weapons/explode4.wav");
-	precache_sound("weapons/explode5.wav");
-	precache_sound("debris/glass1.wav");
-	precache_sound("debris/glass2.wav");
-	precache_sound("debris/glass3.wav");
-	precache_sound("debris/wood1.wav");
-	precache_sound("debris/wood2.wav");
-	precache_sound("debris/wood3.wav");
-	precache_sound("debris/metal1.wav");
-	precache_sound("debris/metal2.wav");
-	precache_sound("debris/metal3.wav");
-	precache_sound("debris/flesh1.wav");
-	precache_sound("debris/flesh2.wav");
-	precache_sound("debris/flesh3.wav");
-	precache_sound("debris/flesh5.wav");
-	precache_sound("debris/flesh6.wav");
-	precache_sound("debris/flesh7.wav");
-	precache_sound("debris/concrete1.wav");
-	precache_sound("debris/concrete2.wav");
-	precache_sound("debris/concrete3.wav");
-
+	// Precache and initialize footsteps.
 	Footsteps_Init();
+	/* TODO: turn these effects into sound shaders */
+	// precache_sound("weapons/explode3.wav");
+	// precache_sound("weapons/explode4.wav");
+	// precache_sound("weapons/explode5.wav");
+	// precache_sound("debris/glass1.wav");
+	// precache_sound("debris/glass2.wav");
+	// precache_sound("debris/glass3.wav");
+	// precache_sound("debris/wood1.wav");
+	// precache_sound("debris/wood2.wav");
+	// precache_sound("debris/wood3.wav");
+	// precache_sound("debris/metal1.wav");
+	// precache_sound("debris/metal2.wav");
+	// precache_sound("debris/metal3.wav");
+	// precache_sound("debris/flesh1.wav");
+	// precache_sound("debris/flesh2.wav");
+	// precache_sound("debris/flesh3.wav");
+	// precache_sound("debris/flesh5.wav");
+	// precache_sound("debris/flesh6.wav");
+	// precache_sound("debris/flesh7.wav");
+	// precache_sound("debris/concrete1.wav");
+	// precache_sound("debris/concrete2.wav");
+	// precache_sound("debris/concrete3.wav");
 
-	precache_sound("player/pl_fallpain3.wav");
-	precache_sound("items/9mmclip1.wav");
-	precache_sound("items/gunpickup2.wav");
-	precache_sound("common/wpn_select.wav");
-	precache_sound("common/wpn_denyselect.wav");
-	precache_sound("player/sprayer.wav");
-	precache_sound("items/flashlight1.wav");
+	// precache_sound("player/pl_fallpain3.wav");
+	// precache_sound("items/9mmclip1.wav");
+	// precache_sound("items/gunpickup2.wav");
+	// precache_sound("common/wpn_select.wav");
+	// precache_sound("common/wpn_denyselect.wav");
+	// precache_sound("player/sprayer.wav");
+	// Pickup sound.
+	precache_sound("player/pickup_item.wav");
+
+	// Flashlight.
+	precache_sound("player/flashlight_on.wav");
+	precache_sound("player/flashlight_off.wav");
+
+	// Null Use Sound.
 	precache_sound("common/null.wav");
 
 	Game_InitRules();

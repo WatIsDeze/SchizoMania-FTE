@@ -198,9 +198,9 @@ w_mp5_secondary(void)
 		Damage_Radius(self.origin, self.owner, dmg, dmg * 2.5f, TRUE, WEAPON_MP5);
 
 		if (random() < 0.5) {
-			sound(self, 1, "weapons/explode3.wav", 1, ATTN_NORM);
+		//	sound(self, 1, "weapons/explode3.wav", 1, ATTN_NORM);
 		} else {
-			sound(self, 1, "weapons/explode4.wav", 1, ATTN_NORM);
+		//	sound(self, 1, "weapons/explode4.wav", 1, ATTN_NORM);
 		}
 		remove(self);
 	}

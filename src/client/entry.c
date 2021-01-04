@@ -62,20 +62,12 @@ CSQC_Init(float apilevel, string enginename, float engineversion)
 	registercommand("dev_sunpos");
 	registercommand("dev_measure");
 
-	precache_model("sprites/640_pain.spr");
-	precache_model("sprites/crosshairs.spr");
-
 	precache_model("sprites/muzzleflash1.spr");
 	precache_model("sprites/muzzleflash2.spr");
 	precache_model("sprites/muzzleflash3.spr");
 
 	/* VOX */
 	Vox_Init();
-
-	precache_sound("common/wpn_hudon.wav");
-	precache_sound("common/wpn_hudoff.wav");
-	precache_sound("common/wpn_moveselect.wav");
-	precache_sound("common/wpn_select.wav");
 
 	/* VGUI */
 	VGUI_Init();
@@ -626,7 +618,7 @@ CSQC_ConsoleCommand(string sCMD)
 		if (!foo) {
 			foo = spawn(CBaseEntity);
 			foo.drawmask = MASK_ENGINE;
-			setmodel(foo, "sprites/muzzleflash1.spr");
+			//setmodel(foo, "sprites/muzzleflash1.spr");
 		}
 		setorigin(foo, getproperty(VF_ORIGIN));
 		foo.Sentence(argv(1));

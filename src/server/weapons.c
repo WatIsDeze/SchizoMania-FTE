@@ -148,9 +148,9 @@ Weapons_RemoveItem(base_player pl, int w)
 void
 Weapons_InitItem(int w)
 {
-	item_pickup it = (item_pickup)self;
-	spawnfunc_item_pickup();
-	it.SetItem(w);
+	// item_pickup it = (item_pickup)self;
+	// spawnfunc_item_pickup();
+	// it.SetItem(w);
 }
 
 void
@@ -192,10 +192,10 @@ void
 Weapon_DropCurrentWeapon(base_player pl)
 {
 	
-	static void DropWeapon_Enable(void)
-	{
-		self.solid = SOLID_TRIGGER;
-	}
+	// static void DropWeapon_Enable(void)
+	// {
+	// 	self.solid = SOLID_TRIGGER;
+	// }
 
 	if (!pl.activeweapon)
 		return;
@@ -203,18 +203,18 @@ Weapon_DropCurrentWeapon(base_player pl)
 	if (g_weapons[pl.activeweapon].allow_drop != TRUE)
 		return;
 
-	item_pickup drop = spawn(item_pickup, m_iWasDropped: TRUE, m_iClip: pl.a_ammo1);
-	drop.SetItem(pl.activeweapon);
-	setorigin(drop, pl.origin);
-	drop.solid = SOLID_NOT;
-	drop.think = DropWeapon_Enable;
-	drop.nextthink = time + 1.5f;
-	drop.movetype = MOVETYPE_TOSS;
-	drop.classname = "remove_me";
+	// item_pickup drop = spawn(item_pickup, m_iWasDropped: TRUE, m_iClip: pl.a_ammo1);
+	// drop.SetItem(pl.activeweapon);
+	// setorigin(drop, pl.origin);
+	// drop.solid = SOLID_NOT;
+	// drop.think = DropWeapon_Enable;
+	// drop.nextthink = time + 1.5f;
+	// drop.movetype = MOVETYPE_TOSS;
+	// drop.classname = "remove_me";
 
-	makevectors(pl.v_angle);
-	drop.velocity = v_forward * 256;
-	drop.avelocity[1] = 500;
+	// makevectors(pl.v_angle);
+	// drop.velocity = v_forward * 256;
+	// drop.avelocity[1] = 500;
 	Weapons_RemoveItem(pl, pl.activeweapon);
 }
 

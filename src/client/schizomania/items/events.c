@@ -72,7 +72,7 @@ void Items_Event_Drop(void) {
     // Fetch name of the player that picked it up.
     string playerName = getplayerkeyvalue(playerID, "name");
     
-    // Push equip notification.
+    // Push drop notification.
     HUDNotification_PushNotification(
         sprintf(
             "%s %s", 

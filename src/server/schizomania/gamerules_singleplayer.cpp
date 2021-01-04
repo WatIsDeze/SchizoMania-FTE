@@ -73,7 +73,7 @@ HLSingleplayerRules::PlayerDeath(base_player bp)
 		IntermissionStart();
 	}
 
-	weaponbox_spawn((player)pl);
+	//weaponbox_spawn((player)pl);
 	pl.movetype = MOVETYPE_NONE;
 	pl.solid = SOLID_NOT;
 	pl.takedamage = DAMAGE_NO;

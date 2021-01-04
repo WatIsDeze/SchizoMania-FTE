@@ -30,30 +30,7 @@
 ../schizomania/entities/hud_notification.cpp
 ../schizomania/entities/hud_textmessage.cpp
 
-../schizomania/entities/monster_apache.cpp
-../schizomania/entities/monster_alien_controller.cpp
-../schizomania/entities/monster_alien_grunt.cpp
-../schizomania/entities/monster_alien_slave.cpp
-../schizomania/entities/monster_barnacle.cpp
 ../schizomania/entities/monster_barney.cpp
-../schizomania/entities/monster_barney_dead.cpp
-../schizomania/entities/monster_cockroach.cpp
-../schizomania/entities/monster_flyer_flock.cpp
-../schizomania/entities/monster_gman.cpp
-../schizomania/entities/monster_headcrab.cpp
-../schizomania/entities/monster_babycrab.cpp
-../schizomania/entities/monster_houndeye.cpp
-../schizomania/entities/monster_human_grunt.cpp
-../schizomania/entities/monster_hgrunt_dead.cpp
-../schizomania/entities/monster_human_assassin.cpp
-../schizomania/entities/monster_ichthyosaur.cpp
-../schizomania/entities/monster_leech.cpp
-../schizomania/entities/monster_rat.cpp
-../schizomania/entities/monster_scientist_dead.cpp
-../schizomania/entities/monster_sitting_scientist.cpp
-../schizomania/entities/monster_scientist.cpp
-../schizomania/entities/monster_sentry.cpp
-../schizomania/entities/monster_tentacle.cpp
 ../schizomania/entities/monster_zombie.cpp
 ../schizomania/entities/solid_bsp_test.cpp
 
@@ -62,13 +39,7 @@
 
 ../schizomania/entities/item_inventory.cpp
 ../schizomania/items.cpp
-../schizomania/entities/item_pickup.cpp
 
-../schizomania/entities/item_longjump.cpp
-../schizomania/entities/item_suit.cpp
-../schizomania/entities/item_healthkit.cpp
-../schizomania/entities/item_battery.cpp
-../schizomania/entities/item_weaponbox.cpp
 ../schizomania/entities/ammo.cpp
 
 ../../botlib/include.src

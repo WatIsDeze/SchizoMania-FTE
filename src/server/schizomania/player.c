@@ -54,10 +54,10 @@ void Player_UseDown(void)
 
 		/* Some entities want to support Use spamming */
 		if (!(self.flags & FL_USE_RELEASED)) {
-			sound(self, CHAN_ITEM, "common/wpn_select.wav", 0.25, ATTN_IDLE);
+			//sound(self, CHAN_ITEM, "common/wpn_select.wav", 0.25, ATTN_IDLE);
 		}
 	} else {
-		sound(self, CHAN_ITEM, "common/wpn_denyselect.wav", 0.25, ATTN_IDLE);
+		//sound(self, CHAN_ITEM, "common/wpn_denyselect.wav", 0.25, ATTN_IDLE);
 		self.flags &= ~FL_USE_RELEASED;
 	}
 }

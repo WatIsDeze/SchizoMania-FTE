@@ -72,7 +72,7 @@ Item_Pickup(player pl, int itemID, int amount)
 
 	// Player pickup sound and log.
 	//Logging_Pickup(other, this, __NULL__);
-	sound(pl, CHAN_ITEM, "items/gunpickup2.wav", 1, ATTN_NORM);
+	sound(pl, CHAN_ITEM, "player/pickup_item.wav", 1, ATTN_NORM);
 	
 	// Write out EV_ITEM_PICKUP event.
 	WriteByte(MSG_MULTICAST, SVC_CGAMEPACKET);

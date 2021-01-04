@@ -6,37 +6,46 @@ This list (if I don't forget to) will be updated regularly, since it is for
 my own ADHD good.
 
 ## Entities - Prototype 0.1:
-- Remove game_locked_Door
-- Rename egui_mainmenu to gui_mainmenu
-- Remove most redundant HL1 stock entities. Time to clear our code.
+- [_] Remove game_locked_Door
+- [_] Rename egui_mainmenu to gui_mainmenu
+- [_] Remove most redundant HL1 stock entities. Time to clear our code.
 
 ## Weapons - Prototype 0.1:
-- Knife
-  - Work on better sounds, where possible.
+- [_] Knife
+  - [_] Work on better sounds, where possible.
 
-- Pistol
-  - Implement properly.
-  - Export model to .iqe and generate a .vvm
+- [_] Pistol
+  - [_] Implement properly.
+  - [_] Export model to .iqe and generate a .vvm
+  - [_] Add sounds.
 
-- Flashlight
-  - Improve the flickering when battery runs low. (Pick a better lightstyle.)
-  - Make this an actual weapon? That'd be nice, right?
+- [_] Flashlight
+  - [_] Wait a few miliseconds, so the light turns on accordingly to the audio.
+  - [_] Improve the flickering when battery runs low. (Pick a better lightstyle.)
+  - [_] Make this an actual weapon? That'd be nice, right?
+  - [_] Replace stock Valve sounds.
 
-## General Code Tasks:
-- Implement Scripted Sequences with dialogues. (I suppose, an entity which'll send a dialogue event mechanism, back and forth? :) )
+## Code Tasks (general) - Prototype 0.1:
+- [_] Use Item Sound.
+- [_] Drop Item Sound.
+- [_] Pickup Item Sound.
+- [_] Implement Scripted Sequences with dialogues. (I suppose, an entity which'll send a dialogue event mechanism, back and forth? :) )
 ## GUI - Prototype 0.1:
 ### Possible, but not required:
-- Use images for buttons. (Maybe a hover glow? effect)
-- Use sound for the hover, and click etc!
-- Render a player mesh, and health/ammo status.
+- [_] Use images for buttons. (Maybe a hover glow? effect)
+- [_] Use sound for the hover, and click etc!
+- [_] Render a player mesh, and health/ammo status.
     -- In the future, make him draw a weapon, or play a heavy breathing animation in case he is hurt etc.
-- Make item list scrollable.
+- [_] Make item list scrollable.
 
 ## Assets (This list is obviously to be updated a lot..):
-- Acquire gfx for preferably a red,white-ish, black, based in-game menu.
-- Acquire sfx for in-game menu.
-- Acquire a few Mixamo models, for AI, and NPC's. (Also thus, Brian, the player model)
-- Acquire basic sounds for doors, footsteps, ambiance.
+- [_] Acquire gfx for preferably a red,white-ish, black, based in-game menu.
+- [_] Acquire sfx for in-game menu.
+- [_] Acquire a few Mixamo models, for AI, and NPC's. (Also thus, Brian, the player model)
+  - [_] Player model, for death animations and scenes.
+  - [_] Assets for a misty monster.
+- [_] Acquire basic sounds for doors, footsteps, ambiance.
+  - [_] Still need to replace all our footsteps...
 
 ## Map: test_prototype_indoor:
 - To be redesigned due to current issues with the map design.
