@@ -39,5 +39,4 @@ void Flashlight_Toggle(void)
 		sound(self, CHAN_ITEM, "player/flashlight_on.wav", 1, ATTN_IDLE);
 		self.gflags |= GF_FLASHLIGHT;
 	}
-
 }
