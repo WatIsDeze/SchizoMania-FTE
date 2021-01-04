@@ -54,6 +54,7 @@ FX_Blood(vector pos, vector color)
 	}
 //Blood_Touch();
 	pointparticles(PARTICLE_BLOOD, pos, [0, 0, 0], 1);
+	Blood_Touch();
 	// if (cvar("violence_hblood") <= 0) {
 	// 	return;
 	// }

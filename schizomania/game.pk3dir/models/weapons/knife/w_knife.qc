@@ -6,5 +6,5 @@ origin 0 0 0
 rotate 0 0 0
 scale 1
 
-scene "iqe/w_knife_large.iqe" noanim 1 
+scene "iqe/w_knife.iqe" noanim 1 
 
