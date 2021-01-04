@@ -5,76 +5,49 @@ in which all game mechanics come on board.
 This list (if I don't forget to) will be updated regularly, since it is for
 my own ADHD good.
 
-# Things to do (low priority list):
-- Move item hover code to View+UpdateWeapon
-- See how we can get Trenchbroom up and running.
+## Entities - Prototype 0.1:
+- Remove game_locked_Door
+- Rename egui_mainmenu to gui_mainmenu
+- Remove most redundant HL1 stock entities. Time to clear our code.
 
-# Things to research/question (medium priority):
-- How to do a proper zombie walk animaton, use offsets so it "moves backwards", to counter the slide effect.
-- Currently, shadows are disabled since the brush used to cast extra light for streetlamps, is somehow tagged along with it.
-  We gotta fix that..
+## Weapons - Prototype 0.1:
+- Knife
+  - Work on better sounds, where possible.
 
-# Prototype - Alpha - 0.1
-## NOTES FOR ANYONE WITH QUESTIONS:
-- GUI Images may be incomplete if you scale the HUD.
+- Pistol
+  - Implement properly.
+  - Export model to .iqe and generate a .vvm
 
-## MUST DO TO FIX NOTES LIST:
-- HUD Hint display about "check the house"
+- Flashlight
+  - Improve the flickering when battery runs low. (Pick a better lightstyle.)
+  - Make this an actual weapon? That'd be nice, right?
 
-## MUST DO LIST:
-
-- The following entities below need additions. Before we can move on.
-We'll likely add our own env_fade too. It kinda sucks we need to
-deviate, but we seek more features than the core gs-entbase has atm.
-  -?? Which entities? lol.
-
-- remove OLD HUD STUFF. (User input is still there.)
-
-- Add KEY support to the strings in HUD_Notifications.
-
-- FIX multisource being able to use Input/Output too.
-- FIX bug that one can use any item (at least, it removes them lol) 
-
-- Implement custom hud_textmessage, which DOES also trigger targets.
-  -- Implement with the typical quake font the UI uses already, but
-     larger. Maybe let text scroll in a bit. Possibly have a small shadowy background layer made in Krita to drop below it.
-  [75%]
-
-- Implement a custom func_door/func_door_rotating with extra sound and trigger options.
-  -- Locked door sound for example
-  -- Closing door sound.
-  -- Hurt/Touch/Knock sound?
-  --- Maybe try and get a door with a doorknob? (This is a tricky one?
-  Or require a door to be triggered, and add a func_button but can it move with the door?)
-
-- Improve the UI, glowy hover buttons?
-
-## Improvements:
-- Currently picking up an item out of a drawers is hell to design properly.
-- Replace the drawers in the bathroom with a cupboard, but func_door_rotating seems to not appreciate that much.
-
-## Weapons:
-- Flashlight - Improve flickering per battery power stage.
-- Adjust damage values, also in Traceattack.c for when a specific bodypart has been hit.
-    -- It multiplies the damage usually by 0.4* etc, which means if a 9mm does like 9 damage... It takes a good 40 hits to kill lol
-- Implement knife, pistol, rifle.
-
-## Inventory/Player in-game menu:
+## General Code Tasks:
+- Implement Scripted Sequences with dialogues. (I suppose, an entity which'll send a dialogue event mechanism, back and forth? :) )
+## GUI - Prototype 0.1:
+### Possible, but not required:
 - Use images for buttons. (Maybe a hover glow? effect)
 - Use sound for the hover, and click etc!
 - Render a player mesh, and health/ammo status.
     -- In the future, make him draw a weapon, or play a heavy breathing animation in case he is hurt etc.
 - Make item list scrollable.
 
-## Map: test_prototype_indoor:
-- Basic fade screen intro, with animations of the player waking up hungover and confused lololol.
-- Finish bathroom cupboard, add a medkit.
-## Code for test_prototype:
-- Implement Scripted Sequences with dialogues. (I suppose, an entity which'll send a dialogue event, back and forth? :) )
-
-## Assets:
-- Acquire gfx for preferably a blue-ish, black, based in-game menu.
+## Assets (This list is obviously to be updated a lot..):
+- Acquire gfx for preferably a red,white-ish, black, based in-game menu.
 - Acquire sfx for in-game menu.
 - Acquire a few Mixamo models, for AI, and NPC's. (Also thus, Brian, the player model)
-- Acquire first person view models for a knife, and a pistol. Maybe use Mixamo meshes for the arms/hands?
 - Acquire basic sounds for doors, footsteps, ambiance.
+
+## Map: test_prototype_indoor:
+- To be redesigned due to current issues with the map design.
+
+## Map: test_prototype_outdoor:
+- It is there, but left unfinished, expected during Prototype 0.2, or 0.3.. goals. :)
+
+# Technical Research List:
+- How to do a proper zombie walk animaton, use offsets so it "moves backwards", to counter the slide effect.
+- Shadows need to be disabled since the brush used to cast extra light for streetlamps, is somehow tagged along with it.
+  We gotta fix that..
+- Body part specific damage, head, arms, legs etc.
+  - Adjust damage values, also in Traceattack.c for when a specific bodypart has been hit.
+    - It multiplies the damage usually by 0.4* etc, which means if a 9mm does like 9 damage... It takes a good 40 hits to kill lol
