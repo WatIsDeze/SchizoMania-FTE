@@ -93,3 +93,108 @@ noclip
 noclip
 /map test_prototype_indoor
 noclip
+/map test_prototype_indoor
+r_showtris 1
+/r_showtris 1
+noclip
+noclip
+/map test_prototype_indoor
+r_showtris 2
+/map test_prototype_indoor
+r_showtris 2
+r_speeds 2
+con_textsize
+con_textsize -16
+vid_restart
+/vid_conheight 
+/vid_conheight 2
+r_speeds 2
+r_auto
+/r_autoscale 
+/r_autoscale  2
+/r_autoscale  4
+/r_autoscale  1
+/r_autoscale 1
+/r_autoscale 1
+/r_autoscale 2
+/r_autoscale 1
+/map test_prototype_indoor
+/r_showtris 2
+/map test_prototype_indoor
+/r_showtris 2
+/map test_prototype_indoor
+r_showtris 2
+/map test_prototype_indoor
+r_showtris 1
+noclip
+r_showtris 0
+noclip
+/map test_prototype_indoor
+r_temporalscenecache 1
+r_showtris 2
+/r_novis 
+/map test_prototype_indoor
+/r_temporalscenecache 0
+r_showtris 2
+vid_restart
+/map test_prototype_indoor
+/map test_prototype_indoor
+noclip
+noclip
+/map test_prototype_indoor
+impulse 101
+noclip
+noclip
+impulse 101
+noclip
+noclip
+god
+noclip
+noclip
+god
+/map test_prototype_indoor
+r_showtris 2
+/map test_prototype_indoor
+r_showtris 2
+noclip
+noclip
+/map test_prototype_indoor
+noclip
+noclip
+/map test_prototype_indoor
+noclip
+noclip
+r_showtris 2
+/map test_prototype_indoor
+r_showtris 2
+noclip
+noclip
+/map test_prototype_indoor
+r_showtris 2
+/map test_prototype_indoor
+/map prt_wip
+/map prt_wip
+/map prt_wip
+impulse 101
+/map prt_wip
+impulse 101
+impulse 101
+/map prt_wip
+god
+/map prt_wip
+god
+/map prt_wip
+/map prt_wip
+/map prt_wip
+/map prt_wip
+/map prt_wip
+/map prt_wip
+/map prt_wip
+/map prt_wip
+/map prt_wip
+/map prt_wip
+/map prt_wip
+/map prt_wip
+god
+god
+impulse 101

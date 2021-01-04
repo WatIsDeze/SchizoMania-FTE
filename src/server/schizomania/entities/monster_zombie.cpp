@@ -147,15 +147,14 @@ monster_zombie::AttackMelee(void)
 
 	// Attack number, depends on distance.
 	int attackNr = 2;
-	dprint(sprintf("%d\n", dist));
 
 	// If the player is still too far away, unlike what CBaseMonster thinks, return FALSE.
-	if (dist > 71) {
+	if (dist > 81) {
 		return FALSE;
 	}
 
 	// If the player is too close, roll the dice for a heavy attack. (ATTACK1)
-	if (dist <= 64) {
+	if (dist <= 74) {
 		if (random() < 0.75)
 			attackNr = 1;
 	}
@@ -188,7 +187,7 @@ monster_zombie::AttackFlailOne(void)
 {
 	// Calculate attack trace, 64 distance.
 	makevectors(angles);
-	vector vecDest = origin + v_forward * 40;
+	vector vecDest = origin + v_forward * 50;
 
 	// Do a trace.
 	traceline(origin, vecDest, FALSE, this);
@@ -207,7 +206,7 @@ monster_zombie::AttackFlailTwo(void)
 {
 	// Calculate attack trace, 64 distance.
 	makevectors(angles);
-	vector vecDest = origin + v_forward * 46;
+	vector vecDest = origin + v_forward * 56;
 
 	// Do a trace.
 	traceline(origin, vecDest, FALSE, this);

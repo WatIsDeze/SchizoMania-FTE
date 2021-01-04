@@ -21,9 +21,9 @@ var int DECAL_BLOOD;
 void
 FX_Blood_Init(void)
 {
-	precache_model("sprites/bloodspray.spr");
-	precache_model("sprites/blood.spr");
-	PARTICLE_BLOOD = particleeffectnum("part_blood");
+	// precache_model("sprites/bloodspray.spr");
+	// precache_model("sprites/blood.spr");
+	PARTICLE_BLOOD = particleeffectnum("part_blood.te_blood");
 	DECAL_BLOOD = particleeffectnum("decal_blood.effect");
 }
 #endif
@@ -52,51 +52,52 @@ FX_Blood(vector pos, vector color)
 			pointparticles(DECAL_BLOOD, g_tracedDecal.endpos, g_tracedDecal.normal, 1);
 		}
 	}
-
+//Blood_Touch();
+	pointparticles(PARTICLE_BLOOD, pos, [0, 0, 0], 1);
 	// if (cvar("violence_hblood") <= 0) {
 	// 	return;
 	// }
 
-	env_sprite eBlood = spawn(env_sprite);
-	setorigin(eBlood, pos);
-	setmodel(eBlood, "sprites/bloodspray.spr");
+// 	env_sprite eBlood = spawn(env_sprite);
+// 	setorigin(eBlood, pos);
+// 	setmodel(eBlood, "sprites/bloodspray.spr");
 
-	eBlood.drawmask = MASK_ENGINE;
-	eBlood.maxframe = modelframecount(eBlood.modelindex);
-	eBlood.loops = 0;
-	eBlood.scale = 1.0f;
-#ifdef GS_RENDERFX
-	eBlood.m_vecRenderColor = color;
-#else
-	eBlood.colormod = color;
-#endif
-	eBlood.framerate = 20;
-	eBlood.nextthink = time + 0.05f;
+// 	eBlood.drawmask = MASK_ENGINE;
+// 	eBlood.maxframe = modelframecount(eBlood.modelindex);
+// 	eBlood.loops = 0;
+// 	eBlood.scale = 1.0f;
+// #ifdef GS_RENDERFX
+// 	eBlood.m_vecRenderColor = color;
+// #else
+// 	eBlood.colormod = color;
+// #endif
+// 	eBlood.framerate = 20;
+// 	eBlood.nextthink = time + 0.05f;
 
-	for (int i = 0; i < 3; i++) {
-		env_sprite ePart = spawn(env_sprite);
-		setorigin(ePart, pos);
-		setmodel(ePart, "sprites/blood.spr");
-		ePart.movetype = MOVETYPE_BOUNCE;
-		ePart.gravity = 0.5f;
-		ePart.scale = 0.5f;
-		ePart.drawmask = MASK_ENGINE;
-		ePart.maxframe = modelframecount(ePart.modelindex);
-		ePart.loops = 0;
-#ifdef GS_RENDERFX
-	eBlood.m_vecRenderColor = color;
-#else
-	eBlood.colormod = color;
-#endif
-		ePart.framerate = 15;
-		ePart.nextthink = time + 0.1f;
-		ePart.velocity = randomvec() * 64;
-		ePart.touch = Blood_Touch;
-		ePart.solid = SOLID_BBOX;
-		/* ignore player physics */
-		ePart.dimension_solid = 1;
-		ePart.dimension_hit = 1;
-		setsize(ePart, [0,0,0], [0,0,0]);
-	}
+// 	for (int i = 0; i < 3; i++) {
+// 		env_sprite ePart = spawn(env_sprite);
+// 		setorigin(ePart, pos);
+// 		setmodel(ePart, "sprites/blood.spr");
+// 		ePart.movetype = MOVETYPE_BOUNCE;
+// 		ePart.gravity = 0.5f;
+// 		ePart.scale = 0.5f;
+// 		ePart.drawmask = MASK_ENGINE;
+// 		ePart.maxframe = modelframecount(ePart.modelindex);
+// 		ePart.loops = 0;
+// #ifdef GS_RENDERFX
+// 	eBlood.m_vecRenderColor = color;
+// #else
+// 	eBlood.colormod = color;
+// #endif
+// 		ePart.framerate = 15;
+// 		ePart.nextthink = time + 0.1f;
+// 		ePart.velocity = randomvec() * 64;
+// 		ePart.touch = Blood_Touch;
+// 		ePart.solid = SOLID_BBOX;
+// 		/* ignore player physics */
+// 		ePart.dimension_solid = 1;
+// 		ePart.dimension_hit = 1;
+// 		setsize(ePart, [0,0,0], [0,0,0]);
+// 	}
 #endif
 }
