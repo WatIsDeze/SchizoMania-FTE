@@ -71,8 +71,8 @@ Item_Pickup(player pl, int itemID, int amount)
 	pl.inventory_items[itemID] = bound(0, pl.inventory_items[itemID] + amount, 255);
 
 	// Player pickup sound and log.
-	//Logging_Pickup(other, this, __NULL__);
-	sound(pl, CHAN_ITEM, "player/pickup_item.wav", 1, ATTN_NORM);
+//	Logging_Pickup(other, this, __NULL__);
+	sound(pl, CHAN_ITEM, "player/item_pickup.wav", 1, ATTN_NORM);
 	
 	// Write out EV_ITEM_PICKUP event.
 	WriteByte(MSG_MULTICAST, SVC_CGAMEPACKET);
@@ -184,6 +184,9 @@ Item_Drop(player pl, int itemID, int amount)
 
     // Remove item from the player inventory.
     pl.inventory_items[itemID] = bound(0, pl.inventory_items[itemID] - amount, 255);
+
+	// Play sound.
+	sound(pl, CHAN_ITEM, "player/item_drop.wav", 1, ATTN_NORM);
 
 	// Spawn dropable.
 	item_inventory drop = spawn(item_inventory);

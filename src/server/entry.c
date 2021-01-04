@@ -195,8 +195,9 @@ void initents(void)
 	// precache_sound("common/wpn_select.wav");
 	// precache_sound("common/wpn_denyselect.wav");
 	// precache_sound("player/sprayer.wav");
-	// Pickup sound.
-	precache_sound("player/pickup_item.wav");
+	// Item Drop/Pickup sounds.
+	precache_sound("player/item_pickup.wav");
+	precache_sound("player/item_drop.wav");
 
 	// Flashlight.
 	precache_sound("player/flashlight_on.wav");
