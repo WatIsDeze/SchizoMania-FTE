@@ -21,10 +21,10 @@
 //=======================
 void i_glock18_precache(void) {
 #ifdef SERVER
-	Sound_Precache("item_glock.use");
-	precache_model("models/w_glock18.mdl");
+//	Sound_Precache("item_glock.use");
+	precache_model("models/weapons/pistol/w_pistol.vvm");
 #else
-	precache_model("models/w_glock18.mdl");
+	precache_model("models/weapons/pistol/w_pistol.vvm");
 #endif
 }
 
@@ -76,7 +76,7 @@ dprint("===================\nDROPPED GLOKC\n=============");
 // Return item model string path.
 //=======================
 string i_glock18_wmodel(void) {
-    return "models/w_glock18.mdl";
+    return "models/weapons/pistol/w_pistol.vvm";
 }
 
 inventory_item_t i_glock18 = 

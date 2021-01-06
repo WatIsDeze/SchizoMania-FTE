@@ -133,8 +133,11 @@ void CUIMenuButton::Input (float flEVType, float flKey, float flChar, float flDe
 
 	// Set the hover flag, in case, we hover...
 	if (Util_MouseAbove(getmousepos(), GetAbsolutePos(), m_vecSize)) {
-		if (!(m_iFlags & MBUTTON_HOVER))
+		if (!(m_iFlags & MBUTTON_HOVER)) {
 			m_iFlags |= MBUTTON_HOVER;
+			//sound(self, CHAN_AUTO, "ui/hover.wav", 1.0, ATTN_NORM);
+			//Sound_Play(self, CHAN_AUTO, "ui/hover.wav");
+		}
 	} else {
 		if (m_iFlags & MBUTTON_HOVER)
 			m_iFlags &= ~MBUTTON_HOVER;

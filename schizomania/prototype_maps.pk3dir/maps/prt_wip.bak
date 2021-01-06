@@ -978,10 +978,16 @@
 // entity 16
 {
 "classname" "item_inventory"
-"origin" "48.000000 156.000000 -26.000000"
+"origin" "48.000000 156.000000 -22.000000"
 "itemID" "4"
 "angle" "-122.197067"
 "amount" "1"
 "targetname" "item_knife2"
 "target" "mm_door1"
+}
+// entity 17
+{
+"classname" "monster_zombie"
+"origin" "128.000000 -16.000000 -52.000000"
+"angle" "-93.153770"
 }

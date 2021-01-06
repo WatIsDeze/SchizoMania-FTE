@@ -15,7 +15,7 @@
  */
 
 /*QUAKED weapon_glock18 (0 0 1) (-16 -16 0) (16 16 32)
-"model" "models/w_glock18.mdl"
+"model" "models/weapons/pistol/w_pistol.vvm"
 
 COUNTER-STRIKE (1999) ENTITY
 
@@ -51,7 +51,7 @@ w_glock18_precache(void)
 #ifdef SERVER
 	Sound_Precache("weapon_glock18.fire");
 	Sound_Precache("weapon_glock18.burstfire");
-	precache_model("models/w_glock18.mdl");
+	precache_model("models/weapons/pistol/w_pistol.vvm");
 #else
 	precache_model("models/v_glock18.mdl");
 	precache_model("models/p_glock18.mdl");
@@ -69,7 +69,7 @@ w_glock18_updateammo(player pl)
 string
 w_glock18_wmodel(void)
 {
-	return "models/w_glock18.mdl";
+	return "models/weapons/pistol/w_pistol.vvm";
 }
 
 string

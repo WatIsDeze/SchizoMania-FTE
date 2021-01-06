@@ -2,32 +2,36 @@ weapon_knife.deploy
 {
     sample weapons/knife/deploy1.wav
 }
+weapon_knife.hit
+{
+	sample weapons/knife/hit_world1.wav
+}
 weapon_knife.slash
 {
     sample weapons/knife/slash1.wav
     sample weapons/knife/slash2.wav
 }
-
 weapon_knife.slashhit
 {
 	sample weapons/knife/hit_flesh_slash1.wav
 	sample weapons/knife/hit_flesh_slash2.wav
 }
-
 weapon_knife.stab
 {
     sample weapons/knife/slash1.wav
     sample weapons/knife/slash2.wav
 }
-
 weapon_knife.stabhit
 {
 	sample weapons/knife/hit_flesh_stab1.wav
 	sample weapons/knife/hit_flesh_stab2.wav
 }
 
-weapon_knife.hit
+weapon_pistol.deploy
 {
-	sample weapons/knife/hit_world1.wav
+    sample weapons/pistol/deploy1.wav
 }
-
+weapon_pistol.fire
+{
+    sample weapons/pistol/fire1.wav
+}

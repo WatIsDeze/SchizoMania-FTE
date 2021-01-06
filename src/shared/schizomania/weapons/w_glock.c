@@ -36,31 +36,38 @@ Same as weapon_9mmhandgun
 
 enum
 {
-	GLOCK_IDLE1,
-	GLOCK_IDLE2,
-	GLOCK_IDLE3,
-	GLOCK_SHOOT_BURST1,
-	GLOCK_SHOOT_BURST2,
-	GLOCK_SHOOT,
-	GLOCK_SHOOT_EMPTY,
-	GLOCK_RELOAD1,
-	GLOCK_DRAW1,
-	GLOCK_UNUSED1,
-	GLOCK_UNUSED2,
-	GLOCK_DRAW2,
-	GLOCK_RELOAD2
+	PISTOL_TPOSE,
+	PISTOL_ATTACK1,
+	PISTOL_IDLE1,
+	PISTOL_RELOAD1,
+	PISTOL_DRAW1,
+	PISTOL_HOLSTER1
+	// GLOCK_IDLE1,
+	// GLOCK_IDLE2,
+	// GLOCK_IDLE3,
+	// GLOCK_SHOOT_BURST1,
+	// GLOCK_SHOOT_BURST2,
+	// GLOCK_SHOOT,
+	// GLOCK_SHOOT_EMPTY,
+	// GLOCK_RELOAD1,
+	// GLOCK_DRAW1,
+	// GLOCK_UNUSED1,
+	// GLOCK_UNUSED2,
+	// GLOCK_DRAW2,
+	// GLOCK_RELOAD2
 };
 
 void
 w_glock_precache(void)
 {
 #ifdef SERVER
-	Sound_Precache("weapon_glock18.fire");
-	Sound_Precache("weapon_glock18.burstfire");
-	precache_model("models/w_glock18.mdl");
+	Sound_Precache("weapon_pistol.deploy");
+	Sound_Precache("weapon_pistol.fire");
+	// precache_model("models/weapons/pistol/w_pistol.vvm");
+	precache_model("models/weapons/pistol/w_pistol.vvm");
 #else
-	precache_model("models/v_glock18.mdl");
-	precache_model("models/p_glock18.mdl");
+	precache_model("models/weapons/pistol/v_pistol.vvm");
+	// precache_model("models/p_glock18.mdl");
 #endif
 }
 
@@ -75,13 +82,13 @@ w_glock_updateammo(player pl)
 string
 w_glock_wmodel(void)
 {
-	return "models/w_glock18.mdl";
+	return "models/weapons/pistol/w_pistol.vvm";
 }
 
 string
 w_glock_pmodel(void)
 {
-	return "models/p_glock18.mdl";
+	return "";
 }
 
 string
@@ -113,31 +120,24 @@ void
 w_glock_draw(void)
 {
 	player pl = (player)self;
-	Weapons_SetModel("models/v_glock18.mdl");
-	int r = (float)input_sequence % 2;
-	switch (r) {
-	case 0:
-		Weapons_ViewAnimation(GLOCK_DRAW1);
-		break;
-	default:
-		Weapons_ViewAnimation(GLOCK_DRAW2);
-		break;
-	}
-
+	Weapons_SetModel("models/weapons/pistol/v_pistol.vvm");
+	Weapons_ViewAnimation(PISTOL_DRAW1);
 #ifdef CLIENT
 //	Got to do this for crosshair support.
 	pl.scma_cross_mindist = 8;
 	pl.scma_cross_deltadist = 3;
+#else
+	Sound_Play(pl, CHAN_WEAPON, "weapon_pistol.deploy");
 #endif
 }
 
-// void
-// w_glock_holster(void)
-// {
-// #ifdef CLIENT
-// 	Weapons_ViewAnimation(GLOCK_HOLSTER);
-// #endif
-// }
+void
+w_glock_holster(void)
+{
+#ifdef CLIENT
+	Weapons_ViewAnimation(PISTOL_HOLSTER1);
+#endif
+}
 
 void
 w_glock_primary(void)
@@ -173,9 +173,9 @@ w_glock_primary(void)
 	Weapons_ViewPunchAngle([-2,0,0]);
 
 	if (pl.a_ammo1) {
-		Weapons_ViewAnimation(GLOCK_SHOOT);
+		Weapons_ViewAnimation(PISTOL_ATTACK1);
 	} else {
-		Weapons_ViewAnimation(GLOCK_SHOOT_EMPTY);
+		//Weapons_ViewAnimation(PISTOL_ATTACK_EMPTY);
 	}
 #else
 	pl.glock_mag--;
@@ -183,9 +183,9 @@ w_glock_primary(void)
 	TraceAttack_FireBullets(1, pl.origin + pl.view_ofs, Skill_GetValue("plr_9mm_bullet", 8), [accuracy,accuracy], WEAPON_GLOCK);
 	//TraceAttack_FireBullets(1, pl.origin + pl.view_ofs, Skill_GetValue("plr_9mm_bullet"), [0.01,0.01], WEAPON_GLOCK);
 	if (pl.a_ammo3) {
-		Sound_Play(pl, CHAN_WEAPON, "weapon_glock18.burstfire");
+		Sound_Play(pl, CHAN_WEAPON, "weapon_pistol.fire");
 	} else {
-		Sound_Play(pl, CHAN_WEAPON, "weapon_glock18.fire");
+		Sound_Play(pl, CHAN_WEAPON, "weapon_pistol.fire");
 	}
 
 	if (self.flags & FL_CROUCHING)
@@ -195,21 +195,21 @@ w_glock_primary(void)
 #endif
 
 	if (pl.a_ammo3) {
-		int r = (float)input_sequence % 2;
-		switch (r) {
-		case 0:
-			Weapons_ViewAnimation(GLOCK_SHOOT_BURST1);
-			break;
-		default:
-			Weapons_ViewAnimation(GLOCK_SHOOT_BURST2);
-			break;
-		}
-		pl.w_attack_next = 0.5f;
+		// int r = (float)input_sequence % 2;
+		// switch (r) {
+		// case 0:
+		// 	Weapons_ViewAnimation(GLOCK_SHOOT_BURST1);
+		// 	break;
+		// default:
+		// 	Weapons_ViewAnimation(GLOCK_SHOOT_BURST2);
+		// 	break;
+		// }
+		// pl.w_attack_next = 0.5f;
 	} else {
 		if (pl.a_ammo1 <= 0) {
-			Weapons_ViewAnimation(GLOCK_SHOOT_EMPTY);
+			Weapons_ViewAnimation(PISTOL_ATTACK1);
 		} else {
-			Weapons_ViewAnimation(GLOCK_SHOOT);
+//			Weapons_ViewAnimation(PISTOL_ATTACK1_EMPTY);
 		}
 		pl.w_attack_next = 0.15f;
 	}
@@ -273,10 +273,10 @@ w_glock_reload(void)
 	int r = (float)input_sequence % 2;
 	switch (r) {
 	case 0:
-		Weapons_ViewAnimation(GLOCK_RELOAD1);
+		Weapons_ViewAnimation(PISTOL_RELOAD1);
 		break;
 	default:
-		Weapons_ViewAnimation(GLOCK_RELOAD2);
+		Weapons_ViewAnimation(PISTOL_RELOAD1);
 		break;
 	}
 
@@ -297,15 +297,15 @@ w_glock_release(void)
 	r = (float)input_sequence % 3;
 	switch (r) {
 	case 1:
-		Weapons_ViewAnimation(GLOCK_IDLE2);
+		Weapons_ViewAnimation(PISTOL_IDLE1);
 		pl.w_idle_next = 2.5f;
 		break;
 	case 2:
-		Weapons_ViewAnimation(GLOCK_IDLE3);
+		Weapons_ViewAnimation(PISTOL_IDLE1);
 		pl.w_idle_next = 3.5f;
 		break;
 	default:
-		Weapons_ViewAnimation(GLOCK_IDLE1);
+		Weapons_ViewAnimation(PISTOL_IDLE1);
 		pl.w_idle_next = 3.75f;
 		break;
 	}
@@ -392,7 +392,7 @@ weapon_t w_glock =
 	.slot		= 1,
 	.slot_pos	= 0,
 	.draw		= w_glock_draw,
-	.holster	= __NULL__,
+	.holster	= w_glock_holster,
 	.primary	= w_glock_primary,
 	.secondary	= w_glock_secondary,
 	.reload		= w_glock_reload,

@@ -11,13 +11,17 @@ my own ADHD good.
 - [_] Remove most redundant HL1 stock entities. Time to clear our code.
 
 ## Weapons - Prototype 0.1:
+- [_] Fix accuracy issues when shooting.
 - [_] Knife
   - [_] Work on better sounds, where possible.
 
 - [_] Pistol
-  - [_] Implement properly.
-  - [_] Export model to .iqe and generate a .vvm
-  - [_] Add sounds.
+  - [-] Implement properly.
+    - [_] Add Muzzleflash
+    - [_] Add shell dropping effect.
+    - [_] Fix animations for reloading fail when empty.
+  - [X] Export model to .iqe and generate a .vvm
+  - [X] Add sounds.
 
 - [_] Flashlight
   - [_] Wait a few miliseconds, so the light turns on accordingly to the audio.

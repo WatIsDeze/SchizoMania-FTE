@@ -39,6 +39,10 @@ void m_init ( void )
 	Background_Init();
 	Desktop_Init();
 
+	// Precache sounds?
+	precache_sound("ui/click.wav");
+	precache_sound("ui/hover.wav");
+	
 	// Register menu cmds.	
 	registercommand( "menu_quit" );
 	registercommand( "menu_music" );

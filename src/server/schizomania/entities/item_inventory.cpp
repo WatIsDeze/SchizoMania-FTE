@@ -134,8 +134,8 @@ void item_inventory::Respawn(void) {
 	SetGFlags(gflags | GF_HOVER_FULLBRIGHT);
 	//SetSize(g_inventory_items[m_iItemID].mins, g_inventory_items[m_iItemID].maxs);
 	SetSolid(SOLID_BSP);
-	SetMovetype(MOVETYPE_PUSH);
-	droptofloor();
+	SetMovetype(MOVETYPE_TOSS);
+	//droptofloor();
 
 	// Set PlayerUse
 	PlayerUse = OnPlayerUse;

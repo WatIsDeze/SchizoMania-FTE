@@ -1,6 +1,7 @@
 #pragma target fte
 #pragma progs_dat  "../../platform/data.pk3dir/menu.dat"
 #define MENU
+#define SERVER
 #define CLASSIC_VGUI
 
 #includelist
