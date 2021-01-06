@@ -77,3 +77,56 @@ vid_restart
 /map prt_wip
 /map prt_wip
 /map prt_wip
+/map prt_wip
+/map prt_wip
+/map prt_wip
+/map prt_wip
+/map prt_wip
+impulse 101
+/map prt_wip
+/map prt_wip
+/map prt_wip
+/map prt_wip
+modelviewer models/weapons/pistol/v_pistol.vvm
+modelviewer models/weapons/pistol/v_pistol.vvm
+/map prt_wip
+/r_shadow_realtime_world_shadows 
+/map prt_wip
+/map prt_wip
+/map test_prototype_indoor
+/map test_prototype_indoor
+/map test_prototype_indoor
+noclip
+noclip
+impulse 101
+/map test_prototype_indoor
+noclip
+noclip
+/map test_prototype_indoor
+noclip
+/map prt_wip
+/map prt_wip
+/map prt_wip
+/map prt_wip
+/map prt_wip
+/map prt_wip
+/map prt_wip
+/map prt_wip
+/map prt_wip
+/map prt_wip
+/map prt_wip
+/map prt_wip
+/map prt_wip
+quit
+/map test_prototype_indoor
+/map test_prototype_indoor
+/map test_prototype_indoor
+/r_showbboxes 
+/r_showbboxes 1
+/map test_prototype_indoor
+/map test_prototype_indoor
+quit
+/map test_prototype_indoor
+impulse 101
+noclip
+noclip

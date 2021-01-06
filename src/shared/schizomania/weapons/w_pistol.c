@@ -17,8 +17,9 @@
 enum
 {
 	PISTOL_TPOSE,
-	PISTOL_ATTACK1,
 	PISTOL_IDLE1,
+	PISTOL_ATTACK1,
+	PISTOL_ATTACK2,
 	PISTOL_RELOAD1,
 	PISTOL_DRAW1,
 	PISTOL_HOLSTER1
@@ -153,21 +154,17 @@ w_pistol_primary(void)
 	View_SetMuzzleflash(MUZZLE_SMALL);
 	Weapons_ViewPunchAngle([-2,0,0]);
 
-	if (pl.a_ammo1) {
-		Weapons_ViewAnimation(PISTOL_ATTACK1);
-	} else {
-		//Weapons_ViewAnimation(PISTOL_ATTACK_EMPTY);
-	}
+	// if (pl.a_ammo1) {
+	// 	Weapons_ViewAnimation(PISTOL_ATTACK1);
+	// } else {
+	// 	//Weapons_ViewAnimation(PISTOL_ATTACK_EMPTY);
+	// }
 #else
 	pl.pistol_mag--;
 	TraceAttack_SetPenetrationPower(1);
 	TraceAttack_FireBullets(1, pl.origin + pl.view_ofs, Skill_GetValue("plr_9mm_bullet", 8), [accuracy,accuracy], WEAPON_PISTOL);
 	//TraceAttack_FireBullets(1, pl.origin + pl.view_ofs, Skill_GetValue("plr_9mm_bullet"), [0.01,0.01], WEAPON_ITEM_PISTOL);
-	if (pl.a_ammo3) {
-		Sound_Play(pl, CHAN_WEAPON, "weapon_pistol.fire");
-	} else {
-		Sound_Play(pl, CHAN_WEAPON, "weapon_pistol.fire");
-	}
+	Sound_Play(pl, CHAN_WEAPON, "weapon_pistol.fire");
 
 	if (self.flags & FL_CROUCHING)
 		Animation_PlayerTopTemp(ANIM_SHOOT1HAND, 0.45f);
@@ -175,25 +172,13 @@ w_pistol_primary(void)
 		Animation_PlayerTopTemp(ANIM_CR_SHOOT1HAND, 0.45f);
 #endif
 
-	if (pl.a_ammo3) {
-		// int r = (float)input_sequence % 2;
-		// switch (r) {
-		// case 0:
-		// 	Weapons_ViewAnimation(ITEM_PISTOL_SHOOT_BURST1);
-		// 	break;
-		// default:
-		// 	Weapons_ViewAnimation(ITEM_PISTOL_SHOOT_BURST2);
-		// 	break;
-		// }
-		// pl.w_attack_next = 0.5f;
+
+	if (pl.a_ammo1 <= 0) {
+		//Weapons_ViewAnimation(PISTOL_ATTACK1_EMPTY);
 	} else {
-		if (pl.a_ammo1 <= 0) {
-			Weapons_ViewAnimation(PISTOL_ATTACK1);
-		} else {
-//			Weapons_ViewAnimation(PISTOL_ATTACK1_EMPTY);
-		}
-		pl.w_attack_next = 0.15f;
+		Weapons_ViewAnimation(PISTOL_ATTACK1);
 	}
+	pl.w_attack_next = 0.15f;
 
 	pl.gflags |= GF_SEMI_TOGGLED;
 	pl.w_idle_next = pl.w_attack_next;
@@ -208,18 +193,10 @@ w_pistol_secondary(void)
 		return;
 	}
 
-	/* toggle burst-fire */
-	pl.a_ammo3 = 1 - pl.a_ammo3;
+	// TODO: Implement pistol smashing..?
+	Weapons_ViewAnimation(PISTOL_ATTACK2);
 
-#ifdef CLIENT
-	if (pl.a_ammo3) {
-		CSQC_Parse_CenterPrint("Switched to Burst-Fire mode");
-	} else {
-		CSQC_Parse_CenterPrint("Switched to Semi-Automatic mode");
-	}
-#endif
-
-	pl.w_attack_next = 1.0f;
+	pl.w_attack_next = 0.85f;
 	pl.w_idle_next = pl.w_attack_next;
 }
 
@@ -254,7 +231,7 @@ w_pistol_reload(void)
 #endif
 	Weapons_ViewAnimation(PISTOL_RELOAD1);
 
-	pl.w_attack_next = 2.1f;
+	pl.w_attack_next = 1.70f;
 	pl.w_idle_next = pl.w_attack_next;
 }
 
@@ -267,8 +244,14 @@ w_pistol_release(void)
 		return;
 	}
 
+	// Play animation.
 	Weapons_ViewAnimation(PISTOL_IDLE1);
-	pl.w_idle_next = 2.5f;
+
+	// Random next interval between 2.5 and 4.5 sec.
+	pl.w_idle_next = bound(2.5, random() * 4.5, 4.5);
+
+	// Special recoil system requirement.
+	w_scma_weaponrelease();
 }
 
 float
@@ -356,7 +339,7 @@ weapon_t w_pistol =
 	.primary	= w_pistol_primary,
 	.secondary	= w_pistol_secondary,
 	.reload		= w_pistol_reload,
-	.release	= w_scma_weaponrelease,
+	.release	= w_pistol_release,
 	.crosshair	= w_pistol_hud,
 	.precache	= w_pistol_precache,
 	.pickup		= w_pistol_pickup,
