@@ -113,9 +113,11 @@ w_pistol_draw(void)
 void
 w_pistol_holster(void)
 {
-#ifdef CLIENT
+//#ifdef CLIENT
+// TODO: WTF IS THIS? IT DUN WORK...
+	Weapons_SetModel("models/weapons/pistol/v_pistol.vvm");
 	Weapons_ViewAnimation(PISTOL_HOLSTER1);
-#endif
+//#endif
 }
 
 void

@@ -31,7 +31,7 @@ void Items_Event_Pickup(void) {
     int itemAmount = readbyte();
 
     // Cast to player.
-    player pl = (player)self;
+    player pl = pSeat->m_ePlayer;
 
     // Add item to the player inventory.
     pl.inventory_items[itemID] = bound(0, pl.inventory_items[itemID] + itemAmount, 255);
@@ -64,7 +64,7 @@ void Items_Event_Drop(void) {
     int itemAmount = readbyte();
 
     // Cast to player.
-    player pl = (player)self;
+    player pl = pSeat->m_ePlayer;
 
     // Remove item from the player inventory.
     pl.inventory_items[itemID] = bound(0, pl.inventory_items[itemID] - itemAmount, 255);
@@ -97,7 +97,7 @@ void Items_Event_Use(void) {
     int itemAmount = readbyte();
 
     // Cast to player.
-    player pl = (player)self;
+    player pl = pSeat->m_ePlayer;
 
     // Ensure it is in bounds.
     pl.inventory_items[itemID] = bound(0, pl.inventory_items[itemID] - itemAmount, 255);
@@ -129,7 +129,7 @@ void Items_Event_Equip(void) {
     int itemID = readbyte();
 
     // Cast to player.
-    player pl = (player)self;
+    player pl = pSeat->m_ePlayer;
 
     // Fetch name of the player that picked it up.
     string playerName = getplayerkeyvalue(playerID, "name");

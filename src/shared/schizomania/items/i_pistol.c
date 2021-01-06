@@ -65,8 +65,11 @@ void i_pistol_drop(player pl) {
 #ifdef SERVER
 dprint("===================\nDROPPED GLOKC\n=============");
 	Weapons_Holster();
-	Weapons_RemoveItem(pl, WEAPON_PISTOL);
-	pl.activeweapon = 0;
+	// TODO: WTF IS THIS? IT DUN WORK...
+	
+	//Weapons_RemoveItem(pl, WEAPON_PISTOL);
+	//if (pl.activeweapon == WEAPON_PISTOL)
+	//	pl.activeweapon = WEAPON_NONE;
 #endif
 }
 
