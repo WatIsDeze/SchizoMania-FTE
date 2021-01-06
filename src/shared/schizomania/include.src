@@ -23,14 +23,14 @@
 ../../shared/schizomania/items/i_can.c
 ../../shared/schizomania/items/i_winebottle.c
 ../../shared/schizomania/items/i_knife.c
-../../shared/schizomania/items/i_glock18.c
+../../shared/schizomania/items/i_pistol.c
 ../../shared/schizomania/items/i_medkit.c
 ../../shared/schizomania/items/items.cpp
 ../../shared/schizomania/items/item_common.c
 
 ../../shared/schizomania/weapons/weapons.h
 ../../shared/schizomania/weapons/weapons_schizomania.c
-../../shared/schizomania/weapons/w_glock.c
+../../shared/schizomania/weapons/w_pistol.c
 ../../shared/schizomania/weapons/w_handgrenade.c
 ../../shared/schizomania/weapons/w_knife.c
 ../../shared/schizomania/weapons/w_mp5.c

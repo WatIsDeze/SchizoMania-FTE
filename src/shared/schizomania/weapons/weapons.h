@@ -21,7 +21,7 @@
 // with the new inventory item system.
 //=======================
 #define ITEM_KNIFE			0x00000001i
-#define ITEM_GLOCK			0x00000002i
+#define ITEM_PISTOL			0x00000002i
 #define ITEM_PYTHON			0x00000004i
 #define ITEM_MP5			0x00000008i
 #define ITEM_CROSSBOW		0x00000010i
@@ -63,7 +63,7 @@ enum
 {
 	WEAPON_NONE,
 	WEAPON_KNIFE,
-	WEAPON_GLOCK,
+	WEAPON_PISTOL,
 	WEAPON_MP5,
 	WEAPON_SHOTGUN,
 	WEAPON_RPG,

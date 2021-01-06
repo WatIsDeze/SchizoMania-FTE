@@ -57,9 +57,9 @@ void Game_Input(void)
 			// pl.armor = 100;
 			// pl.g_items |= ITEM_SUIT;
 			// pl.g_items |= ITEM_KNIFE;
-			// pl.g_items |= ITEM_GLOCK;
+			// pl.g_items |= ITEM_PISTOL;
 			// Weapons_AddItem(pl, WEAPON_KNIFE, -1);
-			// Weapons_AddItem(pl, WEAPON_GLOCK, -1);
+			// Weapons_AddItem(pl, WEAPON_ITEM_PISTOL, -1);
 			// Weapons_AddItem(pl, WEAPON_MP5, -1);
 			// Weapons_AddItem(pl, WEAPON_SHOTGUN, -1);
 			// Weapons_AddItem(pl, WEAPON_RPG, -1);
@@ -68,7 +68,7 @@ void Game_Input(void)
 			Item_Pickup(pl, INVENTORY_ITEM_KNIFE, 1); // Knife
 
 			// Pick up event.
-			Item_Pickup(pl, INVENTORY_ITEM_GLOCK, 1); // Glock
+			Item_Pickup(pl, INVENTORY_ITEM_PISTOL, 1); // Glock
 		}
 
 		if (self.impulse == 102) {

@@ -2698,7 +2698,7 @@ floors/tiled_planks_02
 "itemID" "4"
 "angle" "-122.197067"
 "amount" "1"
-"targetname" "item_glock18"
+"targetname" "ITEM_PISTOL18"
 "target" "mm_door001"
 }
 // entity 18
@@ -2899,7 +2899,7 @@ fabric/fabric005
 // entity 23
 {
 "classname" "func_illusionary"
-"excludenpc" "item_glock18"
+"excludenpc" "ITEM_PISTOL18"
 // brush 0
 {
 ( -1192 3118 160 ) ( -1192 2998 160 ) ( -1296 3118 160 ) nieb/clone/wood02 [ 1 0 0 96 ] [ -0 -1 -0 24 ] -0 0.25 0.25 0 0 0
@@ -3081,7 +3081,7 @@ fabric/fabric005
 // entity 31
 {
 "classname" "func_illusionary"
-"excludenpc" "item_glock18"
+"excludenpc" "ITEM_PISTOL18"
 // brush 0
 {
 ( -1566 3096 160 ) ( -1446 3096 160 ) ( -1566 2992 160 ) nieb/clone/wood02 [ 0 1 0 352 ] [ 1 0 0 472 ] -0 0.25 0.25 0 0 0
@@ -3251,7 +3251,7 @@ fabric/fabric005
 // entity 38
 {
 "classname" "func_illusionary"
-"excludenpc" "item_glock18"
+"excludenpc" "ITEM_PISTOL18"
 // brush 0
 {
 ( -1384 3118 160 ) ( -1384 2998 160 ) ( -1488 3118 160 ) nieb/clone/wood02 [ 1 0 0 352 ] [ -0 -1 -0 24 ] -0 0.25 0.25 0 0 0

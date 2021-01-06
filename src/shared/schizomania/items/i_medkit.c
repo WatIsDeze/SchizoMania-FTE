@@ -21,7 +21,7 @@
 //=======================
 void i_medkit_precache(void) {
 #ifdef SERVER
-	Sound_Precache("item_glock.use");
+	Sound_Precache("ITEM_PISTOL.use");
 	precache_model("models/w_medkit.mdl");
 #else
 	precache_model("models/w_medkit.mdl");

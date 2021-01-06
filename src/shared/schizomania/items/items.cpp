@@ -26,7 +26,7 @@ inventory_item_t g_inventory_items[] = {
 
     // Weapons.
     i_knife,
-    i_glock18,
+    i_pistol,
 
     // Health/Status related.
     i_medkit

@@ -10,6 +10,8 @@ my own ADHD good.
 - [_] Rename egui_mainmenu to gui_mainmenu
 - [_] Remove most redundant HL1 stock entities. Time to clear our code.
 
+## AI - Prototype 0.1:
+- [_] Pull in latest FreeCS changes and see if we can do anything with that botlib of theirs.
 ## Weapons - Prototype 0.1:
 - [_] Fix accuracy issues when shooting.
 - [_] Knife
@@ -29,10 +31,20 @@ my own ADHD good.
   - [_] Make this an actual weapon? That'd be nice, right?
   - [_] Replace stock Valve sounds.
 
-## Code Tasks (general) - Prototype 0.1:
+## Content Tasks (Make us Valve independent!) 0.1:
+These are some random ideas, which will be implemented if possible.
+Other than that it is a bit of a list of ... anything.
+- [_] Ricochet sounds.
 - [_] Use Item Sound.
-- [_] Drop Item Sound.
+- [X] Drop Item Sound.
 - [X] Pickup Item Sound.
+- [_] Smoke/Sparks for bullet hits, need replacing.
+- [_] Bullet ricochet sounds..
+- [_] Hand animation for picking up items, or droppen them??
+
+- [_] Ammo clips for pistol, reloading by item menu?
+  - [_] Maybe let R button remove a clip by default?
+## Code Tasks (general) - Prototype 0.1:
 - [_] Implement Scripted Sequences with dialogues. (I suppose, an entity which'll send a dialogue event mechanism, back and forth? :) )
 ## GUI - Prototype 0.1:
 ### Possible, but not required:

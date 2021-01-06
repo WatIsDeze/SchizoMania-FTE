@@ -37,7 +37,7 @@ void i_knife_use(player pl) {
 }
 
 //=======================
-// void i_glock18_pickup(void)
+// void i_pistol_pickup(void)
 //
 // Pickup.
 //=======================
@@ -48,7 +48,7 @@ void i_knife_pickup(player pl) {
 }
 
 //=======================
-// void i_glock18_equip(void)
+// void i_pistol_equip(void)
 //
 // Equip..
 //=======================
@@ -65,7 +65,7 @@ void i_knife_equip(player pl) {
 }
 
 //=======================
-// void i_glock18_drop(void)
+// void i_pistol_drop(void)
 //
 // Drop.
 //=======================

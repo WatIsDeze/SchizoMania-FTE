@@ -14,26 +14,6 @@
  * OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  */
 
-/*QUAKED weapon_9mmhandgun (0 0 1) (-16 -16 0) (16 16 32)
-"model" "models/w_9mmhandgun.mdl"
-
-HALF-LIFE (1998) ENTITY
-
-9mm Handgun/Glock Weapon
-Same as weapon_glock
-
-*/
-
-/*QUAKED weapon_glock (0 0 1) (-16 -16 0) (16 16 32)
-"model" "models/w_9mmhandgun.mdl"
-
-HALF-LIFE (1998) ENTITY
-
-9mm Handgun/Glock Weapon
-Same as weapon_9mmhandgun
-
-*/
-
 enum
 {
 	PISTOL_TPOSE,
@@ -42,23 +22,23 @@ enum
 	PISTOL_RELOAD1,
 	PISTOL_DRAW1,
 	PISTOL_HOLSTER1
-	// GLOCK_IDLE1,
-	// GLOCK_IDLE2,
-	// GLOCK_IDLE3,
-	// GLOCK_SHOOT_BURST1,
-	// GLOCK_SHOOT_BURST2,
-	// GLOCK_SHOOT,
-	// GLOCK_SHOOT_EMPTY,
-	// GLOCK_RELOAD1,
-	// GLOCK_DRAW1,
-	// GLOCK_UNUSED1,
-	// GLOCK_UNUSED2,
-	// GLOCK_DRAW2,
-	// GLOCK_RELOAD2
+	// ITEM_PISTOL_IDLE1,
+	// ITEM_PISTOL_IDLE2,
+	// ITEM_PISTOL_IDLE3,
+	// ITEM_PISTOL_SHOOT_BURST1,
+	// ITEM_PISTOL_SHOOT_BURST2,
+	// ITEM_PISTOL_SHOOT,
+	// ITEM_PISTOL_SHOOT_EMPTY,
+	// ITEM_PISTOL_RELOAD1,
+	// ITEM_PISTOL_DRAW1,
+	// ITEM_PISTOL_UNUSED1,
+	// ITEM_PISTOL_UNUSED2,
+	// ITEM_PISTOL_DRAW2,
+	// ITEM_PISTOL_RELOAD2
 };
 
 void
-w_glock_precache(void)
+w_pistol_precache(void)
 {
 #ifdef SERVER
 	Sound_Precache("weapon_pistol.deploy");
@@ -71,7 +51,7 @@ w_glock_precache(void)
 }
 
 void
-w_glock_updateammo(player pl)
+w_pistol_updateammo(player pl)
 {
 #ifdef SERVER
 	Weapons_UpdateAmmo(pl, pl.glock_mag, pl.ammo_9mm, -1);
@@ -79,25 +59,25 @@ w_glock_updateammo(player pl)
 }
 
 string
-w_glock_wmodel(void)
+w_pistol_wmodel(void)
 {
 	return "models/weapons/pistol/w_pistol.vvm";
 }
 
 string
-w_glock_pmodel(void)
+w_pistol_pmodel(void)
 {
 	return "";
 }
 
 string
-w_glock_deathmsg(void)
+w_pistol_deathmsg(void)
 {
 	return "";
 }
 
 int
-w_glock_pickup(int new, int startammo)
+w_pistol_pickup(int new, int startammo)
 {
 #ifdef SERVER
 	player pl = (player)self;
@@ -116,7 +96,7 @@ w_glock_pickup(int new, int startammo)
 }
 
 void
-w_glock_draw(void)
+w_pistol_draw(void)
 {
 	player pl = (player)self;
 	Weapons_SetModel("models/weapons/pistol/v_pistol.vvm");
@@ -131,7 +111,7 @@ w_glock_draw(void)
 }
 
 void
-w_glock_holster(void)
+w_pistol_holster(void)
 {
 #ifdef CLIENT
 	Weapons_ViewAnimation(PISTOL_HOLSTER1);
@@ -139,7 +119,7 @@ w_glock_holster(void)
 }
 
 void
-w_glock_primary(void)
+w_pistol_primary(void)
 {
 	player pl = (player)self;
 
@@ -179,8 +159,8 @@ w_glock_primary(void)
 #else
 	pl.glock_mag--;
 	TraceAttack_SetPenetrationPower(1);
-	TraceAttack_FireBullets(1, pl.origin + pl.view_ofs, Skill_GetValue("plr_9mm_bullet", 8), [accuracy,accuracy], WEAPON_GLOCK);
-	//TraceAttack_FireBullets(1, pl.origin + pl.view_ofs, Skill_GetValue("plr_9mm_bullet"), [0.01,0.01], WEAPON_GLOCK);
+	TraceAttack_FireBullets(1, pl.origin + pl.view_ofs, Skill_GetValue("plr_9mm_bullet", 8), [accuracy,accuracy], WEAPON_PISTOL);
+	//TraceAttack_FireBullets(1, pl.origin + pl.view_ofs, Skill_GetValue("plr_9mm_bullet"), [0.01,0.01], WEAPON_ITEM_PISTOL);
 	if (pl.a_ammo3) {
 		Sound_Play(pl, CHAN_WEAPON, "weapon_pistol.fire");
 	} else {
@@ -197,10 +177,10 @@ w_glock_primary(void)
 		// int r = (float)input_sequence % 2;
 		// switch (r) {
 		// case 0:
-		// 	Weapons_ViewAnimation(GLOCK_SHOOT_BURST1);
+		// 	Weapons_ViewAnimation(ITEM_PISTOL_SHOOT_BURST1);
 		// 	break;
 		// default:
-		// 	Weapons_ViewAnimation(GLOCK_SHOOT_BURST2);
+		// 	Weapons_ViewAnimation(ITEM_PISTOL_SHOOT_BURST2);
 		// 	break;
 		// }
 		// pl.w_attack_next = 0.5f;
@@ -218,7 +198,7 @@ w_glock_primary(void)
 }
 
 void
-w_glock_secondary(void)
+w_pistol_secondary(void)
 {
 	player pl = (player)self;
 
@@ -242,7 +222,7 @@ w_glock_secondary(void)
 }
 
 void
-w_glock_reload(void)
+w_pistol_reload(void)
 {
 	player pl = (player)self;
 
@@ -277,40 +257,26 @@ w_glock_reload(void)
 }
 
 void
-w_glock_release(void)
+w_pistol_release(void)
 {
 	player pl = (player)self;
-	int r;
 
 	if (pl.w_idle_next > 0.0) {
 		return;
 	}
 
-	r = (float)input_sequence % 3;
-	switch (r) {
-	case 1:
-		Weapons_ViewAnimation(PISTOL_IDLE1);
-		pl.w_idle_next = 2.5f;
-		break;
-	case 2:
-		Weapons_ViewAnimation(PISTOL_IDLE1);
-		pl.w_idle_next = 3.5f;
-		break;
-	default:
-		Weapons_ViewAnimation(PISTOL_IDLE1);
-		pl.w_idle_next = 3.75f;
-		break;
-	}
+	Weapons_ViewAnimation(PISTOL_IDLE1);
+	pl.w_idle_next = 2.5f;
 }
 
 float
-w_glock_aimanim(void)
+w_pistol_aimanim(void)
 {
 	return self.flags & FL_CROUCHING ? ANIM_CR_AIM1HAND : ANIM_AIM1HAND;
 }
 
 void
-w_glock_hud(void)
+w_pistol_hud(void)
 {
 #ifdef CLIENT
 //	vector cross_pos;
@@ -348,7 +314,7 @@ w_glock_hud(void)
 }
 
 void
-w_glock_hudpic(int selected, vector pos, float a)
+w_pistol_hudpic(int selected, vector pos, float a)
 {
 #ifdef CLIENT
 	if (selected) {
@@ -377,40 +343,40 @@ w_glock_hudpic(int selected, vector pos, float a)
 #endif
 }
 
-weapon_t w_glock =
+weapon_t w_pistol =
 {
-	.name		= "9mmhandgun",
-	.id			= ITEM_GLOCK,
+	.name		= "pistol",
+	.id			= ITEM_PISTOL,
 	.slot		= 1,
 	.slot_pos	= 0,
-	.draw		= w_glock_draw,
-	.holster	= w_glock_holster,
-	.primary	= w_glock_primary,
-	.secondary	= w_glock_secondary,
-	.reload		= w_glock_reload,
+	.draw		= w_pistol_draw,
+	.holster	= w_pistol_holster,
+	.primary	= w_pistol_primary,
+	.secondary	= w_pistol_secondary,
+	.reload		= w_pistol_reload,
 	.release	= w_scma_weaponrelease,
-	.crosshair	= w_glock_hud,
-	.precache	= w_glock_precache,
-	.pickup		= w_glock_pickup,
-	.updateammo	= w_glock_updateammo,
-	.wmodel		= w_glock_wmodel,
-	.pmodel		= w_glock_pmodel,
-	.deathmsg	= w_glock_deathmsg,
-	.aimanim	= w_glock_aimanim,
-	.hudpic		= w_glock_hudpic
+	.crosshair	= w_pistol_hud,
+	.precache	= w_pistol_precache,
+	.pickup		= w_pistol_pickup,
+	.updateammo	= w_pistol_updateammo,
+	.wmodel		= w_pistol_wmodel,
+	.pmodel		= w_pistol_pmodel,
+	.deathmsg	= w_pistol_deathmsg,
+	.aimanim	= w_pistol_aimanim,
+	.hudpic		= w_pistol_hudpic
 };
 
 /* pickups */
 #ifdef SERVER
-void
-weapon_9mmhandgun(void)
-{
-	Weapons_InitItem(WEAPON_GLOCK);
-}
+// void
+// weapon_9mmhandgun(void)
+// {
+// 	Weapons_InitItem(WEAPON_ITEM_PISTOL);
+// }
 
 void
-weapon_glock(void)
+weapon_pistol(void)
 {
-	Weapons_InitItem(WEAPON_GLOCK);
+	Weapons_InitItem(WEAPON_PISTOL);
 }
 #endif

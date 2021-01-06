@@ -15,13 +15,13 @@
  * OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  */
 //=======================
-// void i_glock18_precache(void)
+// void i_pistol_precache(void)
 // 
 // Precache.
 //=======================
-void i_glock18_precache(void) {
+void i_pistol_precache(void) {
 #ifdef SERVER
-//	Sound_Precache("item_glock.use");
+//	Sound_Precache("ITEM_PISTOL.use");
 	precache_model("models/weapons/pistol/w_pistol.vvm");
 #else
 	precache_model("models/weapons/pistol/w_pistol.vvm");
@@ -29,18 +29,18 @@ void i_glock18_precache(void) {
 }
 
 //=======================
-// void i_glock18_pickup(void)
+// void i_pistol_pickup(void)
 //
 // Pickup.
 //=======================
-void i_glock18_pickup(player pl) {
+void i_pistol_pickup(player pl) {
 #ifdef SERVER
-	Weapons_AddItem(pl, WEAPON_GLOCK, 20);
+	Weapons_AddItem(pl, WEAPON_PISTOL, 20);
 #endif
 }
 
 //=======================
-// void i_glock18_equip(void)
+// void i_pistol_equip(void)
 //
 // Equip..
 //=======================
@@ -48,55 +48,55 @@ void i_glock18_pickup(player pl) {
 // Predefine.
 void Weapons_Draw(void)
 #endif
-void i_glock18_equip(player pl) {
+void i_pistol_equip(player pl) {
 #ifdef SERVER
-	pl.activeweapon = WEAPON_GLOCK;
+	pl.activeweapon = WEAPON_PISTOL;
 	Weapons_Draw();
 #endif
 }
 
 //=======================
-// void i_glock18_drop(void)
+// void i_pistol_drop(void)
 //
 // Drop.
 //=======================
 void Weapons_Holster();
-void i_glock18_drop(player pl) {
+void i_pistol_drop(player pl) {
 #ifdef SERVER
 dprint("===================\nDROPPED GLOKC\n=============");
 	Weapons_Holster();
-	Weapons_RemoveItem(pl, WEAPON_GLOCK);
+	Weapons_RemoveItem(pl, WEAPON_PISTOL);
 	pl.activeweapon = 0;
 #endif
 }
 
 //=======================
-// string i_glock18_wmodel(void)
+// string i_pistol_wmodel(void)
 //
 // Return item model string path.
 //=======================
-string i_glock18_wmodel(void) {
+string i_pistol_wmodel(void) {
     return "models/weapons/pistol/w_pistol.vvm";
 }
 
-inventory_item_t i_glock18 = 
+inventory_item_t i_pistol = 
 {
-	.name		= "Glock 18",
+	.name		= "Pistol (9mm)",
 
-    .txtPickup	= "picked up a ^xF42Glock 18",
-	.txtDrop	= "dropped a ^xF42Glock 18",
-    .txtUse		= "used a ^xF42Glock 18",
-	.txtDescription = "The ^xF42Glock 18^FFF is a powerful tool in combat.",
+    .txtPickup	= "picked up a ^xF42Pistol (9mm)",
+	.txtDrop	= "dropped a ^xF42Pistol (9mm)",
+    .txtUse		= "used a ^xF42Pistol (9mm)",
+	.txtDescription = "The ^xF42Pistol (9mm)FFF is a powerful tool in combat.",
 
-	.ID			= INVENTORY_ITEM_GLOCK,
+	.ID			= INVENTORY_ITEM_PISTOL,
 	.mins		= [-8,-8, 0],
 	.maxs		= [8, 8, 8],
 	
 	.use		= __NULL__,
-	.pickup		= i_glock18_pickup,
-	.equip		= i_glock18_equip,
-	.drop		= i_glock18_drop,
+	.pickup		= i_pistol_pickup,
+	.equip		= i_pistol_equip,
+	.drop		= i_pistol_drop,
 
-	.precache	= i_glock18_precache,
-    .wmodel     = i_glock18_wmodel
+	.precache	= i_pistol_precache,
+    .wmodel     = i_pistol_wmodel
 };

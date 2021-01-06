@@ -135,8 +135,8 @@ HLMultiplayerRules::PlayerSpawn(base_player pp)
 
 	LevelNewParms();
 	LevelDecodeParms(pl);
-	pl.g_items = ITEM_SUIT | ITEM_KNIFE;//ITEM_KNIFE | ITEM_GLOCK | ITEM_SUIT;
-	pl.activeweapon = WEAPON_GLOCK;
+	pl.g_items = ITEM_SUIT | ITEM_KNIFE;//ITEM_KNIFE | ITEM_PISTOL | ITEM_SUIT;
+	pl.activeweapon = WEAPON_PISTOL;
 	pl.glock_mag = 18;
 	pl.ammo_9mm = 44;
 

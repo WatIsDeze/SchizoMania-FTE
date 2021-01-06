@@ -30,7 +30,7 @@ enum
 
     // Weapons.
     INVENTORY_ITEM_KNIFE = 3,
-    INVENTORY_ITEM_GLOCK = 4,
+    INVENTORY_ITEM_PISTOL = 4,
 
     // Health/Status.
     INVENTORY_ITEM_MEDKIT = 5,
