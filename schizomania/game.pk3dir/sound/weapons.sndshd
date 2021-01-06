@@ -35,3 +35,7 @@ weapon_pistol.fire
 {
     sample weapons/pistol/fire1.wav
 }
+weapon_pistol.reloadx
+{
+    sample weapons/pistol/reload1.wav
+}

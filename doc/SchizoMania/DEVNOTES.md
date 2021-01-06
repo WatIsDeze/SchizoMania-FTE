@@ -32,7 +32,7 @@ my own ADHD good.
 ## Code Tasks (general) - Prototype 0.1:
 - [_] Use Item Sound.
 - [_] Drop Item Sound.
-- [_] Pickup Item Sound.
+- [X] Pickup Item Sound.
 - [_] Implement Scripted Sequences with dialogues. (I suppose, an entity which'll send a dialogue event mechanism, back and forth? :) )
 ## GUI - Prototype 0.1:
 ### Possible, but not required:

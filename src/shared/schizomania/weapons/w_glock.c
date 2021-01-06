@@ -63,11 +63,10 @@ w_glock_precache(void)
 #ifdef SERVER
 	Sound_Precache("weapon_pistol.deploy");
 	Sound_Precache("weapon_pistol.fire");
-	// precache_model("models/weapons/pistol/w_pistol.vvm");
+	Sound_Precache("weapon_pistol.reload");
 	precache_model("models/weapons/pistol/w_pistol.vvm");
 #else
 	precache_model("models/weapons/pistol/v_pistol.vvm");
-	// precache_model("models/p_glock18.mdl");
 #endif
 }
 
@@ -268,17 +267,10 @@ w_glock_reload(void)
 
 	Weapons_ReloadWeapon(pl, player::glock_mag, player::ammo_9mm, 20);
 	Weapons_UpdateAmmo(pl, pl.glock_mag, pl.ammo_9mm, -1);
-#endif
 
-	int r = (float)input_sequence % 2;
-	switch (r) {
-	case 0:
-		Weapons_ViewAnimation(PISTOL_RELOAD1);
-		break;
-	default:
-		Weapons_ViewAnimation(PISTOL_RELOAD1);
-		break;
-	}
+	Sound_Play(pl, CHAN_WEAPON, "weapon_pistol.reload");
+#endif
+	Weapons_ViewAnimation(PISTOL_RELOAD1);
 
 	pl.w_attack_next = 2.1f;
 	pl.w_idle_next = pl.w_attack_next;
