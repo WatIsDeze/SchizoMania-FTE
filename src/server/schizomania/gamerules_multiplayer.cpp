@@ -137,7 +137,7 @@ HLMultiplayerRules::PlayerSpawn(base_player pp)
 	LevelDecodeParms(pl);
 	pl.g_items = ITEM_SUIT | ITEM_KNIFE;//ITEM_KNIFE | ITEM_PISTOL | ITEM_SUIT;
 	pl.activeweapon = WEAPON_PISTOL;
-	pl.glock_mag = 18;
+	pl.pistol_mag = 18;
 	pl.ammo_9mm = 44;
 
 	spot = Spawn_SelectRandom("info_player_deathmatch");

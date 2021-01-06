@@ -33,7 +33,7 @@ VGUI_Inventory_UpdateItems(void);
 void
 VGUI_Inventory_Use()
 {
-	player pl = (player)self;
+	player pl = pSeat->m_ePlayer;
 
 	if (!winInventory)
 		return;
@@ -69,7 +69,7 @@ VGUI_Inventory_Use()
 void
 VGUI_Inventory_Equip(void)
 {
-	player pl = (player)self;
+	player pl = pSeat->m_ePlayer;
 
 	if (!winInventory)
 		return;
@@ -101,7 +101,7 @@ VGUI_Inventory_Equip(void)
 void
 VGUI_Inventory_Drop(void)
 {
-	player pl = (player)self;
+	player pl = pSeat->m_ePlayer;
 
 	if (!winInventory)
 		return;
@@ -167,7 +167,7 @@ VGUI_Inventory_ItemSelect(float itemID) {
 void
 VGUI_Inventory_UpdateItems(void)
 {
-	player pl = (player)self;
+	player pl = pSeat->m_ePlayer;//(player)self;
 
 	// Used for determining current button position.
 	vector buttonPos = [8, 32, 0];

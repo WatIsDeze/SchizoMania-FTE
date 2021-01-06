@@ -46,7 +46,7 @@ HLGameRules::LevelDecodeParms(base_player pp)
 	pl.ammo_snark = parm22;
 	pl.ammo_hornet = parm23;
 
-	pl.glock_mag = parm24;
+	pl.pistol_mag = parm24;
 	pl.mp5_mag = parm25;
 	pl.python_mag = parm26;
 	pl.shotgun_mag = parm27;
@@ -91,7 +91,7 @@ HLGameRules::LevelChangeParms(base_player pp)
 	parm21 = pl.ammo_tripmine;
 	parm22 = pl.ammo_snark;
 	parm23 = pl.ammo_hornet;
-	parm24 = pl.glock_mag;
+	parm24 = pl.pistol_mag;
 	parm25 = pl.mp5_mag;
 	parm26 = pl.python_mag;
 	parm27 = pl.shotgun_mag;

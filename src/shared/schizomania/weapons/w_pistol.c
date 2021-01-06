@@ -54,7 +54,7 @@ void
 w_pistol_updateammo(player pl)
 {
 #ifdef SERVER
-	Weapons_UpdateAmmo(pl, pl.glock_mag, pl.ammo_9mm, -1);
+	Weapons_UpdateAmmo(pl, pl.pistol_mag, pl.ammo_9mm, -1);
 #endif
 }
 
@@ -83,7 +83,7 @@ w_pistol_pickup(int new, int startammo)
 	player pl = (player)self;
 
 	// if (new) {
-	// 	pl.glock_mag = 20;
+	// 	pl.pistol_mag = 20;
 	// } else {
 	// 	if (pl.ammo_9mm < MAX_A_9MM) {
 	// 		pl.ammo_9mm = bound(0, pl.ammo_9mm + 20, MAX_A_9MM);
@@ -136,7 +136,7 @@ w_pistol_primary(void)
 		return;
 	}
 #else
-	if (!pl.glock_mag) {
+	if (!pl.pistol_mag) {
 		return;
 	}
 #endif
@@ -157,7 +157,7 @@ w_pistol_primary(void)
 		//Weapons_ViewAnimation(PISTOL_ATTACK_EMPTY);
 	}
 #else
-	pl.glock_mag--;
+	pl.pistol_mag--;
 	TraceAttack_SetPenetrationPower(1);
 	TraceAttack_FireBullets(1, pl.origin + pl.view_ofs, Skill_GetValue("plr_9mm_bullet", 8), [accuracy,accuracy], WEAPON_PISTOL);
 	//TraceAttack_FireBullets(1, pl.origin + pl.view_ofs, Skill_GetValue("plr_9mm_bullet"), [0.01,0.01], WEAPON_ITEM_PISTOL);
@@ -238,15 +238,15 @@ w_pistol_reload(void)
 		return;
 	}
 #else
-	if (pl.glock_mag >= 20) {
+	if (pl.pistol_mag >= 20) {
 		return;
 	}
 	if (!pl.ammo_9mm) {
 		return;
 	}
 
-	Weapons_ReloadWeapon(pl, player::glock_mag, player::ammo_9mm, 20);
-	Weapons_UpdateAmmo(pl, pl.glock_mag, pl.ammo_9mm, -1);
+	Weapons_ReloadWeapon(pl, player::pistol_mag, player::ammo_9mm, 20);
+	Weapons_UpdateAmmo(pl, pl.pistol_mag, pl.ammo_9mm, -1);
 
 	Sound_Play(pl, CHAN_WEAPON, "weapon_pistol.reload");
 #endif

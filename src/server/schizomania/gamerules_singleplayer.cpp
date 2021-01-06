@@ -152,7 +152,7 @@ HLSingleplayerRules::SpawnInGamePlayer(base_player pp) {
 	LevelDecodeParms(pl);
 	pl.g_items = ITEM_SUIT;	// pl.g_items = ITEM_KNIFE | ITEM_PISTOL | ITEM_SUIT;
 	pl.activeweapon = 0;// pl.activeweapon = ITEM_KNIFE;
-	pl.glock_mag = 18;
+	pl.pistol_mag = 18;
 	pl.ammo_9mm = 44;
 	pl.flashlight_battery = 100;
 

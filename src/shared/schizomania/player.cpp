@@ -56,7 +56,7 @@ class player:base_player
 	virtual void(void) postdraw;
 #else
 	/* Weapon specific */
-	int glock_mag;
+	int pistol_mag;
 	int mp5_mag;
 	int python_mag;
 	int shotgun_mag;
@@ -77,9 +77,7 @@ class player:base_player
 	int ammo_snark;
 	int ammo_hornet;
 
-	// <WatIs>	
-	int mode_glock18;
-
+	// <WatIs>
 	int old_scma_shotmultiplier;
 	float old_scma_shottime;
 	float old_flashlight_battery;
