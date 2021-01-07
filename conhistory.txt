@@ -130,3 +130,16 @@ quit
 impulse 101
 noclip
 noclip
+noclip
+/map prt_wip
+/map prt_wip
+/map prt_wip
+/map prt_wip
+/map prt_wip
+vid_restart
+/map prt_wip
+/map prt_wip
+/map prt_wip
+/map test_prototype_indoor
+r_showtris 2
+/map test_prototype_indoor

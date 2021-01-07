@@ -62,7 +62,7 @@ sky_camera::sky_camera(void)
 }
 
 void
-SkyCamera_Setup(void)
+SkyCamera_Setup(vector org)
 {
 	if (g_skyscale != 0 && g_skypos) {
 		vector porg;

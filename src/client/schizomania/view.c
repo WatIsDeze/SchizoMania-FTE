@@ -21,6 +21,7 @@
 // If it is, give it a shell.
 //=======================
 entity oldItemTraceEnt;
+
 void View_DrawHoveredItem(void) {
 	player pl = (player)pSeat->m_ePlayer;
 

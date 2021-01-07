@@ -12,6 +12,7 @@ my own ADHD good.
 
 ## AI - Prototype 0.1:
 - [_] Pull in latest FreeCS changes and see if we can do anything with that botlib of theirs.
+
 ## Weapons - Prototype 0.1:
 - [_] Fix accuracy issues when shooting.
 - [_] Knife
