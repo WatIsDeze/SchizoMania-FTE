@@ -78,15 +78,13 @@ void SpectatorDisconnect(void)
 
 void PutClientInServer(void)
 {
-	player pl;
+	g_grMode.PlayerSpawn((base_player)self);
 
-	/* make sure you never change the classname. ever. */
-	if (self.classname != "player") {
-		spawnfunc_player();
+#ifdef BOT_INCLUDED
+	if (clienttype(self) == CLIENTTYPE_BOT) {
+		spawnfunc_bot();
 	}
-
-	pl = (player)self;
-	g_grMode.PlayerSpawn(pl);
+#endif
 
 	/* activate all game_playerspawn entities */
 	for (entity a = world; (a = find(a, ::targetname, "game_playerspawn"));) {

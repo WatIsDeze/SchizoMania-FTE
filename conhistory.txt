@@ -143,3 +143,6 @@ vid_restart
 /map test_prototype_indoor
 r_showtris 2
 /map test_prototype_indoor
+/map test_prototype_indoor
+/map prt_wip
+/map prt_wip
