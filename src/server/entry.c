@@ -97,14 +97,23 @@ void PutClientInServer(void)
 
 void PlayerPreThink(void)
 {
-	player pl = (player)self;
-	g_grMode.PlayerPreFrame(pl);
+#ifdef BOT_INCLUDED
+	if (clienttype(self) == CLIENTTYPE_BOT) {
+		((bot)self).PreFrame();
+	}
+#endif
+	g_grMode.PlayerPreFrame((base_player)self);
 }
 
 void PlayerPostThink(void)
 {
-	player pl = (player)self;
-	g_grMode.PlayerPostFrame(pl);
+#ifdef BOT_INCLUDED
+	if (clienttype(self) == CLIENTTYPE_BOT) {
+		((bot)self).PostFrame();
+	}
+#endif
+
+	g_grMode.PlayerPostFrame((base_player)self);
 }
 
 void SetNewParms(void)
@@ -116,8 +125,7 @@ void SetNewParms(void)
 void SetChangeParms(void)
 {
 	iprint("Setting Level-Change Parameters");
-	player pl = (player)self;
-	g_grMode.LevelChangeParms(pl);
+	g_grMode.LevelChangeParms((base_player)self);
 }
 
 void SV_RunClientCommand(void)

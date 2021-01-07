@@ -85,6 +85,10 @@ float Player_SendEntity(entity ePEnt, float fChanged)
 	if (pl.health <= 0 && ePEnt != pl) {
 		return FALSE;
 	}
+	
+	if (clienttype(ePEnt) != CLIENTTYPE_REAL) {
+		return FALSE;
+	}
 
 	WriteByte(MSG_ENTITY, ENT_PLAYER);
 	WriteFloat(MSG_ENTITY, fChanged);

@@ -439,6 +439,7 @@ HUD_Draw(void)
 	// if (!(pl.g_items & ITEM_SUIT)) {
 	// 	return;
 	// }
+	Textmenu_Draw();
 
 	// //HUD_DrawHealth();
 	// //HUD_DrawArmor();
@@ -452,4 +453,6 @@ void
 HUD_DrawSpectator(void)
 {
 	// FIXME
+	Textmenu_Draw();
+
 }
