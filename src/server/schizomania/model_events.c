@@ -15,15 +15,12 @@
  */
 
 void
-Game_ClientModelEvent(float flTimeStamp, int iCode, string strData)
+Game_ServerModelEvent(float flTimeStamp, int iCode, string strData)
 {
-    dprint(sprintf("CLIENT - Model Event: ^xF42 %d\n", iCode));
+    dprint(sprintf("SERVER - Model Event: ^xF42 %d\n", iCode));
 	switch (iCode) {
-	case 1337:
-localsound(strData, CHAN_AUTO, 1.0);
-	//		Sound_Play(pSeat->m_ePlayer, CHAN_WEAPON, strData);
-		break;
 	default:
-		Event_ProcessModel(flTimeStamp, iCode, strData);
-	}
+		Event_ServerModelEvent(flTimeStamp, iCode, strData);
+		break;
+	} 
 }

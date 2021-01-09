@@ -45,6 +45,7 @@ w_pistol_precache(void)
 	Sound_Precache("weapon_pistol.deploy");
 	Sound_Precache("weapon_pistol.fire");
 	Sound_Precache("weapon_pistol.reload");
+	Sound_Precache("weapon_pistol.holster");
 	precache_model("models/weapons/pistol/w_pistol.vvm");
 #else
 	precache_model("models/weapons/pistol/v_pistol.vvm");
@@ -107,7 +108,7 @@ w_pistol_draw(void)
 	pl.scma_cross_mindist = 8;
 	pl.scma_cross_deltadist = 3;
 #else
-	Sound_Play(pl, CHAN_WEAPON, "weapon_pistol.deploy");
+	//Sound_Play(pl, CHAN_WEAPON, "weapon_pistol.deploy");
 #endif
 }
 

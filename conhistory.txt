@@ -153,3 +153,24 @@ bot_add
 /way_menu 
 /map prt_wip
 bind F2 way_menu
+/map prt_wip
+/map prt_wip
+god
+noclip
+noclip
+/map prt_wip
+vid_Restart
+vid_restart
+/map prt_wip
+/map prt_wip
+/map prt_wip
+/map prt_wip
+/map prt_wip
+/map prt_wip
+/map prt_wip
+impulse 101
+impulse 101
+/map prt_wip
+modelviewer models/weapons/pistol/v_pistol.vvm
+modelviewer models/weapons/pistol/ruger.vvm
+quit

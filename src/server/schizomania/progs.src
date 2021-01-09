@@ -37,12 +37,13 @@
 ../schizomania/player.c
 ../schizomania/spectator.c
 
+../../botlib/include.src
+
 ../schizomania/entities/item_inventory.cpp
 ../schizomania/items.cpp
 
 ../schizomania/entities/ammo.cpp
 
-../../botlib/include.src
 
 ../schizomania/gamerules.cpp
 ../schizomania/gamerules_singleplayer.cpp
@@ -52,9 +53,9 @@
 ../schizomania/damage.c
 ../schizomania/rules.c
 ../schizomania/flashlight.c
-
 ../schizomania/input.c
 ../schizomania/spawn.c
+../schizomania/model_events.c
 
 ../include.src
 ../../shared/include.src

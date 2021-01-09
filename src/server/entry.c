@@ -277,6 +277,11 @@ float ConsoleCmd(string cmd)
 				t.Trigger(self, TRIG_TOGGLE);
 		}
 		break;
+#ifdef BOT_INCLUDED
+	case "way":
+		Way_Cmd();
+		break;
+#endif
 	default:
 		return FALSE;
 	}

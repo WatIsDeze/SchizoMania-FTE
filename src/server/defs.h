@@ -48,6 +48,9 @@ void Client_TriggerCamera(entity, vector, vector, float);
 void Client_FixAngle(entity, vector);
 void Client_ShakeOnce(vector pos, float radius, float duration, float frequency, float amplitude);
 
+void Game_ServerModelEvent(float, int, string);
+void Event_ServerModelEvent(float, int, string);
+
 void Game_Input(void);
 int Rules_IsTeamPlay(void);
 

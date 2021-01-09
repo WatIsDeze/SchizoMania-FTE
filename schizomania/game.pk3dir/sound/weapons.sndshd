@@ -31,6 +31,10 @@ weapon_pistol.deploy
 {
     sample weapons/pistol/deploy1.wav
 }
+weapon_pistol.holster
+{
+    sample weapons/pistol/holster1.wav
+}
 weapon_pistol.fire
 {
     sample weapons/pistol/fire1.wav
@@ -39,3 +43,4 @@ weapon_pistol.reload
 {
     sample weapons/pistol/reload1.wav
 }
+
