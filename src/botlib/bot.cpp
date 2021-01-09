@@ -129,6 +129,7 @@ bot::CheckRoute(void)
 {
 	float flDist;
 	vector evenpos;
+	float rad;
 
 	if (!m_iNodes) {
 		return;
@@ -137,24 +138,26 @@ bot::CheckRoute(void)
 	/* level out position/node stuff */
 	if (m_iCurNode < 0) {
 		evenpos = m_vecLastNode - origin;
+		rad = 64;
 	} else {
 		evenpos = m_pRoute[m_iCurNode].m_vecDest - origin;
+		rad = m_pRoute[m_iCurNode].m_flRadius;
 	}
-	evenpos[2] *= 0.25f;
+	//evenpos[2] *= 0.25f;
 
 	flDist = floor(vlen(evenpos));
 
-	if (flDist < 16) {
+	if (flDist < rad) {
 		dprint(sprintf("^2CBaseMonster::^3CheckRoute^7: " \
 			"%s reached node\n", this.targetname));
 		m_iCurNode--;
-		velocity *= 0.5f;
 
 		if (m_iCurNode >= 0) {
-			//print(sprintf("NODE FLAGS: %i\n", m_pRoute[m_iCurNode].m_iFlags));
+			if (m_pRoute[m_iCurNode].m_iFlags)
+			print(sprintf("NODE FLAGS: %i\n", m_pRoute[m_iCurNode].m_iFlags));
 
 			/* if a node is flagged as jumpy, jump! */
-			if (m_pRoute[m_iCurNode].m_iFlags & WP_JUMP)
+			if (m_pRoute[m_iCurNode].m_iFlags & LF_JUMP)
 				input_buttons |= INPUT_BUTTON2;
 		}
 
@@ -199,7 +202,7 @@ bot::CheckRoute(void)
 		input_buttons |= INPUT_BUTTON2;
 	} else {
 		/* entire way-link needs to be crouched. that's the law of the land */
-		if (m_pRoute[m_iCurNode].m_iFlags & WP_CROUCH)
+		if (m_pRoute[m_iCurNode].m_iFlags & LF_CROUCH)
 			input_buttons |= INPUT_BUTTON8;
 	}
 }
@@ -318,15 +321,18 @@ bot::RunAI(void)
 			/* we are far away, inch closer */
 			aimpos = m_eTarget.origin;
 		} else {
-			if (m_iCurNode == BOTROUTE_DESTINATION)
+			if (m_iCurNode <= BOTROUTE_DESTINATION)
 				aimpos = m_vecLastNode;
 			else
 				aimpos = m_pRoute[m_iCurNode].m_vecDest;
 		}
-		
 
 		/* now we'll set the movevalues relative to the input_angle */
-		vecDirection = normalize(aimpos - origin) * 240;
+		if (m_iCurNode >= 0 && m_pRoute[m_iCurNode].m_iFlags & LF_WALK)
+			vecDirection = normalize(aimpos - origin) * 120;
+		else
+			vecDirection = normalize(aimpos - origin) * 240;
+
 		makevectors(input_angles);
 		input_movevalues = [v_forward * vecDirection, v_right * vecDirection, v_up * vecDirection];
 	}

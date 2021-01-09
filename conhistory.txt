@@ -147,3 +147,9 @@ r_showtris 2
 /map prt_wip
 /map prt_wip
 /map prt_wip
+addbot
+bot_add
+/way_menu 
+/way_menu 
+/map prt_wip
+bind F2 way_menu
