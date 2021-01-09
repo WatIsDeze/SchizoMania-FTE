@@ -285,9 +285,11 @@ float ConsoleCmd(string cmd)
 
 float SV_ShouldPause(float newstatus)
 {
-	if (serverkeyfloat("background") == 1) {
+	if (serverkeyfloat("background") == 1)
 		return FALSE;
-	}
+
+	if (cvar("sv_playerslots") > 1)
+		return FALSE;
 
 	return newstatus;
 }

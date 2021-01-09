@@ -39,6 +39,7 @@
 ../schizomania/scoreboard.c
 ../schizomania/input.c
 ../schizomania/game_events.c
+../schizomania/model_events.c
 
 ../schizomania/entities/item_inventory.cpp
 

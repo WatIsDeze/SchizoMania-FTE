@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2016-2020 Marco Hladik <marco@icculus.org>
+ * Copyright (c) 2016-2021 Marco Hladik <marco@icculus.org>
  *
  * Permission to use, copy, modify, and distribute this software for any
  * purpose with or without fee is hereby granted, provided that the above
@@ -27,8 +27,8 @@ Way_Init(void)
 								"4.\tLink Flags...\n" \
 								"5.\tRadius Settings...\n" \
 								"6.\tAuto-Link Settings...\n" \
-								"7.\tSave/Load...\n" \
-								"\n" \
+								"7.\tMove waypoint...\n" \
+								"8.\tSave/Load...\n" \
 								"9.\tExit\n";
 		way_menu.m_flPosX = 0;
 		way_menu.m_flPosY = -1;
@@ -42,7 +42,6 @@ Way_Init(void)
 								"\n" \
 								"\n" \
 								"4.\tLoad file (data/mapname.way)\n" \
-								"\n" \
 								"\n" \
 								"\n" \
 								"\n" \
@@ -64,7 +63,6 @@ Way_Init(void)
 								"\n" \
 								"\n" \
 								"\n" \
-								"\n" \
 								"9.\tBack\n";
 		way_add.m_flPosX = 0;
 		way_add.m_flPosY = -1;
@@ -80,8 +78,7 @@ Way_Init(void)
 								"\n" \
 								"\n" \
 								"\n" \
-								"\n" \
-								"3.\tAutolink closest\n" \
+								"7.\tAutolink closest\n" \
 								"\n" \
 								"9.\tBack\n";
 		way_link.m_flPosX = 0;
@@ -109,10 +106,10 @@ Way_Init(void)
 	{
 		titles_t way_flags;
 		way_flags.m_strName = "WAY_FLAGS";
-		way_flags.m_strMessage = "1.\tFlag jump (2 steps)\n" \
-								"2.\tFlag crouch (2 steps)\n" \
-								"3.\tFlag walk (2 steps)\n" \
-								"\n" \
+		way_flags.m_strMessage = "1.\tFlag ^3JUMP^7 (2 steps)\n" \
+								"2.\tFlag ^2CROUCH^7 (2 steps)\n" \
+								"3.\tFlag ^1WALK^7 (2 steps)\n" \
+								"4.\tFlag ^4AIM^7 (2 steps)\n" \
 								"\n" \
 								"\n" \
 								"\n" \
@@ -156,6 +153,23 @@ Way_Init(void)
 		way_text.m_flPosY = -1;
 		Titles_AddEntry(way_text);
 	}
+	/* add waypoint menu */
+	{
+		titles_t way_move;
+		way_move.m_strName = "WAY_MOVE";
+		way_move.m_strMessage = "1.\tMove nearest +1 X-axis\n" \
+								"2.\tMove nearest -1 X-axis\n" \
+								"3.\tMove nearest +1 Y-axis\n" \
+								"4.\tMove nearest -1 Y-axis\n" \
+								"5.\tMove nearest +1 Z-axis\n" \
+								"6.\tMove nearest -1 Z-axis\n" \
+								"\n" \
+								"8.\tMove nearest to player-position\n" \
+								"9.\tBack\n";
+		way_move.m_flPosX = 0;
+		way_move.m_flPosY = -1;
+		Titles_AddEntry(way_move);
+	}
 }
 
 void
@@ -181,6 +195,9 @@ WAY_MENU(int n)
 		Textmenu_Call("WAY_AUTOLINK");
 		break;
 	case 7:
+		Textmenu_Call("WAY_MOVE");
+		break;
+	case 8:
 		Textmenu_Call("WAY_FILE");
 		break;
 	case 9:
@@ -340,6 +357,37 @@ WAY_RADIUS(int n)
 		break;
 	case 7:
 		localcmd("sv way radius 128\n");
+		break;
+	case 9:
+		Textmenu_Call("WAY_MENU");
+		break;
+	}
+}
+
+void
+WAY_MOVE(int n)
+{
+	switch (n) {
+	case 1:
+		localcmd("sv way move 1 0 0\n");
+		break;
+	case 2:
+		localcmd("sv way move -1 0 0\n");
+		break;
+	case 3:
+		localcmd("sv way move 0 1 0\n");
+		break;
+	case 4:
+		localcmd("sv way move 0 -1 0\n");
+		break;
+	case 5:
+		localcmd("sv way move 0 0 1\n");
+		break;
+	case 6:
+		localcmd("sv way move 0 0 -1\n");
+		break;
+	case 8:
+		localcmd("sv way movetopos\n");
 		break;
 	case 9:
 		Textmenu_Call("WAY_MENU");

@@ -159,6 +159,11 @@ w_knife_primary(void)
 	pl.w_idle_next = 1.0f;
 	pl.w_attack_next = 0.7f;
 
+	if (self.flags & FL_CROUCHING)
+		Animation_PlayerTopTemp(ANIM_SHOOTCROWBAR, 0.45f);
+	else
+		Animation_PlayerTopTemp(ANIM_CR_SHOOTCROWBAR, 0.45f);
+
 #ifdef SERVER
 	vector src;
 	Weapons_MakeVectors();
@@ -166,11 +171,6 @@ w_knife_primary(void)
 	traceline(src, src + (v_forward * 32), FALSE, pl);
 
 	Sound_Play(pl, CHAN_WEAPON, "weapon_knife.slash");
-
-	if (self.flags & FL_CROUCHING)
-		Animation_PlayerTopTemp(ANIM_SHOOTCROWBAR, 0.45f);
-	else
-		Animation_PlayerTopTemp(ANIM_CR_SHOOTCROWBAR, 0.45f);
 
 	if (trace_fraction >= 1.0) {
 		return;

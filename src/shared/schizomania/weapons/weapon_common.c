@@ -196,7 +196,6 @@ string Weapons_GetDeathmessage(int id)
 	return "";
 }
 
-#ifdef SERVER
 float Weapons_GetAim(int id)
 {
 	if (g_weapons[id].aimanim != __NULL__) {
@@ -205,7 +204,6 @@ float Weapons_GetAim(int id)
 	
 	return 0;
 }
-#endif
 
 #ifdef CLIENT
 void Weapons_HUDPic(int id, int s, vector pos, float a)
