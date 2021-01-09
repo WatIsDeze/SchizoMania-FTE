@@ -28,7 +28,7 @@ typedef struct
 	float m_flFXTime;
 	float m_flTime;
 } gametext_t;
-gametext_t g_textchannels[5];
+gametext_t g_textchannels[6];
 
 /* for effect 2 */
 int
@@ -38,7 +38,7 @@ GameText_CharCount(float fadein, float timer, string msg)
 
 	if (!fadein || len > strlen(msg))
 		return strlen(msg);
-	else 
+	else
 		return len;
 }
 
@@ -48,7 +48,7 @@ GameText_DrawString(vector pos, string msg, vector col, float alpha)
 {
 	vector rpos;
 	int c = tokenizebyseparator(msg, "\n");
-	
+
 	for (int i = 0; i < c; i++) {
 		float strwidth = stringwidth(argv(i), TRUE, [20,20]);
 
@@ -81,30 +81,33 @@ GameText_DrawMessage(int i, float timer, int highlight)
 	vector rpos;
 	float mtime;
 	float btime;
-	string finalstring;
+	string finalstr;
 
 	if (g_textchannels[i].m_iEffect == 2) {
 		/* scan out */
-		finalstring = substring(g_textchannels[i].m_strMessage, 0,
+		finalstr = substring(g_textchannels[i].m_strMessage, 0,
 			GameText_CharCount(g_textchannels[i].m_flFadeIn, timer,
 				g_textchannels[i].m_strMessage));
 	} else {
-		finalstring = g_textchannels[i].m_strMessage;
+		finalstr = g_textchannels[i].m_strMessage;
 	}
 
 	timer = max(0, timer);
 
 	if (highlight) {
-		btime = g_textchannels[i].m_flFadeIn * strlen(g_textchannels[i].m_strMessage);
+		btime = g_textchannels[i].m_flFadeIn * \
+			strlen(g_textchannels[i].m_strMessage);
 		mtime = btime + g_textchannels[i].m_flFadeOut;
 	} else {
-		mtime = g_textchannels[i].m_flFadeIn + g_textchannels[i].m_flHoldTime + g_textchannels[i].m_flFadeOut;
-		btime = g_textchannels[i].m_flFadeIn + g_textchannels[i].m_flHoldTime;
+		mtime = g_textchannels[i].m_flFadeIn + \
+			g_textchannels[i].m_flHoldTime + \
+			g_textchannels[i].m_flFadeOut;
+		btime = g_textchannels[i].m_flFadeIn + \
+			g_textchannels[i].m_flHoldTime;
 	}
 
-	if (timer > mtime) {
+	if (timer > mtime)
 		return;
-	}
 
 	if (timer < g_textchannels[i].m_flFadeIn) {
 		a = (timer / g_textchannels[i].m_flFadeIn);
@@ -118,10 +121,11 @@ GameText_DrawMessage(int i, float timer, int highlight)
 
 	rpos[0] = g_textchannels[i].m_flPosX;
 	rpos[1] = g_textchannels[i].m_flPosY;
+
 	if (highlight) {
-		GameText_DrawString(rpos, finalstring, g_textchannels[i].m_vecColor2, a);
+		GameText_DrawString(rpos, finalstr, g_textchannels[i].m_vecColor2, a);
 	} else {
-		GameText_DrawString(rpos, finalstring, g_textchannels[i].m_vecColor1, a);
+		GameText_DrawString(rpos, finalstr, g_textchannels[i].m_vecColor1, a);
 	}
 }
 
@@ -129,7 +133,8 @@ void
 GameText_Draw(void)
 {
 	drawfont = FONT_20;
-	for (int i = 0; i < 5; i++) {
+
+	for (int i = 0i; i < 6; i++) {
 		GameText_DrawMessage(i, g_textchannels[i].m_flTime - g_textchannels[i].m_flFXTime, 0);
 		GameText_DrawMessage(i, g_textchannels[i].m_flTime, 1);
 		g_textchannels[i].m_flTime += clframetime;
@@ -142,6 +147,12 @@ void
 GameText_Parse(void)
 {
 	int chan = readbyte();
+
+	/* last channel is reserved for text menus */
+	if (!(chan >= 0 && chan <= 4)) {
+		return;
+	}
+
 	g_textchannels[chan].m_strMessage = Titles_ParseFunString(readstring());
 	g_textchannels[chan].m_flPosX = readfloat();
 	g_textchannels[chan].m_flPosY = readfloat();
@@ -160,7 +171,7 @@ GameText_Parse(void)
 }
 
 void
-GameMessage_Setup(string message)
+GameMessage_Setup(string message, int channel)
 {
 	int findid = -1;
 
@@ -171,26 +182,26 @@ GameMessage_Setup(string message)
 	}
 
 	if (findid < 0) {
-		g_textchannels[0].m_strMessage = Titles_ParseFunString(message);
-		g_textchannels[0].m_flTime = 0.0f;
-		g_textchannels[0].m_flPosX = -1;
-		g_textchannels[0].m_flPosY = 0.75f;
-		g_textchannels[0].m_flFadeIn = 0.5f;
-		g_textchannels[0].m_flFadeOut = 0.5f;
-		g_textchannels[0].m_flHoldTime = 4.0f;
-		g_textchannels[0].m_vecColor1 = [1,1,1];
-		g_textchannels[0].m_vecColor2 = [1,1,1];
+		g_textchannels[channel].m_strMessage = Titles_ParseFunString(message);
+		g_textchannels[channel].m_flTime = 0.0f;
+		g_textchannels[channel].m_flPosX = -1;
+		g_textchannels[channel].m_flPosY = 0.75f;
+		g_textchannels[channel].m_flFadeIn = 0.5f;
+		g_textchannels[channel].m_flFadeOut = 0.5f;
+		g_textchannels[channel].m_flHoldTime = 2.0f;
+		g_textchannels[channel].m_vecColor1 = [1,1,1];
+		g_textchannels[channel].m_vecColor2 = [1,1,1];
 	} else {
-		g_textchannels[0].m_strMessage = g_titles[findid].m_strMessage;
-		g_textchannels[0].m_flTime = 0.0f;
-		g_textchannels[0].m_flPosX = g_titles[findid].m_flPosX;
-		g_textchannels[0].m_flPosY = g_titles[findid].m_flPosY;
-		g_textchannels[0].m_flFadeIn = g_titles[findid].m_flFadeIn;
-		g_textchannels[0].m_flFadeOut = g_titles[findid].m_flFadeOut;
-		g_textchannels[0].m_flHoldTime = g_titles[findid].m_flHoldTime;
-		g_textchannels[0].m_vecColor1 = g_titles[findid].m_vecColor1;
-		g_textchannels[0].m_vecColor2 = g_titles[findid].m_vecColor2;
-		g_textchannels[0].m_iEffect = g_titles[findid].m_iEffect;
+		g_textchannels[channel].m_strMessage = g_titles[findid].m_strMessage;
+		g_textchannels[channel].m_flTime = 0.0f;
+		g_textchannels[channel].m_flPosX = g_titles[findid].m_flPosX;
+		g_textchannels[channel].m_flPosY = g_titles[findid].m_flPosY;
+		g_textchannels[channel].m_flFadeIn = g_titles[findid].m_flFadeIn;
+		g_textchannels[channel].m_flFadeOut = g_titles[findid].m_flFadeOut;
+		g_textchannels[channel].m_flHoldTime = g_titles[findid].m_flHoldTime;
+		g_textchannels[channel].m_vecColor1 = g_titles[findid].m_vecColor1;
+		g_textchannels[channel].m_vecColor2 = g_titles[findid].m_vecColor2;
+		g_textchannels[channel].m_iEffect = g_titles[findid].m_iEffect;
 	}
 }
 
@@ -203,7 +214,7 @@ GameMessage_Parse(void)
 	string findme;
 
 	findme = strtoupper(readstring());
-	GameMessage_Setup(findme);
+	GameMessage_Setup(findme, 0);
 
 	strSound = readstring();
 	flVolume = readfloat();

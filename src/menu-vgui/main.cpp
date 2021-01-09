@@ -55,7 +55,7 @@ void m_init ( void )
 }
 
 void
-Menu_RendererRestarted(void)
+Menu_RendererRestarted(string rendererdescription)
 {
 	localcmd("menu_restart\n");
 	Menu_AutoScale();
