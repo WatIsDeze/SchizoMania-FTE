@@ -1,0 +1,8 @@
+{
+	diffusemap textures/models/weapons/shells/diffuse.tga
+    
+	{
+		program vertexlit
+		map $diffuse
+	}
+}

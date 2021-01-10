@@ -13,3 +13,15 @@
 /map prt_wip
 /map prt_wip
 /map prt_wip
+/map prt_wip
+modelviewer models/weapons/shells/small.vvm
+modelviewer models/weapons/shells/small.vvm
+modelviewer models/weapons/shells/small.vvm
+/map prt_wip
+/map prt_wip
+/map prt_wip
+/map prt_wip
+/map prt_wip
+/map prt_wip
+/map prt_wip
+/map prt_wip
