@@ -174,3 +174,14 @@ impulse 101
 modelviewer models/weapons/pistol/v_pistol.vvm
 modelviewer models/weapons/pistol/ruger.vvm
 quit
+modelviewer models/weapons/pistol/v_pistol.vvm
+modelviewer models/weapons/pistol/v_pistol.vvm
+/map prt_wip
+/map prt_wip
+/map prt_wip
+/map prt_wip
+/map prt_wip
+/map prt_wip
+/map prt_wip
+/map prt_wip
+/map prt_wip

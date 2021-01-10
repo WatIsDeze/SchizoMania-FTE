@@ -46,8 +46,14 @@ w_pistol_precache(void)
 	Sound_Precache("weapon_pistol.fire");
 	Sound_Precache("weapon_pistol.reload");
 	Sound_Precache("weapon_pistol.holster");
+	precache_sound("sound/weapons/pistol/holster1.wav");
+	precache_sound("sound/weapons/pistol/draw1.wav");
 	precache_model("models/weapons/pistol/w_pistol.vvm");
 #else
+	Sound_Precache("weapon_pistol.deploy");
+	Sound_Precache("weapon_pistol.fire");
+	Sound_Precache("weapon_pistol.reload");
+	Sound_Precache("weapon_pistol.holster");
 	precache_model("models/weapons/pistol/v_pistol.vvm");
 #endif
 }
