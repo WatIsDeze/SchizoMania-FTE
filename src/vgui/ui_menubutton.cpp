@@ -135,8 +135,7 @@ void CUIMenuButton::Input (float flEVType, float flKey, float flChar, float flDe
 	if (Util_MouseAbove(getmousepos(), GetAbsolutePos(), m_vecSize)) {
 		if (!(m_iFlags & MBUTTON_HOVER)) {
 			m_iFlags |= MBUTTON_HOVER;
-			//sound(self, CHAN_AUTO, "ui/hover.wav", 1.0, ATTN_NORM);
-			//Sound_Play(self, CHAN_AUTO, "ui/hover.wav");
+			localsound("ui/hover.wav");
 		}
 	} else {
 		if (m_iFlags & MBUTTON_HOVER)
@@ -156,6 +155,7 @@ void CUIMenuButton::Input (float flEVType, float flKey, float flChar, float flDe
 				if (m_vFunc) {
 					m_vFunc();
 				}
+				localsound("ui/click.wav");
 			}
 			m_iFlags -= (m_iFlags & MBUTTON_DOWN);
 		}

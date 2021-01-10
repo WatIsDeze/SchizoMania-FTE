@@ -8,10 +8,10 @@ my own ADHD good.
 ## Entities - Prototype 0.1:
 - [_] Remove game_locked_Door
 - [_] Rename egui_mainmenu to gui_mainmenu
-- [_] Remove most redundant HL1 stock entities. Time to clear our code.
+- [X] Remove most redundant HL1 stock entities. Time to clear our code.
 
 ## AI - Prototype 0.1:
-- [_] Pull in latest FreeCS changes and see if we can do anything with that botlib of theirs.
+- [X] Pull in latest FreeCS changes and see if we can do anything with that botlib of theirs.
 
 ## Weapons - Prototype 0.1:
 - [_] Fix accuracy issues when shooting.
@@ -21,8 +21,8 @@ my own ADHD good.
 
 - [_] Pistol
   - [-] Implement properly.
-    - [_] Add Muzzleflash
-    - [_] Add shell dropping effect.
+    - [X] Add Muzzleflash
+    - [X] Add shell dropping effect.
     - [_] Fix animations so that when we're out of ammo, it shows.
   - [X] Export model to .iqe and generate a .vvm
   - [X] Add sounds.
@@ -49,9 +49,14 @@ Other than that it is a bit of a list of ... anything.
 ## Code Tasks (general) - Prototype 0.1:
 - [_] Implement Scripted Sequences with dialogues. (I suppose, an entity which'll send a dialogue event mechanism, back and forth? :) )
 ## GUI - Prototype 0.1:
-### Possible, but not required:
-- [_] Use images for buttons. (Maybe a hover glow? effect)
-- [_] Use sound for the hover, and click etc!
+### Item Menu (More of a... well, all you have menu for the player)
+- [_] Display player model. (Not a requirement, but fun to have.)
+- [_] Display player health, and current weapon that is equiped, and amount of ammo.
+- [_] Make use button disable when an item can't be "used".
+- [_] Make equip button disable when an item can't be "equiped".
+- [_] Make unequip an option in case an item already IS equiped.
+- [_] Use images for buttons. (Maybe a hover glow? effect) Could be nice.
+- [X] Use sound for the hover, and click etc!
 - [_] Render a player mesh, and health/ammo status.
     -- In the future, make him draw a weapon, or play a heavy breathing animation in case he is hurt etc.
 - [_] Make item list scrollable.
