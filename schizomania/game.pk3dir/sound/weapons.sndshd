@@ -1,3 +1,10 @@
+shells.drop
+{
+    sample weapons/shells/bulletdrop1.wav
+    sample weapons/shells/bulletdrop2.wav
+    sample weapons/shells/bulletdrop3.wav
+}
+
 weapon_knife.deploy
 {
     sample weapons/knife/deploy1.wav

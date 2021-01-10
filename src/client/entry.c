@@ -66,8 +66,10 @@ CSQC_Init(float apilevel, string enginename, float engineversion)
 	// precache_model("sprites/muzzleflash1.spr");
 	// precache_model("sprites/muzzleflash2.spr");
 	// precache_model("sprites/muzzleflash3.spr");
+	// Precache muzzleflash and shells, and the audio that goes with it.
 	precache_model("models/weapons/muzzleflashes/muzzleflash1.vvm");
 	precache_model("models/weapons/shells/small.vvm");
+	Sound_Precache("shells.drop");
 
 	/* VOX */
 	Vox_Init();

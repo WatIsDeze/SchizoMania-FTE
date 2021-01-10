@@ -61,11 +61,14 @@ Event_EjectGunShell(void)
 	eShell.drawmask = MASK_ENGINE;
 	eShell.angles = [view_angles[0], view_angles[1], 0];
 	eShell.velocity = pSeat->m_vecPredictedVelocity;
-	eShell.velocity += (v_up * -random(70, 120));
-	eShell.velocity -= (v_right * -random(50, 70));
+	eShell.velocity += (v_up * random(70, 120));
+	eShell.velocity += (v_right * random(50, 70));
 	eShell.avelocity = [0,45,900];
 	eShell.think = Event_EjectGunShell_Death;
-	eShell.nextthink = time + 2.5f; 
+	eShell.nextthink = time + 2.5f;
+
+	// Whaaaaam, play them shell drop audios.
+	Sound_Play(eShell, CHAN_AUTO, "shells.drop");
 }
 
 /*
@@ -99,7 +102,7 @@ Game_ClientModelEvent(float flTimeStamp, int iCode, string strData)
 			Event_PlaySound(pSeat->m_ePlayer, strData, CHAN_WEAPON);
 		break;
 	
-	// Event_MuzzleFlash
+	// Event_MuzzleFlash + Event_EjectGunShell
 	case 1338:
 			Event_MuzzleFlash();
 			Event_EjectGunShell();
