@@ -63,9 +63,10 @@ CSQC_Init(float apilevel, string enginename, float engineversion)
 	registercommand("dev_measure");
 	registercommand("way_menu");
 
-	precache_model("sprites/muzzleflash1.spr");
-	precache_model("sprites/muzzleflash2.spr");
-	precache_model("sprites/muzzleflash3.spr");
+	// precache_model("sprites/muzzleflash1.spr");
+	// precache_model("sprites/muzzleflash2.spr");
+	// precache_model("sprites/muzzleflash3.spr");
+	precache_model("models/weapons/muzzleflashes/muzzleflash1.vvm");
 
 	/* VOX */
 	Vox_Init();

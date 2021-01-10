@@ -41,19 +41,13 @@ enum
 void
 w_pistol_precache(void)
 {
-#ifdef SERVER
 	Sound_Precache("weapon_pistol.deploy");
 	Sound_Precache("weapon_pistol.fire");
 	Sound_Precache("weapon_pistol.reload");
 	Sound_Precache("weapon_pistol.holster");
-	precache_sound("sound/weapons/pistol/holster1.wav");
-	precache_sound("sound/weapons/pistol/draw1.wav");
+#ifdef SERVER
 	precache_model("models/weapons/pistol/w_pistol.vvm");
 #else
-	Sound_Precache("weapon_pistol.deploy");
-	Sound_Precache("weapon_pistol.fire");
-	Sound_Precache("weapon_pistol.reload");
-	Sound_Precache("weapon_pistol.holster");
 	precache_model("models/weapons/pistol/v_pistol.vvm");
 #endif
 }
@@ -171,7 +165,7 @@ w_pistol_primary(void)
 	TraceAttack_SetPenetrationPower(1);
 	TraceAttack_FireBullets(1, pl.origin + pl.view_ofs, Skill_GetValue("plr_9mm_bullet", 8), [accuracy,accuracy], WEAPON_PISTOL);
 	//TraceAttack_FireBullets(1, pl.origin + pl.view_ofs, Skill_GetValue("plr_9mm_bullet"), [0.01,0.01], WEAPON_ITEM_PISTOL);
-	Sound_Play(pl, CHAN_WEAPON, "weapon_pistol.fire");
+	//Sound_Play(pl, CHAN_WEAPON, "weapon_pistol.fire");
 
 	if (self.flags & FL_CROUCHING)
 		Animation_PlayerTopTemp(ANIM_SHOOT1HAND, 0.45f);
@@ -234,7 +228,7 @@ w_pistol_reload(void)
 	Weapons_ReloadWeapon(pl, player::pistol_mag, player::ammo_9mm, 20);
 	Weapons_UpdateAmmo(pl, pl.pistol_mag, pl.ammo_9mm, -1);
 
-	Sound_Play(pl, CHAN_WEAPON, "weapon_pistol.reload");
+	//Sound_Play(pl, CHAN_WEAPON, "weapon_pistol.reload");
 #endif
 	Weapons_ViewAnimation(PISTOL_RELOAD1);
 

@@ -17,12 +17,13 @@ my own ADHD good.
 - [_] Fix accuracy issues when shooting.
 - [_] Knife
   - [_] Work on better sounds, where possible.
+  - [?] Implement model events for audio.
 
 - [_] Pistol
   - [-] Implement properly.
     - [_] Add Muzzleflash
     - [_] Add shell dropping effect.
-    - [_] Fix animations for reloading fail when empty.
+    - [_] Fix animations so that when we're out of ammo, it shows.
   - [X] Export model to .iqe and generate a .vvm
   - [X] Add sounds.
 

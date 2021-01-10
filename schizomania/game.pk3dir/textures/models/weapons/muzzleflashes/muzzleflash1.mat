@@ -1,0 +1,10 @@
+{
+	diffusemap textures/models/weapons/muzzleflashes/muzzleflash1.tga
+    
+	{
+		program vertexlit
+		map $diffuse
+
+		blendFunc add
+	}
+}

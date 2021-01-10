@@ -17,13 +17,9 @@
 void
 Game_ServerModelEvent(float flTimeStamp, int iCode, string strData)
 {
-    dprint(sprintf("SERVER - Model Event: ^xF42 %d\n", iCode));
 	switch (iCode) {
-	case 1337:
-//localsound(strData, CHAN_AUTO, 1.0);
-			Sound_Play(other, CHAN_WEAPON, strData);
-		break;
 	default:
+		dprint(sprintf("^xF42 SERVER - Unknown Game Model Event: ^xFFF %d\n", iCode));
 		Event_ServerModelEvent(flTimeStamp, iCode, strData);
 		break;
 	} 
