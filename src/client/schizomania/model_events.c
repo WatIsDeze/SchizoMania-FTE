@@ -15,6 +15,7 @@ Event_MuzzleFlash(void)
 	// Find muzzleflash tag position.
 	float tagIndex = gettagindex(pSeat->m_eViewModel, "muzzleflash");
 	vector vMuzzlePos = gettaginfo(pSeat->m_eViewModel, tagIndex);
+	makevectors(view_angles);
 	
 	// Spawn TE.
 	entity eMuzzle = spawn();
