@@ -213,9 +213,9 @@ void
 w_deagle_hud(void)
 {
 #ifdef CLIENT
-	Cstrike_DrawCrosshair();
-	HUD_DrawAmmo1();
-	HUD_DrawAmmo2();
+	// Cstrike_DrawCrosshair();
+	// HUD_DrawAmmo1();
+	// HUD_DrawAmmo2();
 	vector aicon_pos = g_hudmins + [g_hudres[0] - 48, g_hudres[1] - 42];
 	drawsubpic(aicon_pos, [24,24], g_hud7_spr, [24/256,72/256], [24/256, 24/256], g_hud_color, pSeat->m_flAmmo2Alpha, DRAWFLAG_ADDITIVE);
 #endif

@@ -16,376 +16,23 @@
  */
 void HUD_DrawWeaponSelect(void);
 
-/* Use first frame for drawing (needs precache) */
-#define NUMSIZE_X 24/256
-#define NUMSIZE_Y 24/128
-#define HUD_ALPHA 0.5
+#define SCMA_CROSS_COLOR [1,0,0]
+#define SCMA_CROSS_ALPHA 0.8f
 
-float spr_hudnum[10] = {
-	0 / 256,
-	24 / 256,
-	(24*2) / 256,
-	(24*3) / 256,
-	(24*4) / 256,
-	(24*5) / 256,
-	(24*6) / 256,
-	(24*7) / 256,
-	(24*8) / 256,
-	(24*9) / 256
-};
-
-/* pre-calculated sprite definitions */
-float spr_health[4] = {
-	80 / 256, // pos x
-	24 / 128, // pos u
-	32 / 256, // size x
-	32 / 128 // size y
-};
-
-float spr_suit1[4] = {
-	0 / 256, // pos x
-	24 / 128, // pos u
-	40 / 256, // size x
-	40 / 128 // size y
-};
-
-float spr_suit2[4] = {
-	40 / 256, // pos x
-	24 / 128, // pos u
-	40 / 256, // size x
-	40 / 128 // size y
-};
-
-float spr_flash1[4] = {
-	160 / 256, // pos x
-	24 / 128, // pos u
-	32 / 256, // size x
-	32 / 128 // size y
-};
-
-float spr_flash2[4] = {
-	112 / 256, // pos x
-	24 / 128, // pos u
-	48 / 256, // size x
-	32 / 128 // size y
-};
-
-/* precaches */
+//=========================================================================
+// void HUD_Init(void)
+//
+// Precaches, and general initialization of subsystems.
+//=========================================================================
 void
 HUD_Init(void)
 {
 	FONT_HUD_MESSAGE = loadfont("font", "", "20", -1);
 	FONT_HUD_NOTIFICATION = loadfont("font", "", "18", -1);
+	FONT_HUD_CROSSHAIRINFO = loadfont("font", "", "14", -1);
     
     // Initialize notification list.
     HUDNotification_Init();
-}
-
-/* seperator for mainly ammo */
-void
-HUD_DrawSeperator(vector pos)
-{
-	// drawsubpic(pos,
-	// 	[2,24],
-	// 	g_hud7_spr,
-	// 	[240/256, 0],
-	// 	[2/256, 24/128],
-	// 	g_hud_color,
-	// 	HUD_ALPHA,
-	// 	DRAWFLAG_ADDITIVE
-	// );
-}
-
-/* handle single/multiple digits */
-void
-HUD_DrawNumber(int iNumber, vector vecPos, float fAlpha, vector vColor)
-{
-	// drawsubpic(vecPos,
-	// 	[24,24],
-	// 	g_hud7_spr,
-	// 	[spr_hudnum[iNumber], 0],
-	// 	[NUMSIZE_X, NUMSIZE_Y],
-	// 	vColor,
-	// 	fAlpha,
-	// 	DRAWFLAG_ADDITIVE
-	// );
-}
-
-void
-HUD_DrawNums(float fNumber, vector vecPos, float fAlpha, vector vColor)
-{
-	// int i = fNumber;
-	// if (i > 0) {
-	// 	while (i > 0) {
-	// 		HUD_DrawNumber((float)i % 10, vecPos, fAlpha, vColor);
-	// 		i = i / 10;
-	// 		vecPos[0] -= 20;
-	// 	}
-	// } else {
-	// 	HUD_DrawNumber(0, vecPos, fAlpha, vColor);
-	// }
-}
-
-/* health */
-void
-HUD_DrawHealth(void)
-{
-	// vector pos;
-	// player pl = (player)pSeat->m_ePlayer;
-
-	// if (pl.health != pSeat->m_iHealthOld) {
-	// 	pSeat->m_flHealthAlpha = 1.0;
-	// }
-
-	// if (pSeat->m_flHealthAlpha >= HUD_ALPHA) {
-	// 	pSeat->m_flHealthAlpha -= clframetime * 0.5;
-	// } else {
-	// 	pSeat->m_flHealthAlpha = HUD_ALPHA;
-	// }
-
-	// pos = g_hudmins + [88, g_hudres[1] - 42];
-	// if (pl.health > 25) {
-	// 	drawsubpic(
-	// 		pos + [-72,-4],
-	// 		[32,32],
-	// 		g_hud7_spr,
-	// 		[spr_health[0], spr_health[1]],
-	// 		[spr_health[2], spr_health[3]],
-	// 		g_hud_color,
-	// 		pSeat->m_flHealthAlpha,
-	// 		DRAWFLAG_ADDITIVE
-	// 	);
-	// 	HUD_DrawNums(pl.health, pos, pSeat->m_flHealthAlpha, g_hud_color);
-	// } else {
-	// 	drawsubpic(
-	// 		pos + [-72,-4],
-	// 		[32,32],
-	// 		g_hud7_spr,
-	// 		[spr_health[0], spr_health[1]],
-	// 		[spr_health[2], spr_health[3]],
-	// 		[1,0,0],
-	// 		pSeat->m_flHealthAlpha,
-	// 		DRAWFLAG_ADDITIVE
-	// 	);
-	// 	HUD_DrawNums(pl.health, pos, pSeat->m_flHealthAlpha, [1,0,0]);
-	// }
-
-	// pSeat->m_iHealthOld = pl.health;
-}
-
-/* armor/suit charge */
-void
-HUD_DrawArmor(void)
-{
-	// vector pos;
-	// player pl = (player)pSeat->m_ePlayer;
-
-	// pos = g_hudmins + [198, g_hudres[1] - 42];
-	
-	// if (pl.armor != pSeat->m_iArmorOld) {
-	// 	pSeat->m_flArmorAlpha = 1.0;
-	// }
-
-	// if (pSeat->m_flArmorAlpha >= HUD_ALPHA) {
-	// 	pSeat->m_flArmorAlpha -= clframetime * 0.5;
-	// } else {
-	// 	pSeat->m_flArmorAlpha = HUD_ALPHA;
-	// }
-
-	// drawsubpic(
-	// 	pos + [-80,-9],
-	// 	[40,40],
-	// 	g_hud7_spr,
-	// 	[spr_suit2[0], spr_suit2[1]],
-	// 	[spr_suit2[2], spr_suit2[3]],
-	// 	g_hud_color,
-	// 	pSeat->m_flArmorAlpha,
-	// 	DRAWFLAG_ADDITIVE
-	// );
-
-	// if (pl.armor > 0) {
-	// 	drawsubpic(
-	// 		pos + [-80,-9],
-	// 		[40, 40 * (pl.armor / 100)],
-	// 		g_hud7_spr,
-	// 		[spr_suit1[0],
-	// 		spr_suit1[1]],
-	// 		[spr_suit1[2], spr_suit1[3] * (pl.armor / 100)],
-	// 		g_hud_color,
-	// 		pSeat->m_flArmorAlpha,
-	// 		DRAWFLAG_ADDITIVE
-	// 	);
-	// }
-
-	// HUD_DrawNums(pl.armor, pos, pSeat->m_flArmorAlpha, g_hud_color);
-	// pSeat->m_iArmorOld = pl.armor;
-}
-
-/* magazine/clip ammo */
-void
-HUD_DrawAmmo1(void)
-{
-	// player pl = (player)pSeat->m_ePlayer;
-	// vector pos;
-
-	// if (pl.a_ammo1 != pSeat->m_iAmmo1Old) {
-	// 	pSeat->m_flAmmo1Alpha = 1.0;
-	// 	pSeat->m_iAmmo1Old = pl.a_ammo1;
-	// }
-
-	// if (pSeat->m_flAmmo1Alpha >= HUD_ALPHA) {
-	// 	pSeat->m_flAmmo1Alpha -= clframetime * 0.5;
-	// } else {
-	// 	pSeat->m_flAmmo1Alpha = HUD_ALPHA;
-	// }
-
-	// pos = g_hudmins + [g_hudres[0] - 152, g_hudres[1] - 42];
-	// HUD_DrawNums(pl.a_ammo1, pos, pSeat->m_flAmmo1Alpha, g_hud_color);
-	// HUD_DrawSeperator(pos + [30,0]);
-}
-
-/* leftover type ammo */
-void
-HUD_DrawAmmo2(void)
-{
-	// player pl = (player)pSeat->m_ePlayer;
-	// vector pos;
-
-	// if (pl.a_ammo2 != pSeat->m_iAmmo2Old) {
-	// 	pSeat->m_flAmmo2Alpha = 1.0;
-	// 	pSeat->m_iAmmo2Old = pl.a_ammo2;
-	// }
-
-	// if (pSeat->m_flAmmo2Alpha >= HUD_ALPHA) {
-	// 	pSeat->m_flAmmo2Alpha -= clframetime * 0.5;
-	// } else {
-	// 	pSeat->m_flAmmo2Alpha = HUD_ALPHA;
-	// }
-
-	// pos = g_hudmins + [g_hudres[0] - 72, g_hudres[1] - 42];
-	// HUD_DrawNums(pl.a_ammo2, pos, pSeat->m_flAmmo2Alpha, g_hud_color);
-}
-
-/* special ammo */
-void
-HUD_DrawAmmo3(void)
-{
-	// player pl = (player)pSeat->m_ePlayer;
-	// vector pos;
-
-	// if (pl.a_ammo3 != pSeat->m_iAmmo3Old) {
-	// 	pSeat->m_flAmmo3Alpha = 1.0;
-	// 	pSeat->m_iAmmo3Old = pl.a_ammo3;
-	// }
-
-	// if (pSeat->m_flAmmo3Alpha >= HUD_ALPHA) {
-	// 	pSeat->m_flAmmo3Alpha -= clframetime * 0.5;
-	// } else {
-	// 	pSeat->m_flAmmo3Alpha = HUD_ALPHA;
-	// }
-
-	// pos = g_hudmins + [g_hudres[0] - 72, g_hudres[1] - 74];
-	// HUD_DrawNums(pl.a_ammo3, pos, pSeat->m_flAmmo3Alpha, g_hud_color);
-}
-
-/* flashlight/torch indicator */
-void
-HUD_DrawFlashlight(void)
-{
-	// vector pos;
-	// player pl = (player)pSeat->m_ePlayer;
-	// pos = g_hudmins + [g_hudres[0] - 48, 16];
-
-	// /* both on, draw both sprites at full intensity */
-	// /* both on, draw both sprites at full intensity */
-	// if (pl.gflags & GF_FLASHLIGHT) {
-	// 	drawsubpic(
-	// 		pos,
-	// 		[32,32],
-	// 		g_hud7_spr,
-	// 		[spr_flash1[0], spr_flash1[1]],
-	// 		[spr_flash1[2], spr_flash1[3]],
-	// 		g_hud_color,
-	// 		1.0f,
-	// 		DRAWFLAG_ADDITIVE
-	// 	);
-
-	// 	drawsubpic(
-	// 		pos,
-	// 		[48,32],
-	// 		g_hud7_spr,
-	// 		[spr_flash2[0], spr_flash2[1]],
-	// 		[spr_flash2[2], spr_flash2[3]],
-	// 		g_hud_color,
-	// 		1.0f,
-	// 		DRAWFLAG_ADDITIVE
-	// 	);
-	// } else {
-	// 	drawsubpic(
-	// 		pos,
-	// 		[32,32],
-	// 		g_hud7_spr,
-	// 		[spr_flash1[0], spr_flash1[1]],
-	// 		[spr_flash1[2], spr_flash1[3]],
-	// 		g_hud_color,
-	// 		HUD_ALPHA,
-	// 		DRAWFLAG_ADDITIVE
-	// 	);
-	// }
-}
-
-/* logo animation used during e3 1998 */
-void
-HUD_DrawLogo(void)
-{
-	// vector pos;
-	// static int f;
-	// static float frame_timer;
-
-	// frame_timer -= clframetime;
-	// pos = [g_hudres[0] - 262, 48];
-
-	// drawpic(
-	// 	pos,
-	// 	sprintf("sprites/640_logo.spr_%i.tga", f),
-	// 	[256,48],
-	// 	[1,1,1],
-	// 	1.0f,
-	// 	DRAWFLAG_ADDITIVE
-	// );
-
-	// if (frame_timer > 0) {
-	// 	return;
-	// }
-
-	// frame_timer = 0.1f;
-
-	// f++;
-	// if (f == 31) {
-	// 	f = 0;
-	// }
-}
-
-/* weapon/ammo pickup notifications */
-void
-HUD_DrawNotify(void)
-{
-	// vector pos;
-	
-	// if (pSeat->m_flPickupAlpha <= 0.0f) {
-	// 	return;
-	// }
-
-	// pos = g_hudmins + [g_hudres[0] - 192, g_hudres[1] - 128];
-	// Weapons_HUDPic(pSeat->m_iPickupWeapon, 1, pos, pSeat->m_flPickupAlpha);
-	// pSeat->m_flPickupAlpha -= clframetime;
-}
-
-void
-HUD_WeaponPickupNotify(int w)
-{
-	// pSeat->m_iPickupWeapon = w;
-	// pSeat->m_flPickupAlpha = 1.0f;
 }
 
 //=========================================================================
@@ -420,32 +67,151 @@ HUD_Flashlight_Draw(void) {
 	drawfont = FONT_CON;
 }
 
+//=========================================================================
+// HUD_DrawUseableCrosshair
+//
+// Draws the "focus is on a useable" object crosshair. This will inform
+// the player of the fact that this object can be interacted with.
+//=========================================================================
+void
+HUD_DrawUseableCrosshair(void)
+{
+
+}
+
+//=========================================================================
+// HUD_DrawDefaultCrosshair
+//
+// Draws the default crosshair seen when no weapon is equiped, and on is
+// wondering around. Searching the area for whichever quest he is on.
+//=========================================================================
+void
+HUD_DrawDefaultCrosshair(void)
+{
+
+	// Static scale variable, for hovering effect.
+	static float scale = 2;
+
+	// Are we focussing?
+	int hasFocusOnUseable = pSeat->m_iHasFocusOnUseable;
+
+	// Default line and text pos setup. (Center of screen, in accordance to hud scale.)
+	vector vert1, vert2, hori1, hori2, text1;
+	vert1 = vert2 = hori1 = hori2 = text1 = g_hudmins + (g_hudres / 2);
+
+	// Default line sizes.
+	float line_length = 10;
+	float line_half_length = line_length / 2;
+
+	// Let it increment in size, back and forth.
+	if (hasFocusOnUseable) {
+		// Accum.
+		scale -= clframetime;
+
+		if (scale < 1) {
+			scale = 2;
+		}
+
+		// Adjust.
+		line_length *= scale;
+		line_half_length = line_length / 2;
+	} else {
+		line_length = 10;
+		line_half_length = line_length / 2;
+	}
+
+	// Left line.
+	vert1[0] -= line_half_length;
+	vert1[1] -= line_half_length;
+
+	// Right line.
+	vert2[0] += line_half_length;	
+	vert2[1] -= line_half_length;
+
+	// Top line.
+	hori1[0] -= line_half_length;
+	hori1[1] -= line_half_length;
+
+	// Bottom line.
+	hori2[0] -= line_half_length;
+	hori2[1] += line_half_length;
+
+	// Draw them.
+	drawfill(vert1, [1, line_length], SCMA_CROSS_COLOR, SCMA_CROSS_ALPHA, DRAWFLAG_ADDITIVE);
+	drawfill(vert2, [1, line_length], SCMA_CROSS_COLOR, SCMA_CROSS_ALPHA, DRAWFLAG_ADDITIVE);
+	drawfill(hori1, [line_length, 1], SCMA_CROSS_COLOR, SCMA_CROSS_ALPHA, DRAWFLAG_ADDITIVE);
+	drawfill(hori2, [line_length + 1, 1], SCMA_CROSS_COLOR, SCMA_CROSS_ALPHA, DRAWFLAG_ADDITIVE);
+
+	// Last but not least, draw a given string to the screen right below
+	// the cursor in case we're focussing on an object.
+	if (hasFocusOnUseable) {
+		string strFocus = "press ^xF42\"E\"^xFFF to pick up";
+		//string strFocusSizeStr = "Press \"E\" to pick up";
+		int strWidth = stringwidth(strFocus, TRUE, [14, 14]);
+
+		// Calculate position.
+		vector pos = text1;
+		pos.x -= strWidth / 2;
+		pos.y += 22;
+
+		// Render time!
+		drawfont = FONT_HUD_CROSSHAIRINFO;
+		drawstring(pos, strFocus, '14 14', [1, 1, 1], 1.0, DRAWFLAG_NORMAL);
+		drawfont = FONT_CON;
+	}
+}
+
+//=========================================================================
+// HUD_DrawCrosshairs
+//
+// Takes care of drawing the appropriate crosshair.
+//
+// When focus is on a usable object, the weapon crosshair will disappear
+// and make room for the "use" crosshair.
+//
+// When no weapon is equiped, it'll show a nice crosshair that can be used
+// when "investigating" the environment.
+//=========================================================================
+void
+HUD_DrawCrosshairs(void)
+{
+	// We need to know what we're in for.
+	int hasFocusOnUseable = pSeat->m_iHasFocusOnUseable;
+	
+	// Are we focussing on an object?
+	//if (hasFocusOnUseable) {
+	//	HUD_DrawUseableCrosshair();
+	//} else {
+		HUD_DrawDefaultCrosshair();
+	//}
+	// Draw weapon crosshair.
+//	SCMA_DrawGunCrosshair();
+}
+
 /* main entry */
 void
 HUD_Draw(void)
 {
-	// player pl = (player)pSeat->m_ePlayer;
-    HUDMessage_Draw();
-    HUDNotification_Draw();
-	HUD_Flashlight_Draw();
+	// Unused var atm.
+	//player pl = (player)pSeat->m_ePlayer;
 
-	// g_hud_color = autocvar_con_color * (1 / 255);
+	// Draw the notifications. (Item pickup messages, etc)
+    HUDNotification_Draw();
+
+	// Draw messages after notifications. (These are actual dialogues in-game)
+    HUDMessage_Draw();
+
+	// The flashlight Hud thing... Not needed atm.
+//	HUD_Flashlight_Draw();
 
 	// /* little point in not drawing these, even if you don't have a suit */
-	Weapons_DrawCrosshair();
-	// //HUD_DrawWeaponSelect();
-	// Obituary_Draw();
+	HUD_DrawCrosshairs();
 
-	// if (!(pl.g_items & ITEM_SUIT)) {
-	// 	return;
-	// }
-	Textmenu_Draw();
-
-	// //HUD_DrawHealth();
-	// //HUD_DrawArmor();
-	// //HUD_DrawFlashlight();
-	// HUD_DrawNotify();
+	// Draw damage indicators last.
 	Damage_Draw();
+
+	// This is there for developer purposes. Waypoint system depends on it.
+	Textmenu_Draw();
 }
 
 /* specatator main entry */

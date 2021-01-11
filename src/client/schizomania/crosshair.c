@@ -18,7 +18,7 @@
 #define CS_CROSS_ALPHA 0.8f
 
 void
-SCMA_DrawCrosshair(void)
+SCMA_DrawGunCrosshair(void)
 {
 	player pl = (player)self;
 	int cross_dist;

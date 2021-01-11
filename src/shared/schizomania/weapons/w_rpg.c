@@ -322,8 +322,8 @@ void w_rpg_hud(void)
 	}
 
 	/* ammo counters */
-	HUD_DrawAmmo1();
-	HUD_DrawAmmo2();
+	// HUD_DrawAmmo1();
+	// HUD_DrawAmmo2();
 
 	/* ammo icon */
 	aicon_pos = g_hudmins + [g_hudres[0] - 48, g_hudres[1] - 42];

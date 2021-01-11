@@ -5,6 +5,11 @@ in which all game mechanics come on board.
 This list (if I don't forget to) will be updated regularly, since it is for
 my own ADHD good.
 
+## Code Tasks (general) - Prototype 0.1:
+- [_] Implement Scripted Sequences with dialogues. (I suppose, an entity which'll send a dialogue event mechanism, back and forth? :) )
+- [_] Rename GF_HOVER_FULLBRIGHT to GF_USEABLE? Also, somehow find a way to not need a "custom" entity for this. Would require breaking all rules though...
+- [_] Implement proper crosshair system.
+
 ## Entities - Prototype 0.1:
 - [_] Remove game_locked_Door
 - [_] Rename egui_mainmenu to gui_mainmenu
@@ -15,6 +20,7 @@ my own ADHD good.
 
 ## Weapons - Prototype 0.1:
 - [_] Fix accuracy issues when shooting.
+
 - [_] Knife
   - [_] Work on better sounds, where possible.
   - [?] Implement model events for audio.
@@ -23,6 +29,8 @@ my own ADHD good.
   - [-] Implement properly.
     - [X] Add Muzzleflash
     - [X] Add shell dropping effect.
+    - [_] Can only reload when in posession of magazines... 
+      - [_] Each reload costs an entire clip. Like the old day RE etc games.
     - [_] Fix animations so that when we're out of ammo, it shows.
   - [X] Export model to .iqe and generate a .vvm
   - [X] Add sounds.
@@ -46,8 +54,7 @@ Other than that it is a bit of a list of ... anything.
 
 - [_] Ammo clips for pistol, reloading by item menu?
   - [_] Maybe let R button remove a clip by default?
-## Code Tasks (general) - Prototype 0.1:
-- [_] Implement Scripted Sequences with dialogues. (I suppose, an entity which'll send a dialogue event mechanism, back and forth? :) )
+
 ## GUI - Prototype 0.1:
 ### Item Menu (More of a... well, all you have menu for the player)
 - [_] Display player model. (Not a requirement, but fun to have.)

@@ -304,9 +304,9 @@ w_mp5_crosshair(void)
 		DRAWFLAG_NORMAL
 	);
 
-	HUD_DrawAmmo1();
-	HUD_DrawAmmo2();
-	HUD_DrawAmmo3();
+	// HUD_DrawAmmo1();
+	// HUD_DrawAmmo2();
+	// HUD_DrawAmmo3();
 
 	aicon_pos = g_hudmins + [g_hudres[0] - 48, g_hudres[1] - 42];
 	drawsubpic(

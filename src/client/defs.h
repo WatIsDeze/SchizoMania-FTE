@@ -98,7 +98,7 @@ void Game_ClientModelEvent(float, int, string);
 CROSSHAIR API
 =======================
 */
-void SCMA_DrawCrosshair(void);
+void SCMA_DrawGunCrosshair(void);
 void SCMA_DrawSimpleCrosshair(void);
 void SCMA_DrawScope(void);
 

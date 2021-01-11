@@ -146,14 +146,13 @@ Game_Parse_Event(float fHeader)
 	case EV_VIEWMODEL:
 		View_PlayAnimation(readbyte());
 		break;
+	// TODO: Remove this some day, because ... it's not used by us.
 	case EV_WEAPON_PICKUP:
 		int w = readbyte();
-
 		// if (autocvar_cl_autoweaponswitch == 1) {
 		// 	sendevent("PlayerSwitchWeapon", "i", w);
 		// }
-
-		HUD_WeaponPickupNotify(w);
+		//HUD_WeaponPickupNotify(w);
 		break;
 	}
 }

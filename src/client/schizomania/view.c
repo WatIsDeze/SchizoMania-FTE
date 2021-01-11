@@ -22,7 +22,7 @@
 //=======================
 entity oldItemTraceEnt;
 
-void View_DrawHoveredItem(void) {
+void View_HandleHoverObject(void) {
 	player pl = (player)pSeat->m_ePlayer;
 
 	// Prep vectors.
@@ -33,23 +33,29 @@ void View_DrawHoveredItem(void) {
 	// Do the entity trace.
 	traceline(vecSrc, vecSrc + (v_forward * 64), MOVE_HITMODEL, self);
 
-	// In case we traced a previous entity, undo its effects.
+	// We undo the the effects on the entity found in the previous frame.
+	// After that, we'll see if we're still focussed on it. If so, we re-apply them again.
 	if (oldItemTraceEnt != __NULL__) {
 		if (oldItemTraceEnt.gflags & GF_HOVER_FULLBRIGHT) {
 			// Remove effect.
 			oldItemTraceEnt.effects &= ~EF_FULLBRIGHT;
-		}
-		
+
+			// We lost focus on a useable object. Let's inform the player seat about this.
+			pSeat->m_iHasFocusOnUseable = FALSE;
+		}		
 
 		// Reset entity reference.
 		oldItemTraceEnt = __NULL__;
 	}
 
-	// If we hit a trace, and it had GF_HOVER_FULLBRIGHT, EF_FULLBRIGHT it.
+	// If we hit a trace, and it had GF_HOVER_FULLBRIGHT, EF_FULLBRIGHT it again.
 	if (trace_ent != world) {
 		// All of the below fail, exception for CBaseEntity.
 		if (trace_ent.gflags & GF_HOVER_FULLBRIGHT) {
 			trace_ent.effects |= EF_FULLBRIGHT;
+
+			// We have focus on a useable object. Let's inform the player seat about this.
+			pSeat->m_iHasFocusOnUseable = TRUE;
 		}
 		
 		// Store it so we can remove effect when unhovered.

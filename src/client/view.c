@@ -140,9 +140,6 @@ void View_DrawViewModel(void)
 	
 	player pl = (player) self;
 
-	// It makes sense to do this here.
-	View_DrawHoveredItem();
-
 	if (pl.health <= 0) {
 		return;
 	}
@@ -150,6 +147,9 @@ void View_DrawViewModel(void)
 	if (cvar("r_drawviewmodel") == 0 || autocvar_cl_thirdperson == TRUE) {
 		return;
 	}
+
+	// It makes sense to do this here.
+	View_HandleHoverObject();
 
 	View_CalcBob();
 	View_UpdateWeapon(m_eViewModel, m_eMuzzleflash);

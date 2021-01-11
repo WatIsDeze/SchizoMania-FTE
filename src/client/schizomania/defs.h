@@ -22,11 +22,16 @@
 //-----------------------
 float FONT_HUD_MESSAGE;
 float FONT_HUD_NOTIFICATION;
+float FONT_HUD_CROSSHAIRINFO;
 
 //-----------------------
 // AUTO CVARS
 //-----------------------
 var int autocvar_cl_autoweaponswitch = TRUE;
+
+//-----------------------
+// NEW HUD STUFF.
+//-----------------------
 
 //-----------------------
 // OLD HUD STUFF.
@@ -45,6 +50,9 @@ var string g_hud7_spr;
 var string g_cross_spr;
 var string g_laser_spr;
 
+//-----------------------
+// PLAYER SEAT STRUCT.
+//-----------------------
 struct
 {
 	/* viewmodel stuff */
@@ -56,6 +64,9 @@ struct
 	int m_iOldWeapon;
 	float m_flBobTime;
 	float m_flBob;
+
+	/* GF_USEABLE related. Crosshair display. */
+	int m_iHasFocusOnUseable;
 
 	/* damage overlay */
 	float m_flDamageAlpha;
@@ -132,8 +143,3 @@ struct
 	
 	entity m_pWeaponFX;
 } g_seats[4], *pSeat;
-
-void HUD_DrawAmmo1(void);
-void HUD_DrawAmmo2(void);
-void HUD_DrawAmmo3(void);
-void HUD_WeaponPickupNotify(int);
