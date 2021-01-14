@@ -101,7 +101,7 @@ inventory_item_t i_knife =
 	.mins		= [-6, -6, 0],
 	.maxs		= [6, 6, 10],
 	
-	.use		= i_knife_use,
+	.use		= __NULL__,
 	.pickup		= i_knife_pickup,
 	.equip		= i_knife_equip,
 	.drop		= i_knife_drop,

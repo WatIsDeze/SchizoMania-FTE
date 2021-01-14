@@ -19,6 +19,8 @@ enumflags
 	BUTTON_VISIBLE = UI_VISIBLE,
 	BUTTON_HOVER,
 	BUTTON_DOWN,
+	BUTTON_HOVER,
+	BUTTON_DISABLED,
 	BUTTON_LASTACTIVE
 };
 
@@ -30,6 +32,8 @@ class CUIButton:CUIWidget
 	vector m_vecButtonSize;
 	string m_strTitle;
 	string m_strTitleActive;
+	string m_strTitleHover;
+	string m_strTitleDisabled;
 	string m_strIcon;
 
 	void(void) CUIButton;
@@ -86,6 +90,8 @@ CUIButton::SetTitle(string strName)
 
 	m_strTitle = strName;
 	m_strTitleActive = sprintf("^xF00%s", m_strTitle);
+	m_strTitleHover = sprintf("^xF24%s", m_strTitle);
+	m_strTitleDisabled = sprintf("^x932%s", m_strTitle);
 	drawfont = g_fntDefault.iID;
 
 	scale = g_fntDefault.iScale;
@@ -126,6 +132,9 @@ CUIButton::Draw(void)
 	if (m_iFlags & BUTTON_DOWN) {
 		drawfill(GetAbsolutePos(), m_vecSize, m_vecColor, 0.25f);
 	}
+	if (m_iFlags & BUTTON_DISABLED) {
+		drawfill(GetAbsolutePos(), m_vecSize, m_vecColor, 0.15f);
+	}
 	drawfill(GetAbsolutePos() + [0, m_vecSize[1] - 1], [m_vecSize[0], 1], m_vecColor, 1.0f);
 	drawfill(GetAbsolutePos(), [m_vecSize[0], 1], m_vecColor, 1.0f);
 	drawfill(GetAbsolutePos() + [0, 1], [1, m_vecSize[1] - 2], m_vecColor, 1.0f);
@@ -133,10 +142,16 @@ CUIButton::Draw(void)
 #endif
 
 	if (m_strTitle) {
-		if (m_iFlags & BUTTON_LASTACTIVE) {
-			Font_DrawText(GetAbsolutePos() + [8, 8], m_strTitleActive, g_fntDefault);
+		if (m_iFlags & BUTTON_DISABLED) {
+			Font_DrawText(GetAbsolutePos() + [8, 8], m_strTitleDisabled, g_fntDefault);
 		} else {
-			Font_DrawText(GetAbsolutePos() + [8, 8], m_strTitle, g_fntDefault);
+			if (m_iFlags & BUTTON_LASTACTIVE) {
+				Font_DrawText(GetAbsolutePos() + [8, 8], m_strTitleActive, g_fntDefault);
+			} else if (m_iFlags & BUTTON_HOVER) {
+				Font_DrawText(GetAbsolutePos() + [8, 8], m_strTitleHover, g_fntDefault);
+			} else {
+				Font_DrawText(GetAbsolutePos() + [8, 8], m_strTitle, g_fntDefault);
+			}
 		}
 	}
 	if (m_strIcon) {
@@ -147,6 +162,20 @@ CUIButton::Draw(void)
 void
 CUIButton::Input(float flEVType, float flKey, float flChar, float flDevID)
 {
+	if (m_iFlags & BUTTON_DISABLED) {
+		return;
+	}
+	// Set the hover flag, in case, we hover...
+	if (Util_MouseAbove(getmousepos(), GetAbsolutePos(), m_vecSize)) {
+		if (!(m_iFlags & BUTTON_HOVER)) {
+			m_iFlags |= BUTTON_HOVER;
+	//		localsound("ui/hover.wav");
+		}
+	} else {
+		if (m_iFlags & BUTTON_HOVER)
+			m_iFlags &= ~BUTTON_HOVER;
+	}
+	
 	if (flEVType == IE_KEYDOWN) {
 		if (flKey == K_MOUSE1) {
 			FlagRemove(BUTTON_LASTACTIVE);

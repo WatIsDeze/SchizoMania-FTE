@@ -22,6 +22,11 @@ static int selectedItemID;
 #define UI_INVENTORY_ITEM_HEIGHT 96
 
 // Defined here so it can be used in each VGUI_Inventory_ function.
+static CUIButton btnUse;
+static CUIButton btnEquip;
+static CUIButton btnDrop;
+static CUIButton btnClose;
+
 void
 VGUI_Inventory_UpdateItems(void);
 
@@ -54,11 +59,8 @@ VGUI_Inventory_Use()
 		selectedItemID = 0;
 	}
 
-	// Update item view.
-	VGUI_Inventory_UpdateItems();
-
-	// Hide item display.
-	winInventory.Hide();
+	// Close item display.
+	VGUI_Inventory_Close();
 }
 
 //=======================
@@ -83,14 +85,8 @@ VGUI_Inventory_Equip(void)
 	// TODO: Mark as EQUIPED for rendering.
 	itemButtons[selectedItemID].FlagRemove(ITEM_SELECTED);
 		
-	// Reset selected item ID.
-	selectedItemID = 0;
-
-	// Update item view.
-	VGUI_Inventory_UpdateItems();
-
-	// Hide item display.
-	winInventory.Hide();
+	// Close item display.
+	VGUI_Inventory_Close();
 }
 
 //=======================
@@ -122,11 +118,8 @@ VGUI_Inventory_Drop(void)
 		selectedItemID = 0;
 	}
 
-	// Update item view.
-	VGUI_Inventory_UpdateItems();
-
-	// Hide item display.
-	winInventory.Hide();
+	// Close item display.
+	VGUI_Inventory_Close();
 }
 
 //=======================
@@ -140,6 +133,23 @@ VGUI_Inventory_Close(void)
 	if (!winInventory)
 		return;
 
+	// Bit of a hack but whatever.. Reset button states the cheesy way. We got a game to finish!
+	btnUse.m_iFlags = 0;
+	btnUse.m_iFlags |= BUTTON_DISABLED | BUTTON_VISIBLE;
+	btnEquip.m_iFlags = 0;
+	btnEquip.m_iFlags |= BUTTON_DISABLED | BUTTON_VISIBLE;
+	btnDrop.m_iFlags = 0;
+	btnDrop.m_iFlags |= BUTTON_DISABLED | BUTTON_VISIBLE;
+	btnClose.m_iFlags = 0;
+	btnClose.m_iFlags |= BUTTON_VISIBLE;
+
+	// Reset selected item ID.
+	selectedItemID = 0;
+
+	// Update item view.
+	VGUI_Inventory_UpdateItems();
+
+	// Hide item display.
 	winInventory.Hide();
 }
 
@@ -150,9 +160,32 @@ VGUI_Inventory_Close(void)
 //=======================
 void
 VGUI_Inventory_ItemSelect(float itemID) {
+	player pl = pSeat->m_ePlayer;
+
 	// By default, clear all flags from the buttons.
 	for (int i = 1; i < INVENTORY_ITEM_MAX; i++) {
 		itemButtons[i].FlagRemove(ITEM_SELECTED);
+	}
+
+	// Should we disable, or enable the use button?
+	if (g_inventory_items[itemID].use == __NULL__) {
+		btnUse.FlagAdd(BUTTON_DISABLED);
+	} else {
+		btnUse.FlagRemove(BUTTON_DISABLED);
+	}
+
+	// Should we disable, or enable the equip button?
+	if (g_inventory_items[itemID].equip == __NULL__) {
+		btnEquip.FlagAdd(BUTTON_DISABLED);
+	} else {
+		btnEquip.FlagRemove(BUTTON_DISABLED);
+	}
+
+	// Should we disable, or enable the drop button?
+	if (itemButtons[itemID].GetItemAmount() >= 1) {
+		btnDrop.FlagRemove(BUTTON_DISABLED);
+	} else {
+		btnDrop.FlagAdd(BUTTON_DISABLED);
 	}
 
 	// Store selected itemID.
@@ -230,10 +263,6 @@ VGUI_Inventory_UpdateItems(void)
 void
 VGUI_Inventory_Show(void) {
 	static int initialized;
-	static CUIButton btnUse;
-	static CUIButton btnEquip;
-	static CUIButton btnDrop;
-	static CUIButton btnClose;
 
 	if (!initialized) {
 		initialized = TRUE;
@@ -246,18 +275,21 @@ VGUI_Inventory_Show(void) {
 		btnUse.SetTitle("Use");
 		btnUse.SetSize( '108 24' );
 		btnUse.SetPos( '326 32' );
+		btnUse.FlagAdd( BUTTON_DISABLED );
 		btnUse.SetFunc(VGUI_Inventory_Use);
 
 		btnEquip = spawn(CUIButton);
 		btnEquip.SetTitle("Equip");
 		btnEquip.SetSize( '108 24' );
 		btnEquip.SetPos( '326 62' );
+		btnEquip.FlagAdd( BUTTON_DISABLED );
 		btnEquip.SetFunc(VGUI_Inventory_Equip);
 
 		btnDrop = spawn(CUIButton);
 		btnDrop.SetTitle("Drop");
 		btnDrop.SetSize( '108 24' );
 		btnDrop.SetPos( '326 92' );
+		btnDrop.FlagAdd( BUTTON_DISABLED );
 		btnDrop.SetFunc(VGUI_Inventory_Drop);
 
 		btnClose = spawn(CUIButton);

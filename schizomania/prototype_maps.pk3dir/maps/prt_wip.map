@@ -987,3 +987,10 @@
 "origin" "128.000000 -16.000000 -52.000000"
 "angle" "-93.153770"
 }
+// entity 18
+{
+"classname" "item_inventory"
+"origin" "48.000000 120.000000 -22.000000"
+"itemID" "5"
+"amount" "1"
+}

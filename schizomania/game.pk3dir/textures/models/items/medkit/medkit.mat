@@ -1,0 +1,10 @@
+{
+	diffusemap textures/models/items/medkit/diffuse.tga
+	normalmap textures/models/items/medkit/normals.tga
+    
+	{
+		program vertexlit
+		map $diffuse
+		map $normalmap
+	}
+}

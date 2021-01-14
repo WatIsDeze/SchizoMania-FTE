@@ -5,10 +5,19 @@ in which all game mechanics come on board.
 This list (if I don't forget to) will be updated regularly, since it is for
 my own ADHD good.
 
+## Code Tasks (general) - Prototype 0.2:
+- [_] Implement Syphon Filter like "item tagging" where the text displays above an item when close to it. Make this a cvar difficulty setting.
+
 ## Code Tasks (general) - Prototype 0.1:
 - [_] Implement Scripted Sequences with dialogues. (I suppose, an entity which'll send a dialogue event mechanism, back and forth? :) )
 - [_] Rename GF_HOVER_FULLBRIGHT to GF_USEABLE? Also, somehow find a way to not need a "custom" entity for this. Would require breaking all rules though...
-- [_] Implement proper crosshair system.
+- [_] 50% there. Implement proper crosshair system.
+
+## Game & Code? Tasks (general) - Prototype 0.1:
+- [_] Health system, green = fine, yellow = caution, orange = extra caution, red = danger.
+- [_] Poisoned, you can be poisoned, yes. So a textual indicator (with symbols preferably) to show what is up. Poisoned, or... what have ya.
+- [_] Display the character in the menu, in case...
+- [_] Implement item "inspection". So one can take a closer look at an item, and possibly acquire an item if clicking on something? Who knows.
 
 ## Entities - Prototype 0.1:
 - [_] Remove game_locked_Door
@@ -17,6 +26,14 @@ my own ADHD good.
 
 ## AI - Prototype 0.1:
 - [X] Pull in latest FreeCS changes and see if we can do anything with that botlib of theirs.
+
+
+## Items - Prototype 0.1:
+- [_] 9mm Ammo Clips.
+- [_] Health medicine.
+- [_] ..
+- [_] ..
+- [_] ..
 
 ## Weapons - Prototype 0.1:
 - [_] Fix accuracy issues when shooting.
@@ -87,6 +104,7 @@ Other than that it is a bit of a list of ... anything.
 - How to do a proper zombie walk animaton, use offsets so it "moves backwards", to counter the slide effect.
 - Shadows need to be disabled since the brush used to cast extra light for streetlamps, is somehow tagged along with it.
   We gotta fix that..
+- Proning, instead of only crouching. Can we do this? Pretty sure we can but, how much work is it?
 - Body part specific damage, head, arms, legs etc.
   - Adjust damage values, also in Traceattack.c for when a specific bodypart has been hit.
     - It multiplies the damage usually by 0.4* etc, which means if a 9mm does like 9 damage... It takes a good 40 hits to kill lol

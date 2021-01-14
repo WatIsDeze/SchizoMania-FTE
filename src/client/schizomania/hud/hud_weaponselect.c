@@ -14,88 +14,94 @@
  * OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  */
 
-vector g_vecHUDNums[6] =
-{
-	[168 / 256, 72 / 128],
-	[188 / 256, 72 / 128],
-	[208 / 256, 72 / 128],
-	[168 / 256, 92 / 128],
-	[188 / 256, 92 / 128],
-	[208 / 256, 92 / 128]
-};
-
+//=========================================================================
+// This function is only still here since I don't wanna mess too much with
+// entry.c
+//=========================================================================
 void
 HUD_DrawWeaponSelect_Forward(void)
 {
-	player pl = (player)pSeat->m_ePlayer;
+	// player pl = (player)pSeat->m_ePlayer;
 
-	if (!pl.activeweapon) {
-		return;
-	}
+	// if (!pl.activeweapon) {
+	// 	return;
+	// }
 
-	if (pSeat->m_flHUDWeaponSelectTime < time) {
-		pSeat->m_iHUDWeaponSelected = pl.activeweapon;
-		sound(pSeat->m_ePlayer, CHAN_ITEM, "common/wpn_hudon.wav", 0.5, ATTN_NONE);
-	} else {
-		sound(pSeat->m_ePlayer, CHAN_ITEM, "common/wpn_moveselect.wav", 0.5, ATTN_NONE);
-		pSeat->m_iHUDWeaponSelected--;
-		if (pSeat->m_iHUDWeaponSelected <= 0) {
-			pSeat->m_iHUDWeaponSelected = g_weapons.length - 1;
-		}
-	}
+	// if (pSeat->m_flHUDWeaponSelectTime < time) {
+	// 	pSeat->m_iHUDWeaponSelected = pl.activeweapon;
+	// 	sound(pSeat->m_ePlayer, CHAN_ITEM, "common/wpn_hudon.wav", 0.5, ATTN_NONE);
+	// } else {
+	// 	sound(pSeat->m_ePlayer, CHAN_ITEM, "common/wpn_moveselect.wav", 0.5, ATTN_NONE);
+	// 	pSeat->m_iHUDWeaponSelected--;
+	// 	if (pSeat->m_iHUDWeaponSelected <= 0) {
+	// 		pSeat->m_iHUDWeaponSelected = g_weapons.length - 1;
+	// 	}
+	// }
 
-	pSeat->m_flHUDWeaponSelectTime = time + 3;
+	// pSeat->m_flHUDWeaponSelectTime = time + 3;
 
-	if not (pl.g_items & g_weapons[pSeat->m_iHUDWeaponSelected].id) {
-		HUD_DrawWeaponSelect_Forward();
-	}
+	// if not (pl.g_items & g_weapons[pSeat->m_iHUDWeaponSelected].id) {
+	// 	HUD_DrawWeaponSelect_Forward();
+	// }
 }
 
+//=========================================================================
+// This function is only still here since I don't wanna mess too much with
+// entry.c
+//=========================================================================
 void
 HUD_DrawWeaponSelect_Back(void)
 {
-	player pl = (player)pSeat->m_ePlayer;
+	// player pl = (player)pSeat->m_ePlayer;
 
-	if (!pl.activeweapon) {
-		return;
-	}
+	// if (!pl.activeweapon) {
+	// 	return;
+	// }
 
-	if (pSeat->m_flHUDWeaponSelectTime < time) {
-		pSeat->m_iHUDWeaponSelected = pl.activeweapon;
-		sound(pSeat->m_ePlayer, CHAN_ITEM, "common/wpn_hudon.wav", 0.5, ATTN_NONE);
-	} else {
-		sound(pSeat->m_ePlayer, CHAN_ITEM, "common/wpn_moveselect.wav", 0.5, ATTN_NONE);
-		pSeat->m_iHUDWeaponSelected++;
-		if (pSeat->m_iHUDWeaponSelected >= g_weapons.length) {
-			pSeat->m_iHUDWeaponSelected = 1;
-		}
-	}
+	// if (pSeat->m_flHUDWeaponSelectTime < time) {
+	// 	pSeat->m_iHUDWeaponSelected = pl.activeweapon;
+	// 	sound(pSeat->m_ePlayer, CHAN_ITEM, "common/wpn_hudon.wav", 0.5, ATTN_NONE);
+	// } else {
+	// 	sound(pSeat->m_ePlayer, CHAN_ITEM, "common/wpn_moveselect.wav", 0.5, ATTN_NONE);
+	// 	pSeat->m_iHUDWeaponSelected++;
+	// 	if (pSeat->m_iHUDWeaponSelected >= g_weapons.length) {
+	// 		pSeat->m_iHUDWeaponSelected = 1;
+	// 	}
+	// }
 
-	pSeat->m_flHUDWeaponSelectTime = time + 3;
+	// pSeat->m_flHUDWeaponSelectTime = time + 3;
 
-	if not (pl.g_items & g_weapons[pSeat->m_iHUDWeaponSelected].id) {
-		HUD_DrawWeaponSelect_Back();
-	}
+	// if not (pl.g_items & g_weapons[pSeat->m_iHUDWeaponSelected].id) {
+	// 	HUD_DrawWeaponSelect_Back();
+	// }
 }
 
+//=========================================================================
+// This function is only still here since I don't wanna mess too much with
+// entry.c
+//=========================================================================
 void
 HUD_DrawWeaponSelect_Trigger(void)
 {
-	player pl = (player)pSeat->m_ePlayer;
-	pl.activeweapon = pSeat->m_iHUDWeaponSelected;
-	sendevent("PlayerSwitchWeapon", "i", pSeat->m_iHUDWeaponSelected);
-	sound(pSeat->m_ePlayer, CHAN_ITEM, "common/wpn_select.wav", 0.5f, ATTN_NONE);
-	pSeat->m_iHUDWeaponSelected = pSeat->m_flHUDWeaponSelectTime = 0;
+	// player pl = (player)pSeat->m_ePlayer;
+	// pl.activeweapon = pSeat->m_iHUDWeaponSelected;
+	// sendevent("PlayerSwitchWeapon", "i", pSeat->m_iHUDWeaponSelected);
+	// sound(pSeat->m_ePlayer, CHAN_ITEM, "common/wpn_select.wav", 0.5f, ATTN_NONE);
+	// pSeat->m_iHUDWeaponSelected = pSeat->m_flHUDWeaponSelectTime = 0;
 }
 
+//=========================================================================
+// This function is only still here since I don't wanna mess too much with
+// entry.c
+//=========================================================================
 void
 HUD_DrawWeaponSelect_Last(void)
 {
-	player pl = (player)pSeat->m_ePlayer;
-	if (pl.g_items & g_weapons[pSeat->m_iOldWeapon].id) {
-		pl.activeweapon = pSeat->m_iOldWeapon;
-		sendevent("PlayerSwitchWeapon", "i", pSeat->m_iOldWeapon);
-	}
+	// player pl = (player)pSeat->m_ePlayer;
+	// if (pl.g_items & g_weapons[pSeat->m_iOldWeapon].id) {
+	// 	pl.activeweapon = pSeat->m_iOldWeapon;
+	// 	sendevent("PlayerSwitchWeapon", "i", pSeat->m_iOldWeapon);
+	// }
 }
 
 void
@@ -107,93 +113,93 @@ HUD_DrawWeaponSelect_Num(vector vecPos, float fValue)
 int
 HUD_InSlotPos(int slot, int pos)
 {
-	player pl = (player)pSeat->m_ePlayer;
-	for (int i = 1; i < g_weapons.length; i++) {
-		if (g_weapons[i].slot == slot && g_weapons[i].slot_pos == pos) {
-			if (pl.g_items & g_weapons[i].id) {
-				return i;
-			} else {
-				return -1;
-			}
-		}
-	}
+	// player pl = (player)pSeat->m_ePlayer;
+	// for (int i = 1; i < g_weapons.length; i++) {
+	// 	if (g_weapons[i].slot == slot && g_weapons[i].slot_pos == pos) {
+	// 		if (pl.g_items & g_weapons[i].id) {
+	// 			return i;
+	// 		} else {
+	// 			return -1;
+	// 		}
+	// 	}
+	// }
 	return -1;
 }
 
 void
 HUD_SlotSelect(int slot)
 {
-	player pl = (player)pSeat->m_ePlayer;
-	int curslot = g_weapons[pSeat->m_iHUDWeaponSelected].slot;
-	int i;
+	// player pl = (player)pSeat->m_ePlayer;
+	// int curslot = g_weapons[pSeat->m_iHUDWeaponSelected].slot;
+	// int i;
 
-	if (g_textmenu != "") {
-		Textmenu_Input(slot);
-		return;
-	}
+	// if (g_textmenu != "") {
+	// 	Textmenu_Input(slot);
+	// 	return;
+	// }
 
-	/* hack to see if we have ANY weapons at all. */
-	if (!pl.activeweapon) {
-		return;
-	}
+	// /* hack to see if we have ANY weapons at all. */
+	// if (!pl.activeweapon) {
+	// 	return;
+	// }
 
-	if (pSeat->m_flHUDWeaponSelectTime < time) {
-		sound(pSeat->m_ePlayer, CHAN_ITEM, "common/wpn_hudon.wav", 0.5, ATTN_NONE);
-	} else {
-		sound(pSeat->m_ePlayer, CHAN_ITEM, "common/wpn_moveselect.wav", 0.5, ATTN_NONE);
-	}
+	// if (pSeat->m_flHUDWeaponSelectTime < time) {
+	// 	sound(pSeat->m_ePlayer, CHAN_ITEM, "common/wpn_hudon.wav", 0.5, ATTN_NONE);
+	// } else {
+	// 	sound(pSeat->m_ePlayer, CHAN_ITEM, "common/wpn_moveselect.wav", 0.5, ATTN_NONE);
+	// }
 
-	/* weren't in that slot? select the first one then */
-	if (curslot != slot) {
-		for (i = 1; i < g_weapons.length; i++) {
-			if (g_weapons[i].slot == slot && pl.g_items & g_weapons[i].id) {
-				pSeat->m_iHUDWeaponSelected = i;
-				pSeat->m_flHUDWeaponSelectTime = time + 3;
-				break;
-			}
-		}
-	} else {
-		int first = -1;
-		for (i = 1; i < g_weapons.length; i++) {
-			if (g_weapons[i].slot == slot && pl.g_items & g_weapons[i].id) {
-				if (i < pSeat->m_iHUDWeaponSelected && first == -1) {
-					first = i;
-				} else if (i > pSeat->m_iHUDWeaponSelected) {
-					first = -1;
-					pSeat->m_iHUDWeaponSelected = i;
-					pSeat->m_flHUDWeaponSelectTime = time + 3;
-					break;
-				}
-			}
-		}
+	// /* weren't in that slot? select the first one then */
+	// if (curslot != slot) {
+	// 	for (i = 1; i < g_weapons.length; i++) {
+	// 		if (g_weapons[i].slot == slot && pl.g_items & g_weapons[i].id) {
+	// 			pSeat->m_iHUDWeaponSelected = i;
+	// 			pSeat->m_flHUDWeaponSelectTime = time + 3;
+	// 			break;
+	// 		}
+	// 	}
+	// } else {
+	// 	int first = -1;
+	// 	for (i = 1; i < g_weapons.length; i++) {
+	// 		if (g_weapons[i].slot == slot && pl.g_items & g_weapons[i].id) {
+	// 			if (i < pSeat->m_iHUDWeaponSelected && first == -1) {
+	// 				first = i;
+	// 			} else if (i > pSeat->m_iHUDWeaponSelected) {
+	// 				first = -1;
+	// 				pSeat->m_iHUDWeaponSelected = i;
+	// 				pSeat->m_flHUDWeaponSelectTime = time + 3;
+	// 				break;
+	// 			}
+	// 		}
+	// 	}
 
-		if (first > 0) {
-			pSeat->m_iHUDWeaponSelected = first;
-			pSeat->m_flHUDWeaponSelectTime = time + 3;
-		}
-	}
+	// 	if (first > 0) {
+	// 		pSeat->m_iHUDWeaponSelected = first;
+	// 		pSeat->m_flHUDWeaponSelectTime = time + 3;
+	// 	}
+	// }
 }
 
 void
 HUD_DrawWeaponSelect(void)
 {
-	player pl = (player)pSeat->m_ePlayer;
-	if (!pl.activeweapon) {
-		return;
-	}
-	if (pSeat->m_flHUDWeaponSelectTime < time) {
-		if (pSeat->m_iHUDWeaponSelected) {
-			sound(pSeat->m_ePlayer, CHAN_ITEM, "common/wpn_hudoff.wav", 0.5, ATTN_NONE);
-			pSeat->m_iHUDWeaponSelected = 0;
-		}
-		return;
-	}
+	// player pl = (player)pSeat->m_ePlayer;
+	// if (!pl.activeweapon) {
+	// 	return;
+	// }
+	// if (pSeat->m_flHUDWeaponSelectTime < time) {
+	// 	if (pSeat->m_iHUDWeaponSelected) {
+	// 		sound(pSeat->m_ePlayer, CHAN_ITEM, "common/wpn_hudoff.wav", 0.5, ATTN_NONE);
+	// 		pSeat->m_iHUDWeaponSelected = 0;
+	// 	}
+	// 	return;
+	// }
 
-	vector vecPos = g_hudmins + [16,16];
+	// vector vecPos = g_hudmins + [16,16];
 
-	int b;
-	int wantslot = g_weapons[pSeat->m_iHUDWeaponSelected].slot;
-	int wantpos = g_weapons[pSeat->m_iHUDWeaponSelected].slot_pos;
+	// int b;
+	// int wantslot = g_weapons[pSeat->m_iHUDWeaponSelected].slot;
+	// int wantpos = g_weapons[pSeat->m_iHUDWeaponSelected].slot_pos;
 	// for (int i = 0; i < 5; i++) {
 	// 	int slot_selected = 0;
 	// 	vecPos[1] = g_hudmins[1] + 16;

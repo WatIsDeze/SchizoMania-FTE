@@ -107,7 +107,7 @@ Item_Use(player pl, int itemID, int amount)
 	// Loop for amount of items.
 	for (int i = 0; i < amount; i++) {
 		// Use. (We shouldn't be in this situation if one can't use an item
-		//       th UI should prevent ths to begn with.)
+		//       th UI should prevent ths to begin with.)
 		if (g_inventory_items[itemID].use != __NULL__) {
 			g_inventory_items[itemID].use(pl);
 
@@ -115,6 +115,7 @@ Item_Use(player pl, int itemID, int amount)
 		    pl.inventory_items[itemID] = bound(0, pl.inventory_items[itemID] - 1, 255);
 		} else {
 			dprint(sprintf("ItemID %i is lacking a use functon.", itemID));
+			return;
 		}
 	}
 

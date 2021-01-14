@@ -22,9 +22,9 @@
 void i_medkit_precache(void) {
 #ifdef SERVER
 	Sound_Precache("ITEM_PISTOL.use");
-	precache_model("models/w_medkit.mdl");
+	precache_model("models/items/medkit/w_medkit.vvm");
 #else
-	precache_model("models/w_medkit.mdl");
+	precache_model("models/items/medkit/w_medkit.vvm");
 #endif
 }
 
@@ -55,7 +55,7 @@ void i_medkit_use(player pl) {
 // Return item model string path.
 //=======================
 string i_medkit_wmodel(void) {
-    return "models/w_medkit.mdl";
+    return "models/items/medkit/w_medkit.vvm";
 }
 
 inventory_item_t i_medkit = 
