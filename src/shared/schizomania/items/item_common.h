@@ -36,6 +36,7 @@ typedef struct {
     vector maxs;            // The maxs bounding box used for this item.
     
     void(player) use;
+    void(player) inspect;
     void(player) pickup;
     void(player) equip;
     void(player) drop;

@@ -38,6 +38,7 @@ inventory_item_t i_null =
 	.maxs		= [8, 8, 8],
 	
 	.use		= __NULL__,
+	.inspect	= __NULL__,
 	.pickup		= __NULL__,
 	.equip		= __NULL__,
 	.drop		= __NULL__,

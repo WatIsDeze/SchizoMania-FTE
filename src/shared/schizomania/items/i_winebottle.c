@@ -60,6 +60,7 @@ inventory_item_t i_winebottle =
 	.maxs		= [8, 8, 8],
 	
 	.use		= i_winebottle_use,
+	.inspect	= __NULL__,
 	.pickup		= __NULL__,
 	.equip		= __NULL__,
 	.drop		= __NULL__,

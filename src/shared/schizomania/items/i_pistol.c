@@ -96,6 +96,7 @@ inventory_item_t i_pistol =
 	.maxs		= [8, 8, 8],
 	
 	.use		= __NULL__,
+	.inspect	= __NULL__,
 	.pickup		= i_pistol_pickup,
 	.equip		= i_pistol_equip,
 	.drop		= i_pistol_drop,

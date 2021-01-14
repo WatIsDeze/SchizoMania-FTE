@@ -24,6 +24,7 @@ static int selectedItemID;
 // Defined here so it can be used in each VGUI_Inventory_ function.
 static CUIButton btnUse;
 static CUIButton btnEquip;
+static CUIButton btnInspect;
 static CUIButton btnDrop;
 static CUIButton btnClose;
 
@@ -181,6 +182,13 @@ VGUI_Inventory_ItemSelect(float itemID) {
 		btnEquip.FlagRemove(BUTTON_DISABLED);
 	}
 
+	// Should we disable, or enable the inspect button?
+	if (g_inventory_items[itemID].inspect == __NULL__) {
+		btnInspect.FlagAdd(BUTTON_DISABLED);
+	} else {
+		btnInspect.FlagRemove(BUTTON_DISABLED);
+	}
+
 	// Should we disable, or enable the drop button?
 	if (itemButtons[itemID].GetItemAmount() >= 1) {
 		btnDrop.FlagRemove(BUTTON_DISABLED);
@@ -285,10 +293,17 @@ VGUI_Inventory_Show(void) {
 		btnEquip.FlagAdd( BUTTON_DISABLED );
 		btnEquip.SetFunc(VGUI_Inventory_Equip);
 
+		btnInspect = spawn(CUIButton);
+		btnInspect.SetTitle("Inspect");
+		btnInspect.SetSize( '108 24' );
+		btnInspect.SetPos( '326 92' );
+		btnInspect.FlagAdd( BUTTON_DISABLED );
+		btnInspect.SetFunc(VGUI_Inventory_Drop);
+
 		btnDrop = spawn(CUIButton);
 		btnDrop.SetTitle("Drop");
 		btnDrop.SetSize( '108 24' );
-		btnDrop.SetPos( '326 92' );
+		btnDrop.SetPos( '326 122' );
 		btnDrop.FlagAdd( BUTTON_DISABLED );
 		btnDrop.SetFunc(VGUI_Inventory_Drop);
 
@@ -301,6 +316,7 @@ VGUI_Inventory_Show(void) {
 		g_uiDesktop.Add(winInventory);
 		winInventory.Add(btnUse);
 		winInventory.Add(btnEquip);
+		winInventory.Add(btnInspect);
 		winInventory.Add(btnDrop);
 		winInventory.Add(btnClose);
 	}

@@ -72,6 +72,7 @@ inventory_item_t i_medkit =
 	.maxs		= [6, 6, 8],
 
 	.use		= i_medkit_use,
+    .inspect	= __NULL__,
 	.pickup		= __NULL__,
 	.equip		= __NULL__,
 	.drop		= __NULL__,
