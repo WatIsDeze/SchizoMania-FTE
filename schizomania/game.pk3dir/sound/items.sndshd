@@ -1,0 +1,4 @@
+items.medkit.use
+{
+    sample items/medkit/use1.wav
+}

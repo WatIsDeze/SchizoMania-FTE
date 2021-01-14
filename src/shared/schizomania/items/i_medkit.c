@@ -21,7 +21,7 @@
 //=======================
 void i_medkit_precache(void) {
 #ifdef SERVER
-	Sound_Precache("ITEM_PISTOL.use");
+	Sound_Precache("items.medkit.use");
 	precache_model("models/items/medkit/w_medkit.vvm");
 #else
 	precache_model("models/items/medkit/w_medkit.vvm");
@@ -39,7 +39,7 @@ void i_medkit_use(player pl) {
 	    Damage_Apply(pl, pl, -20, 0, DMG_GENERIC);
 
         // Play medkit sound.
-        Sound_Play(pl, CHAN_ITEM, "item.healthkit");
+        Sound_Play(pl, CHAN_ITEM, "items.medkit.use");
     //  dprint("server - i_medkit_use");
     #endif
     // #else
