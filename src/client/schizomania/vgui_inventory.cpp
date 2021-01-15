@@ -264,6 +264,17 @@ VGUI_Inventory_UpdateItems(void)
 }
 
 //=======================
+// void VGUI_Inventory_Precache(void)
+//
+// Precache bg etc.
+//=======================
+void
+VGUI_Inventory_Precache(void) 
+{
+	precache_pic("textures/ui/inventory/background.tga");
+}
+
+//=======================
 // void VGUI_Inventory_Show(void)
 //
 // Initializes inventory if needed, and shows it.

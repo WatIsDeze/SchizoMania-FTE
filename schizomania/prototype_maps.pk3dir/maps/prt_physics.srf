@@ -1,0 +1,572 @@
+default
+{
+	castShadows 1
+	receiveShadows 1
+	sampleSize 16
+	longestCurve 0.000000
+}
+
+0 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/next/bunker2
+	lightmapAxis ( -1.000000 0.000000 0.000000 )
+}
+
+1 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/next/bunker2
+	lightmapAxis ( 0.000000 -1.000000 0.000000 )
+}
+
+2 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/next/bunker2
+	lightmapAxis ( 0.000000 1.000000 0.000000 )
+}
+
+3 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/next/bunker2
+	lightmapAxis ( 1.000000 0.000000 0.000000 )
+}
+
+4 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/skies/yukongold
+	sampleSize 0
+}
+
+5 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/next/cracked1
+	lightmapAxis ( 0.000000 0.000000 1.000000 )
+}
+
+6 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/next/bunker1
+	entity 5
+	castShadows 0
+	lightmapAxis ( 1.000000 0.000000 0.000000 )
+}
+
+7 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/next/bunker1
+	entity 5
+	castShadows 0
+	lightmapAxis ( 0.000000 1.000000 0.000000 )
+}
+
+8 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/next/bunker1
+	entity 5
+	castShadows 0
+	lightmapAxis ( 0.000000 0.000000 1.000000 )
+}
+
+9 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/next/bunker1
+	entity 5
+	castShadows 0
+	lightmapAxis ( -1.000000 0.000000 0.000000 )
+}
+
+10 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/next/bunker1
+	entity 5
+	castShadows 0
+	lightmapAxis ( 0.000000 -1.000000 0.000000 )
+}
+
+11 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/next/bunker1
+	entity 5
+	castShadows 0
+	lightmapAxis ( 0.000000 0.000000 -1.000000 )
+}
+
+12 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/next/bunker1
+	entity 6
+	castShadows 0
+	lightmapAxis ( 1.000000 0.000000 0.000000 )
+}
+
+13 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/next/bunker1
+	entity 6
+	castShadows 0
+	lightmapAxis ( 0.000000 1.000000 0.000000 )
+}
+
+14 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/next/bunker1
+	entity 6
+	castShadows 0
+	lightmapAxis ( 0.000000 0.000000 1.000000 )
+}
+
+15 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/next/bunker1
+	entity 6
+	castShadows 0
+	lightmapAxis ( -1.000000 0.000000 0.000000 )
+}
+
+16 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/next/bunker1
+	entity 6
+	castShadows 0
+	lightmapAxis ( 0.000000 -1.000000 0.000000 )
+}
+
+17 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/next/bunker1
+	entity 6
+	castShadows 0
+	lightmapAxis ( 0.000000 0.000000 -1.000000 )
+}
+
+18 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/next/bunker1
+	entity 7
+	castShadows 0
+	lightmapAxis ( 1.000000 0.000000 0.000000 )
+}
+
+19 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/next/bunker1
+	entity 7
+	castShadows 0
+	lightmapAxis ( 0.000000 1.000000 0.000000 )
+}
+
+20 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/next/bunker1
+	entity 7
+	castShadows 0
+	lightmapAxis ( 0.000000 0.000000 1.000000 )
+}
+
+21 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/next/bunker1
+	entity 7
+	castShadows 0
+	lightmapAxis ( -1.000000 0.000000 0.000000 )
+}
+
+22 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/next/bunker1
+	entity 7
+	castShadows 0
+	lightmapAxis ( 0.000000 -1.000000 0.000000 )
+}
+
+23 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/next/bunker1
+	entity 7
+	castShadows 0
+	lightmapAxis ( 0.000000 0.000000 -1.000000 )
+}
+
+24 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/next/bunker1
+	entity 8
+	castShadows 0
+	lightmapAxis ( 1.000000 0.000000 0.000000 )
+}
+
+25 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/next/bunker1
+	entity 8
+	castShadows 0
+	lightmapAxis ( 0.000000 1.000000 0.000000 )
+}
+
+26 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/next/bunker1
+	entity 8
+	castShadows 0
+	lightmapAxis ( 0.000000 0.000000 1.000000 )
+}
+
+27 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/next/bunker1
+	entity 8
+	castShadows 0
+	lightmapAxis ( -1.000000 0.000000 0.000000 )
+}
+
+28 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/next/bunker1
+	entity 8
+	castShadows 0
+	lightmapAxis ( 0.000000 -1.000000 0.000000 )
+}
+
+29 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/next/bunker1
+	entity 8
+	castShadows 0
+	lightmapAxis ( 0.000000 0.000000 -1.000000 )
+}
+
+30 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/next/bunker1
+	entity 9
+	castShadows 0
+	lightmapAxis ( 1.000000 0.000000 0.000000 )
+}
+
+31 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/next/bunker1
+	entity 9
+	castShadows 0
+	lightmapAxis ( 0.000000 1.000000 0.000000 )
+}
+
+32 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/next/bunker1
+	entity 9
+	castShadows 0
+	lightmapAxis ( 0.000000 0.000000 1.000000 )
+}
+
+33 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/next/bunker1
+	entity 9
+	castShadows 0
+	lightmapAxis ( -1.000000 0.000000 0.000000 )
+}
+
+34 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/next/bunker1
+	entity 9
+	castShadows 0
+	lightmapAxis ( 0.000000 -1.000000 0.000000 )
+}
+
+35 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/next/bunker1
+	entity 9
+	castShadows 0
+	lightmapAxis ( 0.000000 0.000000 -1.000000 )
+}
+
+36 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/next/bunker1
+	entity 10
+	castShadows 0
+	lightmapAxis ( 1.000000 0.000000 0.000000 )
+}
+
+37 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/next/bunker1
+	entity 10
+	castShadows 0
+	lightmapAxis ( 0.000000 1.000000 0.000000 )
+}
+
+38 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/next/bunker1
+	entity 10
+	castShadows 0
+	lightmapAxis ( 0.000000 0.000000 1.000000 )
+}
+
+39 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/next/bunker1
+	entity 10
+	castShadows 0
+	lightmapAxis ( -1.000000 0.000000 0.000000 )
+}
+
+40 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/next/bunker1
+	entity 10
+	castShadows 0
+	lightmapAxis ( 0.000000 -1.000000 0.000000 )
+}
+
+41 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/next/bunker1
+	entity 10
+	castShadows 0
+	lightmapAxis ( 0.000000 0.000000 -1.000000 )
+}
+
+42 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/next/bunker1
+	entity 11
+	castShadows 0
+	lightmapAxis ( 1.000000 0.000000 0.000000 )
+}
+
+43 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/next/bunker1
+	entity 11
+	castShadows 0
+	lightmapAxis ( 0.000000 1.000000 0.000000 )
+}
+
+44 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/next/bunker1
+	entity 11
+	castShadows 0
+	lightmapAxis ( 0.000000 0.000000 1.000000 )
+}
+
+45 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/next/bunker1
+	entity 11
+	castShadows 0
+	lightmapAxis ( -1.000000 0.000000 0.000000 )
+}
+
+46 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/next/bunker1
+	entity 11
+	castShadows 0
+	lightmapAxis ( 0.000000 -1.000000 0.000000 )
+}
+
+47 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/next/bunker1
+	entity 11
+	castShadows 0
+	lightmapAxis ( 0.000000 0.000000 -1.000000 )
+}
+
+48 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/next/bunker1
+	entity 12
+	castShadows 0
+	lightmapAxis ( 1.000000 0.000000 0.000000 )
+}
+
+49 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/next/bunker1
+	entity 12
+	castShadows 0
+	lightmapAxis ( 0.000000 1.000000 0.000000 )
+}
+
+50 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/next/bunker1
+	entity 12
+	castShadows 0
+	lightmapAxis ( 0.000000 0.000000 1.000000 )
+}
+
+51 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/next/bunker1
+	entity 12
+	castShadows 0
+	lightmapAxis ( -1.000000 0.000000 0.000000 )
+}
+
+52 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/next/bunker1
+	entity 12
+	castShadows 0
+	lightmapAxis ( 0.000000 -1.000000 0.000000 )
+}
+
+53 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/next/bunker1
+	entity 12
+	castShadows 0
+	lightmapAxis ( 0.000000 0.000000 -1.000000 )
+}
+
+54 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/next/bunker1
+	entity 13
+	castShadows 0
+	lightmapAxis ( 1.000000 0.000000 0.000000 )
+}
+
+55 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/next/bunker1
+	entity 13
+	castShadows 0
+	lightmapAxis ( 0.000000 1.000000 0.000000 )
+}
+
+56 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/next/bunker1
+	entity 13
+	castShadows 0
+	lightmapAxis ( 0.000000 0.000000 1.000000 )
+}
+
+57 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/next/bunker1
+	entity 13
+	castShadows 0
+	lightmapAxis ( -1.000000 0.000000 0.000000 )
+}
+
+58 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/next/bunker1
+	entity 13
+	castShadows 0
+	lightmapAxis ( 0.000000 -1.000000 0.000000 )
+}
+
+59 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/next/bunker1
+	entity 13
+	castShadows 0
+	lightmapAxis ( 0.000000 0.000000 -1.000000 )
+}
+
+60 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/next/bunker1
+	entity 14
+	castShadows 0
+	lightmapAxis ( 1.000000 0.000000 0.000000 )
+}
+
+61 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/next/bunker1
+	entity 14
+	castShadows 0
+	lightmapAxis ( 0.000000 1.000000 0.000000 )
+}
+
+62 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/next/bunker1
+	entity 14
+	castShadows 0
+	lightmapAxis ( 0.000000 0.000000 1.000000 )
+}
+
+63 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/next/bunker1
+	entity 14
+	castShadows 0
+	lightmapAxis ( -1.000000 0.000000 0.000000 )
+}
+
+64 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/next/bunker1
+	entity 14
+	castShadows 0
+	lightmapAxis ( 0.000000 -1.000000 0.000000 )
+}
+
+65 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/next/bunker1
+	entity 14
+	castShadows 0
+	lightmapAxis ( 0.000000 0.000000 -1.000000 )
+}
+
+66 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/next/bunker1
+	entity 15
+	castShadows 0
+	lightmapAxis ( 1.000000 0.000000 0.000000 )
+}
+
+67 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/next/bunker1
+	entity 15
+	castShadows 0
+	lightmapAxis ( 0.000000 1.000000 0.000000 )
+}
+
+68 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/next/bunker1
+	entity 15
+	castShadows 0
+	lightmapAxis ( 0.000000 0.000000 1.000000 )
+}
+
+69 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/next/bunker1
+	entity 15
+	castShadows 0
+	lightmapAxis ( -1.000000 0.000000 0.000000 )
+}
+
+70 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/next/bunker1
+	entity 15
+	castShadows 0
+	lightmapAxis ( 0.000000 -1.000000 0.000000 )
+}
+
+71 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/next/bunker1
+	entity 15
+	castShadows 0
+	lightmapAxis ( 0.000000 0.000000 -1.000000 )
+}
+

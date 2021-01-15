@@ -14,6 +14,10 @@
  * OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  */
 
+// Predef.
+void
+VGUI_Inventory_Precache(void);
+
 /*
 =================
 Client_Init
@@ -40,6 +44,7 @@ void
 Game_RendererRestarted(string rstr)
 {
 	Obituary_Precache();
+	Inventory_Precache();
 
 	FX_Blood_Init();
 	FX_BreakModel_Init();
