@@ -1,0 +1,8 @@
+{
+	diffusemap /models/characters/player/hair.tga
+    
+	{
+		program vertexlit
+		map $diffuse
+	}
+}

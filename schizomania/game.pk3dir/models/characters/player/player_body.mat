@@ -1,0 +1,10 @@
+{
+	diffusemap /models/characters/player/diffuse.tga
+	normalmap /models/characters/player/normals.tga
+    
+	{
+		program vertexlit
+		map $diffuse
+		map $normalmap
+	}
+}

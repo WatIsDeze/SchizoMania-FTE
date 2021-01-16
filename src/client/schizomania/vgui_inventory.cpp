@@ -14,23 +14,37 @@
  * OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  */
 
-static CUIWindow winInventory;
+// Core bg's.
 static CUIPic picBackground;
+static CUIWindow winInventory;
+static CUIWindow winStatus;
+
+//-------------------------------------------------
+// Inventory Display.
+//-------------------------------------------------
+// Item display.
 static CUI3DItem itemButtons[INVENTORY_ITEM_MAX];
 static int selectedItemID;
 
 #define UI_INVENTORY_ITEM_WIDTH 96
 #define UI_INVENTORY_ITEM_HEIGHT 96
 
-// Defined here so it can be used in each VGUI_Inventory_ function.
+// Sidebar.
 static CUIButton btnUse;
 static CUIButton btnEquip;
 static CUIButton btnInspect;
 static CUIButton btnDrop;
 static CUIButton btnClose;
 
+// Updates item list.
 void
 VGUI_Inventory_UpdateItems(void);
+
+//-------------------------------------------------
+// Status Display.
+//-------------------------------------------------
+static entity ePlayerModel;
+static CUI3DView mdlPlayerModel;
 
 //=======================
 // void VGUI_Inventory_Use(void)
@@ -151,9 +165,13 @@ VGUI_Inventory_Close(void)
 	// Update item view.
 	VGUI_Inventory_UpdateItems();
 
-	// Hide item display.
+	// Hide background, inventory and status windows.
 	picBackground.FlagRemove(UI_VISIBLE);
 	winInventory.Hide();
+	winStatus.Hide();
+
+	// Unpause.
+	setpause(FALSE);
 }
 
 //=======================
@@ -277,6 +295,23 @@ VGUI_Inventory_Precache(void)
 }
 
 //=======================
+// static void VGUI_Inventory_DrawPlayerModel ( void ) 
+//
+// Renders the player model in status window.
+//=======================
+static void VGUI_Inventory_DrawPlayerModel ( void ) {
+	// Don't render the world.
+	setproperty(VF_DRAWWORLD, 0);
+
+	// Add and animate player model mesh.
+	addentity( ePlayerModel );
+
+	// Set player model animation depending on health and animate it.
+	ePlayerModel.frame = 10;
+	ePlayerModel.frame1time += frametime;
+}
+
+//=======================
 // void VGUI_Inventory_Show(void)
 //
 // Initializes inventory if needed, and shows it.
@@ -299,7 +334,15 @@ VGUI_Inventory_Show(void) {
 		winInventory.SetSize('440 320');
 		winInventory.FlagAdd(WINDOW_NO_VISUAL | WINDOW_NO_DRAG);
 
-		// Setup the default buttons.
+		// Player status window.
+		winStatus = spawn(CUIWindow);
+		winStatus.SetTitle("Status");
+		winStatus.SetSize('196 384');
+		winStatus.FlagAdd(WINDOW_NO_VISUAL | WINDOW_NO_DRAG);
+
+		//------------------------------------------------
+		// Setup the inventory sidebar.
+		//------------------------------------------------
 		btnUse = spawn(CUIButton);
 		btnUse.SetTitle("Use");
 		btnUse.SetSize( '108 24' );
@@ -334,20 +377,63 @@ VGUI_Inventory_Show(void) {
 		btnClose.SetPos( '326 290' );
 		btnClose.SetFunc(VGUI_Inventory_Close);
 
+		//------------------------------------------------
+		// Setup the default status display.
+		//------------------------------------------------
+		mdlPlayerModel = spawn (CUI3DView);
+		mdlPlayerModel.SetPos('0 0');
+		mdlPlayerModel.SetSize('196 384');
+		mdlPlayerModel.Set3DAngles( [15,180,0] );
+		mdlPlayerModel.SetDrawFunc(VGUI_Inventory_DrawPlayerModel);
+		// Set view model distance properly.
+		vector vecDistance = [ 78, 0, 14 ];
+		AngleVectors( mdlPlayerModel.Get3DAngles() );
+		mdlPlayerModel.Set3DPos( v_forward * -vecDistance[0] + v_right * vecDistance[1] + v_up * vecDistance[2] );
+
+		// Create player model entity.
+		ePlayerModel = spawn();
+		//precache_model("models/characters/zombie_derrick/zombie_derrick.vvm");
+		setmodel( ePlayerModel, "models/characters/zombie_derrick/zombie_derrick.vvm");
+		ePlayerModel.frame = 1;
+		ePlayerModel.frame1time = 0;
+
+		// Add core bg's to desktop.
 		g_uiDesktop.Add(picBackground);
 		g_uiDesktop.Add(winInventory);
+		g_uiDesktop.Add(winStatus);
+
+		// Add inventory kids.
 		winInventory.Add(btnUse);
 		winInventory.Add(btnEquip);
 		winInventory.Add(btnInspect);
 		winInventory.Add(btnDrop);
 		winInventory.Add(btnClose);
+
+		// Add status kids.
+		winStatus.Add(mdlPlayerModel);
 	}
 
+	// Update items.
 	VGUI_Inventory_UpdateItems();
 
-	winInventory.SetPos((video_res / 2) - (winInventory.GetSize() / 2));
+	// Position Background.
 	picBackground.SetPos((video_res / 2) - (picBackground.GetSize() / 2));
 
-	winInventory.Show();
+	// Position Inventory Window.
+	vector winInventoryPos = (video_res / 2);
+	vector winInventoryOffset = '-10 -180';
+	winInventory.SetPos(winInventoryPos + winInventoryOffset);
+
+	// Position Status Window.
+	vector winStatusPos = (video_res / 2);
+	vector winStatusOffset = '-450 -180';
+	winStatus.SetPos(winStatusPos + winStatusOffset);
+
+	// Show background and window.
 	picBackground.FlagAdd(UI_VISIBLE);
+	winInventory.Show();
+	winStatus.Show();
+
+	// Pause,
+	setpause(TRUE);
 }
