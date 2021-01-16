@@ -45,6 +45,10 @@ VGUI_Inventory_UpdateItems(void);
 //-------------------------------------------------
 static entity ePlayerModel;
 static CUI3DView mdlPlayerModel;
+static CUILabel lblStatusTop;
+static CUILabel lblStatusHealth;
+static CUILabel lblStatusStamina;
+static CUILabel lblStatusCondition;
 
 //=======================
 // void VGUI_Inventory_Use(void)
@@ -300,6 +304,8 @@ VGUI_Inventory_Precache(void)
 // Renders the player model in status window.
 //=======================
 static void VGUI_Inventory_DrawPlayerModel ( void ) {
+	player pl = (player)pSeat->m_ePlayer;
+
 	// Don't render the world.
 	setproperty(VF_DRAWWORLD, 0);
 
@@ -307,7 +313,6 @@ static void VGUI_Inventory_DrawPlayerModel ( void ) {
 	addentity( ePlayerModel );
 
 	// Set player model animation depending on health and animate it.
-	ePlayerModel.frame = 10;
 	ePlayerModel.frame1time += frametime;
 }
 
@@ -319,6 +324,17 @@ static void VGUI_Inventory_DrawPlayerModel ( void ) {
 void
 VGUI_Inventory_Show(void) {
 	static int initialized;
+
+	player pl = pSeat->m_ePlayer;//(player)self;
+
+	int health = 0;
+	int stamina = 0;
+
+	// Set health and stamina if player available.
+	//if (pl) {
+		health = pl.health;
+		stamina = pl.armor;
+	//}	
 
 	if (!initialized) {
 		initialized = TRUE;
@@ -346,35 +362,35 @@ VGUI_Inventory_Show(void) {
 		btnUse = spawn(CUIButton);
 		btnUse.SetTitle("Use");
 		btnUse.SetSize( '108 24' );
-		btnUse.SetPos( '326 32' );
+		btnUse.SetPos( '342 32' );
 		btnUse.FlagAdd( BUTTON_DISABLED );
 		btnUse.SetFunc(VGUI_Inventory_Use);
 
 		btnEquip = spawn(CUIButton);
 		btnEquip.SetTitle("Equip");
 		btnEquip.SetSize( '108 24' );
-		btnEquip.SetPos( '326 62' );
+		btnEquip.SetPos( '342 62' );
 		btnEquip.FlagAdd( BUTTON_DISABLED );
 		btnEquip.SetFunc(VGUI_Inventory_Equip);
 
 		btnInspect = spawn(CUIButton);
 		btnInspect.SetTitle("Inspect");
 		btnInspect.SetSize( '108 24' );
-		btnInspect.SetPos( '326 92' );
+		btnInspect.SetPos( '342 92' );
 		btnInspect.FlagAdd( BUTTON_DISABLED );
 		btnInspect.SetFunc(VGUI_Inventory_Drop);
 
 		btnDrop = spawn(CUIButton);
 		btnDrop.SetTitle("Drop");
 		btnDrop.SetSize( '108 24' );
-		btnDrop.SetPos( '326 122' );
+		btnDrop.SetPos( '342 122' );
 		btnDrop.FlagAdd( BUTTON_DISABLED );
 		btnDrop.SetFunc(VGUI_Inventory_Drop);
 
 		btnClose = spawn(CUIButton);
 		btnClose.SetTitle("Close");
 		btnClose.SetSize( '108 24' );
-		btnClose.SetPos( '326 290' );
+		btnClose.SetPos( '342 192' );
 		btnClose.SetFunc(VGUI_Inventory_Close);
 
 		//------------------------------------------------
@@ -383,19 +399,37 @@ VGUI_Inventory_Show(void) {
 		mdlPlayerModel = spawn (CUI3DView);
 		mdlPlayerModel.SetPos('0 0');
 		mdlPlayerModel.SetSize('196 384');
-		mdlPlayerModel.Set3DAngles( [15,180,0] );
+		mdlPlayerModel.Set3DAngles( [25,180,0] );
 		mdlPlayerModel.SetDrawFunc(VGUI_Inventory_DrawPlayerModel);
 		// Set view model distance properly.
-		vector vecDistance = [ 78, 0, 14 ];
+		vector vecDistance = [ 78, -2, 14 ];
 		AngleVectors( mdlPlayerModel.Get3DAngles() );
 		mdlPlayerModel.Set3DPos( v_forward * -vecDistance[0] + v_right * vecDistance[1] + v_up * vecDistance[2] );
 
 		// Create player model entity.
 		ePlayerModel = spawn();
 		//precache_model("models/characters/zombie_derrick/zombie_derrick.vvm");
-		setmodel( ePlayerModel, "models/characters/zombie_derrick/zombie_derrick.vvm");
-		ePlayerModel.frame = 1;
-		ePlayerModel.frame1time = 0;
+		setmodel( ePlayerModel, "models/characters/player/player.vvm");
+
+		// Create Status Top.
+		lblStatusTop = spawn(CUILabel);
+		lblStatusTop.SetTitle("Player Status");
+		lblStatusTop.SetPos('70 -18');
+
+		// Create Condition label.
+		lblStatusCondition = spawn(CUILabel);
+		lblStatusCondition.SetTitle("Condition:		^xF42Healthy");
+		lblStatusCondition.SetPos('40 304');
+		
+		// Create Health label.
+		lblStatusHealth = spawn(CUILabel);
+		lblStatusHealth.SetTitle(sprintf("%s		^xF42%i%s", "Health:", health, "%"));
+		lblStatusHealth.SetPos('40 324');
+
+		// Create Health label.
+		lblStatusStamina = spawn(CUILabel);
+		lblStatusStamina.SetTitle(sprintf("%s		^xF42%i%s", "Stamina:", stamina, "%"));
+		lblStatusStamina.SetPos('40 344');
 
 		// Add core bg's to desktop.
 		g_uiDesktop.Add(picBackground);
@@ -411,10 +445,33 @@ VGUI_Inventory_Show(void) {
 
 		// Add status kids.
 		winStatus.Add(mdlPlayerModel);
+		winStatus.Add(lblStatusTop);
+		winStatus.Add(lblStatusHealth);
+		winStatus.Add(lblStatusStamina);
+		winStatus.Add(lblStatusCondition);
 	}
 
 	// Update items.
 	VGUI_Inventory_UpdateItems();
+
+	// Update player entity animation.
+	if (pl.health > 80) {
+		ePlayerModel.frame = 1;
+		ePlayerModel.frame1time = 0;
+	} else if (pl.health > 55) {
+		ePlayerModel.frame = 3;
+		ePlayerModel.frame1time = 0;
+	} else if (pl.health > 25) {
+		ePlayerModel.frame = 4;
+		ePlayerModel.frame1time = 0;
+	} else {
+		ePlayerModel.frame = 5;
+		ePlayerModel.frame1time = 0;
+	}
+
+	// Update status indicator labels.
+	lblStatusHealth.SetTitle(sprintf("%s		^xF42%i%s", "Health:", health, "%"));
+	lblStatusStamina.SetTitle(sprintf("%s		^xF42%i%s", "Stamina:", stamina, "%"));
 
 	// Position Background.
 	picBackground.SetPos((video_res / 2) - (picBackground.GetSize() / 2));

@@ -184,10 +184,12 @@ void CSEv_PlayerSwitchWeapon_i(int w)
 void
 Player_Precache(void)
 {
-	searchhandle pm;
-	pm = search_begin("models/player/*/*.mdl", TRUE, TRUE);
-	for (int i = 0; i < search_getsize(pm); i++) {
-		precache_model(search_getfilename(pm, i));
-	}
-	search_end(pm);
+	// searchhandle pm;
+	// pm = search_begin("models/player/*/*.mdl", TRUE, TRUE);
+	// for (int i = 0; i < search_getsize(pm); i++) {
+	// 	precache_model(search_getfilename(pm, i));
+	// }
+	// search_end(pm);
+	// Precache player model.
+	precache_model("models/player/player.vvm");
 }

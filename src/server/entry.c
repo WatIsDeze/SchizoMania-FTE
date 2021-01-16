@@ -289,10 +289,7 @@ float ConsoleCmd(string cmd)
 }
 
 float SV_ShouldPause(float newstatus)
-{
-	if (serverkeyfloat("inventory") == 1)
-		return TRUE;
-		
+{		
 	if (serverkeyfloat("background") == 1)
 		return FALSE;
 

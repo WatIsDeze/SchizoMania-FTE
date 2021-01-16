@@ -41,7 +41,8 @@ void CUILabel::SetTitle (string strName)
 #ifndef CLASSIC_VGUI
 	m_strTitle = strName;
 #else
-	m_strTitle = sprintf("%s%s", Font_RGBtoHex(UI_MAINCOLOR), strName);
+	// m_strTitle = sprintf("%s%s", Font_RGBtoHex(UI_MAINCOLOR), strName);
+	m_strTitle = sprintf("%s%s", "^xFFF", strName);
 #endif
 	drawfont = g_fntDefault.iID;
 
