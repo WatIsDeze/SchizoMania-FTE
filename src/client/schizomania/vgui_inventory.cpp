@@ -299,6 +299,24 @@ VGUI_Inventory_Precache(void)
 }
 
 //=======================
+// void VGUI_Inventory_UpdateStatus ( void ) 
+//
+// Update status fields and adjust player animation.
+//=======================
+void VGUI_Inventory_UpdateStatus ( void )  {
+	// Fetch health and stamina.
+	player pl = (player)pSeat->m_ePlayer;
+
+	int health = pl.health;
+	int stamina = pl.armor;
+
+	// Create Health label.
+	lblStatusHealth.SetTitle(sprintf("%s		^xF42%i%s", "Health:", health, "%"));
+	// Create Health label.
+	lblStatusStamina.SetTitle(sprintf("%s		^xF42%i%s", "Stamina:", stamina, "%"));
+}
+
+//=======================
 // static void VGUI_Inventory_DrawPlayerModel ( void ) 
 //
 // Renders the player model in status window.
@@ -306,11 +324,40 @@ VGUI_Inventory_Precache(void)
 static void VGUI_Inventory_DrawPlayerModel ( void ) {
 	player pl = (player)pSeat->m_ePlayer;
 
+
 	// Don't render the world.
 	setproperty(VF_DRAWWORLD, 0);
 
 	// Add and animate player model mesh.
 	addentity( ePlayerModel );
+	vector src = [78, -2, -14];
+	vector ang = [0, 0, 0];
+			float p = dynamiclight_add(src, 256, [1,0.8,0.6], 0, "textures/flashlight");
+			dynamiclight_set(p, LFIELD_ANGLES, ang);
+			dynamiclight_set(p, LFIELD_FLAGS, LFLAG_NORMALMODE | LFLAG_REALTIMEMODE);
+
+	// Update player entity animation.
+	if (pl.health > 80) {
+		if (ePlayerModel.frame != 1) {
+			ePlayerModel.frame = 1;
+			ePlayerModel.frame1time = 0;
+		}
+	} else if (pl.health > 55) {
+		if (ePlayerModel.frame != 3) {
+			ePlayerModel.frame = 3;
+			ePlayerModel.frame1time = 0;
+		}
+	} else if (pl.health > 25) {
+		if (ePlayerModel.frame != 4) {
+			ePlayerModel.frame = 4;
+			ePlayerModel.frame1time = 0;
+		}
+	} else {
+		if (ePlayerModel.frame != 5) {
+			ePlayerModel.frame = 5;
+			ePlayerModel.frame1time = 0;
+		}
+	}
 
 	// Set player model animation depending on health and animate it.
 	ePlayerModel.frame1time += frametime;
@@ -323,10 +370,13 @@ static void VGUI_Inventory_DrawPlayerModel ( void ) {
 //=======================
 void
 VGUI_Inventory_Show(void) {
+	// Set to TRUE when the Window GUI has been allocated.
 	static int initialized;
 
+	// Fetch player.
 	player pl = pSeat->m_ePlayer;//(player)self;
 
+	// Store for later use.
 	int health = 0;
 	int stamina = 0;
 
@@ -402,7 +452,7 @@ VGUI_Inventory_Show(void) {
 		mdlPlayerModel.Set3DAngles( [25,180,0] );
 		mdlPlayerModel.SetDrawFunc(VGUI_Inventory_DrawPlayerModel);
 		// Set view model distance properly.
-		vector vecDistance = [ 78, -2, 14 ];
+		vector vecDistance = [ 66, -2, 25 ];
 		AngleVectors( mdlPlayerModel.Get3DAngles() );
 		mdlPlayerModel.Set3DPos( v_forward * -vecDistance[0] + v_right * vecDistance[1] + v_up * vecDistance[2] );
 
@@ -453,25 +503,7 @@ VGUI_Inventory_Show(void) {
 
 	// Update items.
 	VGUI_Inventory_UpdateItems();
-
-	// Update player entity animation.
-	if (pl.health > 80) {
-		ePlayerModel.frame = 1;
-		ePlayerModel.frame1time = 0;
-	} else if (pl.health > 55) {
-		ePlayerModel.frame = 3;
-		ePlayerModel.frame1time = 0;
-	} else if (pl.health > 25) {
-		ePlayerModel.frame = 4;
-		ePlayerModel.frame1time = 0;
-	} else {
-		ePlayerModel.frame = 5;
-		ePlayerModel.frame1time = 0;
-	}
-
-	// Update status indicator labels.
-	lblStatusHealth.SetTitle(sprintf("%s		^xF42%i%s", "Health:", health, "%"));
-	lblStatusStamina.SetTitle(sprintf("%s		^xF42%i%s", "Stamina:", stamina, "%"));
+	VGUI_Inventory_UpdateStatus();
 
 	// Position Background.
 	picBackground.SetPos((video_res / 2) - (picBackground.GetSize() / 2));

@@ -14,11 +14,11 @@ my own ADHD good.
 - [_] 50% there. Implement proper crosshair system.
 
 ## Game & Code? Tasks (general) - Prototype 0.1:
-- [_] Health system, green = fine, yellow = caution, orange = extra caution, red = danger.
+- [X] Health system, green = fine, yellow = caution, orange = extra caution, red = danger.
 - [_] Poisoned, you can be poisoned, yes. So a textual indicator (with symbols preferably) to show what is up. Poisoned, or... what have ya.
-- [_] Display the character in the menu, in case...
+- [X] Display the character in the menu, in case...
 - [_] Implement item "inspection". So one can take a closer look at an item, and possibly acquire an item if clicking on something? Who knows.
-
+- [_] Implement APAP Pill Bottle
 ## Entities - Prototype 0.1:
 - [_] Remove game_locked_Door
 - [_] Rename egui_mainmenu to gui_mainmenu
