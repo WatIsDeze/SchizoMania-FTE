@@ -19,7 +19,9 @@ enumflags
 	WINDOW_VISIBLE = UI_VISIBLE,
 	WINDOW_DRAGGING,
 	WINDOW_RESIZING,
-	WINDOW_CANRESIZE
+	WINDOW_CANRESIZE,
+	WINDOW_NO_DRAG,		// Can we drag it?
+	WINDOW_NO_VISUAL	// Do we render the bg?
 };
 
 class CUIWindow:CUIWidget
@@ -166,7 +168,8 @@ void CUIWindow::Show(void)
 
 void CUIWindow::Draw(void)
 {
-
+	if (m_iFlags & WINDOW_NO_VISUAL)
+		return;
 #ifdef CLASSIC_VGUI
 	drawfill(m_vecOrigin, m_vecSize, [0,0,0], 0.5);
 	drawfill(m_vecOrigin, [m_vecSize[0], 1], m_vecColor, 1.0f);
@@ -215,8 +218,11 @@ void CUIWindow::Input (float flEVType, float flKey, float flChar, float flDevID)
 			if (m_iFlags & WINDOW_CANRESIZE && Util_MouseAbove(getmousepos(), m_vecOrigin + (m_vecSize - [16,16]), [16,16])) {
 				m_iFlags |= WINDOW_RESIZING;
 			} else if (Util_MouseAbove(getmousepos(), m_vecOrigin, [m_vecSize[0] - 32, 16])) {
-				m_iFlags |= WINDOW_DRAGGING;
-				m_vecDragOffset = m_vecOrigin - getmousepos();
+				
+				if (!(m_iFlags & WINDOW_NO_DRAG)) {
+					m_iFlags |= WINDOW_DRAGGING;
+					m_vecDragOffset = m_vecOrigin - getmousepos();
+				}
 			}
 		}
 	} else if (flEVType == IE_KEYUP) {

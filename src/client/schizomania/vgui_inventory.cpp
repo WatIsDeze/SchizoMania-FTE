@@ -15,6 +15,7 @@
  */
 
 static CUIWindow winInventory;
+static CUIPic picBackground;
 static CUI3DItem itemButtons[INVENTORY_ITEM_MAX];
 static int selectedItemID;
 
@@ -151,6 +152,7 @@ VGUI_Inventory_Close(void)
 	VGUI_Inventory_UpdateItems();
 
 	// Hide item display.
+	picBackground.FlagRemove(UI_VISIBLE);
 	winInventory.Hide();
 }
 
@@ -285,9 +287,17 @@ VGUI_Inventory_Show(void) {
 
 	if (!initialized) {
 		initialized = TRUE;
+
+		// Mainmenu background.
+		picBackground = spawn(CUIPic);
+		picBackground.SetImage("textures/ui/inventory/background.tga");
+		picBackground.SetSize( '1280 768' );
+
+		// Inventory window.
 		winInventory = spawn(CUIWindow);
 		winInventory.SetTitle("Inventory");
 		winInventory.SetSize('440 320');
+		winInventory.FlagAdd(WINDOW_NO_VISUAL | WINDOW_NO_DRAG);
 
 		// Setup the default buttons.
 		btnUse = spawn(CUIButton);
@@ -324,6 +334,7 @@ VGUI_Inventory_Show(void) {
 		btnClose.SetPos( '326 290' );
 		btnClose.SetFunc(VGUI_Inventory_Close);
 
+		g_uiDesktop.Add(picBackground);
 		g_uiDesktop.Add(winInventory);
 		winInventory.Add(btnUse);
 		winInventory.Add(btnEquip);
@@ -334,6 +345,9 @@ VGUI_Inventory_Show(void) {
 
 	VGUI_Inventory_UpdateItems();
 
-	winInventory.Show();
 	winInventory.SetPos((video_res / 2) - (winInventory.GetSize() / 2));
+	picBackground.SetPos((video_res / 2) - (picBackground.GetSize() / 2));
+
+	winInventory.Show();
+	picBackground.FlagAdd(UI_VISIBLE);
 }

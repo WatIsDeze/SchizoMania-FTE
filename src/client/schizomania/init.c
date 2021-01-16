@@ -43,9 +43,13 @@ Client_InitDone(void)
 void
 Game_RendererRestarted(string rstr)
 {
+	// Precache Obituary.
 	Obituary_Precache();
-	Inventory_Precache();
 
+	// Precache VGUI.
+	VGUI_Inventory_Precache();
+
+	// Precache special effects.
 	FX_Blood_Init();
 	FX_BreakModel_Init();
 	FX_Explosion_Init();

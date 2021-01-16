@@ -8,3 +8,7 @@ sv_mintic 0
 /map prt_physics
 /map prt_wip
 /map prt_wip
+/map prt_wip
+/map prt_wip
+/map prt_wip
+/map prt_wip
