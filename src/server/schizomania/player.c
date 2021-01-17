@@ -191,5 +191,5 @@ Player_Precache(void)
 	// }
 	// search_end(pm);
 	// Precache player model.
-	precache_model("models/player/player.vvm");
+	precache_model("models/characters/player/player.vvm");
 }

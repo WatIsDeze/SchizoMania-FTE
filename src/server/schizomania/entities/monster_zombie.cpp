@@ -298,15 +298,7 @@ monster_zombie::monster_zombie(void)
 	Sound_Precache("monster_zombie.idle");
 	Sound_Precache("monster_zombie.pain");
 	netname = "Zombie Derrick";
-	
-	static int x = 0;
-	x++;
-	if (x == 1) {
-		model = "models/characters/player/player.vvm";
-	} else {
-		model = "models/characters/zombie_derrick/zombie_derrick.vvm";
-	}
-	
+	model = "models/characters/zombie_derrick/zombie_derrick.vvm";
 	base_health = Skill_GetValue("zombie_derrick_health", 80);
 	base_mins = [-16,-16,0];
 	base_maxs = [16,16,72];

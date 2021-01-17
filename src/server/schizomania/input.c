@@ -50,20 +50,16 @@ void Game_Input(void)
 		Flashlight_Toggle();
 	}
 
-	if (cvar("sv_cheats") == 1) {
+	if (cvar("sv_cheats") == 1 || cvar("developer") == 1) {
 		player pl = (player)self;
+
+		// Give player all items.
 		if (self.impulse == 101) {
-			// pl.health = 100;
-			// pl.armor = 100;
-			// pl.g_items |= ITEM_SUIT;
-			// pl.g_items |= ITEM_KNIFE;
-			// pl.g_items |= ITEM_PISTOL;
-			// Weapons_AddItem(pl, WEAPON_KNIFE, -1);
-			// Weapons_AddItem(pl, WEAPON_ITEM_PISTOL, -1);
-			// Weapons_AddItem(pl, WEAPON_MP5, -1);
-			// Weapons_AddItem(pl, WEAPON_SHOTGUN, -1);
-			// Weapons_AddItem(pl, WEAPON_RPG, -1);
-			// Weapons_AddItem(pl, WEAPON_HANDGRENADE, -1);
+			pl.health = 100;
+			pl.armor = 100;
+			
+			pl.g_items |= ITEM_SUIT;
+			
 			// Pick up event.
 			Item_Pickup(pl, INVENTORY_ITEM_KNIFE, 1); // Knife
 
@@ -71,6 +67,7 @@ void Game_Input(void)
 			Item_Pickup(pl, INVENTORY_ITEM_PISTOL, 1); // Glock
 		}
 
+		// Respawn all map entities.
 		if (self.impulse == 102) {
 			// Respawn all the entities
 			for (entity a = world; (a = findfloat(a, ::identity, 1));) {
@@ -88,6 +85,11 @@ void Game_Input(void)
 					BASEFL_CHANGED_EFFECTS;
 			}
 			bprint(PRINT_HIGH, "Respawning all map entities...\n");
+		}
+
+		if (self.impulse == 103) {
+			Damage_Apply(pl, pl, 20, 20 * 2.5, TRUE, WEAPON_PISTOL);
+			pl.armor = 100;
 		}
 	}
 	

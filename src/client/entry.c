@@ -71,6 +71,9 @@ CSQC_Init(float apilevel, string enginename, float engineversion)
 	precache_model("models/weapons/shells/small.vvm");
 	Sound_Precache("shells.drop");
 
+	// Precache damage sprites.
+	precache_pic("sprites/player/pl_dmg_left.tga");
+
 	/* VOX */
 	Vox_Init();
 

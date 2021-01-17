@@ -1,0 +1,8 @@
+{
+	diffusemap textures/models/weapons/knife/grid.tga
+	    
+	{
+		program vertexlit
+		map $diffuse
+	}
+}

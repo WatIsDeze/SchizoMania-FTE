@@ -23,6 +23,19 @@ void VGUI_Inventory_Show(void);
 void VGUI_Inventory_Close(void);
 
 //=======================
+// CanUseCheatCommand
+//
+// Returns TRUE if sv_cheats or developer = 1.
+//=======================
+int 
+CanUseCheatCommand(void)
+{
+	if (cvar("sv_cheats") == 1 || cvar("developer") == 1)
+		return TRUE;
+	else
+		return FALSE;
+}
+//=======================
 // int Game_ConsoleCommand(void)
 //
 // SchizoMania console command implementations.
@@ -31,18 +44,20 @@ int
 Game_ConsoleCommand(void)
 {
 	switch(argv(0)) {
-		case "drop":
-			float itemID = 0;
-			float amount = 0;
-			if (argv(1)) {
-				itemID = stof(argv(1));
-			}
-			if (argv(2)) {
-				amount = stof(argv(2));
-			}
+		// case "drop":
+		// 	if (CanUseCheatCommand()) {
+		// 		float itemID = 0;
+		// 		float amount = 0;
+		// 		if (argv(1)) {
+		// 			itemID = stof(argv(1));
+		// 		}
+		// 		if (argv(2)) {
+		// 			amount = stof(argv(2));
+		// 		}
 
-			sendevent("Dropitem", "ii", itemID, amount);
-			break;
+		// 		sendevent("Dropitem", "ii", itemID, amount);
+		// 		break;
+		// 	}
 		case "inventory":
 			VGUI_Inventory_Show();
 			break;

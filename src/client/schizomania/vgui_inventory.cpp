@@ -304,6 +304,17 @@ VGUI_Inventory_Precache(void)
 // Update status fields and adjust player animation.
 //=======================
 void VGUI_Inventory_UpdateStatus ( void )  {
+	string IndicatorColor(int value) {
+		if (value > 80) {
+			return "^x2F0";
+		} else if (value > 55) {
+			return "^xDF1";
+		} else if (value > 25) {
+			return "^xC80";
+		} else {
+			return "^xF42";
+		}
+	}
 	// Fetch health and stamina.
 	player pl = (player)pSeat->m_ePlayer;
 
@@ -311,9 +322,9 @@ void VGUI_Inventory_UpdateStatus ( void )  {
 	int stamina = pl.armor;
 
 	// Create Health label.
-	lblStatusHealth.SetTitle(sprintf("%s		^xF42%i%s", "Health:", health, "%"));
+	lblStatusHealth.SetTitle(sprintf("%s		%s%i%s", "Health:", IndicatorColor(health), health, "%"));
 	// Create Health label.
-	lblStatusStamina.SetTitle(sprintf("%s		^xF42%i%s", "Stamina:", stamina, "%"));
+	lblStatusStamina.SetTitle(sprintf("%s		%s%i%s", "Stamina:", IndicatorColor(stamina), stamina, "%"));
 }
 
 //=======================
@@ -325,12 +336,15 @@ static void VGUI_Inventory_DrawPlayerModel ( void ) {
 	player pl = (player)pSeat->m_ePlayer;
 
 
+	// Update VGUI status labels.
+	VGUI_Inventory_UpdateStatus();
+
 	// Don't render the world.
 	setproperty(VF_DRAWWORLD, 0);
 
 	// Add and animate player model mesh.
 	addentity( ePlayerModel );
-	vector src = [78, -2, -14];
+	vector src = [80, -2, -14];
 	vector ang = [0, 0, 0];
 			float p = dynamiclight_add(src, 256, [1,0.8,0.6], 0, "textures/flashlight");
 			dynamiclight_set(p, LFIELD_ANGLES, ang);
@@ -468,7 +482,7 @@ VGUI_Inventory_Show(void) {
 
 		// Create Condition label.
 		lblStatusCondition = spawn(CUILabel);
-		lblStatusCondition.SetTitle("Condition:		^xF42Healthy");
+		lblStatusCondition.SetTitle("Condition:		^x2F0Healthy");
 		lblStatusCondition.SetPos('40 304');
 		
 		// Create Health label.

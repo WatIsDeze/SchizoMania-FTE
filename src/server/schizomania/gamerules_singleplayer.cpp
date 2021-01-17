@@ -124,15 +124,15 @@ HLSingleplayerRules::SpawnInGamePlayer(base_player pp) {
 	pl.movetype = MOVETYPE_WALK;
 	pl.flags = FL_CLIENT;
 	pl.viewzoom = 1.0;
-	pl.model = "models/player.mdl";
-	string mymodel = infokey(pl, "model");
+	pl.model = "models/characters/player/player.vvm";
+	// string mymodel = infokey(pl, "model");
 
-	if (mymodel) {
-		mymodel = sprintf("models/player/%s/%s.mdl", mymodel, mymodel);
-		if (whichpack(mymodel)) {
-			pl.model = mymodel;
-		}
-	}
+	// if (mymodel) {
+	// 	mymodel = sprintf("models/player/%s/%s.mdl", mymodel, mymodel);
+	// 	if (whichpack(mymodel)) {
+	// 		pl.model = mymodel;
+	// 	}
+	// }
 	setmodel(pl, pl.model);
 
 	setsize(pl, VEC_HULL_MIN, VEC_HULL_MAX);

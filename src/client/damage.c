@@ -18,6 +18,8 @@ void
 Damage_Draw(void)
 {
 	vector center;
+	vector size_x_spr;		// Size for the sprites on-screen that show top and bottom.
+	vector size_y_spr; 	// Size for the sprites on-screen that show left and right.
 	vector rel_pos;
 	float fw, fw_alpha;
 	float rt, rt_alpha;
@@ -26,8 +28,12 @@ Damage_Draw(void)
 		return;
 	}
 
+	// Screen center.
 	center = video_mins + (video_res / 2);
 
+	// The sprites for the sides are 768x2048
+	size_y_spr[0] = (video_res[0] >= 1980 ? 768 : 768 / 2);
+	size_y_spr[1] = video_res[1];//(video_res[1] >= 2048 ? video_res[1] : 2048);
 	/* the pos relative to the player + view_dir determines which
 	 * and how bright each indicator is drawn. so first get the relative
 	 * position between us and the attacker, then calculate the strength
@@ -40,24 +46,40 @@ Damage_Draw(void)
 	rt = dotproduct(rel_pos, v_right);
 
 	fw_alpha = fabs(fw) * pSeat->m_flDamageAlpha;
-	if (fw > 0.25f) {
-		drawpic(center + [-64,-102], "sprites/640_pain.spr_0.tga", 
-			[128,48], [1,1,1], fw_alpha, DRAWFLAG_ADDITIVE);
-	} else if (fw < -0.25f) {
-		drawpic(center + [-64,70], "sprites/640_pain.spr_2.tga",
-			[128,48], [1,1,1], fw_alpha, DRAWFLAG_ADDITIVE);
-	}
+	// if (fw > 0.25f) {
+	//  	drawpic(center + [-video_res[0] / 2, -size_y_spr[1] / 2], "sprites/pl_dmg_left.tga", 
+	//  		[768,size_y_spr[1]], [1,1,1], fw_alpha, DRAWFLAG_NORMAL);
+	//  	// drawpic(center + [70,-64], "textures/player/damage_left",
+	//  	// 	[768, video_res.y], [1,1,1], rt_alpha, DRAWFLAG_ADDITIVE);
+	// } else if (fw < -0.25f) {
+	//  	drawpic(center + [-video_res[0] / 2, -size_y_spr[1] / 2], "sprites/pl_dmg_left.tga", 
+	//  		[768,size_y_spr[1]], [1,1,1], fw_alpha, DRAWFLAG_NORMAL);
+	//  	// drawpic(center + [-64,70], "sprites/640_pain.spr_2.tga",
+	//  	// 	[128,48], [1,1,1], fw_alpha, DRAWFLAG_ADDITIVE);
+	//  	// drawpic(center + [70,-64], "textures/player/damage_leftx",
+	//  	// 	[768, video_res.y], [1,1,1], rt_alpha, DRAWFLAG_ADDITIVE);
+	// }
 
 	rt_alpha = fabs(rt) * pSeat->m_flDamageAlpha;
-	if (rt > 0.25f) {
-		drawpic(center + [70,-64], "sprites/640_pain.spr_1.tga",
-			[48,128], [1,1,1], rt_alpha, DRAWFLAG_ADDITIVE);
-	} else if (rt < -0.25f) {
-		drawpic(center + [-102,-64], "sprites/640_pain.spr_3.tga",
-			[48,128], [1,1,1], rt_alpha, DRAWFLAG_ADDITIVE);
-	}
+	// if (rt > 0.25f) {
+	//  	drawpic(center + [-video_res[0] / 2, -size_y_spr[1] / 2], "sprites/pl_dmg_left.tga", 
+	//  		[768,size_y_spr[1]], [1,1,1], fw_alpha, DRAWFLAG_NORMAL);
+	//  	// drawpic(center + [102,-64], "sprites/640_pain.spr_4.tga",
+	//  	// 	[48,128], [1,1,1], rt_alpha, DRAWFLAG_ADDITIVE);
 
-	pSeat->m_flDamageAlpha -= clframetime;
+	//  	// drawpic(center + [70,-64], "textures/player/damage_left",
+	//  	// 	[768, video_res.y], [1,1,1], rt_alpha, DRAWFLAG_ADDITIVE);
+	// } else if (rt < -0.25f) {
+	//  	drawpic(center + [-video_res[0] / 2, -size_y_spr[1] / 2], "sprites/pl_dmg_left.tga", 
+	//  		[768,size_y_spr[1]], [1,1,1], fw_alpha, DRAWFLAG_NORMAL);
+	//  	// drawpic(center + [-102,-64], "sprites/640_pain.spr_3.tga",
+	//  	// 	[48,128], [1,1,1], rt_alpha, DRAWFLAG_ADDITIVE);
+	//  	// drawpic(center + [70,-64], "textures/player/damage_left",
+	//  	// 	[768, video_res.y], [1,1,1], rt_alpha, DRAWFLAG_ADDITIVE);
+	// }
+	drawpic([0, 0], "sprites/damage01.tga", video_res, [1,1,1], pSeat->m_flDamageAlpha, DRAWFLAG_NORMAL);
+dprint(sprintf("%f\n", pSeat->m_flDamageAlpha));
+	pSeat->m_flDamageAlpha -= clframetime * 1.8;
 }
 
 /*
