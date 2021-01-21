@@ -24,6 +24,8 @@ static CUIMenuButton btnMViewer;
 static CUIMenuButton btnResume;
 static CUIMenuButton btnDisconnect;
 
+static CUILabel lblGameVersion;
+
 static void Desktop_ResumeGame ( void ) {
 	m_toggle( 0 );
 }
@@ -107,32 +109,32 @@ void Desktop_Init ( void )
 	btnQuit = spawn( CUIMenuButton );
 	btnQuit.SetTitle( "Quit Game" );
 	btnQuit.SetSize( '200 24' );
-
 	btnQuit.SetFunc( UI_QuitGame_Show );
 	btnQuit.FlagAdd( MBUTTON_TEXTONLY );
 
 	btnMPlayer = spawn( CUIMenuButton );
 	btnMPlayer.SetTitle( "Music Player" );
 	btnMPlayer.SetSize( '200 24' );
-
 	btnMPlayer.SetFunc( UI_MusicPlayer_Show );
 	btnMPlayer.FlagAdd( MBUTTON_TEXTONLY );
 
 	btnMViewer = spawn( CUIMenuButton );
 	btnMViewer.SetTitle( "Model Viewer" );
 	btnMViewer.SetSize( '200 24' );
-
 	btnMViewer.SetFunc( UI_ModelViewer_Show );
 	btnMViewer.FlagAdd( MBUTTON_TEXTONLY );
 
 	btnResume = spawn( CUIMenuButton );
 	btnResume.SetTitle( "Resume Game" );
 	btnResume.SetSize( '200 24' );
-
 	btnResume.SetFunc( Desktop_ResumeGame );
 	btnResume.FlagRemove( MBUTTON_SHOWOFFLINE );
 	btnResume.FlagAdd( MBUTTON_TEXTONLY );
 
+	lblGameVersion = spawn( CUILabel );
+	lblGameVersion.SetTitle("SchizoMania - build: (0.0.1)");
+	lblGameVersion.SetPos( ( video_res ) - '140 32' );
+lblGameVersion.FlagAdd( MBUTTON_TEXTONLY );
 	g_uiDesktop.Add( btnNewgame );
 	g_uiDesktop.Add( btnLoadgame );
 	g_uiDesktop.Add( btnFindserver );
@@ -143,6 +145,7 @@ void Desktop_Init ( void )
 	// g_uiDesktop.Add( btnMViewer );
 	g_uiDesktop.Add( btnResume );
 	g_uiDesktop.Add( btnDisconnect );
+	g_uiDesktop.Add( lblGameVersion );
 }
 
 void Desktop_Draw ( void )

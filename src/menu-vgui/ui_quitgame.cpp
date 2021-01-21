@@ -40,13 +40,13 @@ void UI_QuitGame_Show ( void )
 
 		btnQuit = spawn( CUIButton );
 		btnQuit.SetTitle( "Quit" );
-		btnQuit.SetSize( '64 24' );
-		btnQuit.SetPos( winQuitGame.GetSize() - '152 32' );
+		btnQuit.SetSize( '96 24' );
+		btnQuit.SetPos( winQuitGame.GetSize() - '212 32' );
 		
 		btnCancel = spawn( CUIButton );
 		btnCancel.SetTitle( "Cancel" );
-		btnCancel.SetSize( '64 24' );
-		btnCancel.SetPos( winQuitGame.GetSize() - '80 32' );
+		btnCancel.SetSize( '96 24' );
+		btnCancel.SetPos( winQuitGame.GetSize() - '106 32' );
 
 		lblSure = spawn( CUILabel );
 		lblSure.SetTitle( "Do you wish to stop playing now?" );

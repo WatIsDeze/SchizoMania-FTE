@@ -21,7 +21,6 @@ void UI_NewGame_Show ( void )
 	static CUIWindow winNewGame;
 	static CUIButton btnPlay;
 	static CUIButton btnCancel;
-	static CUILabel	lblSelectChapter;
 	static CUIRadio radChapter1;
 	static CUIRadio radChapter2;
 	static CUIRadio radChapter3;
@@ -66,41 +65,36 @@ void UI_NewGame_Show ( void )
 		g_iNewGameInitialized = TRUE;
 		winNewGame = spawn( CUIWindow );
 		winNewGame.SetTitle( "New Game" );
-		winNewGame.SetSize( '192 168' );
+		winNewGame.SetSize( '340 168' );
 		winNewGame.SetIcon( "textures/ui/icons/desktop" );
 		g_uiDesktop.Add( winNewGame );
 
 		btnPlay = spawn( CUIButton );
 		btnPlay.SetTitle( "Play" );
-		btnPlay.SetSize( '64 24' );
-		btnPlay.SetPos( winNewGame.GetSize() - '152 32' );
+		btnPlay.SetSize( '96 24' );
+		btnPlay.SetPos( winNewGame.GetSize() - '212 32' );
 		btnPlay.SetFunc( NewGame_Play );
 
 		btnCancel = spawn( CUIButton );
 		btnCancel.SetTitle( "Cancel" );
-		btnCancel.SetSize( '64 24' );
-		btnCancel.SetPos( winNewGame.GetSize() - '80 32' );
+		btnCancel.SetSize( '96 24' );
+		btnCancel.SetPos( winNewGame.GetSize() - '106 32' );
 		btnCancel.SetFunc( NewGame_Cancel );
-
-		lblSelectChapter = spawn ( CUILabel );
-		lblSelectChapter.SetTitle( "Select a chapter to play:" );
-		lblSelectChapter.SetSize( '128 16' );
-		lblSelectChapter.SetPos( '32 32' );
 
 		radChapter1 = spawn( CUIRadio );
 		radChapter1.SetTitle( "Chapter 1 - The Indoors" );
-		radChapter1.SetSize( '176 16' );
-		radChapter1.SetPos( '8 56' );
+		radChapter1.SetSize( '324 16' );
+		radChapter1.SetPos( '8 32' );
 
 		radChapter2 = spawn( CUIRadio );
 		radChapter2.SetTitle( "Chapter 2 - The Outdoors" );
-		radChapter2.SetSize( '176 16' );
-		radChapter2.SetPos( '8 80' );
+		radChapter2.SetSize( '324 16' );
+		radChapter2.SetPos( '8 54' );
 
 		radChapter3 = spawn( CUIRadio );
 		radChapter3.SetTitle( "Chapter 3 - Unimplemented" );
-		radChapter3.SetSize( '176 16' );
-		radChapter3.SetPos( '8 104' );
+		radChapter3.SetSize( '324 16' );
+		radChapter3.SetPos( '8 76' );
 		radChapter3.SetValue( TRUE );
 
 		radChapter1.SetFunc( NewGame_Check_Chapter1 );
@@ -112,7 +106,6 @@ void UI_NewGame_Show ( void )
 		winNewGame.Add( radChapter1 );
 		winNewGame.Add( radChapter2 );
 		winNewGame.Add( radChapter3 );
-		winNewGame.Add( lblSelectChapter );
 
 		// Select chapter 1 by default.
 		NewGame_Check_Chapter1();
