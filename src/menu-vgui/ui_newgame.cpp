@@ -66,7 +66,7 @@ void UI_NewGame_Show ( void )
 		winNewGame = spawn( CUIWindow );
 		winNewGame.SetTitle( "New Game" );
 		winNewGame.SetSize( '340 168' );
-		winNewGame.SetIcon( "textures/ui/icons/desktop" );
+		//winNewGame.SetIcon( "textures/ui/icons/desktop" );
 		g_uiDesktop.Add( winNewGame );
 
 		btnPlay = spawn( CUIButton );

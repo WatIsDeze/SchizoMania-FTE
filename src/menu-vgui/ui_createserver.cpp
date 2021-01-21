@@ -55,8 +55,8 @@ void UI_CreateServer_Show ( void )
 		g_iCreateServerInitialized = TRUE;
 		winCreate = spawn( CUIWindow );
 		winCreate.SetTitle( "Create Server" );
-		winCreate.SetSize( '338 385' );
-		winCreate.SetIcon( "textures/ui/icons/server-new" );
+		winCreate.SetSize( '420 385' );
+		//winCreate.SetIcon( "textures/ui/icons/server-new" );
 
 		searchhandle shMaps = search_begin( "maps/*.bsp", SEARCH_NAMESORT, TRUE );
 		lsbMaps = spawn( CUIList );

@@ -272,7 +272,7 @@ void UI_Options_Show ( void )
 		winOptions = spawn( CUIWindow );
 		winOptions.SetTitle( "Options" );
 		winOptions.SetSize( '420 320' );
-		winOptions.SetIcon( "textures/ui/icons/gear" );
+		//winOptions.SetIcon( "textures/ui/icons/gear" );
 
         tabOptions = spawn( CUITabView );
         tabOptions.SetSize('400 240');
@@ -280,14 +280,14 @@ void UI_Options_Show ( void )
 
 		btnApply = spawn( CUIButton );
 		btnApply.SetTitle( "Apply" );
-		btnApply.SetSize( '64 24' );
-		btnApply.SetPos( winOptions.GetSize() - '152 32' );
+		btnApply.SetSize( '96 24' );
+		btnApply.SetPos( winOptions.GetSize() - '210 32' );
 		btnApply.SetFunc( Options_Apply );
 
 		btnCancel = spawn( CUIButton );
 		btnCancel.SetTitle( "Cancel" );
-		btnCancel.SetSize( '64 24' );
-		btnCancel.SetPos( winOptions.GetSize() - '80 32' );
+		btnCancel.SetSize( '96 24' );
+		btnCancel.SetPos( winOptions.GetSize() - '104 32' );
 		btnCancel.SetFunc( Options_Cancel );
 
         winOptions.Add(btnApply);

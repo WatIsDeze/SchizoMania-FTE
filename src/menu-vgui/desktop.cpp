@@ -60,8 +60,7 @@ static void Desktop_PositionButtons( void ) {
 	btnResume.SetPos(  buttonPos  );
 
 	// It serves as a label but whatever.
-	lblGameVersion.SetPos( video_res - [333, 332, 0] );
-	
+	lblGameVersion.SetPos( video_res - [358, 32, 0] );
 }
 
 void Desktop_Init ( void )
@@ -136,7 +135,6 @@ void Desktop_Init ( void )
 
 	lblGameVersion = spawn( CUIMenuButton );
 	lblGameVersion.SetTitle("SchizoMania - build: (0.0.1)");
-	lblGameVersion.SetSize( '200 24');
 	lblGameVersion.FlagAdd( MBUTTON_TEXTONLY );
 
 	g_uiDesktop.Add( btnNewgame );

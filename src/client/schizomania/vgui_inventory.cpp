@@ -321,10 +321,22 @@ void VGUI_Inventory_UpdateStatus ( void )  {
 	int health = pl.health;
 	int stamina = pl.armor;
 
+//	TODO: Clean up this code. I'm feeling sick atm so, not today.
+	int hspaces = 3;
+	if (health >= 100)
+		lblStatusHealth.SetTitle(sprintf("%s    %s%i%s", "Health:", IndicatorColor(health), health, "%"));
+	if (health <= 99)
+		lblStatusHealth.SetTitle(sprintf("%s    %s%i%s", "Health: ", IndicatorColor(health), health, "%"));
+	if (health <= 9)
+		lblStatusHealth.SetTitle(sprintf("%s    %s%i%s", "Health:     ", IndicatorColor(health), health, "%"));
+//	lblStatusHealth.SetTitle(sprintf("%s    %s%i%s", "Health:", IndicatorColor(health), health, "%"));
 	// Create Health label.
-	lblStatusHealth.SetTitle(sprintf("%s		%s%i%s", "Health:", IndicatorColor(health), health, "%"));
-	// Create Health label.
-	lblStatusStamina.SetTitle(sprintf("%s		%s%i%s", "Stamina:", IndicatorColor(stamina), stamina, "%"));
+	if (stamina >= 100)
+		lblStatusStamina.SetTitle(sprintf("%s   %s%i%s", "Stamina:", IndicatorColor(stamina), stamina, "%"));
+	if (stamina <= 99)
+		lblStatusStamina.SetTitle(sprintf("%s   %s%i%s", "Stamina: ", IndicatorColor(stamina), stamina, "%"));
+	if (stamina <= 9)
+		lblStatusStamina.SetTitle(sprintf("%s   %s%i%s", "Stamina:  ", IndicatorColor(stamina), stamina, "%"));
 }
 
 //=======================
@@ -478,22 +490,22 @@ VGUI_Inventory_Show(void) {
 		// Create Status Top.
 		lblStatusTop = spawn(CUILabel);
 		lblStatusTop.SetTitle("Player Status");
-		lblStatusTop.SetPos('70 -18');
+		lblStatusTop.SetPos('30 -18');
 
 		// Create Condition label.
 		lblStatusCondition = spawn(CUILabel);
-		lblStatusCondition.SetTitle("Condition:		^x2F0Healthy");
-		lblStatusCondition.SetPos('40 304');
+		lblStatusCondition.SetTitle("Condition: ^x2F0Healthy");
+		lblStatusCondition.SetPos('5 304');
 		
 		// Create Health label.
 		lblStatusHealth = spawn(CUILabel);
-		lblStatusHealth.SetTitle(sprintf("%s		^xF42%i%s", "Health:", health, "%"));
-		lblStatusHealth.SetPos('40 324');
+		lblStatusHealth.SetTitle(sprintf("%s    ^xF42%i%s", "Health:", health, "%"));
+		lblStatusHealth.SetPos('5 324');
 
 		// Create Health label.
 		lblStatusStamina = spawn(CUILabel);
-		lblStatusStamina.SetTitle(sprintf("%s		^xF42%i%s", "Stamina:", stamina, "%"));
-		lblStatusStamina.SetPos('40 344');
+		lblStatusStamina.SetTitle(sprintf("%s   ^xF42%i%s", "Stamina:", stamina, "%"));
+		lblStatusStamina.SetPos('5 344');
 
 		// Add core bg's to desktop.
 		g_uiDesktop.Add(picBackground);

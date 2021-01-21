@@ -90,7 +90,7 @@ CUIButton::SetTitle(string strName)
 
 	m_strTitle = strName;
 	m_strTitleActive = sprintf("^xF00%s", m_strTitle);
-	m_strTitleHover = sprintf("^xF24%s", m_strTitle);
+	m_strTitleHover = sprintf("^xA10%s", m_strTitle);
 	m_strTitleDisabled = sprintf("^x932%s", m_strTitle);
 	drawfont = g_fntDefault.iID;
 
