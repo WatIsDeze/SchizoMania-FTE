@@ -1,1 +1,1 @@
-bin/fteqw.exe -manifest schizomania.fmf
+start bin/fteqw.exe -manifest schizomania.fmf
