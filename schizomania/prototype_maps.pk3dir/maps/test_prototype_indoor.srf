@@ -3215,7 +3215,7 @@ default
 	lightmapAxis ( 0.000000 0.000000 1.000000 )
 }
 
-465 // SURFACE_META V: 4 I: 6 planar
+465 // SURFACE_META V: 5 I: 9 planar
 {
 	shader textures/nieb/clone/concrete08
 	lightmapAxis ( 0.000000 0.000000 1.000000 )
@@ -3341,7 +3341,7 @@ default
 	lightmapAxis ( -1.000000 0.000000 0.000000 )
 }
 
-486 // SURFACE_META V: 12 I: 24 planar
+486 // SURFACE_META V: 13 I: 27 planar
 {
 	shader textures/nieb/clone/plaster02
 	lightmapAxis ( 0.000000 0.000000 -1.000000 )
@@ -4905,73 +4905,73 @@ default
 	lightmapAxis ( -1.000000 0.000000 0.000000 )
 }
 
-734 // SURFACE_META V: 34 I: 78 planar
+734 // SURFACE_META V: 36 I: 84 planar
 {
 	shader textures/nieb/clone/brick08
 	lightmapAxis ( 0.000000 -1.000000 0.000000 )
 }
 
-735 // SURFACE_META V: 9 I: 15 planar
+735 // SURFACE_META V: 5 I: 9 planar
 {
 	shader textures/nieb/clone/brick08
 	lightmapAxis ( 1.000000 0.000000 0.000000 )
 }
 
-736 // SURFACE_META V: 5 I: 9 planar
+736 // SURFACE_META V: 9 I: 15 planar
 {
 	shader textures/nieb/clone/brick08
-	lightmapAxis ( 0.000000 1.000000 0.000000 )
+	lightmapAxis ( 1.000000 0.000000 0.000000 )
 }
 
-737 // SURFACE_META V: 4 I: 6 planar
+737 // SURFACE_META V: 5 I: 9 planar
 {
 	shader textures/nieb/clone/brick08
 	lightmapAxis ( -1.000000 0.000000 0.000000 )
 }
 
-738 // SURFACE_META V: 4 I: 6 planar
+738 // SURFACE_META V: 5 I: 9 planar
+{
+	shader textures/nieb/clone/brick08
+	lightmapAxis ( 0.000000 -1.000000 0.000000 )
+}
+
+739 // SURFACE_META V: 5 I: 9 planar
+{
+	shader textures/nieb/clone/brick08
+	lightmapAxis ( 0.000000 1.000000 0.000000 )
+}
+
+740 // SURFACE_META V: 4 I: 6 planar
 {
 	shader textures/nieb/clone/brick08
 	lightmapAxis ( -1.000000 0.000000 0.000000 )
 }
 
-739 // SURFACE_META V: 16 I: 30 planar
+741 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/nieb/clone/brick08
+	lightmapAxis ( -1.000000 0.000000 0.000000 )
+}
+
+742 // SURFACE_META V: 16 I: 30 planar
 {
 	shader textures/nieb/clone/brick08
 	lightmapAxis ( 0.000000 1.000000 0.000000 )
 }
 
-740 // SURFACE_META V: 6 I: 12 planar
+743 // SURFACE_META V: 6 I: 12 planar
 {
 	shader textures/nieb/clone/brick08
 	lightmapAxis ( 0.000000 0.000000 -1.000000 )
 }
 
-741 // SURFACE_META V: 6 I: 12 planar
+744 // SURFACE_META V: 6 I: 12 planar
 {
 	shader textures/nieb/clone/brick08
 	lightmapAxis ( 0.000000 0.000000 -1.000000 )
 }
 
-742 // SURFACE_META V: 4 I: 6 planar
-{
-	shader textures/nieb/clone/brick08
-	lightmapAxis ( 1.000000 0.000000 0.000000 )
-}
-
-743 // SURFACE_META V: 4 I: 6 planar
-{
-	shader textures/nieb/clone/brick08
-	lightmapAxis ( 1.000000 0.000000 0.000000 )
-}
-
-744 // SURFACE_META V: 5 I: 9 planar
-{
-	shader textures/nieb/clone/brick08
-	lightmapAxis ( 0.000000 1.000000 0.000000 )
-}
-
-745 // SURFACE_META V: 7 I: 15 planar
+745 // SURFACE_META V: 4 I: 6 planar
 {
 	shader textures/nieb/clone/brick08
 	lightmapAxis ( 1.000000 0.000000 0.000000 )
@@ -4980,37 +4980,34 @@ default
 746 // SURFACE_META V: 4 I: 6 planar
 {
 	shader textures/nieb/clone/brick08
-	lightmapAxis ( 0.000000 -1.000000 0.000000 )
+	lightmapAxis ( 1.000000 0.000000 0.000000 )
 }
 
-747 // SURFACE_META V: 6 I: 12 planar
+747 // SURFACE_META V: 5 I: 9 planar
+{
+	shader textures/nieb/clone/brick08
+	lightmapAxis ( 0.000000 1.000000 0.000000 )
+}
+
+748 // SURFACE_META V: 7 I: 15 planar
 {
 	shader textures/nieb/clone/brick08
 	lightmapAxis ( 1.000000 0.000000 0.000000 )
 }
 
-748 // SURFACE_META V: 8 I: 12 planar
-{
-	shader textures/nieb/complex/wall_01
-	entity 43
-	lightmapAxis ( 1.000000 0.000000 0.000000 )
-}
-
 749 // SURFACE_META V: 4 I: 6 planar
 {
-	shader textures/nieb/complex/wall_01
-	entity 43
+	shader textures/nieb/clone/brick08
+	lightmapAxis ( 0.000000 -1.000000 0.000000 )
+}
+
+750 // SURFACE_META V: 6 I: 12 planar
+{
+	shader textures/nieb/clone/brick08
 	lightmapAxis ( 1.000000 0.000000 0.000000 )
 }
 
-750 // SURFACE_META V: 27 I: 45 planar
-{
-	shader textures/nieb/complex/wall_01
-	entity 43
-	lightmapAxis ( 0.000000 0.000000 1.000000 )
-}
-
-751 // SURFACE_META V: 5 I: 9 planar
+751 // SURFACE_META V: 8 I: 12 planar
 {
 	shader textures/nieb/complex/wall_01
 	entity 43
@@ -5024,214 +5021,217 @@ default
 	lightmapAxis ( 1.000000 0.000000 0.000000 )
 }
 
-753 // SURFACE_META V: 4 I: 6 planar
-{
-	shader textures/nieb/complex/wall_01
-	entity 43
-	lightmapAxis ( 0.000000 1.000000 0.000000 )
-}
-
-754 // SURFACE_META V: 5 I: 9 planar
-{
-	shader textures/nieb/complex/wall_01
-	entity 43
-	lightmapAxis ( -1.000000 0.000000 0.000000 )
-}
-
-755 // SURFACE_META V: 4 I: 6 planar
-{
-	shader textures/nieb/complex/wall_01
-	entity 43
-	lightmapAxis ( 0.000000 -1.000000 0.000000 )
-}
-
-756 // SURFACE_META V: 4 I: 6 planar
-{
-	shader textures/nieb/complex/wall_01
-	entity 43
-	lightmapAxis ( -1.000000 0.000000 0.000000 )
-}
-
-757 // SURFACE_META V: 5 I: 9 planar
-{
-	shader textures/nieb/complex/wall_01
-	entity 43
-	lightmapAxis ( 1.000000 0.000000 0.000000 )
-}
-
-758 // SURFACE_META V: 4 I: 6 planar
-{
-	shader textures/nieb/complex/wall_01
-	entity 43
-	lightmapAxis ( -1.000000 0.000000 0.000000 )
-}
-
-759 // SURFACE_META V: 9 I: 15 planar
-{
-	shader textures/nieb/complex/wall_01
-	entity 43
-	lightmapAxis ( 0.000000 1.000000 0.000000 )
-}
-
-760 // SURFACE_META V: 6 I: 12 planar
-{
-	shader textures/nieb/complex/wall_01
-	entity 43
-	lightmapAxis ( -1.000000 0.000000 0.000000 )
-}
-
-761 // SURFACE_META V: 9 I: 15 planar
-{
-	shader textures/nieb/complex/wall_01
-	entity 43
-	lightmapAxis ( 0.000000 -1.000000 0.000000 )
-}
-
-762 // SURFACE_META V: 4 I: 6 planar
-{
-	shader textures/nieb/complex/wall_01
-	entity 43
-	lightmapAxis ( 1.000000 0.000000 0.000000 )
-}
-
-763 // SURFACE_META V: 4 I: 6 planar
-{
-	shader textures/nieb/complex/wall_01
-	entity 43
-	lightmapAxis ( -1.000000 0.000000 0.000000 )
-}
-
-764 // SURFACE_META V: 4 I: 6 planar
-{
-	shader textures/nieb/complex/wall_01
-	entity 43
-	lightmapAxis ( 0.000000 1.000000 0.000000 )
-}
-
-765 // SURFACE_META V: 4 I: 6 planar
+753 // SURFACE_META V: 27 I: 45 planar
 {
 	shader textures/nieb/complex/wall_01
 	entity 43
 	lightmapAxis ( 0.000000 0.000000 1.000000 )
 }
 
-766 // SURFACE_META V: 4 I: 6 planar
+754 // SURFACE_META V: 5 I: 9 planar
+{
+	shader textures/nieb/complex/wall_01
+	entity 43
+	lightmapAxis ( 1.000000 0.000000 0.000000 )
+}
+
+755 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/nieb/complex/wall_01
+	entity 43
+	lightmapAxis ( 1.000000 0.000000 0.000000 )
+}
+
+756 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/nieb/complex/wall_01
+	entity 43
+	lightmapAxis ( 0.000000 1.000000 0.000000 )
+}
+
+757 // SURFACE_META V: 5 I: 9 planar
+{
+	shader textures/nieb/complex/wall_01
+	entity 43
+	lightmapAxis ( -1.000000 0.000000 0.000000 )
+}
+
+758 // SURFACE_META V: 4 I: 6 planar
 {
 	shader textures/nieb/complex/wall_01
 	entity 43
 	lightmapAxis ( 0.000000 -1.000000 0.000000 )
+}
+
+759 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/nieb/complex/wall_01
+	entity 43
+	lightmapAxis ( -1.000000 0.000000 0.000000 )
+}
+
+760 // SURFACE_META V: 5 I: 9 planar
+{
+	shader textures/nieb/complex/wall_01
+	entity 43
+	lightmapAxis ( 1.000000 0.000000 0.000000 )
+}
+
+761 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/nieb/complex/wall_01
+	entity 43
+	lightmapAxis ( -1.000000 0.000000 0.000000 )
+}
+
+762 // SURFACE_META V: 9 I: 15 planar
+{
+	shader textures/nieb/complex/wall_01
+	entity 43
+	lightmapAxis ( 0.000000 1.000000 0.000000 )
+}
+
+763 // SURFACE_META V: 6 I: 12 planar
+{
+	shader textures/nieb/complex/wall_01
+	entity 43
+	lightmapAxis ( -1.000000 0.000000 0.000000 )
+}
+
+764 // SURFACE_META V: 9 I: 15 planar
+{
+	shader textures/nieb/complex/wall_01
+	entity 43
+	lightmapAxis ( 0.000000 -1.000000 0.000000 )
+}
+
+765 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/nieb/complex/wall_01
+	entity 43
+	lightmapAxis ( 1.000000 0.000000 0.000000 )
+}
+
+766 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/nieb/complex/wall_01
+	entity 43
+	lightmapAxis ( -1.000000 0.000000 0.000000 )
 }
 
 767 // SURFACE_META V: 4 I: 6 planar
 {
 	shader textures/nieb/complex/wall_01
 	entity 43
-	lightmapAxis ( 0.000000 0.000000 -1.000000 )
+	lightmapAxis ( 0.000000 1.000000 0.000000 )
 }
 
-768 // SURFACE_META V: 23 I: 45 planar
+768 // SURFACE_META V: 4 I: 6 planar
 {
-	shader textures/nieb/clone/wall02
-	lightmapAxis ( -1.000000 0.000000 0.000000 )
+	shader textures/nieb/complex/wall_01
+	entity 43
+	lightmapAxis ( 0.000000 0.000000 1.000000 )
 }
 
 769 // SURFACE_META V: 4 I: 6 planar
 {
-	shader textures/nieb/clone/wall02
+	shader textures/nieb/complex/wall_01
+	entity 43
 	lightmapAxis ( 0.000000 -1.000000 0.000000 )
 }
 
-770 // SURFACE_META V: 23 I: 45 planar
+770 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/nieb/complex/wall_01
+	entity 43
+	lightmapAxis ( 0.000000 0.000000 -1.000000 )
+}
+
+771 // SURFACE_META V: 23 I: 45 planar
 {
 	shader textures/nieb/clone/wall02
 	lightmapAxis ( -1.000000 0.000000 0.000000 )
-}
-
-771 // SURFACE_META V: 4 I: 6 planar
-{
-	shader textures/nieb/clone/wall02
-	lightmapAxis ( 0.000000 -1.000000 0.000000 )
 }
 
 772 // SURFACE_META V: 4 I: 6 planar
 {
 	shader textures/nieb/clone/wall02
-	lightmapAxis ( 0.000000 0.000000 -1.000000 )
-}
-
-773 // SURFACE_META V: 4 I: 6 planar
-{
-	shader textures/nieb/clone/wall02
-	lightmapAxis ( 0.000000 1.000000 0.000000 )
-}
-
-774 // SURFACE_META V: 4 I: 6 planar
-{
-	shader textures/nieb/clone/wall02
-	lightmapAxis ( 0.000000 0.000000 -1.000000 )
-}
-
-775 // SURFACE_META V: 4 I: 6 planar
-{
-	shader textures/nieb/clone/wall02
-	lightmapAxis ( 0.000000 1.000000 0.000000 )
-}
-
-776 // SURFACE_META V: 4 I: 6 planar
-{
-	shader textures/nieb/clone/wall02
 	lightmapAxis ( 0.000000 -1.000000 0.000000 )
 }
 
-777 // SURFACE_META V: 4 I: 6 planar
-{
-	shader textures/nieb/clone/wall02
-	lightmapAxis ( 0.000000 -1.000000 0.000000 )
-}
-
-778 // SURFACE_META V: 4 I: 6 planar
-{
-	shader textures/nieb/clone/wall02
-	lightmapAxis ( 0.000000 0.000000 -1.000000 )
-}
-
-779 // SURFACE_META V: 4 I: 6 planar
-{
-	shader textures/nieb/clone/wall02
-	lightmapAxis ( 0.000000 1.000000 0.000000 )
-}
-
-780 // SURFACE_META V: 4 I: 6 planar
-{
-	shader textures/nieb/clone/wall02
-	lightmapAxis ( 0.000000 0.000000 -1.000000 )
-}
-
-781 // SURFACE_META V: 4 I: 6 planar
-{
-	shader textures/nieb/clone/wall02
-	lightmapAxis ( 0.000000 1.000000 0.000000 )
-}
-
-782 // SURFACE_META V: 5 I: 9 planar
-{
-	shader textures/nieb/clone/wall02
-	lightmapAxis ( 0.000000 1.000000 0.000000 )
-}
-
-783 // SURFACE_META V: 10 I: 24 planar
-{
-	shader textures/nieb/clone/wall02
-	lightmapAxis ( 0.000000 -1.000000 0.000000 )
-}
-
-784 // SURFACE_META V: 4 I: 6 planar
+773 // SURFACE_META V: 23 I: 45 planar
 {
 	shader textures/nieb/clone/wall02
 	lightmapAxis ( -1.000000 0.000000 0.000000 )
 }
 
-785 // SURFACE_META V: 10 I: 24 planar
+774 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/nieb/clone/wall02
+	lightmapAxis ( 0.000000 -1.000000 0.000000 )
+}
+
+775 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/nieb/clone/wall02
+	lightmapAxis ( 0.000000 0.000000 -1.000000 )
+}
+
+776 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/nieb/clone/wall02
+	lightmapAxis ( 0.000000 1.000000 0.000000 )
+}
+
+777 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/nieb/clone/wall02
+	lightmapAxis ( 0.000000 0.000000 -1.000000 )
+}
+
+778 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/nieb/clone/wall02
+	lightmapAxis ( 0.000000 1.000000 0.000000 )
+}
+
+779 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/nieb/clone/wall02
+	lightmapAxis ( 0.000000 -1.000000 0.000000 )
+}
+
+780 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/nieb/clone/wall02
+	lightmapAxis ( 0.000000 -1.000000 0.000000 )
+}
+
+781 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/nieb/clone/wall02
+	lightmapAxis ( 0.000000 0.000000 -1.000000 )
+}
+
+782 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/nieb/clone/wall02
+	lightmapAxis ( 0.000000 1.000000 0.000000 )
+}
+
+783 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/nieb/clone/wall02
+	lightmapAxis ( 0.000000 0.000000 -1.000000 )
+}
+
+784 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/nieb/clone/wall02
+	lightmapAxis ( 0.000000 1.000000 0.000000 )
+}
+
+785 // SURFACE_META V: 5 I: 9 planar
 {
 	shader textures/nieb/clone/wall02
 	lightmapAxis ( 0.000000 1.000000 0.000000 )
@@ -5240,7 +5240,7 @@ default
 786 // SURFACE_META V: 10 I: 24 planar
 {
 	shader textures/nieb/clone/wall02
-	lightmapAxis ( 0.000000 1.000000 0.000000 )
+	lightmapAxis ( 0.000000 -1.000000 0.000000 )
 }
 
 787 // SURFACE_META V: 4 I: 6 planar
@@ -5249,61 +5249,61 @@ default
 	lightmapAxis ( -1.000000 0.000000 0.000000 )
 }
 
-788 // SURFACE_META V: 4 I: 6 planar
+788 // SURFACE_META V: 10 I: 24 planar
+{
+	shader textures/nieb/clone/wall02
+	lightmapAxis ( 0.000000 1.000000 0.000000 )
+}
+
+789 // SURFACE_META V: 10 I: 24 planar
+{
+	shader textures/nieb/clone/wall02
+	lightmapAxis ( 0.000000 1.000000 0.000000 )
+}
+
+790 // SURFACE_META V: 4 I: 6 planar
 {
 	shader textures/nieb/clone/wall02
 	lightmapAxis ( -1.000000 0.000000 0.000000 )
 }
 
-789 // SURFACE_META V: 6 I: 12 planar
+791 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/nieb/clone/wall02
+	lightmapAxis ( -1.000000 0.000000 0.000000 )
+}
+
+792 // SURFACE_META V: 6 I: 12 planar
 {
 	shader textures/nieb/clone/wall02
 	lightmapAxis ( 0.000000 0.000000 -1.000000 )
 }
 
-790 // SURFACE_META V: 6 I: 12 planar
+793 // SURFACE_META V: 6 I: 12 planar
 {
 	shader textures/nieb/clone/wall02
 	lightmapAxis ( 0.000000 0.000000 -1.000000 )
 }
 
-791 // SURFACE_META V: 6 I: 12 planar
+794 // SURFACE_META V: 6 I: 12 planar
 {
 	shader textures/nieb/clone/wall02
 	lightmapAxis ( 0.000000 0.000000 -1.000000 )
-}
-
-792 // SURFACE_META V: 4 I: 6 planar
-{
-	shader textures/nieb/clone/wall02
-	lightmapAxis ( 1.000000 0.000000 0.000000 )
-}
-
-793 // SURFACE_META V: 4 I: 6 planar
-{
-	shader textures/nieb/clone/wall02
-	lightmapAxis ( 1.000000 0.000000 0.000000 )
-}
-
-794 // SURFACE_META V: 4 I: 6 planar
-{
-	shader textures/nieb/clone/wall02
-	lightmapAxis ( 1.000000 0.000000 0.000000 )
 }
 
 795 // SURFACE_META V: 4 I: 6 planar
 {
 	shader textures/nieb/clone/wall02
-	lightmapAxis ( 0.000000 -1.000000 0.000000 )
+	lightmapAxis ( 1.000000 0.000000 0.000000 )
 }
 
-796 // SURFACE_META V: 22 I: 48 planar
+796 // SURFACE_META V: 4 I: 6 planar
 {
 	shader textures/nieb/clone/wall02
 	lightmapAxis ( 1.000000 0.000000 0.000000 )
 }
 
-797 // SURFACE_META V: 23 I: 45 planar
+797 // SURFACE_META V: 4 I: 6 planar
 {
 	shader textures/nieb/clone/wall02
 	lightmapAxis ( 1.000000 0.000000 0.000000 )
@@ -5315,16 +5315,16 @@ default
 	lightmapAxis ( 0.000000 -1.000000 0.000000 )
 }
 
-799 // SURFACE_META V: 6 I: 12 planar
+799 // SURFACE_META V: 22 I: 48 planar
 {
 	shader textures/nieb/clone/wall02
-	lightmapAxis ( 0.000000 0.000000 -1.000000 )
+	lightmapAxis ( 1.000000 0.000000 0.000000 )
 }
 
-800 // SURFACE_META V: 4 I: 6 planar
+800 // SURFACE_META V: 23 I: 45 planar
 {
 	shader textures/nieb/clone/wall02
-	lightmapAxis ( 0.000000 1.000000 0.000000 )
+	lightmapAxis ( 1.000000 0.000000 0.000000 )
 }
 
 801 // SURFACE_META V: 4 I: 6 planar
@@ -5333,7 +5333,7 @@ default
 	lightmapAxis ( 0.000000 -1.000000 0.000000 )
 }
 
-802 // SURFACE_META V: 4 I: 6 planar
+802 // SURFACE_META V: 6 I: 12 planar
 {
 	shader textures/nieb/clone/wall02
 	lightmapAxis ( 0.000000 0.000000 -1.000000 )
@@ -5354,199 +5354,193 @@ default
 805 // SURFACE_META V: 4 I: 6 planar
 {
 	shader textures/nieb/clone/wall02
-	lightmapAxis ( 0.000000 -1.000000 0.000000 )
+	lightmapAxis ( 0.000000 0.000000 -1.000000 )
 }
 
 806 // SURFACE_META V: 4 I: 6 planar
 {
 	shader textures/nieb/clone/wall02
-	lightmapAxis ( 0.000000 0.000000 -1.000000 )
+	lightmapAxis ( 0.000000 1.000000 0.000000 )
 }
 
 807 // SURFACE_META V: 4 I: 6 planar
 {
 	shader textures/nieb/clone/wall02
-	lightmapAxis ( 0.000000 1.000000 0.000000 )
+	lightmapAxis ( 0.000000 -1.000000 0.000000 )
 }
 
 808 // SURFACE_META V: 4 I: 6 planar
 {
 	shader textures/nieb/clone/wall02
-	lightmapAxis ( 0.000000 0.000000 -1.000000 )
+	lightmapAxis ( 0.000000 -1.000000 0.000000 )
 }
 
 809 // SURFACE_META V: 4 I: 6 planar
 {
 	shader textures/nieb/clone/wall02
-	lightmapAxis ( 0.000000 1.000000 0.000000 )
+	lightmapAxis ( 0.000000 0.000000 -1.000000 )
 }
 
 810 // SURFACE_META V: 4 I: 6 planar
 {
-	shader textures/nieb/clone/brick10
-	lightmapAxis ( -1.000000 0.000000 0.000000 )
+	shader textures/nieb/clone/wall02
+	lightmapAxis ( 0.000000 1.000000 0.000000 )
 }
 
-811 // SURFACE_META V: 13 I: 33 planar
+811 // SURFACE_META V: 4 I: 6 planar
 {
-	shader textures/nieb/clone/brick10
-	lightmapAxis ( -1.000000 0.000000 0.000000 )
+	shader textures/nieb/clone/wall02
+	lightmapAxis ( 0.000000 0.000000 -1.000000 )
 }
 
 812 // SURFACE_META V: 4 I: 6 planar
 {
+	shader textures/nieb/clone/wall02
+	lightmapAxis ( 0.000000 1.000000 0.000000 )
+}
+
+813 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/nieb/clone/brick10
+	lightmapAxis ( -1.000000 0.000000 0.000000 )
+}
+
+814 // SURFACE_META V: 13 I: 33 planar
+{
+	shader textures/nieb/clone/brick10
+	lightmapAxis ( -1.000000 0.000000 0.000000 )
+}
+
+815 // SURFACE_META V: 4 I: 6 planar
+{
 	shader textures/nieb/clone/brick10
 	lightmapAxis ( 0.000000 -1.000000 0.000000 )
 }
 
-813 // SURFACE_META V: 6 I: 12 planar
+816 // SURFACE_META V: 6 I: 12 planar
 {
 	shader textures/nieb/clone/brick10
 	lightmapAxis ( 0.000000 0.000000 -1.000000 )
-}
-
-814 // SURFACE_META V: 4 I: 6 planar
-{
-	shader textures/nieb/clone/brick10
-	lightmapAxis ( 0.000000 1.000000 0.000000 )
-}
-
-815 // SURFACE_META V: 10 I: 24 planar
-{
-	shader textures/nieb/clone/brick10
-	lightmapAxis ( 0.000000 1.000000 0.000000 )
-}
-
-816 // SURFACE_META V: 12 I: 30 planar
-{
-	shader textures/nieb/clone/brick10
-	lightmapAxis ( 0.000000 -1.000000 0.000000 )
 }
 
 817 // SURFACE_META V: 4 I: 6 planar
 {
 	shader textures/nieb/clone/brick10
-	lightmapAxis ( -1.000000 0.000000 0.000000 )
+	lightmapAxis ( 0.000000 1.000000 0.000000 )
 }
 
-818 // SURFACE_META V: 4 I: 6 planar
-{
-	shader textures/nieb/clone/brick10
-	lightmapAxis ( 0.000000 0.000000 -1.000000 )
-}
-
-819 // SURFACE_META V: 4 I: 6 planar
-{
-	shader textures/nieb/clone/brick10
-	lightmapAxis ( 1.000000 0.000000 0.000000 )
-}
-
-820 // SURFACE_META V: 5 I: 9 planar
+818 // SURFACE_META V: 10 I: 24 planar
 {
 	shader textures/nieb/clone/brick10
 	lightmapAxis ( 0.000000 1.000000 0.000000 )
 }
 
-821 // SURFACE_META V: 10 I: 24 planar
+819 // SURFACE_META V: 12 I: 30 planar
 {
 	shader textures/nieb/clone/brick10
-	lightmapAxis ( 1.000000 0.000000 0.000000 )
+	lightmapAxis ( 0.000000 -1.000000 0.000000 )
+}
+
+820 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/nieb/clone/brick10
+	lightmapAxis ( -1.000000 0.000000 0.000000 )
+}
+
+821 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/nieb/clone/brick10
+	lightmapAxis ( 0.000000 0.000000 -1.000000 )
 }
 
 822 // SURFACE_META V: 4 I: 6 planar
 {
 	shader textures/nieb/clone/brick10
-	lightmapAxis ( 0.000000 -1.000000 0.000000 )
+	lightmapAxis ( 1.000000 0.000000 0.000000 )
 }
 
-823 // SURFACE_META V: 4 I: 6 planar
-{
-	shader textures/nieb/clone/brick10
-	lightmapAxis ( 0.000000 0.000000 -1.000000 )
-}
-
-824 // SURFACE_META V: 4 I: 6 planar
+823 // SURFACE_META V: 5 I: 9 planar
 {
 	shader textures/nieb/clone/brick10
 	lightmapAxis ( 0.000000 1.000000 0.000000 )
 }
 
-825 // SURFACE_META V: 21 I: 69 planar
+824 // SURFACE_META V: 10 I: 24 planar
 {
 	shader textures/nieb/clone/brick10
 	lightmapAxis ( 1.000000 0.000000 0.000000 )
+}
+
+825 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/nieb/clone/brick10
+	lightmapAxis ( 0.000000 -1.000000 0.000000 )
 }
 
 826 // SURFACE_META V: 4 I: 6 planar
 {
 	shader textures/nieb/clone/brick10
-	lightmapAxis ( 0.000000 -1.000000 0.000000 )
+	lightmapAxis ( 0.000000 0.000000 -1.000000 )
 }
 
 827 // SURFACE_META V: 4 I: 6 planar
 {
 	shader textures/nieb/clone/brick10
-	lightmapAxis ( 0.000000 0.000000 -1.000000 )
+	lightmapAxis ( 0.000000 1.000000 0.000000 )
 }
 
-828 // SURFACE_META V: 4 I: 6 planar
+828 // SURFACE_META V: 21 I: 69 planar
 {
 	shader textures/nieb/clone/brick10
-	lightmapAxis ( 0.000000 0.000000 1.000000 )
+	lightmapAxis ( 1.000000 0.000000 0.000000 )
 }
 
 829 // SURFACE_META V: 4 I: 6 planar
 {
 	shader textures/nieb/clone/brick10
-	lightmapAxis ( 0.000000 1.000000 0.000000 )
+	lightmapAxis ( 0.000000 -1.000000 0.000000 )
 }
 
 830 // SURFACE_META V: 4 I: 6 planar
 {
 	shader textures/nieb/clone/brick10
-	lightmapAxis ( 0.000000 -1.000000 0.000000 )
+	lightmapAxis ( 0.000000 0.000000 -1.000000 )
 }
 
 831 // SURFACE_META V: 4 I: 6 planar
 {
 	shader textures/nieb/clone/brick10
-	lightmapAxis ( 0.000000 0.000000 -1.000000 )
+	lightmapAxis ( 0.000000 0.000000 1.000000 )
 }
 
 832 // SURFACE_META V: 4 I: 6 planar
 {
 	shader textures/nieb/clone/brick10
-	lightmapAxis ( 0.000000 0.000000 1.000000 )
+	lightmapAxis ( 0.000000 1.000000 0.000000 )
 }
 
 833 // SURFACE_META V: 4 I: 6 planar
 {
 	shader textures/nieb/clone/brick10
-	lightmapAxis ( 0.000000 1.000000 0.000000 )
+	lightmapAxis ( 0.000000 -1.000000 0.000000 )
 }
 
 834 // SURFACE_META V: 4 I: 6 planar
 {
-	shader textures/doors/wood_door_01
-	entity 2
-	castShadows 0
-	lightmapAxis ( 1.000000 0.000000 0.000000 )
+	shader textures/nieb/clone/brick10
+	lightmapAxis ( 0.000000 0.000000 -1.000000 )
 }
 
 835 // SURFACE_META V: 4 I: 6 planar
 {
-	shader textures/doors/wood_door_01
-	entity 2
-	castShadows 0
-	lightmapAxis ( 0.000000 1.000000 0.000000 )
+	shader textures/nieb/clone/brick10
+	lightmapAxis ( 0.000000 0.000000 1.000000 )
 }
 
 836 // SURFACE_META V: 4 I: 6 planar
 {
-	shader textures/doors/wood_door_01
-	entity 2
-	castShadows 0
-	lightmapAxis ( 0.000000 0.000000 1.000000 )
+	shader textures/nieb/clone/brick10
+	lightmapAxis ( 0.000000 1.000000 0.000000 )
 }
 
 837 // SURFACE_META V: 4 I: 6 planar
@@ -5554,7 +5548,7 @@ default
 	shader textures/doors/wood_door_01
 	entity 2
 	castShadows 0
-	lightmapAxis ( -1.000000 0.000000 0.000000 )
+	lightmapAxis ( 1.000000 0.000000 0.000000 )
 }
 
 838 // SURFACE_META V: 4 I: 6 planar
@@ -5562,7 +5556,7 @@ default
 	shader textures/doors/wood_door_01
 	entity 2
 	castShadows 0
-	lightmapAxis ( 0.000000 -1.000000 0.000000 )
+	lightmapAxis ( 0.000000 1.000000 0.000000 )
 }
 
 839 // SURFACE_META V: 4 I: 6 planar
@@ -5570,31 +5564,31 @@ default
 	shader textures/doors/wood_door_01
 	entity 2
 	castShadows 0
-	lightmapAxis ( 0.000000 0.000000 -1.000000 )
+	lightmapAxis ( 0.000000 0.000000 1.000000 )
 }
 
 840 // SURFACE_META V: 4 I: 6 planar
 {
 	shader textures/doors/wood_door_01
-	entity 3
+	entity 2
 	castShadows 0
-	lightmapAxis ( 1.000000 0.000000 0.000000 )
+	lightmapAxis ( -1.000000 0.000000 0.000000 )
 }
 
 841 // SURFACE_META V: 4 I: 6 planar
 {
 	shader textures/doors/wood_door_01
-	entity 3
+	entity 2
 	castShadows 0
-	lightmapAxis ( 0.000000 1.000000 0.000000 )
+	lightmapAxis ( 0.000000 -1.000000 0.000000 )
 }
 
 842 // SURFACE_META V: 4 I: 6 planar
 {
 	shader textures/doors/wood_door_01
-	entity 3
+	entity 2
 	castShadows 0
-	lightmapAxis ( 0.000000 0.000000 1.000000 )
+	lightmapAxis ( 0.000000 0.000000 -1.000000 )
 }
 
 843 // SURFACE_META V: 4 I: 6 planar
@@ -5602,7 +5596,7 @@ default
 	shader textures/doors/wood_door_01
 	entity 3
 	castShadows 0
-	lightmapAxis ( -1.000000 0.000000 0.000000 )
+	lightmapAxis ( 1.000000 0.000000 0.000000 )
 }
 
 844 // SURFACE_META V: 4 I: 6 planar
@@ -5610,7 +5604,7 @@ default
 	shader textures/doors/wood_door_01
 	entity 3
 	castShadows 0
-	lightmapAxis ( 0.000000 -1.000000 0.000000 )
+	lightmapAxis ( 0.000000 1.000000 0.000000 )
 }
 
 845 // SURFACE_META V: 4 I: 6 planar
@@ -5618,31 +5612,31 @@ default
 	shader textures/doors/wood_door_01
 	entity 3
 	castShadows 0
-	lightmapAxis ( 0.000000 0.000000 -1.000000 )
+	lightmapAxis ( 0.000000 0.000000 1.000000 )
 }
 
 846 // SURFACE_META V: 4 I: 6 planar
 {
 	shader textures/doors/wood_door_01
-	entity 4
+	entity 3
 	castShadows 0
-	lightmapAxis ( 1.000000 0.000000 0.000000 )
+	lightmapAxis ( -1.000000 0.000000 0.000000 )
 }
 
 847 // SURFACE_META V: 4 I: 6 planar
 {
 	shader textures/doors/wood_door_01
-	entity 4
+	entity 3
 	castShadows 0
-	lightmapAxis ( 0.000000 1.000000 0.000000 )
+	lightmapAxis ( 0.000000 -1.000000 0.000000 )
 }
 
 848 // SURFACE_META V: 4 I: 6 planar
 {
 	shader textures/doors/wood_door_01
-	entity 4
+	entity 3
 	castShadows 0
-	lightmapAxis ( 0.000000 0.000000 1.000000 )
+	lightmapAxis ( 0.000000 0.000000 -1.000000 )
 }
 
 849 // SURFACE_META V: 4 I: 6 planar
@@ -5650,7 +5644,7 @@ default
 	shader textures/doors/wood_door_01
 	entity 4
 	castShadows 0
-	lightmapAxis ( -1.000000 0.000000 0.000000 )
+	lightmapAxis ( 1.000000 0.000000 0.000000 )
 }
 
 850 // SURFACE_META V: 4 I: 6 planar
@@ -5658,7 +5652,7 @@ default
 	shader textures/doors/wood_door_01
 	entity 4
 	castShadows 0
-	lightmapAxis ( 0.000000 -1.000000 0.000000 )
+	lightmapAxis ( 0.000000 1.000000 0.000000 )
 }
 
 851 // SURFACE_META V: 4 I: 6 planar
@@ -5666,10 +5660,34 @@ default
 	shader textures/doors/wood_door_01
 	entity 4
 	castShadows 0
-	lightmapAxis ( 0.000000 0.000000 -1.000000 )
+	lightmapAxis ( 0.000000 0.000000 1.000000 )
 }
 
 852 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/doors/wood_door_01
+	entity 4
+	castShadows 0
+	lightmapAxis ( -1.000000 0.000000 0.000000 )
+}
+
+853 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/doors/wood_door_01
+	entity 4
+	castShadows 0
+	lightmapAxis ( 0.000000 -1.000000 0.000000 )
+}
+
+854 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/doors/wood_door_01
+	entity 4
+	castShadows 0
+	lightmapAxis ( 0.000000 0.000000 -1.000000 )
+}
+
+855 // SURFACE_META V: 4 I: 6 planar
 {
 	shader textures/nieb/clone/wood-floor01
 	entity 18
@@ -5677,7 +5695,7 @@ default
 	lightmapAxis ( 1.000000 0.000000 0.000000 )
 }
 
-853 // SURFACE_META V: 10 I: 18 planar
+856 // SURFACE_META V: 10 I: 18 planar
 {
 	shader textures/nieb/clone/wood-floor01
 	entity 18
@@ -5685,7 +5703,7 @@ default
 	lightmapAxis ( 0.000000 1.000000 0.000000 )
 }
 
-854 // SURFACE_META V: 18 I: 36 planar
+857 // SURFACE_META V: 18 I: 36 planar
 {
 	shader textures/nieb/clone/wood-floor01
 	entity 18
@@ -5693,7 +5711,7 @@ default
 	lightmapAxis ( 0.000000 0.000000 1.000000 )
 }
 
-855 // SURFACE_META V: 8 I: 18 planar
+858 // SURFACE_META V: 8 I: 18 planar
 {
 	shader textures/nieb/clone/wood-floor01
 	entity 18
@@ -5701,7 +5719,7 @@ default
 	lightmapAxis ( -1.000000 0.000000 0.000000 )
 }
 
-856 // SURFACE_META V: 22 I: 42 planar
+859 // SURFACE_META V: 22 I: 42 planar
 {
 	shader textures/nieb/clone/wood-floor01
 	entity 18
@@ -5709,36 +5727,12 @@ default
 	lightmapAxis ( 0.000000 0.000000 -1.000000 )
 }
 
-857 // SURFACE_META V: 10 I: 18 planar
+860 // SURFACE_META V: 10 I: 18 planar
 {
 	shader textures/nieb/clone/wood-floor01
 	entity 18
 	castShadows 0
 	lightmapAxis ( 0.000000 -1.000000 0.000000 )
-}
-
-858 // SURFACE_META V: 4 I: 6 planar
-{
-	shader textures/nieb/clone/wood-floor01
-	entity 18
-	castShadows 0
-	lightmapAxis ( 0.000000 -1.000000 0.000000 )
-}
-
-859 // SURFACE_META V: 8 I: 18 planar
-{
-	shader textures/nieb/clone/wood-floor01
-	entity 18
-	castShadows 0
-	lightmapAxis ( 1.000000 0.000000 0.000000 )
-}
-
-860 // SURFACE_META V: 4 I: 6 planar
-{
-	shader textures/nieb/clone/wood-floor01
-	entity 18
-	castShadows 0
-	lightmapAxis ( 0.000000 0.000000 1.000000 )
 }
 
 861 // SURFACE_META V: 4 I: 6 planar
@@ -5746,10 +5740,34 @@ default
 	shader textures/nieb/clone/wood-floor01
 	entity 18
 	castShadows 0
+	lightmapAxis ( 0.000000 -1.000000 0.000000 )
+}
+
+862 // SURFACE_META V: 8 I: 18 planar
+{
+	shader textures/nieb/clone/wood-floor01
+	entity 18
+	castShadows 0
+	lightmapAxis ( 1.000000 0.000000 0.000000 )
+}
+
+863 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/nieb/clone/wood-floor01
+	entity 18
+	castShadows 0
+	lightmapAxis ( 0.000000 0.000000 1.000000 )
+}
+
+864 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/nieb/clone/wood-floor01
+	entity 18
+	castShadows 0
 	lightmapAxis ( 0.000000 1.000000 0.000000 )
 }
 
-862 // SURFACE_META V: 4 I: 6 planar
+865 // SURFACE_META V: 4 I: 6 planar
 {
 	shader textures/nieb/clone/wood-floor01
 	entity 18
@@ -5757,7 +5775,7 @@ default
 	lightmapAxis ( -1.000000 0.000000 0.000000 )
 }
 
-863 // SURFACE_META V: 4 I: 6 planar
+866 // SURFACE_META V: 4 I: 6 planar
 {
 	shader textures/nieb/clone/wood-floor01
 	entity 20
@@ -5765,7 +5783,7 @@ default
 	lightmapAxis ( 1.000000 0.000000 0.000000 )
 }
 
-864 // SURFACE_META V: 10 I: 18 planar
+867 // SURFACE_META V: 10 I: 18 planar
 {
 	shader textures/nieb/clone/wood-floor01
 	entity 20
@@ -5773,7 +5791,7 @@ default
 	lightmapAxis ( 0.000000 1.000000 0.000000 )
 }
 
-865 // SURFACE_META V: 18 I: 36 planar
+868 // SURFACE_META V: 18 I: 36 planar
 {
 	shader textures/nieb/clone/wood-floor01
 	entity 20
@@ -5781,7 +5799,7 @@ default
 	lightmapAxis ( 0.000000 0.000000 1.000000 )
 }
 
-866 // SURFACE_META V: 8 I: 18 planar
+869 // SURFACE_META V: 8 I: 18 planar
 {
 	shader textures/nieb/clone/wood-floor01
 	entity 20
@@ -5789,7 +5807,7 @@ default
 	lightmapAxis ( -1.000000 0.000000 0.000000 )
 }
 
-867 // SURFACE_META V: 22 I: 42 planar
+870 // SURFACE_META V: 22 I: 42 planar
 {
 	shader textures/nieb/clone/wood-floor01
 	entity 20
@@ -5797,36 +5815,12 @@ default
 	lightmapAxis ( 0.000000 0.000000 -1.000000 )
 }
 
-868 // SURFACE_META V: 10 I: 18 planar
+871 // SURFACE_META V: 10 I: 18 planar
 {
 	shader textures/nieb/clone/wood-floor01
 	entity 20
 	castShadows 0
 	lightmapAxis ( 0.000000 -1.000000 0.000000 )
-}
-
-869 // SURFACE_META V: 4 I: 6 planar
-{
-	shader textures/nieb/clone/wood-floor01
-	entity 20
-	castShadows 0
-	lightmapAxis ( 0.000000 -1.000000 0.000000 )
-}
-
-870 // SURFACE_META V: 8 I: 18 planar
-{
-	shader textures/nieb/clone/wood-floor01
-	entity 20
-	castShadows 0
-	lightmapAxis ( 1.000000 0.000000 0.000000 )
-}
-
-871 // SURFACE_META V: 4 I: 6 planar
-{
-	shader textures/nieb/clone/wood-floor01
-	entity 20
-	castShadows 0
-	lightmapAxis ( 0.000000 0.000000 1.000000 )
 }
 
 872 // SURFACE_META V: 4 I: 6 planar
@@ -5834,10 +5828,34 @@ default
 	shader textures/nieb/clone/wood-floor01
 	entity 20
 	castShadows 0
+	lightmapAxis ( 0.000000 -1.000000 0.000000 )
+}
+
+873 // SURFACE_META V: 8 I: 18 planar
+{
+	shader textures/nieb/clone/wood-floor01
+	entity 20
+	castShadows 0
+	lightmapAxis ( 1.000000 0.000000 0.000000 )
+}
+
+874 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/nieb/clone/wood-floor01
+	entity 20
+	castShadows 0
+	lightmapAxis ( 0.000000 0.000000 1.000000 )
+}
+
+875 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/nieb/clone/wood-floor01
+	entity 20
+	castShadows 0
 	lightmapAxis ( 0.000000 1.000000 0.000000 )
 }
 
-873 // SURFACE_META V: 4 I: 6 planar
+876 // SURFACE_META V: 4 I: 6 planar
 {
 	shader textures/nieb/clone/wood-floor01
 	entity 20
@@ -5845,7 +5863,7 @@ default
 	lightmapAxis ( -1.000000 0.000000 0.000000 )
 }
 
-874 // SURFACE_PATCH V: 75 I: 0 
+877 // SURFACE_PATCH V: 75 I: 0 
 {
 	shader textures/fabric/fabric005
 	entity 22
@@ -5854,7 +5872,7 @@ default
 	lightmapAxis ( 0.000000 -1.000000 0.000000 )
 }
 
-875 // SURFACE_PATCH V: 75 I: 0 
+878 // SURFACE_PATCH V: 75 I: 0 
 {
 	shader textures/fabric/fabric005
 	entity 22
@@ -5863,7 +5881,7 @@ default
 	lightmapAxis ( 0.000000 1.000000 0.000000 )
 }
 
-876 // SURFACE_META V: 10 I: 18 planar
+879 // SURFACE_META V: 10 I: 18 planar
 {
 	shader textures/nieb/clone/wood-floor01
 	entity 24
@@ -5871,7 +5889,7 @@ default
 	lightmapAxis ( 1.000000 0.000000 0.000000 )
 }
 
-877 // SURFACE_META V: 18 I: 36 planar
+880 // SURFACE_META V: 18 I: 36 planar
 {
 	shader textures/nieb/clone/wood-floor01
 	entity 24
@@ -5879,7 +5897,7 @@ default
 	lightmapAxis ( 0.000000 0.000000 1.000000 )
 }
 
-878 // SURFACE_META V: 8 I: 18 planar
+881 // SURFACE_META V: 8 I: 18 planar
 {
 	shader textures/nieb/clone/wood-floor01
 	entity 24
@@ -5887,7 +5905,7 @@ default
 	lightmapAxis ( 0.000000 -1.000000 0.000000 )
 }
 
-879 // SURFACE_META V: 22 I: 42 planar
+882 // SURFACE_META V: 22 I: 42 planar
 {
 	shader textures/nieb/clone/wood-floor01
 	entity 24
@@ -5895,36 +5913,12 @@ default
 	lightmapAxis ( 0.000000 0.000000 -1.000000 )
 }
 
-880 // SURFACE_META V: 8 I: 18 planar
+883 // SURFACE_META V: 8 I: 18 planar
 {
 	shader textures/nieb/clone/wood-floor01
 	entity 24
 	castShadows 0
 	lightmapAxis ( 0.000000 1.000000 0.000000 )
-}
-
-881 // SURFACE_META V: 4 I: 6 planar
-{
-	shader textures/nieb/clone/wood-floor01
-	entity 24
-	castShadows 0
-	lightmapAxis ( -1.000000 0.000000 0.000000 )
-}
-
-882 // SURFACE_META V: 4 I: 6 planar
-{
-	shader textures/nieb/clone/wood-floor01
-	entity 24
-	castShadows 0
-	lightmapAxis ( 0.000000 0.000000 1.000000 )
-}
-
-883 // SURFACE_META V: 4 I: 6 planar
-{
-	shader textures/nieb/clone/wood-floor01
-	entity 24
-	castShadows 0
-	lightmapAxis ( 1.000000 0.000000 0.000000 )
 }
 
 884 // SURFACE_META V: 4 I: 6 planar
@@ -5932,15 +5926,15 @@ default
 	shader textures/nieb/clone/wood-floor01
 	entity 24
 	castShadows 0
-	lightmapAxis ( 0.000000 1.000000 0.000000 )
+	lightmapAxis ( -1.000000 0.000000 0.000000 )
 }
 
-885 // SURFACE_META V: 10 I: 18 planar
+885 // SURFACE_META V: 4 I: 6 planar
 {
 	shader textures/nieb/clone/wood-floor01
 	entity 24
 	castShadows 0
-	lightmapAxis ( -1.000000 0.000000 0.000000 )
+	lightmapAxis ( 0.000000 0.000000 1.000000 )
 }
 
 886 // SURFACE_META V: 4 I: 6 planar
@@ -5948,10 +5942,34 @@ default
 	shader textures/nieb/clone/wood-floor01
 	entity 24
 	castShadows 0
+	lightmapAxis ( 1.000000 0.000000 0.000000 )
+}
+
+887 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/nieb/clone/wood-floor01
+	entity 24
+	castShadows 0
+	lightmapAxis ( 0.000000 1.000000 0.000000 )
+}
+
+888 // SURFACE_META V: 10 I: 18 planar
+{
+	shader textures/nieb/clone/wood-floor01
+	entity 24
+	castShadows 0
+	lightmapAxis ( -1.000000 0.000000 0.000000 )
+}
+
+889 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/nieb/clone/wood-floor01
+	entity 24
+	castShadows 0
 	lightmapAxis ( 0.000000 -1.000000 0.000000 )
 }
 
-887 // SURFACE_META V: 10 I: 18 planar
+890 // SURFACE_META V: 10 I: 18 planar
 {
 	shader textures/nieb/clone/wood-floor01
 	entity 26
@@ -5959,7 +5977,7 @@ default
 	lightmapAxis ( 1.000000 0.000000 0.000000 )
 }
 
-888 // SURFACE_META V: 18 I: 36 planar
+891 // SURFACE_META V: 18 I: 36 planar
 {
 	shader textures/nieb/clone/wood-floor01
 	entity 26
@@ -5967,7 +5985,7 @@ default
 	lightmapAxis ( 0.000000 0.000000 1.000000 )
 }
 
-889 // SURFACE_META V: 8 I: 18 planar
+892 // SURFACE_META V: 8 I: 18 planar
 {
 	shader textures/nieb/clone/wood-floor01
 	entity 26
@@ -5975,7 +5993,7 @@ default
 	lightmapAxis ( 0.000000 -1.000000 0.000000 )
 }
 
-890 // SURFACE_META V: 22 I: 42 planar
+893 // SURFACE_META V: 22 I: 42 planar
 {
 	shader textures/nieb/clone/wood-floor01
 	entity 26
@@ -5983,36 +6001,12 @@ default
 	lightmapAxis ( 0.000000 0.000000 -1.000000 )
 }
 
-891 // SURFACE_META V: 8 I: 18 planar
+894 // SURFACE_META V: 8 I: 18 planar
 {
 	shader textures/nieb/clone/wood-floor01
 	entity 26
 	castShadows 0
 	lightmapAxis ( 0.000000 1.000000 0.000000 )
-}
-
-892 // SURFACE_META V: 4 I: 6 planar
-{
-	shader textures/nieb/clone/wood-floor01
-	entity 26
-	castShadows 0
-	lightmapAxis ( -1.000000 0.000000 0.000000 )
-}
-
-893 // SURFACE_META V: 4 I: 6 planar
-{
-	shader textures/nieb/clone/wood-floor01
-	entity 26
-	castShadows 0
-	lightmapAxis ( 0.000000 0.000000 1.000000 )
-}
-
-894 // SURFACE_META V: 4 I: 6 planar
-{
-	shader textures/nieb/clone/wood-floor01
-	entity 26
-	castShadows 0
-	lightmapAxis ( 1.000000 0.000000 0.000000 )
 }
 
 895 // SURFACE_META V: 4 I: 6 planar
@@ -6020,15 +6014,15 @@ default
 	shader textures/nieb/clone/wood-floor01
 	entity 26
 	castShadows 0
-	lightmapAxis ( 0.000000 1.000000 0.000000 )
+	lightmapAxis ( -1.000000 0.000000 0.000000 )
 }
 
-896 // SURFACE_META V: 10 I: 18 planar
+896 // SURFACE_META V: 4 I: 6 planar
 {
 	shader textures/nieb/clone/wood-floor01
 	entity 26
 	castShadows 0
-	lightmapAxis ( -1.000000 0.000000 0.000000 )
+	lightmapAxis ( 0.000000 0.000000 1.000000 )
 }
 
 897 // SURFACE_META V: 4 I: 6 planar
@@ -6036,10 +6030,34 @@ default
 	shader textures/nieb/clone/wood-floor01
 	entity 26
 	castShadows 0
-	lightmapAxis ( 0.000000 -1.000000 0.000000 )
+	lightmapAxis ( 1.000000 0.000000 0.000000 )
 }
 
 898 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/nieb/clone/wood-floor01
+	entity 26
+	castShadows 0
+	lightmapAxis ( 0.000000 1.000000 0.000000 )
+}
+
+899 // SURFACE_META V: 10 I: 18 planar
+{
+	shader textures/nieb/clone/wood-floor01
+	entity 26
+	castShadows 0
+	lightmapAxis ( -1.000000 0.000000 0.000000 )
+}
+
+900 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/nieb/clone/wood-floor01
+	entity 26
+	castShadows 0
+	lightmapAxis ( 0.000000 -1.000000 0.000000 )
+}
+
+901 // SURFACE_META V: 4 I: 6 planar
 {
 	shader textures/nieb/clone/wood-floor01
 	entity 28
@@ -6047,7 +6065,7 @@ default
 	lightmapAxis ( 1.000000 0.000000 0.000000 )
 }
 
-899 // SURFACE_META V: 10 I: 18 planar
+902 // SURFACE_META V: 10 I: 18 planar
 {
 	shader textures/nieb/clone/wood-floor01
 	entity 28
@@ -6055,7 +6073,7 @@ default
 	lightmapAxis ( 0.000000 1.000000 0.000000 )
 }
 
-900 // SURFACE_META V: 18 I: 36 planar
+903 // SURFACE_META V: 18 I: 36 planar
 {
 	shader textures/nieb/clone/wood-floor01
 	entity 28
@@ -6063,7 +6081,7 @@ default
 	lightmapAxis ( 0.000000 0.000000 1.000000 )
 }
 
-901 // SURFACE_META V: 8 I: 18 planar
+904 // SURFACE_META V: 8 I: 18 planar
 {
 	shader textures/nieb/clone/wood-floor01
 	entity 28
@@ -6071,7 +6089,7 @@ default
 	lightmapAxis ( -1.000000 0.000000 0.000000 )
 }
 
-902 // SURFACE_META V: 22 I: 42 planar
+905 // SURFACE_META V: 22 I: 42 planar
 {
 	shader textures/nieb/clone/wood-floor01
 	entity 28
@@ -6079,36 +6097,12 @@ default
 	lightmapAxis ( 0.000000 0.000000 -1.000000 )
 }
 
-903 // SURFACE_META V: 10 I: 18 planar
+906 // SURFACE_META V: 10 I: 18 planar
 {
 	shader textures/nieb/clone/wood-floor01
 	entity 28
 	castShadows 0
 	lightmapAxis ( 0.000000 -1.000000 0.000000 )
-}
-
-904 // SURFACE_META V: 4 I: 6 planar
-{
-	shader textures/nieb/clone/wood-floor01
-	entity 28
-	castShadows 0
-	lightmapAxis ( 0.000000 -1.000000 0.000000 )
-}
-
-905 // SURFACE_META V: 8 I: 18 planar
-{
-	shader textures/nieb/clone/wood-floor01
-	entity 28
-	castShadows 0
-	lightmapAxis ( 1.000000 0.000000 0.000000 )
-}
-
-906 // SURFACE_META V: 4 I: 6 planar
-{
-	shader textures/nieb/clone/wood-floor01
-	entity 28
-	castShadows 0
-	lightmapAxis ( 0.000000 0.000000 1.000000 )
 }
 
 907 // SURFACE_META V: 4 I: 6 planar
@@ -6116,10 +6110,34 @@ default
 	shader textures/nieb/clone/wood-floor01
 	entity 28
 	castShadows 0
+	lightmapAxis ( 0.000000 -1.000000 0.000000 )
+}
+
+908 // SURFACE_META V: 8 I: 18 planar
+{
+	shader textures/nieb/clone/wood-floor01
+	entity 28
+	castShadows 0
+	lightmapAxis ( 1.000000 0.000000 0.000000 )
+}
+
+909 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/nieb/clone/wood-floor01
+	entity 28
+	castShadows 0
+	lightmapAxis ( 0.000000 0.000000 1.000000 )
+}
+
+910 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/nieb/clone/wood-floor01
+	entity 28
+	castShadows 0
 	lightmapAxis ( 0.000000 1.000000 0.000000 )
 }
 
-908 // SURFACE_META V: 4 I: 6 planar
+911 // SURFACE_META V: 4 I: 6 planar
 {
 	shader textures/nieb/clone/wood-floor01
 	entity 28
@@ -6127,7 +6145,7 @@ default
 	lightmapAxis ( -1.000000 0.000000 0.000000 )
 }
 
-909 // SURFACE_META V: 4 I: 6 planar
+912 // SURFACE_META V: 4 I: 6 planar
 {
 	shader textures/nieb/clone/wood-floor01
 	entity 30
@@ -6135,7 +6153,7 @@ default
 	lightmapAxis ( 1.000000 0.000000 0.000000 )
 }
 
-910 // SURFACE_META V: 10 I: 18 planar
+913 // SURFACE_META V: 10 I: 18 planar
 {
 	shader textures/nieb/clone/wood-floor01
 	entity 30
@@ -6143,7 +6161,7 @@ default
 	lightmapAxis ( 0.000000 1.000000 0.000000 )
 }
 
-911 // SURFACE_META V: 18 I: 36 planar
+914 // SURFACE_META V: 18 I: 36 planar
 {
 	shader textures/nieb/clone/wood-floor01
 	entity 30
@@ -6151,7 +6169,7 @@ default
 	lightmapAxis ( 0.000000 0.000000 1.000000 )
 }
 
-912 // SURFACE_META V: 8 I: 18 planar
+915 // SURFACE_META V: 8 I: 18 planar
 {
 	shader textures/nieb/clone/wood-floor01
 	entity 30
@@ -6159,7 +6177,7 @@ default
 	lightmapAxis ( -1.000000 0.000000 0.000000 )
 }
 
-913 // SURFACE_META V: 22 I: 42 planar
+916 // SURFACE_META V: 22 I: 42 planar
 {
 	shader textures/nieb/clone/wood-floor01
 	entity 30
@@ -6167,36 +6185,12 @@ default
 	lightmapAxis ( 0.000000 0.000000 -1.000000 )
 }
 
-914 // SURFACE_META V: 10 I: 18 planar
+917 // SURFACE_META V: 10 I: 18 planar
 {
 	shader textures/nieb/clone/wood-floor01
 	entity 30
 	castShadows 0
 	lightmapAxis ( 0.000000 -1.000000 0.000000 )
-}
-
-915 // SURFACE_META V: 4 I: 6 planar
-{
-	shader textures/nieb/clone/wood-floor01
-	entity 30
-	castShadows 0
-	lightmapAxis ( 0.000000 -1.000000 0.000000 )
-}
-
-916 // SURFACE_META V: 8 I: 18 planar
-{
-	shader textures/nieb/clone/wood-floor01
-	entity 30
-	castShadows 0
-	lightmapAxis ( 1.000000 0.000000 0.000000 )
-}
-
-917 // SURFACE_META V: 4 I: 6 planar
-{
-	shader textures/nieb/clone/wood-floor01
-	entity 30
-	castShadows 0
-	lightmapAxis ( 0.000000 0.000000 1.000000 )
 }
 
 918 // SURFACE_META V: 4 I: 6 planar
@@ -6204,10 +6198,34 @@ default
 	shader textures/nieb/clone/wood-floor01
 	entity 30
 	castShadows 0
+	lightmapAxis ( 0.000000 -1.000000 0.000000 )
+}
+
+919 // SURFACE_META V: 8 I: 18 planar
+{
+	shader textures/nieb/clone/wood-floor01
+	entity 30
+	castShadows 0
+	lightmapAxis ( 1.000000 0.000000 0.000000 )
+}
+
+920 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/nieb/clone/wood-floor01
+	entity 30
+	castShadows 0
+	lightmapAxis ( 0.000000 0.000000 1.000000 )
+}
+
+921 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/nieb/clone/wood-floor01
+	entity 30
+	castShadows 0
 	lightmapAxis ( 0.000000 1.000000 0.000000 )
 }
 
-919 // SURFACE_META V: 4 I: 6 planar
+922 // SURFACE_META V: 4 I: 6 planar
 {
 	shader textures/nieb/clone/wood-floor01
 	entity 30
@@ -6215,36 +6233,12 @@ default
 	lightmapAxis ( -1.000000 0.000000 0.000000 )
 }
 
-920 // SURFACE_META V: 4 I: 6 planar
-{
-	shader textures/nieb/clone/wood02
-	entity 32
-	castShadows 0
-	lightmapAxis ( 1.000000 0.000000 0.000000 )
-}
-
-921 // SURFACE_META V: 4 I: 6 planar
-{
-	shader textures/nieb/clone/wood02
-	entity 32
-	castShadows 0
-	lightmapAxis ( 0.000000 1.000000 0.000000 )
-}
-
-922 // SURFACE_META V: 4 I: 6 planar
-{
-	shader textures/nieb/clone/wood02
-	entity 32
-	castShadows 0
-	lightmapAxis ( 0.000000 0.000000 1.000000 )
-}
-
 923 // SURFACE_META V: 4 I: 6 planar
 {
 	shader textures/nieb/clone/wood02
 	entity 32
 	castShadows 0
-	lightmapAxis ( -1.000000 0.000000 0.000000 )
+	lightmapAxis ( 1.000000 0.000000 0.000000 )
 }
 
 924 // SURFACE_META V: 4 I: 6 planar
@@ -6252,7 +6246,7 @@ default
 	shader textures/nieb/clone/wood02
 	entity 32
 	castShadows 0
-	lightmapAxis ( 0.000000 -1.000000 0.000000 )
+	lightmapAxis ( 0.000000 1.000000 0.000000 )
 }
 
 925 // SURFACE_META V: 4 I: 6 planar
@@ -6260,31 +6254,31 @@ default
 	shader textures/nieb/clone/wood02
 	entity 32
 	castShadows 0
-	lightmapAxis ( 0.000000 0.000000 -1.000000 )
+	lightmapAxis ( 0.000000 0.000000 1.000000 )
 }
 
 926 // SURFACE_META V: 4 I: 6 planar
 {
 	shader textures/nieb/clone/wood02
-	entity 33
+	entity 32
 	castShadows 0
-	lightmapAxis ( 1.000000 0.000000 0.000000 )
+	lightmapAxis ( -1.000000 0.000000 0.000000 )
 }
 
 927 // SURFACE_META V: 4 I: 6 planar
 {
 	shader textures/nieb/clone/wood02
-	entity 33
+	entity 32
 	castShadows 0
-	lightmapAxis ( 0.000000 1.000000 0.000000 )
+	lightmapAxis ( 0.000000 -1.000000 0.000000 )
 }
 
 928 // SURFACE_META V: 4 I: 6 planar
 {
 	shader textures/nieb/clone/wood02
-	entity 33
+	entity 32
 	castShadows 0
-	lightmapAxis ( 0.000000 0.000000 1.000000 )
+	lightmapAxis ( 0.000000 0.000000 -1.000000 )
 }
 
 929 // SURFACE_META V: 4 I: 6 planar
@@ -6292,7 +6286,7 @@ default
 	shader textures/nieb/clone/wood02
 	entity 33
 	castShadows 0
-	lightmapAxis ( -1.000000 0.000000 0.000000 )
+	lightmapAxis ( 1.000000 0.000000 0.000000 )
 }
 
 930 // SURFACE_META V: 4 I: 6 planar
@@ -6300,7 +6294,7 @@ default
 	shader textures/nieb/clone/wood02
 	entity 33
 	castShadows 0
-	lightmapAxis ( 0.000000 -1.000000 0.000000 )
+	lightmapAxis ( 0.000000 1.000000 0.000000 )
 }
 
 931 // SURFACE_META V: 4 I: 6 planar
@@ -6308,31 +6302,31 @@ default
 	shader textures/nieb/clone/wood02
 	entity 33
 	castShadows 0
-	lightmapAxis ( 0.000000 0.000000 -1.000000 )
+	lightmapAxis ( 0.000000 0.000000 1.000000 )
 }
 
 932 // SURFACE_META V: 4 I: 6 planar
 {
 	shader textures/nieb/clone/wood02
-	entity 34
+	entity 33
 	castShadows 0
-	lightmapAxis ( 1.000000 0.000000 0.000000 )
+	lightmapAxis ( -1.000000 0.000000 0.000000 )
 }
 
 933 // SURFACE_META V: 4 I: 6 planar
 {
 	shader textures/nieb/clone/wood02
-	entity 34
+	entity 33
 	castShadows 0
-	lightmapAxis ( 0.000000 1.000000 0.000000 )
+	lightmapAxis ( 0.000000 -1.000000 0.000000 )
 }
 
 934 // SURFACE_META V: 4 I: 6 planar
 {
 	shader textures/nieb/clone/wood02
-	entity 34
+	entity 33
 	castShadows 0
-	lightmapAxis ( 0.000000 0.000000 1.000000 )
+	lightmapAxis ( 0.000000 0.000000 -1.000000 )
 }
 
 935 // SURFACE_META V: 4 I: 6 planar
@@ -6340,7 +6334,7 @@ default
 	shader textures/nieb/clone/wood02
 	entity 34
 	castShadows 0
-	lightmapAxis ( -1.000000 0.000000 0.000000 )
+	lightmapAxis ( 1.000000 0.000000 0.000000 )
 }
 
 936 // SURFACE_META V: 4 I: 6 planar
@@ -6348,7 +6342,7 @@ default
 	shader textures/nieb/clone/wood02
 	entity 34
 	castShadows 0
-	lightmapAxis ( 0.000000 -1.000000 0.000000 )
+	lightmapAxis ( 0.000000 1.000000 0.000000 )
 }
 
 937 // SURFACE_META V: 4 I: 6 planar
@@ -6356,7 +6350,7 @@ default
 	shader textures/nieb/clone/wood02
 	entity 34
 	castShadows 0
-	lightmapAxis ( 0.000000 0.000000 -1.000000 )
+	lightmapAxis ( 0.000000 0.000000 1.000000 )
 }
 
 938 // SURFACE_META V: 4 I: 6 planar
@@ -6364,7 +6358,7 @@ default
 	shader textures/nieb/clone/wood02
 	entity 34
 	castShadows 0
-	lightmapAxis ( 1.000000 0.000000 0.000000 )
+	lightmapAxis ( -1.000000 0.000000 0.000000 )
 }
 
 939 // SURFACE_META V: 4 I: 6 planar
@@ -6372,7 +6366,7 @@ default
 	shader textures/nieb/clone/wood02
 	entity 34
 	castShadows 0
-	lightmapAxis ( 0.000000 1.000000 0.000000 )
+	lightmapAxis ( 0.000000 -1.000000 0.000000 )
 }
 
 940 // SURFACE_META V: 4 I: 6 planar
@@ -6380,7 +6374,7 @@ default
 	shader textures/nieb/clone/wood02
 	entity 34
 	castShadows 0
-	lightmapAxis ( 0.000000 0.000000 1.000000 )
+	lightmapAxis ( 0.000000 0.000000 -1.000000 )
 }
 
 941 // SURFACE_META V: 4 I: 6 planar
@@ -6388,7 +6382,7 @@ default
 	shader textures/nieb/clone/wood02
 	entity 34
 	castShadows 0
-	lightmapAxis ( -1.000000 0.000000 0.000000 )
+	lightmapAxis ( 1.000000 0.000000 0.000000 )
 }
 
 942 // SURFACE_META V: 4 I: 6 planar
@@ -6396,7 +6390,7 @@ default
 	shader textures/nieb/clone/wood02
 	entity 34
 	castShadows 0
-	lightmapAxis ( 0.000000 -1.000000 0.000000 )
+	lightmapAxis ( 0.000000 1.000000 0.000000 )
 }
 
 943 // SURFACE_META V: 4 I: 6 planar
@@ -6404,31 +6398,31 @@ default
 	shader textures/nieb/clone/wood02
 	entity 34
 	castShadows 0
-	lightmapAxis ( 0.000000 0.000000 -1.000000 )
+	lightmapAxis ( 0.000000 0.000000 1.000000 )
 }
 
 944 // SURFACE_META V: 4 I: 6 planar
 {
-	shader textures/doors/wood_door_01
-	entity 36
+	shader textures/nieb/clone/wood02
+	entity 34
 	castShadows 0
-	lightmapAxis ( 1.000000 0.000000 0.000000 )
+	lightmapAxis ( -1.000000 0.000000 0.000000 )
 }
 
 945 // SURFACE_META V: 4 I: 6 planar
 {
-	shader textures/doors/wood_door_01
-	entity 36
+	shader textures/nieb/clone/wood02
+	entity 34
 	castShadows 0
-	lightmapAxis ( 0.000000 1.000000 0.000000 )
+	lightmapAxis ( 0.000000 -1.000000 0.000000 )
 }
 
 946 // SURFACE_META V: 4 I: 6 planar
 {
-	shader textures/doors/wood_door_01
-	entity 36
+	shader textures/nieb/clone/wood02
+	entity 34
 	castShadows 0
-	lightmapAxis ( 0.000000 0.000000 1.000000 )
+	lightmapAxis ( 0.000000 0.000000 -1.000000 )
 }
 
 947 // SURFACE_META V: 4 I: 6 planar
@@ -6436,7 +6430,7 @@ default
 	shader textures/doors/wood_door_01
 	entity 36
 	castShadows 0
-	lightmapAxis ( -1.000000 0.000000 0.000000 )
+	lightmapAxis ( 1.000000 0.000000 0.000000 )
 }
 
 948 // SURFACE_META V: 4 I: 6 planar
@@ -6444,7 +6438,7 @@ default
 	shader textures/doors/wood_door_01
 	entity 36
 	castShadows 0
-	lightmapAxis ( 0.000000 -1.000000 0.000000 )
+	lightmapAxis ( 0.000000 1.000000 0.000000 )
 }
 
 949 // SURFACE_META V: 4 I: 6 planar
@@ -6452,31 +6446,31 @@ default
 	shader textures/doors/wood_door_01
 	entity 36
 	castShadows 0
-	lightmapAxis ( 0.000000 0.000000 -1.000000 )
+	lightmapAxis ( 0.000000 0.000000 1.000000 )
 }
 
 950 // SURFACE_META V: 4 I: 6 planar
 {
 	shader textures/doors/wood_door_01
-	entity 41
+	entity 36
 	castShadows 0
-	lightmapAxis ( 1.000000 0.000000 0.000000 )
+	lightmapAxis ( -1.000000 0.000000 0.000000 )
 }
 
 951 // SURFACE_META V: 4 I: 6 planar
 {
 	shader textures/doors/wood_door_01
-	entity 41
+	entity 36
 	castShadows 0
-	lightmapAxis ( 0.000000 1.000000 0.000000 )
+	lightmapAxis ( 0.000000 -1.000000 0.000000 )
 }
 
 952 // SURFACE_META V: 4 I: 6 planar
 {
 	shader textures/doors/wood_door_01
-	entity 41
+	entity 36
 	castShadows 0
-	lightmapAxis ( 0.000000 0.000000 1.000000 )
+	lightmapAxis ( 0.000000 0.000000 -1.000000 )
 }
 
 953 // SURFACE_META V: 4 I: 6 planar
@@ -6484,7 +6478,7 @@ default
 	shader textures/doors/wood_door_01
 	entity 41
 	castShadows 0
-	lightmapAxis ( -1.000000 0.000000 0.000000 )
+	lightmapAxis ( 1.000000 0.000000 0.000000 )
 }
 
 954 // SURFACE_META V: 4 I: 6 planar
@@ -6492,7 +6486,7 @@ default
 	shader textures/doors/wood_door_01
 	entity 41
 	castShadows 0
-	lightmapAxis ( 0.000000 -1.000000 0.000000 )
+	lightmapAxis ( 0.000000 1.000000 0.000000 )
 }
 
 955 // SURFACE_META V: 4 I: 6 planar
@@ -6500,31 +6494,31 @@ default
 	shader textures/doors/wood_door_01
 	entity 41
 	castShadows 0
-	lightmapAxis ( 0.000000 0.000000 -1.000000 )
+	lightmapAxis ( 0.000000 0.000000 1.000000 )
 }
 
 956 // SURFACE_META V: 4 I: 6 planar
 {
 	shader textures/doors/wood_door_01
-	entity 42
+	entity 41
 	castShadows 0
-	lightmapAxis ( 1.000000 0.000000 0.000000 )
+	lightmapAxis ( -1.000000 0.000000 0.000000 )
 }
 
 957 // SURFACE_META V: 4 I: 6 planar
 {
 	shader textures/doors/wood_door_01
-	entity 42
+	entity 41
 	castShadows 0
-	lightmapAxis ( 0.000000 1.000000 0.000000 )
+	lightmapAxis ( 0.000000 -1.000000 0.000000 )
 }
 
 958 // SURFACE_META V: 4 I: 6 planar
 {
 	shader textures/doors/wood_door_01
-	entity 42
+	entity 41
 	castShadows 0
-	lightmapAxis ( 0.000000 0.000000 1.000000 )
+	lightmapAxis ( 0.000000 0.000000 -1.000000 )
 }
 
 959 // SURFACE_META V: 4 I: 6 planar
@@ -6532,7 +6526,7 @@ default
 	shader textures/doors/wood_door_01
 	entity 42
 	castShadows 0
-	lightmapAxis ( -1.000000 0.000000 0.000000 )
+	lightmapAxis ( 1.000000 0.000000 0.000000 )
 }
 
 960 // SURFACE_META V: 4 I: 6 planar
@@ -6540,7 +6534,7 @@ default
 	shader textures/doors/wood_door_01
 	entity 42
 	castShadows 0
-	lightmapAxis ( 0.000000 -1.000000 0.000000 )
+	lightmapAxis ( 0.000000 1.000000 0.000000 )
 }
 
 961 // SURFACE_META V: 4 I: 6 planar
@@ -6548,31 +6542,31 @@ default
 	shader textures/doors/wood_door_01
 	entity 42
 	castShadows 0
-	lightmapAxis ( 0.000000 0.000000 -1.000000 )
+	lightmapAxis ( 0.000000 0.000000 1.000000 )
 }
 
 962 // SURFACE_META V: 4 I: 6 planar
 {
-	shader textures/glass/glass_01
-	entity 74
+	shader textures/doors/wood_door_01
+	entity 42
 	castShadows 0
-	lightmapAxis ( 0.000000 1.000000 0.000000 )
+	lightmapAxis ( -1.000000 0.000000 0.000000 )
 }
 
 963 // SURFACE_META V: 4 I: 6 planar
 {
-	shader textures/glass/glass_01
-	entity 74
+	shader textures/doors/wood_door_01
+	entity 42
 	castShadows 0
-	lightmapAxis ( 0.000000 1.000000 0.000000 )
+	lightmapAxis ( 0.000000 -1.000000 0.000000 )
 }
 
 964 // SURFACE_META V: 4 I: 6 planar
 {
-	shader textures/glass/glass_01
-	entity 74
+	shader textures/doors/wood_door_01
+	entity 42
 	castShadows 0
-	lightmapAxis ( 0.000000 -1.000000 0.000000 )
+	lightmapAxis ( 0.000000 0.000000 -1.000000 )
 }
 
 965 // SURFACE_META V: 4 I: 6 planar
@@ -6580,10 +6574,34 @@ default
 	shader textures/glass/glass_01
 	entity 74
 	castShadows 0
-	lightmapAxis ( 0.000000 -1.000000 0.000000 )
+	lightmapAxis ( 0.000000 1.000000 0.000000 )
 }
 
 966 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/glass/glass_01
+	entity 74
+	castShadows 0
+	lightmapAxis ( 0.000000 1.000000 0.000000 )
+}
+
+967 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/glass/glass_01
+	entity 74
+	castShadows 0
+	lightmapAxis ( 0.000000 -1.000000 0.000000 )
+}
+
+968 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/glass/glass_01
+	entity 74
+	castShadows 0
+	lightmapAxis ( 0.000000 -1.000000 0.000000 )
+}
+
+969 // SURFACE_META V: 4 I: 6 planar
 {
 	shader textures/nieb/garden/metal1
 	entity 74
@@ -6591,7 +6609,7 @@ default
 	lightmapAxis ( 1.000000 0.000000 0.000000 )
 }
 
-967 // SURFACE_META V: 30 I: 66 planar
+970 // SURFACE_META V: 30 I: 66 planar
 {
 	shader textures/nieb/garden/metal1
 	entity 74
@@ -6599,7 +6617,7 @@ default
 	lightmapAxis ( 0.000000 1.000000 0.000000 )
 }
 
-968 // SURFACE_META V: 30 I: 66 planar
+971 // SURFACE_META V: 30 I: 66 planar
 {
 	shader textures/nieb/garden/metal1
 	entity 74
@@ -6607,7 +6625,7 @@ default
 	lightmapAxis ( 0.000000 -1.000000 0.000000 )
 }
 
-969 // SURFACE_META V: 12 I: 18 planar
+972 // SURFACE_META V: 12 I: 18 planar
 {
 	shader textures/nieb/garden/metal1
 	entity 74
@@ -6615,7 +6633,7 @@ default
 	lightmapAxis ( 0.000000 0.000000 1.000000 )
 }
 
-970 // SURFACE_META V: 12 I: 30 planar
+973 // SURFACE_META V: 12 I: 30 planar
 {
 	shader textures/nieb/garden/metal1
 	entity 74
@@ -6623,7 +6641,7 @@ default
 	lightmapAxis ( -1.000000 0.000000 0.000000 )
 }
 
-971 // SURFACE_META V: 12 I: 18 planar
+974 // SURFACE_META V: 12 I: 18 planar
 {
 	shader textures/nieb/garden/metal1
 	entity 74
@@ -6631,36 +6649,12 @@ default
 	lightmapAxis ( 0.000000 0.000000 -1.000000 )
 }
 
-972 // SURFACE_META V: 12 I: 30 planar
+975 // SURFACE_META V: 12 I: 30 planar
 {
 	shader textures/nieb/garden/metal1
 	entity 74
 	castShadows 0
 	lightmapAxis ( 1.000000 0.000000 0.000000 )
-}
-
-973 // SURFACE_META V: 4 I: 6 planar
-{
-	shader textures/nieb/garden/metal1
-	entity 74
-	castShadows 0
-	lightmapAxis ( 0.000000 0.000000 -1.000000 )
-}
-
-974 // SURFACE_META V: 4 I: 6 planar
-{
-	shader textures/nieb/garden/metal1
-	entity 74
-	castShadows 0
-	lightmapAxis ( 0.000000 0.000000 1.000000 )
-}
-
-975 // SURFACE_META V: 4 I: 6 planar
-{
-	shader textures/nieb/garden/metal1
-	entity 74
-	castShadows 0
-	lightmapAxis ( 0.000000 0.000000 -1.000000 )
 }
 
 976 // SURFACE_META V: 4 I: 6 planar
@@ -6668,7 +6662,7 @@ default
 	shader textures/nieb/garden/metal1
 	entity 74
 	castShadows 0
-	lightmapAxis ( 0.000000 0.000000 1.000000 )
+	lightmapAxis ( 0.000000 0.000000 -1.000000 )
 }
 
 977 // SURFACE_META V: 4 I: 6 planar
@@ -6676,31 +6670,31 @@ default
 	shader textures/nieb/garden/metal1
 	entity 74
 	castShadows 0
-	lightmapAxis ( -1.000000 0.000000 0.000000 )
+	lightmapAxis ( 0.000000 0.000000 1.000000 )
 }
 
 978 // SURFACE_META V: 4 I: 6 planar
 {
-	shader textures/glass/glass_01
-	entity 75
+	shader textures/nieb/garden/metal1
+	entity 74
 	castShadows 0
-	lightmapAxis ( 0.000000 1.000000 0.000000 )
+	lightmapAxis ( 0.000000 0.000000 -1.000000 )
 }
 
 979 // SURFACE_META V: 4 I: 6 planar
 {
-	shader textures/glass/glass_01
-	entity 75
+	shader textures/nieb/garden/metal1
+	entity 74
 	castShadows 0
-	lightmapAxis ( 0.000000 1.000000 0.000000 )
+	lightmapAxis ( 0.000000 0.000000 1.000000 )
 }
 
 980 // SURFACE_META V: 4 I: 6 planar
 {
-	shader textures/glass/glass_01
-	entity 75
+	shader textures/nieb/garden/metal1
+	entity 74
 	castShadows 0
-	lightmapAxis ( 0.000000 -1.000000 0.000000 )
+	lightmapAxis ( -1.000000 0.000000 0.000000 )
 }
 
 981 // SURFACE_META V: 4 I: 6 planar
@@ -6708,10 +6702,34 @@ default
 	shader textures/glass/glass_01
 	entity 75
 	castShadows 0
-	lightmapAxis ( 0.000000 -1.000000 0.000000 )
+	lightmapAxis ( 0.000000 1.000000 0.000000 )
 }
 
 982 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/glass/glass_01
+	entity 75
+	castShadows 0
+	lightmapAxis ( 0.000000 1.000000 0.000000 )
+}
+
+983 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/glass/glass_01
+	entity 75
+	castShadows 0
+	lightmapAxis ( 0.000000 -1.000000 0.000000 )
+}
+
+984 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/glass/glass_01
+	entity 75
+	castShadows 0
+	lightmapAxis ( 0.000000 -1.000000 0.000000 )
+}
+
+985 // SURFACE_META V: 4 I: 6 planar
 {
 	shader textures/nieb/garden/metal1
 	entity 75
@@ -6719,7 +6737,7 @@ default
 	lightmapAxis ( 1.000000 0.000000 0.000000 )
 }
 
-983 // SURFACE_META V: 30 I: 66 planar
+986 // SURFACE_META V: 30 I: 66 planar
 {
 	shader textures/nieb/garden/metal1
 	entity 75
@@ -6727,7 +6745,7 @@ default
 	lightmapAxis ( 0.000000 1.000000 0.000000 )
 }
 
-984 // SURFACE_META V: 30 I: 66 planar
+987 // SURFACE_META V: 30 I: 66 planar
 {
 	shader textures/nieb/garden/metal1
 	entity 75
@@ -6735,7 +6753,7 @@ default
 	lightmapAxis ( 0.000000 -1.000000 0.000000 )
 }
 
-985 // SURFACE_META V: 12 I: 18 planar
+988 // SURFACE_META V: 12 I: 18 planar
 {
 	shader textures/nieb/garden/metal1
 	entity 75
@@ -6743,7 +6761,7 @@ default
 	lightmapAxis ( 0.000000 0.000000 1.000000 )
 }
 
-986 // SURFACE_META V: 12 I: 30 planar
+989 // SURFACE_META V: 12 I: 30 planar
 {
 	shader textures/nieb/garden/metal1
 	entity 75
@@ -6751,7 +6769,7 @@ default
 	lightmapAxis ( -1.000000 0.000000 0.000000 )
 }
 
-987 // SURFACE_META V: 12 I: 18 planar
+990 // SURFACE_META V: 12 I: 18 planar
 {
 	shader textures/nieb/garden/metal1
 	entity 75
@@ -6759,36 +6777,12 @@ default
 	lightmapAxis ( 0.000000 0.000000 -1.000000 )
 }
 
-988 // SURFACE_META V: 12 I: 30 planar
+991 // SURFACE_META V: 12 I: 30 planar
 {
 	shader textures/nieb/garden/metal1
 	entity 75
 	castShadows 0
 	lightmapAxis ( 1.000000 0.000000 0.000000 )
-}
-
-989 // SURFACE_META V: 4 I: 6 planar
-{
-	shader textures/nieb/garden/metal1
-	entity 75
-	castShadows 0
-	lightmapAxis ( 0.000000 0.000000 -1.000000 )
-}
-
-990 // SURFACE_META V: 4 I: 6 planar
-{
-	shader textures/nieb/garden/metal1
-	entity 75
-	castShadows 0
-	lightmapAxis ( 0.000000 0.000000 1.000000 )
-}
-
-991 // SURFACE_META V: 4 I: 6 planar
-{
-	shader textures/nieb/garden/metal1
-	entity 75
-	castShadows 0
-	lightmapAxis ( 0.000000 0.000000 -1.000000 )
 }
 
 992 // SURFACE_META V: 4 I: 6 planar
@@ -6796,7 +6790,7 @@ default
 	shader textures/nieb/garden/metal1
 	entity 75
 	castShadows 0
-	lightmapAxis ( 0.000000 0.000000 1.000000 )
+	lightmapAxis ( 0.000000 0.000000 -1.000000 )
 }
 
 993 // SURFACE_META V: 4 I: 6 planar
@@ -6804,31 +6798,31 @@ default
 	shader textures/nieb/garden/metal1
 	entity 75
 	castShadows 0
-	lightmapAxis ( -1.000000 0.000000 0.000000 )
+	lightmapAxis ( 0.000000 0.000000 1.000000 )
 }
 
 994 // SURFACE_META V: 4 I: 6 planar
 {
-	shader textures/doors/wood_door_01
-	entity 76
+	shader textures/nieb/garden/metal1
+	entity 75
 	castShadows 0
-	lightmapAxis ( 1.000000 0.000000 0.000000 )
+	lightmapAxis ( 0.000000 0.000000 -1.000000 )
 }
 
 995 // SURFACE_META V: 4 I: 6 planar
 {
-	shader textures/doors/wood_door_01
-	entity 76
+	shader textures/nieb/garden/metal1
+	entity 75
 	castShadows 0
-	lightmapAxis ( 0.000000 1.000000 0.000000 )
+	lightmapAxis ( 0.000000 0.000000 1.000000 )
 }
 
 996 // SURFACE_META V: 4 I: 6 planar
 {
-	shader textures/doors/wood_door_01
-	entity 76
+	shader textures/nieb/garden/metal1
+	entity 75
 	castShadows 0
-	lightmapAxis ( 0.000000 0.000000 1.000000 )
+	lightmapAxis ( -1.000000 0.000000 0.000000 )
 }
 
 997 // SURFACE_META V: 4 I: 6 planar
@@ -6836,7 +6830,7 @@ default
 	shader textures/doors/wood_door_01
 	entity 76
 	castShadows 0
-	lightmapAxis ( -1.000000 0.000000 0.000000 )
+	lightmapAxis ( 1.000000 0.000000 0.000000 )
 }
 
 998 // SURFACE_META V: 4 I: 6 planar
@@ -6844,7 +6838,7 @@ default
 	shader textures/doors/wood_door_01
 	entity 76
 	castShadows 0
-	lightmapAxis ( 0.000000 -1.000000 0.000000 )
+	lightmapAxis ( 0.000000 1.000000 0.000000 )
 }
 
 999 // SURFACE_META V: 4 I: 6 planar
@@ -6852,31 +6846,31 @@ default
 	shader textures/doors/wood_door_01
 	entity 76
 	castShadows 0
-	lightmapAxis ( 0.000000 0.000000 -1.000000 )
+	lightmapAxis ( 0.000000 0.000000 1.000000 )
 }
 
 1000 // SURFACE_META V: 4 I: 6 planar
 {
 	shader textures/doors/wood_door_01
-	entity 77
+	entity 76
 	castShadows 0
-	lightmapAxis ( 1.000000 0.000000 0.000000 )
+	lightmapAxis ( -1.000000 0.000000 0.000000 )
 }
 
 1001 // SURFACE_META V: 4 I: 6 planar
 {
 	shader textures/doors/wood_door_01
-	entity 77
+	entity 76
 	castShadows 0
-	lightmapAxis ( 0.000000 1.000000 0.000000 )
+	lightmapAxis ( 0.000000 -1.000000 0.000000 )
 }
 
 1002 // SURFACE_META V: 4 I: 6 planar
 {
 	shader textures/doors/wood_door_01
-	entity 77
+	entity 76
 	castShadows 0
-	lightmapAxis ( 0.000000 0.000000 1.000000 )
+	lightmapAxis ( 0.000000 0.000000 -1.000000 )
 }
 
 1003 // SURFACE_META V: 4 I: 6 planar
@@ -6884,7 +6878,7 @@ default
 	shader textures/doors/wood_door_01
 	entity 77
 	castShadows 0
-	lightmapAxis ( -1.000000 0.000000 0.000000 )
+	lightmapAxis ( 1.000000 0.000000 0.000000 )
 }
 
 1004 // SURFACE_META V: 4 I: 6 planar
@@ -6892,7 +6886,7 @@ default
 	shader textures/doors/wood_door_01
 	entity 77
 	castShadows 0
-	lightmapAxis ( 0.000000 -1.000000 0.000000 )
+	lightmapAxis ( 0.000000 1.000000 0.000000 )
 }
 
 1005 // SURFACE_META V: 4 I: 6 planar
@@ -6900,31 +6894,31 @@ default
 	shader textures/doors/wood_door_01
 	entity 77
 	castShadows 0
-	lightmapAxis ( 0.000000 0.000000 -1.000000 )
+	lightmapAxis ( 0.000000 0.000000 1.000000 )
 }
 
 1006 // SURFACE_META V: 4 I: 6 planar
 {
 	shader textures/doors/wood_door_01
-	entity 78
+	entity 77
 	castShadows 0
-	lightmapAxis ( 1.000000 0.000000 0.000000 )
+	lightmapAxis ( -1.000000 0.000000 0.000000 )
 }
 
 1007 // SURFACE_META V: 4 I: 6 planar
 {
 	shader textures/doors/wood_door_01
-	entity 78
+	entity 77
 	castShadows 0
-	lightmapAxis ( 0.000000 1.000000 0.000000 )
+	lightmapAxis ( 0.000000 -1.000000 0.000000 )
 }
 
 1008 // SURFACE_META V: 4 I: 6 planar
 {
 	shader textures/doors/wood_door_01
-	entity 78
+	entity 77
 	castShadows 0
-	lightmapAxis ( 0.000000 0.000000 1.000000 )
+	lightmapAxis ( 0.000000 0.000000 -1.000000 )
 }
 
 1009 // SURFACE_META V: 4 I: 6 planar
@@ -6932,7 +6926,7 @@ default
 	shader textures/doors/wood_door_01
 	entity 78
 	castShadows 0
-	lightmapAxis ( -1.000000 0.000000 0.000000 )
+	lightmapAxis ( 1.000000 0.000000 0.000000 )
 }
 
 1010 // SURFACE_META V: 4 I: 6 planar
@@ -6940,7 +6934,7 @@ default
 	shader textures/doors/wood_door_01
 	entity 78
 	castShadows 0
-	lightmapAxis ( 0.000000 -1.000000 0.000000 )
+	lightmapAxis ( 0.000000 1.000000 0.000000 )
 }
 
 1011 // SURFACE_META V: 4 I: 6 planar
@@ -6948,31 +6942,31 @@ default
 	shader textures/doors/wood_door_01
 	entity 78
 	castShadows 0
-	lightmapAxis ( 0.000000 0.000000 -1.000000 )
+	lightmapAxis ( 0.000000 0.000000 1.000000 )
 }
 
 1012 // SURFACE_META V: 4 I: 6 planar
 {
 	shader textures/doors/wood_door_01
-	entity 79
+	entity 78
 	castShadows 0
-	lightmapAxis ( 1.000000 0.000000 0.000000 )
+	lightmapAxis ( -1.000000 0.000000 0.000000 )
 }
 
 1013 // SURFACE_META V: 4 I: 6 planar
 {
 	shader textures/doors/wood_door_01
-	entity 79
+	entity 78
 	castShadows 0
-	lightmapAxis ( 0.000000 1.000000 0.000000 )
+	lightmapAxis ( 0.000000 -1.000000 0.000000 )
 }
 
 1014 // SURFACE_META V: 4 I: 6 planar
 {
 	shader textures/doors/wood_door_01
-	entity 79
+	entity 78
 	castShadows 0
-	lightmapAxis ( 0.000000 0.000000 1.000000 )
+	lightmapAxis ( 0.000000 0.000000 -1.000000 )
 }
 
 1015 // SURFACE_META V: 4 I: 6 planar
@@ -6980,7 +6974,7 @@ default
 	shader textures/doors/wood_door_01
 	entity 79
 	castShadows 0
-	lightmapAxis ( -1.000000 0.000000 0.000000 )
+	lightmapAxis ( 1.000000 0.000000 0.000000 )
 }
 
 1016 // SURFACE_META V: 4 I: 6 planar
@@ -6988,7 +6982,7 @@ default
 	shader textures/doors/wood_door_01
 	entity 79
 	castShadows 0
-	lightmapAxis ( 0.000000 -1.000000 0.000000 )
+	lightmapAxis ( 0.000000 1.000000 0.000000 )
 }
 
 1017 // SURFACE_META V: 4 I: 6 planar
@@ -6996,31 +6990,31 @@ default
 	shader textures/doors/wood_door_01
 	entity 79
 	castShadows 0
-	lightmapAxis ( 0.000000 0.000000 -1.000000 )
+	lightmapAxis ( 0.000000 0.000000 1.000000 )
 }
 
 1018 // SURFACE_META V: 4 I: 6 planar
 {
-	shader textures/glass/glass_01
-	entity 86
+	shader textures/doors/wood_door_01
+	entity 79
 	castShadows 0
-	lightmapAxis ( 0.000000 1.000000 0.000000 )
+	lightmapAxis ( -1.000000 0.000000 0.000000 )
 }
 
 1019 // SURFACE_META V: 4 I: 6 planar
 {
-	shader textures/glass/glass_01
-	entity 86
+	shader textures/doors/wood_door_01
+	entity 79
 	castShadows 0
-	lightmapAxis ( 0.000000 1.000000 0.000000 )
+	lightmapAxis ( 0.000000 -1.000000 0.000000 )
 }
 
 1020 // SURFACE_META V: 4 I: 6 planar
 {
-	shader textures/glass/glass_01
-	entity 86
+	shader textures/doors/wood_door_01
+	entity 79
 	castShadows 0
-	lightmapAxis ( 0.000000 -1.000000 0.000000 )
+	lightmapAxis ( 0.000000 0.000000 -1.000000 )
 }
 
 1021 // SURFACE_META V: 4 I: 6 planar
@@ -7028,10 +7022,34 @@ default
 	shader textures/glass/glass_01
 	entity 86
 	castShadows 0
-	lightmapAxis ( 0.000000 -1.000000 0.000000 )
+	lightmapAxis ( 0.000000 1.000000 0.000000 )
 }
 
 1022 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/glass/glass_01
+	entity 86
+	castShadows 0
+	lightmapAxis ( 0.000000 1.000000 0.000000 )
+}
+
+1023 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/glass/glass_01
+	entity 86
+	castShadows 0
+	lightmapAxis ( 0.000000 -1.000000 0.000000 )
+}
+
+1024 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/glass/glass_01
+	entity 86
+	castShadows 0
+	lightmapAxis ( 0.000000 -1.000000 0.000000 )
+}
+
+1025 // SURFACE_META V: 4 I: 6 planar
 {
 	shader textures/nieb/garden/metal1
 	entity 86
@@ -7039,7 +7057,7 @@ default
 	lightmapAxis ( 1.000000 0.000000 0.000000 )
 }
 
-1023 // SURFACE_META V: 30 I: 66 planar
+1026 // SURFACE_META V: 30 I: 66 planar
 {
 	shader textures/nieb/garden/metal1
 	entity 86
@@ -7047,7 +7065,7 @@ default
 	lightmapAxis ( 0.000000 1.000000 0.000000 )
 }
 
-1024 // SURFACE_META V: 30 I: 66 planar
+1027 // SURFACE_META V: 30 I: 66 planar
 {
 	shader textures/nieb/garden/metal1
 	entity 86
@@ -7055,7 +7073,7 @@ default
 	lightmapAxis ( 0.000000 -1.000000 0.000000 )
 }
 
-1025 // SURFACE_META V: 12 I: 18 planar
+1028 // SURFACE_META V: 12 I: 18 planar
 {
 	shader textures/nieb/garden/metal1
 	entity 86
@@ -7063,7 +7081,7 @@ default
 	lightmapAxis ( 0.000000 0.000000 1.000000 )
 }
 
-1026 // SURFACE_META V: 12 I: 30 planar
+1029 // SURFACE_META V: 12 I: 30 planar
 {
 	shader textures/nieb/garden/metal1
 	entity 86
@@ -7071,7 +7089,7 @@ default
 	lightmapAxis ( -1.000000 0.000000 0.000000 )
 }
 
-1027 // SURFACE_META V: 12 I: 18 planar
+1030 // SURFACE_META V: 12 I: 18 planar
 {
 	shader textures/nieb/garden/metal1
 	entity 86
@@ -7079,36 +7097,12 @@ default
 	lightmapAxis ( 0.000000 0.000000 -1.000000 )
 }
 
-1028 // SURFACE_META V: 12 I: 30 planar
+1031 // SURFACE_META V: 12 I: 30 planar
 {
 	shader textures/nieb/garden/metal1
 	entity 86
 	castShadows 0
 	lightmapAxis ( 1.000000 0.000000 0.000000 )
-}
-
-1029 // SURFACE_META V: 4 I: 6 planar
-{
-	shader textures/nieb/garden/metal1
-	entity 86
-	castShadows 0
-	lightmapAxis ( 0.000000 0.000000 -1.000000 )
-}
-
-1030 // SURFACE_META V: 4 I: 6 planar
-{
-	shader textures/nieb/garden/metal1
-	entity 86
-	castShadows 0
-	lightmapAxis ( 0.000000 0.000000 1.000000 )
-}
-
-1031 // SURFACE_META V: 4 I: 6 planar
-{
-	shader textures/nieb/garden/metal1
-	entity 86
-	castShadows 0
-	lightmapAxis ( 0.000000 0.000000 -1.000000 )
 }
 
 1032 // SURFACE_META V: 4 I: 6 planar
@@ -7116,7 +7110,7 @@ default
 	shader textures/nieb/garden/metal1
 	entity 86
 	castShadows 0
-	lightmapAxis ( 0.000000 0.000000 1.000000 )
+	lightmapAxis ( 0.000000 0.000000 -1.000000 )
 }
 
 1033 // SURFACE_META V: 4 I: 6 planar
@@ -7124,31 +7118,31 @@ default
 	shader textures/nieb/garden/metal1
 	entity 86
 	castShadows 0
-	lightmapAxis ( -1.000000 0.000000 0.000000 )
+	lightmapAxis ( 0.000000 0.000000 1.000000 )
 }
 
 1034 // SURFACE_META V: 4 I: 6 planar
 {
-	shader textures/glass/glass_01
-	entity 87
+	shader textures/nieb/garden/metal1
+	entity 86
 	castShadows 0
-	lightmapAxis ( 0.000000 1.000000 0.000000 )
+	lightmapAxis ( 0.000000 0.000000 -1.000000 )
 }
 
 1035 // SURFACE_META V: 4 I: 6 planar
 {
-	shader textures/glass/glass_01
-	entity 87
+	shader textures/nieb/garden/metal1
+	entity 86
 	castShadows 0
-	lightmapAxis ( 0.000000 1.000000 0.000000 )
+	lightmapAxis ( 0.000000 0.000000 1.000000 )
 }
 
 1036 // SURFACE_META V: 4 I: 6 planar
 {
-	shader textures/glass/glass_01
-	entity 87
+	shader textures/nieb/garden/metal1
+	entity 86
 	castShadows 0
-	lightmapAxis ( 0.000000 -1.000000 0.000000 )
+	lightmapAxis ( -1.000000 0.000000 0.000000 )
 }
 
 1037 // SURFACE_META V: 4 I: 6 planar
@@ -7156,10 +7150,34 @@ default
 	shader textures/glass/glass_01
 	entity 87
 	castShadows 0
-	lightmapAxis ( 0.000000 -1.000000 0.000000 )
+	lightmapAxis ( 0.000000 1.000000 0.000000 )
 }
 
 1038 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/glass/glass_01
+	entity 87
+	castShadows 0
+	lightmapAxis ( 0.000000 1.000000 0.000000 )
+}
+
+1039 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/glass/glass_01
+	entity 87
+	castShadows 0
+	lightmapAxis ( 0.000000 -1.000000 0.000000 )
+}
+
+1040 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/glass/glass_01
+	entity 87
+	castShadows 0
+	lightmapAxis ( 0.000000 -1.000000 0.000000 )
+}
+
+1041 // SURFACE_META V: 4 I: 6 planar
 {
 	shader textures/nieb/garden/metal1
 	entity 87
@@ -7167,7 +7185,7 @@ default
 	lightmapAxis ( 1.000000 0.000000 0.000000 )
 }
 
-1039 // SURFACE_META V: 30 I: 66 planar
+1042 // SURFACE_META V: 30 I: 66 planar
 {
 	shader textures/nieb/garden/metal1
 	entity 87
@@ -7175,7 +7193,7 @@ default
 	lightmapAxis ( 0.000000 1.000000 0.000000 )
 }
 
-1040 // SURFACE_META V: 30 I: 66 planar
+1043 // SURFACE_META V: 30 I: 66 planar
 {
 	shader textures/nieb/garden/metal1
 	entity 87
@@ -7183,7 +7201,7 @@ default
 	lightmapAxis ( 0.000000 -1.000000 0.000000 )
 }
 
-1041 // SURFACE_META V: 12 I: 18 planar
+1044 // SURFACE_META V: 12 I: 18 planar
 {
 	shader textures/nieb/garden/metal1
 	entity 87
@@ -7191,7 +7209,7 @@ default
 	lightmapAxis ( 0.000000 0.000000 1.000000 )
 }
 
-1042 // SURFACE_META V: 12 I: 30 planar
+1045 // SURFACE_META V: 12 I: 30 planar
 {
 	shader textures/nieb/garden/metal1
 	entity 87
@@ -7199,7 +7217,7 @@ default
 	lightmapAxis ( -1.000000 0.000000 0.000000 )
 }
 
-1043 // SURFACE_META V: 12 I: 18 planar
+1046 // SURFACE_META V: 12 I: 18 planar
 {
 	shader textures/nieb/garden/metal1
 	entity 87
@@ -7207,36 +7225,12 @@ default
 	lightmapAxis ( 0.000000 0.000000 -1.000000 )
 }
 
-1044 // SURFACE_META V: 12 I: 30 planar
+1047 // SURFACE_META V: 12 I: 30 planar
 {
 	shader textures/nieb/garden/metal1
 	entity 87
 	castShadows 0
 	lightmapAxis ( 1.000000 0.000000 0.000000 )
-}
-
-1045 // SURFACE_META V: 4 I: 6 planar
-{
-	shader textures/nieb/garden/metal1
-	entity 87
-	castShadows 0
-	lightmapAxis ( 0.000000 0.000000 -1.000000 )
-}
-
-1046 // SURFACE_META V: 4 I: 6 planar
-{
-	shader textures/nieb/garden/metal1
-	entity 87
-	castShadows 0
-	lightmapAxis ( 0.000000 0.000000 1.000000 )
-}
-
-1047 // SURFACE_META V: 4 I: 6 planar
-{
-	shader textures/nieb/garden/metal1
-	entity 87
-	castShadows 0
-	lightmapAxis ( 0.000000 0.000000 -1.000000 )
 }
 
 1048 // SURFACE_META V: 4 I: 6 planar
@@ -7244,7 +7238,7 @@ default
 	shader textures/nieb/garden/metal1
 	entity 87
 	castShadows 0
-	lightmapAxis ( 0.000000 0.000000 1.000000 )
+	lightmapAxis ( 0.000000 0.000000 -1.000000 )
 }
 
 1049 // SURFACE_META V: 4 I: 6 planar
@@ -7252,31 +7246,31 @@ default
 	shader textures/nieb/garden/metal1
 	entity 87
 	castShadows 0
-	lightmapAxis ( -1.000000 0.000000 0.000000 )
+	lightmapAxis ( 0.000000 0.000000 1.000000 )
 }
 
 1050 // SURFACE_META V: 4 I: 6 planar
 {
-	shader textures/glass/glass_01
-	entity 89
+	shader textures/nieb/garden/metal1
+	entity 87
 	castShadows 0
-	lightmapAxis ( 0.000000 1.000000 0.000000 )
+	lightmapAxis ( 0.000000 0.000000 -1.000000 )
 }
 
 1051 // SURFACE_META V: 4 I: 6 planar
 {
-	shader textures/glass/glass_01
-	entity 89
+	shader textures/nieb/garden/metal1
+	entity 87
 	castShadows 0
-	lightmapAxis ( 0.000000 1.000000 0.000000 )
+	lightmapAxis ( 0.000000 0.000000 1.000000 )
 }
 
 1052 // SURFACE_META V: 4 I: 6 planar
 {
-	shader textures/glass/glass_01
-	entity 89
+	shader textures/nieb/garden/metal1
+	entity 87
 	castShadows 0
-	lightmapAxis ( 0.000000 -1.000000 0.000000 )
+	lightmapAxis ( -1.000000 0.000000 0.000000 )
 }
 
 1053 // SURFACE_META V: 4 I: 6 planar
@@ -7284,10 +7278,34 @@ default
 	shader textures/glass/glass_01
 	entity 89
 	castShadows 0
-	lightmapAxis ( 0.000000 -1.000000 0.000000 )
+	lightmapAxis ( 0.000000 1.000000 0.000000 )
 }
 
 1054 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/glass/glass_01
+	entity 89
+	castShadows 0
+	lightmapAxis ( 0.000000 1.000000 0.000000 )
+}
+
+1055 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/glass/glass_01
+	entity 89
+	castShadows 0
+	lightmapAxis ( 0.000000 -1.000000 0.000000 )
+}
+
+1056 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/glass/glass_01
+	entity 89
+	castShadows 0
+	lightmapAxis ( 0.000000 -1.000000 0.000000 )
+}
+
+1057 // SURFACE_META V: 4 I: 6 planar
 {
 	shader textures/nieb/garden/metal1
 	entity 89
@@ -7295,7 +7313,7 @@ default
 	lightmapAxis ( 1.000000 0.000000 0.000000 )
 }
 
-1055 // SURFACE_META V: 30 I: 66 planar
+1058 // SURFACE_META V: 30 I: 66 planar
 {
 	shader textures/nieb/garden/metal1
 	entity 89
@@ -7303,7 +7321,7 @@ default
 	lightmapAxis ( 0.000000 1.000000 0.000000 )
 }
 
-1056 // SURFACE_META V: 30 I: 66 planar
+1059 // SURFACE_META V: 30 I: 66 planar
 {
 	shader textures/nieb/garden/metal1
 	entity 89
@@ -7311,7 +7329,7 @@ default
 	lightmapAxis ( 0.000000 -1.000000 0.000000 )
 }
 
-1057 // SURFACE_META V: 12 I: 18 planar
+1060 // SURFACE_META V: 12 I: 18 planar
 {
 	shader textures/nieb/garden/metal1
 	entity 89
@@ -7319,7 +7337,7 @@ default
 	lightmapAxis ( 0.000000 0.000000 1.000000 )
 }
 
-1058 // SURFACE_META V: 12 I: 30 planar
+1061 // SURFACE_META V: 12 I: 30 planar
 {
 	shader textures/nieb/garden/metal1
 	entity 89
@@ -7327,7 +7345,7 @@ default
 	lightmapAxis ( -1.000000 0.000000 0.000000 )
 }
 
-1059 // SURFACE_META V: 12 I: 18 planar
+1062 // SURFACE_META V: 12 I: 18 planar
 {
 	shader textures/nieb/garden/metal1
 	entity 89
@@ -7335,36 +7353,12 @@ default
 	lightmapAxis ( 0.000000 0.000000 -1.000000 )
 }
 
-1060 // SURFACE_META V: 12 I: 30 planar
+1063 // SURFACE_META V: 12 I: 30 planar
 {
 	shader textures/nieb/garden/metal1
 	entity 89
 	castShadows 0
 	lightmapAxis ( 1.000000 0.000000 0.000000 )
-}
-
-1061 // SURFACE_META V: 4 I: 6 planar
-{
-	shader textures/nieb/garden/metal1
-	entity 89
-	castShadows 0
-	lightmapAxis ( 0.000000 0.000000 -1.000000 )
-}
-
-1062 // SURFACE_META V: 4 I: 6 planar
-{
-	shader textures/nieb/garden/metal1
-	entity 89
-	castShadows 0
-	lightmapAxis ( 0.000000 0.000000 1.000000 )
-}
-
-1063 // SURFACE_META V: 4 I: 6 planar
-{
-	shader textures/nieb/garden/metal1
-	entity 89
-	castShadows 0
-	lightmapAxis ( 0.000000 0.000000 -1.000000 )
 }
 
 1064 // SURFACE_META V: 4 I: 6 planar
@@ -7372,7 +7366,7 @@ default
 	shader textures/nieb/garden/metal1
 	entity 89
 	castShadows 0
-	lightmapAxis ( 0.000000 0.000000 1.000000 )
+	lightmapAxis ( 0.000000 0.000000 -1.000000 )
 }
 
 1065 // SURFACE_META V: 4 I: 6 planar
@@ -7380,31 +7374,31 @@ default
 	shader textures/nieb/garden/metal1
 	entity 89
 	castShadows 0
-	lightmapAxis ( -1.000000 0.000000 0.000000 )
+	lightmapAxis ( 0.000000 0.000000 1.000000 )
 }
 
 1066 // SURFACE_META V: 4 I: 6 planar
 {
-	shader textures/glass/glass_01
-	entity 90
+	shader textures/nieb/garden/metal1
+	entity 89
 	castShadows 0
-	lightmapAxis ( 0.000000 1.000000 0.000000 )
+	lightmapAxis ( 0.000000 0.000000 -1.000000 )
 }
 
 1067 // SURFACE_META V: 4 I: 6 planar
 {
-	shader textures/glass/glass_01
-	entity 90
+	shader textures/nieb/garden/metal1
+	entity 89
 	castShadows 0
-	lightmapAxis ( 0.000000 1.000000 0.000000 )
+	lightmapAxis ( 0.000000 0.000000 1.000000 )
 }
 
 1068 // SURFACE_META V: 4 I: 6 planar
 {
-	shader textures/glass/glass_01
-	entity 90
+	shader textures/nieb/garden/metal1
+	entity 89
 	castShadows 0
-	lightmapAxis ( 0.000000 -1.000000 0.000000 )
+	lightmapAxis ( -1.000000 0.000000 0.000000 )
 }
 
 1069 // SURFACE_META V: 4 I: 6 planar
@@ -7412,10 +7406,34 @@ default
 	shader textures/glass/glass_01
 	entity 90
 	castShadows 0
-	lightmapAxis ( 0.000000 -1.000000 0.000000 )
+	lightmapAxis ( 0.000000 1.000000 0.000000 )
 }
 
 1070 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/glass/glass_01
+	entity 90
+	castShadows 0
+	lightmapAxis ( 0.000000 1.000000 0.000000 )
+}
+
+1071 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/glass/glass_01
+	entity 90
+	castShadows 0
+	lightmapAxis ( 0.000000 -1.000000 0.000000 )
+}
+
+1072 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/glass/glass_01
+	entity 90
+	castShadows 0
+	lightmapAxis ( 0.000000 -1.000000 0.000000 )
+}
+
+1073 // SURFACE_META V: 4 I: 6 planar
 {
 	shader textures/nieb/garden/metal1
 	entity 90
@@ -7423,7 +7441,7 @@ default
 	lightmapAxis ( 1.000000 0.000000 0.000000 )
 }
 
-1071 // SURFACE_META V: 30 I: 66 planar
+1074 // SURFACE_META V: 30 I: 66 planar
 {
 	shader textures/nieb/garden/metal1
 	entity 90
@@ -7431,7 +7449,7 @@ default
 	lightmapAxis ( 0.000000 1.000000 0.000000 )
 }
 
-1072 // SURFACE_META V: 30 I: 66 planar
+1075 // SURFACE_META V: 30 I: 66 planar
 {
 	shader textures/nieb/garden/metal1
 	entity 90
@@ -7439,7 +7457,7 @@ default
 	lightmapAxis ( 0.000000 -1.000000 0.000000 )
 }
 
-1073 // SURFACE_META V: 12 I: 18 planar
+1076 // SURFACE_META V: 12 I: 18 planar
 {
 	shader textures/nieb/garden/metal1
 	entity 90
@@ -7447,7 +7465,7 @@ default
 	lightmapAxis ( 0.000000 0.000000 1.000000 )
 }
 
-1074 // SURFACE_META V: 12 I: 30 planar
+1077 // SURFACE_META V: 12 I: 30 planar
 {
 	shader textures/nieb/garden/metal1
 	entity 90
@@ -7455,7 +7473,7 @@ default
 	lightmapAxis ( -1.000000 0.000000 0.000000 )
 }
 
-1075 // SURFACE_META V: 12 I: 18 planar
+1078 // SURFACE_META V: 12 I: 18 planar
 {
 	shader textures/nieb/garden/metal1
 	entity 90
@@ -7463,7 +7481,7 @@ default
 	lightmapAxis ( 0.000000 0.000000 -1.000000 )
 }
 
-1076 // SURFACE_META V: 12 I: 30 planar
+1079 // SURFACE_META V: 12 I: 30 planar
 {
 	shader textures/nieb/garden/metal1
 	entity 90
@@ -7471,39 +7489,39 @@ default
 	lightmapAxis ( 1.000000 0.000000 0.000000 )
 }
 
-1077 // SURFACE_META V: 4 I: 6 planar
-{
-	shader textures/nieb/garden/metal1
-	entity 90
-	castShadows 0
-	lightmapAxis ( 0.000000 0.000000 -1.000000 )
-}
-
-1078 // SURFACE_META V: 4 I: 6 planar
-{
-	shader textures/nieb/garden/metal1
-	entity 90
-	castShadows 0
-	lightmapAxis ( 0.000000 0.000000 1.000000 )
-}
-
-1079 // SURFACE_META V: 4 I: 6 planar
-{
-	shader textures/nieb/garden/metal1
-	entity 90
-	castShadows 0
-	lightmapAxis ( 0.000000 0.000000 -1.000000 )
-}
-
 1080 // SURFACE_META V: 4 I: 6 planar
 {
 	shader textures/nieb/garden/metal1
 	entity 90
 	castShadows 0
-	lightmapAxis ( 0.000000 0.000000 1.000000 )
+	lightmapAxis ( 0.000000 0.000000 -1.000000 )
 }
 
 1081 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/nieb/garden/metal1
+	entity 90
+	castShadows 0
+	lightmapAxis ( 0.000000 0.000000 1.000000 )
+}
+
+1082 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/nieb/garden/metal1
+	entity 90
+	castShadows 0
+	lightmapAxis ( 0.000000 0.000000 -1.000000 )
+}
+
+1083 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/nieb/garden/metal1
+	entity 90
+	castShadows 0
+	lightmapAxis ( 0.000000 0.000000 1.000000 )
+}
+
+1084 // SURFACE_META V: 4 I: 6 planar
 {
 	shader textures/nieb/garden/metal1
 	entity 90

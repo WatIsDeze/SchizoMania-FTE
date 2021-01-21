@@ -1,0 +1,30 @@
+# Blender MTL File: 'arms(1).blend'
+# Material Count: 2
+
+newmtl arms
+Ns 287.999996
+Ka 0.070000 0.070000 0.070000
+Kd 1.000000 1.000000 1.000000
+Ks 1.000000 1.000000 1.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 3
+map_Bump -o 0.000000 -1.000000 0.000000 ../../bakes/arms/armNormal.png
+map_Kd -o 0.000000 -1.000000 0.000000 M:/watisdeze/models/knife-animated/source/textures/armcolor.png
+map_Ks -o 0.000000 -1.000000 0.000000 ../../bakes/arms/armspecular.png
+refl -o 0.000000 -1.000000 0.000000 ../../bakes/arms/armspecular.png
+
+newmtl knife
+Ns 190.009131
+Ka 0.100000 0.100000 0.100000
+Kd 0.980000 0.980000 0.980000
+Ks 1.000000 1.000000 1.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 3
+map_Bump -o 0.000000 -1.000000 0.000000 ../../bakes/knife/knifeNormal.png
+map_Kd -o 0.000000 -1.000000 0.000000 ../../bakes/knife/knifeColor.png
+map_Ks -o 0.000000 -1.000000 0.000000 ../../bakes/knife/knifeSpecular.png
+refl -o 0.000000 -1.000000 0.000000 ../../bakes/knife/knifeSpecular.png

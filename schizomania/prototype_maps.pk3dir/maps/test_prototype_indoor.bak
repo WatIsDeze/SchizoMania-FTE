@@ -2287,7 +2287,7 @@ fabric/fabric005
 // entity 23
 {
 "classname" "item_inventory"
-"origin" "-1553.000000 3036.000000 150.000000"
+"origin" "-1553.000000 3036.000000 152.000000"
 "itemID" "5"
 "amount" "1"
 "targetname" "item_healthkit1"

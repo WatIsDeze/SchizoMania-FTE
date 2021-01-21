@@ -17,8 +17,10 @@ my own ADHD good.
 - [X] Health system, green = fine, yellow = caution, orange = extra caution, red = danger.
 - [_] Poisoned, you can be poisoned, yes. So a textual indicator (with symbols preferably) to show what is up. Poisoned, or... what have ya.
 - [X] Display the character in the menu, in case...
-- [_] Implement item "inspection". So one can take a closer look at an item, and possibly acquire an item if clicking on something? Who knows.
+- [_] Implement item "inspection". So one can take a closer look at an item, and possibly acquire an item if clicking on something? 
+      Like a letter which may need to be opened, before you can read it. But also, to observe if there's for example some cryptical text on it.
 - [_] Implement APAP Pill Bottle
+
 ## Entities - Prototype 0.1:
 - [_] Remove game_locked_Door
 - [_] Rename egui_mainmenu to gui_mainmenu
@@ -74,8 +76,8 @@ Other than that it is a bit of a list of ... anything.
 
 ## GUI - Prototype 0.1:
 ### Item Menu (More of a... well, all you have menu for the player)
-- [_] Display player model. (Not a requirement, but fun to have.)
-- [_] Display player health, and current weapon that is equiped, and amount of ammo.
+- [X] Display player model. (Not a requirement, but fun to have.)
+- [/] Display player health, and current weapon that is equiped, and amount of ammo.
 - [_] Make use button disable when an item can't be "used".
 - [_] Make equip button disable when an item can't be "equiped".
 - [_] Make unequip an option in case an item already IS equiped.

@@ -2,9 +2,6 @@ FTEMANIFEST 1
 GAME schizomania
 NAME "SchizoMania"
 BASEGAME platform
-BASEGAME logos
-BASEGAME cstrike
-BASEGAME valve
 BASEGAME schizomania
 
 // custom game menu variables
@@ -14,22 +11,18 @@ BASEGAME schizomania
 -set gameinfo_mpentity "info_player_deathmatch"
 -set gameinfo_size "184000000"
 -set gameinfo_url_info "https://github.com/WatIsDeze/SchizoMania-FTE"
--set gameinfo_version "1.5"
+-set gameinfo_version "0.1"
 -set gameinfo_url_dl ""
 -set gameinfo_type "Singleplayer"
 -set gameinfo_nomodels 0
 -set gameinfo_gamedll "progs.dat"
--set gameinfo_startmap "test"
+-set gameinfo_startmap "prt_map_0"
 -set gameinfo_trainingmap "map test"
 -set gameinfo_cldll 1
 -set gameinfo_hlversion "1110"
 -set gameinfo_svonly "0"
 -set gameinfo_menutrack ""
 -set gameinfo_chatroom "schizomania"
-
-DOWNLOADSURL http://www.frag-net.com/dl/cstrike_packages
-UPDATEURL http://www.frag-net.com/mods/cstrike.fmf
-INSTALL "cstrike_essential;valve_essential;free_essential"
 
 // you don't really want to change these
 RTCBROKER master.frag-net.com:27950
