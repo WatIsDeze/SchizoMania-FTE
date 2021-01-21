@@ -41,3 +41,5 @@ noclip
 /map prt_map_0
 quit
 /map prt_map_0
+/map prt_map_0
+/map prt_wip

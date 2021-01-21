@@ -67,7 +67,7 @@ void Desktop_Init ( void )
 
 	btnNewgame = spawn( CUIMenuButton );
 	btnNewgame.SetTitle( "New Game" );
-	btnNewgame.SetSize( '96 24' );
+	btnNewgame.SetSize( '200 24' );
 
 	btnNewgame.SetFunc( UI_NewGame_Show );
 	btnNewgame.FlagRemove( MBUTTON_SHOWSP | MBUTTON_SHOWMP );
@@ -75,59 +75,59 @@ void Desktop_Init ( void )
 
 	btnDisconnect = spawn( CUIMenuButton );
 	btnDisconnect.SetTitle( "Disconnect" );
-	btnDisconnect.SetSize( '96 24' );
+	btnDisconnect.SetSize( '200 24' );
 	btnDisconnect.SetFunc( Desktop_DisconnectGame );
 	btnDisconnect.FlagRemove( MBUTTON_SHOWOFFLINE );
 	btnDisconnect.FlagAdd( MBUTTON_TEXTONLY );
 
 	btnLoadgame = spawn( CUIMenuButton );
 	btnLoadgame.SetTitle( "Load Game" );
-	btnLoadgame.SetSize( '96 24' );
+	btnLoadgame.SetSize( '200 24' );
 
 	btnLoadgame.FlagAdd( MBUTTON_TEXTONLY );
 
 	btnFindserver = spawn( CUIMenuButton );
 	btnFindserver.SetTitle( "Find Servers" );
-	btnFindserver.SetSize( '96 24' );
+	btnFindserver.SetSize( '200 24' );
 	btnFindserver.SetFunc( UI_FindServers_Show );
 	btnFindserver.FlagAdd( MBUTTON_TEXTONLY );
 
 	btnCreateserver = spawn( CUIMenuButton );
 	btnCreateserver.SetTitle( "Create Server" );
-	btnCreateserver.SetSize( '96 24' );
+	btnCreateserver.SetSize( '200 24' );
 	btnCreateserver.SetFunc( UI_CreateServer_Show );
 	btnCreateserver.FlagAdd( MBUTTON_TEXTONLY );
 
 	btnOptions = spawn( CUIMenuButton );
 	btnOptions.SetTitle( "Options" );
-	btnOptions.SetSize( '96 24' );
+	btnOptions.SetSize( '200 24' );
 	btnOptions.SetFunc( UI_Options_Show );
 	btnOptions.FlagAdd( MBUTTON_TEXTONLY );
 
 	btnQuit = spawn( CUIMenuButton );
 	btnQuit.SetTitle( "Quit Game" );
-	btnQuit.SetSize( '96 24' );
+	btnQuit.SetSize( '200 24' );
 
 	btnQuit.SetFunc( UI_QuitGame_Show );
 	btnQuit.FlagAdd( MBUTTON_TEXTONLY );
 
 	btnMPlayer = spawn( CUIMenuButton );
 	btnMPlayer.SetTitle( "Music Player" );
-	btnMPlayer.SetSize( '96 24' );
+	btnMPlayer.SetSize( '200 24' );
 
 	btnMPlayer.SetFunc( UI_MusicPlayer_Show );
 	btnMPlayer.FlagAdd( MBUTTON_TEXTONLY );
 
 	btnMViewer = spawn( CUIMenuButton );
 	btnMViewer.SetTitle( "Model Viewer" );
-	btnMViewer.SetSize( '96 24' );
+	btnMViewer.SetSize( '200 24' );
 
 	btnMViewer.SetFunc( UI_ModelViewer_Show );
 	btnMViewer.FlagAdd( MBUTTON_TEXTONLY );
 
 	btnResume = spawn( CUIMenuButton );
 	btnResume.SetTitle( "Resume Game" );
-	btnResume.SetSize( '96 24' );
+	btnResume.SetSize( '200 24' );
 
 	btnResume.SetFunc( Desktop_ResumeGame );
 	btnResume.FlagRemove( MBUTTON_SHOWOFFLINE );
