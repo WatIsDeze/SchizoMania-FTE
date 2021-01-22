@@ -58,13 +58,10 @@ class CUIWidget
 	CUIWidget m_parent;
 	int m_iFlags;
 	string m_strGroupName;
-	font_s *font;
 
 	virtual void(CUIWidget) Add;
 	virtual void(int) FlagAdd;
 	virtual void(int) FlagRemove;
-
-	virtual void(font_s*) SetFont;
 
 	virtual void(vector) SetPos;
 	virtual vector() GetPos;
@@ -83,14 +80,7 @@ CUIWidget::CUIWidget(void)
 	m_parent = 0;
 	m_next = 0;
 	m_strGroupName = "default";
-	font = &g_fntDefault;
 	FlagAdd(UI_VISIBLE);
-}
-
-void
-CUIWidget::SetFont(font_s *fnt)
-{
-	font = fnt;
 }
 
 void
@@ -221,8 +211,8 @@ UISystem_Init(void)
 	}
 #endif
 
-	Font_Load("scripts/ui_font_mainmenu_default.txt", g_fntDefault);
-	Font_Load("scripts/ui_font_mainmenu_title.txt", g_fntMainMenuTitle);
+	Font_Load("scripts/ui_font_mm_default.txt", g_fntDefault);
+	Font_Load("scripts/ui_font_mm_title.txt", g_fntMainMenuTitle);
 	precache_pic("textures/ui/steam/icon_radiosel");
 	precache_pic("textures/ui/steam/icon_radiounsel");
 	precache_pic("textures/ui/steam/icon_checked");

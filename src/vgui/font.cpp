@@ -93,6 +93,7 @@ Font_DrawText (vector vecOrigin, string strText, font_s fnt)
 float
 Font_GetTextWidth(string strText, font_s fnt) 
 {
+	drawfont = (float)fnt.iID;
 	float strwidth = stringwidth(strText, TRUE, [fnt.iScale, fnt.iScale]);
 	return strwidth;
 }

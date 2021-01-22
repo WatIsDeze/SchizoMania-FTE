@@ -44,7 +44,7 @@ void CUILabel::SetTitle (string strName)
 	// m_strTitle = sprintf("%s%s", Font_RGBtoHex(UI_MAINCOLOR), strName);
 	m_strTitle = sprintf("%s%s", "^xFFF", strName);
 #endif
-	drawfont = font.iID;
+	drawfont = g_fntDefault.iID;
 
 	/* hack, add 2 just to make sure it doesn't immediately wrap. bug
 	 * in engines' textfield thing in combo with ttf. */
@@ -53,7 +53,7 @@ void CUILabel::SetTitle (string strName)
 void CUILabel::Draw(void)
 {
 	if (m_strTitle) {
-		Font_DrawFontField(GetAbsolutePos(), m_vecSize, m_strTitle, font, 0);
+		Font_DrawField(GetAbsolutePos(), m_vecSize, m_strTitle, g_fntDefault, 0);
 	}
 }
 
