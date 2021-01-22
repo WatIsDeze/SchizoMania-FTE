@@ -79,13 +79,14 @@ void CUITextBox::Draw(void)
 	// blinking cursor
 	if (m_iFlags & TEXTBOX_FOCUS) {
 		if (rint(m_flTime) & 1) {
-			Font_DrawText(m_parent.m_vecOrigin + m_vecOrigin + [8, 8], sprintf("%s|", m_strText), g_fntDefault);
+			Font_DrawText(GetAbsolutePos() + [8, 8], sprintf("%s|", m_strText), g_fntDefault);
 			return;
 		}
 	}
 	
 	if (m_strText) {
-		Font_DrawText(m_parent.m_vecOrigin + m_vecOrigin + [8, 8], m_strText, g_fntDefault);
+		//Font_DrawText(m_parent.m_vecOrigin + m_vecOrigin + [8, 8], m_strText, g_fntDefault);
+		Font_DrawField(GetAbsolutePos() + [8, 8], m_vecSize,m_strText, g_fntDefault, AF_LEFT);
 	}
 }
 

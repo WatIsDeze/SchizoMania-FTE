@@ -117,7 +117,7 @@ HUDNotification_DrawString(vector pos, string msg, vector col, float alpha)
 	for (int i = 0; i < c; i++) {
 		float strwidth = stringwidth(argv(i), TRUE, [18,18]);
 		pos[1] += 18 * i;
-		drawstring(pos, argv(i), '18 18', col, alpha,
+		drawstring(pos, argv(i), '16 16', col, alpha,
 			0);
 	}
 }

@@ -68,7 +68,7 @@ HUDMessage_DrawString(vector pos, string msg, vector col, float alpha)
 		}
 		rpos[1] += 20 * i;
 		rpos[1] -= (20 * c) / 2;
-		drawstring(rpos, argv(i), '20 20', col, alpha,
+		drawstring(rpos, argv(i), '18 18', col, alpha,
 			DRAWFLAG_ADDITIVE);
 	}
 }

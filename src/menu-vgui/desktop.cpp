@@ -93,13 +93,13 @@ void Desktop_Init ( void )
 	btnFindserver = spawn( CUIMenuButton );
 	btnFindserver.SetTitle( "Find Servers" );
 	btnFindserver.SetSize( '174 24' );
-	btnFindserver.SetFunc( UI_FindServers_Show );
+//	btnFindserver.SetFunc( UI_FindServers_Show );
 	btnFindserver.FlagAdd( MBUTTON_TEXTONLY );
 
 	btnCreateserver = spawn( CUIMenuButton );
 	btnCreateserver.SetTitle( "Create Server" );
 	btnCreateserver.SetSize( '174 24' );
-	btnCreateserver.SetFunc( UI_CreateServer_Show );
+//	btnCreateserver.SetFunc( UI_CreateServer_Show );
 	btnCreateserver.FlagAdd( MBUTTON_TEXTONLY );
 
 	btnOptions = spawn( CUIMenuButton );

@@ -27,8 +27,8 @@ void HUD_DrawWeaponSelect(void);
 void
 HUD_Init(void)
 {
-	FONT_HUD_MESSAGE = loadfont("font", "", "20", -1);
-	FONT_HUD_NOTIFICATION = loadfont("font", "", "18", -1);
+	FONT_HUD_MESSAGE = loadfont("font", "", "18", -1);
+	FONT_HUD_NOTIFICATION = loadfont("font", "", "16", -1);
 	FONT_HUD_CROSSHAIRINFO = loadfont("font", "", "14", -1);
     
     // Initialize notification list.
