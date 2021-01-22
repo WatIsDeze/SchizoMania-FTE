@@ -1,0 +1,10 @@
+{
+	diffusemap textures/nieb/suite/floorsregular0100.tga
+    normalmap textures/nieb/suite/floorsregular0100_normal.tga
+
+	{
+		program lightmapped
+		map $diffuse
+		map $normalmap
+	}
+}

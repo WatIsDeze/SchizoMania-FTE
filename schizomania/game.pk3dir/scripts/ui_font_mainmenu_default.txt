@@ -1,0 +1,4 @@
+COLOR=255 255 255
+ALPHA=255
+SIZE=16
+PATH=gfx/shell/lunchds.ttf

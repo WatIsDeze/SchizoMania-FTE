@@ -1,0 +1,10 @@
+{
+	diffusemap textures/nieb/suite/brickolddirty0067.tga
+    normalmap textures/nieb/suite/brickolddirty0067_normal.tga
+
+	{
+		program lightmapped
+		map $diffuse
+		map $normalmap
+	}
+}

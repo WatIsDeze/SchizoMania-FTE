@@ -34,13 +34,13 @@ typedef struct
 void
 Font_Load (string strFile, font_s &fntNew)
 {
-#ifdef CLASSIC_VGUI
-	fntNew.iID = (int)loadfont("", "gfx/conchars", "12", -1, 0, 0);
-	fntNew.iScale = 12;
-	fntNew.vecColor = [1,1,1];
-	fntNew.flAlpha = 0.85f;
-	fntNew.iFlags = 0;
-#else
+// //#ifdef CLASSIC_VGUI
+// //	fntNew.iID = (int)loadfont("", "gfx/conchars", "12", -1, 0, 0);
+// 	fntNew.iScale = 12;
+// 	fntNew.vecColor = [1,1,1];
+// 	fntNew.flAlpha = 0.85f;
+// 	fntNew.iFlags = 0;
+// #else
 	string strTemp = "";
 	string strFontPath = "";
 	filestream fileFont = fopen(strFile, FILE_READ);
@@ -80,7 +80,7 @@ Font_Load (string strFile, font_s &fntNew)
 	}
 
 	fntNew.iID = (int)loadfont("", strFontPath, ftos((float)fntNew.iScale), -1, 0, 0);
-#endif
+//#endif
 }
 
 void
@@ -90,10 +90,24 @@ Font_DrawText (vector vecOrigin, string strText, font_s fnt)
 	drawstring(vecOrigin, strText, [fnt.iScale, fnt.iScale], fnt.vecColor, fnt.flAlpha, (float)fnt.iFlags);
 }
 
+float
+Font_GetTextWidth(string strText, font_s fnt) 
+{
+	float strwidth = stringwidth(strText, TRUE, [fnt.iScale, fnt.iScale]);
+	return strwidth;
+}
+
 void
 Font_DrawField (vector vecOrigin, vector vecSize, string strText, font_s fnt, int iAlignFlags)
 {
 	drawfont = (float)fnt.iID;
+	drawtextfield(vecOrigin, vecSize, (float)iAlignFlags, strText);
+}
+
+void
+Font_DrawFontField (vector vecOrigin, vector vecSize, string strText, font_s *fnt, int iAlignFlags)
+{
+	drawfont = (float)fnt->iID;
 	drawtextfield(vecOrigin, vecSize, (float)iAlignFlags, strText);
 }
 

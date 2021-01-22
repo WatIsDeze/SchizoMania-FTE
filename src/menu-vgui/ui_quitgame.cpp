@@ -49,7 +49,7 @@ void UI_QuitGame_Show ( void )
 		btnCancel.SetPos( winQuitGame.GetSize() - '106 32' );
 
 		lblSure = spawn( CUILabel );
-		lblSure.SetTitle( "Do you wish to stop playing now?" );
+		lblSure.SetTitle( "Shat your pants already?" );
 		lblSure.SetSize( '256 16' );
 		lblSure.SetPos( '0 48' );
 

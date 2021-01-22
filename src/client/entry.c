@@ -95,9 +95,14 @@ void
 CSQC_RendererRestarted(string rstr)
 {
 	/* Fonts */
-	FONT_16 = loadfont("16", "fonts/default", "16", -1);
-	FONT_20 = loadfont("cr", "creditsfont?fmt=h", "20", -1);
-	FONT_CON = loadfont("font", "", "12", -1);
+	// FONT_16 = loadfont("16", "fonts/default", "16", -1);
+	// FONT_20 = loadfont("cr", "creditsfont?fmt=h", "20", -1);
+	// FONT_CON = loadfont("font", "", "12", -1);
+	FONT_16 = loadfont("", "gfx/shell/lunchds.ttf", "16 outline=2", -1, 0, 0);
+	FONT_20 = loadfont("", "gfx/shell/lunchds.ttf", "20 outline=2", -1, 0, 0);
+	FONT_CON = loadfont("", "gfx/shell/lunchds.ttf", "18 outline=2", -1, 0, 0);
+	//FONT_DEFAULT = loadfont("", "gfx/shell/lunchds.ttf", "16", -1, 0, 0);
+    
 	drawfont = FONT_CON;
 
 	/* Particles */

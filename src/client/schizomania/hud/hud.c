@@ -27,10 +27,15 @@ void HUD_DrawWeaponSelect(void);
 void
 HUD_Init(void)
 {
-	FONT_HUD_MESSAGE = loadfont("font", "", "18", -1);
-	FONT_HUD_NOTIFICATION = loadfont("font", "", "16", -1);
-	FONT_HUD_CROSSHAIRINFO = loadfont("font", "", "14", -1);
+	// FONT_HUD_MESSAGE = loadfont("font", "", "18", -1);
+	// FONT_HUD_NOTIFICATION = loadfont("font", "", "16", -1);
+	// FONT_HUD_CROSSHAIRINFO = loadfont("font", "", "14", -1);
     
+	FONT_HUD_MESSAGE = loadfont("", "gfx/shell/lunchds.ttf", "18 outline=2", -1, 0, 0);
+	FONT_HUD_NOTIFICATION = loadfont("", "gfx/shell/lunchds.ttf", "18 outline=2", -1, 0, 0);
+	FONT_HUD_CROSSHAIRINFO = loadfont("", "gfx/shell/lunchds.ttf?outline=1", "17 outline=2", -1, 0, 0);
+    
+
     // Initialize notification list.
     HUDNotification_Init();
 }

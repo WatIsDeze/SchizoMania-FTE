@@ -24,6 +24,7 @@ static CUIMenuButton btnMViewer;
 static CUIMenuButton btnResume;
 static CUIMenuButton btnDisconnect;
 
+static CUILabel lblGameTitle;
 static CUIMenuButton lblGameVersion;
 
 static void Desktop_ResumeGame ( void ) {
@@ -60,7 +61,12 @@ static void Desktop_PositionButtons( void ) {
 	btnResume.SetPos(  buttonPos  );
 
 	// It serves as a label but whatever.
-	lblGameVersion.SetPos( video_res - [358, 32, 0] );
+	lblGameVersion.SetPos( video_res - [226, 32, 0] );
+	
+	// Set Game Title position.
+	vector gameTitlePos = video_res / 2;
+	gameTitlePos[1] = 64;
+	gameTitlePos[0] -= Font_GetTextWidth("SchizoMania", g_fntMainMenuTitle) / 2;
 }
 
 void Desktop_Init ( void )
@@ -133,10 +139,16 @@ void Desktop_Init ( void )
 	btnResume.FlagRemove( MBUTTON_SHOWOFFLINE );
 	btnResume.FlagAdd( MBUTTON_TEXTONLY );
 
+	lblGameTitle = spawn( CUILabel );
+	lblGameTitle.SetTitle("SchizoMania");
+	lblGameTitle.FlagAdd( MBUTTON_TEXTONLY );
+
 	lblGameVersion = spawn( CUIMenuButton );
-	lblGameVersion.SetTitle("SchizoMania - build: (0.0.1)");
+	lblGameVersion.SetTitle("SchizoMania - (0.0.1)");
 	lblGameVersion.FlagAdd( MBUTTON_TEXTONLY );
 
+	// Add title first zo it is below in z-order.
+	g_uiDesktop.Add( lblGameTitle );
 	g_uiDesktop.Add( btnNewgame );
 	g_uiDesktop.Add( btnLoadgame );
 	g_uiDesktop.Add( btnFindserver );

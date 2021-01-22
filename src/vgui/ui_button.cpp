@@ -143,14 +143,14 @@ CUIButton::Draw(void)
 
 	if (m_strTitle) {
 		if (m_iFlags & BUTTON_DISABLED) {
-			Font_DrawText(GetAbsolutePos() + [8, 8], m_strTitleDisabled, g_fntDefault);
+			Font_DrawText(GetAbsolutePos() + [8, 5], m_strTitleDisabled, g_fntDefault);
 		} else {
 			if (m_iFlags & BUTTON_LASTACTIVE) {
-				Font_DrawText(GetAbsolutePos() + [8, 8], m_strTitleActive, g_fntDefault);
+				Font_DrawText(GetAbsolutePos() + [8, 5], m_strTitleActive, g_fntDefault);
 			} else if (m_iFlags & BUTTON_HOVER) {
-				Font_DrawText(GetAbsolutePos() + [8, 8], m_strTitleHover, g_fntDefault);
+				Font_DrawText(GetAbsolutePos() + [8, 5], m_strTitleHover, g_fntDefault);
 			} else {
-				Font_DrawText(GetAbsolutePos() + [8, 8], m_strTitle, g_fntDefault);
+				Font_DrawText(GetAbsolutePos() + [8, 5], m_strTitle, g_fntDefault);
 			}
 		}
 	}
