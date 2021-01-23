@@ -490,22 +490,22 @@ VGUI_Inventory_Show(void) {
 		// Create Status Top.
 		lblStatusTop = spawn(CUILabel);
 		lblStatusTop.SetTitle("Player Status");
-		lblStatusTop.SetPos('30 -18');
+		lblStatusTop.SetPos('43 -18');
 
 		// Create Condition label.
 		lblStatusCondition = spawn(CUILabel);
 		lblStatusCondition.SetTitle("Condition: ^x2F0Healthy");
-		lblStatusCondition.SetPos('5 304');
+		lblStatusCondition.SetPos('25 304');
 		
 		// Create Health label.
 		lblStatusHealth = spawn(CUILabel);
 		lblStatusHealth.SetTitle(sprintf("%s    ^xF42%i%s", "Health:", health, "%"));
-		lblStatusHealth.SetPos('5 324');
+		lblStatusHealth.SetPos('25 324');
 
 		// Create Health label.
 		lblStatusStamina = spawn(CUILabel);
 		lblStatusStamina.SetTitle(sprintf("%s   ^xF42%i%s", "Stamina:", stamina, "%"));
-		lblStatusStamina.SetPos('5 344');
+		lblStatusStamina.SetPos('25 344');
 
 		// Add core bg's to desktop.
 		g_uiDesktop.Add(picBackground);
