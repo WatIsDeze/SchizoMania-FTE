@@ -8,7 +8,7 @@ The gameplay wants to make the player enjoy intense moments where nerves play up
 
 ## Releases:
 The game will release new versions from time to time, gradually evolving to a finished product. Currently at the time of writing this document, there is a prototype release codenamed "[The way of the Road](https://github.com/WatIsDeze/SchizoMania-FTE/releases/tag/v0.0.0)" for download.
-
+ 
 Let it be clear that since the game is still a prototype, things may change in the future. Also, expect bugs and incomplete features to be there. These releases are not for the weak of heart :)
 ## Tech:
 Using FreeCS and the FTEQW engine, the game has made a huge leap of development progress in 7 months time since it started. With the advantage of having Half-Life based stock entities, mapping becomes quite pleasant and a breeze. Being able to use Worldspawn Editor and its extended VVBSP format, as well as being able to use the extended .iqm format(.vvm) allows for a lot of possibilities, not easily found in other Quake engines.
