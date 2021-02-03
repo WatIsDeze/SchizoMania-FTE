@@ -1,1 +1,0 @@
-/usr/bin/c++ -fPIC -flto -fno-fat-lto-objects -Wl,--no-undefined -shared  -o fteplug_bullet.so CMakeFiles/bullet.dir/plugins/plugin.c.o CMakeFiles/bullet.dir/plugins/bullet/bulletplug.cpp.o  -Wl,-rpath,/usr/local/lib: -lm /usr/local/lib/libBulletDynamics.so /usr/local/lib/libBulletCollision.so /usr/local/lib/libLinearMath.so /usr/local/lib/libBulletSoftBody.so 

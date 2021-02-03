@@ -1,1 +1,0 @@
-/usr/bin/c++  -flto -fno-fat-lto-objects  -rdynamic CMakeFiles/iqmtool.dir/iqm/iqm.cpp.o CMakeFiles/iqmtool.dir/plugins/models/gltf.c.o CMakeFiles/iqmtool.dir/engine/client/image.c.o CMakeFiles/iqmtool.dir/imgtool.c.o  -o iqmtool  -ldl 
