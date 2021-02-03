@@ -289,7 +289,7 @@ Footsteps_Update(void)
 			break;
 		default:
 			Footsteps_Default(pl);
-		}
+		} 
 
 		/* switch between feet */
 		//pl.step = 0.05 - pl.step;
