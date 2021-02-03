@@ -108,6 +108,8 @@ light_dynamic::predraw(void)
 
 	float p = dynamiclight_add(origin, m_flDistance, m_vecLight, m_flStyle);
 	dynamiclight_set(p, LFIELD_ANGLES, angles);
+	//dynamiclight_set(p, LFLAG_REALTIMEMODE, 0);
+	dynamiclight_set(p, LFLAG_NOSHADOWS, 1);
 
 	if (m_strPattern)
 		dynamiclight_set(p, LFIELD_STYLESTRING, m_strPattern);

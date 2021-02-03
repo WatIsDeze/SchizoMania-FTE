@@ -1,0 +1,1 @@
+/usr/bin/cc -fPIC  -Wstrict-prototypes -Wold-style-definition -Wold-style-declaration -Wpointer-arith -Wvla -Wdeclaration-after-statement -Wformat-truncation=1 -march=native -O3 -Wl,--warn-common -flto -fno-fat-lto-objects -Wl,--no-undefined -shared  -o fteplug_namemaker.so CMakeFiles/namemaker.dir/plugins/plugin.c.o CMakeFiles/namemaker.dir/plugins/namemaker/namemaker.c.o  -lm 

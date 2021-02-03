@@ -161,7 +161,7 @@ void Desktop_Init ( void )
 	// g_uiDesktop.Add( btnMViewer );
 	g_uiDesktop.Add( btnResume );
 	g_uiDesktop.Add( btnDisconnect );
-	g_uiDesktop.Add( lblGameVersion );
+	//g_uiDesktop.Add( lblGameVersion );
 }
 
 void Desktop_Draw ( void )

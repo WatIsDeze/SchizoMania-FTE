@@ -35,14 +35,16 @@ Menu_AutoScale(void)
 
 void m_init ( void )
 {
+	// Initialize.
 	UISystem_Init();
 	Background_Init();
 	Desktop_Init();
 
-	// Precache sounds?
+	// Precache sounds.
 	precache_sound("ui/click.wav");
 	precache_sound("ui/hover.wav");
-	
+	precache_sound("background/mainmenu.wav");
+
 	// Register menu cmds.	
 	registercommand( "menu_quit" );
 	registercommand( "menu_music" );
@@ -51,6 +53,7 @@ void m_init ( void )
 	// Start up our local mainmenu background server map.
 	localcmd("map_background mainmenu\n");
 
+	// Scale the menu.
 	Menu_AutoScale();
 }
 
@@ -58,6 +61,7 @@ void
 Menu_RendererRestarted(string rendererdescription)
 {
 	localcmd("menu_restart\n");
+	
 	Menu_AutoScale();
 }
 
@@ -68,6 +72,13 @@ void m_shutdown ( void )
 
 void m_draw ( vector vecScreensize )
 {
+	static int hasPlayedIntro = FALSE;
+
+	if (hasPlayedIntro == FALSE) {
+		// Play our audio file.
+		localsound("background/mainmenu.wav");
+		hasPlayedIntro = TRUE;
+	}
 	if (vecScreensize != video_res) {
 		Menu_AutoScale();
 	}

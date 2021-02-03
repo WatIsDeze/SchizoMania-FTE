@@ -1,0 +1,4 @@
+/home/user/Dev/FTEDev/Games/SchizoMania-FTE/bin/CMakeFiles/_CMakeLTOTest-C/bin/CMakeFiles/rebuild_cache.dir
+/home/user/Dev/FTEDev/Games/SchizoMania-FTE/bin/CMakeFiles/_CMakeLTOTest-C/bin/CMakeFiles/edit_cache.dir
+/home/user/Dev/FTEDev/Games/SchizoMania-FTE/bin/CMakeFiles/_CMakeLTOTest-C/bin/CMakeFiles/boo.dir
+/home/user/Dev/FTEDev/Games/SchizoMania-FTE/bin/CMakeFiles/_CMakeLTOTest-C/bin/CMakeFiles/foo.dir

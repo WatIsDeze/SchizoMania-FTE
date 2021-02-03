@@ -272,7 +272,7 @@ Footsteps_Update(void)
 		}
 
 		// Play the sound with shorter intervals if we're running.
-		if (vlen(pl.velocity) > 220) {
+		if (vlen(pl.velocity) > PMOVE_STEP_RUNSPEED) {
 			pl.step_time = time + 0.40;
 		} else {
 			pl.step_time = time + 0.62;
