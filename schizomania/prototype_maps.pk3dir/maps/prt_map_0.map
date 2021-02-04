@@ -2143,5 +2143,5 @@
 {
 "classname" "sky_camera"
 "origin" "-3040.000000 3168.000000 56.000000"
-"scale" "96"
+"scale" "16"
 }
