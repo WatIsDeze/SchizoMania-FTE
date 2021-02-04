@@ -1,0 +1,14 @@
+{
+	qer_editorImage "textures/blockout/512x512_pink.tga"
+
+	diffusemap textures/blockout/512x512_pink.tga
+    normalmap textures/blockout/512x512_pink_normal.tga
+	
+	surfaceParm tile
+	
+	{
+		program lightmapped
+		map $diffuse
+		map $normalmap
+	}
+}

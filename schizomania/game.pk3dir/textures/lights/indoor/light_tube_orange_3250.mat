@@ -1,0 +1,18 @@
+{
+	qer_editorImage textures/lights/indoor/light_tube_orange.tga
+
+	diffusemap textures/lights/indoor/light_tube_orange.tga
+	qer_trans 0.75
+
+	surfaceParm trans
+	surfaceParm nolightmap
+
+    vmap_surfaceLight 3250
+	vmap_lightImage textures/lights/colors/orange_soft.tga
+
+	{
+		program lightmapped
+		map $diffuse
+		blendFunc blend
+	}
+}
